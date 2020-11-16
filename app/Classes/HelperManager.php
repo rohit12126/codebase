@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Classes;
+use Image;
 
 class HelperManager
 {
@@ -18,5 +19,18 @@ class HelperManager
             session()->flash('alert-success', $msg);
         else
             session()->flash('alert-error', $msg);
+    }
+
+    public static function uploadFile($file, $file_path)
+    {
+        if(!is_null($file))
+        {
+            $file_name = time().'_file_'.$file->getClientOriginalName();
+
+            $image_resize = Image::make($file->getRealPath());              
+            // $image_resize->resize(1356, 450);
+            $image_resize->save(base_path('/public/'.$file_path).'/'.$file_name);
+            return $file_name ;
+        }
     }
 }
