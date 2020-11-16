@@ -28,6 +28,6 @@ class ProductController extends Controller
     {
         //$notes = Notes::with('user')->with('status')->paginate( 20 );
         $product = [];
-        return view('frontend.list', ['notes' => $notes]);
+        return view('frontend.list', ['notes' => $product]);
     }
 }

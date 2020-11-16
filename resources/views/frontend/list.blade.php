@@ -1,5 +1,4 @@
 @extends('layouts.front')
-
 @section('content')
 <!-- START SECTION SHOP -->
 <div class="section">
