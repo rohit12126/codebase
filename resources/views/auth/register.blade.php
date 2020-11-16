@@ -35,6 +35,16 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text">
                             <svg class="c-icon">
+                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-mobile"></use>
+                            </svg>
+                          </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="{{ __('Mobile Number') }}" name="mobile" value="{{ old('mobile') }}" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <svg class="c-icon">
                               <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
                             </svg>
                           </span>
