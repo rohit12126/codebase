@@ -9,14 +9,18 @@ use App\Classes\ProductManager;
 class ProductController extends Controller
 {
 
+    protected $productManager;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        ProductManager $productManager
+    )
     {
         //$this->middleware('auth');
+        $this->productManager =  $productManager;
     }
 
     /**
@@ -26,8 +30,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$notes = Notes::with('user')->with('status')->paginate( 20 );
-        $product = [];
-        return view('frontend.list', ['notes' => $product]);
+        $paginate = 5;
+        $products = $this->productManager->getProducts($paginate);
+        dd($products);
+        return view('frontend.list', ['products' => $products]);
     }
 }

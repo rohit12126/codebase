@@ -2,11 +2,10 @@
 
 namespace App\Classes;
 
-use App\Models\Product as ProductModel;
-use App\Models\ProductImage as ProductImageModel;
+use App\Models\Cart as CartModel;
 use App\Classes\HelperManager as Common;
 
-class UserManager
+class CartManager
 {
     public static function create($req)
     {
