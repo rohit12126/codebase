@@ -1,4 +1,5 @@
-
+@extends('layouts.front')
+@section('content')
 <!-- START SECTION SHOP -->
 <div class="section">
 	<div class="container">
@@ -666,3 +667,4 @@
     </div>
 </div>
 <!-- END SECTION SHOP -->
+@endsection
