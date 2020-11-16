@@ -32,6 +32,10 @@ Route::group(['middleware' => ['get.menu']], function () {
         
         Route::get('admin/category', 'admin\CategoryController@index')->name('admin.category');
         Route::post('admin/category', 'admin\CategoryController@addCategory')->name('admin.category');
+        
+        Route::get('admin/edit_category/{id?}', 'admin\CategoryController@editCategory');//->name('admin.categoryedit');
+        Route::post('admin/edit_category/{id?}', 'admin\CategoryController@editSubmitCategory');//->name('admin.categoryedit');
+        Route::get('admin/delete_category/{id?}', 'admin\CategoryController@deleteCategory');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
