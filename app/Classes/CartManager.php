@@ -7,8 +7,8 @@ use App\Classes\HelperManager as Common;
 
 class CartManager
 {
-    public static function create($req)
+    public function check()
     {
-        
+        dd("HI");
     }
 }
