@@ -207,8 +207,12 @@ Route::group(['middleware' => ['get.menu']], function () {
         });
     });
 });
-Route::get('/profile',                 'ProfileController@index')->name('profile');
 
+Route::prefix('profile')->group(function () {
+Route::get('/',                 'ProfileController@index')->name('profile');
+Route::post('/update',                 'ProfileController@update')->name('profile.update');
+
+});
 Route::prefix('product')->group(function () {
     Route::get('/',                 'ProductController@index')->name('product.list');
     Route::get('/detail{product_id}',     'ProductController@detail')->name('product.detail');

@@ -31,4 +31,12 @@ class ProfileController extends Controller
         $user = Auth::user();
         return view('frontend.profile', ['user' => $user]);
     }
+    public function update(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name       = $request->input('name');
+        $user->email      = $request->input('email');
+        $user->save();
+        return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+    }
 }
