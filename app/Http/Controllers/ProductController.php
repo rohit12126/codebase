@@ -9,17 +9,6 @@ use App\Classes\ProductManager;
 class ProductController extends Controller
 {
 
-    protected $productManager;
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //$this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +17,9 @@ class ProductController extends Controller
     public function index()
     {
         $paginate = 5;
-        $products = ProductManager::getProducts($paginate);
+        $productmanager = new ProductManager;
+        $product = $productmanager->getProduct();
+        //$products = ProductManager::getProducts($paginate);
         dd($paginate);
         return view('frontend.list', ['products' => $products]);
     }
