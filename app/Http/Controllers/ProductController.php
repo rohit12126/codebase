@@ -26,7 +26,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $notes = Notes::with('user')->with('status')->paginate( 20 );
-        return view('dashboard.notes.notesList', ['notes' => $notes]);
+        //$notes = Notes::with('user')->with('status')->paginate( 20 );
+        $product = [];
+        return view('frontend.list', ['notes' => $notes]);
     }
 }
