@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+    
     protected $fillable = [
         'name', 
         'category_id', 
@@ -16,4 +15,12 @@ class Product extends Model
         'sale_price', 
         'stock_qty'
     ];
+
+    /**
+     * Get the imagess for the product.
+     */
+    public function images()
+    {
+        return $this->hasMany('App\Models\ProductImage');
+    }
 }

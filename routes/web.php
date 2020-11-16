@@ -203,3 +203,9 @@ Route::group(['middleware' => ['get.menu']], function () {
         });
     });
 });
+Route::get('/profile',                 'ProfileController@index')->name('profile');
+
+Route::prefix('product')->group(function () {
+    Route::get('/',                 'ProductController@index')->name('product.list');
+    Route::get('/product/detail',     'ProductController@detail')->name('product.detail');
+});
