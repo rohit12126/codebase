@@ -23,4 +23,12 @@ class Product extends Model
     {
         return $this->hasMany('App\Models\ProductImage');
     }
+
+    /**
+     * Get the category belongs to the product.
+     */
+    public function catergory()
+    {
+        return $this->hasOne('App\Models\Category');
+    }
 }

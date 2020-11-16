@@ -1,7 +1,4 @@
 <?php
-Route::get('/forms', function () {
-    return view('dashboard.base.forms');
-});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -216,5 +213,5 @@ Route::get('/profile',                 'ProfileController@index')->name('profile
 
 Route::prefix('product')->group(function () {
     Route::get('/',                 'ProductController@index')->name('product.list');
-    Route::get('/product/detail',     'ProductController@detail')->name('product.detail');
+    Route::get('/detail{product_id}',     'ProductController@detail')->name('product.detail');
 });

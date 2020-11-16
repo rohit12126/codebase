@@ -16,5 +16,12 @@ class Category extends Model
     {
         return $this->hasOne('App\Models\CategoryImage', 'category_id');
     }
-    /******* Relationships ********/
+    
+    /**
+     * Get the product that belongs the category.
+     */
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product');
+    }
 }

@@ -3,7 +3,7 @@
 namespace App\Classes;
 
 use App\Models\Product as ProductModel;
-use App\Models\ProductImage as ProductImageModel;
+use App\Models\ProductImage;
 use App\Classes\HelperManager as Common;
 
 class ProductManager
@@ -79,5 +79,17 @@ class ProductManager
     public static function getProductById($id)
     {
         return ProductModel::with('images')->find($id);
+    }
+
+    public function getProducts($paginate)
+    {
+        $products = ProductModel::with('images', 'catergory')->paginate($paginate);
+        return $products;
+    }
+
+    public function getProduct($productId)
+    {
+        $products = ProductModel::with('images', 'catergory')->find($productId);
+        return $products;
     }
 }
