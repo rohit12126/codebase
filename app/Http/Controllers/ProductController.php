@@ -15,12 +15,9 @@ class ProductController extends Controller
      *
      * @return void
      */
-    public function __construct(
-        ProductManager $productManager
-    )
+    public function __construct()
     {
         //$this->middleware('auth');
-        $this->productManager =  $productManager;
     }
 
     /**
@@ -31,8 +28,8 @@ class ProductController extends Controller
     public function index()
     {
         $paginate = 5;
-        $products = $this->productManager->getProducts($paginate);
-        dd($products);
+        $products = ProductManager::getProducts($paginate);
+        dd($paginate);
         return view('frontend.list', ['products' => $products]);
     }
 }
