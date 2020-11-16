@@ -38,7 +38,7 @@
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-comment-square"></use>
                         </svg> Comments<span class="badge badge-warning ml-auto">42</span></a>
-                    <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="#">
+                    <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="{{route('profile')}}">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
                         </svg> Profile</a><a class="dropdown-item" href="#">
