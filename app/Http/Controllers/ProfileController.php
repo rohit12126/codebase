@@ -39,4 +39,7 @@ class ProfileController extends Controller
         $user->save();
         return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
     }
+    public function account(){
+        return view('frontend.account');
+    }
 }
