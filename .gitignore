@@ -15,6 +15,7 @@
 /public/icons
 /public/vendors
 /public/public
+/public/upload
 /storage/*.key
 /vendor
 .env

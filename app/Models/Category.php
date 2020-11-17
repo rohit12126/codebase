@@ -12,7 +12,6 @@ class Category extends Model
     ];
 
     /******* Relationships ********/
-
     public function image()
     {
         return $this->hasOne('App\Models\CategoryImage', 'category_id');

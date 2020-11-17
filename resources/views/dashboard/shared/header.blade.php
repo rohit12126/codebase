@@ -38,7 +38,7 @@
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-comment-square"></use>
                         </svg> Comments<span class="badge badge-warning ml-auto">42</span></a>
-                    <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="#">
+                    <div class="dropdown-header bg-light py-2"><strong>Settings</strong></div><a class="dropdown-item" href="{{route('profile')}}">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
                         </svg> Profile</a><a class="dropdown-item" href="#">
@@ -63,7 +63,7 @@
                 </div>
             </li>
         </ul>
-        <div class="c-subheader px-3">
+        <div class="c-subheader px-3 d-none">
             <ol class="breadcrumb border-0 m-0">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <?php $segments = ''; ?>
