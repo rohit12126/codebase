@@ -48,4 +48,10 @@ class User extends Authenticatable
     protected $attributes = [ 
         'menuroles' => 'user',
     ];
+
+    public function address()
+    {
+        return $this->hasMany('App\Models\Address', 'user_id');
+
+    }
 }

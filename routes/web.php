@@ -45,6 +45,11 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_user/{id?}', 'admin\UserController@editSubmitUser');
         Route::get('admin/delete_user/{id?}', 'admin\UserController@deleteUser');
         Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
+        
+        Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
+        Route::get('admin/order_details/{order_no?}', 'admin\OrderController@orderDetails');
+        Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
+        
     });
 
     Route::group(['middleware' => ['role:user']], function () {

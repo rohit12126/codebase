@@ -61,6 +61,13 @@ if(!function_exists('renderDropdown')){
     </li>
 
     <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.order') }}">
+            <i class="cil-speedometer c-sidebar-nav-icon"></i>
+            Orders
+        </a>
+    </li>
+
+    <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.logout') }}">
             <i class="cil-account-logout c-sidebar-nav-icon"></i>
             Logout
