@@ -36,12 +36,15 @@ class ProductController extends Controller
         return view('dashboard.product', compact('product_list', 'category_list', 'product'));
     }
 
-    public function editSubmitCategory(Request $req)
+    public function editSubmitProduct(Request $req)
     {
+        // \App\Models\ProductImage::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
+        // dump( array_keys($req->storeimage) );
+        // dd($req);
         $response = ProductManager::edit($req);
         if($response == true){
             HelperManager::setMessage('Product Updated Successfully!');
-            return redirect()->route('admin.category');
+            return back();
         }else{
             HelperManager::setMessage('Product Update Failed!', 'error');
         }

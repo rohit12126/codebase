@@ -3,7 +3,7 @@
 namespace App\Classes;
 
 use App\Models\Product as ProductModel;
-use App\Models\ProductImage;
+use App\Models\ProductImage as ProductImageModel;
 use App\Classes\HelperManager as Common;
 
 class ProductManager
@@ -36,23 +36,36 @@ class ProductManager
 
     public static function edit($req)
     {
-        $category = null;
+        $product = null;
         if ($exist = self::getProductById($req->id)) {
-            $category = $exist;
+            $product = $exist;
         } else {
             return false;
         }
 
-        if ($category->fill(['name' => $req->name])->save()) {
+        $data = [
+            'name' => $req->name,
+            'category_id' => $req->category_id,
+            'purchase_price' => $req->purchase_price,
+            'sale_price' => $req->sale_price,
+            'stock_qty' => $req->stock_qty,
+            'description' => $req->description,
+        ];
+        if ($product->fill($data)->save()) {
+            if(isset($req->storeimage) && is_array($req->storeimage) && $req->storeimage !== null){
+                ProductImageModel::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
+            }
             if ($req->image) {
-                $file_name = Common::uploadFile($req->image, 'upload/product');
-                if (@$category->image !== null) {
-                    $category->image->update(['image' => $file_name]);
-                } else {
-                    ProductImageModel::create([
-                        'product_id' => $category->id,
-                        'image' => $file_name
-                    ]);
+                foreach ($req->image as $key=>$image) {
+                    $file_name = Common::uploadFile($image, 'upload/product');
+                    if (is_array($req->storeimage) && in_array( $key, array_keys($req->storeimage))) {
+                        ProductImageModel::where("id", $key)->where('product_id', $product->id)->update(['image' => $file_name]);
+                    } else {
+                        ProductImageModel::create([
+                            'product_id' => $product->id,
+                            'image' => $file_name
+                        ]);
+                    }
                 }
             }
             return true;
