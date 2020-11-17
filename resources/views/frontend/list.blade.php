@@ -10,7 +10,6 @@
                     <div class="col-md-4 col-6">
                         <div class="product">
                             <div class="product_img">
-                                <a href="{{ route('product.detail', ['id' => $product->id ])}}">
                                     <img src="{{ asset('product_images/product_img1.jpg')}}" alt="product_img1">
                                 </a>
                                 <div class="product_action_box">
@@ -23,7 +22,7 @@
                                 </div>
                             </div>
                             <div class="product_info">
-                                <h6 class="product_title"><a href="shop-product-detail.html">{{$product->name}}</a></h6>
+                                <h6 class="product_title">{{$product->name}}</a></h6>
                                 <div class="product_price">
                                     <span class="price">₹ {{$product->purchase_price}}</span>
                                     <del>₹ {{$product->sale_price}}</del>
@@ -54,12 +53,6 @@
         		<div class="row">
                     <div class="col-12">
                         {{ $products->links() }}
-                        {{-- <ul class="pagination mt-3 justify-content-center pagination_style1">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="linearicons-arrow-right"></i></a></li>
-                        </ul> --}}
                     </div>
                 </div>
         	</div>

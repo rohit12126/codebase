@@ -29,7 +29,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function detail() {
-
+    public function detail($productId) {
+        dd($productId);
     }
 }

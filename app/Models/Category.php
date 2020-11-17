@@ -22,6 +22,6 @@ class Category extends Model
      */
     public function product()
     {
-        return $this->belongsTo('App\Models\Product');
+        return $this->hasOne('App\Models\Product');
     }
 }
