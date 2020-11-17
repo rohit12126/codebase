@@ -147,13 +147,9 @@
 @section('javascript')
 
 <script>
-    //document.getElementById('addMore').addEventListener("click", function(event){ 
     function addMore() {
-
         document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
     }
-    //});
-
 </script>
 
 @endsection
