@@ -38,6 +38,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/edit_product/{id?}', 'admin\ProductController@editProduct');
         Route::post('admin/edit_product/{id?}', 'admin\ProductController@editSubmitProduct');
         Route::get('admin/delete_product/{id?}', 'admin\ProductController@deleteProduct');
+
+        Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
+        Route::post('admin/user', 'admin\UserController@addUser')->name('admin.user');
+        Route::get('admin/edit_user/{id?}', 'admin\UserController@editUser'); 
+        Route::post('admin/edit_user/{id?}', 'admin\UserController@editSubmitUser');
+        Route::get('admin/delete_user/{id?}', 'admin\UserController@deleteUser');
+        Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
