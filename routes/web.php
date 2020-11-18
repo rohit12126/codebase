@@ -37,6 +37,8 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/product', 'admin\ProductController@addProduct')->name('admin.product');
         Route::get('admin/edit_product/{id?}', 'admin\ProductController@editProduct');
         Route::post('admin/edit_product/{id?}', 'admin\ProductController@editSubmitProduct');
+        Route::get('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
+        Route::post('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
         Route::get('admin/delete_product/{id?}', 'admin\ProductController@deleteProduct');
 
         Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
@@ -47,8 +49,11 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
         
         Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
+        Route::post('admin/order', 'admin\OrderController@index')->name('admin.order');
         Route::get('admin/order_details/{order_no?}', 'admin\OrderController@orderDetails');
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
+        
+        Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
         
     });
 

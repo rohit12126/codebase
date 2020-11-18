@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Create Product</h4>
+                        <h4>Product Add/Edit</h4>
                     </div>
                     <div class="card-body">
                         @include('partials.alert_msg')
@@ -52,6 +52,14 @@
                                         <textarea placeholder="Description" name="description" class="form-control" required>{{ @$product->description }}</textarea>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="">Status</label>
+                                        <select name="status" id="" class="form-control">
+                                            <option @if(@$product->status == 1) selected @endif value="1">Active</option>
+                                            <option @if(@$product->status == 0) selected @endif value="0">In-Actice</option>
+                                        </select>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">
                                         Submit
                                     </button>
@@ -85,59 +93,6 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Product List</h4>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Name</th>
-                                    <th>Stock Quantity</th>
-                                    <th>Purchase Price</th>
-                                    <th>Sale Price</th>
-                                    <th>Image</th>
-                                    <th>Action</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach($product_list as $key => $value)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->stock_qty }}</td>
-                                    <td>{{ $value->purchase_price }}</td>
-                                    <td>{{ $value->sale_price }}</td>
-                                    <td>
-                                        @if(count($value->images) > 0)
-                                        @foreach($value->images as $key2 => $value2)
-                                        <img src="{{ url('') }}/upload/product/{{ @$value2->image}}" width="50" />
-                                        @endforeach
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_product', $value->id) }}">
-                                            <i class="cil-description"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}">
-                                            <i class="cil-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 </div>

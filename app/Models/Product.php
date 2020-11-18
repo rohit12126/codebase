@@ -13,7 +13,8 @@ class Product extends Model
         'description', 
         'purchase_price', 
         'sale_price', 
-        'stock_qty'
+        'stock_qty',
+        'status',
     ];
 
     /**

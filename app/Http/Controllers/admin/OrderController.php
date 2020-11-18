@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $order_list = OrderManager::getLast50OrderList();
+        $order_list = OrderManager::getLatestPaginatedOrderList($req);
         return view('dashboard.order', compact('order_list'));
     }
 
@@ -90,5 +90,10 @@ class OrderController extends Controller
             HelperManager::setMessage('User deletion Failed!', 'error');
         }
         return back();
+    }
+
+    public function email()
+    {
+        return view('dashboard.email.order_status_change');
     }
 }

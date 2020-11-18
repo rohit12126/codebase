@@ -41,28 +41,42 @@ if(!function_exists('renderDropdown')){
 
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.category') }}">
-            <i class="cil-speedometer c-sidebar-nav-icon"></i>
+            <i class="cil-grid c-sidebar-nav-icon"></i>
             Category
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.product') }}">
-            <i class="cil-speedometer c-sidebar-nav-icon"></i>
+    <li class="c-sidebar-nav-dropdown">
+        <a class="c-sidebar-nav-dropdown-toggle" href="#">
+            <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Product
         </a>
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
+                    <i class="cil-list c-sidebar-nav-icon"></i>
+                    List
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.product') }}">
+                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
+                    Add
+                </a>
+            </li>
+        </ul>
     </li>
 
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.user') }}">
-            <i class="cil-speedometer c-sidebar-nav-icon"></i>
+            <i class="cil-user c-sidebar-nav-icon"></i>
             User
         </a>
     </li>
 
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.order') }}">
-            <i class="cil-speedometer c-sidebar-nav-icon"></i>
+            <i class="cil-cart c-sidebar-nav-icon"></i>
             Orders
         </a>
     </li>

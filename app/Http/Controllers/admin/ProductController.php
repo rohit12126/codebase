@@ -12,9 +12,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product_list = ProductManager::getProductList();
         $category_list = CategoryManager::getCategoryList();
-        return view('dashboard.product', compact('product_list', 'category_list'));
+        return view('dashboard.product', compact('category_list'));
+    }
+
+    public function productList(Request $req)
+    {
+        $product_list = ProductManager::getProductListPaginated($req);
+        return view('dashboard.product_list', compact('product_list'));
     }
 
     public function addProduct(Request $req)
@@ -38,9 +43,6 @@ class ProductController extends Controller
 
     public function editSubmitProduct(Request $req)
     {
-        // \App\Models\ProductImage::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
-        // dump( array_keys($req->storeimage) );
-        // dd($req);
         $response = ProductManager::edit($req);
         if($response == true){
             HelperManager::setMessage('Product Updated Successfully!');
@@ -48,7 +50,7 @@ class ProductController extends Controller
         }else{
             HelperManager::setMessage('Product Update Failed!', 'error');
         }
-        return back();
+        return redirect()->route('admin.product.list');
     }
 
     public function deleteProduct($id)
