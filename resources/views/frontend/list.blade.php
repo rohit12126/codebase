@@ -78,7 +78,7 @@
             var productId = $(this).children( ".product-id" ).val();
             e.preventDefault();
             jQuery.ajax({
-                url: "{{ url('/product/add-cart') }}",
+                url: "{{ url('/cart/add-cart') }}",
                 method: 'post',
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {

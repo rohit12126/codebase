@@ -55,12 +55,17 @@
                                             if (!empty($cart)) {
                                                 $qty = $cart->qty;
                                             }
-                                        @phpend
-                                        <input type="button" value="-" class="minus"><input type="text" name="quantity" value="{{$qty}}" title="Qty" class="qty" ><input type="button" value="+" class="plus"></div>
+                                        @endphp
+                                        <input type="button" value="-" class="minus remove-from-cart">
+
+                                        <input type="text" name="quantity" value="{{$qty}}" title="Qty" class="qty" >
+                                        
+                                        <input type="button" value="+" class="plus add-to-cart">
+                                    </div>
                                 </div>
+                                <input type="hidden" class="product-id" value="{{$product->id}}">
                                 <div class="cart_btn">
                                     <button class="btn btn-fill-out btn-addtocart add-to-cart" type="button">
-                                    <input type="hidden" class="product-id" value="{{$product->id}}">
                                     <i class="icon-basket-loaded"></i> Add to cart</button>
                                 </div>
                             </div>
@@ -84,11 +89,13 @@
 @section('scripts')
 <script>
     jQuery(document).ready(function(){
+        /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
-            var productId = $(this).children( ".product-id" ).val();
+            var productId = $(".product-id").val();
+            alert(productId);
             e.preventDefault();
             jQuery.ajax({
-                url: "{{ url('/product/add-cart') }}",
+                url: "{{ url('/cart/add-cart') }}",
                 method: 'post',
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
@@ -97,7 +104,41 @@
                 success: function(result){
                     alert(result);
                 }});
-        }); 
+        });
+        /* Remove from cart functionality */
+        jQuery('.remove-from-cart').click(function(e) {
+            var productId = $(".product-id").val();
+            alert(productId);
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/remove-from-cart') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    productId : productId
+                },
+                success: function(result){
+                    alert(result);
+                }});
+        });
+
+        /* Update cart functionality */
+
+        $(".qty").blur(function(e) {
+            var productId = $(".product-id").val();
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/update-cart') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    productId : productId,
+                    qty : qty
+                },
+                success: function(result){
+                    alert(result);
+                }});
+        });
     });
 </script>
 @endsection
