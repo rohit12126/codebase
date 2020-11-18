@@ -50,6 +50,13 @@ class ProfileController extends Controller
             'orders' => $orders
             ]);
     }
+    public function orderDetails($order){
+        $data = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order);
+        return view(
+            'frontend.partials.orderProductDetail',[
+                'data' => $data,
+            ]);
+    }
     public function resetPassword(Request $request)
     {
         $user = User::find($request->id);

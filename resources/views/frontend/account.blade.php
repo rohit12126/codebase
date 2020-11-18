@@ -39,17 +39,17 @@
                             </div>
                         </div>
                   	</div>
-                  	<div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-                   @include('frontend.partials.order')
-                  	</div>
-					<div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                  <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                    @include('frontend.partials.order')
+                  </div>
+                  <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                     @include('frontend.partials.address')
-					</div>
-                    <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
-					@include('frontend.partials.profile')
-					</div>
-				</div>
-			</div>
+                  </div>
+                  <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
+					          @include('frontend.partials.profile')
+				  	      </div>
+			      </div>
+			  </div>
 		</div>
 	</div>
 </div>

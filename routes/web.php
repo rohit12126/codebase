@@ -231,7 +231,9 @@ Route::prefix('account')->group(function () {
 Route::get('/profile',                 'ProfileController@index')->name('profile');
 Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
+Route::get('/orderDetails/{id}' ,'ProfileController@orderDetails')->name('orderDetails');
 });
+
 
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('product.list');
