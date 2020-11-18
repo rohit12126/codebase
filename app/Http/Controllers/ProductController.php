@@ -9,7 +9,20 @@ use App\Classes\CartManager;
 
 class ProductController extends Controller
 {
-
+    protected $productManager;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(
+        ProductManager $productManager,
+        CartManager $cartManager
+    )
+    {
+        $this->productManager = $productManager;
+        $this->cartManager = $cartManager;
+    }
     /**
      * Display a listing of the product.
      *
@@ -18,8 +31,8 @@ class ProductController extends Controller
     public function index()
     {
         $paginate = 5;
-        $productmanager = new ProductManager;
-        $products = $productmanager->getProducts($paginate);
+        
+        $products = $this->productManager->getProducts($paginate);
         return view('frontend.list', ['products' => $products]);
     }
 
@@ -29,7 +42,24 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function detail($productId) {
-        dd($productId);
+    public function detail(Request $req) {
+        $productId = $req->input('id');
+        $cart = [];
+        $product = $this->productManager->getProduct($productId);
+        $cart = $this->cartManager->getProduct($productId);
+        return view('frontend.product-detail',
+            ['product' => $product, 'cart'=>$cart]
+        );
+    }
+
+    /**
+     * Add to cart a product
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addToCart(Request $req) {
+        $productId = $req->input('productId');
+        $product = $this->productManager->getProduct($productId);
+        $this->cartManager->addToCart($product);
     }
 }

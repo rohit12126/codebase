@@ -216,6 +216,7 @@ Route::post('/update',                 'ProfileController@update')->name('profil
 
 });
 Route::prefix('product')->group(function () {
-    Route::get('/',                 'ProductController@index')->name('product.list');
-    Route::get('/detail{product_id}',     'ProductController@detail')->name('product.detail');
+    Route::get('/', 'ProductController@index')->name('product.list');
+    Route::get('/detail','ProductController@detail')->name('product.detail');
+    Route::post('/add-cart','ProductController@addToCart')->name('product.addCart');
 });
