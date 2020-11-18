@@ -35,6 +35,7 @@
                                         </option>
                                     </select>
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                    <div class="text-danger">After submit buyer will get email notification for order status change!</div>
                                 </form>
                             </div>
                         </div>

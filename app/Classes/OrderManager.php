@@ -3,10 +3,11 @@
 namespace App\Classes;
 
 use App\Models\Order as OrderModel;
-use App\Models\OrderProduct as OrderProductModel;
 use App\Classes\HelperManager as Common;
 use App\Models\Product as ProductModel;
 use Carbon\Carbon;
+use App\Mail\OrderStatusChange;
+use Illuminate\Support\Facades\Mail;
 
 class OrderManager
 {
@@ -14,6 +15,14 @@ class OrderManager
     {
         $order = self::getOrderByOrderNUmber($req->order_no);
         if ($order->fill(['status' => $req->order_status])->save()) {
+
+            $data['order_no'] = $order->order_no;
+            $data['buyer_name'] = ucwords($order->user->name);
+            $data['status'] = $order->order_status;
+            dump( Mail::to($order->user->email)->send(new OrderStatusChange($data)) );
+            dump($data);
+            dd($order->user);
+
             return true;
         } else {
             return false;
@@ -55,10 +64,10 @@ class OrderManager
                 $order->where(function ($query) use ($req) {
                     $product = ProductModel::select('id')->where('name', 'like', '%' . $req->product_name . '%')->get()->toArray();
                     if (count($product) > 0) {
-                        $listProduct = function ($query) use($product) {
+                        $listProduct = function ($query) use ($product) {
                             // $query->where('user_id', Auth::user()->id);
                             $query->whereIn('product_id', array_column($product, 'id'));
-                         };
+                        };
                         $query->whereHas('productList', $listProduct);
                     }
                 });

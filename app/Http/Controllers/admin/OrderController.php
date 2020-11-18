@@ -94,6 +94,6 @@ class OrderController extends Controller
 
     public function email()
     {
-        return view('dashboard.email.order_status_change');
+        return view('dashboard.email.order_confirm');
     }
 }
