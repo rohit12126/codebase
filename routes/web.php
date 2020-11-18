@@ -233,7 +233,10 @@ Route::get('/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
 
 /* Cart Routes */
+Route::get('cart/','CartController@index')->name('cart');
 Route::post('cart/add-cart','CartController@addToCart')->name('cart.addCart');
 Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('cart.removeFromCart');
 Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
+Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
+
 

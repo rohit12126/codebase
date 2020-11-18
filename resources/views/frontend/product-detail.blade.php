@@ -92,7 +92,6 @@
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
             var productId = $(".product-id").val();
-            alert(productId);
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/add-cart') }}",
@@ -102,13 +101,14 @@
                     productId : productId
                 },
                 success: function(result){
-                    alert(result);
-                }});
+                    alert("Item successfully added to the cart.");
+                    location.reload(true);
+                }
+            });
         });
         /* Remove from cart functionality */
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $(".product-id").val();
-            alert(productId);
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/remove-from-cart') }}",
@@ -118,14 +118,17 @@
                     productId : productId
                 },
                 success: function(result){
-                    alert(result);
-                }});
+                    alert("Item successfully removed from the cart.");
+                    location.reload(true);
+                }
+            });
         });
 
         /* Update cart functionality */
 
         $(".qty").blur(function(e) {
             var productId = $(".product-id").val();
+            var qty = $(this).val();
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/update-cart') }}",
@@ -136,8 +139,10 @@
                     qty : qty
                 },
                 success: function(result){
-                    alert(result);
-                }});
+                    alert("Item quantity updated successfully.");
+                    location.reload(true);
+                }
+            });
         });
     });
 </script>

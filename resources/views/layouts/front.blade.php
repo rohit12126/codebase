@@ -27,7 +27,7 @@
 
     <!-- <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('css/css-ionicons.min.css')}}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-themify-icons.css')}}"> -->
+    <link rel="stylesheet" href="{{ asset('css/css-themify-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-linearicons.css')}}">
     <!-- <link rel="stylesheet" href="{{ asset('css/css-flaticon.css')}}"> -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-simple-line-icons.css')}}"> -->
@@ -301,7 +301,7 @@
                             </ul>
                             <div class="cart_footer">
                                 <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">₹</span></span>{{$cartSubTotal}}</p>
-                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line view-cart">View Cart</a><a href="#" class="btn btn-fill-out checkout">Checkout</a></p>
+                                <p class="cart_buttons"><a href="{{ url('/cart/') }}" class="btn btn-fill-line view-cart">View Cart</a><a href="#" class="btn btn-fill-out checkout">Checkout</a></p>
                             </div>
                         </div>
                     </li>
@@ -495,19 +495,20 @@ footer-->
     jQuery(document).ready(function(){
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
-            alert('check1');
             var rowId = $( this ).children('.rowId').val();
             e.preventDefault();
             jQuery.ajax({
-                url: "{{ url('/cart/remove-from-cart') }}",
+                url: "{{ url('/cart/remove-product') }}",
                 method: 'post',
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     rowId : rowId
                 },
                 success: function(result){
-                    alert(result);
-                }});
+                    alert("Item successfully removed from the cart.");
+                    location.reload(true);
+                }
+            });
         });
     });
 </script>

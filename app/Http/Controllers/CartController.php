@@ -26,6 +26,22 @@ class CartController extends Controller
     }
     
     /**
+     * Cart List
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $req) {
+        $productList = $this->cartManager->getCartContain();
+        $cartSubTotal = $this->cartManager->subTotal();
+        return view('frontend.cart',
+            [
+                'products' => $productList,
+                'cartSubTotal' => $cartSubTotal,
+            ]
+        );
+    }
+
+    /**
      * Add to cart a product (Increase qty)
      *
      * @return \Illuminate\Http\Response
@@ -54,8 +70,9 @@ class CartController extends Controller
      */
     public function updateCart(Request $req) {
         $productId = $req->input('productId');
+        $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
-        $this->cartManager->addToCart($product);
+        $this->cartManager->updateCart($product, $qty);
     }
 
     /**

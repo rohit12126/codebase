@@ -21,7 +21,7 @@ class CartManager
         $rowId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
-            if ($item->id === $product->id) {
+            if ($item->id == $product->id) {
                 $qty = $item->qty + $qty;
                 $rowId = $item->rowId;
                 $set = true;
@@ -47,7 +47,7 @@ class CartManager
         $rowId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
-            if ($item->id === $product->id) {
+            if ($item->id == $product->id) {
                 $qty = $item->qty - $qty;
                 $rowId = $item->rowId;
                 $set = true;
@@ -107,12 +107,12 @@ class CartManager
         $rowId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
-            if ($item->id === $productId) {
+            if ($item->id == $productId) {
                 $rowId = $item->rowId;
                 break;
             }
         }
-
+        
         if (!empty($rowId)) {
             return Cart::get($rowId);
         } else {
@@ -175,7 +175,7 @@ class CartManager
         $rowId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
-            if ($item->id === $product->id) {
+            if ($item->id == $product->id) {
                 $rowId = $item->rowId;
                 $set = true;
                 break;

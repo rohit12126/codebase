@@ -31,7 +31,6 @@ class ProductController extends Controller
     public function index()
     {
         $paginate = 5;
-        
         $products = $this->productManager->getProducts($paginate);
         return view('frontend.list', ['products' => $products]);
     }
