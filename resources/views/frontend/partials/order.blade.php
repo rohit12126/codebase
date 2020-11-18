@@ -15,20 +15,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($orders as $order)
                         <tr>
-                            <td>#1234</td>
-                         <td>March 15, 2020</td>
-                         <td>Processing</td>
-                         <td>$78.00 for 1 item</td>
-                         <td><a href="#" class="btn btn-fill-out btn-sm">View</a></td>
+                            <td>{{$order->order_no}}</td>
+                         <td>{{$order->created_at->format('d-m-Y')}}</td>
+                         <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancel")}}</td>
+                         <td>{{$order->grand_total}}</td>
+                         <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a></td>
                      </tr>
-                     <tr>
-                        <td>#2366</td>
-                        <td>June 20, 2020</td>
-                        <td>Completed</td>
-                        <td>$81.00 for 1 item</td>
-                        <td><a href="#" class="btn btn-fill-out btn-sm">View</a></td>
-                    </tr>
+                     @endforeach
                    </tbody>
                </table>
            </div>

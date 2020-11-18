@@ -23,14 +23,14 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&amp;display=swap"
         rel="stylesheet"> -->
      <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
-     <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
+     <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script>
 
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css-ionicons.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-themify-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-linearicons.css')}}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-flaticon.css')}}"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-simple-line-icons.css')}}"> -->
+    <link rel="stylesheet" href="{{ asset('css/css-flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/css-simple-line-icons.css')}}">
     <!--- owl carousel CSS-->
     <link rel="stylesheet" href="{{ asset('css/css-owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-owl.theme.css')}}">
