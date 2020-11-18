@@ -19,10 +19,7 @@ class OrderManager
             $data['order_no'] = $order->order_no;
             $data['buyer_name'] = ucwords($order->user->name);
             $data['status'] = $order->order_status;
-            dump( Mail::to($order->user->email)->send(new OrderStatusChange($data)) );
-            dump($data);
-            dd($order->user);
-
+            Mail::to($order->user->email)->send(new OrderStatusChange($data));
             return true;
         } else {
             return false;
