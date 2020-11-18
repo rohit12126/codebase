@@ -5,10 +5,10 @@ namespace App\Classes;
 use App\Models\Cart as CartModel;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Classes\HelperManager as Common;
+use Illuminate\Support\Facades\Auth;
 
 class CartManager
 {
-
 
     /**
      * Add product to cart (Increase product qty to cart)
@@ -72,12 +72,19 @@ class CartManager
      */
     public function addProduct($product, $qty = 1)
     {
-        Cart::add([
+        $productData = [
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
             'price'=> $product->purchase_price,
-        ]);
+        ];
+
+        Cart::add($productData);
+
+        if (Auth::check()) {
+            $user_id = Auth::user()->id;
+            $this->createCart($productData, $user_id);
+        }
     }
 
     /**
@@ -186,6 +193,24 @@ class CartManager
             $this->updateProduct($rowId, $data);
         } else {
             $this->addProduct($product, $qty);
+        }
+    }
+
+    /**
+     * Check DB cart
+     *
+     */
+    public function createCart($productData, $user_id)
+    {
+        $cartData = CartModel::where('user_id', $user_id)
+            ->first();
+        if (!is_null($cartData)) {
+            dd($cartData);
+        } else {
+            $insertId = CartModel::create([
+                'user_id' => $user_id,
+                'cart_data' => json_encode($productData)
+            ]);
         }
     }
 }
