@@ -2,6 +2,7 @@
     <div class="col-lg-6">
         <div class="card mb-3 mb-lg-0">
             <div class="card-header">
+            {{$orders}}
                 <h3>Billing Address</h3>
             </div>
             <div class="card-body">

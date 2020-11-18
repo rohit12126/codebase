@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Classes\UserManager;
+use App\Classes\OrderManager;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -16,11 +16,13 @@ class ProfileController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        OrderManager $orderManager
+    )
     {
         $this->middleware('auth');
+        $this->orderManager = $orderManager;
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -42,10 +44,10 @@ class ProfileController extends Controller
     }
     public function account(){
         $user = Auth::user();
-        $address='';
-        $orders='';
+        $orders=$this->orderManager->getOrderByUserIdWithAddress($user->id);
         return view('frontend.account',[
-            'user' => $user
+            'user' => $user,
+            'orders' => $orders
             ]);
     }
     public function resetPassword(Request $request)

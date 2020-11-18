@@ -4,6 +4,8 @@ namespace App\Classes;
 
 use App\User as UserModel;
 use App\Classes\HelperManager as Common;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserManager
 {
@@ -58,5 +60,8 @@ class UserManager
     public static function getUserById($id)
     {
         return UserModel::find($id);
+    }
+    public static function getCurrentUser(){
+        return Auth::user();
     }
 }
