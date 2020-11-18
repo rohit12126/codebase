@@ -17,9 +17,9 @@
                     </div>
                     <div class="card-body">
                         @include('partials.alert_msg')
-                        <div class="row">
-                            <div class="col-6">
-                                <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-6">
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Categoty</label>
@@ -58,20 +58,28 @@
                                     <a onclick="history.go(-1)" class="btn btn-danger text-white">
                                         Back
                                     </a>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                @dump($product)
-                                    <label for="file-input">Product Image</label>
-                                    <input id="file-input" type="file" name="image[]" class="form-control" accept="image/*">
-                                    @if(@$product->image[0]->image)
-                                    <hr />
-                                    <img src="{{ url('') }}/upload/product/{{ @$product->image[0]->image}}" width="150" />
-                                    @endif
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group" id="moreImage">
+                                        <label for="">Product Image <span class="btn btn-primary btn-sm" id="addMore" onclick="addMore()">Add More</span> </label>
+                                        @if(isset($product->images) && count(@$product->images) > 0)
+                                        @foreach($product->images as $key => $value)
+                                        @if($key > 0) <div><hr> @endif
+                                        <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
+                                        <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
+                                        <img src="{{ url('') }}/upload/product/{{ $value->image }}" width="100" />
+                                        @if($key > 0)
+                                           <bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button></div>
+                                        @endif
+
+                                        @endforeach
+                                        @else
+                                        <input id="file-input" type="file" name="image[]" class="form-control" accept="image/*" required>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -109,7 +117,7 @@
                                     <td>
                                         @if(count($value->images) > 0)
                                         @foreach($value->images as $key2 => $value2)
-                                        <img src="{{ url('') }}/upload/product/{{ @$value2->image}}" width="150" />
+                                        <img src="{{ url('') }}/upload/product/{{ @$value2->image}}" width="50" />
                                         @endforeach
                                         @endif
                                     </td>
@@ -138,5 +146,10 @@
 
 @section('javascript')
 
+<script>
+    function addMore() {
+        document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
+    }
+</script>
 
 @endsection

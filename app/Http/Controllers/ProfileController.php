@@ -36,6 +36,24 @@ class ProfileController extends Controller
         $user = User::find($request->id);
         $user->name       = $request->input('name');
         $user->email      = $request->input('email');
+        $user->mobile      = $request->input('mobile');
+        $user->save();
+        return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+    }
+    public function account(){
+        $user = Auth::user();
+        $address='';
+        $orders='';
+        return view('frontend.account',[
+            'user' => $user
+            ]);
+    }
+    public function resetPassword(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name       = $request->input('name');
+        $user->email      = $request->input('email');
+        $user->mobile      = $request->input('mobile');
         $user->save();
         return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
     }

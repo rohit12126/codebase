@@ -38,6 +38,18 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/edit_product/{id?}', 'admin\ProductController@editProduct');
         Route::post('admin/edit_product/{id?}', 'admin\ProductController@editSubmitProduct');
         Route::get('admin/delete_product/{id?}', 'admin\ProductController@deleteProduct');
+
+        Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
+        Route::post('admin/user', 'admin\UserController@addUser')->name('admin.user');
+        Route::get('admin/edit_user/{id?}', 'admin\UserController@editUser'); 
+        Route::post('admin/edit_user/{id?}', 'admin\UserController@editSubmitUser');
+        Route::get('admin/delete_user/{id?}', 'admin\UserController@deleteUser');
+        Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
+        
+        Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
+        Route::get('admin/order_details/{order_no?}', 'admin\OrderController@orderDetails');
+        Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
+        
     });
 
     Route::group(['middleware' => ['role:user']], function () {
@@ -210,10 +222,10 @@ Route::group(['middleware' => ['get.menu']], function () {
     });
 });
 
-Route::prefix('profile')->group(function () {
-Route::get('/',                 'ProfileController@index')->name('profile');
-Route::post('/update',                 'ProfileController@update')->name('profile.update');
-
+Route::prefix('account')->group(function () {
+Route::get('/profile',                 'ProfileController@index')->name('profile');
+Route::get('/',                 'ProfileController@account')->name('account');
+Route::post('/update',                 'ProfileController@update')->name('account.update');
 });
 Route::prefix('product')->group(function () {
     Route::get('/', 'ProductController@index')->name('product.list');

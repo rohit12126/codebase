@@ -1,88 +1,59 @@
-@extends('dashboard.authBase')
+@extends('layouts.front')
 
 @section('content')
 
+<div class="login_register_wrap section">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="card mx-4">
-            <div class="card-body p-4">
-                <form method="POST" action="{{ route('register') }}">
-                    @csrf
-                    <h1>{{ __('Register') }}</h1>
-                    <p class="text-muted">Create your account</p>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <svg class="c-icon">
-                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-user"></use>
-                            </svg>
-                          </span>
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-md-10">
+                <div class="login_wrap">
+            		<div class="padding_eight_all bg-white">
+                        <div class="heading_s1">
+                            <h3>Create an Account</h3>
                         </div>
-                        <input class="form-control" type="text" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required autofocus>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <svg class="c-icon">
-                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-envelope-open"></use>
-                            </svg>
-                          </span>
+                        <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Enter Your Name" name="name" value="{{ old('name') }}" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required="" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter Your Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required="" class="form-control" name="mobile" placeholder="Enter Your Phone Number" value="{{ old('mobile') }}">
+                            </div>
+                            <div class="form-group">
+                            <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required>
+                            </div>
+                            <div class="login_footer form-group">
+                                <div class="chek-form">
+                                    <div class="custome-checkbox">
+                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
+                                        <label class="form-check-label" for="exampleCheckbox2"><span>I agree to terms &amp; Policy.</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-fill-out btn-block">Register</button>
+                            </div>
+                        </form>
+                        <div class="different_login">
+                            <span> or</span>
                         </div>
-                        <input class="form-control" type="text" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}" required>
+                        <ul class="btn-login list_none text-center">
+                            <li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
+                            <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
+                        </ul>
+                        <div class="form-note text-center">Already have an account? <a href="{{route('login')}}">Log in</a></div>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <svg class="c-icon">
-                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-mobile"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <input class="form-control" type="text" placeholder="{{ __('Mobile Number') }}" name="mobile" value="{{ old('mobile') }}" required>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <svg class="c-icon">
-                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
-                    </div>
-                    <div class="input-group mb-4">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <svg class="c-icon">
-                              <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <input class="form-control" type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required>
-                    </div>
-                    <button class="btn btn-block btn-success" type="submit">{{ __('Register') }}</button>
-                </form>
-            </div>
-            <div class="card-footer p-4">
-              <div class="row">
-                <div class="col-6">
-                  <button class="btn btn-block btn-facebook" type="button">
-                    <span>facebook</span>
-                  </button>
                 </div>
-                <div class="col-6">
-                  <button class="btn btn-block btn-twitter" type="button">
-                    <span>twitter</span>
-                  </button>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-
+</div>
 @endsection
 
 @section('javascript')
