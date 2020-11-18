@@ -232,7 +232,16 @@ Route::get('/profile',                 'ProfileController@index')->name('profile
 Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 });
-Route::prefix('product')->group(function () {
-    Route::get('/',                 'ProductController@index')->name('product.list');
-    Route::get('/detail{product_id}',     'ProductController@detail')->name('product.detail');
-});
+
+/* Product Routes */
+Route::get('/', 'ProductController@index')->name('product.list');
+Route::get('product/detail','ProductController@detail')->name('product.detail');
+
+/* Cart Routes */
+Route::get('cart/','CartController@index')->name('cart');
+Route::post('cart/add-cart','CartController@addToCart')->name('cart.addCart');
+Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('cart.removeFromCart');
+Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
+Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
+
+

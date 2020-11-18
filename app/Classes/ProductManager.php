@@ -128,7 +128,7 @@ class ProductManager
 
     public function getProduct($productId)
     {
-        $products = ProductModel::with('images', 'catergory')->find($productId);
-        return $products;
+        $product = ProductModel::with('images', 'catergory')->find($productId);
+        return $product;
     }
 }
