@@ -11,11 +11,8 @@
         <div class="card mb-3 mb-lg-0">
             <div class="card-header">
             
-                <h3>Product Name : {{$data->productList[0]->product->name}}</h3>
+                <h3>Order Id : {{$data->order_no}}</h3>
             </div>
-            <div class="card-body">
-                    <p>{{$data->productList[0]->product->description}}</p>
-                        </div>
         </div>
     </div>
     <div class="col-lg-3">
@@ -50,21 +47,28 @@
                     <table class="table">
                   <thead>
                       <tr>
-                          <th>Order</th>
-                          <th>Date</th>
-                          <th>Status</th>
+                          <th>Product</th>
+                          <th>Preview Image</th>
                           <th>Quantity</th>
-                          <th>Total</th>
+                          <th>Purchase Price</th>
+                          <th>Sale Price</th>
+                         
                         </tr>
                     </thead>
                         <tbody>
+                            @foreach($data->productList as $product)
                             <tr>
-                            <td>{{$data->order_no}}</td>
-                            <td>{{$data->created_at->format('d-m-Y')}}</td>
-                            <td>{{$data->status === 1 ? "In-Process" : ($data->status ===2 ? "Delivered" : "Cancel")}}</td>
-                            <td>{{ $data->productList[0]->product_quantity }} </td>
-                            <td>{{$data->grand_total}}</td>
+                            <td>{{$product->product->name}}</td>
+                            <td>@if (isset($product->product->images[0]->image))
+                                        <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                    @else
+                                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                    @endif</td>
+                            <td>{{$product->product_quantity}}</td>
+                            <td>{{$product->product->purchase_price}}</td>
+                            <td>{{$product->product->sale_price}} </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     </div>
