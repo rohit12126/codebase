@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Classes\OrderManager;
+use App\Classes\CartManager;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -17,11 +18,13 @@ class ProfileController extends Controller
      * @return void
      */
     public function __construct(
-        OrderManager $orderManager
+        OrderManager $orderManager,
+        CartManager $cartManager
     )
     {
         $this->middleware('auth');
         $this->orderManager = $orderManager;
+        $this->cartManager = $cartManager;
     }
     /**
      * Display a listing of the resource.
@@ -44,7 +47,8 @@ class ProfileController extends Controller
     }
     public function account(){
         $user = Auth::user();
-        $orders=$this->orderManager->getOrderByUserIdWithAddress($user->id);
+        $orders = $this->orderManager->getOrderByUserIdWithAddress($user->id);
+        $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
             'user' => $user,
             'orders' => $orders
