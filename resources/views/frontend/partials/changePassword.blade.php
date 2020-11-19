@@ -12,7 +12,11 @@
                     </div>
                 @endif
             <div class="row">
-       
+            @if(session()->has('error'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 <div class="form-group col-md-12">
                     <label>Current Password <span class="required">*</span></label>
                     <input required="" class="form-control @error('email') is-invalid @enderror" name="current-password" type="password">
