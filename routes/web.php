@@ -47,6 +47,9 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_user/{id?}', 'admin\UserController@editSubmitUser');
         Route::get('admin/delete_user/{id?}', 'admin\UserController@deleteUser');
         Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
+
+        Route::get('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password'); 
+        Route::post('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password');
         
         Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
         Route::post('admin/order', 'admin\OrderController@index')->name('admin.order');

@@ -32,12 +32,12 @@ class UserManager
             'name' => $req->name,
             'mobile' => $req->mobile,
         ];
-        if($req->password !== null){
+        if ($req->password !== null) {
             $data['password'] = bcrypt($req->password);
         }
-        if($user->fill($data)->update()){
+        if ($user->fill($data)->update()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -46,6 +46,16 @@ class UserManager
     {
         if ($user = self::getUserById($id)) {
             $user->delete();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function changePassword($req)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->fill(['password' => bcrypt($req->new_password)])->update()) {
             return true;
         } else {
             return false;
@@ -61,7 +71,8 @@ class UserManager
     {
         return UserModel::find($id);
     }
-    public static function getCurrentUser(){
+    public static function getCurrentUser()
+    {
         return Auth::user();
     }
 }

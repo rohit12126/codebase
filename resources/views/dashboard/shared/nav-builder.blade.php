@@ -82,6 +82,13 @@ if(!function_exists('renderDropdown')){
     </li>
 
     <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
+            <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
+            Change Password
+        </a>
+    </li>
+
+    <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.logout') }}">
             <i class="cil-account-logout c-sidebar-nav-icon"></i>
             Logout

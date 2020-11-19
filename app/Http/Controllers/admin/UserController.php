@@ -19,15 +19,15 @@ class UserController extends Controller
     public function addUser(Request $req)
     {
         $req->validate([
-            'name'	=> 'required|string',
-    		'email'	=> 'required|email:rfc|unique:users,email',
-            'mobile'	=> 'required|string|max:15',
-            'password'	=> 'required'
-        ]); 
+            'name'    => 'required|string',
+            'email'    => 'required|email:rfc|unique:users,email',
+            'mobile'    => 'required|string|max:15',
+            'password'    => 'required'
+        ]);
         $response = UserManager::add($req);
-        if($response == true){
+        if ($response == true) {
             HelperManager::setMessage('User Add Successfully!');
-        }else{
+        } else {
             HelperManager::setMessage('User Add Failed!', 'error');
         }
         return back();
@@ -43,16 +43,16 @@ class UserController extends Controller
     public function editSubmitUser(Request $req)
     {
         $req->validate([
-            'name'	=> 'required|string',
-    		'email'	=> 'bail|required|email:rfc|unique:users,email,'.$req->id,
-            'mobile'	=> 'string',
-            'password'	=> ''
-        ]); 
+            'name'    => 'required|string',
+            'email'    => 'bail|required|email:rfc|unique:users,email,' . $req->id,
+            'mobile'    => 'string',
+            'password'    => ''
+        ]);
         $response = UserManager::edit($req);
-        if($response == true){
+        if ($response == true) {
             HelperManager::setMessage('User Updated Successfully!');
             return redirect()->route('admin.user');
-        }else{
+        } else {
             HelperManager::setMessage('User Update Failed!', 'error');
         }
         return back();
@@ -67,11 +67,35 @@ class UserController extends Controller
     public function deleteUser($id)
     {
         $response = UserManager::delete($id);
-        if($response == true){
+        if ($response == true) {
             HelperManager::setMessage('User deleted Successfully!');
-        }else{
+        } else {
             HelperManager::setMessage('User deletion Failed!', 'error');
         }
         return back();
+    }
+
+    public function changePassword(Request $req)
+    {
+        if ( count($req->all()) > 0) {
+            $req->validate([
+                'current_password' => ['required', function ($attribute, $value, $fail) {
+                    if (!\Hash::check($value, Auth::guard('admin')->user()->password)) {
+                        return $fail(__('The current password is incorrect.'));
+                    }
+                }],
+                'new_password'    => 'required',
+                'confirm_password'    => 'required|same:new_password',
+            ]);
+            $response = UserManager::changePassword($req);
+            if ($response == true) {
+                HelperManager::setMessage('Password Change Successfully!');
+            } else {
+                HelperManager::setMessage('Password could not be change!', 'error');
+            }
+            return back();
+        } else {
+            return view('dashboard.change_password');
+        }
     }
 }
