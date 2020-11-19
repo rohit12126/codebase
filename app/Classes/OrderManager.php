@@ -5,6 +5,7 @@ namespace App\Classes;
 use App\Models\Order as OrderModel;
 use App\Classes\HelperManager as Common;
 use App\Models\Product as ProductModel;
+// use App\Models\ProductImage as ProductImageModel;
 use Carbon\Carbon;
 use App\Mail\OrderStatusChange;
 use Illuminate\Support\Facades\Mail;
@@ -143,6 +144,7 @@ class OrderManager
             ->with('productList.product')
             ->where('order_no', $order)->first();
     }
+
     public static function getOrderByUserIdWithAddress($userId)
     {
         return OrderModel::with('getShippingAddress')
@@ -160,5 +162,13 @@ class OrderManager
                 $orderNumber = time();
             }
             return $orderNumber;
+    }
+    public static function getProductsByOrderNUmber($order)
+    {
+        return OrderModel::select('*')
+            ->with('getShippingAddress')
+            ->with('getBillingAddress')
+            ->with('productList.product.images')
+            ->where('order_no', $order)->first();
     }
 }

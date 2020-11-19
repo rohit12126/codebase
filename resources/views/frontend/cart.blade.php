@@ -55,7 +55,8 @@
         </div>
         <div class="row">
             <input type="hidden" value="{{$userId}}" id="user_id" class="user_id">
-
+            <input type="hidden" value="{{$isTempUser}}" id="isTempUser" class="is-temp-user">
+            
             <div class="col-md-6">
             	<div class="heading_s1 mb-3">
             		<h6>Shipping Address</h6>
@@ -64,8 +65,9 @@
                     <div class="form-row">
                         <div class="form-group col-lg-6">
                             <select name="shipping_address" id="shipping_address" class="form-control">
-                                <option value="1">fafadfdsf</option>
-                                <option value="2">fgdfgfdg</option>
+                                @foreach ($shippingAddress as $address)
+                                    <option value="{{$address->id}}">{{$address->address}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -92,8 +94,9 @@
                     <div class="form-row">
                         <div class="form-group col-lg-6">
                             <select name="billing_address" id="billing_address" class="form-control">
-                                <option value="2">fafadfdsf</option>
-                                <option value="3">fgdfgfdg</option>
+                                @foreach ($billingAddress as $address)
+                                    <option value="{{$address->id}}">{{$address->address}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -208,9 +211,9 @@
         jQuery('#addshipAddress').click(function(e) {
             var address = $( '#shipAddress' ).val();
             var user_id = $( '#user_id' ).val();
+            var isTempUser = $( '#isTempUser' ).val();
             var type = 1;
-            alert(user_id);
-            alert(address);
+            
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/api/address/add') }}",
@@ -219,12 +222,12 @@
                 data: {
                     address : address,
                     type : type,
-                    user_id : user_id
+                    user_id : user_id,
+                    temp_user : isTempUser
                 },
                 success: function(result){
-                    alert(result);
                     alert("Address successfully added to the list.");
-                    //location.reload(true);
+                    location.reload(true);
                 }
             });
         });
@@ -233,9 +236,9 @@
         {
             var address = $( '#billAddress' ).val();
             var user_id = $( '#user_id' ).val();
+            var isTempUser = $( '#isTempUser' ).val();
             var type = 2;
-            alert(user_id);
-            alert(address);
+            
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/api/address/add') }}",
@@ -244,12 +247,12 @@
                 data: {
                     address : address,
                     type : type,
-                    user_id : user_id
+                    user_id : user_id,
+                    temp_user : isTempUser
                 },
                 success: function(result){
-                    alert(result);
                     alert("Address successfully added to the list.");
-                    //location.reload(true);
+                    location.reload(true);
                 }
             });
         });

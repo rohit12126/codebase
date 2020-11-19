@@ -61,6 +61,10 @@ class UserManager
             return false;
         }
     }
+    public static function changeUserPassword($req)
+    {
+        
+    }
 
     public static function getUserList()
     {

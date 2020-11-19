@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Classes\OrderManager;
 use App\Classes\CartManager;
+use App\Classes\UserManager;
+// use App\Classes\ProductManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,48 +22,62 @@ class ProfileController extends Controller
      */
     public function __construct(
         OrderManager $orderManager,
-        CartManager $cartManager
+        CartManager $cartManager,
+        UserManager $userManager
     )
     {
         $this->middleware('auth');
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
+        $this->userManager =$userManager;
+    }
+
+     /**
+     * Update User Account Details
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        if($this->userManager->edit($request)){
+            return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+        }
     }
     /**
-     * Display a listing of the resource.
+     * Get Account Details Of Logged in User
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $user = Auth::user();
-        return view('frontend.profile', ['user' => $user]);
-    }
-    public function update(Request $request)
-    {
-        $user = User::find($request->id);
-        $user->name       = $request->input('name');
-        $user->email      = $request->input('email');
-        $user->mobile      = $request->input('mobile');
-        $user->save();
-        return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
-    }
     public function account(){
-        $user = Auth::user();
+        $user = $this->userManager->getCurrentUser();
         $orders = $this->orderManager->getOrderByUserIdWithAddress($user->id);
+      
         $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
             'user' => $user,
             'orders' => $orders
             ]);
     }
+    /**
+     * Get Order Details Of OrderId
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */
     public function orderDetails($order){
-        $data = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order);
+        $data = $this->orderManager->getProductsByOrderNUmber($order);
+        // dd($this->orderManager->getProductsByOrderNUmber($order));
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
             ]);
     }
+
+    /**
+     * Get Order Details Of OrderId
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */
+
     public function admin_credential_rules(array $data)
         {
         $messages = [
@@ -77,7 +93,11 @@ class ProfileController extends Controller
 
         return $validator;
         }  
-        
+       /**
+     * Update Password of user
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */   
     public function postCredentials(Request $request)
     {
         $request_data = $request->All();
