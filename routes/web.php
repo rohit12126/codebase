@@ -253,4 +253,6 @@ Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('car
 Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
+Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
+
 

@@ -3,6 +3,7 @@
 namespace App\Classes;
 
 use App\Models\Order as OrderModel;
+use App\Models\OrderProduct;
 use App\Classes\HelperManager as Common;
 use App\Models\Product as ProductModel;
 use Carbon\Carbon;
@@ -149,6 +150,7 @@ class OrderManager
             ->with('getBillingAddress')
             ->with('productList')->where("user_id", $userId)->get();
     }
+
     public static function generateOrderNumber(){
             $orderNumber = OrderModel::select(
                 'order_no'
@@ -160,5 +162,13 @@ class OrderManager
                 $orderNumber = time();
             }
             return $orderNumber;
+    }
+
+    public static function addOrder($orderData){
+        return  OrderModel::create($orderData);
+    }
+    
+    public static function addOrderProduct($orderProductData) {
+        return  OrderProduct::create($orderProductData);
     }
 }
