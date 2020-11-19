@@ -10,6 +10,7 @@ use App\Classes\CartManager;
 class ProductController extends Controller
 {
     protected $productManager;
+    protected $cartManager;
     /**
      * Create a new controller instance.
      *

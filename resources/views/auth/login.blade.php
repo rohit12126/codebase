@@ -17,7 +17,7 @@
                         @csrf
                             <div class="form-group">
                             <div class="input-group-prepend">
-                                <input type="text" required="" class="form-control" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}""></div></div>
+                                <input type="text" required="" class="form-control" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}"></div></div>
                             <div class="form-group">
                                 <input class="form-control" required="" type="password" placeholder="{{ __('Password') }}" name="password"></div>
                             <div class="login_footer form-group">

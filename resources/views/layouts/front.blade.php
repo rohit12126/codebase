@@ -273,7 +273,11 @@
                             </div>
                         </li>
                         <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li> 
+                        @if (!Auth::guest())
+                        <li><a class="nav-link nav_item" href="{{route('account')}}">My Account</a></li> 
+                        @else
                         <li><a class="nav-link nav_item" href="{{route('login')}}">Login</a></li> 
+                        @endif
                     </ul>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">

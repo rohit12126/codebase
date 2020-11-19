@@ -101,8 +101,9 @@
                     productId : productId
                 },
                 success: function(result){
+                    alert(result);
                     alert("Item successfully added to the cart.");
-                    location.reload(true);
+                    //location.reload(true);
                 }
             });
         });
