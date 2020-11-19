@@ -491,6 +491,7 @@ footer-->
   <script src="{{ asset('js/js-slick.min.js')}}"></script><!-- elevatezoom js -->
   <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script><!-- scripts js -->
   <script src="{{ asset('js/js-scripts.js')}}"></script>
+  <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script>
 </body>
 
 </html>

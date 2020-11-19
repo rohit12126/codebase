@@ -149,4 +149,16 @@ class OrderManager
             ->with('getBillingAddress')
             ->with('productList')->where("user_id", $userId)->get();
     }
+    public static function generateOrderNumber(){
+            $orderNumber = OrderModel::select(
+                'order_no'
+            ) ->orderBy('order_no', 'DESC')->first();
+            if (isset($orderNumber->order_no)){
+            $orderNumber = $orderNumber->order_no + 1;
+            }
+            if ($orderNumber == 0){
+                $orderNumber = time();
+            }
+            return $orderNumber;
+    }
 }
