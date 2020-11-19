@@ -76,8 +76,6 @@ class ProfileController extends Controller
         
     public function postCredentials(Request $request)
     {
-      if(Auth::Check())
-      {
         $request_data = $request->All();
         $validator = $this->admin_credential_rules($request_data);
         if($validator->fails())
@@ -100,11 +98,6 @@ class ProfileController extends Controller
             $error = array('current-password' => 'Please enter correct current password');
             return redirect()->back()->withErrors($error);
           }
-        }        
-      }
-      else
-      {
-        return redirect()->to('/account');
-      }    
+        }               
     }
 }
