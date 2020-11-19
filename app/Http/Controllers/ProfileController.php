@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Classes\OrderManager;
 use App\Classes\CartManager;
+use App\Classes\UserManager;
+use App\Classes\AddressManager;
+use App\Classes\HelperManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,88 +23,92 @@ class ProfileController extends Controller
      */
     public function __construct(
         OrderManager $orderManager,
-        CartManager $cartManager
+        CartManager $cartManager,
+        UserManager $userManager,
+        AddressManager $addressManager
     )
     {
         $this->middleware('auth');
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
+        $this->userManager =$userManager;
+        $this->addressManager = $addressManager;
+    }
+
+     /**
+     * Update User Account Details
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        if($this->userManager->edit($request)){
+            return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+        }
     }
     /**
-     * Display a listing of the resource.
+     * Get Account Details Of Logged in User
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $user = Auth::user();
-        return view('frontend.profile', ['user' => $user]);
-    }
-    public function update(Request $request)
-    {
-        $user = User::find($request->id);
-        $user->name       = $request->input('name');
-        $user->email      = $request->input('email');
-        $user->mobile      = $request->input('mobile');
-        $user->save();
-        return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
-    }
     public function account(){
-        $user = Auth::user();
-        $orders = $this->orderManager->getOrderByUserIdWithAddress($user->id);
+        $user = $this->userManager
+                ->getCurrentUser();
+        $orders = $this->orderManager
+                    ->getOrderByUserId($user->id);
+        $shippingAddress =  $this->addressManager
+                ->getAddresses($user->id,1,0);
+        $billingAddress=$this->addressManager
+                ->getAddresses($user->id,2,0);
         $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
             'user' => $user,
-            'orders' => $orders
+            'orders' => $orders,
+            'shippingAddress' => $shippingAddress,
+            'billingAddress' => $billingAddress
             ]);
     }
+
+    /**
+     * Get Order Details Of OrderId
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */
     public function orderDetails($order){
-        $data = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order);
+        $data = $this->orderManager->getProductsByOrderNUmber($order);
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
             ]);
     }
-    public function admin_credential_rules(array $data)
-        {
-        $messages = [
-            'current-password.required' => 'Please enter current password',
-            'password.required' => 'Please enter password',
-        ];
 
-        $validator = Validator::make($data, [
-            'current-password' => 'required',
-            'password' => 'required|same:password',
-            'password_confirmation' => 'required|same:password',     
-        ], $messages);
-
-        return $validator;
-        }  
-        
+    /**
+     * Update Password of user
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */   
     public function postCredentials(Request $request)
     {
-        $request_data = $request->All();
-        $validator = $this->admin_credential_rules($request_data);
-        if($validator->fails())
-        {
-            return redirect()->back()->withErrors($validator->getMessageBag());
-        }
-        else
-        {  
-          $current_password = Auth::User()->password;           
-          if(Hash::check($request_data['current-password'], $current_password))
-          {           
-            $user_id = Auth::User()->id;                       
-            $obj_user = User::find($user_id);
-            $obj_user->password = Hash::make($request_data['password']);
-            $obj_user->save(); 
-            redirect()->back()->with('message', 'Profile Updated Sucessfully!');
-          }
-          else
-          {           
-            $error = array('current-password' => 'Please enter correct current password');
-            return redirect()->back()->withErrors($error);
-          }
-        }               
+        
+        if ( count($request->all()) > 0) {
+            $request->validate([
+                'current_password' => ['required', function ($attribute, $value, $fail) {
+                    if (!\Hash::check($value, Auth::guard('admin')->user()->password)) {
+                        return $fail(__('The current password is incorrect.'));
+                    }
+                }],
+                'new_password'    => 'required',
+                'confirm_password'    => 'required|same:new_password',
+            ]);
+            $response = UserManager::changeUserPassword($request);
+            if ($response == true) {
+                HelperManager::setMessage('Password Change Successfully!');
+            } else {
+                HelperManager::setMessage('Password could not be change!', 'error');
+            }
+            return back();
+        } else {
+            return view('frontend.account');
+        }              
     }
 }

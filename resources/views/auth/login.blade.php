@@ -18,8 +18,18 @@
                             <div class="form-group">
                             <div class="input-group-prepend">
                                 <input type="text" required="" class="form-control" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}"></div></div>
+                                @error('email')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             <div class="form-group">
                                 <input class="form-control" required="" type="password" placeholder="{{ __('Password') }}" name="password"></div>
+                                @error('password')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             <div class="login_footer form-group">
                                 <a href="{{ route('password.request') }}">Forgot password?</a>
                             </div>

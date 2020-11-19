@@ -229,12 +229,12 @@ Route::group(['middleware' => ['get.menu']], function () {
         });
     });
 });
-
+/*user dashboard Routes*/
 Route::prefix('account')->group(function () {
 Route::get('/profile',                 'ProfileController@index')->name('profile');
 Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
-Route::get('/orderDetails/{id}' ,'ProfileController@orderDetails')->name('orderDetails');
+Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
 });
 Route::get('stripe', 'StripePaymentController@stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
@@ -255,4 +255,7 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 
 Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
-
+/*Paypal Payment Routes*/
+Route::get('payment', 'PayPalController@payment')->name('paypal');
+Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
+Route::get('payment/success', 'PayPalController@success')->name('payment.success');
