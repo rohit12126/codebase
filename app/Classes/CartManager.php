@@ -246,7 +246,6 @@ class CartManager
                     $cartArr[$key]->qty = $data['qty'];
                 }
             }
-         
             CartModel::where('id', $cartId)
                 ->update(['cart_data' => json_encode($cartArr)]);
         }

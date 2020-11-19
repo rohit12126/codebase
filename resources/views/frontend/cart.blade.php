@@ -132,7 +132,7 @@
                 },
                 success: function(result){
                     alert("Item successfully added to the cart.");
-                    //location.reload(true);
+                    location.reload(true);
                 }
             });
         });
