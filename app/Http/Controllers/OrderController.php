@@ -65,7 +65,7 @@ class OrderController extends Controller
         $orderData['billing_address'] = $req->input('billing_address');
         $orderData['shipping_address'] = $req->input('shipping_address');
         $orderData['status'] = 1;
-        $orderData['grand_total'] = $req->input('grand_total');
+        $orderData['grand_total'] = (float) $req->input('grand_total');
         
         $order = $this->orderManager->addOrder($orderData);
     

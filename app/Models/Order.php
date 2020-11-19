@@ -8,9 +8,12 @@ class Order extends Model
 {
     protected $fillable = [
         'order_no',
+        'user_id',
+        'temp_user',
         'billing_address',
         'shipping_address',
-        'status'
+        'status',
+        'grand_total'
     ];
 
     /******* Relationships ********/

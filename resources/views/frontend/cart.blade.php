@@ -53,6 +53,15 @@
             	<div class="medium_divider"></div>
             </div>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('order.addOrder') }}" method="post">
             <div class="row">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
@@ -125,6 +134,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="cart_total_label">Cart Subtotal</td>
+                                        <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
                                         <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
                                     </tr>
                                     <tr>

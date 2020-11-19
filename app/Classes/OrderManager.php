@@ -165,14 +165,15 @@ class OrderManager
             return $orderNumber;
     }
 
-    public static function addOrder($orderData){
+    public static function addOrder($orderData) {
+        
         return  OrderModel::create($orderData);
     }
     
     public static function addOrderProduct($orderProductData) {
         return  OrderProduct::create($orderProductData);
     }
-    
+
     public static function getProductsByOrderNUmber($order)
     {
         return OrderModel::select('*')
