@@ -298,4 +298,14 @@ class CartManager
             ]);
         }
     }
+
+    /**
+     * Destroy User cart
+     * 
+     */
+    public function destroyCartDB($user_id)
+    {
+        CartModel::where('user_id', $user_id)
+        ->delete();
+    }
 }
