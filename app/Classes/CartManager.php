@@ -257,17 +257,45 @@ class CartManager
      */
     public function synchCart($user_id)
     {
-        $cartData = CartModel::where('user_id', $user_id)
+        $cart = CartModel::where('user_id', $user_id)
             ->first();
-        if (!is_null($cartData)) {
-            //dd($cartData);
+        if (!is_null($cart)) {
+            $cartId = $cart->id;
+
+            $cartSessionData = $this->getCartContain();
+            $cartData = json_decode($cart->cart_data);
+            $productIds = array_column($cartData,'id');
+            
+            foreach ($cartData as $key => $item) {
+                foreach ($cartSessionData as $key1 => $itemSess) {
+                    $desIndex = array_search($itemSess->id, $productIds);
+				    if ($desIndex !== false) { 
+                        if ($item->id == $itemSess->id) {
+                            $cartData[$key]->qty = $itemSess->qty;
+                        }
+                    }
+                }       
+            }
+
+            CartModel::where('id', $cartId)
+                ->update(['cart_data' => json_encode($cartData)]);
+            
         } else {
             $cartData = $this->getCartContain();
-            //dd($cartData);
-            /* $insertId = CartModel::create([
+            $cartDB = [];
+            foreach ($cartData as $key => $item) {
+                $cartDB[] = [
+                    'id'=> $item->id,
+                    'name'=> $item->name,
+                    'qty'=> $item->qty,
+                    'price'=> $item->price
+                ];
+            }
+
+            $insertId = CartModel::create([
                 'user_id' => $user_id,
-                'cart_data' => json_encode($productData)
-            ]); */
+                'cart_data' => json_encode($cartDB)
+            ]);
         }
     }
 }
