@@ -38,6 +38,7 @@
                                 <h3>Dashboard</h3>
                             </div>
                             <div class="card-body">
+                            <h3> Welcome {{ $user->name}} </h3>
                     			<p>From your account dashboard. you can easily check &amp; view your <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')">recent orders</a>, manage your <a href="javascript:void(0);" onclick="$('#address-tab').trigger('click')">shipping and billing addresses</a> and <a href="javascript:void(0);" onclick="$('#account-detail-tab').trigger('click')">edit your password and account details.</a></p>
                             </div>
                         </div>

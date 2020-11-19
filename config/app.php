@@ -180,6 +180,8 @@ return [
         
         Spatie\Permission\PermissionServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
     ],
 
     /*
@@ -231,7 +233,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-
-    ],
+        'Socialite'=> Laravel\Socialite\Facades\Socialite::class,
+        
+    ]
 
 ];
