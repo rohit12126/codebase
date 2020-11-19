@@ -16,6 +16,7 @@ class AddTempToOrdersTable extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->tinyInteger('temp_user')
                 ->after('user_id')
+                ->default(0)
                 ->comment('1: temp user , 0: none');
         });
     }

@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Classes\ProductManager;
 use App\Classes\CartManager;
+use App\Classes\GuestUserManager;
+use App\Classes\AddressManager;
+
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     protected $productManager;
     protected $cartManager;
+    protected $guestUserManager;
+    protected $addressManager;
     /**
      * Create a new controller instance.
      *
@@ -19,11 +24,16 @@ class CartController extends Controller
      */
     public function __construct(
         ProductManager $productManager,
-        CartManager $cartManager
+        CartManager $cartManager,
+        GuestUserManager $guestUserManager,
+        AddressManager $addressManager
     )
     {
         $this->productManager = $productManager;
         $this->cartManager = $cartManager;
+        $this->guestUserManager = $guestUserManager;
+        $this->addressManager = $addressManager;
+        
     }
     
     /**
@@ -34,18 +44,32 @@ class CartController extends Controller
     public function index(Request $req) {
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
-        
+        $isTempUser = 0;
+        $shippingAddress = [];
+        $billingAddress = [];
         if (Auth::check()) {
             $userId = Auth::user()->id;
+            $shippingAddress = $this->addressManager
+                ->getAddresses($userId, 1, 0);
+            $billingAddress = $this->addressManager
+                ->getAddresses($userId, 2, 0);
         } else {
-            $userId = '';
+            $userId = $this->guestUserManager->getUserId();
+            $isTempUser = 1;
+            $shippingAddress = $this->addressManager
+                ->getAddresses($userId, 1, 1);
+            $billingAddress = $this->addressManager
+                ->getAddresses($userId, 2, 1);
         }
         
         return view('frontend.cart',
             [
                 'products' => $productList,
                 'cartSubTotal' => $cartSubTotal,
-                'userId' => $userId
+                'userId' => $userId,
+                'isTempUser' => $isTempUser,
+                'shippingAddress' => $shippingAddress,
+                'billingAddress' => $billingAddress
             ]
         );
     }
