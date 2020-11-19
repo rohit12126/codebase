@@ -145,11 +145,10 @@ class OrderManager
             ->where('order_no', $order)->first();
     }
 
-    public static function getOrderByUserIdWithAddress($userId)
+    public static function getOrderByUserId($userId)
     {
-        return OrderModel::with('getShippingAddress')
-            ->with('getBillingAddress')
-            ->with('productList')->where("user_id", $userId)->get();
+        return OrderModel::with('productList')
+        ->where("user_id", $userId)->get();
     }
     public static function generateOrderNumber(){
             $orderNumber = OrderModel::select(

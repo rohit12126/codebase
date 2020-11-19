@@ -7,7 +7,7 @@ use App\User;
 use App\Classes\OrderManager;
 use App\Classes\CartManager;
 use App\Classes\UserManager;
-// use App\Classes\ProductManager;
+use App\Classes\AddressManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,13 +23,15 @@ class ProfileController extends Controller
     public function __construct(
         OrderManager $orderManager,
         CartManager $cartManager,
-        UserManager $userManager
+        UserManager $userManager,
+        AddressManager $addressManager
     )
     {
         $this->middleware('auth');
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
         $this->userManager =$userManager;
+        $this->addressManager = $addressManager;
     }
 
      /**
@@ -49,13 +51,20 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function account(){
-        $user = $this->userManager->getCurrentUser();
-        $orders = $this->orderManager->getOrderByUserIdWithAddress($user->id);
-      
+        $user = $this->userManager
+                ->getCurrentUser();
+        $orders = $this->orderManager
+                    ->getOrderByUserId($user->id);
+        $shippingAddress =  $this->addressManager
+                ->getAddresses($user->id,1,0);
+        $billingAddress=$this->addressManager
+                ->getAddresses($user->id,2,0);
         $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
             'user' => $user,
-            'orders' => $orders
+            'orders' => $orders,
+            'shippingAddress' => $shippingAddress,
+            'billingAddress' => $billingAddress
             ]);
     }
     /**
