@@ -298,14 +298,14 @@
                                         <a href="#" class="item_remove">
                                         <input type="hidden" class="rowId" value="{{$product->rowId}}">
                                         <i class="ion-close"></i></a>
-                                        <a href="#">{{-- <img src="{{ asset('images/cart_thamb1.jpg')}}" alt="cart_thumb1"> --}} {{$product->name}}</a>
+                                        <a href="#"> {{$product->name}}</a>
                                         <span class="cart_quantity"> {{$product->qty}} x <span class="cart_amount"> <span class="price_symbole">₹</span></span>{{$product->price}}</span>
                                     </li>
                                 @endforeach
                             </ul>
                             <div class="cart_footer">
                                 <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">₹</span></span>{{$cartSubTotal}}</p>
-                                <p class="cart_buttons"><a href="{{ url('/cart/') }}" class="btn btn-fill-line view-cart">View Cart</a><a href="#" class="btn btn-fill-out checkout">Checkout</a></p>
+                                <p class="cart_buttons"><a href="{{ url('/cart/') }}" class="btn btn-fill-line view-cart">View Cart</a>{{-- <a href="#" class="btn btn-fill-out checkout">Checkout</a> --}}</p>
                             </div>
                         </div>
                     </li>

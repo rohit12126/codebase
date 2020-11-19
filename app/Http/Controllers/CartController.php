@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Classes\ProductManager;
 use App\Classes\CartManager;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -33,10 +34,18 @@ class CartController extends Controller
     public function index(Request $req) {
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
+        
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+        } else {
+            $userId = '';
+        }
+        
         return view('frontend.cart',
             [
                 'products' => $productList,
                 'cartSubTotal' => $cartSubTotal,
+                'userId' => $userId
             ]
         );
     }
