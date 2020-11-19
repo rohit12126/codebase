@@ -238,7 +238,9 @@ Route::get('/orderDetails/{id}' ,'ProfileController@orderDetails')->name('orderD
 });
 Route::get('stripe', 'StripePaymentController@stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
-
+/* social login*/
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('product.list');

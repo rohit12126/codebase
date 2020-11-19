@@ -29,5 +29,16 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => env('facebook_CLIENT_ID'),
+        'client_secret' => env('facebook_CLIENT_SECRET'),
+        'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
+    ],
+    'twiter' => [
+        'client_id' => env('twiter_CLIENT_ID'),
+        'client_secret' => env('twiter_CLIENT_SECRET'),
+        'redirect' => 'http://your-callback-url',
+    ],
+
 
 ];
