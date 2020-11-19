@@ -236,6 +236,7 @@ Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 Route::get('/orderDetails/{id}' ,'ProfileController@orderDetails')->name('orderDetails');
 });
+Route::get('stripe', 'StripePaymentController@stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
 
 

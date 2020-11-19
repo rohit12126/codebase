@@ -10,7 +10,7 @@
 						<div class="product-image">
                             <div class="product_img_box">
                                 @if (isset($product->images[0]->image))
-                                <img id="product_img" src="{{ asset('product_images/'.$product->images[0]->image)}}" data-zoom-image="{{ asset('product_images/'.$product->images[0]->image)}}" alt="product_img1"><a href="#" class="product_img_zoom" title="Zoom">
+                                <img id="product_img" src="{{ asset('upload/product/'.$product->images[0]->image)}}" data-zoom-image="{{ asset('upload/product/'.$product->images[0]->image)}}" alt="product_img1"><a href="#" class="product_img_zoom" title="Zoom">
                                         <span class="linearicons-zoom-in"></span>
                                     </a>
                                 @else
@@ -21,8 +21,8 @@
                             @if (isset($product->images[0]->image))
                                 @foreach ($product->images as $image)
                                     <div class="item">
-                                        <a href="#" class="product_gallery_item " data-image="{{ asset('product_images/'.$image->image)}}" data-zoom-image="{{ asset('product_images/'.$image->image)}}">
-                                            <img src="{{ asset('product_images/'.$image->image)}}" alt="product_small_img1"></a>
+                                        <a href="#" class="product_gallery_item " data-image="{{ asset('upload/product/'.$image->image)}}" data-zoom-image="{{ asset('upload/product/'.$image->image)}}">
+                                            <img src="{{ asset('upload/product/'.$image->image)}}" alt="product_small_img1"></a>
                                     </div>
                                 @endforeach
                             @endif

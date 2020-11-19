@@ -57,6 +57,7 @@ class ProfileController extends Controller
     }
     public function orderDetails($order){
         $data = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order);
+        dump( $data );
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
