@@ -236,7 +236,7 @@ Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
 });
-/* Reset User Password*/
+Route::get('stripe', 'StripePaymentController@stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
 /* social login*/
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');

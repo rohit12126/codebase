@@ -7,26 +7,51 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-md-10">
                 <div class="login_wrap">
-            		<div class="padding_eight_all bg-white">
+                    <div class="padding_eight_all bg-white">
                         <div class="heading_s1">
                             <h3>Create an Account</h3>
                         </div>
                         <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                            @csrf
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Enter Your Name" name="name" value="{{ old('name') }}" required autofocus>
+                                @error('name')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="text" required="" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter Your Email">
+                                @error('email')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="text" required="" class="form-control" name="mobile" placeholder="Enter Your Phone Number" value="{{ old('mobile') }}">
+                                @error('mobile')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                            <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
+                                <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
+                                @error('password')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input class="form-control" type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required>
+                                @error('password_confirmation')
+                                <span class="text-danger" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                             <div class="login_footer form-group">
                                 <div class="chek-form">

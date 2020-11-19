@@ -17,7 +17,7 @@
                                 <div class="product_img">
                                     <a href="{{ route('product.detail',['id' => $product->id]) }}">
                                     @if (isset($product->images[0]->image))
-                                        <img src="{{ asset('product_images/'.$product->images[0]->image)}}" alt="product_img1">
+                                        <img src="{{ asset('upload/product/'.$product->images[0]->image)}}" alt="product_img1">
                                     @else
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                     @endif
@@ -86,7 +86,7 @@
                 },
                 success: function(result){
                     alert("Item successfully added to the cart.");
-                    //location.reload(true);
+                    location.reload(true);
                 }});
         }); 
     });

@@ -42,17 +42,6 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="6" class="px-0">
-                                	<div class="row no-gutters align-items-center">
-                                        <div class="col-lg-8 col-md-6 text-left text-md-right">
-                                            <button class="btn btn-line-fill btn-sm" type="submit">Update Cart</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -65,31 +54,65 @@
             </div>
         </div>
         <div class="row">
-        	<div class="col-md-6">
+            <input type="hidden" value="{{$userId}}" id="user_id" class="user_id">
+            <input type="hidden" value="{{$isTempUser}}" id="isTempUser" class="is-temp-user">
+            
+            <div class="col-md-6">
             	<div class="heading_s1 mb-3">
-            		<h6>Calculate Shipping</h6>
+            		<h6>Shipping Address</h6>
                 </div>
                 <form class="field_form shipping_calculator">
                     <div class="form-row">
-                        <div class="form-group col-lg-12">
-                            <div class="custom_select">
-                                <select class="form-control">
-                                    <option value="IN">India</option>
-                                </select>
+                        <div class="form-group col-lg-6">
+                            <select name="shipping_address" id="shipping_address" class="form-control">
+                                @foreach ($shippingAddress as $address)
+                                    <option value="{{$address->id}}">{{$address->address}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-4">
+                            <input type="button" class="btn btn-danger" value="Add more" data-toggle="collapse" data-target="#addressField">
+                            <div id="addressField" class="collapse" style="margin:20px;">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" id="shipAddress" class="form-control" value="" placeholder="Shipping Address">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <input name="addshipAddress" id="addshipAddress" class="btn btn-primary add-address" type="button" value="submit">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </form>
+                <div class="heading_s1 mb-3">
+            		<h6>Billing Address</h6>
+                </div>
+                <form class="field_form shipping_calculator">
                     <div class="form-row">
                         <div class="form-group col-lg-6">
-                            <input required="required" placeholder="State / Country" class="form-control" name="name" type="text">
-                        </div>
-                        <div class="form-group col-lg-6">
-                            <input required="required" placeholder="PostCode / ZIP" class="form-control" name="name" type="text">
+                            <select name="billing_address" id="billing_address" class="form-control">
+                                @foreach ($billingAddress as $address)
+                                    <option value="{{$address->id}}">{{$address->address}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-lg-12">
-                            <button class="btn btn-fill-line" type="submit">Update Totals</button>
+                        <div class="form-group col-lg-4">
+                            <input type="button" class="btn btn-danger" value="Add more" data-toggle="collapse" data-target="#billAddressField">
+                            <div id="billAddressField" class="collapse" style="margin:20px;">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" id="billAddress" class="form-control" value="" placeholder="Billiing Address">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <input name="addBillAddress" id="addBillAddress" class="btn btn-primary add-address" type="button" value="submit">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -100,13 +123,23 @@
                         <h6>Cart Totals</h6>
                     </div>
                     <div class="table-responsive">
-                        <table class="table"><tbody><tr><td class="cart_total_label">Cart Subtotal</td>
-                                    <td class="cart_total_amount">$349.00</td>
-                                </tr><tr><td class="cart_total_label">Shipping</td>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="cart_total_label">Cart Subtotal</td>
+                                    <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">Shipping</td>
                                     <td class="cart_total_amount">Free Shipping</td>
-                                </tr><tr><td class="cart_total_label">Total</td>
-                                    <td class="cart_total_amount"><strong>$349.00</strong></td>
-                                </tr></tbody></table></div>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">Total</td>
+                                    <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <a href="#" class="btn btn-fill-out">Proceed To CheckOut</a>
                 </div>
             </div>
@@ -155,7 +188,6 @@
         });
 
         /* Update cart functionality */
-
         $(".qty").blur(function(e) {
             var productId = $( this ).attr('productId');
             var qty = $(this).val();
@@ -170,6 +202,56 @@
                 },
                 success: function(result){
                     alert("Item quantity updated successfully.");
+                    location.reload(true);
+                }
+            });
+        });
+
+        /* Add address functionality */
+        jQuery('#addshipAddress').click(function(e) {
+            var address = $( '#shipAddress' ).val();
+            var user_id = $( '#user_id' ).val();
+            var isTempUser = $( '#isTempUser' ).val();
+            var type = 1;
+            
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/api/address/add') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    address : address,
+                    type : type,
+                    user_id : user_id,
+                    temp_user : isTempUser
+                },
+                success: function(result){
+                    alert("Address successfully added to the list.");
+                    location.reload(true);
+                }
+            });
+        });
+
+        jQuery('#addBillAddress').click(function(e) 
+        {
+            var address = $( '#billAddress' ).val();
+            var user_id = $( '#user_id' ).val();
+            var isTempUser = $( '#isTempUser' ).val();
+            var type = 2;
+            
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/api/address/add') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    address : address,
+                    type : type,
+                    user_id : user_id,
+                    temp_user : isTempUser
+                },
+                success: function(result){
+                    alert("Address successfully added to the list.");
                     location.reload(true);
                 }
             });

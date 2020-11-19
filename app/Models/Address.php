@@ -11,5 +11,6 @@ class Address extends Model
         'user_id',
         'address',
         'type',
+        'temp_user',
     ];
 }
