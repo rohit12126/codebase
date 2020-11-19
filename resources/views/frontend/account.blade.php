@@ -19,6 +19,9 @@
                         <a class="nav-link" id="account-detail-tab" data-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="ti-id-badge"></i>Account details</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="true"><i class="ti-id-badge"></i>Change Password</a>
+                      </li>
+                      <li class="nav-item">
                       <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ti-lock"></i>Logout</a>
                       </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -39,17 +42,20 @@
                             </div>
                         </div>
                   	</div>
-                  	<div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-                   @include('frontend.partials.order')
-                  	</div>
-					<div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                  <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                    @include('frontend.partials.order')
+                  </div>
+                  <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                     @include('frontend.partials.address')
-					</div>
-                    <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
-					@include('frontend.partials.profile')
-					</div>
-				</div>
-			</div>
+                  </div>
+                  <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
+					          @include('frontend.partials.profile')
+				  	      </div>
+                  <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
+					          @include('frontend.partials.changePassword')
+				  	      </div>
+			      </div>
+			  </div>
 		</div>
 	</div>
 </div>
