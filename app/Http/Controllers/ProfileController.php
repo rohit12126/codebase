@@ -8,7 +8,6 @@ use App\Classes\OrderManager;
 use App\Classes\CartManager;
 use App\Classes\UserManager;
 use App\Classes\AddressManager;
-use App\Classes\HelperManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -68,7 +67,6 @@ class ProfileController extends Controller
             'billingAddress' => $billingAddress
             ]);
     }
-
     /**
      * Get Order Details Of OrderId
      * @param OrderId
@@ -83,32 +81,55 @@ class ProfileController extends Controller
     }
 
     /**
+     * Get Order Details Of OrderId
+     * @param OrderId
+     * @return \Illuminate\Http\Response
+     */
+
+    public function passwordUpdateRules(array $data)
+        {
+        $messages = [
+            'currentPassword.required' => 'Please enter current password',
+            'password.required' => 'Please enter password',
+        ];
+
+        $validator = Validator::make($data, [
+            'currentPassword' => 'required',
+            'password' => 'required|same:password',
+            'password_confirmation' => 'required|same:password',     
+        ], $messages);
+
+        return $validator;
+        }
+       /**
      * Update Password of user
      * @param OrderId
      * @return \Illuminate\Http\Response
      */   
     public function postCredentials(Request $request)
     {
-        
-        if ( count($request->all()) > 0) {
-            $request->validate([
-                'current_password' => ['required', function ($attribute, $value, $fail) {
-                    if (!\Hash::check($value, Auth::guard('admin')->user()->password)) {
-                        return $fail(__('The current password is incorrect.'));
-                    }
-                }],
-                'new_password'    => 'required',
-                'confirm_password'    => 'required|same:new_password',
-            ]);
-            $response = UserManager::changeUserPassword($request);
-            if ($response == true) {
-                HelperManager::setMessage('Password Change Successfully!');
-            } else {
-                HelperManager::setMessage('Password could not be change!', 'error');
-            }
-            return back();
-        } else {
-            return view('frontend.account');
-        }              
+        $request_data = $request->All();
+        $validator = $this->passwordUpdateRules($request_data);
+        if($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator->getMessageBag());
+        }
+        else
+        {  
+          $current_password = Auth::User()->password;           
+          if(\Hash::check($request_data['currentPassword'], $current_password))
+          {           
+            $user_id = Auth::User()->id;                       
+            $obj_user = User::find($user_id);
+            $obj_user->password = Hash::make($request_data['password']);
+            $obj_user->save(); 
+            redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+          }
+          else
+          {           
+            $error = array('currentPassword' => 'Please enter correct current password');
+            return redirect()->back()->withErrors($error);
+          }
+        }               
     }
 }
