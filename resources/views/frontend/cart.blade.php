@@ -149,6 +149,8 @@
                             </table>
                         </div>
                         <input type="submit" class="btn btn-danger" value="Proceed To CheckOut">
+                        <a htref="#" class="btn btn-primary"> <i class="fab fa-paypal"></i> Pay With Paypal Paypal </a>
+
                         {{-- <a href="#" class="btn btn-fill-out"></a> --}}
                     </div>
                 </div>

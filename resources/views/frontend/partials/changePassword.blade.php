@@ -23,21 +23,21 @@
                     <label>Current Password <span class="required">*</span></label>
                     <input required class="form-control @if($errors->has('currentPassword') is-invalid @endif" name="currentPassword" type="password" min="8">
                     @if($errors->has('currentPassword'))
-                    <div class="error">{{ $errors->first('currentPassword') }}</div>
+                    <div class="text-danger">{{ $errors->first('currentPassword') }}</div>
                     @endif
                 </div>
                 <div class="form-group col-md-12">
                     <label>New Password <span class="required">*</span></label>
                     <input required class="form-control @if($errors->has('password') is-invalid @endif" name="password" type="password" min="8">
                     @if($errors->has('password'))
-                    <div class="error">{{ $errors->first('password') }}</div>
+                    <div class="text-danger">{{ $errors->first('password') }}</div>
                     @endif
                 </div>
                 <div class="form-group col-md-12">
                     <label>Confirm Password <span class="required">*</span></label>
                     <input required class="form-control @if($errors->has('password_confirmation') is-invalid @endif"  name="password_confirmation" type="password" min="8">
                     @if($errors->has('password_confirmation'))
-                    <div class="error">{{ $errors->first('password_confirmation') }}</div>
+                    <div class="text-danger">{{ $errors->first('password_confirmation') }}</div>
                     @endif
                 </div>
                 <div class="col-md-12">
