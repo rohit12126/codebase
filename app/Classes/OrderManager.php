@@ -182,4 +182,13 @@ class OrderManager
             ->with('productList.product.images')
             ->where('order_no', $order)->first();
     }
+
+    public static function getOrderCount($is_cancelled=false)
+    {
+        if($is_cancelled === true){
+            return OrderModel::where('status', 3)->get()->count();
+        }else{
+            return OrderModel::get()->count();
+        }
+    }
 }
