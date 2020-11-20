@@ -82,6 +82,7 @@ class CartController extends Controller
     public function addToCart(Request $req) {
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
+        // dd($product->images[0]->image);
         $this->cartManager->addToCart($product);
     }
     

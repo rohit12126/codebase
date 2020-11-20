@@ -20,7 +20,7 @@
                         <tbody>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="images/images-product_img1.jpg" alt="product1"></a></td>
+                                    <td class="product-thumbnail"><a href="#"><img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1"></a></td>
                                     <td class="product-name" data-title="Product"><a href="#">{{$product->name}}</a></td>
                                     <td class="product-price" data-title="Price">₹ {{$product->price}}</td>
                                     <td class="product-quantity" data-title="Quantity">

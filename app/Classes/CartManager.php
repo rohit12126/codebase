@@ -76,9 +76,9 @@ class CartManager
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> $product->purchase_price,
+            'price'=> $product->sale_price,
+            'options' => ['image' => @$product->images[0]->image]
         ];
-
         Cart::add($productData);
         
         if (Auth::check()) {
