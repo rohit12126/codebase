@@ -3,7 +3,6 @@
         <h3>Update Your Account Details</h3>
     </div>
     <div class="card-body">
-        <p>Already have an account? <a href="#">Log in instead!</a></p>
              <form method="POST" action="{{ route('account.update') }}">
              @csrf
                 @if(session()->has('message'))
