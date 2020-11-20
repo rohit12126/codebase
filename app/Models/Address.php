@@ -11,6 +11,12 @@ class Address extends Model
         'user_id',
         'address',
         'type',
+        'name',
+        'mobile',
+        'country',
+        'state',
+        'city',
+        'zipcode',
         'temp_user',
     ];
 }

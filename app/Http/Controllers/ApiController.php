@@ -14,7 +14,12 @@ class ApiController extends Controller
     {
         $req->validate([
             'user_id'    => 'required|integer',
-            'address'    => 'required|string',
+            'name'    => 'required|string',
+            'mobile'    => 'required|string',
+            'country'    => 'required|string',
+            'state'    => 'required|string',
+            'city'    => 'required|string',
+            'zipcode'    => 'required|string',
             'type'    => 'required|integer|between:1,2',
         ]);
         $result = AddressManager::add($req);
