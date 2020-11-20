@@ -53,15 +53,25 @@
             	<div class="medium_divider"></div>
             </div>
         </div>
-        <div class="row">
-            <input type="hidden" value="{{$userId}}" id="user_id" class="user_id">
-            <input type="hidden" value="{{$isTempUser}}" id="isTempUser" class="is-temp-user">
-            
-            <div class="col-md-6">
-            	<div class="heading_s1 mb-3">
-            		<h6>Shipping Address</h6>
-                </div>
-                <form class="field_form shipping_calculator">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{ route('order.addOrder') }}" method="post">
+            <div class="row">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input name="user_id" type="hidden" value="{{$userId}}" id="user_id" class="user_id">
+                <input name="temp_user" type="hidden" value="{{$isTempUser}}" id="isTempUser" class="is-temp-user">
+                
+                <div class="col-md-6">
+                    <div class="heading_s1 mb-3">
+                        <h6>Shipping Address</h6>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-lg-6">
                             <select name="shipping_address" id="shipping_address" class="form-control">
@@ -86,11 +96,9 @@
                             </div>
                         </div>
                     </div>
-                </form>
-                <div class="heading_s1 mb-3">
-            		<h6>Billing Address</h6>
-                </div>
-                <form class="field_form shipping_calculator">
+                    <div class="heading_s1 mb-3">
+                        <h6>Billing Address</h6>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-lg-6">
                             <select name="billing_address" id="billing_address" class="form-control">
@@ -115,35 +123,37 @@
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="col-md-6">
-            	<div class="border p-3 p-md-4">
-                    <div class="heading_s1 mb-3">
-                        <h6>Cart Totals</h6>
+                </div>
+                <div class="col-md-6">
+                    <div class="border p-3 p-md-4">
+                        <div class="heading_s1 mb-3">
+                            <h6>Cart Totals</h6>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_total_label">Cart Subtotal</td>
+                                        <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
+                                        <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart_total_label">Shipping</td>
+                                        <td class="cart_total_amount">Free Shipping</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart_total_label">Total</td>
+                                        <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <input type="submit" class="btn btn-danger" value="Proceed To CheckOut">
+                        {{-- <a href="#" class="btn btn-fill-out"></a> --}}
                     </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td class="cart_total_label">Cart Subtotal</td>
-                                    <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cart_total_label">Shipping</td>
-                                    <td class="cart_total_amount">Free Shipping</td>
-                                </tr>
-                                <tr>
-                                    <td class="cart_total_label">Total</td>
-                                    <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <a href="#" class="btn btn-fill-out">Proceed To CheckOut</a>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <!-- END SECTION SHOP -->

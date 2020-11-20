@@ -253,7 +253,10 @@ Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('car
 Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
+Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
+
 /*Paypal Payment Routes*/
-Route::get('payment', 'PayPalController@payment')->name('paypal');
-Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
-Route::get('payment/success', 'PayPalController@success')->name('payment.success');
+Route::get('/paywithpaypal','PaypalController@payWithPaypal')->name('addmoney.paywithpaypal');
+Route::post('/paypal','PaypalController@postPaymentWithpaypal')->name('addmoney.paypal');
+Route::get('/paypal', 'PaypalController@getPaymentStatus')->name('payment.status');
+

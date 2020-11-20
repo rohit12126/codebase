@@ -63,7 +63,14 @@ class UserManager
     }
     public static function changeUserPassword($req)
     {
-        
+        $user = self::getCurrentUser();
+        dump('hi');
+        if ($user->fill(['password' => bcrypt($req->new_password)])->update()) {
+            return true;
+            dump('hi');
+        } else {
+            return false;
+        }
     }
 
     public static function getUserList()

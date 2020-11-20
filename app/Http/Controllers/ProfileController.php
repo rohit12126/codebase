@@ -7,7 +7,7 @@ use App\User;
 use App\Classes\OrderManager;
 use App\Classes\CartManager;
 use App\Classes\UserManager;
-// use App\Classes\ProductManager;
+use App\Classes\AddressManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,13 +23,15 @@ class ProfileController extends Controller
     public function __construct(
         OrderManager $orderManager,
         CartManager $cartManager,
-        UserManager $userManager
+        UserManager $userManager,
+        AddressManager $addressManager
     )
     {
         $this->middleware('auth');
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
         $this->userManager =$userManager;
+        $this->addressManager = $addressManager;
     }
 
      /**
@@ -49,13 +51,20 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function account(){
-        $user = $this->userManager->getCurrentUser();
-        $orders = $this->orderManager->getOrderByUserIdWithAddress($user->id);
-      
+        $user = $this->userManager
+                ->getCurrentUser();
+        $orders = $this->orderManager
+                    ->getOrderByUserId($user->id);
+        $shippingAddress =  $this->addressManager
+                ->getAddresses($user->id,1,0);
+        $billingAddress=$this->addressManager
+                ->getAddresses($user->id,2,0);
         $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
             'user' => $user,
-            'orders' => $orders
+            'orders' => $orders,
+            'shippingAddress' => $shippingAddress,
+            'billingAddress' => $billingAddress
             ]);
     }
     /**
@@ -65,7 +74,6 @@ class ProfileController extends Controller
      */
     public function orderDetails($order){
         $data = $this->orderManager->getProductsByOrderNUmber($order);
-        // dd($this->orderManager->getProductsByOrderNUmber($order));
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
@@ -78,21 +86,21 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function admin_credential_rules(array $data)
+    public function passwordUpdateRules(array $data)
         {
         $messages = [
-            'current-password.required' => 'Please enter current password',
+            'currentPassword.required' => 'Please enter current password',
             'password.required' => 'Please enter password',
         ];
 
         $validator = Validator::make($data, [
-            'current-password' => 'required',
+            'currentPassword' => 'required',
             'password' => 'required|same:password',
             'password_confirmation' => 'required|same:password',     
         ], $messages);
 
         return $validator;
-        }  
+        }
        /**
      * Update Password of user
      * @param OrderId
@@ -101,7 +109,7 @@ class ProfileController extends Controller
     public function postCredentials(Request $request)
     {
         $request_data = $request->All();
-        $validator = $this->admin_credential_rules($request_data);
+        $validator = $this->passwordUpdateRules($request_data);
         if($validator->fails())
         {
             return redirect()->back()->withErrors($validator->getMessageBag());
@@ -109,7 +117,7 @@ class ProfileController extends Controller
         else
         {  
           $current_password = Auth::User()->password;           
-          if(Hash::check($request_data['current-password'], $current_password))
+          if(\Hash::check($request_data['currentPassword'], $current_password))
           {           
             $user_id = Auth::User()->id;                       
             $obj_user = User::find($user_id);
@@ -119,7 +127,7 @@ class ProfileController extends Controller
           }
           else
           {           
-            $error = array('current-password' => 'Please enter correct current password');
+            $error = array('currentPassword' => 'Please enter correct current password');
             return redirect()->back()->withErrors($error);
           }
         }               

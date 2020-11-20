@@ -6,13 +6,14 @@
                 <h3>Billing Address</h3>
             </div>
             <div class="card-body">
-            @foreach($orders as $order)
-            <address>@php echo(str_replace(',','</br>', $order->getBillingAddress->address))@endphp
+            @foreach($shippingAddress as $sAddress)
+            <address>
+            <?php echo(str_replace(',','</br>',$sAddress->address))?>
             </address>
                 <!-- <p>New York</p> -->
-                <a href="#" class="btn btn-fill-out">Edit</a>
+                <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->
             @endforeach
-            </div>
+            </div><hr>
         </div>
     </div>
     <div class="col-lg-6">
@@ -21,11 +22,14 @@
                 <h3>Shipping Address</h3>
             </div>
             <div class="card-body">
-            @foreach($orders as $order)
-            <address>@php echo(str_replace(',','</br>', $order->getShippingAddress->address))@endphp
-            </address>
+               
+            @foreach($billingAddress as $bAddress)
+            
+            <address>
+            @php echo(str_replace(',','</br>',$bAddress->address))@endphp
+            </address><hr>
                 <!-- <p>New York</p> -->
-                <a href="#" class="btn btn-fill-out">Edit</a>
+                <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->
             @endforeach
             </div>
         </div>

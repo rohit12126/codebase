@@ -3,6 +3,7 @@
 namespace App\Classes;
 
 use App\Models\Order as OrderModel;
+use App\Models\OrderProduct;
 use App\Classes\HelperManager as Common;
 use App\Models\Product as ProductModel;
 // use App\Models\ProductImage as ProductImageModel;
@@ -145,12 +146,12 @@ class OrderManager
             ->where('order_no', $order)->first();
     }
 
-    public static function getOrderByUserIdWithAddress($userId)
+    public static function getOrderByUserId($userId)
     {
-        return OrderModel::with('getShippingAddress')
-            ->with('getBillingAddress')
-            ->with('productList')->where("user_id", $userId)->get();
+        return OrderModel::with('productList')
+        ->where("user_id", $userId)->get();
     }
+
     public static function generateOrderNumber(){
             $orderNumber = OrderModel::select(
                 'order_no'
@@ -163,6 +164,16 @@ class OrderManager
             }
             return $orderNumber;
     }
+
+    public static function addOrder($orderData) {
+        
+        return  OrderModel::create($orderData);
+    }
+    
+    public static function addOrderProduct($orderProductData) {
+        return  OrderProduct::create($orderProductData);
+    }
+
     public static function getProductsByOrderNUmber($order)
     {
         return OrderModel::select('*')
