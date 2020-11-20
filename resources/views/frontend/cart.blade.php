@@ -62,98 +62,31 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('order.addOrder') }}" method="post">
-            <div class="row">
-                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                <input name="user_id" type="hidden" value="{{$userId}}" id="user_id" class="user_id">
-                <input name="temp_user" type="hidden" value="{{$isTempUser}}" id="isTempUser" class="is-temp-user">
-                
-                <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="border p-3 p-md-4">
                     <div class="heading_s1 mb-3">
-                        <h6>Shipping Address</h6>
+                        <h6>Cart Totals</h6>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-lg-6">
-                            <select name="shipping_address" id="shipping_address" class="form-control">
-                                @foreach ($shippingAddress as $address)
-                                    <option value="{{$address->id}}">{{$address->address}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="cart_total_label">Cart Subtotal</td>
+                                    <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
+                                    <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="cart_total_label">Total</td>
+                                    <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-lg-4">
-                            <input type="button" class="btn btn-danger" value="Add more" data-toggle="collapse" data-target="#addressField">
-                            <div id="addressField" class="collapse" style="margin:20px;">
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <input type="text" id="shipAddress" class="form-control" value="" placeholder="Shipping Address">
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input name="addshipAddress" id="addshipAddress" class="btn btn-primary add-address" type="button" value="submit">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="heading_s1 mb-3">
-                        <h6>Billing Address</h6>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-lg-6">
-                            <select name="billing_address" id="billing_address" class="form-control">
-                                @foreach ($billingAddress as $address)
-                                    <option value="{{$address->id}}">{{$address->address}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-lg-4">
-                            <input type="button" class="btn btn-danger" value="Add more" data-toggle="collapse" data-target="#billAddressField">
-                            <div id="billAddressField" class="collapse" style="margin:20px;">
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <input type="text" id="billAddress" class="form-control" value="" placeholder="Billiing Address">
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input name="addBillAddress" id="addBillAddress" class="btn btn-primary add-address" type="button" value="submit">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="border p-3 p-md-4">
-                        <div class="heading_s1 mb-3">
-                            <h6>Cart Totals</h6>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td class="cart_total_label">Cart Subtotal</td>
-                                        <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
-                                        <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_total_label">Shipping</td>
-                                        <td class="cart_total_amount">Free Shipping</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_total_label">Total</td>
-                                        <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <input type="submit" class="btn btn-danger" value="Proceed To CheckOut">
-                        {{-- <a href="#" class="btn btn-fill-out"></a> --}}
-                    </div>
+                    <a href="#" class="btn btn-fill-out">Proceed To CheckOut</a>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <!-- END SECTION SHOP -->

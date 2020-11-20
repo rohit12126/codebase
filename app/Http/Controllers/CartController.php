@@ -44,32 +44,11 @@ class CartController extends Controller
     public function index(Request $req) {
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
-        $isTempUser = 0;
-        $shippingAddress = [];
-        $billingAddress = [];
-        if (Auth::check()) {
-            $userId = Auth::user()->id;
-            $shippingAddress = $this->addressManager
-                ->getAddresses($userId, 1, 0);
-            $billingAddress = $this->addressManager
-                ->getAddresses($userId, 2, 0);
-        } else {
-            $userId = $this->guestUserManager->getUserId();
-            $isTempUser = 1;
-            $shippingAddress = $this->addressManager
-                ->getAddresses($userId, 1, 1);
-            $billingAddress = $this->addressManager
-                ->getAddresses($userId, 2, 1);
-        }
         
         return view('frontend.cart',
             [
                 'products' => $productList,
                 'cartSubTotal' => $cartSubTotal,
-                'userId' => $userId,
-                'isTempUser' => $isTempUser,
-                'shippingAddress' => $shippingAddress,
-                'billingAddress' => $billingAddress
             ]
         );
     }
