@@ -37,7 +37,12 @@ return [
     'twiter' => [
         'client_id' => env('twiter_CLIENT_ID'),
         'client_secret' => env('twiter_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+        'redirect' => 'http://127.0.0.1:8000/login/twitter/callback',
+    ],
+    'google' => [
+        'client_id'     => env('GL_ID'),
+        'client_secret' => env('GL_SECRET'),
+        'redirect'      => env('APP_URL') . '/oauth/google/callback',
     ],
 
 

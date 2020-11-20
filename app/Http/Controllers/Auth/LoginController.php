@@ -42,9 +42,9 @@ class LoginController extends Controller
     }
 
 
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -52,10 +52,42 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
-    {
-        $user = Socialite::driver('facebook')->user();
+    public function handleProviderCallback($provider)
+   {
+       try {
+           $user = Socialite::driver($provider)->user();
+       } catch (Exception $e) {
+           return redirect('/login');
+       }
 
-        // $user->token;
-    }
+       $authUser = $this->findOrCreateUser($user, $provider);
+       Auth::login($authUser, true);
+       return redirect('/account');
+   }
+   public function findOrCreateUser($providerUser, $provider)
+   {
+       $account = SocialIdentity::whereProviderName($provider)
+                  ->whereProviderId($providerUser->getId())
+                  ->first();
+
+       if ($account) {
+           return $account->user;
+       } else {
+           $user = User::whereEmail($providerUser->getEmail())->first();
+
+           if (! $user) {
+               $user = User::create([
+                   'email' => $providerUser->getEmail(),
+                   'name'  => $providerUser->getName(),
+               ]);
+           }
+
+           $user->identities()->create([
+               'provider_id'   => $providerUser->getId(),
+               'provider_name' => $provider,
+           ]);
+
+           return $user;
+       }
+   }
 }

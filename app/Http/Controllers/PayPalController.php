@@ -42,8 +42,6 @@ class PaypalController extends Controller
     }
     public function payWithpaypal(Request $request)
     {
-       
-
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
@@ -64,7 +62,7 @@ class PaypalController extends Controller
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($item_list)
-            ->setDescription('Your transaction description');
+            ->setDescription('Chapter 247');
 
         $redirect_urls = new RedirectUrls();
         $redirect_urls->setReturnUrl(URL::route('payment.status')) /** Specify return URL **/
@@ -145,5 +143,8 @@ class PaypalController extends Controller
         \Session::put('error', 'Payment failed');
         return view(
             'frontend.partials.account');
+        }
+        public function front(){
+            return view('frontend.paypal');
         }
 }
