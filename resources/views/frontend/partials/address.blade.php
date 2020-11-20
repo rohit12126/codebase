@@ -8,7 +8,11 @@
             <div class="card-body">
             @foreach($shippingAddress as $sAddress)
             <address>
-            <?php echo(str_replace(',','</br>',$sAddress->address))?>
+            <?php echo(str_replace(',','</br>',$sAddress->address))?></br>
+            @isset($sAddress->city){{$sAddress->city}}</br>@endisset
+            @isset($sAddress->state){{$sAddress->state}}</br>@endisset
+            @isset($sAddress->zipcode){{$sAddress->zipcode}}</br>@endisset
+            @isset($sAddress->country){{$sAddress->country}}@endisset
             </address>
                 <!-- <p>New York</p> -->
                 <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->
@@ -26,7 +30,11 @@
             @foreach($billingAddress as $bAddress)
             
             <address>
-            @php echo(str_replace(',','</br>',$bAddress->address))@endphp
+            @php echo(str_replace(',','</br>',$bAddress->address))@endphp</br>
+            @isset($bAddress->city){{$bAddress->city}}</br>@endisset
+                @isset($bAddress->state){{$bAddress->state}}</br>@endisset
+                @isset($bAddress->zipcode){{$bAddress->zipcode}}</br>@endisset
+                @isset($bAddress->country){{$bAddress->country}}@endisset
             </address><hr>
                 <!-- <p>New York</p> -->
                 <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->

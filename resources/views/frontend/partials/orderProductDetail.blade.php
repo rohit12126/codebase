@@ -50,8 +50,8 @@
                           <th>Product</th>
                           <th>Preview Image</th>
                           <th>Quantity</th>
-                          <th>Purchase Price</th>
-                          <th>Sale Price</th>
+                          <th>Price</th>
+                          <th></th>
                          
                         </tr>
                     </thead>
@@ -63,10 +63,10 @@
                                         <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @else
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                    @endif</td>
+                                    @endif
+                            </td>
                             <td>{{$product->product_quantity}}</td>
-                            <td>{{$product->product->purchase_price}}</td>
-                            <td>{{$product->product->sale_price}} </td>
+                            <td>{{$product->price}}</td>
                             </tr>
                             @endforeach
                         </tbody>

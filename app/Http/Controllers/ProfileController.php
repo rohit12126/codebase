@@ -121,9 +121,9 @@ class ProfileController extends Controller
           {           
             $user_id = Auth::User()->id;                       
             $obj_user = User::find($user_id);
-            $obj_user->password = Hash::make($request_data['password']);
+            $obj_user->password = \Hash::make($request_data['password']);
             $obj_user->save(); 
-            redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+            redirect()->route('/account')->with('message', 'Profile Updated Sucessfully!');
           }
           else
           {           
