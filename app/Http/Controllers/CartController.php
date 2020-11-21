@@ -54,6 +54,74 @@ class CartController extends Controller
     }
 
     /**
+     * Get Addresse List
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getAddresses(Request $req) {
+
+        $isTemp = 0;
+        $userId = 0;
+        $shippingAddresses = [];
+        $billingAddresses = [];
+        $productList = $this->cartManager->getCartContain();
+        $cartSubTotal = $this->cartManager->subTotal();
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
+            $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
+        } else {
+            $isTemp = 1;
+            $userId = $this->guestUserManager->getUserId();
+        }
+
+        return view('frontend.address',
+            [
+                'shippingAddresses' => $shippingAddresses,
+                'billingAddresses' => $billingAddresses,
+                'userId' => $userId,
+                'isTemp' => $isTemp,
+                'productList' => $productList,
+                'cartSubTotal' => $cartSubTotal
+            ]
+        );
+    }
+    
+    /**
+     * add Address
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addAddress(Request $req) {
+
+        $isTemp = 0;
+        $userId = 0;
+        $shippingAddresses = [];
+        $billingAddresses = [];
+        $productList = $this->cartManager->getCartContain();
+        $cartSubTotal = $this->cartManager->subTotal();
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
+            $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
+        } else {
+            $isTemp = 1;
+            $userId = $this->guestUserManager->getUserId();
+        }
+
+        return view('frontend.address',
+            [
+                'shippingAddresses' => $shippingAddresses,
+                'billingAddresses' => $billingAddresses,
+                'userId' => $userId,
+                'isTemp' => $isTemp,
+                'productList' => $productList,
+                'cartSubTotal' => $cartSubTotal
+            ]
+        );
+    }
+    
+    /**
      * Add to cart a product (Increase qty)
      *
      * @return \Illuminate\Http\Response

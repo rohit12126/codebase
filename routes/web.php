@@ -253,6 +253,10 @@ Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('car
 Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
+/* Checkout Routes */
+Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
+Route::post('address/save','CartController@addAddresse')->name('address.save');
+
 Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
 /*Paypal Payment Routes*/
