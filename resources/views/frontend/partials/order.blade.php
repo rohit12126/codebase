@@ -19,7 +19,7 @@
                         
                         <tr>
                          <td>{{$order->order_no}}</td>
-                         <td>{{$order->created_at->format('d-m-Y')}}</td>
+                         <td>{{date("F jS", strtotime($order->created_at))}}</td>
                          <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancel")}}</td>
                          <td>{{$order->grand_total}}</td>
                          <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>

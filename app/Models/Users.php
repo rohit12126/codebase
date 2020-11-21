@@ -16,6 +16,9 @@ class Users extends Model
     {
         return $this->hasMany('App\Models\Notes');
     }
+    public function identities() {
+        return $this->hasMany('App\SocialIdentity');
+     }
 
     protected $dates = [
         'deleted_at'

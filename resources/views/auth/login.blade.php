@@ -40,8 +40,8 @@
                         <div class="different_login">
                             <span> or</span>
                         </div>
-                        <ul class="btn-login list_none text-center"><li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
-                            <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
+                        <ul class="btn-login list_none text-center"><li><a href="{{ url('/login/facebook') }}" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
+                            <li><a href="{{ url('/login/google') }}" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
                         </ul><div class="form-note text-center">Don't Have an Account? 
                         @if (Route::has('password.request'))
                           <a href="{{ route('register') }}">

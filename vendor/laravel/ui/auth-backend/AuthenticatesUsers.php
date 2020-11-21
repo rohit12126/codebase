@@ -18,21 +18,6 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        if (session('link')) {
-            $myPath     = session('link');
-            $loginPath  = url('/login');
-            $previous   = url()->previous();
-    
-            if ($previous = $loginPath) {
-                session(['link' => $myPath]);
-            }
-            else{
-                session(['link' => $previous]);
-            }
-        }
-        else{
-             session(['link' => url()->previous()]);
-        }
         return view('auth.login');
     }
 
@@ -140,7 +125,7 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        return redirect(session('link')); 
+        //
     }
 
     /**

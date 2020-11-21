@@ -239,8 +239,8 @@ Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderd
 Route::get('stripe', 'StripePaymentController@stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
 /* social login*/
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');
 
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('product.list');
@@ -263,4 +263,5 @@ Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder'
 Route::get('/paywithpaypal','PaypalController@payWithPaypal')->name('addmoney.paywithpaypal');
 Route::post('/paypal','PaypalController@postPaymentWithpaypal')->name('addmoney.paypal');
 Route::get('/paypal', 'PaypalController@getPaymentStatus')->name('payment.status');
-
+Route::get('/checkout', 'OrderController@checkout');
+Route::get('/paynow','PaypalController@front');
