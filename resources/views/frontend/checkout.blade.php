@@ -54,21 +54,24 @@
                         <h4>Payment</h4>
                     </div>
                     <div class="payment_option">
-                        <div class="custome-radio">
-                            <input class="form-check-input" type="radio" name="payment_option" value="paypal">
-                            <label class="form-check-label" for="exampleRadios5">Stripe</label>
+                    <form method="post" action="{{route('submit.mode')}}">
+                    @csrf
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_options" id="exampleRadios4" value="Stripe" data-url="http://127.0.0.1:8000/stripe/">
+                                <label class="form-check-label" for="exampleRadios4">Stripe</label>
+                            </div>
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_options" id="exampleRadios5" value="Paypal" data-url="http://127.0.0.1:8000/paywithpaypal/">
+                                <label class="form-check-label" for="exampleRadios5">Paypal</label>
+                            </div>
                         </div>
-                        <div class="custome-radio">
-                            <input class="form-check-input" type="radio" name="payment_option" value="stripe">
-                            <label class="form-check-label" for="exampleRadios5">Paypal</label>
-                            <p data-method="option5" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
-                        </div>
-                    </div>
                 </div>
-                <a href="#" class="btn btn-fill-out btn-block">Place Order</a>
+                <button type="submit" name="submit" class="btn btn-fill-out btn-block">Place Order</a>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
 <!-- END SECTION SHOP -->
 @endsection

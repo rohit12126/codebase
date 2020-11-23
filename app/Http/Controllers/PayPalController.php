@@ -20,6 +20,8 @@ use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use App\Classes\CartManager;
+use App\Classes\ProductManager;
+
 class PaypalController extends Controller
 {
     private $_api_context;
@@ -28,7 +30,9 @@ class PaypalController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        CartManager $cartManager
+    )
     {
 
         /** PayPal api context **/
@@ -38,7 +42,7 @@ class PaypalController extends Controller
             $paypal_conf['secret'])
         );
         $this->_api_context->setConfig($paypal_conf['settings']);
-
+        $this->cartManager = $cartManager;
     }
     public function payWithpaypal(Request $request)
     {
@@ -50,14 +54,14 @@ class PaypalController extends Controller
         $item_1->setName('Item 1') /** item name **/
             ->setCurrency('INR')
             ->setQuantity(1)
-            ->setPrice(100); /** unit price **/
+            ->setPrice($this->cartManager->subTotal()); /** unit price **/
 
         $item_list = new ItemList();
         $item_list->setItems(array($item_1));
 
         $amount = new Amount();
         $amount->setCurrency('INR')
-            ->setTotal(100);
+            ->setTotal($this->cartManager->subTotal());
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)

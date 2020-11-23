@@ -59,7 +59,7 @@
             	<div class="medium_divider"></div>
             </div>
         </div>
-        <form method="post" action="{{route('')}}">
+        <form method="post" action="{{url('/')}}">
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">

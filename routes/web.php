@@ -236,7 +236,7 @@ Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
 });
-Route::get('stripe', 'StripePaymentController@stripe');
+Route::get('stripe', 'StripePaymentController@stripe')->name('stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
 /* social login*/
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
@@ -256,12 +256,12 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 /* Checkout Routes */
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
 Route::post('address/save','CartController@addAddresse')->name('address.save');
-
+Route::post('checkout/mode' , 'OrderController@checkmode')->name('submit.mode');
 Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
 /*Paypal Payment Routes*/
-Route::get('/paywithpaypal','PaypalController@payWithPaypal')->name('addmoney.paywithpaypal');
-Route::post('/paypal','PaypalController@postPaymentWithpaypal')->name('addmoney.paypal');
-Route::get('/paypal', 'PaypalController@getPaymentStatus')->name('payment.status');
-Route::get('/checkout', 'OrderController@checkout');
-Route::get('/paynow','PaypalController@front');
+Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
+Route::post('/paypal','PayPalController@postPaymentWithpaypal')->name('addmoney.paypal');
+Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status');
+Route::get('/checkout', 'CartController@billing');
+Route::get('/paynow','PayPalController@front');

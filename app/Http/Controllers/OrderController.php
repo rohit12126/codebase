@@ -10,6 +10,7 @@ use App\Classes\GuestUserManager;
 use App\Classes\AddressManager;
 use App\Classes\OrderManager;
 
+
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -46,6 +47,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function addOrder(Request $req) {
         $req->validate([
             'user_id' => 'required|integer',
@@ -88,5 +90,17 @@ class OrderController extends Controller
                 'order' => $order,
             ]
         );
+    }
+    public function checkmode(Request $req){
+        // dd($req->payment_options);
+        if($req->payment_options == 'Paypal'){
+            return redirect()->route('addmoney.paywithpaypal');
+        }
+        elseif($req->payment_options == 'Stripe'){
+            return redirect()->route('stripe');
+        }
+        else{ 
+            return redirect()->back();
+        }
     }
 }
