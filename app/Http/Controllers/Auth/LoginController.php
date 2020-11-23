@@ -29,9 +29,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // if(
-    //     url()->previous() =
-    // )
     // protected $redirectTo = '/account';
 
     /**
@@ -65,7 +62,7 @@ class LoginController extends Controller
 
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
-       return redirect('/account');
+       return redirect()->back();
    }
    public function findOrCreateUser($providerUser, $provider)
    {
@@ -110,7 +107,8 @@ class LoginController extends Controller
         $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
 
         if (\Auth::attempt($this->getCredentials($request))) {
-            return redirect()->route('account');
+            return  redirect()->back();
+            // return redirect()->route('account');
         }
         $errors = new MessageBag(['password' => ['These credentials do not match our records.']]); 
         return redirect()->back()->withErrors($errors);
