@@ -34,15 +34,15 @@ return [
         'client_secret' => env('facebook_CLIENT_SECRET'),
         'redirect' => env('APP_URL') . '/login/facebook/callback',
     ],
-    'twiter' => [
-        'client_id' => env('twiter_CLIENT_ID'),
-        'client_secret' => env('twiter_CLIENT_SECRET'),
+    'twitter' => [
+        'client_id' => env('twitter_CLIENT_ID'),
+        'client_secret' => env('twitter_CLIENT_SECRET'),
         'redirect' => env('APP_URL') . '/login/twitter/callback',
     ],
     'google' => [
         'client_id'     => env('GL_ID'),
         'client_secret' => env('GL_SECRET'),
-        'redirect'      => env('APP_URL') . '/oauth/google/callback',
+        'redirect'      => env('APP_URL') . '/login/google/callback',
     ],
 
 
