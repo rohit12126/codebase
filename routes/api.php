@@ -19,6 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 
-Route::post('/address/add', 'ApiController@add_address');
+Route::post('/address/add', 'ApiController@addAddress');
 
 Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
