@@ -131,7 +131,7 @@
                         <input class="form-control" required="" type="text" name="ship_zipcode" placeholder="Postcode / ZIP *">
                     </div>
                 </div>
-                <a href="#" class="btn btn-fill-out btn-block">Continue</a>
+                <a href="{{route('checkout')}}" class="btn btn-fill-out btn-block">Continue</a>
             </div>
         </form>  
     </div>
