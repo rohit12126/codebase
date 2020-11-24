@@ -92,8 +92,6 @@ class LoginController extends Controller
            return $user;
        }
    }
-        // $user->token;
-    // }
 
     protected function getCredentials(Request $request)
     {

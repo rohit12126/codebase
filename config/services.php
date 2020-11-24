@@ -42,7 +42,7 @@ return [
     'google' => [
         'client_id'     => env('GL_ID'),
         'client_secret' => env('GL_SECRET'),
-        'redirect'      => env('APP_URL') . '/login/google/callback',
+        'redirect'      => env('APP_URL') . 'login/google/callback',
     ],
 
 
