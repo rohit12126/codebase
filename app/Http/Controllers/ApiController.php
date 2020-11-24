@@ -16,11 +16,13 @@ class ApiController extends Controller
             'user_id'    => 'required|integer',
             'name'    => 'required|string',
             'mobile'    => 'required|string',
+            'address' => 'required|string',
             'country'    => 'required|string',
             'state'    => 'required|string',
             'city'    => 'required|string',
             'zipcode'    => 'required|string',
             'type'    => 'required|integer|between:1,2',
+            'temp_user' => 'integer'
         ]);
         $result = AddressManager::add($req);
         if ($result !== false) {

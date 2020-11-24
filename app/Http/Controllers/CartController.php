@@ -52,6 +52,7 @@ class CartController extends Controller
             ]
         );
     }
+    
     Public function billing(){
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
@@ -99,37 +100,66 @@ class CartController extends Controller
     }
     
     /**
-     * add Address
-     *
-     * @return \Illuminate\Http\Response
+     * add Address pass Address Id to checkout
+     * @param Request $req
+     * @return view checkout
      */
     public function addAddress(Request $req) {
-
         $isTemp = 0;
         $userId = 0;
-        $shippingAddresses = [];
-        $billingAddresses = [];
-        $productList = $this->cartManager->getCartContain();
-        $cartSubTotal = $this->cartManager->subTotal();
+        $bill = 0;
+        $ship = 0;
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
-            $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         } else {
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
         }
-
-        return view('frontend.address',
+        if(!isset($req->shipping_address)){
+            $shippingAddress=[
+                'name'=>$req->ship_name,
+                'phone'=>$req->ship_phone,
+                'address'=>$req->ship_address,
+                'city'=>$req->ship_city,
+                'state'=>$req->ship_state,
+                'zipcode'=>$req->ship_zipcode,
+                'user_id'=>$userId,
+                'type'=>1,
+                'temp_user'=>$isTemp,
+            ];
+        $ship = AddressManager::add($shippingAddress);
+        $ship =$ship['id'];
+        }else{
+            $ship = $req->shipping_address;
+        }
+        if(!isset($req->billing_address)){
+            $billingAddress=[
+                'name'=>$req->bill_name,
+                'phone'=>$req->bill_phone,
+                'address'=>$req->bill_address,
+                'city'=>$req->bill_city,
+                'state'=>$req->bill_state,
+                'zipcode'=>$req->bill_zipcode,
+                'user_id'=>$userId,
+                'type'=>2,
+                'temp_user'=>$isTemp,
+            ];
+        $bill = AddressManager::add($billingAddress);
+        $bill = $bill['id'];
+        }else{
+            $bill = $req->billing_address;
+        }
+        $productList = $this->cartManager->getCartContain();
+        $cartSubTotal = $this->cartManager->subTotal();
+         return view(
+            'frontend.checkout',
             [
-                'shippingAddresses' => $shippingAddresses,
-                'billingAddresses' => $billingAddresses,
-                'userId' => $userId,
-                'isTemp' => $isTemp,
                 'productList' => $productList,
-                'cartSubTotal' => $cartSubTotal
+                'cartSubTotal' => $cartSubTotal,
+                'bill'=>$bill,
+                'ship'=>$ship,
             ]
-        );
+        );       
     }
     
     /**

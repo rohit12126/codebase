@@ -8,7 +8,7 @@ class AddressManager
 {
     public static function add($req)
     {
-        if ($response = AddressModel::create($req->all())) {
+        if ($response = AddressModel::create($req)) {
             return $response->getAttributes();
         } else {
             return false;
