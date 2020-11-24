@@ -96,10 +96,10 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_product', $value->id) }}">
+                                        <a class="btn btn-info" href="{{ url('admin/edit_product', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');">
+                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>

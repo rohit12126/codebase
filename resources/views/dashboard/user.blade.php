@@ -104,6 +104,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
+                                    <th>Proxy Login</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -116,17 +117,19 @@
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
                                     <td>{{ $value->mobile }}</td>
-
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_user', $value->id) }}">
-                                            <i class="cil-pencil"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');">
-                                            <i class="cil-trash"></i>
-                                        </a>
                                         <a class="btn btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank">
                                             Login as {{ ucwords($value->name) }}
                                         </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
+                                            <i class="cil-pencil"></i>
+                                        </a>
+                                        <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
+                                            <i class="cil-trash"></i>
+                                        </a>
+
                                     </td>
                                 </tr>
                                 @endforeach

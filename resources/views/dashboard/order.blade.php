@@ -112,8 +112,8 @@
                                     <td>{{ $value->grand_total }}</td>
 
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/order_details', $value->order_no) }}">
-                                            <i class="cil-description"></i>
+                                        <a class="btn btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
+                                            <i class="cil-arrow-thick-to-right"></i>
                                         </a>
                                         {{-- <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
                                         onclick="return confirm('Are you sure you want to delete this user?');">
