@@ -1,0 +1,28 @@
+{
+    "admin_please_login": "Please login!",
+    "current_password_wrong" : "The current password is incorrect.",
+    "password_change_success" : "Password Change Successfully!",
+    "password_change_failed" : "Password could not be change!",
+    "admin_login_failed" : "These credentials do not match to our records!",
+    "category_add_success" : "Category Add Successfully!",
+    "category_add_failed" : "Category Add Failed!",
+    "category_update_success" : "Category Updated Successfully!",
+    "category_update_failed" : "Category Updated Successfully!",
+    "category_delete_success" : "Category Deleted Successfully!",
+    "category_delete_failed" : "Category Deleted Failed!",
+    "product_add_success" : "Product Add Successfully!",
+    "product_add_failed" : "Product Add Failed!",
+    "product_update_success" : "Product Updated Successfully!",
+    "product_update_falied" : "Product Update Failed!",
+    "product_delete_success" : "Product deleted Successfully!",
+    "product_delete_failed" : "Product deletion Failed!",
+    "order_status_change_success" : "Order Status Changed Successfully!",
+    "order_status_change_failed" : "Order status could not be changed!",
+    "user_add_success" : "User Add Successfully!",
+    "user_add_failed" : "User Add Failed!",
+    "user_update_success" : "User Updated Successfully!",
+    "user_update_failed" : "User Updated Failed!",
+    "user_delete_success" : "User deleted Successfully!",
+    "user_delete_failed" : "User deletion Failed!"
+
+}

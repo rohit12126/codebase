@@ -9,6 +9,7 @@
 <div class="container-fluid">
     <div class="fade-in">
 
+        @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -16,14 +17,13 @@
                         <h4>Change Password</h4>
                     </div>
                     <div class="card-body">
-                        @include('partials.alert_msg')
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
                                         <label>Current Password</label>
-                                        <input type="password" placeholder="Current Password" name="current_password" class="form-control" required autocomplete="off"/>
+                                        <input type="password" placeholder="Current Password" name="current_password" class="form-control" required autocomplete="off" />
                                         @error('current_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>New Password</label>
-                                        <input type="password" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off"/>
+                                        <input type="password" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off" />
                                         @error('new_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password</label>
-                                        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" required autocomplete="off"/>
+                                        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" required autocomplete="off" />
                                         @error('confirm_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -72,11 +72,15 @@
 @endsection
 
 @section('javascript')
-
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script>
-    function addMore() {
-        document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
-    }
+    $("#myform").validate({
+        submitHandler: function(form) {
+            // do other things for a valid form
+            form.submit();
+        }
+    });
 
 </script>
 

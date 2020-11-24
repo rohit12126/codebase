@@ -109,7 +109,7 @@ class ProductManager
             if ($req->stock_less) {
                 $order->where('stock_qty', '<=', $req->stock_less);
             }
-            return $order->get();
+            return $order->paginate(1);
         } else {
             return ProductModel::with('images')->paginate(1);
         }

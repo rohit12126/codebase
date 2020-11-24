@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\ProductManager;
 use App\Classes\CategoryManager;
-use App\Classes\HelperManager;
+use App\Classes\HelperManager as Common;
 
 class ProductController extends Controller
 {
@@ -26,9 +26,9 @@ class ProductController extends Controller
     {
         $response = ProductManager::add($req);
         if($response == true){
-            HelperManager::setMessage('Product Add Successfully!');
+            Common::setMessage(__('product_add_success'));
         }else{
-            HelperManager::setMessage('Product Add Failed!', 'error');
+            Common::setMessage(__('product_add_failed'), 'error');
         }
         return back();
     }
@@ -45,10 +45,10 @@ class ProductController extends Controller
     {
         $response = ProductManager::edit($req);
         if($response == true){
-            HelperManager::setMessage('Product Updated Successfully!');
+            Common::setMessage(__('product_update_success'));
             return back();
         }else{
-            HelperManager::setMessage('Product Update Failed!', 'error');
+            Common::setMessage(__('product_update_falied'), 'error');
         }
         return redirect()->route('admin.product.list');
     }
@@ -57,9 +57,9 @@ class ProductController extends Controller
     {
         $response = ProductManager::delete($id);
         if($response == true){
-            HelperManager::setMessage('Product deleted Successfully!');
+            Common::setMessage(__('product_delete_success'));
         }else{
-            HelperManager::setMessage('Product deletion Failed!', 'error');
+            Common::setMessage(__('product_delete_failed'), 'error');
         }
         return back();
     }

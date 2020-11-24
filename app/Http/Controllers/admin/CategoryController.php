@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\CategoryManager;
-use App\Classes\HelperManager;
+use App\Classes\HelperManager as Common;
 
 class CategoryController extends Controller
 {
@@ -19,9 +19,9 @@ class CategoryController extends Controller
     {        
         $response = CategoryManager::add($req);
         if($response == true){
-            HelperManager::setMessage('Category Add Successfully!');
+            Common::setMessage(__('category_add_success'));
         }else{
-            HelperManager::setMessage('Category Add Failed!', 'error');
+            Common::setMessage(__('category_add_failed'), 'error');
         }
         return back();
     }
@@ -37,10 +37,10 @@ class CategoryController extends Controller
     {
         $response = CategoryManager::edit($req);
         if($response == true){
-            HelperManager::setMessage('Category Updated Successfully!');
+            Common::setMessage(__('category_update_success'));
             return redirect()->route('admin.category');
         }else{
-            HelperManager::setMessage('Category Update Failed!', 'error');
+            Common::setMessage(__('category_update_failed'), 'error');
         }
         return back();
     }
@@ -49,9 +49,9 @@ class CategoryController extends Controller
     {
         $response = CategoryManager::delete($id);
         if($response == true){
-            HelperManager::setMessage('Category deleted Successfully!');
+            Common::setMessage(__('category_delete_success'));
         }else{
-            HelperManager::setMessage('Category deletion Failed!', 'error');
+            Common::setMessage(__('category_delete_failed'), 'error');
         }
         return back();
     }
