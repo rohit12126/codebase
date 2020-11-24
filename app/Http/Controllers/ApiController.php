@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ApiController extends Controller
 {
-    public function add_address(Request $req)
+    public function addAddress(Request $req)
     {
         $req->validate([
             'user_id'    => 'required|integer',

@@ -69,8 +69,9 @@
                             <span> or</span>
                         </div>
                         <ul class="btn-login list_none text-center">
-                            <li><a href="#" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
-                            <li><a href="#" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
+                            <li><a href="{{ url('/login/facebook') }}" class="btn btn-facebook"><i class="ion-social-facebook"></i>Facebook</a></li>
+                            <li><a href="{{ url('/login/twitter') }}" class="btn btn-facebook"><i class="ion-social-twitter"></i>Twitter</a></li>
+                            <li><a href="{{ url('/login/google') }}" class="btn btn-google"><i class="ion-social-googleplus"></i>Google</a></li>
                         </ul>
                         <div class="form-note text-center">Already have an account? <a href="{{route('login')}}">Log in</a></div>
                     </div>

@@ -83,7 +83,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="#" class="btn btn-fill-out">Proceed To CheckOut</a>
+                    <a href="{{url('/checkout/address')}}" class="btn btn-fill-out">Proceed To CheckOut</a>
                 </div>
             </div>
         </div>

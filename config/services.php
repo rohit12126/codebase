@@ -32,12 +32,17 @@ return [
     'facebook' => [
         'client_id' => env('facebook_CLIENT_ID'),
         'client_secret' => env('facebook_CLIENT_SECRET'),
-        'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
+        'redirect' => env('APP_URL') . '/login/facebook/callback',
     ],
-    'twiter' => [
-        'client_id' => env('twiter_CLIENT_ID'),
-        'client_secret' => env('twiter_CLIENT_SECRET'),
-        'redirect' => 'http://your-callback-url',
+    'twitter' => [
+        'client_id' => env('twitter_CLIENT_ID'),
+        'client_secret' => env('twitter_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . '/login/twitter/callback',
+    ],
+    'google' => [
+        'client_id'     => env('GL_ID'),
+        'client_secret' => env('GL_SECRET'),
+        'redirect'      => env('APP_URL') . '/login/google/callback',
     ],
 
 

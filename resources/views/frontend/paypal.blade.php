@@ -1,25 +1,37 @@
-<form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="/payment/add-funds/paypal">
-  {{ csrf_field() }}
-  <h2 class="w3-text-blue">Payment Form</h2>
-  <p>Demo PayPal form - Integrating paypal in laravel</p>
-  <p>      
-  <label class="w3-text-blue"><b>Enter Amount</b></label>
-  <input class="w3-input w3-border" name="amount" type="text"></p>      
-  <button class="w3-btn w3-blue">Pay with PayPal</button></p>
-</form>
-@if ($message = Session::get('success'))
-    <div class="w3-panel w3-green w3-display-container">
-        <span onclick="this.parentElement.style.display='none'"
-                class="w3-button w3-green w3-large w3-display-topright">&times;</span>
-        <p>{!! $message !!}</p>
-    </div>
-    <?php Session::forget('success');?>
-    @endif
-@if ($message = Session::get('error'))
-    <div class="w3-panel w3-red w3-display-container">
-        <span onclick="this.parentElement.style.display='none'"
-                class="w3-button w3-red w3-large w3-display-topright">&times;</span>
-        <p>{!! $message !!}</p>
-    </div>
-    <?php Session::forget('error');?>
-@endif
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+</head>
+
+<body>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AcZQgrjV0wrsJXUFpyN7oNFjVOIFNJ663874xsZbcGQWHWhPR9ZONWIN9EhIafYXFn1Nkh-jUGVlCKbz">
+  </script>
+
+  <div id="paypal-button-container"></div>
+</body>
+
+<script>
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '0.01'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) {
+        // This function shows a transaction success message to your buyer.
+        alert('Transaction completed by ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-button-container');
+  //This function displays Smart Payment Buttons on your web page.
+</script>
