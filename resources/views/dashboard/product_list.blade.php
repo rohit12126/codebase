@@ -22,6 +22,7 @@
                         @include('partials.alert_msg')
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="page" id="page" value="" />
                             <div class="row">
                                 <div class="col-6">
                                     <label>Product Name</label>
@@ -96,9 +97,9 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-info" href="{{ url('admin/edit_product', $value->id) }}">
-                                            <i class="cil-description"></i>
+                                            <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}">
+                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
@@ -107,10 +108,10 @@
 
                             </tbody>
                         </table>
-                        @if(@!$_POST)
-                        {{ $product_list->links() }}
+                        {{-- @if(@!$_POST) --}}
+                        {{ @$product_list->links() }}
                             
-                        @endif
+                        {{-- @endif --}}
                     </div>
                 </div>
             </div>
@@ -122,11 +123,12 @@
 @endsection
 
 @section('javascript')
-
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
-    function addMore() {
-        document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
-    }
+$('.page-link').click(function(e){
+    e.preventDefault();
+    $('#page').val($(this).text());
+    $('form').submit();
+});
 </script>
-
 @endsection

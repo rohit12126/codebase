@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\UserManager;
-use App\Classes\HelperManager;
+use App\Classes\HelperManager as Common;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -26,9 +26,9 @@ class UserController extends Controller
         ]);
         $response = UserManager::add($req);
         if ($response == true) {
-            HelperManager::setMessage('User Add Successfully!');
+            Common::setMessage(__('user_add_success'));
         } else {
-            HelperManager::setMessage('User Add Failed!', 'error');
+            Common::setMessage(__('user_add_failed'), 'error');
         }
         return back();
     }
@@ -50,10 +50,10 @@ class UserController extends Controller
         ]);
         $response = UserManager::edit($req);
         if ($response == true) {
-            HelperManager::setMessage('User Updated Successfully!');
+            Common::setMessage(__('user_update_success'));
             return redirect()->route('admin.user');
         } else {
-            HelperManager::setMessage('User Update Failed!', 'error');
+            Common::setMessage(__('user_update_failed'), 'error');
         }
         return back();
     }
@@ -68,9 +68,9 @@ class UserController extends Controller
     {
         $response = UserManager::delete($id);
         if ($response == true) {
-            HelperManager::setMessage('User deleted Successfully!');
+            Common::setMessage(__('user_delete_success'));
         } else {
-            HelperManager::setMessage('User deletion Failed!', 'error');
+            Common::setMessage(__('user_delete_failed'), 'error');
         }
         return back();
     }
@@ -81,7 +81,7 @@ class UserController extends Controller
             $req->validate([
                 'current_password' => ['required', function ($attribute, $value, $fail) {
                     if (!\Hash::check($value, Auth::guard('admin')->user()->password)) {
-                        return $fail(__('The current password is incorrect.'));
+                        return $fail(__('current_password_wrong'));
                     }
                 }],
                 'new_password'    => 'required',
@@ -89,9 +89,9 @@ class UserController extends Controller
             ]);
             $response = UserManager::changePassword($req);
             if ($response == true) {
-                HelperManager::setMessage('Password Change Successfully!');
+                Common::setMessage(__('password_change_success'));
             } else {
-                HelperManager::setMessage('Password could not be change!', 'error');
+                Common::setMessage( __('password_change_failed'), 'error');
             }
             return back();
         } else {

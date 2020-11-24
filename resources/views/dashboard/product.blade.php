@@ -9,15 +9,15 @@
 <div class="container-fluid">
     <div class="fade-in">
 
+        @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Product Add/Edit</h4>
+                        <h4>Product @if(isset($product)) Edit @else Add @endif </h4>
                     </div>
                     <div class="card-body">
-                        @include('partials.alert_msg')
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
                                 <div class="col-6">
                                     @csrf
@@ -56,7 +56,7 @@
                                         <label for="">Status</label>
                                         <select name="status" id="" class="form-control">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0) selected @endif value="0">In-Actice</option>
+                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
                                         </select>
                                     </div>
 
@@ -72,12 +72,13 @@
                                         <label for="">Product Image <span class="btn btn-primary btn-sm" id="addMore" onclick="addMore()">Add More</span> </label>
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
-                                        @if($key > 0) <div><hr> @endif
-                                        <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
-                                        <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
-                                        <img src="{{ url('') }}/upload/product/{{ $value->image }}" width="100" />
-                                        @if($key > 0)
-                                           <bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button></div>
+                                        @if($key > 0) <div>
+                                            <hr> @endif
+                                            <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
+                                            <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
+                                            <img src="{{ url('') }}/upload/product/{{ $value->image }}" width="100" />
+                                            @if($key > 0)
+                                            <bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button></div>
                                         @endif
 
                                         @endforeach
@@ -100,11 +101,22 @@
 @endsection
 
 @section('javascript')
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script>
+    $("#myform").validate({
+        submitHandler: function(form) {
+            // do other things for a valid form
+            form.submit();
+        }
+    });
 
+</script>
 <script>
     function addMore() {
         document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
     }
+
 </script>
 
 @endsection

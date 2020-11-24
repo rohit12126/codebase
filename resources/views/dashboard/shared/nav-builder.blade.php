@@ -94,7 +94,7 @@ if(!function_exists('renderDropdown')){
             Logout
         </a>
     </li>
-    @if(isset($appMenus['sidebar menu']))
+    {{-- @if(isset($appMenus['sidebar menu']))
     @foreach($appMenus['sidebar menu'] as $menuel)
     @if($menuel['slug'] === 'link')
     <li class="c-sidebar-nav-item">
@@ -120,7 +120,7 @@ if(!function_exists('renderDropdown')){
     </li>
     @endif
     @endforeach
-    @endif
+    @endif --}}
 </ul>
 <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>

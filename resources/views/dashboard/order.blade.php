@@ -5,6 +5,7 @@
     .pagination {
         justify-content: flex-end !important;
     }
+
 </style>
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 @endsection
@@ -24,19 +25,18 @@
                         @include('partials.alert_msg')
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="page" id="page" value="" />
                             <div class="row">
                                 <div class="col-6">
                                     <label>From Date</label>
-                                    <input type="text" placeholder="From Date" name="from_date" class="form-control"
-                                        value="{{ @$_POST['from_date'] }}" id="from_date" autocomplete="off">
+                                    <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_POST['from_date'] }}" id="from_date" autocomplete="off">
                                     @error('name')
                                     <span class="text-danger" role="alert">
                                         {{ $message }}
                                     </span>
                                     @enderror
                                     <label>Order No.</label>
-                                    <input type="text" placeholder="Order No." name="order_no" class="form-control"
-                                        value="{{ @$_POST['order_no'] }}" autocomplete="off">
+                                    <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_POST['order_no'] }}" autocomplete="off">
                                     @error('order_no')
                                     <span class="text-danger" role="alert">
                                         {{ $message }}
@@ -44,13 +44,11 @@
                                     @enderror
                                     <label>Product Name</label>
 
-                                    <input type="text" placeholder="Product Name" name="product_name"
-                                        class="form-control" value="{{ @$_POST['product_name'] }}">
+                                    <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_POST['product_name'] }}">
                                 </div>
                                 <div class="col-6">
                                     <label>To Date</label>
-                                    <input type="text" placeholder="To Date" name="to_date" class="form-control"
-                                        value="{{ @$_POST['to_date'] }}" id="to_date">
+                                    <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_POST['to_date'] }}" id="to_date">
                                     @error('email')
                                     <span class="text-danger" role="alert">
                                         {{ $message }}
@@ -68,7 +66,7 @@
                                         <option value="3" @if(@$_POST['order_status']==3) selected @endif </option>Cancelled
                                         </option>
                                     </select>
-                                    
+
                                 </div>
                             </div>
                             <hr>
@@ -114,8 +112,7 @@
                                     <td>{{ $value->grand_total }}</td>
 
                                     <td>
-                                        <a class="btn btn-info"
-                                            href="{{ url('admin/order_details', $value->order_no) }}">
+                                        <a class="btn btn-info" href="{{ url('admin/order_details', $value->order_no) }}">
                                             <i class="cil-description"></i>
                                         </a>
                                         {{-- <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
@@ -128,10 +125,7 @@
 
                             </tbody>
                         </table>
-                        @if(@!$_POST)
-
-                        {{ $order_list->links() }}
-                        @endif
+                        {{ @$order_list->links() }}
                     </div>
                 </div>
             </div>
@@ -146,26 +140,33 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script>
-    $(function () {
+    $(function() {
         $("#from_date").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "-10:+0",
-            showButtonPanel: true,
-            dateFormat: 'dd M yy',
-            onSelect: function (selected) {
+            changeMonth: true
+            , changeYear: true
+            , yearRange: "-10:+0"
+            , showButtonPanel: true
+            , dateFormat: 'dd M yy'
+            , onSelect: function(selected) {
                 $("#to_date").datepicker("option", "minDate", selected)
             }
         });
 
         $("#to_date").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            yearRange: "-10:+0",
-            showButtonPanel: true,
-            dateFormat: 'dd M yy',
+            changeMonth: true
+            , changeYear: true
+            , yearRange: "-10:+0"
+            , showButtonPanel: true
+            , dateFormat: 'dd M yy',
 
         });
+
+        $('.page-link').click(function(e) {
+            e.preventDefault();
+            $('#page').val($(this).text());
+            $('form').submit();
+        });
     });
+
 </script>
 @endsection

@@ -16,7 +16,7 @@ class AdminAuth
     {
         if(!Auth::guard('admin')->check())
         {
-            return redirect('admin/login')->withErrors('You need to login!');
+            return redirect('admin/login')->withErrors(__('admin_please_login'));
         }
         return $next($request);
     }
