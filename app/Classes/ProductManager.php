@@ -52,7 +52,6 @@ class ProductManager
             'description' => $req->description,
             'status' => (int)$req->status,
         ];
-        // dd($data);
         if ($product->fill($data)->save()) {
             if (isset($req->storeimage) && is_array($req->storeimage) && $req->storeimage !== null) {
                 ProductImageModel::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();

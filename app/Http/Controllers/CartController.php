@@ -151,15 +151,17 @@ class CartController extends Controller
         }
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
+        session([
+            'ship' => $ship,
+            'bill' => $bill,
+            'isTemp'=>$isTemp,
+            'userId'=>$userId]);
          return view(
             'frontend.checkout',
             [
                 'productList' => $productList,
-                'cartSubTotal' => $cartSubTotal,
-                'bill'=>$bill,
-                'ship'=>$ship,
-            ]
-        );       
+                'cartSubTotal' => $cartSubTotal
+            ]);   
     }
     
     /**

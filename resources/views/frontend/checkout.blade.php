@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="order_review">
                 <div class="heading_s1">
-                    <h4>Your Orders</h4> {{$bill}}
+                    <h4>Your Orders</h4>
                 </div>
                 <div class="table-responsive order_table">
                     <table class="table">
@@ -55,23 +55,9 @@
                         <h4>Payment</h4>
                     </div>
                     <div class="payment_option">
-                    <form method="post" action="{{route('submit.mode')}}">
-                    @csrf
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_options" id="exampleRadios4" value="Stripe" data-url="http://127.0.0.1:8000/stripe/">
-                                <label class="form-check-label" for="exampleRadios4">Stripe</label>
-                            </div>
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_options" id="exampleRadios5" value="Paypal" data-url="http://127.0.0.1:8000/paywithpaypal/">
-                                <label class="form-check-label" for="exampleRadios5">Paypal</label>
-                                <input type="hidden" name="amount" value="{{$cartSubTotal}}">
-                                <input type="hidden" name="bill" value="{{$bill}}">
-                                <input type="hidden" name="ship" value="{{$ship}}">
-                            </div>
                         </div>
                 </div>
-                <button type="submit" name="submit" class="btn btn-fill-out btn-block">Place Order</a>
-                </form>
+                <a class="btn btn-fill-out" href="{{route('addmoney.paywithpaypal')}}">Paypal</a> <a class="btn btn-fill-out" href="{{route('stripe')}}">Stripe</a>
             </div>
         </div>
     </div>

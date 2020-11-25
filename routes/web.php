@@ -257,7 +257,7 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
 Route::post('address/save','CartController@addAddress')->name('address.save');
 Route::post('checkout/mode' , 'OrderController@checkmode')->name('submit.mode');
-Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
+Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
 /*Paypal Payment Routes*/
 Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
