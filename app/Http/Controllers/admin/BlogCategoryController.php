@@ -19,9 +19,9 @@ class BlogCategoryController extends Controller
     {        
         $response = BlogCategoryManager::add($req);
         if($response == true){
-            Common::setMessage(__('category_add_success'));
+            Common::setMessage(__('blog_category_add_success'));
         }else{
-            Common::setMessage(__('category_add_failed'), 'error');
+            Common::setMessage(__('blog_category_add_failed'), 'error');
         }
         return back();
     }
@@ -37,10 +37,10 @@ class BlogCategoryController extends Controller
     {
         $response = BlogCategoryManager::edit($req);
         if($response == true){
-            Common::setMessage(__('category_update_success'));
+            Common::setMessage(__('blog_category_update_success'));
             return redirect()->route('admin.blog.category');
         }else{
-            Common::setMessage(__('category_update_failed'), 'error');
+            Common::setMessage(__('blog_category_update_failed'), 'error');
         }
         return back();
     }
@@ -49,9 +49,9 @@ class BlogCategoryController extends Controller
     {
         $response = BlogCategoryManager::delete($id);
         if($response == true){
-            Common::setMessage(__('category_delete_success'));
+            Common::setMessage(__('blog_category_delete_success'));
         }else{
-            Common::setMessage(__('category_delete_failed'), 'error');
+            Common::setMessage(__('blog_category_delete_failed'), 'error');
         }
         return back();
     }

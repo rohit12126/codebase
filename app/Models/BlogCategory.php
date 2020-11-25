@@ -11,4 +11,12 @@ class BlogCategory extends Model
         'name',
         'status'
     ];
+
+    /**
+     * Get the blog that belongs the category.
+     */
+    public function blog()
+    {
+        return $this->hasOne('App\Models\Blog');
+    }
 }
