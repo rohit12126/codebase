@@ -29,10 +29,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    //temperoary accessing url directly as local server
     'facebook' => [
         'client_id' => env('facebook_CLIENT_ID'),
         'client_secret' => env('facebook_CLIENT_SECRET'),
-        'redirect' => env('APP_URL') . '/login/facebook/callback',
+        'redirect' => 'http://localhost/login/facebook/callback',
     ],
     'twitter' => [
         'client_id' => env('twitter_CLIENT_ID'),
