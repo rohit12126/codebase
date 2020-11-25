@@ -66,7 +66,6 @@ class UserManager
         $user = self::getCurrentUser();
         if ($user->fill(['password' => bcrypt($req->new_password)])->update()) {
             return true;
-            dump('hi');
         } else {
             return false;
         }
