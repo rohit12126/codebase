@@ -255,13 +255,10 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 
 /* Checkout Routes */
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
-Route::post('address/save','CartController@addAddress')->name('address.save');
-Route::post('checkout/mode' , 'OrderController@checkmode')->name('submit.mode');
+Route::post('checkout','CartController@addAddress')->name('address.save');
 Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
 /*Paypal Payment Routes*/
 Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
 Route::post('/paypal','PayPalController@postPaymentWithpaypal')->name('addmoney.paypal');
 Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status');
-Route::get('/checkout', 'CartController@billing')->name('checkout');
-Route::get('/paynow','PayPalController@front');

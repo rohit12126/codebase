@@ -52,18 +52,6 @@ class CartController extends Controller
             ]
         );
     }
-    
-    Public function billing(){
-        $productList = $this->cartManager->getCartContain();
-        $cartSubTotal = $this->cartManager->subTotal();
-        return view(
-            'frontend.checkout',
-            [
-                'productList' => $productList,
-                'cartSubTotal' => $cartSubTotal,
-            ]
-        );
-    }
 
     /**
      * Get Addresse List
