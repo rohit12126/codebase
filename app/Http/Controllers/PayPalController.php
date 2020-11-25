@@ -46,26 +46,29 @@ class PaypalController extends Controller
     {
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
-
-        $item_1 = new Item();
-
-        $item_1->setName('Item 1')
-            ->setCurrency('USD')
-            ->setQuantity(1)
-            ->setPrice(2); /** unit price **/
-
-        $item_list = new ItemList();
-        $item_list->setItems(array($item_1));
-
+        $i=0;
+        $currency = 'USD';
+        $orders = $this->cartManager->getCartContain();
+        foreach($orders as $key => $product)
+            {
+                $items[$i] = new Item();
+                $items[$i]->setName($product->name)
+                ->setCurrency($currency)
+                ->setQuantity($product->qty)
+                        ->setPrice($product->price); 
+                $i++;
+            } 
+        $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
+        $itemList = new ItemList();
+        $itemList->setItems($items);
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal(2);
+            ->setTotal($subTotal);
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
-            ->setItemList($item_list)
+            ->setItemList($itemList)
             ->setDescription('Chapter 247');
-
         $redirect_urls = new RedirectUrls();
         $redirect_urls->setReturnUrl(URL::route('payment.status'))
             ->setCancelUrl(URL::route('payment.status'));
@@ -80,7 +83,7 @@ class PaypalController extends Controller
             $payment->create($this->_api_context);
 
         } catch (\PayPal\Exception\PPConnectionException $ex) {
-            if (\Config::get('app.debug')) {
+            if (config('app.debug')) {
                 session()->put('error', 'Connection timeout');
                 return redirect()->route('paywithpaypal');
             } else {
