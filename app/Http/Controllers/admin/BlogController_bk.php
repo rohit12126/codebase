@@ -15,7 +15,6 @@ class BlogController extends Controller
     {
         if($_POST)
         {  
-            //dd($req->all())         ;
             if($id > 0)
                 $menu = BlogCategory::find($id);
             else
@@ -25,17 +24,16 @@ class BlogController extends Controller
             $menu->status = 1;
             if($menu->save())
             {
-                $req->session()->flash('alert-success', 'Category '. (($id > 0) ? 'updated' : 'created'). ' successfully!');
+                $req->session()->flash('alert-success', 'Blog category '. (($id > 0) ? 'updated' : 'created'). ' successfully!');
             }else{
-                $req->session()->flash('alert-error', 'Category '. (($id > 0) ? 'updated' : 'created'). ' failed!');
+                $req->session()->flash('alert-error', 'Blog category '. (($id > 0) ? 'updated' : 'created'). ' failed!');
             }
             return redirect('/admin/blog-category/');
         }
         $menu = BlogCategory::get();
         if($id > 0)
             $edit = BlogCategory::where('id', '=', $id)->where('status', '=', 1)->first();
-        //dump($edit->menu_name);    
-        return view('admin.blog_category', array('menu_list' => $menu, 'edit' => @$edit));
+        return view('dashboard.blog_category', array('menu_list' => $menu, 'edit' => @$edit));
     }
 
     public function categoryStatusChange($id)
@@ -63,7 +61,7 @@ class BlogController extends Controller
             $menu = Blog::find($id);
             else
             $menu = new Blog;        
-           // 0 => "id"
+           
             $menu->menu_id  = $req->menu;
             $menu->title    = $req->title;
             $menu->short_desc    = $req->short_desc;
@@ -76,12 +74,11 @@ class BlogController extends Controller
             if($req->thumbnail)
             {
                 $site_favicon = time().'_blog_thumbnail_'.$req->file('thumbnail')->getClientOriginalName();
-                //$req->thumbnail->move(, $site_favicon);
+                
                 $menu->thumbnail  = $site_favicon ;
                 
                 $thumb_img = Image::make($req->file('thumbnail')->getRealPath())->resize(228, 190);
                 $thumb_img->save(base_path('../upload/blog').'/'.$site_favicon,100);
-               // Image::make(base_path('../upload/blog').'/'.$site_favicon)->resize(228, 190);
             }
 
             if($req->banner)

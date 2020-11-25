@@ -57,7 +57,20 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
         
         Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
-        
+
+        Route::get('admin/blog-category', 'admin\BlogCategoryController@index')->name('admin.blog.category');
+        Route::post('admin/blog-category', 'admin\BlogCategoryController@addCategory')->name('admin.blog.category');
+        Route::get('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editCategory');//->name('admin.categoryedit');
+        Route::post('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editSubmitCategory');//->name('admin.categoryedit');
+        Route::get('admin/blog_delete_category/{id?}', 'admin\BlogCategoryController@deleteCategory');
+
+        Route::get('admin/blog', 'admin\BlogController@index')->name('admin.blog');
+        Route::post('admin/blog', 'admin\BlogController@addBlog')->name('admin.blog');
+        Route::get('admin/edit_blog/{id?}', 'admin\BlogController@editBlog');
+        Route::post('admin/edit_blog/{id?}', 'admin\BlogController@editSubmitBlog');
+        Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
