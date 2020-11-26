@@ -60,6 +60,14 @@
                                         </select>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="">Is Accessory</label>
+                                        <select name="is_accessory" id="" class="form-control">
+                                            <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
+                                            <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
+                                        </select>
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">
                                         Submit
                                     </button>

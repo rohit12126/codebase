@@ -49,42 +49,53 @@ class OrderController extends Controller
      */
    
     public function addOrder(Request $req) {
-        $orderNumber = $this->orderManager->generateOrderNumber();
-        
-        $orderData['order_no'] = $orderNumber;
+        if($request->session()->has('userId')){
         $isTempUser = $req->session()->get('isTemp');
         $userId = $req->session()->get('userId');
-        $orderData['user_id'] = $userId;
-        if(!empty($isTempUser)) {
-            $orderData['temp_user'] = $isTempUser;
-        }
-        $orderData['billing_address'] = $req->session()->get('bill');
-        $orderData['shipping_address'] = $req->session()->get('ship');
-        $orderData['status'] = 1;
-        $orderData['grand_total'] = (float) $this->cartManager->subTotal();
-        
-        $order = $this->orderManager->addOrder($orderData);
-    
-        $cartProducts = $this->cartManager->getCartContain();
 
-        foreach ($cartProducts as $key => $product) {
-            $orderProduct = [
-                'order_no' => $orderNumber,
-                'product_id' => $product->id,
-                'product_quantity' => $product->qty,
-                'price' => $product->price,
-            ];
-            $this->orderManager->addOrderProduct($orderProduct);
-        }
+        if(strpos(url()->previous(), 'order/add-order') == false){
+            $orderNumber = $this->orderManager->generateOrderNumber();
+            
+            $orderData['order_no'] = $orderNumber;
+            $orderData['user_id'] = $userId;
+            if(!empty($isTempUser)) {
+                $orderData['temp_user'] = $isTempUser;
+            }
+            $orderData['billing_address'] = $req->session()->get('bill');
+            $orderData['shipping_address'] = $req->session()->get('ship');
+            $orderData['status'] = 1;
+            $orderData['grand_total'] = (float) $this->cartManager->subTotal();
+            
+            $order = $this->orderManager->addOrder($orderData);
         
-        $this->cartManager->destroy();
-        $this->cartManager->destroyCartDB($userId);
-        $req->session()->forget(['isTemp', 'userId','bill', 'ship']);
+            $cartProducts = $this->cartManager->getCartContain();
+
+            foreach ($cartProducts as $key => $product) {
+                $orderProduct = [
+                    'order_no' => $orderNumber,
+                    'product_id' => $product->id,
+                    'product_quantity' => $product->qty,
+                    'price' => $product->price,
+                ];
+                $this->orderManager->addOrderProduct($orderProduct);
+            }
+            
+            $this->cartManager->destroy();
+            $this->cartManager->destroyCartDB($userId);
+            $product = $this->orderManager->getProductsByOrder($order->order_no);
+            $req->session()->forget(['bill', 'ship']);
+        }else{
+            $order = $this->orderManager->getLastOrder($userId,$isTempUser);
+            $product = $this->orderManager->getProductsByOrder($order->order_no);
+            }
         return view('frontend.order-success',
             [
                 'order' => $order,
+                'product' => $product,
             ]
-        );
+            );
+        }
+        return redirect('/');
     }
     
 }
