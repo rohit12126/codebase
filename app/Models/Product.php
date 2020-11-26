@@ -15,6 +15,7 @@ class Product extends Model
         'sale_price', 
         'stock_qty',
         'status',
+        'is_accessory'
     ];
 
     /**
