@@ -15,6 +15,10 @@ Route::group(['middleware' => ['get.menu']], function () {
     Route::get('/admin/login', function () {
         return view('dashboard.auth.login');
     });
+    
+    Route::get('/admin', function () {
+        return view('dashboard.auth.login');
+    });
 
     Route::post('admin/login', 'admin\LoginController@loginSubmit')->name('admin.login.submit');
 
@@ -57,7 +61,20 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
         
         Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
-        
+
+        Route::get('admin/blog-category', 'admin\BlogCategoryController@index')->name('admin.blog.category');
+        Route::post('admin/blog-category', 'admin\BlogCategoryController@addCategory')->name('admin.blog.category');
+        Route::get('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editCategory');//->name('admin.categoryedit');
+        Route::post('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editSubmitCategory');//->name('admin.categoryedit');
+        Route::get('admin/blog_delete_category/{id?}', 'admin\BlogCategoryController@deleteCategory');
+
+        Route::get('admin/blog', 'admin\BlogController@index')->name('admin.blog');
+        Route::post('admin/blog', 'admin\BlogController@addBlog')->name('admin.blog');
+        Route::get('admin/edit_blog/{id?}', 'admin\BlogController@editBlog');
+        Route::post('admin/edit_blog/{id?}', 'admin\BlogController@editSubmitBlog');
+        Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
@@ -245,6 +262,14 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
+
+/* Blog Routes */
+Route::get('blog/', 'BlogController@index')->name('blog.list');
+Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+
+Route::get('home/', 'BlogController@index')->name('home');
+Route::get('faq/', 'BlogController@index')->name('faq');
+Route::get('about-us/', 'BlogController@index')->name('about-us');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');

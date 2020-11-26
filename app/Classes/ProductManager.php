@@ -17,6 +17,8 @@ class ProductManager
             'sale_price' => $req->sale_price,
             'stock_qty' => $req->stock_qty,
             'description' => $req->description,
+            'status' => (int)$req->status,
+            'is_accessory' => (int)$req->is_accessory,
         ];
         if ($product = ProductModel::create($data)) {
             if ($req->image) {
@@ -51,6 +53,8 @@ class ProductManager
             'stock_qty' => $req->stock_qty,
             'description' => $req->description,
             'status' => (int)$req->status,
+            'is_accessory' => (int)$req->is_accessory,
+            
         ];
         if ($product->fill($data)->save()) {
             if (isset($req->storeimage) && is_array($req->storeimage) && $req->storeimage !== null) {

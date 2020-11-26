@@ -18,6 +18,7 @@ class Product extends Model implements ReviewRateable
         'sale_price', 
         'stock_qty',
         'status',
+        'is_accessory'
     ];
 
     /**
