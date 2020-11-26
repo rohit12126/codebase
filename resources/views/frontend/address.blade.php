@@ -59,7 +59,8 @@
             	<div class="medium_divider"></div>
             </div>
         </div>
-        <form method="post" action="{{route('')}}">
+        <form method="post" action="{{route('address.save')}}">
+        @csrf
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">
@@ -78,22 +79,22 @@
                         </div>
                     @endforeach
                     <div class="form-group">
-                        <input type="text" required="" class="form-control" name="bill_name" placeholder="Name *">
+                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="bill_phone" placeholder="Phone *">
+                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="bill_address" required="" placeholder="Address *">
+                        <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="bill_city" placeholder="City / Town *">
+                        <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" placeholder="City / Town *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="bill_state" placeholder="State / County *">
+                        <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" placeholder="State / County *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="bill_zipcode" placeholder="Postcode / ZIP *">
+                        <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -112,29 +113,64 @@
                             </label>
                         </div>
                     @endforeach
+                    <input type="checkbox" id="filladdress" name="filladdress"/>
                     <div class="form-group">
-                        <input type="text" required="" class="form-control" name="ship_name" placeholder="Name *">
+                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="ship_phone" placeholder="Phone *">
+                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="ship_address" required="" placeholder="Address *">
+                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="ship_city" placeholder="City / Town *">
+                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="ship_state" placeholder="State / County *">
+                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" required="" type="text" name="ship_zipcode" placeholder="Postcode / ZIP *">
+                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
                     </div>
                 </div>
-                <a href="#" class="btn btn-fill-out btn-block">Continue</a>
+                <button type="submit" class="btn btn-fill-out btn-block">Continue</a>
             </div>
         </form>  
     </div>
 </div>
 <!-- END SECTION SHOP -->
+<script>
+$(document).ready(function(){
+    $("#filladdress").on("click", function(){
+         if (this.checked) { 
+                $("#ship_name").val($("#bill_name").val());
+                $("#ship_phone").val($("#bill_phone").val());
+                $("#ship_address").val($("#bill_address").val());
+                $("#ship_city").val($("#bill_city").val());  
+                $("#ship_state").val($("#bill_state").val());  
+                $("#ship_zipcode").val($("#bill_zipcode").val());                         
+    }
+    else {
+        $("#ship_name").val('');
+        $("#ship_phone").val('');
+        $("#ship_address").val('');
+        $("#ship_city").val('');
+        $("#ship_state").val('');
+        $("#ship_zipcode").val('');           
+    }
+    });
+    $('input:radio[name="shipping_address"]').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $(".ship").removeAttr("required");
+        }
+    });
+    $('input:radio[name="billing_address"]').change(
+    function(){
+        if ($(this).is(':checked')) {
+            $(".bill").removeAttr("required");
+        }
+    });
+});
+</script>
 @endsection

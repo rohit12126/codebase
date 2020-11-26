@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-// use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\MessageBag;
+use App\SocialIdentity;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -43,7 +45,7 @@ class LoginController extends Controller
 
 
     public function redirectToProvider($provider)
-    {
+    {   
         return Socialite::driver($provider)->redirect();
     }
 
@@ -90,8 +92,6 @@ class LoginController extends Controller
            return $user;
        }
    }
-        // $user->token;
-    // }
 
     protected function getCredentials(Request $request)
     {
@@ -108,7 +108,6 @@ class LoginController extends Controller
 
         if (\Auth::attempt($this->getCredentials($request))) {
             return  redirect()->back();
-            // return redirect()->route('account');
         }
         $errors = new MessageBag(['password' => ['These credentials do not match our records.']]); 
         return redirect()->back()->withErrors($errors);

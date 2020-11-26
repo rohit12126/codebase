@@ -18,7 +18,7 @@ class LoginController extends Controller
         if (Auth::guard('admin')->attempt(['email' => $req->email, 'password' => $req->password, 'menuroles' => 'admin'])) {
             return redirect()->intended('admin/dashboard');
         }
-        return back()->withErrors(['Login password not match']);
+        return back()->withErrors([__('admin_login_failed')]);
     }
 
     public function logout()

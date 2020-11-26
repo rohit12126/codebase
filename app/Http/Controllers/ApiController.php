@@ -10,17 +10,19 @@ use Illuminate\Support\Facades\Auth;
 
 class ApiController extends Controller
 {
-    public function add_address(Request $req)
+    public function addAddress(Request $req)
     {
         $req->validate([
             'user_id'    => 'required|integer',
             'name'    => 'required|string',
             'mobile'    => 'required|string',
+            'address' => 'required|string',
             'country'    => 'required|string',
             'state'    => 'required|string',
             'city'    => 'required|string',
             'zipcode'    => 'required|string',
             'type'    => 'required|integer|between:1,2',
+            'temp_user' => 'integer'
         ]);
         $result = AddressManager::add($req);
         if ($result !== false) {

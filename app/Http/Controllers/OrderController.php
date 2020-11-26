@@ -10,6 +10,7 @@ use App\Classes\GuestUserManager;
 use App\Classes\AddressManager;
 use App\Classes\OrderManager;
 
+
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -46,26 +47,21 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function addOrder(Request $req) {
-        $req->validate([
-            'user_id' => 'required|integer',
-            'billing_address' => 'required|integer',
-            'shipping_address' => 'required|integer',
-            'grand_total' => 'required'
-        ]);
         $orderNumber = $this->orderManager->generateOrderNumber();
         
         $orderData['order_no'] = $orderNumber;
-        $isTempUser = $req->input('temp_user');
-        $userId = $req->input('user_id');
+        $isTempUser = $req->session()->get('isTemp');
+        $userId = $req->session()->get('userId');
         $orderData['user_id'] = $userId;
         if(!empty($isTempUser)) {
             $orderData['temp_user'] = $isTempUser;
         }
-        $orderData['billing_address'] = $req->input('billing_address');
-        $orderData['shipping_address'] = $req->input('shipping_address');
+        $orderData['billing_address'] = $req->session()->get('bill');
+        $orderData['shipping_address'] = $req->session()->get('ship');
         $orderData['status'] = 1;
-        $orderData['grand_total'] = (float) $req->input('grand_total');
+        $orderData['grand_total'] = (float) $this->cartManager->subTotal();
         
         $order = $this->orderManager->addOrder($orderData);
     
@@ -83,10 +79,12 @@ class OrderController extends Controller
         
         $this->cartManager->destroy();
         $this->cartManager->destroyCartDB($userId);
+        $req->session()->forget(['isTemp', 'userId','bill', 'ship']);
         return view('frontend.order-success',
             [
                 'order' => $order,
             ]
         );
     }
+    
 }

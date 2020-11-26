@@ -81,6 +81,26 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
+    <li class="c-sidebar-nav-dropdown">
+        <a class="c-sidebar-nav-dropdown-toggle" href="#">
+            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            Blogs
+        </a>
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.blog.list') }}">
+                    <i class="cil-list c-sidebar-nav-icon"></i>
+                    List
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.blog') }}">
+                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
+                    Add
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
@@ -94,7 +114,7 @@ if(!function_exists('renderDropdown')){
             Logout
         </a>
     </li>
-    @if(isset($appMenus['sidebar menu']))
+    {{-- @if(isset($appMenus['sidebar menu']))
     @foreach($appMenus['sidebar menu'] as $menuel)
     @if($menuel['slug'] === 'link')
     <li class="c-sidebar-nav-item">
@@ -120,7 +140,7 @@ if(!function_exists('renderDropdown')){
     </li>
     @endif
     @endforeach
-    @endif
+    @endif --}}
 </ul>
 <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>

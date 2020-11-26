@@ -5,17 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stripe;
 use App\Classes\HelperManager as Common;
+use App\Classes\CartManager;
+use App\Classes\OrderManager;
+
    
 class StripePaymentController extends Controller
 {
+    public function __construct(
+        CartManager $cartManager
+    )
+    {
+        $this->cartManager = $cartManager;
+    }
     /**
      * success response method.
      *
      * @return \Illuminate\Http\Response
      */
     public function stripe()
-    {
-        return view('frontend.stripe');
+    {  
+        return view('frontend.stripe',
+        [
+            'amount' => 100,
+        ]);
     }
   
     /**
@@ -27,7 +39,7 @@ class StripePaymentController extends Controller
     {
         Stripe\Stripe::setApiKey('sk_test_51HooUMEENLBkKA9ULKoCIWtGpkgwW5Fb5tF5eMZkb1GDZszhJ5UEc2N28jyEht6JDPxTPD9Mg3XavotEiNvyuD1200m5OLE3Pc');
         Stripe\Charge::create ([
-                "amount" => 100 * 100,
+                "amount" => 100,
                 "currency" => "INR",
                 "source" => $request->stripeToken,
                 "description" => "Chapter 247",

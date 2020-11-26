@@ -57,7 +57,20 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
         
         Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
-        
+
+        Route::get('admin/blog-category', 'admin\BlogCategoryController@index')->name('admin.blog.category');
+        Route::post('admin/blog-category', 'admin\BlogCategoryController@addCategory')->name('admin.blog.category');
+        Route::get('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editCategory');//->name('admin.categoryedit');
+        Route::post('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editSubmitCategory');//->name('admin.categoryedit');
+        Route::get('admin/blog_delete_category/{id?}', 'admin\BlogCategoryController@deleteCategory');
+
+        Route::get('admin/blog', 'admin\BlogController@index')->name('admin.blog');
+        Route::post('admin/blog', 'admin\BlogController@addBlog')->name('admin.blog');
+        Route::get('admin/edit_blog/{id?}', 'admin\BlogController@editBlog');
+        Route::post('admin/edit_blog/{id?}', 'admin\BlogController@editSubmitBlog');
+        Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
+        Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
@@ -236,7 +249,7 @@ Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
 });
-Route::get('stripe', 'StripePaymentController@stripe');
+Route::get('stripe', 'StripePaymentController@stripe')->name('stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
 /* social login*/
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
@@ -245,6 +258,10 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
+
+/* Blog Routes */
+Route::get('blog/', 'BlogController@index')->name('blog.list');
+Route::get('blog/detail','BlogController@detail')->name('blog.detail');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
@@ -255,13 +272,10 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 
 /* Checkout Routes */
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
-Route::post('address/save','CartController@addAddresse')->name('address.save');
-
-Route::post('order/add-order','OrderController@addOrder')->name('order.addOrder');
+Route::post('checkout','CartController@addAddress')->name('address.save');
+Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');
 
 /*Paypal Payment Routes*/
-Route::get('/paywithpaypal','PaypalController@payWithPaypal')->name('addmoney.paywithpaypal');
-Route::post('/paypal','PaypalController@postPaymentWithpaypal')->name('addmoney.paypal');
-Route::get('/paypal', 'PaypalController@getPaymentStatus')->name('payment.status');
-Route::get('/checkout', 'OrderController@checkout');
-Route::get('/paynow','PaypalController@front');
+Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
+Route::post('/paypal','PayPalController@postPaymentWithpaypal')->name('addmoney.paypal');
+Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status');

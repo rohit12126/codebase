@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\OrderManager;
-use App\Classes\HelperManager;
+use App\Classes\HelperManager as Common;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -26,9 +26,9 @@ class OrderController extends Controller
     {
         $response = OrderManager::orderStatusChange($req);
         if($response == true){
-            HelperManager::setMessage('Order Status Changed Successfully!');
+            Common::setMessage(__('order_status_change_success'));
         }else{
-            HelperManager::setMessage('Order status could not be change!', 'error');
+            Common::setMessage(__('order_status_change_failed'), 'error');
         }
         return back();
     }

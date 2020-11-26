@@ -49,23 +49,15 @@
                         </tfoot>
                     </table>
                 </div>
+               
                 <div class="payment_method">
                     <div class="heading_s1">
                         <h4>Payment</h4>
                     </div>
                     <div class="payment_option">
-                        <div class="custome-radio">
-                            <input class="form-check-input" type="radio" name="payment_option" value="paypal">
-                            <label class="form-check-label" for="exampleRadios5">Stripe</label>
                         </div>
-                        <div class="custome-radio">
-                            <input class="form-check-input" type="radio" name="payment_option" value="stripe">
-                            <label class="form-check-label" for="exampleRadios5">Paypal</label>
-                            <p data-method="option5" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
-                        </div>
-                    </div>
                 </div>
-                <a href="#" class="btn btn-fill-out btn-block">Place Order</a>
+                <a class="btn btn-fill-out" href="{{route('addmoney.paywithpaypal')}}">Paypal</a> <a class="btn btn-fill-out" href="{{route('stripe')}}">Stripe</a>
             </div>
         </div>
     </div>

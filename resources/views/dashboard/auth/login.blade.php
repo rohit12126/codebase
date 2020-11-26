@@ -13,11 +13,6 @@
                         <form method="POST" action="{{ route('admin.login.submit') }}">
                             @csrf
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="icon-user"></i>
-                                    </span>
-                                </div>
                                 <input class="form-control" type="email" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ @$_POST['email'] }}" required autofocus>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -26,11 +21,6 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="icon-lock"></i>
-                                    </span>
-                                </div>
                                 <input class="form-control" type="password" placeholder="{{ __('Password') }}" name="password" required>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">

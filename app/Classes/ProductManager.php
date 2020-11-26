@@ -52,7 +52,6 @@ class ProductManager
             'description' => $req->description,
             'status' => (int)$req->status,
         ];
-        // dd($data);
         if ($product->fill($data)->save()) {
             if (isset($req->storeimage) && is_array($req->storeimage) && $req->storeimage !== null) {
                 ProductImageModel::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
@@ -109,7 +108,7 @@ class ProductManager
             if ($req->stock_less) {
                 $order->where('stock_qty', '<=', $req->stock_less);
             }
-            return $order->get();
+            return $order->paginate(1);
         } else {
             return ProductModel::with('images')->paginate(1);
         }

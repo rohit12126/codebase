@@ -71,7 +71,7 @@ class OrderManager
                     }
                 });
             }
-            return $order->get();
+            return $order->paginate(1);
         } else {
             return OrderModel::select(
                 '*',
@@ -81,7 +81,7 @@ class OrderManager
                     WHEN 2 THEN "Delivered"
                     WHEN 3 THEN "Cancelled"
                     ELSE "" END) AS order_status')
-            )->with('user')->latest()->paginate(10);
+            )->with('user')->latest()->paginate(1);
         }
     }
 

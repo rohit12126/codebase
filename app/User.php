@@ -54,4 +54,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Address', 'user_id');
 
     }
+    public function identities() {
+        return $this->hasMany('App\SocialIdentity');
+     }
 }
