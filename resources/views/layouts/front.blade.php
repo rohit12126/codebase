@@ -56,9 +56,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link nav_item" href="{{url('/')}}">Home</a></li>
-                        <li><a class="nav-link nav_item" href="{{route('product.list')}}">Products</a></li>
-                        <li><a class="nav-link nav_item" href="{{route('blog.list')}}">Blog</a></li>
+                        <li><a class="nav-link"  href="#">Home</a></li>
+                        <li><a class="nav-link nav_item" href="about.html">About Us</a></li> 
+                        <li class="dropdown-mega-menu"><a class="nav-link" href="#" data-toggle="dropdown">Products</a></li>
+                        <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li> 
+                        <li>
+                            <a class="nav-link" href="#" data-toggle="dropdown">Blog</a>
+                        </li>
+                        <li><a class="nav-link nav_item" href="faq.html">Faq</a></li>
                         @if (!Auth::guest())
                         <li><a class="nav-link nav_item" href="{{route('account')}}">My Account</a></li> 
                         @else
