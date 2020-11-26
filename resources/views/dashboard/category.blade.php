@@ -32,19 +32,6 @@
                                         Cancel
                                     </a>
                                 </div>
-                                <div class="col-6">
-
-                                    <div class="form-group">
-                                        <label for="file-input">Category Image</label>
-                                        <input id="file-input" type="file" name="image" class="form-control"
-                                            accept="image/*">
-                                        @if(@$category->image->image)
-                                        <hr />
-                                        <img src="{{ url('') }}/upload/category/{{ @$category->image->image}}"
-                                            width="150" />
-                                        @endif
-                                    </div>
-
                         </form>
                     </div>
                 </div>
@@ -75,7 +62,6 @@
                             <tr>
                                 <th>S No.</th>
                                 <th>Name</th>
-                                <th>Image</th>
                                 <th>Action</th>
 
                             </tr>
@@ -85,11 +71,6 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>
-                                    @if(@$value->image->image)
-                                    <img src="{{ url('') }}/upload/category/{{ @$value->image->image}}" width="100" />
-                                    @endif
-                                </td>
                                 <td>
                                     <button class="btn btn-info" type="button" data-toggle="tooltip"
                                         data-placement="top" title="Tooltip on top" data-original-title="Tooltip on top"

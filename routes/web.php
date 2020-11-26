@@ -15,6 +15,10 @@ Route::group(['middleware' => ['get.menu']], function () {
     Route::get('/admin/login', function () {
         return view('dashboard.auth.login');
     });
+    
+    Route::get('/admin', function () {
+        return view('dashboard.auth.login');
+    });
 
     Route::post('admin/login', 'admin\LoginController@loginSubmit')->name('admin.login.submit');
 
@@ -262,6 +266,10 @@ Route::get('product/detail','ProductController@detail')->name('product.detail');
 /* Blog Routes */
 Route::get('blog/', 'BlogController@index')->name('blog.list');
 Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+
+Route::get('home/', 'BlogController@index')->name('home');
+Route::get('faq/', 'BlogController@index')->name('faq');
+Route::get('about-us/', 'BlogController@index')->name('about-us');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
