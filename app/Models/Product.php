@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Codebyray\ReviewRateable\Contracts\ReviewRateable;
+use Codebyray\ReviewRateable\Traits\ReviewRateable as ReviewRateableTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Product extends Model implements ReviewRateable
 {
-    
+    use ReviewRateableTrait;
+
     protected $fillable = [
         'name', 
         'category_id', 

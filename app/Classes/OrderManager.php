@@ -191,4 +191,15 @@ class OrderManager
             return OrderModel::get()->count();
         }
     }
+    public static function getProductsByOrder($order)
+    {
+        return OrderProduct::where('order_no', $order)->with('product')->get();
+    }
+    public static function getLastOrder($userId,$temp)
+    {
+        return OrderModel::where("user_id", $userId)
+            ->where('temp_user', $temp)
+            ->latest()
+            ->first();
+    }
 }

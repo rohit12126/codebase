@@ -182,6 +182,8 @@ return [
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
+        Codebyray\ReviewRateable\ReviewRateableServiceProvider::class,
+
     ],
 
     /*
