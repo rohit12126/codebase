@@ -41,8 +41,8 @@
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <select name="status" id="" class="form-control">
-                                            <option @if(@$blog->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$blog->status == 0 && @$blog->status != null) selected @endif value="0">In-Actice</option>
+                                            <option @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">Inactive</option>
                                         </select>
                                     </div>
 
@@ -57,8 +57,9 @@
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Image </label>
                                         @if(isset($blog->image))
-                                            <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
-                                            <img src="{{ url('') }}/upload/blog/{{ $value->image }}" width="100" />
+                                            <input id="file-input" type="file" name="image" class="form-control" accept="image/*">
+                                            <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
+                                            <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" width="100" />
                                         @else
                                         <input id="file-input" type="file" name="image" class="form-control" accept="image/*" required>
                                         @endif

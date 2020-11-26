@@ -36,15 +36,22 @@ class BlogManager
             return false;
         }
 
-        $file_name = Common::uploadFile($req->image, 'upload/product');
+        if ($req->hasFile('image')) {
+            
+            $file_name = Common::uploadFile($req->image, 'upload/blog');
+        } else {
+            $file_name =  $req->storeimage;
+        }
+        
 
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
             'description' => $req->description,
             'image' => $file_name,
-            'status' => (int) $req->status
+            'status' => $req->status
         ];
+        //dd($data);
         if ($product->fill($data)->save()) {
             return true;
         } else {

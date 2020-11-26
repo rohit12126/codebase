@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     
+    protected $fillable = [
+        'category_id',
+        'title',
+        'description',
+        'image',
+        'status',
+    ];
     /**
      * Get the category belongs to the product.
      */

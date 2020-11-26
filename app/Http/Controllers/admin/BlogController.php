@@ -41,7 +41,7 @@ class BlogController extends Controller
         return view('dashboard.blog', compact('blog_list', 'category_list', 'blog'));
     }
 
-    public function editSubmitProduct(Request $req)
+    public function editSubmitBlog(Request $req)
     {
         $response = BlogManager::edit($req);
         if($response == true){
@@ -53,7 +53,7 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.list');
     }
 
-    public function deleteProduct($id)
+    public function deleteBlog($id)
     {
         $response = BlogManager::delete($id);
         if($response == true){
