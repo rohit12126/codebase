@@ -259,6 +259,10 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 Route::get('/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
 
+/* Blog Routes */
+Route::get('blog/', 'BlogController@index')->name('blog.list');
+Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
 Route::post('cart/add-cart','CartController@addToCart')->name('cart.addCart');

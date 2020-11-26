@@ -3,60 +3,50 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\BlogCategory;
-use App\Models\Blog;
+use Illuminate\Support\Facades\DB;
+use App\Classes\BlogManager;
+use App\Classes\BlogCategoryManager;
 
 class BlogController extends Controller
 {
+    protected $blogManager;
+    protected $blogCategoryManager;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(
+        BlogManager $blogManager,
+        BlogCategoryManager $blogCategoryManager
+    )
+    {
+        $this->blogManager = $blogManager;
+        $this->blogCategoryManager = $blogCategoryManager;
+    }
+    /**
+     * Display a listing of the Blog.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $blog_cat = BlogCategory::where('status', 1)->get();
-        $blog = Blog::where('status', 1)->get();
-        return view('once.blogs') 
-        ->with('blogs', $blog)
-        ->with('blog_cats', $blog_cat);
+        $paginate = 5;
+        $blogs = $this->blogManager->getBlogs($paginate);
+        return view('frontend.blog-list', ['blogs' => $blogs]);
     }
 
-    public function category($cat_name)
-    {
-        //dd($cat_name);
-        $cat = BlogCategory::where('cat_link', $cat_name)->where('status', 1)->first();
-        if(empty($cat)) 
-        {
-            session()->flash('alert-error', 'No category found.');
-            return redirect('blogs');
-        }
-        $blog_cat = BlogCategory::where('status', 1)->get();
-        $blog = Blog::where('status', 1)->where('menu_id',
-        function($query) use ($cat_name){
-            $query->select('id')
-            ->from(with(new BlogCategory)->getTable())
-            ->where('cat_link', $cat_name)
-            ->where('status', 1)
-            ->limit(1);
-        }
-        )->get();
-        return view('once.blogs') 
-        ->with('blogs', $blog)
-        ->with('breadcrumb', $cat)
-        ->with('blog_cats', $blog_cat)
-        ;
-    }
-
-    public function showBlog($blog_link)
-    {
-        $blog = Blog::where('status', 1)->where('blog_link', $blog_link)->first();
-        if(empty($blog)) 
-        {
-            session()->flash('alert-error', 'No blog found.');
-            return redirect('blogs');
-        }
-
-        $blog_cat = BlogCategory::where('status', 1)->get();
-        return view('once.blog_details')
-        ->with('blog', $blog) 
-        ->with('blog_cats', $blog_cat)       
-        ;
+    
+    /**
+     * Display a Detail of the Blog.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail(Request $req) {
+        $blogId = $req->input('id');
+        $blog = $this->blogManager->getBlog($blogId);
+        return view('frontend.blog-detail',
+            ['blog' => $blog]
+        );
     }
 }

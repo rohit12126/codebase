@@ -10,21 +10,37 @@ use App\Classes\HelperManager as Common;
 
 class BlogController extends Controller
 {
+    protected $blogManager;
+    protected $blogCategoryManager;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(
+        BlogManager $blogManager,
+        BlogCategoryManager $blogCategoryManager
+    )
+    {
+        $this->blogManager = $blogManager;
+        $this->blogCategoryManager = $blogCategoryManager;
+    }
+
     public function index()
     {
-        $category_list = BlogCategoryManager::getCategoryList();
+        $category_list = $this->blogCategoryManager->getCategoryList();
         return view('dashboard.blog', compact('category_list'));
     }
 
     public function blogList(Request $req)
     {
-        $blog_list = BlogManager::getBlogListPaginated($req);
+        $blog_list = $this->blogManager->getBlogListPaginated($req);
         return view('dashboard.blog_list', compact('blog_list'));
     }
 
     public function addBlog(Request $req)
     {
-        $response = BlogManager::add($req);
+        $response = $this->blogManager->add($req);
         if($response == true){
             Common::setMessage(__('blog_add_success'));
         }else{
@@ -35,15 +51,15 @@ class BlogController extends Controller
 
     public function editBlog($id)
     {
-        $blog = BlogManager::getBlogById($id);
-        $blog_list = BlogManager::getBlogList();
-        $category_list = BlogCategoryManager::getCategoryList();
+        $blog = $this->blogManager->getBlogById($id);
+        $blog_list = $this->blogManager->getBlogList();
+        $category_list = $this->blogCategoryManager->getCategoryList();
         return view('dashboard.blog', compact('blog_list', 'category_list', 'blog'));
     }
 
     public function editSubmitBlog(Request $req)
     {
-        $response = BlogManager::edit($req);
+        $response = $this->blogManager->edit($req);
         if($response == true){
             Common::setMessage(__('blog_update_success'));
             return back();
@@ -55,7 +71,7 @@ class BlogController extends Controller
 
     public function deleteBlog($id)
     {
-        $response = BlogManager::delete($id);
+        $response = $this->blogManager->delete($id);
         if($response == true){
             Common::setMessage(__('blog_delete_success'));
         }else{
