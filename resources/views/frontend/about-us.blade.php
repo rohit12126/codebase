@@ -1,47 +1,75 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
-<div class="section">
-	<div class="container">
-    	<div class="row">
-			<div class="col-lg-9">
-            	<div class="row shop_container list">
-                    @if($blogs->isEmpty()) 
-                    <div class="col-md-4 col-6">
-                        <h3>No Blog available.</h3>
-                    </div>
-                    @else
-                        @foreach ($blogs as $blog)
-                        <div class="col-md-4 col-6">
-                            <div class="product">
-                                <div class="product_img">
-                                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
-                                    @if (isset($blog->image))
-                                        <img src="{{ asset('upload/blog/'.$blog->image)}}" alt="product_img1">
-                                    @else
-                                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                    @endif
-                                    </a>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="{{ route('blog.detail',['id' => $blog->id]) }}">{{$blog->title}}</a></h6>
-                                    <div class="pr_desc">
-                                        <p>{{$blog->description}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    @endif
-                    
+<div class="">
+<section class="section p-0">
+        <div class="section-inner">
+            <div class="section-img-wrapper about-bg1">
+                <div class="section-img-content">
+                    Your Sitzfeldt Sofa. <br>
+                    Your ultimate <br>
+                    comfort zone. <br>
                 </div>
-        		<div class="row">
-                    <div class="col-12">
-                        {{ $blogs->links() }}
-                    </div>
-                </div>
-        	</div>
+            </div>
+            <div class="section-text-wrapper">
+                <h2>Our Mantra</h2>
+                <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
+                <button class="btn btn-outline-secondary">see the sofas</button>
+            </div>
         </div>
-    </div>
+    </section>
+    <section class="section p-0">
+        <div class="section-inner">
+            <div class="section-img-wrapper about-bg3 order-1 order-lg-2">
+                <div class="section-img-content">
+                    Your Sitzfeldt Sofa. <br>
+                    Your ultimate <br>
+                    comfort zone. <br>
+                </div>
+            </div>
+            <div class="section-text-wrapper order-2 order-lg-1">
+                <h2>Our Mantra</h2>
+                <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
+                <button class="btn btn-outline-secondary">see the sofas</button>
+            </div>
+        </div>
+    </section>
+    <section class="section p-0">
+        <div class="section-inner">
+            <div class="section-img-wrapper about-bg2">
+                <div class="section-img-content">
+                    Your Sitzfeldt Sofa. <br>
+                    Your ultimate <br>
+                    comfort zone. <br>
+                </div>
+            </div>
+            <div class="section-text-wrapper">
+                <h2>Our Mantra</h2>
+                <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
+                <button class="btn btn-outline-secondary">see the sofas</button>
+            </div>
+        </div>
+    </section>
+    <section class="section pd-80-1">
+        <div class="content-section">
+            <img src="{{URL::asset('/images/about-awards.png')}}" alt="" class="w-100">
+        </div>
+    </section>
+    <section class="section p-0">
+        <div class="section-inner">
+            <div class="section-img-wrapper about-bg4 order-1 order-lg-2">
+                <div class="section-img-content">
+                    Your Sitzfeldt Sofa. <br>
+                    Your ultimate <br>
+                    comfort zone. <br>
+                </div>
+            </div>
+            <div class="section-text-wrapper order-2 order-lg-1">
+                <h2>Our Mantra</h2>
+                <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
+                <button class="btn btn-outline-secondary">see the sofas</button>
+            </div>
+        </div>
+    </section>
 </div>
 @endsection

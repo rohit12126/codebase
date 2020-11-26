@@ -43,149 +43,281 @@
 </head>
 
 <body>
-    <header class="header_wrap fixed-top dd_dark_skin transparent_header">
-        <div class="light_skin main_menu_uppercase" style="background-color: black;">
-            <div class="container">
-            <nav class="navbar navbar-expand-lg"> 
-                <a class="navbar-brand" href="{{url('/')}}">
-                    <img class="logo_light" src="{{ asset('images/logo_light.png')}}" alt="logo">
-                    <img class="logo_dark" src="{{ asset('images/logo_dark.png')}}" alt="logo">
+<header class="head-bar">
+        <div class="main-header clearfix">
+            <div class="head-info d-inline-block">
+                <a href="index.php" class="d-block  p-0 pr-xl-2 head-logo">
+                     <!-- <img src="img/sitzfeldt.png" alt="" class="head-logo"> -->
+                     Custom closet
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"> 
-                    <span class="ion-android-menu"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li><a class="nav-link"  href="#">Home</a></li>
-                        <li><a class="nav-link nav_item" href="about.html">About Us</a></li> 
-                        <li class="dropdown-mega-menu"><a class="nav-link" href="#" data-toggle="dropdown">Products</a></li>
-                        <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li> 
-                        <li>
-                            <a class="nav-link" href="#" data-toggle="dropdown">Blog</a>
-                        </li>
-                        <li><a class="nav-link nav_item" href="faq.html">Faq</a></li>
-                        @if (!Auth::guest())
-                        <li><a class="nav-link nav_item" href="{{route('account')}}">My Account</a></li> 
-                        @else
-                        <li><a class="nav-link nav_item" href="{{route('login')}}">Login</a></li> 
-                        @endif
-                    </ul>
-                </div>
-                <ul class="navbar-nav attr-nav align-items-center">
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-toggle="dropdown"><i class="linearicons-cart"></i><span class="cart_count">{{ $cartCount }}</span></a>
-                        <div class="cart_box dropdown-menu dropdown-menu-right">
-                            <ul class="cart_list">
-                                @foreach ($cartContains as $product)
-                                    <li>
-                                        <a href="#" class="item_remove">
-                                        <input type="hidden" class="rowId" value="{{$product->rowId}}">
-                                        <i class="ion-close"></i></a>
-                                        <a href="#"> {{$product->name}}</a>
-                                        <span class="cart_quantity"> {{$product->qty}} x <span class="cart_amount"> <span class="price_symbole">₹</span></span>{{$product->price}}</span>
-                                    </li>
-                                @endforeach
+            </div>
+            <div class="head-navbar d-inline-block">
+                <nav class="head-nav">
+                    <ul class="head-nav-ul">
+                        <!-- <li class="head-nav-li">
+                            <span class="link-cover d-block d-lg-none"></span>
+                            <a href="" class="head-nav-link has-dropdown">PRODUCTS</a>
+                            <ul class="head-nav-ul head-sub-menu">
+                                <li class="head-nav-li head-dropdown-back">
+                                    <a class="head-nav-link">back</a>
+                                </li>
+                                <li class="head-nav-li">
+                                    <a href="" class="head-nav-link">Submenu 1</a>
+                                </li>
+                                <li class="head-nav-li">
+                                    <a href="" class="head-nav-link">Submenu 2</a>
+                                </li>
+                                <li class="head-nav-li">
+                                    <a href="" class="head-nav-link">Submenu 3</a>
+                                </li>
+                                <li class="head-nav-li">
+                                    <a href="" class="head-nav-link">Submenu 4</a>
+                                </li>
                             </ul>
-                            <div class="cart_footer">
-                                <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">₹</span></span>{{$cartSubTotal}}</p>
-                                <p class="cart_buttons"><a href="{{ url('/cart/') }}" class="btn btn-fill-line view-cart">View Cart</a>{{-- <a href="#" class="btn btn-fill-out checkout">Checkout</a> --}}</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+                        </li> -->
+                        <li class="head-nav-li">
+                            <a href="index.php" class="head-nav-link">home</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="about.php" class="head-nav-link">ABOUT US</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="" class="head-nav-link">resources</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="" class="head-nav-link">portfolio</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="blog.php" class="head-nav-link">blog</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="faq.php" class="head-nav-link">faq</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="" class="head-nav-link">contact us</a>
+                        </li>
+                        <li class="head-nav-li d-lg-none">
+                            <a href="" class="head-nav-link">country</a>
+                        </li>
+                        <li class="head-nav-li d-lg-none">
+                            <a href="tel:" class="head-nav-link">T +49 (0)30 60 988 588</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="head-shopbar d-inline-block float-right">
+                <span class="head-shop-icon">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                </span>
+                <span class="head-shop-icon">
+                    <a href="" title="Favorite"><img src="{{URL::asset('/images/icon/hearticon.png')}}" alt=""></a>
+                </span>
+                <span class="head-shop-icon">
+                    <a href="" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
+                </span>
+                <span class="head-shop-icon main-toggler d-lg-none">
+                    <span class="burger">
+                        <span></span>
+                    </span>
+                </span>
             </div>
         </div>
-    </header><!-- END HEADER -->
+        <div class="head-alert-bar">
+            <span> Informationen zur aktuellen Situation bei Custom Closet. </span>
+            <span class="actioninfo-icon"><strong>i</strong></span>
+            <span><a href="">Mehr erfahren</a></span>
+        </div>
+    </header>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="auth-modal modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Custome closet</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">            
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sign In</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Sign Up</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="form-tabs-content">
+                   <div class="form-block">
+                      <form id="loginform" method="POST">
+                         <div class="form-group">
+                            <label for="Email">Email <span class="mandatory">*</span></label>
+                            <input type="text" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-password" value="">
+                         </div>
+                         <div class="form-group">
+                            <label for="Password">Password <span class="mandatory">*</span><span class="link">Forgot password?</span></label>
+                            <input type="password" class="form-control" id="Password" name="password" placeholder="******" autocomplete="new-password">
+                         </div>
+                         <div class="form-group form-button"><button id="submit" class="btn btn-auth">Login</button></div>
+                         <div class="divider-line"><span class="">OR</span></div>
+                         <div class="social-auth">
+                            <button class="btn social-btn google-btn">
+                                <span class="icon-block">
+                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" width="40px" class="ico-img">
+                                </span>
+                                Login With Google
+                            </button>
+                            <button class="btn social-btn facebook-btn">
+                                <span class="icon-block">
+                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4-1.png" width="40px" class="ico-img">
+                                </span>
+                                Login With Facebook
+                            </button>
+                         </div>
+                      </form>
+                   </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="form-tabs-content">
+                   <div class="form-items">
+                        <form id="signupform" method="POST">
+                            <div class="form-flexed-row">
+                               <div class="form-group">
+                                  <label for="Name">First Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="Name" name="firstName" placeholder="John" autocomplete="new-firstName" value="">
+                               </div>
+                               <div class="form-group">
+                                  <label for="lastName">Last Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" autocomplete="new-lastName" value="">
+                               </div>
+                            </div>
+                            <div class="form-group">
+                               <label for="Email">Email<span class="mandatory">*</span></label><input type="text" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="">
+                            </div>
+                            <div class="form-group">
+                               <label for="number">Mobile Number <span class="mandatory">*</span></label><input type="text" class="form-control" id="number" name="contactNumber" placeholder="xxxxxxxxxx" maxlength="14" autocomplete="new-number" value="">
+                            </div>
+                            <div class="form-flexed-row">
+                               <div class="form-group">
+                                  <label for="Password">Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="">
+                               </div>
+                               <div class="form-group">
+                                  <label for="re-password">Confirm Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="re-password" name="confirmPassword" placeholder="Confirm Password" autocomplete="conf-password" value="">
+                               </div>
+                            </div>
+                            <div class="form-group form-button"><button id="submit" type="submit" class="btn btn-auth">Create Account</button></div>
+                        </form>                    
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HEADER -->
 
 @yield('content')
 
 <!--=================================
 footer-->
 @yield('fcontent')
-    <div class="middle_footer mb-4 mb-md-5">
-    	<div class="container">
-        	<div class="row">
-            	<div class="col-12">
-                	<div class="contact_bottom_info">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style3 border-0 p-0">
-                                    <div class="icon">
-                                        <i class="ti-location-pin"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                    	<h5>Location</h5>
-                                        <p>123 Street, Old Trafford, </br> NewYork, USA</p>
-                                    </div>
-                                </div>
+
+    <footer class="footer-wrapper">
+        <div class="footer-inner m-auto content-section">
+        <div class="pre-footer">
+                    <div class="row m-0 text-center text-sm-left">
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+                            <h5 class="text-uppercase mb-3">About Us</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit culpa neque.
+                                <br><a href="">More about us &gt;&gt;</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+                            <h5 class="text-uppercase mb-3">Quick Links</h5>
+                            <ul class="footer-nav-ul">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">About us</a></li>
+                                <li><a href="">resources</a></li>
+                                <li><a href="">portfolio</a></li>
+                                <li><a href="">blog</a></li>
+                                <li><a href="">faq</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
+                            <h5 class="text-uppercase mb-3">Showrooms</h5>
+                            <ul class="footer-nav-ul">
+                                <li><a href="">Berlin</a></li>
+                                <li><a href="">Cologne</a></li>
+                                <li><a href="">Frankfurt</a></li>
+                                <li><a href="">Munich</a></li>
+                                <li><a href="">Hamburg</a></li>
+                                <li><a href="">Stuttgart</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <h5 class="text-uppercase mb-3">Help</h5>
+                            <ul class="footer-nav-ul">
+                                <li>
+                                    <a href="" class="font-weight-bold">+49 (0)30 60 988 588</a>
+                                </li>
+                                <li>
+                                    <a href="" class="text-underline">service@customcloset.com</a>
+                                </li>
+                                <li><a href="">contact us</a></li>
+                                <li><a href="">Terms &amp; Conditions</a></li>
+                                <li><a href="">privacy policy</a></li>
+                            </ul>
+                            <div class="d-flex w-100 align-items-center mt-4">
+                                <span class="footer-socialicon">
+                                    <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/fb-white.png')}}" alt=""></a>
+                                </span>
+                                <span class="footer-socialicon">
+                                    <a href="" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/insta-white.png')}}" alt=""></a>
+                                </span>
+                                <span class="footer-socialicon">
+                                    <a href="" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest-white.png')}}" alt=""></a>
+                                </span>
                             </div>
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style3 border-0 p-0">
-                                    <div class="icon">
-                                        <i class="ti-email"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                    	<h5>Email us</h5>
-                                        <p><a href="mailto:info@sitename.com">info@sitename.com</a> </br> <a href="mailto:bestwebcreator.com">bestwebcreator.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">	
-                                <div class="icon_box icon_box_style3 border-0 p-0">
-                                    <div class="icon">
-                                        <i class="flaticon-support"></i>
-                                    </div>
-                                    <div class="icon_box_content">
-                                    	<h5>27/4 Online Support</h5>
-                                        <p>Call for styling advice on </br> <a href="tell:+123 1234 5678">+123 1234 5678</a> </p>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="post-footer text-center text-sm-left">
+                <div class="row m-0">
+                    <div class="col-sm-5 p-lg-0">
+                        <!-- <img src="img/sitzfeldt-white.png" alt="" class="foot-logo"> -->
+                        <span class="footer-logo">Custom Closets</span>
+                    </div>
+                    <div class="col-sm-7 p-lg-0">
+                        <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">
+                            <a href="https://en.sitzfeldt.com/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47955">Returns</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47956">Terms of Service</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="bottom_footer bg_dark4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-md-0 text-center text-md-left">© 2020 All Rights Reserved by Bestwebcreator</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="footer_payment text-center text-md-right">
-                        <li><a href="#"><img src="{{ asset('images/visa.png')}}" alt="visa"></a></li>
-                        <li><a href="#"><img src="{{ asset('images/discover.png')}}" alt="discover"></a></li>
-                        <li><a href="#"><img src="{{ asset('images/master_card.png')}}" alt="master_card"></a></li>
-                        <li><a href="#"><img src="{{ asset('images/paypal.png')}}" alt="paypal"></a></li>
-                        <li><a href="#"><img src="{{ asset('images/amarican_express.png')}}" alt="amarican_express"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+        </div> 
+    </footer>
 <!-- END FOOTER -->
   <!-- Latest jQuery -->
   <!-- <script src="{{ asset('js/js-popper.min.js')}}"></script>Latest compiled and minified Bootstrap -->
   <script src="{{ asset('js/js-bootstrap.min.js')}}"></script><!-- owl-carousel min js  -->
   <script src="{{ asset('js/js-owl.carousel.min.js')}}"></script><!--magnific-popup min js--> 
   <!-- <script src="{{ asset('js/js-magnific-popup.min.js')}}"></script>waypoints min js  -->
-  <script src="{{ asset('js/js-waypoints.min.js')}}"></script><!-- parallax js  -->
-  <script src="{{ asset('js/js-parallax.js')}}"></script><!-- countdown js  -->
-  <script src="{{ asset('js/js-jquery.countdown.min.js')}}"></script><!-- fit video  -->
-  <script src="{{ asset('js/js-Hoverparallax.min.js')}}"></script><!-- jquery.countTo js  -->
-  <script src="{{ asset('js/js-jquery.countTo.js')}}"></script><!-- imagesloaded js -->
+  <!--<script src="{{ asset('js/js-waypoints.min.js')}}"></script>--> <!-- parallax js  -->
+  <!--<script src="{{ asset('js/js-parallax.js')}}"></script>--> <!-- countdown js  -->
+  <!--<script src="{{ asset('js/js-jquery.countdown.min.js')}}"></script>--> <!-- fit video  -->
+  <!--<script src="{{ asset('js/js-Hoverparallax.min.js')}}"></script>--><!-- jquery.countTo js  -->
+  <!--<script src="{{ asset('js/js-jquery.countTo.js')}}"></script>--> <!-- imagesloaded js -->
   <!-- <script src="{{ asset('js/js-imagesloaded.pkgd.min.js')}}"></script>isotope min js -->
-  <script src="{{ asset('js/js-isotope.min.js')}}"></script><!-- jquery.appear js  -->
-  <script src="{{ asset('js/js-jquery.appear.js')}}"></script><!-- jquery.parallax-scroll js -->
-  <script src="{{ asset('js/js-jquery.parallax-scroll.js')}}"></script><!-- jquery.dd.min js -->
-  <script src="{{ asset('js/js-jquery.dd.min.js')}}"></script><!-- slick js -->
-  <script src="{{ asset('js/js-slick.min.js')}}"></script><!-- elevatezoom js -->
-  <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script><!-- scripts js -->
+  <!--<script src="{{ asset('js/js-isotope.min.js')}}"></script>--> <!-- jquery.appear js  -->
+  <!--<script src="{{ asset('js/js-jquery.appear.js')}}"></script>--> <!-- jquery.parallax-scroll js -->
+  <!--<script src="{{ asset('js/js-jquery.parallax-scroll.js')}}"></script>--> <!-- jquery.dd.min js -->
+  <!--<script src="{{ asset('js/js-jquery.dd.min.js')}}"></script>--> <!-- slick js -->
+  <!-- <script src="{{ asset('js/js-slick.min.js')}}"></script> elevatezoom js -->
+  <!-- <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>scripts js -->
   <script src="{{ asset('js/js-scripts.js')}}"></script>
-  <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script>
+  <!-- <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script> -->
 </body>
 
 </html>

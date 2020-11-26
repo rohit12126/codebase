@@ -267,9 +267,9 @@ Route::get('product/detail','ProductController@detail')->name('product.detail');
 Route::get('blog/', 'BlogController@index')->name('blog.list');
 Route::get('blog/detail','BlogController@detail')->name('blog.detail');
 
-Route::get('home/', 'BlogController@index')->name('home');
-Route::get('faq/', 'BlogController@index')->name('faq');
-Route::get('about-us/', 'BlogController@index')->name('about-us');
+Route::get('home/', 'HomeController@home')->name('home');
+Route::get('faq/', 'HomeController@faq')->name('faq');
+Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
