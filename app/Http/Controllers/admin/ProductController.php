@@ -30,7 +30,7 @@ class ProductController extends Controller
         }else{
             Common::setMessage(__('product_add_failed'), 'error');
         }
-        return back();
+        return redirect()->route('admin.product.list');
     }
 
     public function editProduct($id)
