@@ -96,7 +96,6 @@ class ProductManager
 
     public static function getProductListPaginated($req)
     {
-        // dd($req->all());
         if (
             $req->product_name !== null
             || $req->stock_less !== null
@@ -112,9 +111,9 @@ class ProductManager
             if ($req->stock_less) {
                 $order->where('stock_qty', '<=', $req->stock_less);
             }
-            return $order->paginate(1);
+            return $order->orderBy('id', 'desc')->paginate(4);
         } else {
-            return ProductModel::with('images')->paginate(1);
+            return ProductModel::with('images')->orderBy('id', 'desc')->paginate(4);
         }
     }
 

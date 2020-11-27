@@ -16,25 +16,42 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
                         <h4>Product Filter</h4>
+                        </div>
+                        <div class="col-4">
+                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                            @csrf
+                        <button type="submit" class="btn btn-primary" style="float: right;">
+                                Submit
+                            </button>
+                            @if(@$_POST)
+                            <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
+                                Clear Active Filters
+                            </a>
+                            @endif
+                        </div>
+                    </div>
+
                     </div>
                     <div class="card-body">
                         @include('partials.alert_msg')
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
-                            @csrf
+                        
                             <input type="hidden" name="page" id="page" value="" />
-                            <div class="row">
-                                <div class="col-6">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
                                     <label>Product Name</label>
                                     <input type="text" placeholder="Product Name" name="product_name"
                                         class="form-control" value="{{ @$_POST['product_name'] }}">
+                                    </div>
+                                    <div class="col">
                                     <label>Stock Less Quantity</label>
                                     <input type="text" placeholder="Stock Less Quantity" name="stock_less" class="form-control"
                                         value="{{ @$_POST['stock_less'] }}" autocomplete="off">
-                                </div>
-                                <div class="col-6">
-                                  
-
+                                    </div>
+                                    <div class="col">
                                     <label>Status</label>
                                     <select name="product_status" id="" class="form-control">
                                         <option value="">Select Status</option>
@@ -43,16 +60,10 @@
                                         <option value="0" @if(@$_POST['product_status']==2) selected @endif </option>In-Active
                                         </option>
                                     </select>
-                                    
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <button type="submit" class="btn btn-primary">
-                                Submit
-                            </button>
-                            <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                Back
-                            </a>
+                                </div>
+                         
                         </form>
                     </div>
                 </div>

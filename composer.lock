@@ -4,6 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "hash": "29b1380497b5b798f7334bb31f2a72c4",
+=======
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
     "content-hash": "2929563bd485acef9c13c0f0cd7daf54",
     "packages": [
         {
@@ -164,7 +168,11 @@
                 "laravel",
                 "reviewable"
             ],
+<<<<<<< HEAD
+            "time": "2020-08-24 07:26:39"
+=======
             "time": "2020-11-24T00:48:48+00:00"
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1183,7 +1191,11 @@
                 "laravel",
                 "oauth"
             ],
+<<<<<<< HEAD
+            "time": "2020-11-24 17:34:35"
+=======
             "time": "2020-11-24T17:34:35+00:00"
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "laravel/tinker",
@@ -3291,7 +3303,11 @@
                 "payment processing",
                 "stripe"
             ],
+<<<<<<< HEAD
+            "time": "2020-11-24 16:33:56"
+=======
             "time": "2020-11-24T16:33:56+00:00"
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6548,16 +6564,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "7.0.10",
+            "version": "7.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf"
+                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f1884187926fbb755a9aaf0b3836ad3165b478bf",
-                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8eb390a862ec0408fd8ec90fa939ca253ef14218",
+                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218",
                 "shasum": ""
             },
             "require": {
@@ -6607,7 +6623,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+            "time": "2020-11-27 05:19:31"
+=======
             "time": "2019-11-20T13:55:58+00:00"
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6801,16 +6821,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.9",
+            "version": "8.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6"
+                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
-                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ebd3963f9ba330f98a8fe6ccf5390839e868af75",
+                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75",
                 "shasum": ""
             },
             "require": {
@@ -6826,7 +6846,7 @@
                 "phar-io/version": "^2.0.1",
                 "php": "^7.2",
                 "phpspec/prophecy": "^1.10.3",
-                "phpunit/php-code-coverage": "^7.0.10",
+                "phpunit/php-code-coverage": "^7.0.11",
                 "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.1.2",
@@ -6880,7 +6900,60 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+            "time": "2020-11-27 05:24:14"
+        },
+        {
+            "name": "scrivo/highlight.php",
+            "version": "v9.18.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/scrivo/highlight.php.git",
+                "reference": "fa75a865928a4a5d49e5e77faca6bd2f2410baaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/fa75a865928a4a5d49e5e77faca6bd2f2410baaf",
+                "reference": "fa75a865928a4a5d49e5e77faca6bd2f2410baaf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.7",
+                "sabberworm/php-css-parser": "^8.3",
+                "symfony/finder": "^2.8|^3.4",
+                "symfony/var-dumper": "^2.8|^3.4"
+            },
+            "suggest": {
+                "ext-dom": "Needed to make use of the features in the utilities namespace"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Highlight\\": "",
+                    "HighlightUtilities\\": ""
+                },
+                "files": [
+                    "HighlightUtilities/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Geert Bergman",
+                    "homepage": "http://www.scrivo.org/",
+                    "role": "Project Author"
+                },
+=======
             "funding": [
+>>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
                 {
                     "url": "https://phpunit.de/donate.html",
                     "type": "custom"
