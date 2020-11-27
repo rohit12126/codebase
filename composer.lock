@@ -4,10 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "29b1380497b5b798f7334bb31f2a72c4",
-=======
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
     "content-hash": "2929563bd485acef9c13c0f0cd7daf54",
     "packages": [
         {
@@ -168,11 +164,7 @@
                 "laravel",
                 "reviewable"
             ],
-<<<<<<< HEAD
-            "time": "2020-08-24 07:26:39"
-=======
             "time": "2020-11-24T00:48:48+00:00"
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1191,11 +1183,7 @@
                 "laravel",
                 "oauth"
             ],
-<<<<<<< HEAD
-            "time": "2020-11-24 17:34:35"
-=======
             "time": "2020-11-24T17:34:35+00:00"
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "laravel/tinker",
@@ -3018,16 +3006,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "3.17.0",
+            "version": "3.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "35d40a45e49f5713f477823b571e05ef6a3a0394"
+                "reference": "1c51a5fa12131565fe3860705163e53d7a26258a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/35d40a45e49f5713f477823b571e05ef6a3a0394",
-                "reference": "35d40a45e49f5713f477823b571e05ef6a3a0394",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/1c51a5fa12131565fe3860705163e53d7a26258a",
+                "reference": "1c51a5fa12131565fe3860705163e53d7a26258a",
                 "shasum": ""
             },
             "require": {
@@ -3035,7 +3023,7 @@
                 "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
                 "illuminate/contracts": "^5.8|^6.0|^7.0|^8.0",
                 "illuminate/database": "^5.8|^6.0|^7.0|^8.0",
-                "php": "^7.2.5"
+                "php": "^7.2.5|^8.0"
             },
             "require-dev": {
                 "orchestra/testbench": "^3.8|^4.0|^5.0|^6.0",
@@ -3084,11 +3072,11 @@
             ],
             "funding": [
                 {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
+                    "url": "https://github.com/spatie",
+                    "type": "github"
                 }
             ],
-            "time": "2020-09-16T16:47:18+00:00"
+            "time": "2020-11-09T14:08:36+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -3303,11 +3291,7 @@
                 "payment processing",
                 "stripe"
             ],
-<<<<<<< HEAD
-            "time": "2020-11-24 16:33:56"
-=======
             "time": "2020-11-24T16:33:56+00:00"
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6564,16 +6548,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "7.0.11",
+            "version": "7.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218"
+                "reference": "52f55786aa2e52c26cd9e2db20aff2981e0f7399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8eb390a862ec0408fd8ec90fa939ca253ef14218",
-                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/52f55786aa2e52c26cd9e2db20aff2981e0f7399",
+                "reference": "52f55786aa2e52c26cd9e2db20aff2981e0f7399",
                 "shasum": ""
             },
             "require": {
@@ -6623,11 +6607,13 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-            "time": "2020-11-27 05:19:31"
-=======
-            "time": "2019-11-20T13:55:58+00:00"
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
+            "funding": [
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-27T06:08:35+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6900,60 +6886,7 @@
                 "testing",
                 "xunit"
             ],
-<<<<<<< HEAD
-            "time": "2020-11-27 05:24:14"
-        },
-        {
-            "name": "scrivo/highlight.php",
-            "version": "v9.18.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "fa75a865928a4a5d49e5e77faca6bd2f2410baaf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/fa75a865928a4a5d49e5e77faca6bd2f2410baaf",
-                "reference": "fa75a865928a4a5d49e5e77faca6bd2f2410baaf",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.7",
-                "sabberworm/php-css-parser": "^8.3",
-                "symfony/finder": "^2.8|^3.4",
-                "symfony/var-dumper": "^2.8|^3.4"
-            },
-            "suggest": {
-                "ext-dom": "Needed to make use of the features in the utilities namespace"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Highlight\\": "",
-                    "HighlightUtilities\\": ""
-                },
-                "files": [
-                    "HighlightUtilities/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Geert Bergman",
-                    "homepage": "http://www.scrivo.org/",
-                    "role": "Project Author"
-                },
-=======
             "funding": [
->>>>>>> fa72835c98b0ae78cab1718db57e90b06ad5f477
                 {
                     "url": "https://phpunit.de/donate.html",
                     "type": "custom"
@@ -6963,7 +6896,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-10T12:51:38+00:00"
+            "time": "2020-11-27T05:24:14+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

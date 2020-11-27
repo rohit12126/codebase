@@ -122,26 +122,17 @@
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="form-tabs-content">
                    <div class="form-block">
-                   {{-- method="POST" action="{{ route('login') }}" --}}
                       <form id="loginform" >
                          <div class="form-group">
                             <label for="Email">Email <span class="mandatory">*</span></label>
-                            <input type="text" class="form-control" id="Email" name="email" placeholder="{{ __('E-Mail Address') }}" autocomplete="new-password" value="{{ old('email') }}">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="{{ __('E-Mail Address') }}" autocomplete="new-password" value="{{ old('email') }}">
                          </div>
-                         @error('email')
-                            <span class="text-danger" role="alert">
-                                {{ $message }}
-                            </span>
-                         @enderror
+                         <div class="email_error"> </div>
                          <div class="form-group">
                             <label for="Password">Password <span class="mandatory">*</span><a href="{{ route('password.request') }}" class="link">Forgot password?</a></label>
-                            <input type="password" class="form-control" id="Password" name="password" placeholder="******" autocomplete="new-password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="******" autocomplete="new-password">
                          </div>
-                         @error('password')
-                            <span class="text-danger" role="alert">
-                                {{ $message }}
-                            </span>
-                        @enderror
+                         <div class="password_error"> </div>
                          <div class="form-group form-button"><button type="submit" id="login" class="btn btn-auth">Login</button></div>
                          <div class="divider-line"><span class="">OR</span></div>
                          <div class="social-auth">
@@ -309,31 +300,45 @@ footer-->
     jQuery(document).ready(function() {
 
         /* Login functionality */
-        jQuery('#loginform').submit(function() {
-            alert('check I -->');
-            var values = $(this).serialize();
-            
-            console.log(values);
-        });
-
-        /* jQuery('#login').click(function(e) {
-            var rowId = $( this ).children('.rowId').val();
-            var rowId = $( this ).children('.rowId').val();
-
+        jQuery('#loginform').submit(function(e) {
             e.preventDefault();
+            var email = $("#email").val();
+            var password = $("#password").val();
+            
+            if (email.length === 0) {
+                $(".email_error").html('<span class="text-danger" role="alert"> Email field is required.</span>');
+                return false;
+            } else {
+                $(".email_error").html('');
+            }
+
+            if (password.length === 0) {
+                $(".password_error").html('<span class="text-danger" role="alert"> Password field is required.</span>');
+                return false;
+            } else {
+                $(".password_error").html('');
+            }
+            
             jQuery.ajax({
-                url: "{{ url('/cart/remove-product') }}",
+                url: "{{ url('/login') }}",
+                dataType: 'json',
                 method: 'post',
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
-                    rowId : rowId
+                    email : email,
+                    password : password
                 },
-                success: function(result){
-                    alert("Item successfully removed from the cart.");
-                    location.reload(true);
+                success: function(result) {
+                    if (result.status == "success") {
+                        window.location.href = "{{ route('account')}}";
+                    } else {
+                        $(".email_error").html('<span class="text-danger" role="alert"> '+result.message+'</span>');
+                        return false;
+                    }
                 }
             });
-        }); */
+        });
+
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
             var rowId = $( this ).children('.rowId').val();
