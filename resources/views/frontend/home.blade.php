@@ -101,4 +101,38 @@
             </div>
         </div>
     </section>
+    <section class="grid-tiems-section">
+        <div class="grid-2020">
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-kostenlose-lieferung_0.jpg&quot;);">
+              <span class="text-wrapper">
+                 <p><strong>Free Delivery.</strong><br>Free and fast premium two-man delivery, all the way to your living room. Even the returns are free!</p>
+              </span>
+           </div>
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-100-tage_0.jpg&quot;);">
+              <span class="text-wrapper">
+                 <p><strong>100 day trial.</strong><br>100 days of risk-free sitting. If it’s not a perfect fit, we’ll pick it up for free and refund your money.</p>
+              </span>
+           </div>
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-nachhaltig_0.jpg&quot;);">
+              <span class="text-wrapper hasstars">
+                 <p><strong>Excellent service.</strong><br>Actual people, no bots, ready to help via email, chat or phone, Mon-Fri. from 9am - 6pm.<br><a href="tel:&#8203;+493060988588">&#8203;+49 30 60 988 588</a></p>
+              </span>
+           </div>
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-faire-preise_0.jpg&quot;);">
+              <span class="text-wrapper">
+                 <p><strong>Sustainability.&nbsp;</strong><br>Our Promise: Made in Europe, wood sustainably forested and leather certified with the environmental label Blauer Engel.</p>
+              </span>
+           </div>
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-ausgezeichnetes_design_0.jpg&quot;);">
+              <span class="text-wrapper">
+                 <p><strong>Awarded Design.</strong><br>Our sofas do not only excite customers but also experts and design juries.</p>
+              </span>
+           </div>
+           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url(&quot;https://www.sitzfeldt.com/sites/default/files/sitzfeldt-service_0.jpg&quot;);">
+              <span class="text-wrapper">
+                 <p><strong>Fair Prices.</strong><br>Cutting out the middleman means a unique value-for-money deal for our customers.</p>
+              </span>
+           </div>
+        </div>
+    </section>
 @endsection

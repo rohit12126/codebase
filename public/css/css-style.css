@@ -3191,7 +3191,77 @@ input.text {
 /*===================================*
   04.END SHOP BANNER STYLE
 *===================================*/
-
+.grid-tiems-section{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+.grid-column-image-wrapper {
+	height: calc(33vw * 1.25);
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	background-repeat: no-repeat;
+	float: left;
+	overflow: hidden;
+	width: 33.33333%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.grid-column-image-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: inherit;
+	transition: inherit;
+}
+.grid-column-image-wrapper::before {
+	transform: scale(1.01);
+}
+.grid-column-image-wrapper:hover {
+	cursor: pointer;
+}
+.grid-column-image-wrapper span.text-wrapper {
+	font-size: 16px;
+	line-height: 25px;
+	min-height: 30%;
+}
+.grid-column-image-wrapper span.text-wrapper, .grid-column-image-wrapper span.button-wrapper {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 50%;
+	min-width: 70%;
+	margin-top: -20px;
+}
+.grid-column-image-wrapper span.text-wrapper {
+	top: auto;
+	color: #FFF;
+	bottom: 20px;
+	padding: 0 30px;
+	box-sizing: border-box;
+}
+.grid-column-image-wrapper:hover::before {
+	transform: scale(1.1);
+}
+@media only screen and (min-width: 81.25em){
+	.grid-column-image-wrapper span.text-wrapper strong, .grid-column-image-wrapper span.text-wrapper {
+			font-size: 20px;
+			line-height: 29px;
+	}
+}
+@media only screen and (min-width: 93.75em){
+	.grid-column-image-wrapper span.text-wrapper, .grid-column-image-wrapper span.text-wrapper strong {
+			font-size: 24px;
+			line-height: 34px;
+	}
+}
 /*===================================*
   05.START CATEGORIES STYLE
 *===================================*/
@@ -3782,111 +3852,7 @@ h6.blog_title {
 /*===================================*
   10.START NEWLETTER STYLE
 *===================================*/
-.newsletter_small {
-	padding: 70px 0;
-}
-.newsletter_form form,
-.newsletter_form2 form {
-	position: relative;
-}
-.rounded-input {
-	border-radius: 50px;
-}
-.newsletter_form input,
-.newsletter_form input:focus,
-.newsletter_form2 input,
-.newsletter_form2 input:focus {
-	border: 0;
-}
-.newsletter_form input.form-control-sm {
-	height: 50px;
-	padding: 10px 140px 10px 20px;
-}
-.newsletter_form button {
-	position: absolute;
-	right: 0px;
-	top: 50%;
-	-moz-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-.newsletter_form2 input,
-.newsletter_form2 input:focus {
-	height: 59px;
-	padding: 10px 140px 10px 20px;
-}
-.newsletter_form2 button {
-	position: absolute;
-	right: 5px;
-	top: 4px;
-}
-.newsletter_box {
-	padding: 70px 50px;
-	background-color: #fff;
-	position: relative;
-}
-.newsletter_box::before {
-	content: "";
-	position: absolute;
-	left: 10px;
-	right: 0px;
-	bottom: 0px;
-	top: 10px;
-	box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
-	z-index: 0;
-}
-.newsletter_wrap {
-	position: relative;
-	margin: 30px 0;
-}
-.newsletter_wrap::before {
-	content: "";
-	position: absolute;
-	left: 15px;
-	right: 15px;
-	bottom: -15px;
-	top: -15px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-	z-index: -1;
-	background-color: #fff;
-}
-.newsletter_wrap::after {
-	content: "";
-	position: absolute;
-	left: 30px;
-	right: 30px;
-	bottom: -30px;
-	top: -30px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-	z-index: -2;
-	background-color: #fff;
-}
-.newsletter_form .btn-send {
-	background-color: #FF324D;
-	color: #fff;
-	font-size: 20px;
-	right: 5px;
-	border: 0;
-	border-radius: 100%;
-	width: 40px;
-	height: 40px;
-	padding: 0;
-	line-height: 40px;
-}
-.newsletter_form .btn-send2 {
-	background-color: transparent;
-	color: #FF324D;
-	font-size: 20px;
-	right: 5px;
-	width: 50px;
-	height: 40px;
-	line-height: 40px;
-	border-left: 1px solid #ddd;
-	border-top: 0;
-	border-bottom: 0;
-	border-right: 0;
-	padding: 0 0 0 5px;
-}
+
 .input_tran_white input, .input_tran_white input:focus {
 	background-color: rgba(255,255,255,0.1);
 	color: #fff;
@@ -3912,23 +3878,7 @@ h6.blog_title {
 	color:#ffffff;
 	opacity:1
 }
-.newsletter_text {
-	position: relative;
-	padding-left: 80px;
-}
-.newsletter_text p:last-child {
-	margin: 0;
-}
-.newsletter_text::before {
-	content: "\e999";
-	position: absolute;
-	left: 0;
-	color: #fff;
-	font-family: linearicons;
-	font-size: 65px;
-	line-height: normal;
-	opacity: 0.4;
-}
+
 /*===================================*
   10.END NEWLETTER STYLE
 *===================================*/
@@ -8331,3 +8281,70 @@ h5 {
 	margin-left: -40%;
 	z-index: 0;
 }*/
+/*===================================products=========================================*/
+.products-tab-ul li
+{
+    margin: 0.5rem 1rem;
+}
+.products-list-row{
+    width: 100%;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    justify-content: center;
+}
+.products-list-col
+{
+    box-sizing: border-box;
+    width: 33.33%;
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+}
+.products-list-product
+{
+    position: relative;
+    padding-bottom: 35px;
+}
+.products-list-product a
+{
+    display: block;
+}
+.products-list-product
+{
+    width: 100%;
+}
+.products-list-product .btn
+{
+    position: absolute;
+    visibility: hidden;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 40px;
+    transition: 0.3s all;
+}
+.products-list-product:hover .btn
+{
+    visibility: visible;
+}
+.products-list-title, .products-list-price {
+    width: 50%;
+    line-height: 22px;
+    float: left;
+    padding: 0.4rem;
+}
+.products-list-price
+{
+    text-align: right;
+    font-size: 14px;
+    font-weight: 300;
+}
+.products-list-title h2
+{
+    font-size: 18px;
+    margin: 0;
+}
