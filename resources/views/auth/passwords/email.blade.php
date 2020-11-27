@@ -32,14 +32,6 @@
                                 <button type="submit" class="btn btn-fill-out btn-block" name="login">Send Password Reset Link </button>
                             </div>
                         </form>
-                        <div class="different_login">
-                            <span> or</span>
-                        </div>
-                       <div class="form-note text-center">Go Back to Login? 
-                        @if (Route::has('password.request'))
-                          <a href="{{ route('login') }}">
-                        @endif
-                        Login</a></div>
                     </div>
                 </div>
             </div>

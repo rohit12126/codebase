@@ -122,30 +122,32 @@
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="form-tabs-content">
                    <div class="form-block">
-                      <form id="loginform" method="POST">
+                      <form id="loginform" >
                          <div class="form-group">
                             <label for="Email">Email <span class="mandatory">*</span></label>
-                            <input type="text" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-password" value="">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="{{ __('E-Mail Address') }}" autocomplete="new-password" value="{{ old('email') }}">
                          </div>
+                         <div class="email_error"> </div>
                          <div class="form-group">
-                            <label for="Password">Password <span class="mandatory">*</span><span class="link">Forgot password?</span></label>
-                            <input type="password" class="form-control" id="Password" name="password" placeholder="******" autocomplete="new-password">
+                            <label for="Password">Password <span class="mandatory">*</span><a href="{{ route('password.request') }}" class="link">Forgot password?</a></label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="******" autocomplete="new-password">
                          </div>
-                         <div class="form-group form-button"><button id="submit" class="btn btn-auth">Login</button></div>
+                         <div class="password_error"> </div>
+                         <div class="form-group form-button"><button type="submit" id="login" class="btn btn-auth">Login</button></div>
                          <div class="divider-line"><span class="">OR</span></div>
                          <div class="social-auth">
-                            <button class="btn social-btn google-btn">
+                            <a href="{{ url('/login/google') }}" class="btn social-btn google-btn">
                                 <span class="icon-block">
-                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" width="40px" class="ico-img">
+                                    <img src="{{URL::asset('/logo/google-logo.png')}}" width="40px" class="ico-img">
                                 </span>
                                 Login With Google
-                            </button>
-                            <button class="btn social-btn facebook-btn">
+                            </a>
+                            <a href="{{ url('/login/facebook') }}" class="btn social-btn facebook-btn">
                                 <span class="icon-block">
-                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4-1.png" width="40px" class="ico-img">
+                                    <img src="{{URL::asset('/logo/facebook-logo.png')}}" width="40px" class="ico-img">
                                 </span>
                                 Login With Facebook
-                            </button>
+                            </a>
                          </div>
                       </form>
                    </div>
@@ -295,7 +297,48 @@ footer-->
 </html>
 @yield('scripts')
 <script>
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function() {
+
+        /* Login functionality */
+        jQuery('#loginform').submit(function(e) {
+            e.preventDefault();
+            var email = $("#email").val();
+            var password = $("#password").val();
+            
+            if (email.length === 0) {
+                $(".email_error").html('<span class="text-danger" role="alert"> Email field is required.</span>');
+                return false;
+            } else {
+                $(".email_error").html('');
+            }
+
+            if (password.length === 0) {
+                $(".password_error").html('<span class="text-danger" role="alert"> Password field is required.</span>');
+                return false;
+            } else {
+                $(".password_error").html('');
+            }
+            
+            jQuery.ajax({
+                url: "{{ url('/login') }}",
+                dataType: 'json',
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    email : email,
+                    password : password
+                },
+                success: function(result) {
+                    if (result.status == "success") {
+                        window.location.href = "{{ route('account')}}";
+                    } else {
+                        $(".email_error").html('<span class="text-danger" role="alert"> '+result.message+'</span>');
+                        return false;
+                    }
+                }
+            });
+        });
+
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
             var rowId = $( this ).children('.rowId').val();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Classes\HelperManager as Common;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\MessageBag;
 use App\SocialIdentity;
@@ -103,13 +104,13 @@ class LoginController extends Controller
     }
 
     public function login(Request $request)
-    {
+    {   
         $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
 
         if (\Auth::attempt($this->getCredentials($request))) {
-            return  redirect()->back();
+            return Common::response('success', 'Logged in successfully!');
         }
-        $errors = new MessageBag(['password' => ['These credentials do not match our records.']]); 
-        return redirect()->back()->withErrors($errors);
+
+        return Common::response('error', 'These credentials do not match our records.!');
     }
 }

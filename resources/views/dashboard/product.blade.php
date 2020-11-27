@@ -77,21 +77,42 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
-                                        <label for="">Product Image <span class="btn btn-primary btn-sm" id="addMore" onclick="addMore()">Add More</span> </label>
+                                     <div class="container">
+                                        <div class="row">
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
-                                        @if($key > 0) <div>
-                                            <hr> @endif
-                                            <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
-                                            <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
-                                            <img src="{{ url('') }}/upload/product/{{ $value->image }}" width="100" />
+                                            <div class="col-sm-4 imgUp">
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});">
+                                                </div>
+                                            <label class="btn btn-primary">
+                                                Upload
+                                            </label>
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
                                             @if($key > 0)
-                                            <bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button></div>
-                                        @endif
+                                            <i class="fa fa-times del"></i>
+                                            @endif
+                                            </div>
+                                            @endforeach
+                                        <i class="fa fa-plus imgAdd"></i>
+                                        </div>
+                                    </div>
 
-                                        @endforeach
                                         @else
-                                        <input id="file-input" type="file" name="image[]" class="form-control" accept="image/*" required>
+                                          
+                                    
+                                        <br><div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4 imgUp">
+                                                <div class="imagePreview">
+                                                </div>
+                                            <label class="btn btn-primary">
+                                                Upload
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                            </label>
+                                            </div>
+                                            <i class="fa fa-plus imgAdd"></i>
+                                            </div>
+                                        </div>
                                         @endif
                                     </div>
                                 </div>
@@ -105,12 +126,87 @@
     </div>
 </div>
 </div>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<style>
+.imagePreview {
+    width: 100%;
+    height: 90px;
+    background-position: center center;
+  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
+  background-color:#fff;
+    background-size: cover;
+  background-repeat:no-repeat;
+    display: inline-block;
+  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.btn-primary
+{
+  display:block;
+  border-radius:0px;
+  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+  margin-top:-5px;
+}
+.imgUp
+{
+  margin-bottom:15px;
+}
+.del
+{
+  position:absolute;
+  top:0px;
+  right:15px;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:rgba(255,255,255,0.6);
+  cursor:pointer;
+}
+.imgAdd
+{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#4bd7ef;
+  color:#fff;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align:center;
+  line-height:30px;
+  margin-top:0px;
+  cursor:pointer;
+  font-size:15px;
+}
+</style>
 @endsection
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script>
+$(".imgAdd").click(function(){
+  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i></div>');
+});
+$(document).on("click", "i.del" , function() {
+	$(this).parent().remove();
+});
+$(function() {
+    $(document).on("change",".uploadFile", function()
+    {
+    		var uploadFile = $(this);
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; 
+        if (/^image/.test( files[0].type)){
+            var reader = new FileReader(); 
+            reader.readAsDataURL(files[0]);
+ 
+            reader.onloadend = function(){
+uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+            }
+        }
+      
+    });
+});
+</script>
 <script>
     $("#myform").validate({
         submitHandler: function(form) {
@@ -122,7 +218,7 @@
 </script>
 <script>
     function addMore() {
-        document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><div>';
+        document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" onchange="openFile(event)" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><img id="output"><div>';
     }
 
 </script>
