@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "969e226be9972a7e036b6368d05be8b5",
-    "content-hash": "78c580f78d55a0b4b24f8a68666dee92",
+    "hash": "29b1380497b5b798f7334bb31f2a72c4",
+    "content-hash": "2929563bd485acef9c13c0f0cd7daf54",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -159,7 +159,7 @@
                 "laravel",
                 "reviewable"
             ],
-            "time": "2020-08-24T07:26:39+00:00"
+            "time": "2020-08-24 07:26:39"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1053,16 +1053,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v5.1.0",
+            "version": "v5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "14082c665186348028e5bde17ab33b21b36dac79"
+                "reference": "dc786c41eb3615ca430da3b9aa5c9c0282f7e390"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/14082c665186348028e5bde17ab33b21b36dac79",
-                "reference": "14082c665186348028e5bde17ab33b21b36dac79",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/dc786c41eb3615ca430da3b9aa5c9c0282f7e390",
+                "reference": "dc786c41eb3615ca430da3b9aa5c9c0282f7e390",
                 "shasum": ""
             },
             "require": {
@@ -1114,7 +1114,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2020-11-03 19:24:43"
+            "time": "2020-11-24 17:34:35"
         },
         {
             "name": "laravel/tinker",
@@ -3043,16 +3043,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.65.0",
+            "version": "v7.66.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "d4a22eeec7654efb8476fe8bea95b1e9928025a6"
+                "reference": "0dc50f42b06be83fe7029410616bda6e89c6d2be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d4a22eeec7654efb8476fe8bea95b1e9928025a6",
-                "reference": "d4a22eeec7654efb8476fe8bea95b1e9928025a6",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/0dc50f42b06be83fe7029410616bda6e89c6d2be",
+                "reference": "0dc50f42b06be83fe7029410616bda6e89c6d2be",
                 "shasum": ""
             },
             "require": {
@@ -3096,7 +3096,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-11-19 19:37:25"
+            "time": "2020-11-24 16:33:56"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5901,16 +5901,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "7.0.10",
+            "version": "7.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf"
+                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f1884187926fbb755a9aaf0b3836ad3165b478bf",
-                "reference": "f1884187926fbb755a9aaf0b3836ad3165b478bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8eb390a862ec0408fd8ec90fa939ca253ef14218",
+                "reference": "8eb390a862ec0408fd8ec90fa939ca253ef14218",
                 "shasum": ""
             },
             "require": {
@@ -5960,7 +5960,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-11-20 13:55:58"
+            "time": "2020-11-27 05:19:31"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6154,16 +6154,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.9",
+            "version": "8.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6"
+                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
-                "reference": "f5c8a5dd5e7e8d68d7562bfb48d47287d33937d6",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ebd3963f9ba330f98a8fe6ccf5390839e868af75",
+                "reference": "ebd3963f9ba330f98a8fe6ccf5390839e868af75",
                 "shasum": ""
             },
             "require": {
@@ -6179,7 +6179,7 @@
                 "phar-io/version": "^2.0.1",
                 "php": "^7.2",
                 "phpspec/prophecy": "^1.10.3",
-                "phpunit/php-code-coverage": "^7.0.10",
+                "phpunit/php-code-coverage": "^7.0.11",
                 "phpunit/php-file-iterator": "^2.0.2",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.1.2",
@@ -6233,7 +6233,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-11-10 12:51:38"
+            "time": "2020-11-27 05:24:14"
         },
         {
             "name": "scrivo/highlight.php",
