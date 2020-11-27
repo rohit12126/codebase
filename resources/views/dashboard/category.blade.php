@@ -28,9 +28,15 @@
                                     <button type="submit" class="btn btn-primary">
                                         @if(isset($category)) Update @else Submit @endif
                                     </button>
+                                    @if(isset($category))
+                                    <a href="{{route('admin.category')}}" class="btn btn-danger text-white">
+                                        Cancel
+                                    </a>
+                                    @else
                                     <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
                                         Cancel
                                     </a>
+                                    @endif
                                 </div>
                         </form>
                     </div>
