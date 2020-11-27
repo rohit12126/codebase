@@ -77,22 +77,29 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
-                                        <label for="">Product Image 
-                                        <span class="btn btn-primary btn-sm" id="addMore" onclick="addMore()">Add More</span> 
-                                        </label>
+                                     <div class="container">
+                                        <div class="row">
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
-                                        @if($key > 0) <div>
-                                            <hr> @endif
-                                            <input id="file-input" type="file" name="image[{{ $value->id }}]" class="form-control" accept="image/*">
-                                            <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
-                                            <img src="{{ url('') }}/upload/product/{{ $value->image }}" width="100" />
+                                            <div class="col-sm-4 imgUp">
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});">
+                                                </div>
+                                            <label class="btn btn-primary">
+                                                Upload
+                                            </label>
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
                                             @if($key > 0)
-                                            <bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button></div>
-                                        @endif
+                                            <i class="fa fa-times del"></i>
+                                            @endif
+                                            </div>
+                                            @endforeach
+                                        <i class="fa fa-plus imgAdd"></i>
+                                        </div>
+                                    </div>
 
-                                        @endforeach
                                         @else
+                                          
+                                    
                                         <br><div class="container">
                                         <div class="row">
                                             <div class="col-sm-4 imgUp">
