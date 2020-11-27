@@ -14,7 +14,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- SITE TITLE -->
-    <title>Ecommerce</title><!-- Favicon Icon -->
+    <title>Custom Closet</title><!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png')}}"><!-- Animation CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-animate.css')}}">Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-bootstrap.min.css')}}">
@@ -46,58 +46,30 @@
 <header class="head-bar">
         <div class="main-header clearfix">
             <div class="head-info d-inline-block">
-                <a href="index.php" class="d-block  p-0 pr-xl-2 head-logo">
-                     <!-- <img src="img/sitzfeldt.png" alt="" class="head-logo"> -->
-                     Custom closet
+                <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
+                    Custom Closet
                 </a>
             </div>
             <div class="head-navbar d-inline-block">
                 <nav class="head-nav">
                     <ul class="head-nav-ul">
-                        <!-- <li class="head-nav-li">
-                            <span class="link-cover d-block d-lg-none"></span>
-                            <a href="" class="head-nav-link has-dropdown">PRODUCTS</a>
-                            <ul class="head-nav-ul head-sub-menu">
-                                <li class="head-nav-li head-dropdown-back">
-                                    <a class="head-nav-link">back</a>
-                                </li>
-                                <li class="head-nav-li">
-                                    <a href="" class="head-nav-link">Submenu 1</a>
-                                </li>
-                                <li class="head-nav-li">
-                                    <a href="" class="head-nav-link">Submenu 2</a>
-                                </li>
-                                <li class="head-nav-li">
-                                    <a href="" class="head-nav-link">Submenu 3</a>
-                                </li>
-                                <li class="head-nav-li">
-                                    <a href="" class="head-nav-link">Submenu 4</a>
-                                </li>
-                            </ul>
-                        </li> -->
                         <li class="head-nav-li">
-                            <a href="index.php" class="head-nav-link">home</a>
+                            <a href="{{ url('home/') }}" class="head-nav-link">Home</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="about.php" class="head-nav-link">ABOUT US</a>
+                            <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="" class="head-nav-link">resources</a>
+                            <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="" class="head-nav-link">portfolio</a>
+                            <a href="{{ url('faq/') }}" class="head-nav-link">Faq</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="blog.php" class="head-nav-link">blog</a>
-                        </li>
-                        <li class="head-nav-li">
-                            <a href="faq.php" class="head-nav-link">faq</a>
-                        </li>
-                        <li class="head-nav-li">
-                            <a href="" class="head-nav-link">contact us</a>
+                            <a href="#" class="head-nav-link">contact us</a>
                         </li>
                         <li class="head-nav-li d-lg-none">
-                            <a href="" class="head-nav-link">country</a>
+                            <a href="#" class="head-nav-link">country</a>
                         </li>
                         <li class="head-nav-li d-lg-none">
                             <a href="tel:" class="head-nav-link">T +49 (0)30 60 988 588</a>
@@ -132,7 +104,7 @@
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Custome closet</h4>
+            <h4 class="modal-title" id="exampleModalLabel">Custome Closet</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
