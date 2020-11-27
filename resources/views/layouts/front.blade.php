@@ -122,30 +122,41 @@
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="form-tabs-content">
                    <div class="form-block">
-                      <form id="loginform" method="POST">
+                   {{-- method="POST" action="{{ route('login') }}" --}}
+                      <form id="loginform" >
                          <div class="form-group">
                             <label for="Email">Email <span class="mandatory">*</span></label>
-                            <input type="text" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-password" value="">
+                            <input type="text" class="form-control" id="Email" name="email" placeholder="{{ __('E-Mail Address') }}" autocomplete="new-password" value="{{ old('email') }}">
                          </div>
+                         @error('email')
+                            <span class="text-danger" role="alert">
+                                {{ $message }}
+                            </span>
+                         @enderror
                          <div class="form-group">
-                            <label for="Password">Password <span class="mandatory">*</span><span class="link">Forgot password?</span></label>
+                            <label for="Password">Password <span class="mandatory">*</span><a href="{{ route('password.request') }}" class="link">Forgot password?</a></label>
                             <input type="password" class="form-control" id="Password" name="password" placeholder="******" autocomplete="new-password">
                          </div>
-                         <div class="form-group form-button"><button id="submit" class="btn btn-auth">Login</button></div>
+                         @error('password')
+                            <span class="text-danger" role="alert">
+                                {{ $message }}
+                            </span>
+                        @enderror
+                         <div class="form-group form-button"><button type="submit" id="login" class="btn btn-auth">Login</button></div>
                          <div class="divider-line"><span class="">OR</span></div>
                          <div class="social-auth">
-                            <button class="btn social-btn google-btn">
+                            <a href="{{ url('/login/google') }}" class="btn social-btn google-btn">
                                 <span class="icon-block">
-                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" width="40px" class="ico-img">
+                                    <img src="{{URL::asset('/logo/google-logo.png')}}" width="40px" class="ico-img">
                                 </span>
                                 Login With Google
-                            </button>
-                            <button class="btn social-btn facebook-btn">
+                            </a>
+                            <a href="{{ url('/login/facebook') }}" class="btn social-btn facebook-btn">
                                 <span class="icon-block">
-                                    <img src="https://risepuerto.c247.website/wp-content/uploads/2020/10/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4-1.png" width="40px" class="ico-img">
+                                    <img src="{{URL::asset('/logo/facebook-logo.png')}}" width="40px" class="ico-img">
                                 </span>
                                 Login With Facebook
-                            </button>
+                            </a>
                          </div>
                       </form>
                    </div>
@@ -295,7 +306,34 @@ footer-->
 </html>
 @yield('scripts')
 <script>
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function() {
+
+        /* Login functionality */
+        jQuery('#loginform').submit(function() {
+            alert('check I -->');
+            var values = $(this).serialize();
+            
+            console.log(values);
+        });
+
+        /* jQuery('#login').click(function(e) {
+            var rowId = $( this ).children('.rowId').val();
+            var rowId = $( this ).children('.rowId').val();
+
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/remove-product') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    rowId : rowId
+                },
+                success: function(result){
+                    alert("Item successfully removed from the cart.");
+                    location.reload(true);
+                }
+            });
+        }); */
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
             var rowId = $( this ).children('.rowId').val();
