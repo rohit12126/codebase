@@ -63,15 +63,16 @@ class LoginController extends Controller
            return redirect('/login');
        }
 
+       if($user->getemail()== null){
+        return redirect()->route('register');
+    }
+
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
        return redirect()->back();
    }
    public function findOrCreateUser($providerUser, $provider)
    {
-       if($providerUser->getemail()== null){
-           return redirect()->route('register');
-       }
        $account = SocialIdentity::whereProviderName($provider)
                   ->whereProviderId($providerUser->getId())
                   ->first();
