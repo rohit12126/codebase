@@ -20,6 +20,7 @@
                     </div>
                     
                     <div class="card-body">
+                    @include('partials.alert_msg')
                         <table class="table table-striped table-bordered datatable">
                             <thead>
                                 <tr>
@@ -40,10 +41,10 @@
                                     <!-- <td>4</td>
                                     <td>5</td> -->
                                     <td>
-                                        <a class="btn btn-info" title="Approve This Review">
+                                        <a class="btn btn-info" href="{{ url('admin/review/approv', $value->id) }}" title="Approve This Review">
                                             <i class="cil-thumb-up"></i>
                                         </a>
-                                        <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" title="Delete">
+                                        <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
