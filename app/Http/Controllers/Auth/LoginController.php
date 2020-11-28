@@ -63,6 +63,10 @@ class LoginController extends Controller
            return redirect('/login');
        }
 
+       if($user->getemail()== null){
+        return redirect()->route('register');
+    }
+
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
        return redirect()->back();

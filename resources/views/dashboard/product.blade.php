@@ -23,7 +23,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Categoty</label>
-                                        <select class="form-control" id="select3" name="category_id" required>
+                                        <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Product Name</label>
-                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}">
+                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of product">
                                     </div>
                                     <div class="form-group">
                                         <label>Purchase Price</label>
@@ -126,6 +126,8 @@
     </div>
 </div>
 </div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <style>
 .imagePreview {
