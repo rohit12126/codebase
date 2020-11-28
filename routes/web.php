@@ -291,3 +291,6 @@ Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status
 
 /*Rating Routes*/
 Route::post('/submit/review', 'ProductController@rating');
+
+Route::get('/admin/reviews' , 'admin\ReviewController@allActive')->name('admin.aprooved');
+Route::get('/admin/new/reviews' , 'admin\ReviewController@allInActive')->name('admin.toaprooved');

@@ -86,12 +86,14 @@
                 <div class="form-group">
                 <label for="review">Write a Review
                 </label>
+                <span class="mandatory">*</span>
                     <div class="input-group-prepend">
                         <textarea name="review" class="form-control" rows="4" cols="50"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                 <label for="rating">Rate us Out of 5 :)</label>
+                <span class="mandatory">*</span>
                     <select class="form-control" name="rating">
                         <option value="1">1</option>
                         <option value="2">2</option>

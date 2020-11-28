@@ -58,6 +58,11 @@
     </script>
 
     <link href="{{ asset('css/coreui-chartjs.css') }}" rel="stylesheet">
+    <style>
+      .mandatory {
+      color: red;
+      }
+    </style>
   </head>
 
 

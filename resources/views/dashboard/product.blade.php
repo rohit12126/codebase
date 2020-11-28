@@ -23,6 +23,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Categoty</label>
+                                        <span class="mandatory">*</span>
                                         <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
@@ -32,6 +33,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Product Name</label>
+                                        <span class="mandatory">*</span>
                                         <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of product">
                                     </div>
                                     <div class="form-group">
@@ -41,10 +43,12 @@
 
                                     <div class="form-group">
                                         <label>Sale Price</label>
+                                        <span class="mandatory">*</span>
                                         <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
                                     </div>
                                     <div class="form-group">
                                         <label>Stock Quantity</label>
+                                        <span class="mandatory">*</span>
                                         <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}" title="Enter Stock Quantity of product">
                                     </div>
                                     <div class="form-group">
@@ -54,6 +58,7 @@
 
                                     <div class="form-group">
                                         <label for="">Status</label>
+                                        <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
                                             <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
@@ -62,6 +67,7 @@
 
                                     <div class="form-group">
                                         <label for="">Is Accessory</label>
+                                        <span class="mandatory">*</span>
                                         <select name="is_accessory" id="" class="form-control" title="Is product accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>

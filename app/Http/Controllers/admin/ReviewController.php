@@ -21,4 +21,24 @@ class ReviewController extends Controller
     {
         $this->reviewManager = $reviewManager;
     }
+    
+    public function allActive()
+    {
+        $approved = $this->reviewManager->getAllActiveReviews();
+        return view('dashboard.approved_review_list', compact('approved'));
+    }
+    public function allInActive()
+    {
+        $approved = $this->reviewManager->getAllInActiveReviews();
+        return view('dashboard.new_review_list', compact('approved'));
+
+    }
+    public function delete($id)
+    {
+        return $this->reviewManager->deleteReview($id);
+    }
+    public function aproov($id)
+    {
+        return $this->reviewManager->aproovReview($id);
+    }
 }
