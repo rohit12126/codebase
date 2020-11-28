@@ -69,6 +69,9 @@ class LoginController extends Controller
    }
    public function findOrCreateUser($providerUser, $provider)
    {
+       if($providerUser->getemail()== null){
+           return redirect()->route('register');
+       }
        $account = SocialIdentity::whereProviderName($provider)
                   ->whereProviderId($providerUser->getId())
                   ->first();
