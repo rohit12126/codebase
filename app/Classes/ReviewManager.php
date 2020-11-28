@@ -13,7 +13,7 @@ class ReviewManager
     public function getAllActiveReviews()
     {
         $review = DB::table('reviews')->where('approved', 1)->paginate(5);
-        
+
         return $review;
     }
 
@@ -31,5 +31,10 @@ class ReviewManager
     {
         return DB::table('reviews')->where('id',$id)->update(['approved' => true]);;
     }
+    public function disapprovReview($id)
+    {
+        return DB::table('reviews')->where('id',$id)->update(['approved' => false]);;
+    }
+    
 
 }

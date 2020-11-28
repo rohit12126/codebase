@@ -75,6 +75,12 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
+        Route::get('/admin/reviews' , 'admin\ReviewController@allActive')->name('admin.aprooved');
+        Route::get('/admin/new/reviews' , 'admin\ReviewController@allInActive')->name('admin.toaprooved');
+        Route::get('admin/review/delete/{id?}', 'admin\ReviewController@delete');
+        Route::get('admin/review/approv/{id?}', 'admin\ReviewController@approv');
+        Route::get('admin/review/disapprov/{id?}', 'admin\ReviewController@disapprov');
+
     });
 
     Route::group(['middleware' => ['role:user']], function () {
@@ -292,5 +298,4 @@ Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status
 /*Rating Routes*/
 Route::post('/submit/review', 'ProductController@rating');
 
-Route::get('/admin/reviews' , 'admin\ReviewController@allActive')->name('admin.aprooved');
-Route::get('/admin/new/reviews' , 'admin\ReviewController@allInActive')->name('admin.toaprooved');
+

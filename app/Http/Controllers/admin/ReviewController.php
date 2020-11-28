@@ -35,10 +35,32 @@ class ReviewController extends Controller
     }
     public function delete($id)
     {
-        return $this->reviewManager->deleteReview($id);
+        $response = $this->reviewManager->deleteReview($id);
+        if($response == true){
+            Common::setMessage(__('review_delete_success'));
+        }else{
+            Common::setMessage(__('review_delete_failed'), 'error');
+        }
+        return back();
     }
-    public function aproov($id)
+    public function approv($id)
     {
-        return $this->reviewManager->aproovReview($id);
+        $response = $this->reviewManager->aproovReview($id);
+        if($response == true){
+            Common::setMessage(__('review_aproov_success'));
+        }else{
+            Common::setMessage(__('review_aproov_failed'), 'error');
+        }
+        return back();
+    }
+    public function disapprov($id)
+    {
+        $response = $this->reviewManager->disapprovReview($id);
+        if($response == true){
+            Common::setMessage(__('review_disaproov_success'));
+        }else{
+            Common::setMessage(__('review_disaproov_failed'), 'error');
+        }
+        return back();
     }
 }
