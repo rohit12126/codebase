@@ -290,7 +290,7 @@ footer-->
   <!--<script src="{{ asset('js/js-jquery.dd.min.js')}}"></script>--> <!-- slick js -->
   <!-- <script src="{{ asset('js/js-slick.min.js')}}"></script> elevatezoom js -->
   <!-- <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>scripts js -->
-  <script src="{{ asset('js/js-scripts.js')}}"></script>
+  <!-- <script src="{{ asset('js/js-scripts.js')}}"></script> -->
   <!-- <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script> -->
 </body>
 
@@ -356,5 +356,34 @@ footer-->
                 }
             });
         });
+
+        /** Home page animation */
+        var previousScroll = 0;    
+        var counter = 1;
+        var counterPlus = 0;
+        $(window).scroll(function () {
+        var currentScroll = $(this).scrollTop();
+        if (currentScroll > previousScroll){
+            
+                if ( $(window).scrollTop() >= 500) {
+                    counterPlus =  counter++;
+                    $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+                    //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
+                    console.log('down');
+                    
+                }
+        }
+            else {
+                console.log("UP")
+                if ( $(window).scrollTop() <= 700) {
+                    counterPlus =  counter--;
+                    $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+                    //$('.mover').css("transform", 'translate(' + +counterPlus+ '%, -50%)')
+                }
+                
+            }
+        previousScroll = currentScroll;
+        });
+        
     });
 </script>

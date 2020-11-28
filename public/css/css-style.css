@@ -3247,6 +3247,9 @@ input.text {
 	padding: 0 30px;
 	box-sizing: border-box;
 }
+.grid-column-image-wrapper p,.grid-column-image-wrapper a{
+	color: #fff;
+}
 .grid-column-image-wrapper:hover::before {
 	transform: scale(1.1);
 }
