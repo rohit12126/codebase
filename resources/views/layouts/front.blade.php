@@ -77,14 +77,12 @@
             <div class="head-shopbar d-inline-block float-right">
                 
                 <span class="head-shop-icon">
-                @guest
-                    <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                @endguest
-                @auth
-                <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                @endauth
-
-
+                    @guest
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                    @endguest
+                    @auth
+                    <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                    @endauth
                 </span>
 
                 <span class="head-shop-icon">
@@ -173,6 +171,7 @@
                             </div>
                             <div class="form-group">
                                <label for="Email">Email<span class="mandatory">*</span></label><input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="" required="true">
+                               <div class="Email_error"> </div>
                             </div>
                             <div class="form-group">
                                <label for="number">Mobile Number <span class="mandatory">*</span></label><input type="text" pattern="[7-9]{1}[0-9]{9}" class="form-control" title="Please input a valid mobile number" id="mobile" name="mobile" placeholder="xxxxxxxxxx" maxlength="14" autocomplete="new-number" value="" required="true">
@@ -180,9 +179,11 @@
                             <div class="form-flexed-row">
                                <div class="form-group">
                                   <label for="Password">Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="" required="true">
+                                  <div class="password_error"> </div>
                                </div>
                                <div class="form-group">
                                   <label for="re-password">Confirm Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="re-password" name="password_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="" required="true">
+                                  <div class="password_confirmation_error"> </div>
                                </div>
                             </div>
                             <div class="password_not_match_error"> </div>
@@ -348,12 +349,21 @@ footer-->
 
         jQuery('#signupform').submit(function(e) {
             e.preventDefault();
-            var name = $("#name").val();
+            
+            $(".Email_error").html('');
+            $(".password_error").html('');
+            $(".password_confirmation_error").html('');
+            $(".password_not_match_error").html('');
+
+            var name = $("#Name").val();
             var lastName = $("#lastName").val();
             var Email = $("#Email").val();
             var mobile = $("#mobile").val();
             var Password = $("#Password").val();
             var Repassword = $("#re-password").val();
+
+            var password_error = "";
+            var password_confirmation_error = "";
 
             name = name + lastName;
 
@@ -361,7 +371,7 @@ footer-->
                 $(".password_not_match_error").html('<span class="text-danger" role="alert">Password and confirm password did not match.</span>');
                 return false;
             }
-
+            
             jQuery.ajax({
                 url: "{{ url('/register') }}",
                 dataType: 'json',
@@ -375,11 +385,24 @@ footer-->
                     password_confirmation : Repassword
                 },
                 success: function(result) {
-                    
                     if (result.status == "success") {
                         window.location.href = "{{ route('account')}}";
                     } else {
-                        $(".email_error").html('<span class="text-danger" role="alert"> '+result.message+'</span>');
+                        
+                        $.each( result.errors, function( key, value ) {
+                            if (key == 'password') {
+                                $(".password_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+
+                            if (key == 'password_confirmation') {
+                                $(".password_confirmation_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+
+                            if (key == 'email') {
+                                $(".Email_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+                        });
+                        
                         return false;
                     }
                 }
