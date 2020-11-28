@@ -22,6 +22,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>Category Name</label>
+                                        <span class="mandatory">*</span>
                                         <input type="text" placeholder="category name" name="name" class="form-control"
                                             required value="{{ @$category->name }}">
                                     </div>
