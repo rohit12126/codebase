@@ -101,6 +101,26 @@ if(!function_exists('renderDropdown')){
             </li>
         </ul>
     </li>
+    <li class="c-sidebar-nav-dropdown" title="This is Review Section">
+        <a class="c-sidebar-nav-dropdown-toggle" href="#">
+            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            Reviews
+        </a>
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item" title="Find all blogs here">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.aprooved') }}">
+                    <i class="cil-list c-sidebar-nav-icon"></i>
+                   Aprooved
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item" title="Add a new Blog">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.toaprooved') }}">
+                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
+                    To Aprooved
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class="c-sidebar-nav-item"title="Secure Account today, Change Password">
         <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
