@@ -2677,7 +2677,21 @@
                 "image",
                 "spatie"
             ],
+<<<<<<< HEAD
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-27T14:44:09+00:00"
+=======
             "time": "2020-11-27 14:44:09"
+>>>>>>> 9320a0251c9a0b1cc0ca277d8dcba9af6c7b438e
         },
         {
             "name": "spatie/image-optimizer",

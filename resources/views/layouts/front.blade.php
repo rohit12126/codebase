@@ -77,14 +77,12 @@
             <div class="head-shopbar d-inline-block float-right">
                 
                 <span class="head-shop-icon">
-                @guest
-                    <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                @endguest
-                @auth
-                <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                @endauth
-
-
+                    @guest
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                    @endguest
+                    @auth
+                    <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                    @endauth
                 </span>
 
                 <span class="head-shop-icon">
@@ -162,29 +160,33 @@
               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="form-tabs-content">
                    <div class="form-items">
-                        <form id="signupform" method="POST">
+                        <form id="signupform" >
                             <div class="form-flexed-row">
                                <div class="form-group">
-                                  <label for="Name">First Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="Name" name="firstName" placeholder="John" autocomplete="new-firstName" value="">
+                                  <label for="Name">First Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="Name" name="name" placeholder="John" autocomplete="new-firstName" value="" required="true">
                                </div>
                                <div class="form-group">
-                                  <label for="lastName">Last Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" autocomplete="new-lastName" value="">
+                                  <label for="lastName">Last Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" autocomplete="new-lastName" value="" required="true">
                                </div>
                             </div>
                             <div class="form-group">
-                               <label for="Email">Email<span class="mandatory">*</span></label><input type="text" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="">
+                               <label for="Email">Email<span class="mandatory">*</span></label><input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="" required="true">
+                               <div class="Email_error"> </div>
                             </div>
                             <div class="form-group">
-                               <label for="number">Mobile Number <span class="mandatory">*</span></label><input type="text" class="form-control" id="number" name="contactNumber" placeholder="xxxxxxxxxx" maxlength="14" autocomplete="new-number" value="">
+                               <label for="number">Mobile Number <span class="mandatory">*</span></label><input type="text" pattern="[7-9]{1}[0-9]{9}" class="form-control" title="Please input a valid mobile number" id="mobile" name="mobile" placeholder="xxxxxxxxxx" maxlength="14" autocomplete="new-number" value="" required="true">
                             </div>
                             <div class="form-flexed-row">
                                <div class="form-group">
-                                  <label for="Password">Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="">
+                                  <label for="Password">Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="" required="true">
+                                  <div class="password_error"> </div>
                                </div>
                                <div class="form-group">
-                                  <label for="re-password">Confirm Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="re-password" name="confirmPassword" placeholder="Confirm Password" autocomplete="conf-password" value="">
+                                  <label for="re-password">Confirm Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="re-password" name="password_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="" required="true">
+                                  <div class="password_confirmation_error"> </div>
                                </div>
                             </div>
+                            <div class="password_not_match_error"> </div>
                             <div class="form-group form-button"><button id="submit" type="submit" class="btn btn-auth">Create Account</button></div>
                         </form>                    
                    </div>
@@ -339,6 +341,68 @@ footer-->
                         window.location.href = "{{ route('account')}}";
                     } else {
                         $(".email_error").html('<span class="text-danger" role="alert"> '+result.message+'</span>');
+                        return false;
+                    }
+                }
+            });
+        });
+
+        jQuery('#signupform').submit(function(e) {
+            e.preventDefault();
+            
+            $(".Email_error").html('');
+            $(".password_error").html('');
+            $(".password_confirmation_error").html('');
+            $(".password_not_match_error").html('');
+
+            var name = $("#Name").val();
+            var lastName = $("#lastName").val();
+            var Email = $("#Email").val();
+            var mobile = $("#mobile").val();
+            var Password = $("#Password").val();
+            var Repassword = $("#re-password").val();
+
+            var password_error = "";
+            var password_confirmation_error = "";
+
+            name = name + lastName;
+
+            if (Password != Repassword) {
+                $(".password_not_match_error").html('<span class="text-danger" role="alert">Password and confirm password did not match.</span>');
+                return false;
+            }
+            
+            jQuery.ajax({
+                url: "{{ url('/register') }}",
+                dataType: 'json',
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    name : name,
+                    email : Email,
+                    mobile : mobile,
+                    password : Password,
+                    password_confirmation : Repassword
+                },
+                success: function(result) {
+                    if (result.status == "success") {
+                        window.location.href = "{{ route('account')}}";
+                    } else {
+                        
+                        $.each( result.errors, function( key, value ) {
+                            if (key == 'password') {
+                                $(".password_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+
+                            if (key == 'password_confirmation') {
+                                $(".password_confirmation_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+
+                            if (key == 'email') {
+                                $(".Email_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                            }
+                        });
+                        
                         return false;
                     }
                 }
