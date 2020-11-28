@@ -48,13 +48,16 @@
             <div class="head-info d-inline-block">
                 <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
                     Custom Closet
-                </a>
+                </a><div class=""></div>
             </div>
             <div class="head-navbar d-inline-block">
                 <nav class="head-nav">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
                             <a href="{{ url('home/') }}" class="head-nav-link">Home</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
@@ -67,12 +70,6 @@
                         </li>
                         <li class="head-nav-li">
                             <a href="#" class="head-nav-link">contact us</a>
-                        </li>
-                        <li class="head-nav-li d-lg-none">
-                            <a href="#" class="head-nav-link">country</a>
-                        </li>
-                        <li class="head-nav-li d-lg-none">
-                            <a href="tel:" class="head-nav-link">T +49 (0)30 60 988 588</a>
                         </li>
                     </ul>
                 </nav>
