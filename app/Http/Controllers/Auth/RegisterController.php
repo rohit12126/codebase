@@ -106,7 +106,6 @@ class RegisterController extends Controller
                 'response_code' => 200
             );
         }
-        
         echo json_encode($response);
     }
 }
