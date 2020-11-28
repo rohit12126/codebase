@@ -14,7 +14,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Blog @if(isset($blog)) Edit @else Add @endif </h4>
+                        <h4>@if(isset($blog)) Edit @else Add @endif Blog</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">

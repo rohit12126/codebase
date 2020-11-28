@@ -46,11 +46,11 @@
                                     <input type="text" placeholder="Product Name" name="product_name"
                                         class="form-control" value="{{ @$_POST['product_name'] }}">
                                     </div>
-                                    <div class="col">
+                                    {{-- <div class="col">
                                     <label>Stock Less Quantity</label>
                                     <input type="text" placeholder="Stock Less Quantity" name="stock_less" class="form-control"
                                         value="{{ @$_POST['stock_less'] }}" autocomplete="off">
-                                    </div>
+                                    </div> --}}
                                     <div class="col">
                                     <label>Status</label>
                                     <select name="product_status" id="" class="form-control">
