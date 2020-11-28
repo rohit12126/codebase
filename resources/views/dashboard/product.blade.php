@@ -23,7 +23,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Categoty</label>
-                                        <select class="form-control" id="select3" name="category_id" required>
+                                        <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
@@ -32,29 +32,29 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Product Name</label>
-                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}">
+                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of product">
                                     </div>
                                     <div class="form-group">
                                         <label>Purchase Price</label>
-                                        <input type="number" placeholder="Purchase Price" name="purchase_price" class="form-control" required value="{{ @$product->purchase_price }}">
+                                        <input type="number" placeholder="Purchase Price" name="purchase_price" class="form-control" required value="{{ @$product->purchase_price }}" title="Enter Purchase price of product">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Sale Price</label>
-                                        <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}">
+                                        <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
                                     </div>
                                     <div class="form-group">
                                         <label>Stock Quantity</label>
-                                        <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}">
+                                        <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}" title="Enter Stock Quantity of product">
                                     </div>
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control" required>{{ @$product->description }}</textarea>
+                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about product" >{{ @$product->description }}</textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">Status</label>
-                                        <select name="status" id="" class="form-control">
+                                        <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
                                             <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
                                         </select>
@@ -62,13 +62,13 @@
 
                                     <div class="form-group">
                                         <label for="">Is Accessory</label>
-                                        <select name="is_accessory" id="" class="form-control">
+                                        <select name="is_accessory" id="" class="form-control" title="Is product accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" title="Submit Product">
                                         Submit
                                     </button>
                                     <a onclick="history.go(-1)" class="btn btn-danger text-white">
@@ -82,18 +82,18 @@
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});">
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title=" This is Product Image Preview" >
                                                 </div>
-                                            <label class="btn btn-primary">
+                                            <label class="btn btn-primary" >
                                                 Upload
                                             </label>
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload Images Here">
                                             @if($key > 0)
                                             <i class="fa fa-times del"></i>
                                             @endif
                                             </div>
                                             @endforeach
-                                        <i class="fa fa-plus imgAdd"></i>
+                                        <i class="fa fa-plus imgAdd" title="U may add more images"></i>
                                         </div>
                                     </div>
 
@@ -103,14 +103,14 @@
                                         <br><div class="container">
                                         <div class="row">
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview">
+                                                <div class="imagePreview" title=" This is Product Image Preview">
                                                 </div>
-                                            <label class="btn btn-primary">
+                                            <label class="btn btn-primary" title="Upload Images Here">
                                                 Upload
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                             </div>
-                                            <i class="fa fa-plus imgAdd"></i>
+                                            <i class="fa fa-plus imgAdd" title="U may add more images"></i>
                                             </div>
                                         </div>
                                         @endif
@@ -126,6 +126,8 @@
     </div>
 </div>
 </div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <style>
 .imagePreview {

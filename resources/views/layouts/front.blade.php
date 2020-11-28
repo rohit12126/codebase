@@ -48,13 +48,16 @@
             <div class="head-info d-inline-block">
                 <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
                     Custom Closet
-                </a>
+                </a><div class=""></div>
             </div>
             <div class="head-navbar d-inline-block">
                 <nav class="head-nav">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
                             <a href="{{ url('home/') }}" class="head-nav-link">Home</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
@@ -68,19 +71,20 @@
                         <li class="head-nav-li">
                             <a href="#" class="head-nav-link">contact us</a>
                         </li>
-                        <li class="head-nav-li d-lg-none">
-                            <a href="#" class="head-nav-link">country</a>
-                        </li>
-                        <li class="head-nav-li d-lg-none">
-                            <a href="tel:" class="head-nav-link">T +49 (0)30 60 988 588</a>
-                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="head-shopbar d-inline-block float-right">
                 
                 <span class="head-shop-icon">
+                @guest
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                @endguest
+                @auth
+                <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                @endauth
+
+
                 </span>
 
                 <span class="head-shop-icon">
@@ -293,7 +297,7 @@ footer-->
   <!--<script src="{{ asset('js/js-jquery.dd.min.js')}}"></script>--> <!-- slick js -->
   <!-- <script src="{{ asset('js/js-slick.min.js')}}"></script> elevatezoom js -->
   <!-- <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>scripts js -->
-  <script src="{{ asset('js/js-scripts.js')}}"></script>
+  <!-- <script src="{{ asset('js/js-scripts.js')}}"></script> -->
   <!-- <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script> -->
 </body>
 
@@ -399,5 +403,34 @@ footer-->
                 }
             });
         });
+
+        /** Home page animation */
+        var previousScroll = 0;    
+        var counter = 1;
+        var counterPlus = 0;
+        $(window).scroll(function () {
+        var currentScroll = $(this).scrollTop();
+        if (currentScroll > previousScroll){
+            
+                if ( $(window).scrollTop() >= 500) {
+                    counterPlus =  counter++;
+                    $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+                    //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
+                    console.log('down');
+                    
+                }
+        }
+            else {
+                console.log("UP")
+                if ( $(window).scrollTop() <= 700) {
+                    counterPlus =  counter--;
+                    $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+                    //$('.mover').css("transform", 'translate(' + +counterPlus+ '%, -50%)')
+                }
+                
+            }
+        previousScroll = currentScroll;
+        });
+        
     });
 </script>
