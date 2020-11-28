@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -74,5 +76,37 @@ class RegisterController extends Controller
         ]);
         // $user->assignRole('user');
         return $user;
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request)
+    {
+        if ($this->validator($request->all())->fails()) {
+            $errors = $this->validator($request->all())->errors()->getMessages();            
+            $clientErrors = array();
+            foreach ($errors as $key => $value) {
+                $clientErrors[$key] = $value[0];
+            }
+            $response = array(
+                'status' => 'error',
+                'response_code' => 201,
+                'errors' => $clientErrors
+            );            
+        } else {
+            $this->validator($request->all())->validate();
+            $user = $this->create($request->all());
+            $this->guard()->login($user);
+            $response = array(
+                'status' => 'success',
+                'response_code' => 200
+            );
+        }
+        
+        echo json_encode($response);
     }
 }
