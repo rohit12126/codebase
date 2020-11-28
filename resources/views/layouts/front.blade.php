@@ -79,7 +79,14 @@
             </div>
             <div class="head-shopbar d-inline-block float-right">
                 <span class="head-shop-icon">
+                @guest
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                @endguest
+                @auth
+                <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
+                @endauth
+
+
                 </span>
                 <span class="head-shop-icon">
                     <a href="" title="Favorite"><img src="{{URL::asset('/images/icon/hearticon.png')}}" alt=""></a>
