@@ -61,7 +61,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
+                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 

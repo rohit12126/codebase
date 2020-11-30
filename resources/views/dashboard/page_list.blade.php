@@ -14,9 +14,23 @@
     <div class="fade-in">
         <div class="row">
             <div class="col-sm-12">
+                @include('partials.alert_msg')
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Page List</h4>
+                        <div class="row">
+                            <div class="col-10">
+                                <h4>Page List</h4>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ url('admin/cms') }}" class="btn btn-primary btn-sm pull-right">
+                                    Create Page
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered datatable">
@@ -24,10 +38,10 @@
                                 <tr>
                                     <th>S No.</th>
                                     <th>Title</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach($page_list as $key => $value)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
@@ -42,13 +56,9 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
-                        {{-- @if(@!$_POST) --}}
-                        {{ @$product_list->links() }}
-                            
-                        {{-- @endif --}}
+                        {{ @$page_list->links() }}
                     </div>
                 </div>
             </div>

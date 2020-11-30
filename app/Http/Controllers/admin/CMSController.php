@@ -33,8 +33,8 @@ class CMSController extends Controller
 
     public function editPage($id)
     {
-        $product = CMSManager::getProductById($id);
-        $product_list = CMSManager::getProductList();
+        $page = CMSManager::getPageById($id);
+        $page_list = CMSManager::getPageList();
         return view('dashboard.page', compact('page_list', 'page'));
     }
 

@@ -37,7 +37,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is page Active or Inactive ?">
                                             <option @if(@$page->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$page->status == 0 && @$page->status != null) selected @endif value="0">In-Actice</option>
+                                            <option @if(@$page->status == 0 && @$page->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
                                     <div style="display: flex;flex-direction: row;">
