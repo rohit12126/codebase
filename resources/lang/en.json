@@ -47,6 +47,14 @@
     "user_update_success" : "User updated successfully!",
     "user_update_failed" : "Something went wrong unable to update User!",
     "user_delete_success" : "User deleted successfully!",
-    "user_delete_failed" : "Something went wrong unable to delete User!"
+    "user_delete_failed" : "Something went wrong unable to delete User!",
+    "faq_add_success": "Faq Added Successfully!",
+    "faq_add_failed" :"Failed to Add Faq!",
+    "faq_catagorey_add_success":"Faq Categorey Added Successfully",
+    "faq_catagorey_add_failed":"Something went wrong unable to Add Catagorey",
+    "faq_delete_success":"FAQ Deleted Succeddfully",
+    "faq_delete_failed":"Something went wrong unable to delete FAQ",
+    "faq_update_success":"FAQ Updated Successfully",
+    "faq_update_failed":"Something went wrong unable to update FAQ"
 
 }
