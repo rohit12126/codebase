@@ -46,25 +46,11 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-dropdown" title="Products">
-        <a class="c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+    <li class="c-sidebar-nav-item" title="Find Product Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Product
         </a>
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item" title="Find All Products here">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
-                    <i class="cil-list c-sidebar-nav-icon"></i>
-                    List
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item" title="Add a new Product">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.product') }}">
-                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    Add
-                </a>
-            </li>
-        </ul>
     </li>
 
     <li class="c-sidebar-nav-item" title="Users List">
