@@ -106,7 +106,6 @@
                                     </div>
 
                                         @else
-                                          
                                     
                                         <br><div class="container">
                                         <div class="row">
