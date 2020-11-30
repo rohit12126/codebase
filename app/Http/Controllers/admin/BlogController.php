@@ -46,7 +46,7 @@ class BlogController extends Controller
         }else{
             Common::setMessage(__('blog_add_failed'), 'error');
         }
-        return back();
+        return redirect()->route('admin.blog.list');
     }
 
     public function editBlog($id)
