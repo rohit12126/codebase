@@ -81,6 +81,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/review/approv/{id?}', 'admin\ReviewController@approv');
         Route::get('admin/review/disapprov/{id?}', 'admin\ReviewController@disapprov');
 
+        Route::get('admin/cms', 'admin\CMSController@index')->name('admin.cms');
+        Route::post('admin/cms', 'admin\CMSController@addPage')->name('admin.cms');
+        Route::get('admin/edit_cms/{id?}', 'admin\CMSController@editPage');
+        Route::post('admin/edit_cms/{id?}', 'admin\CMSController@editSubmitPage');
+        Route::get('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
+        Route::post('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
+        Route::get('admin/delete_page/{id?}', 'admin\CMSController@deletePage');
     });
 
     Route::group(['middleware' => ['role:user']], function () {
