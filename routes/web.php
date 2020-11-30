@@ -80,6 +80,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/review/delete/{id?}', 'admin\ReviewController@delete');
         Route::get('admin/review/approv/{id?}', 'admin\ReviewController@approv');
         Route::get('admin/review/disapprov/{id?}', 'admin\ReviewController@disapprov');
+        Route::get('admin/faq','admin\FaqController@index')->name('admin.faq');
+        Route::post('admin/faq','admin\FaqController@addFaq')->name('admin.faq');
+        Route::post('admin/faq/category','admin\FaqController@addFaqCategory')->name('admin.faq.category');
+        Route::get('admin/faq-list', 'admin\FaqController@faqList')->name('admin.faq.list');
+        Route::get('admin/delete_faq/{id?}', 'admin\FaqController@deleteFaq');
+        Route::get('admin/edit_faq/{id?}', 'admin\FaqController@editFaq');
+        Route::post('admin/edit_faq/{id?}', 'admin\FaqController@editSubmitFaq');
 
     });
 

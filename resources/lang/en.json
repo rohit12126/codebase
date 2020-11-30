@@ -41,6 +41,13 @@
     "user_update_success" : "User Updated Successfully!",
     "user_update_failed" : "User Updated Failed!",
     "user_delete_success" : "User deleted Successfully!",
-    "user_delete_failed" : "User deletion Failed!"
-
+    "user_delete_failed" : "User deletion Failed!",
+    "faq_add_success": "Faq Added Successfully!",
+    "faq_add_failed" :"Failed to Add Faq!",
+    "faq_catagorey_add_success":"Faq Categorey Added Successfully",
+    "faq_catagorey_add_failed":"Failed To Add Catagorey",
+    "faq_delete_success":"FAQ Deleted Succeddfully",
+    "faq_delete_failed":"FAQ Deletion Failed",
+    "faq_update_success":"FAQ Updated Successfully",
+    "faq_update_failed":"FAQ Updation Failed"
 }
