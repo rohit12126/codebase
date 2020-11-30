@@ -77,15 +77,6 @@
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                         </div>
-                                        {{-- <div class="col-sm-4 imgUp">
-                                            <div class="imagePreview" title=" This is Blog Image Preview">
-                                            </div>
-                                            <label class="btn btn-primary" title="Upload Image Here">
-                                                Upload
-                                            <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Image Here">
-                                        </label>
-                                        </div> --}}
-                                        {{--<input id="file-input" type="file" name="image" class="form-control" accept="image/*" required> --}}
                                     </div>
                                 </div>
                             </div>
