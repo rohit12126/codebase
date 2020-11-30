@@ -36,7 +36,7 @@
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$blog->title }}">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group"> 
                                         <label>Description</label>
                                         <span class="mandatory">*</span>
                                         <textarea placeholder="Description" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
