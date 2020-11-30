@@ -25,4 +25,8 @@ class EnquiryManager
     {
         return Enquiry::paginate(10);
     }
+    public static function contected($id)
+    {
+        return Enquiry::where('id',$id)->update(['connected' => true]);
+    }
 }

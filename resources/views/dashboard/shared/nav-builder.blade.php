@@ -120,6 +120,12 @@ if(!function_exists('renderDropdown')){
             </li>
         </ul>
     </li>
+    <li class="c-sidebar-nav-item"title="Check Enquries">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.enquiries') }}">
+            <i class="cil-address-book c-sidebar-nav-icon"></i>
+            Enquiries
+        </a>
+    </li>
     <li class="c-sidebar-nav-item"title="Secure Account today, Change Password">
         <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>

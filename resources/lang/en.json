@@ -55,6 +55,8 @@
     "faq_delete_success":"FAQ Deleted Succeddfully",
     "faq_delete_failed":"Something went wrong unable to delete FAQ",
     "faq_update_success":"FAQ Updated Successfully",
-    "faq_update_failed":"Something went wrong unable to update FAQ"
+    "faq_update_failed":"Something went wrong unable to update FAQ",
+    "enqury_contect_success":"Successfully Marked Connected",
+    "enqury_contect_failed":"Failed to updated Enqury Status Try Again"
 
 }

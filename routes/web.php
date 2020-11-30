@@ -95,7 +95,8 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::post('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::get('admin/delete_page/{id?}', 'admin\CMSController@deletePage');
-        Route::get('admin/enquries', 'admin\EnquiryController@list');
+        Route::get('admin/enquiries', 'admin\EnquiryController@list')->name('admin.enquiries');
+        Route::get('admin/update-enquiry/{id?}', 'admin\EnquiryController@contected');
 
     });
 

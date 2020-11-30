@@ -19,6 +19,7 @@ class CreateEnquiriesTable extends Migration
             $table->string('email');
             $table->string('phone_nu');
             $table->longText('message')->nullable();
+            $table->boolean('connected')->default(0);
             $table->timestamps();
         });
     }
