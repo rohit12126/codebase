@@ -21,12 +21,21 @@ class FaqController extends Controller
     {
         $this->faqManager = $faqManager;
     }
-
+    /**
+     * Load Add FAQ Form.
+     *
+     * @return void
+     */
     public function index()
     {
         $category_list = $this->faqManager->getCategoryList();
         return view('dashboard.faq',compact('category_list')); 
     }
+     /**
+     * Submit Add FAQ Form.
+     *
+     * @return bool
+     */
     public function addFaq(Request $req)
     {
         $response = $this->faqManager->add($req);
@@ -37,6 +46,11 @@ class FaqController extends Controller
         }
         return back();
     }
+    /**
+     * Submit Add FAQ Category.
+     *
+     * @return bool
+     */
     public function addFaqCategory(Request $req)
     {
         $response = $this->faqManager->addCategory($req);
@@ -47,18 +61,33 @@ class FaqController extends Controller
         }
         return back();
     }
+    /**
+     * FAQ List
+     * @return 
+     * 
+     */
     public function faqList(Request $req)
     {
         $faq_list = $this->faqManager->getfaqListPaginated($req);
         return view('dashboard.faq_list', compact('faq_list'));
     }
+      /**
+     * Load Edit FAQ Form.
+     *  @param $id
+     * @return bool
+     */
     public function editFaq($id)
     {
         $faq = $this->faqManager->getFaqById($id);
         $category_list = $this->faqManager->getCategoryList();
         return view('dashboard.faq', compact('category_list', 'faq'));
     }
-
+  /**
+     * Submit Edit FAQ Form.
+     *
+     * @return bool
+     * @param Request
+     */
     public function editSubmitFaq(Request $req)
     {
         $response = $this->faqManager->edit($req);
@@ -70,7 +99,11 @@ class FaqController extends Controller
         }
         return redirect()->route('admin.faq.list');
     }
-
+  /**
+     * Delete FAQ.
+     * @param $id
+     * @return bool
+     */
     public function deleteFaq($id)
     {
         $response = $this->faqManager->delete($id);
