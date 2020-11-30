@@ -16,42 +16,33 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-10">
-                                <h4>Blog List</h4>
-                            </div>
-                            <div class="col-2">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right">
-                                    Create Blog
-                                </a>
-                            </div>
-                        </div>
+                        <h4>Faq List</h4>
                     </div>
                     <div class="card-body">
+                    @include('partials.alert_msg')
                         <table class="table table-striped table-bordered datatable">
                             <thead>
                                 <tr>
                                     <th>S No.</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Image</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($blog_list as $key => $value)
+                                @foreach($faq_list as $key => $value)
+                                
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->title }}</td>
-                                    <td>{{ $value->description }}</td>
+                                    <td>{{ $value->body }}</td>
+                                    <td>{{$value->categori->category}}</td>
                                     <td>
-                                        <img src="{{ url('') }}/upload/blog/{{ @$value->image}}" width="50" />
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
+                                        <a class="btn btn-info" href="{{ url('admin/edit_faq', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                        <a class="btn btn-danger" href="{{ url('admin/delete_faq', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
@@ -61,7 +52,7 @@
                             </tbody>
                         </table>
                         {{-- @if(@!$_POST) --}}
-                        {{ @$blog_list->links() }}
+                        {{ @$faq_list->links() }}
                             
                         {{-- @endif --}}
                     </div>

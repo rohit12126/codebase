@@ -74,7 +74,16 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Product List</h4>
+                        <div class="row">
+                            <div class="col-10">
+                                <h4>Product List</h4>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right">
+                                    Create Product
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered datatable">

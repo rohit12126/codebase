@@ -36,7 +36,7 @@
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$blog->title }}">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group"> 
                                         <label>Description</label>
                                         <span class="mandatory">*</span>
                                         <textarea placeholder="Description" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
@@ -46,7 +46,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control">
                                             <option @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
-                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">Inactive</option>
+                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 
@@ -61,13 +61,31 @@
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Image </label>
                                         <span class="mandatory">*</span>
-                                        @if(isset($blog->image))
-                                            <input id="file-input" type="file" name="image" class="form-control" accept="image/*">
-                                            <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
-                                            <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" width="100" />
-                                        @else
-                                        <input id="file-input" type="file" name="image" class="form-control" accept="image/*" required>
-                                        @endif
+
+                                        <div class="col-sm-4 imgUp">
+                                            <div class="imagePreview" title=" This is Blog Image Preview">
+                                                
+                                                @if(isset($blog->image))
+                                                    <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage" width="100" />
+                                                    <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
+                                                @else
+                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage" width="100" />
+                                                @endif
+                                            </div>
+                                            <label class="btn btn-primary" title="Upload Images Here">
+                                                Upload
+                                                <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
+                                            </label>
+                                        </div>
+                                        {{-- <div class="col-sm-4 imgUp">
+                                            <div class="imagePreview" title=" This is Blog Image Preview">
+                                            </div>
+                                            <label class="btn btn-primary" title="Upload Image Here">
+                                                Upload
+                                            <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Image Here">
+                                        </label>
+                                        </div> --}}
+                                        {{--<input id="file-input" type="file" name="image" class="form-control" accept="image/*" required> --}}
                                     </div>
                                 </div>
                             </div>
@@ -86,6 +104,22 @@
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<script>
+$(function() {
+    $(document).on("change",".uploadFile", function()
+    {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('.previewImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+</script>
+
 <script>
     $("#myform").validate({
         submitHandler: function(form) {

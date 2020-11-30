@@ -61,7 +61,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
+                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 
@@ -106,7 +106,6 @@
                                     </div>
 
                                         @else
-                                          
                                     
                                         <br><div class="container">
                                         <div class="row">
@@ -138,54 +137,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <style>
-.imagePreview {
-    width: 100%;
-    height: 90px;
-    background-position: center center;
-  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
-  background-color:#fff;
-    background-size: cover;
-  background-repeat:no-repeat;
-    display: inline-block;
-  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
-}
-.btn-primary
-{
-  display:block;
-  border-radius:0px;
-  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
-  margin-top:-5px;
-}
-.imgUp
-{
-  margin-bottom:15px;
-}
-.del
-{
-  position:absolute;
-  top:0px;
-  right:15px;
-  width:30px;
-  height:30px;
-  text-align:center;
-  line-height:30px;
-  background-color:rgba(255,255,255,0.6);
-  cursor:pointer;
-}
-.imgAdd
-{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background-color:#4bd7ef;
-  color:#fff;
-  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
-  text-align:center;
-  line-height:30px;
-  margin-top:0px;
-  cursor:pointer;
-  font-size:15px;
-}
+
 </style>
 @endsection
 
@@ -202,7 +154,7 @@ $(document).on("click", "i.del" , function() {
 $(function() {
     $(document).on("change",".uploadFile", function()
     {
-    		var uploadFile = $(this);
+        var uploadFile = $(this);
         var files = !!this.files ? this.files : [];
         if (!files.length || !window.FileReader) return; 
         if (/^image/.test( files[0].type)){
@@ -210,7 +162,7 @@ $(function() {
             reader.readAsDataURL(files[0]);
  
             reader.onloadend = function(){
-uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+                uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
             }
         }
       

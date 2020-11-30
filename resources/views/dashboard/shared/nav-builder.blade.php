@@ -30,7 +30,7 @@ if(!function_exists('renderDropdown')){
 }
 ?>
 
-<div class="c-sidebar-brand">Custom Closet</div>
+<div class="c-sidebar-brand">Custom Closets</div>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
         <a class="c-sidebar-nav-link" href="{{ route('admin.dashboard') }}" >
@@ -46,25 +46,11 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-dropdown" title="Products">
-        <a class="c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+    <li class="c-sidebar-nav-item" title="Find Product Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Product
         </a>
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item" title="Find All Products here">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
-                    <i class="cil-list c-sidebar-nav-icon"></i>
-                    List
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item" title="Add a new Product">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.product') }}">
-                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    Add
-                </a>
-            </li>
-        </ul>
     </li>
 
     <li class="c-sidebar-nav-item" title="Users List">
@@ -81,25 +67,18 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-dropdown" title="This is Blog Section">
-        <a class="c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+    <li class="c-sidebar-nav-item" title="Find Blogs Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.blog.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Blogs
         </a>
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item" title="Find all blogs here">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.blog.list') }}">
-                    <i class="cil-list c-sidebar-nav-icon"></i>
-                    List
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item" title="Add a new Blog">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.blog') }}">
-                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    Add
-                </a>
-            </li>
-        </ul>
+    </li>
+
+    <li class="c-sidebar-nav-item" title="Find CMS pages Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.page.list') }}">
+            <i class="cil-grid c-sidebar-nav-icon"></i>
+            CMS
+        </a>
     </li>
     <li class="c-sidebar-nav-dropdown" title="This is Review Section">
         <a class="c-sidebar-nav-dropdown-toggle" href="#">
@@ -110,13 +89,33 @@ if(!function_exists('renderDropdown')){
             <li class="c-sidebar-nav-item" title="Find all blogs here">
                 <a class="c-sidebar-nav-link" href="{{ route('admin.aprooved') }}">
                     <i class="cil-list c-sidebar-nav-icon"></i>
-                   Aprooved
+                    Approved
                 </a>
             </li>
             <li class="c-sidebar-nav-item" title="Add a new Blog">
                 <a class="c-sidebar-nav-link" href="{{ route('admin.toaprooved') }}">
                     <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    To Aprooved
+                    To Approved
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="c-sidebar-nav-dropdown" title="This is faq Section">
+        <a class="c-sidebar-nav-dropdown-toggle" href="#">
+            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            FAQs
+        </a>
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item" title="Find all faqs here">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.faq.list') }}">
+                    <i class="cil-list c-sidebar-nav-icon"></i>
+                    List
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item" title="Add a new faq">
+                <a class="c-sidebar-nav-link" href="{{ route('admin.faq') }}">
+                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
+                    Add
                 </a>
             </li>
         </ul>

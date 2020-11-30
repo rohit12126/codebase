@@ -80,6 +80,22 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/review/delete/{id?}', 'admin\ReviewController@delete');
         Route::get('admin/review/approv/{id?}', 'admin\ReviewController@approv');
         Route::get('admin/review/disapprov/{id?}', 'admin\ReviewController@disapprov');
+        Route::get('admin/faq','admin\FaqController@index')->name('admin.faq');
+        Route::post('admin/faq','admin\FaqController@addFaq')->name('admin.faq');
+        Route::post('admin/faq/category','admin\FaqController@addFaqCategory')->name('admin.faq.category');
+        Route::get('admin/faq-list', 'admin\FaqController@faqList')->name('admin.faq.list');
+        Route::get('admin/delete_faq/{id?}', 'admin\FaqController@deleteFaq');
+        Route::get('admin/edit_faq/{id?}', 'admin\FaqController@editFaq');
+        Route::post('admin/edit_faq/{id?}', 'admin\FaqController@editSubmitFaq');
+
+        Route::get('admin/cms', 'admin\CMSController@index')->name('admin.cms');
+        Route::post('admin/cms', 'admin\CMSController@addPage')->name('admin.cms');
+        Route::get('admin/edit_cms/{id?}', 'admin\CMSController@editPage');
+        Route::post('admin/edit_cms/{id?}', 'admin\CMSController@editSubmitPage');
+        Route::get('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
+        Route::post('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
+        Route::get('admin/delete_page/{id?}', 'admin\CMSController@deletePage');
+        Route::get('admin/enquries', 'admin\EnquiryController@list');
 
     });
 

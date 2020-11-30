@@ -32,38 +32,29 @@
                             <thead>
                                 <tr>
                                     <th>S No.</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($blog_list as $key => $value)
                                 <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->title }}</td>
-                                    <td>{{ $value->description }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Message</td>
                                     <td>
-                                        <img src="{{ url('') }}/upload/blog/{{ @$value->image}}" width="50" />
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
-                                            <i class="cil-pencil"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                        <a class="btn btn-primary" href="#" onclick="return confirm('Are you sure you want to mark contected?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                @endforeach
 
                             </tbody>
                         </table>
-                        {{-- @if(@!$_POST) --}}
-                        {{ @$blog_list->links() }}
-                            
-                        {{-- @endif --}}
                     </div>
                 </div>
             </div>
