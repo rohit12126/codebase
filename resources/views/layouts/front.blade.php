@@ -440,7 +440,6 @@ footer-->
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
                     //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
                     console.log('down');
-                    
                 }
         }
             else {
