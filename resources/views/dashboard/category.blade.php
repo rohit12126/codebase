@@ -56,11 +56,9 @@
                         <h4>Category List</h4>
                     </div>
                     <div class="col-2">
-                        {{-- @if(!isset($category)) --}}
                         <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
                             Create Category
                         </button>
-                        {{-- @endif --}}
                     </div>
                 </div>
                 <div class="card-body">

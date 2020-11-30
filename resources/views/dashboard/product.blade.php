@@ -14,7 +14,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Product @if(isset($product)) Edit @else Add @endif </h4>
+                        <h4>@if(isset($product)) Edit @else Add @endif Product</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
@@ -61,25 +61,27 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Actice</option>
+                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="">Is Accessory</label>
+                                        <label for="">Is Accessory ?</label>
                                         <span class="mandatory">*</span>
                                         <select name="is_accessory" id="" class="form-control" title="Is product accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary" title="Submit Product">
-                                        Submit
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                        Back
-                                    </a>
+                                    <div style="display: flex;flex-direction: row;">
+                                        <button type="submit" class="btn btn-primary" title="Submit Product">
+                                            Submit
+                                        </button>
+                                                
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" style="margin-left: 10px;">
+                                            Back
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
@@ -104,7 +106,6 @@
                                     </div>
 
                                         @else
-                                          
                                     
                                         <br><div class="container">
                                         <div class="row">
