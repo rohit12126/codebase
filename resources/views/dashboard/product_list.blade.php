@@ -24,14 +24,14 @@
                             <input type="hidden" name="page" id="page" value="" />
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <div class="form-group">
                                         <label>Product Name</label>
                                         <input type="text" placeholder="Product Name" name="product_name"
                                             class="form-control" value="{{ @$_POST['product_name'] }}">
                                         </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-4">
                                         <div class="form-group">
                                             <label>Status</label>
                                             <select name="product_status" id="" class="form-control">
@@ -43,12 +43,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <button type="submit" class="btn btn-primary" >
+                                    <div class="col-4 d-flex align-items-center pt-2">
+                                        <button type="submit" class="btn btn-primary mr-3 mt-0" >
                                             Search
                                         </button>
                                         <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
-                                            Clear Filters
+                                            <i class="cil-reload"></i>
                                         </a>
                                     </div>
                                 </div>

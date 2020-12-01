@@ -20209,8 +20209,8 @@ body {
 }
 .btn-primary {
   display:block;
-  border-radius:0px;
-  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+  /* border-radius:0px; */
+  /* box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2); */
   margin-top:-5px;
 }
 .imgUp {
