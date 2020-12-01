@@ -4,6 +4,16 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.faq.list') }}">FAQ</a></li>
+            <li class="breadcrumb-item active">@if(isset($faq)) Edit @else Add @endif  FAQ</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -14,7 +24,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>FAQ @if(isset($faq)) Edit @else Add @endif </h4>
+                        <h4> @if(isset($faq)) Edit @else Add @endif  FAQ</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" id="myform">
@@ -62,9 +72,11 @@
                             <div class="col-6">
                                 <div class="form-group" id="moreImage">
                                 <label for="">FAQ Category </label><br>
-                                    <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}}>
-                                        Jump to FAQ Category Section
-                                    </a>    
+                                    <div class="col">
+                                        <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}}>
+                                            Jump to FAQ Category Section
+                                        </a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
