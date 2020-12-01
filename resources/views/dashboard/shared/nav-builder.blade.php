@@ -42,21 +42,21 @@ if(!function_exists('renderDropdown')){
     <li class="c-sidebar-nav-item" title="Find All Categories Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.category') }}">
             <i class="cil-grid c-sidebar-nav-icon"></i>
-            Category
+            Categories
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Products Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
-            Product
+            Products
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Users Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.user') }}">
             <i class="cil-user c-sidebar-nav-icon"></i>
-            User
+            Users
         </a>
     </li>
 
