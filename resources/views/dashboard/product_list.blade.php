@@ -11,6 +11,25 @@
 @section('content')
 <div class="container-fluid">
     <div class="fade-in">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row-->
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="fade-in">
          <div class="row">
             <div class="col-sm-12">
                 <div class="card">

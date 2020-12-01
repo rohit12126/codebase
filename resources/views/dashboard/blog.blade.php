@@ -8,7 +8,6 @@
 
 <div class="container-fluid">
     <div class="fade-in">
-
         @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
