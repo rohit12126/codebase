@@ -26,7 +26,8 @@
                                         <input type="text" placeholder="category name" name="name" class="form-control"
                                             required value="{{ @$category->name }}">
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
+                                    <div class="d-flex pt-2" >
+                                    <button type="submit" class="btn btn-primary mt-0 mr-3">
                                         @if(isset($category)) Update @else Submit @endif
                                     </button>
                                     @if(isset($category))
@@ -38,6 +39,7 @@
                                         Cancel
                                     </a>
                                     @endif
+                                    </div>
                                 </div>
                         </form>
                     </div>
