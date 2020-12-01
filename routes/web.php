@@ -312,5 +312,8 @@ Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status
 
 /*Rating Routes*/
 Route::post('/submit/review', 'ProductController@rating');
+/*Contact us Routes*/
+Route::get('/contact-us', 'admin\EnquiryController@index');
+Route::post('/contact-us/store', 'admin\EnquiryController@submit')->name('contact.store');
 
 
