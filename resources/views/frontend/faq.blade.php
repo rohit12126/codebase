@@ -26,27 +26,27 @@
             </div>
         </div>
     </section>
- 
+
     <section class="section" id="#faq1">
         <div class="content-section">
             <h2 class="heading2 mt-3 mb-5 text-center">Faq 1</h2>
             <div id="accordion">
             @foreach($faq_list as $faq)
                 <div class="faq-card">
-                  <div class="faq-card-header">
+                <div class="faq-card-header">
                     <a class="faq-card-link" data-toggle="collapse" href="#fq{{$faq->id}}">
                     {{$faq->title}}
-                  </a>
-                  </div>
-                  <div id="fq{{$faq->id}}" class="collapse" data-parent="#accordion">
+                </a>
+                </div>
+                <div id="fq{{$faq->id}}" class="collapse" data-parent="#accordion">
                     <div class="faq-card-body">
                     <p>{{$faq->body}}</p>
                     </div>
-                  </div>
                 </div>
-              @endforeach
+                </div>
+            @endforeach
             </div>
         </div>
     </section>
-   
+
 @endsection

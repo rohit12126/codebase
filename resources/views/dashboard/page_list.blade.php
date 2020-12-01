@@ -71,11 +71,5 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$('.page-link').click(function(e){
-    e.preventDefault();
-    $('#page').val($(this).text());
-    $('form').submit();
-});
-</script>
+
 @endsection
