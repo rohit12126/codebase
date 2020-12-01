@@ -8,7 +8,6 @@
 
 <div class="container-fluid">
     <div class="fade-in">
-
         @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
@@ -49,27 +48,27 @@
                                             <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Submit
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                        Back
-                                    </a>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
+                                            Submit
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                            Back
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Image </label>
                                         <span class="mandatory">*</span>
-
                                         <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
                                                 
                                                 @if(isset($blog->image))
-                                                    <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage" width="100" />
+                                                    <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage w-100 h-100" width="100" />
                                                     <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
                                                 @else
-                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage" width="100" />
+                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage w-100 h-100" width="100" />
                                                 @endif
                                             </div>
                                             <label class="btn btn-primary" title="Upload Images Here">
@@ -77,6 +76,13 @@
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                         </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group" id="moreImage">
+                                        <label for="">Blog Category </label><br>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}}>
+                                            Jump to Blog Category Section
+                                        </a>    
                                     </div>
                                 </div>
                             </div>
