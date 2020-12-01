@@ -7,12 +7,12 @@ use App\Classes\HelperManager as Common;
 
 class EnquiryManager
 {
-    public function add($req)
+    public function store($req)
     {
         $data = [
             'name' => $req->name,
             'email' => $req->email,
-            'phone_nu' => $req->phone_nu,
+            'phone_nu' => $req->phone,
             'message' => $req->message
         ];
         if (Enquiry::create($data)) {
@@ -24,5 +24,9 @@ class EnquiryManager
     public static function getEnquiryListPaginated()
     {
         return Enquiry::paginate(10);
+    }
+    public static function contected($id)
+    {
+        return Enquiry::where('id',$id)->update(['connected' => true]);
     }
 }

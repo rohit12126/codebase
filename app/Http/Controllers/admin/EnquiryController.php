@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\EnquiryManager;
+use App\Classes\HelperManager as Common;
 
 class EnquiryController extends Controller
 {
@@ -21,10 +22,38 @@ class EnquiryController extends Controller
         $this->enquiryManager = $enquiryManager;
     }
 
+    public function index()
+    {
+        return view('frontend.contact');
+    }
+
     public function list()
     {
-        $response=$this->enquiryManager->getEnquiryListPaginated();
-        return view('dashboard.enquiries');
+        $enquieies=$this->enquiryManager->getEnquiryListPaginated();
+        return view('dashboard.enquiries',compact('enquieies'));
+    }
+    public function contected($id)
+    {
+        $response = $this->enquiryManager->contected($id);
+        if($response == true){
+            Common::setMessage(__('enqury_contect_success'));
+        }else{
+            Common::setMessage(__('enqury_contect_failed'), 'error');
+        }
+        return back();
+    }
+    public function submit(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'message' => 'required'
+         ]);
+         if($this->enquiryManager->store($request)){
+         return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+         }
+
     }
 
 

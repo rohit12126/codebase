@@ -62,7 +62,6 @@
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Image </label>
                                         <span class="mandatory">*</span>
-
                                         <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
                                                 
@@ -78,15 +77,13 @@
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                         </div>
-                                        {{-- <div class="col-sm-4 imgUp">
-                                            <div class="imagePreview" title=" This is Blog Image Preview">
-                                            </div>
-                                            <label class="btn btn-primary" title="Upload Image Here">
-                                                Upload
-                                            <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Image Here">
-                                        </label>
-                                        </div> --}}
-                                        {{--<input id="file-input" type="file" name="image" class="form-control" accept="image/*" required> --}}
+                                    </div>
+                                    <hr>
+                                    <div class="form-group" id="moreImage">
+                                        <label for="">Blog Category </label><br>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}}>
+                                            Jump to Blog Category Section
+                                        </a>    
                                     </div>
                                 </div>
                             </div>

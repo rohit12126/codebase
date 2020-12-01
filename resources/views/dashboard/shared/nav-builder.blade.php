@@ -46,120 +46,71 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find Product Here">
+    <li class="c-sidebar-nav-item" title="Find All Products Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Product
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Users List">
+    <li class="c-sidebar-nav-item" title="Find All Users Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.user') }}">
             <i class="cil-user c-sidebar-nav-icon"></i>
             User
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find All Orders here">
+    <li class="c-sidebar-nav-item" title="Find All Orders Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.order') }}">
             <i class="cil-cart c-sidebar-nav-icon"></i>
             Orders
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find Blogs Here">
+    <li class="c-sidebar-nav-item" title="Find All Orders Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.blog.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Blogs
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find CMS pages Here">
+    <li class="c-sidebar-nav-item" title="Find All CMS Pages Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.page.list') }}">
             <i class="cil-grid c-sidebar-nav-icon"></i>
             CMS
         </a>
     </li>
-    <li class="c-sidebar-nav-dropdown" title="This is Review Section">
-        <a class="c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="cil-sitemap c-sidebar-nav-icon"></i>
+    <li class="c-sidebar-nav-dropdown" title="Product Reviews">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.aprooved') }}">
+            <i class="cil-list c-sidebar-nav-icon"></i>
             Reviews
         </a>
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item" title="Find all blogs here">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.aprooved') }}">
-                    <i class="cil-list c-sidebar-nav-icon"></i>
-                    Approved
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item" title="Add a new Blog">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.toaprooved') }}">
-                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    To Approved
-                </a>
-            </li>
-        </ul>
     </li>
-    <li class="c-sidebar-nav-dropdown" title="This is faq Section">
-        <a class="c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="cil-sitemap c-sidebar-nav-icon"></i>
-            FAQs
+    <li class="c-sidebar-nav-item" title="Find All FAQ Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.faq.list') }}">
+            <i class="cil-grid c-sidebar-nav-icon"></i>
+            FAQ
         </a>
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item" title="Find all faqs here">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.faq.list') }}">
-                    <i class="cil-list c-sidebar-nav-icon"></i>
-                    List
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item" title="Add a new faq">
-                <a class="c-sidebar-nav-link" href="{{ route('admin.faq') }}">
-                    <i class="cil-playlist-add c-sidebar-nav-icon"></i>
-                    Add
-                </a>
-            </li>
-        </ul>
     </li>
-    <li class="c-sidebar-nav-item"title="Secure Account today, Change Password">
+    <li class="c-sidebar-nav-item"title="Check All Enquries Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.enquiries') }}">
+            <i class="cil-address-book c-sidebar-nav-icon"></i>
+            Enquiries
+        </a>
+    </li>
+    <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
         <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
             Change Password
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Before Closing Window, LogOut by Clicking Here">
+    <li class="c-sidebar-nav-item" title="Before Closing Window, LogOut By Clicking Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.logout') }}">
             <i class="cil-account-logout c-sidebar-nav-icon"></i>
             Logout
         </a>
     </li>
-    {{-- @if(isset($appMenus['sidebar menu']))
-    @foreach($appMenus['sidebar menu'] as $menuel)
-    @if($menuel['slug'] === 'link')
-    <li class="c-sidebar-nav-item">
-        <a class="c-sidebar-nav-link" href="{{ url('') . $menuel['href'] }}">
-            @if($menuel['hasIcon'] === true)
-            @if($menuel['iconType'] === 'coreui')
-            <i class="{{ $menuel['icon'] }} c-sidebar-nav-icon"></i>
-            @endif
-            @endif
-            {{ $menuel['name'] }}
-        </a>
-    </li>
-    @elseif($menuel['slug'] === 'dropdown')
-    <?php renderDropdown($menuel) ?>
-    @elseif($menuel['slug'] === 'title')
-    <li class="c-sidebar-nav-title">
-        @if($menuel['hasIcon'] === true)
-        @if($menuel['iconType'] === 'coreui')
-        <i class="{{ $menuel['icon'] }} c-sidebar-nav-icon"></i>
-        @endif
-        @endif
-        {{ $menuel['name'] }}
-    </li>
-    @endif
-    @endforeach
-    @endif --}}
 </ul>
 <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
 </div>

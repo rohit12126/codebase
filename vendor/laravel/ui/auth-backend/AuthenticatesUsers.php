@@ -18,11 +18,6 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        $urlPrevious = url()->previous();
-        $urlBase = url()->to('/');
-        if(($urlPrevious != $urlBase . '/login') && (substr($urlPrevious, 0, strlen($urlBase)) === $urlBase)) {
-            session()->put('url.intended', $urlPrevious);
-        }
         return view('auth.login');
     }
 

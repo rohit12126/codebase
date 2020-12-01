@@ -16,8 +16,18 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Faq List</h4>
+                        <div class="row">
+                            <div class="col-10">
+                                <h4>FAQ List</h4>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right">
+                                    Create FAQ
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="card-body">
                     @include('partials.alert_msg')
                         <table class="table table-striped table-bordered datatable">
@@ -48,7 +58,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                         {{-- @if(@!$_POST) --}}

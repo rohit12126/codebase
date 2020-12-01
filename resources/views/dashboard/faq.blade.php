@@ -61,10 +61,10 @@
                             </form>
                             <div class="col-6">
                                 <div class="form-group" id="moreImage">
-                                    <label for="">Add New Category </label><br>
-                                <a class="btn btn-primary  text-white" data-toggle="modal" data-target="#exampleModal">
-                                    Add Category
-                                </a>    
+                                <label for="">FAQ Category </label><br>
+                                    <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}}>
+                                        Jump to FAQ Category Section
+                                    </a>    
                                 </div>
                             </div>
                         </div>
@@ -74,39 +74,6 @@
         </div>
     </div>
 </div>
-</div><div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="faq_category_form" action="{{route('admin.faq.category')}}" method="post">
-        @csrf
-        <div class="form-group">
-            <label>Category</label>
-            <span class="mandatory">*</span>
-            <input type="text" placeholder="Category" name="category" class="form-control" required="" value="">
-        </div>
-        <div class="form-group">
-            <label for="">Status</label>
-            <span class="mandatory">*</span>
-            <select name="status" id="" class="form-control">
-                <option value="1">Active</option>
-                <option value="0">Inactive</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Save Category</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 @endsection

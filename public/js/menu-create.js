@@ -164,8 +164,8 @@ document.getElementById("type").onchange = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/c247/codebase/resources/js/coreui/menu-create.js */"./resources/js/coreui/menu-create.js");
-module.exports = __webpack_require__(/*! /var/www/html/c247/codebase/resources/sass/style.scss */"./resources/sass/style.scss");
+__webpack_require__(/*! /var/www/html/codebase/resources/js/coreui/menu-create.js */"./resources/js/coreui/menu-create.js");
+module.exports = __webpack_require__(/*! /var/www/html/codebase/resources/sass/style.scss */"./resources/sass/style.scss");
 
 
 /***/ })

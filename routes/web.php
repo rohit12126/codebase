@@ -27,10 +27,8 @@ Route::group(['middleware' => ['get.menu']], function () {
 
         Route::get('admin/logout', 'admin\LoginController@logout')->name('admin.logout');
         
-        Route::get('/admin/dashboard', function () {
-            return view('dashboard.homepage');
-        })->name('admin.dashboard');
-        
+        Route::get('/admin/dashboard','admin\DashboardController@index')->name('admin.dashboard');
+
         Route::get('admin/category', 'admin\CategoryController@index')->name('admin.category');
         Route::post('admin/category', 'admin\CategoryController@addCategory')->name('admin.category');
         Route::get('admin/edit_category/{id?}', 'admin\CategoryController@editCategory');//->name('admin.categoryedit');
@@ -88,6 +86,12 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/edit_faq/{id?}', 'admin\FaqController@editFaq');
         Route::post('admin/edit_faq/{id?}', 'admin\FaqController@editSubmitFaq');
 
+        Route::get('admin/faq-category', 'admin\FaqCategoryController@index')->name('admin.faq.category');
+        Route::post('admin/faq-category', 'admin\FaqCategoryController@addCategory')->name('admin.faq.category');
+        Route::get('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editCategory');
+        Route::post('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editSubmitCategory');
+        Route::get('admin/faq_delete_category/{id?}', 'admin\FaqCategoryController@deleteCategory');
+
         Route::get('admin/cms', 'admin\CMSController@index')->name('admin.cms');
         Route::post('admin/cms', 'admin\CMSController@addPage')->name('admin.cms');
         Route::get('admin/edit_cms/{id?}', 'admin\CMSController@editPage');
@@ -95,7 +99,8 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::post('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::get('admin/delete_page/{id?}', 'admin\CMSController@deletePage');
-        Route::get('admin/enquries', 'admin\EnquiryController@list');
+        Route::get('admin/enquiries', 'admin\EnquiryController@list')->name('admin.enquiries');
+        Route::get('admin/update-enquiry/{id?}', 'admin\EnquiryController@contected');
 
     });
 
@@ -313,5 +318,8 @@ Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status
 
 /*Rating Routes*/
 Route::post('/submit/review', 'ProductController@rating');
+/*Contact us Routes*/
+Route::get('/contact-us', 'admin\EnquiryController@index');
+Route::post('/contact-us/store', 'admin\EnquiryController@submit')->name('contact.store');
 
 

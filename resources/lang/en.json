@@ -55,6 +55,14 @@
     "faq_delete_success":"FAQ Deleted Succeddfully",
     "faq_delete_failed":"Something went wrong unable to delete FAQ",
     "faq_update_success":"FAQ Updated Successfully",
-    "faq_update_failed":"Something went wrong unable to update FAQ"
+    "faq_update_failed":"Something went wrong unable to update FAQ",
+    "enqury_contect_success":"Successfully Marked Connected",
+    "enqury_contect_failed":"Failed to updated Enqury Status Try Again",
+    "faq_category_add_success" : "FAQ category added successfully!",
+    "faq_category_add_failed" : "Something went wrong unable to add FAQ Category!",
+    "faq_category_update_success" : "FAQ Category udated successfully!",
+    "faq_category_update_failed" : "Something went wrong unable to update FAQ Category!",
+    "faq_category_delete_success" : "FAQ Category deleted successfully!",
+    "faq_category_delete_failed" : "Something went wrong unable to delete FAQ Category!"
 
 }
