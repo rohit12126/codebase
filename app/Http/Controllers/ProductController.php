@@ -10,6 +10,7 @@ use App\Classes\ProductManager;
 use App\Classes\CartManager;
 use App\Classes\UserManager;
 use App\Classes\OrderManager;
+use App\Classes\CategoryManager;
 
 class ProductController extends Controller
 {
@@ -17,6 +18,7 @@ class ProductController extends Controller
     protected $cartManager;
     protected $userManager;
     protected $orderManager;
+    protected $categoryManager;
     /**
      * Create a new controller instance.
      *
@@ -26,13 +28,15 @@ class ProductController extends Controller
         ProductManager $productManager,
         CartManager $cartManager,
         UserManager $userManager,
-        OrderManager $orderManager
+        OrderManager $orderManager,
+        CategoryManager $categoryManager
     )
     {
         $this->productManager = $productManager;
         $this->cartManager = $cartManager;
         $this->userManager = $userManager;
         $this->orderManager = $orderManager;
+        $this->categoryManager = $categoryManager;
     }
     /**
      * Display a listing of the product.
@@ -43,7 +47,8 @@ class ProductController extends Controller
     {
         $paginate = 5;
         $products = $this->productManager->getProducts($paginate);
-        return view('frontend.list', ['products' => $products]);
+        $categories = $this->categoryManager->getCategoryList();
+        return view('frontend.list', ['products' => $products, 'categories'=> $categories]);
     }
 
     
