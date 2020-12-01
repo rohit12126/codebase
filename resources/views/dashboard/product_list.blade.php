@@ -51,10 +51,10 @@
                                         </div>
                                     </div>
                                     <div class="col-4 d-flex align-items-center pt-2">
-                                        <button type="submit" class="btn btn-primary mr-3 mt-0" >
+                                        <button type="submit" class="btn btn-primary mr-3 mt-0" title="Apply Filters">
                                             Search
                                         </button>
-                                        <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
+                                        <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white"title="remove Filters">
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>
@@ -80,7 +80,7 @@
                                 <h4>Product List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right" title="Create Product Here">
                                     Create Product
                                 </a>
                             </div>

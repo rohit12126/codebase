@@ -30,7 +30,7 @@
                                 <h4>FAQ List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right" title="Create New FAQ">
                                     Create FAQ
                                 </a>
                             </div>

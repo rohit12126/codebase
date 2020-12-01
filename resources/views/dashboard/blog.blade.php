@@ -90,7 +90,7 @@
                                     <hr>
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Category </label><br>
-                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}}>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}} title="Find all Blog Catagories Here">
                                             Jump to Blog Category Section
                                         </a>    
                                     </div>
