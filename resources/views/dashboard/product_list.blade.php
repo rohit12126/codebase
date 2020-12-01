@@ -9,61 +9,55 @@
 @endsection
 
 @section('content')
-
 <div class="container-fluid">
     <div class="fade-in">
          <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                    <div class="row">
-                        <div class="col-8">
                         <h4>Product Filter</h4>
-                        </div>
-                        <div class="col-4">
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
-                            @csrf
-                        <button type="submit" class="btn btn-primary" style="float: right;">
-                                Submit
-                            </button>
-                            @if(@$_POST)
-                            <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
-                                Clear Active Filters
-                            </a>
-                            @endif
-                        </div>
-                    </div>
-
                     </div>
                     <div class="card-body">
                         @include('partials.alert_msg')
-                        
+                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
+                            @csrf
                             <input type="hidden" name="page" id="page" value="" />
                             <div class="container">
                                 <div class="row">
-                                    <div class="col">
-                                    <label>Product Name</label>
-                                    <input type="text" placeholder="Product Name" name="product_name"
-                                        class="form-control" value="{{ @$_POST['product_name'] }}">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                        <label>Product Name</label>
+                                        <input type="text" placeholder="Product Name" name="product_name"
+                                            class="form-control" value="{{ @$_POST['product_name'] }}">
+                                        </div>
                                     </div>
-                                    {{-- <div class="col">
-                                    <label>Stock Less Quantity</label>
-                                    <input type="text" placeholder="Stock Less Quantity" name="stock_less" class="form-control"
-                                        value="{{ @$_POST['stock_less'] }}" autocomplete="off">
-                                    </div> --}}
-                                    <div class="col">
-                                    <label>Status</label>
-                                    <select name="product_status" id="" class="form-control">
-                                        <option value="">Select Status</option>
-                                        <option value="1" @if(@$_POST['product_status']==1) selected @endif </option>Active
-                                        </option>
-                                        <option value="0" @if(@$_POST['product_status']==2) selected @endif </option>In-Active
-                                        </option>
-                                    </select>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select name="product_status" id="" class="form-control">
+                                                <option value="">Select Status</option>
+                                                <option value="1" @if(@$_POST['product_status']==1) selected @endif </option>Active
+                                                </option>
+                                                <option value="0" @if(@$_POST['product_status']==2) selected @endif </option>In-Active
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary" >
+                                            Search
+                                        </button>
+                                        <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
+                                            Clear Filters
+                                        </a>
                                     </div>
                                 </div>
-                                </div>
-                         
+                                {{-- <div class="col">
+                                <label>Stock Less Quantity</label>
+                                <input type="text" placeholder="Stock Less Quantity" name="stock_less" class="form-control"
+                                    value="{{ @$_POST['stock_less'] }}" autocomplete="off">
+                                </div> --}}
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -110,9 +104,7 @@
                                     <td>{{ $value->sale_price }}</td>
                                     <td>
                                         @if(count($value->images) > 0)
-                                        @foreach($value->images as $key2 => $value2)
-                                        <img src="{{ url('') }}/upload/product/{{ @$value2->image}}" width="50" />
-                                        @endforeach
+                                            <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
                                         @endif
                                     </td>
                                     <td>

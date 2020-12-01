@@ -84,16 +84,9 @@
         @include('dashboard.shared.footer')
       </div>
     </div>
-
-
-
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('js/coreui-utils.js') }}"></script>
     @yield('javascript')
-
-
-
-
   </body>
 </html>
