@@ -51,10 +51,10 @@
                                         </div>
                                     </div>
                                     <div class="col-4 d-flex align-items-center pt-2">
-                                        <button type="submit" class="btn btn-primary mr-3 mt-0" >
+                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                             Search
                                         </button>
-                                        <a href="{{route('admin.product.list')}}" class="btn btn-danger text-white">
+                                        <a href="{{route('admin.product.list')}}" title="Remove All Filters"  class="btn btn-danger text-white">
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>
@@ -80,7 +80,7 @@
                                 <h4>Product List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.product') }}" title="Add New Product" class="btn btn-primary btn-sm pull-right">
                                     Create Product
                                 </a>
                             </div>
@@ -112,13 +112,15 @@
                                     <td>
                                         @if(count($value->images) > 0)
                                             <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
+                                        @else
+                                            <img src="{{ url('/download.jpeg') }}" width="50" />
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_product', $value->id) }}" title="Edit">
+                                        <a class="btn btn-info" title="Edit Product" href="{{ url('admin/edit_product', $value->id) }}">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');" title="Delete">
+                                        <a class="btn btn-danger" title="Delete Product"  href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');" >
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
@@ -127,10 +129,7 @@
 
                             </tbody>
                         </table>
-                        {{-- @if(@!$_POST) --}}
                         {{ @$product_list->links() }}
-                            
-                        {{-- @endif --}}
                     </div>
                 </div>
             </div>
