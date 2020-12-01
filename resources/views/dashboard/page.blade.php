@@ -39,7 +39,7 @@
                                     
                                     <div class="form-group">
                                         <label>Content</label>
-                                        <textarea name="content" id="content" class="form-control" required >{{ @$page->content }}</textarea>
+                                        <textarea name="content" rows="4" id="content" class="form-control" required >{{ @$page->content }}</textarea>
                                     </div>
 
                                     <div class="form-group">
@@ -86,7 +86,11 @@
 
 </script>
 <script src="{{ asset('js/ckeditor.js') }}"></script>
-
+<style>
+.ck-editor__editable {
+    min-height: 200px;
+}
+</style>
 <script>
 	ClassicEditor
 		.create( document.querySelector( '#content' ), {
