@@ -30,7 +30,7 @@
                                 <h4>Blog List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right" title="Create Blog Now">
                                     Create Blog
                                 </a>
                             </div>
