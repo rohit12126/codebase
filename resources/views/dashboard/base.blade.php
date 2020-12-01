@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v3.0.0-alpha.1
-* @link https://coreui.io
-* Copyright (c) 2019 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
-
 <html lang="en">
   <head>
     <base href="./">
@@ -46,7 +38,6 @@
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-
       function gtag() {
         dataLayer.push(arguments);
       }
@@ -59,14 +50,11 @@
 
     <link href="{{ asset('css/coreui-chartjs.css') }}" rel="stylesheet">
     <style>
-      .mandatory {
+    .mandatory {
       color: red;
       }
     </style>
   </head>
-
-
-
   <body class="c-app">
     <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
 
