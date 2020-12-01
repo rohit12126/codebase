@@ -31,7 +31,7 @@ class FaqController extends Controller
         $category_list = $this->faqManager->getCategoryList();
         return view('dashboard.faq',compact('category_list')); 
     }
-     /**
+    /**
      * Submit Add FAQ Form.
      *
      * @return bool
@@ -71,7 +71,7 @@ class FaqController extends Controller
         $faq_list = $this->faqManager->getfaqListPaginated($req);
         return view('dashboard.faq_list', compact('faq_list'));
     }
-      /**
+    /**
      * Load Edit FAQ Form.
      *  @param $id
      * @return bool
@@ -82,7 +82,7 @@ class FaqController extends Controller
         $category_list = $this->faqManager->getCategoryList();
         return view('dashboard.faq', compact('category_list', 'faq'));
     }
-  /**
+    /**
      * Submit Edit FAQ Form.
      *
      * @return bool
@@ -99,7 +99,7 @@ class FaqController extends Controller
         }
         return redirect()->route('admin.faq.list');
     }
-  /**
+    /**
      * Delete FAQ.
      * @param $id
      * @return bool

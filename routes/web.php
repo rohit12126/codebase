@@ -88,6 +88,12 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/edit_faq/{id?}', 'admin\FaqController@editFaq');
         Route::post('admin/edit_faq/{id?}', 'admin\FaqController@editSubmitFaq');
 
+        Route::get('admin/faq-category', 'admin\FaqCategoryController@index')->name('admin.faq.category');
+        Route::post('admin/faq-category', 'admin\FaqCategoryController@addCategory')->name('admin.faq.category');
+        Route::get('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editCategory');
+        Route::post('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editSubmitCategory');
+        Route::get('admin/faq_delete_category/{id?}', 'admin\FaqCategoryController@deleteCategory');
+
         Route::get('admin/cms', 'admin\CMSController@index')->name('admin.cms');
         Route::post('admin/cms', 'admin\CMSController@addPage')->name('admin.cms');
         Route::get('admin/edit_cms/{id?}', 'admin\CMSController@editPage');

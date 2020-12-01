@@ -86,7 +86,7 @@
                       </div>
                     @endif
                 </div>
-                <p class="leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                <!-- <p class="leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p> -->
                 <div class="field_form">
                     <form method="post" action="{{ route('contact.store') }}">
                     @csrf
