@@ -61,10 +61,10 @@
                             </form>
                             <div class="col-6">
                                 <div class="form-group" id="moreImage">
-                                    <label for="">Add New Category </label><br>
-                                <a class="btn btn-primary  text-white" data-toggle="modal" data-target="#exampleModal">
-                                    Add Category
-                                </a>    
+                                <label for="">Add New Category </label><br>
+                                    <a class="btn btn-primary  text-white" data-toggle="modal" data-target="#exampleModal">
+                                        Add Category
+                                    </a>    
                                 </div>
                             </div>
                         </div>

@@ -7,12 +7,12 @@ use App\Classes\HelperManager as Common;
 
 class EnquiryManager
 {
-    public function add($req)
+    public function store($req)
     {
         $data = [
             'name' => $req->name,
             'email' => $req->email,
-            'phone_nu' => $req->phone_nu,
+            'phone_nu' => $req->phone,
             'message' => $req->message
         ];
         if (Enquiry::create($data)) {

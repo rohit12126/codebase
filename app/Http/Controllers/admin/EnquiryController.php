@@ -22,6 +22,11 @@ class EnquiryController extends Controller
         $this->enquiryManager = $enquiryManager;
     }
 
+    public function index()
+    {
+        return view('frontend.contact');
+    }
+
     public function list()
     {
         $enquieies=$this->enquiryManager->getEnquiryListPaginated();
@@ -36,6 +41,19 @@ class EnquiryController extends Controller
             Common::setMessage(__('enqury_contect_failed'), 'error');
         }
         return back();
+    }
+    public function submit(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'message' => 'required'
+         ]);
+         if($this->enquiryManager->store($request)){
+         return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+         }
+
     }
 
 

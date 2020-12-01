@@ -69,7 +69,7 @@
                             <a href="{{ url('faq/') }}" class="head-nav-link">Faq</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="#" class="head-nav-link">contact us</a>
+                            <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
                         </li>
                     </ul>
                 </nav>
