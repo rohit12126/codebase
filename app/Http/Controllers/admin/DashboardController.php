@@ -14,10 +14,4 @@ class DashboardController extends Controller
         $data = HomeManager::getDashboardData();
         return view('dashboard.homepage', compact('data'));
     }
-
-    public function pageList(Request $req)
-    {
-        $page_list = CMSManager::getPageListPaginated($req);
-        return view('dashboard.page_list', compact('page_list'));
-    }
 }

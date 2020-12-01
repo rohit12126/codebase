@@ -61,7 +61,6 @@
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Image </label>
                                         <span class="mandatory">*</span>
-
                                         <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
                                                 
@@ -77,6 +76,13 @@
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                         </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group" id="moreImage">
+                                        <label for="">Blog Category </label><br>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}}>
+                                            Jump to Blog Category Section
+                                        </a>    
                                     </div>
                                 </div>
                             </div>
