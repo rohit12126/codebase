@@ -70,12 +70,14 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary">
-                                Submit
-                            </button>
-                            <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                Back
-                            </a>
+                            <div class="d-flex">
+                                <button type="submit" class="btn btn-primary mt-0 mr-4">
+                                    Submit
+                                </button>
+                                <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                    Back
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>

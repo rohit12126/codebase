@@ -48,13 +48,14 @@
                                             <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Submit
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                        Back
-                                    </a>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
+                                            Submit
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                            Back
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
@@ -64,10 +65,10 @@
                                             <div class="imagePreview" title=" This is Blog Image Preview">
                                                 
                                                 @if(isset($blog->image))
-                                                    <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage" width="100" />
+                                                    <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage w-100 h-100" width="100" />
                                                     <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
                                                 @else
-                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage" width="100" />
+                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage w-100 h-100" width="100" />
                                                 @endif
                                             </div>
                                             <label class="btn btn-primary" title="Upload Images Here">
