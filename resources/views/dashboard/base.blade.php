@@ -61,7 +61,10 @@
       @include('dashboard.shared.nav-builder')
 
       @include('dashboard.shared.header')
-
+      
+      @yield('breadcrumb')
+      
+      </header>
       <div class="c-body">
 
         <main class="c-main">

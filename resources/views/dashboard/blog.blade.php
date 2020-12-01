@@ -4,6 +4,16 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.blog.list') }}">Blogs</a></li>
+            <li class="breadcrumb-item active">@if(isset($blog)) Edit @else Add @endif Blog</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
