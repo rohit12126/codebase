@@ -4,6 +4,16 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.order') }}">Orders</a></li>
+            <li class="breadcrumb-item active">Order Details</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">

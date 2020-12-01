@@ -7,27 +7,15 @@
     }
 </style>
 @endsection
-
-@section('content')
-<div class="container-fluid">
-    <div class="fade-in">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <nav aria-label="breadcrumb" role="navigation">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Library</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.row-->
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Products</li>
+        </ol>
     </div>
-</div>
+@endsection
+@section('content')
 <div class="container-fluid">
     <div class="fade-in">
          <div class="row">
