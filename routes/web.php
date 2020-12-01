@@ -27,10 +27,8 @@ Route::group(['middleware' => ['get.menu']], function () {
 
         Route::get('admin/logout', 'admin\LoginController@logout')->name('admin.logout');
         
-        Route::get('/admin/dashboard', function () {
-            return view('dashboard.homepage');
-        })->name('admin.dashboard');
-        
+        Route::get('/admin/dashboard','admin\DashboardController@index')->name('admin.dashboard');
+
         Route::get('admin/category', 'admin\CategoryController@index')->name('admin.category');
         Route::post('admin/category', 'admin\CategoryController@addCategory')->name('admin.category');
         Route::get('admin/edit_category/{id?}', 'admin\CategoryController@editCategory');//->name('admin.categoryedit');
