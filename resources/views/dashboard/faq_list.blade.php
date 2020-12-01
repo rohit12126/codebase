@@ -47,7 +47,11 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->title }}</td>
                                     <td>{{ $value->body }}</td>
+                                    @if($value->categori==null)
+                                    <td>No Category Assigned</td>
+                                    @else
                                     <td>{{$value->categori->category}}</td>
+                                    @endif
                                     <td>
                                         <a class="btn btn-info" href="{{ url('admin/edit_faq', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>

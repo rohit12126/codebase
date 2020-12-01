@@ -25,7 +25,7 @@
                                         <label for="select3">Select Categoty</label>
                                         <span class="mandatory">*</span>
                                         <select class="form-control" id="select3" name="category_id" required>
-                                            <option value="">Please select</option>
+                                            <option value="">Please select Or Create new</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$faq->category) selected @endif>{{$value->category}}</option>
                                             @endforeach

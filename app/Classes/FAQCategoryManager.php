@@ -41,7 +41,7 @@ class FaqCategoryManager
     public static function delete($id)
     {
         if ($category = self::getCategoryById($id)) {
-        Faq::where('category', $id)->update(['category' => self::getCategoryFirstId()]);
+            Faq::where('category', $id)->update(['category' => self::getCategoryLatestId()]);
             $category->delete();
             return true;
         } else {
@@ -58,8 +58,8 @@ class FaqCategoryManager
     {
         return FaqCategory::find($id);
     }
-    public static function getCategoryFirstId()
+    public static function getCategoryLatestId()
     {
-        return FaqCategory::first()->id;
+        return FaqCategory::latest()->first()->id;
     }
 }
