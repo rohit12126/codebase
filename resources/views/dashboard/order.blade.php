@@ -171,12 +171,6 @@
             , dateFormat: 'dd M yy',
 
         });
-
-        $('.page-link').click(function(e) {
-            e.preventDefault();
-            $('#page').val($(this).text());
-            $('form').submit();
-        });
     });
 
 </script>
