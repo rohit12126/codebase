@@ -108,7 +108,7 @@
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Custome Closet</h4>
+            <h4 class="modal-title" id="exampleModalLabel">Custom Closet</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -269,7 +269,7 @@ footer-->
                 <div class="row m-0">
                     <div class="col-sm-5 p-lg-0">
                         <!-- <img src="img/sitzfeldt-white.png" alt="" class="foot-logo"> -->
-                        <span class="footer-logo">Custom Closets</span>
+                        <span class="footer-logo">Custom Closet</span>
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">

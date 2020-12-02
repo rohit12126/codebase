@@ -7744,6 +7744,7 @@ a:hover {
 	background: #4867AA;
 	color: #fff;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+	margin-left: 0 !important;
 }
 .social-auth .social-btn .icon-block{
 	position: absolute;
