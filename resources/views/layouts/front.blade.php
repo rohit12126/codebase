@@ -484,8 +484,6 @@ footer-->
             }
         });
         
-        
-
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
             var rowId = $( this ).children('.rowId').val();
