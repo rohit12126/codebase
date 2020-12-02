@@ -13,7 +13,6 @@ class ProductManager
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
-            'purchase_price' => $req->purchase_price,
             'sale_price' => $req->sale_price,
             'description' => $req->description,
             'status' => (int)$req->status,
@@ -47,9 +46,7 @@ class ProductManager
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
-            'purchase_price' => $req->purchase_price,
             'sale_price' => $req->sale_price,
-            'stock_qty' => $req->stock_qty,
             'description' => $req->description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,

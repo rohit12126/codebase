@@ -82,14 +82,13 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Category</label>
-                                        <span class="mandatory">*</span>
                                         <span>
                                             <a href="{{ route('admin.category') }}" style="text-decoration: none;">
                                                 <i class="fa fa-plus category-add" title="Click here to add category"></i>
                                                 <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
                                             </a>
                                         </span>
-                                        <select class="form-control" id="select3" name="category_id" required title="Select a catagory of item">
+                                        <select class="form-control" id="select3" name="category_id" >
                                             <option value="0">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
@@ -99,7 +98,7 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of item">
+                                        <input type="text" placeholder="Name" name="name" class="form-control" required value="{{ @$product->name }}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
@@ -119,7 +118,7 @@
                                     <div class="form-group">
                                         <label for="">Is Accessory ?</label>
                                         <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is Product Accessory ?">
+                                        <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
@@ -227,21 +226,6 @@ $(function() {
 });
 </script>
 <script>
-    $.validator.addMethod("priceCheck", function (value, element, options)
-    {
-        console.log(value);
-        console.log(element);
-        console.log(options.data);
-        //we need the validation error to appear on the correct element
-        /* var targetEl = $('input[name="'+options.data+'"]'),
-            bothEmpty = (value == targetEl.val() == ''); */
-
-        //trigger error class on target input
-        /* (bothEmpty) ? targetEl.addClass('error') : targetEl.removeClass('error');
-        return !bothEmpty; */
-    },
-        "Friend's name and email required."
-    );
     $("#myform").validate({
         /* onkeyup: true,
         rules: {
