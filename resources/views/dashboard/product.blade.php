@@ -81,10 +81,16 @@
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="select3">Select Categoty</label>
+                                        <label for="select3">Select Category</label>
                                         <span class="mandatory">*</span>
+                                        <span>
+                                            <a href="{{ route('admin.category') }}" style="text-decoration: none;">
+                                                <i class="fa fa-plus category-add" title="Click here to add category"></i>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                            </a>
+                                        </span>
                                         <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
-                                            <option value="">Please select</option>
+                                            <option value="0">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
@@ -105,11 +111,7 @@
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Stock Quantity</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}" title="Enter Stock Quantity of product">
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Description</label>
                                         <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about product" >{{ @$product->description }}</textarea>
@@ -133,7 +135,7 @@
                                         </select>
                                     </div>
                                     <div class="d-flex pt-4">
-                                        <button type="submit" class="btn btn-primary  mr-4 mt-0" title="@if(@$product) Update @else Submit @endif">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
                                             @if(@$product) Update @else Submit @endif
                                         </button>
                                                 
