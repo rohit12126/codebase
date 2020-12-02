@@ -46,9 +46,9 @@
                                         <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$blog->title }}">
                                     </div>
                                     <div class="form-group"> 
-                                        <label>Description</label>
+                                        <label>Body</label>
                                         <span class="mandatory">*</span>
-                                        <textarea placeholder="Description" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
+                                        <textarea placeholder="Add Blog Body here" id="content" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
@@ -111,7 +111,24 @@
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+<script src="{{ asset('js/ckeditor.js') }}"></script>
+<style>
+.ck-editor__editable {
+    min-height: 200px;
+}
+</style>
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#content' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
 <script>
 $(function() {
     $(document).on("change",".uploadFile", function()

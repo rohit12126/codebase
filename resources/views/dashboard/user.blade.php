@@ -119,7 +119,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @foreach($user_list as $key => $value)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
@@ -142,7 +141,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
