@@ -54,7 +54,7 @@
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                             Search
                                         </button>
-                                        <a href="{{route('admin.product.list')}}" title="Remove All Filters"  class="btn btn-danger text-white">
+                                        <a href="{{route('admin.product.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>
@@ -142,11 +142,5 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$('.page-link').click(function(e){
-    e.preventDefault();
-    $('#page').val($(this).text());
-    $('form').submit();
-});
-</script>
+
 @endsection

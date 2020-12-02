@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-2">
                                 {{-- @if(!isset($category)) --}}
-                                <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
+                                <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');" title="Create New Usere Here">
                                     Create User
                                 </button>
                                 {{-- @endif --}}
@@ -127,7 +127,7 @@
                                     <td>{{ $value->email }}</td>
                                     <td>{{ $value->mobile }}</td>
                                     <td>
-                                        <a class="btn btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank">
+                                        <a class="btn btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
                                             Login as {{ ucwords($value->name) }}
                                         </a>
                                     </td>

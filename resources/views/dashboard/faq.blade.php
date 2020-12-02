@@ -61,10 +61,10 @@
                                         </select>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" title="save">
                                     @if(isset($faq)) Update @else Submit @endif
                                     </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                    <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Go Back to previous Page">
                                         Back
                                     </a>
                                 </div>
@@ -73,7 +73,7 @@
                                 <div class="form-group" id="moreImage">
                                 <label for="">FAQ Category </label><br>
                                     <div class="col">
-                                        <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}}>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}} title="Find All FAQ Categories Here">
                                             Jump to FAQ Category Section
                                         </a>
                                     </div>    

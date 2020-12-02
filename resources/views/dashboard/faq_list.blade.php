@@ -30,7 +30,7 @@
                                 <h4>FAQ List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right" title="Create New FAQ">
                                     Create FAQ
                                 </a>
                             </div>
@@ -89,11 +89,5 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$('.page-link').click(function(e){
-    e.preventDefault();
-    $('#page').val($(this).text());
-    $('form').submit();
-});
-</script>
+
 @endsection
