@@ -11,7 +11,7 @@
     <div class="c-subheader px-3">
         <ol class="breadcrumb border-0 m-0">
         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Products</li>
+        <li class="breadcrumb-item active">Items</li>
         </ol>
     </div>
     
@@ -34,7 +34,7 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                         <label>Search via Name</label>
-                                        <input type="text" placeholder="Product Name" name="product_name"
+                                        <input type="text" placeholder="Item Name" name="product_name"
                                             class="form-control" value="{{ @$_GET['product_name'] }}">
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                             Search
                                         </button>
-                                        <a href="{{route('admin.product.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                        <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>
@@ -68,8 +68,8 @@
                         </form>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.product') }}" title="Add New Product" class="btn btn-primary btn-sm pull-right">
-                                    Create Product
+                                <a href="{{ route('admin.item') }}" title="Add New Item" class="btn btn-primary btn-sm pull-right">
+                                    Create Item
                                 </a>
                             </div>
                         </div>
@@ -79,11 +79,9 @@
                             <thead>
                                 <tr>
                                     <th>S No.</th>
-                                    <th>Name</th>
-                                    <th>Stock</th>
-                                    <th>Purchase Price</th>
-                                    <th>Sale Price</th>
                                     <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -93,10 +91,6 @@
                                 @foreach($product_list as $key => $value)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{strstr($value->stock_qty, '.', true)}}</td>
-                                    <td>$ {{ $value->purchase_price }}</td>
-                                    <td>$ {{ $value->sale_price }}</td>
                                     <td>
                                         @if(count($value->images) > 0)
                                             <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
@@ -104,11 +98,13 @@
                                             <img src="{{ url('/download.jpeg') }}" width="50" />
                                         @endif
                                     </td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>$ {{ $value->sale_price }}</td>
                                     <td>
-                                        <a class="btn btn-info" title="Edit Product" href="{{ url('admin/edit_product', $value->id) }}">
+                                        <a class="btn btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" title="Delete Product"  href="{{ url('admin/delete_product', $value->id) }}" onclick="return confirm('Are you sure you want to delete this product?');" >
+                                        <a class="btn btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>

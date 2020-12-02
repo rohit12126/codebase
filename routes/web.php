@@ -35,13 +35,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_category/{id?}', 'admin\CategoryController@editSubmitCategory');//->name('admin.categoryedit');
         Route::get('admin/delete_category/{id?}', 'admin\CategoryController@deleteCategory');
 
-        Route::get('admin/product', 'admin\ProductController@index')->name('admin.product');
-        Route::post('admin/product', 'admin\ProductController@addProduct')->name('admin.product');
-        Route::get('admin/edit_product/{id?}', 'admin\ProductController@editProduct');
-        Route::post('admin/edit_product/{id?}', 'admin\ProductController@editSubmitProduct');
-        Route::get('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
-        Route::post('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
-        Route::get('admin/delete_product/{id?}', 'admin\ProductController@deleteProduct');
+        Route::get('admin/item', 'admin\ProductController@index')->name('admin.item');
+        Route::post('admin/item', 'admin\ProductController@addProduct')->name('admin.item');
+        Route::get('admin/edit_item/{id?}', 'admin\ProductController@editProduct');
+        Route::post('admin/edit_item/{id?}', 'admin\ProductController@editSubmitProduct');
+        Route::get('admin/item-list', 'admin\ProductController@productList')->name('admin.item.list');
+        Route::post('admin/item-list', 'admin\ProductController@productList')->name('admin.item.list');
+        Route::get('admin/delete_item/{id?}', 'admin\ProductController@deleteProduct');
 
         Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
         Route::post('admin/user', 'admin\UserController@addUser')->name('admin.user');

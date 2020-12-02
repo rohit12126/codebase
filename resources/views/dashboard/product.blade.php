@@ -73,7 +73,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>@if(isset($product)) Edit @else Add @endif Product</h4>
+                        <h4>@if(isset($product)) Edit @else Add @endif Item</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
@@ -89,7 +89,7 @@
                                                 <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
                                             </a>
                                         </span>
-                                        <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
+                                        <select class="form-control" id="select3" name="category_id" required title="Select a catagory of item">
                                             <option value="0">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
@@ -97,30 +97,20 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Product Name</label>
+                                        <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of product">
+                                        <input type="text" placeholder="Name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of item">
                                     </div>
                                     <div class="form-group">
-                                        <label>Purchase Price</label>
-                                        <input type="number" placeholder="Purchase Price" name="purchase_price" class="form-control" required value="{{ @$product->purchase_price }}" title="Enter Purchase price of product">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Sale Price</label>
+                                        <label>Price</label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
+                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of item">
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about product" >{{ @$product->description }}</textarea>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
-                                        <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
+                                        <select name="status" id="" class="form-control" title="Is item Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
                                             <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
@@ -134,6 +124,12 @@
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about item" >{{ @$product->description }}</textarea>
+                                    </div>
+
                                     <div class="d-flex pt-4">
                                         <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
                                             @if(@$product) Update @else Submit @endif
@@ -151,7 +147,7 @@
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Product image preview" >
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
                                             <label class="btn btn-primary" >
                                                 Upload
@@ -171,7 +167,7 @@
                                         <br><div class="container">
                                         <div class="row">
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview" title="Product image preview">
+                                                <div class="imagePreview" title="Item image preview">
                                                 </div>
                                             <label class="btn btn-primary" title="Upload image here">
                                                 Upload
@@ -263,7 +259,6 @@ $(function() {
     function addMore() {
         document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" onchange="openFile(event)" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><img id="output"><div>';
     }
-
 </script>
 
 @endsection
