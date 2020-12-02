@@ -14,38 +14,38 @@
         <li class="breadcrumb-item active">Products</li>
         </ol>
     </div>
+    
 @endsection
 @section('content')
 <div class="container-fluid">
-    <div class="fade-in">
-         <div class="row">
+    <div class="fade-in">        
+        <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Product Filter</h4>
-                    </div>
-                    <div class="card-body">
-                        @include('partials.alert_msg')
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
-                            @csrf
+                        <div class="row">
+                            <div class="col-10">
+                            @include('partials.alert_msg')
+                        <form method="GET" action="{{ url()->current() }}" enctype="multipart/form-data">
+                            
                             <input type="hidden" name="page" id="page" value="" />
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="form-group">
-                                        <label>Product Name</label>
+                                        <label>Search via Name</label>
                                         <input type="text" placeholder="Product Name" name="product_name"
-                                            class="form-control" value="{{ @$_POST['product_name'] }}">
+                                            class="form-control" value="{{ @$_GET['product_name'] }}">
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <label>Status</label>
+                                            <label>Filter via Status</label>
                                             <select name="product_status" id="" class="form-control">
                                                 <option value="">Select Status</option>
-                                                <option value="1" @if(@$_POST['product_status']==1) selected @endif </option>Active
+                                                <option value="1" @if(@$_GET['product_status']==1) selected @endif </option>Active
                                                 </option>
-                                                <option value="0" @if(@$_POST['product_status']==2) selected @endif </option>In-Active
+                                                <option value="0" @if(@$_GET['product_status']==2) selected @endif </option>In-Active
                                                 </option>
                                             </select>
                                         </div>
@@ -66,21 +66,9 @@
                                 </div> --}}
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-10">
-                                <h4>Product List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right" title="Create Product Here">
+                                <a href="{{ route('admin.product') }}" class="btn btn-primary btn-sm pull-right" title="Add New Product">
                                     Create Product
                                 </a>
                             </div>
@@ -92,7 +80,7 @@
                                 <tr>
                                     <th>S No.</th>
                                     <th>Name</th>
-                                    <th>Stock Quantity</th>
+                                    <th>Stock</th>
                                     <th>Purchase Price</th>
                                     <th>Sale Price</th>
                                     <th>Image</th>
@@ -106,9 +94,9 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->name }}</td>
-                                    <td>{{ $value->stock_qty }}</td>
-                                    <td>{{ $value->purchase_price }}</td>
-                                    <td>{{ $value->sale_price }}</td>
+                                    <td>{{strstr($value->stock_qty, '.', true)}}</td>
+                                    <td>$ {{ $value->purchase_price }}</td>
+                                    <td>$ {{ $value->sale_price }}</td>
                                     <td>
                                         @if(count($value->images) > 0)
                                             <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
@@ -127,7 +115,7 @@
 
                             </tbody>
                         </table>
-                        {{ @$product_list->links() }}
+                        {{ @$product_list->appends(request()->query())->links() }}
                     </div>
                 </div>
             </div>
