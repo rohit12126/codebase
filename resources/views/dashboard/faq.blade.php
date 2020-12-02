@@ -4,6 +4,16 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.faq.list') }}">FAQ</a></li>
+            <li class="breadcrumb-item active">@if(isset($faq)) Edit @else Add @endif  FAQ</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -14,7 +24,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>FAQ @if(isset($faq)) Edit @else Add @endif </h4>
+                        <h4> @if(isset($faq)) Edit @else Add @endif  FAQ</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" id="myform">
@@ -25,7 +35,7 @@
                                         <label for="select3">Select Categoty</label>
                                         <span class="mandatory">*</span>
                                         <select class="form-control" id="select3" name="category_id" required>
-                                            <option value="">Please select</option>
+                                            <option value="">Please select Or Create new</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$faq->category) selected @endif>{{$value->category}}</option>
                                             @endforeach
@@ -50,21 +60,24 @@
                                             <option @if (isset($faq->status) && $faq->status =='0') {{ "selected"}} @endif value="0">Inactive</option>
                                         </select>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">
-                                    @if(isset($faq)) Update @else Submit @endif
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                        Back
-                                    </a>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary  mr-4 mt-0" title="@if(isset($faq)) Update @else Submit @endif">
+                                        @if(isset($faq)) Update @else Submit @endif
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancle">
+                                            Cancle
+                                        </a>
+                                    </div>
                                 </div>
                             </form>
                             <div class="col-6">
                                 <div class="form-group" id="moreImage">
                                 <label for="">FAQ Category </label><br>
-                                    <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}}>
-                                        Jump to FAQ Category Section
-                                    </a>    
+                                    <div class="col">
+                                        <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}} title="Find All FAQ Categories Here">
+                                            Jump to FAQ Category Section
+                                        </a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>

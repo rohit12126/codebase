@@ -42,6 +42,13 @@ class FaqManager
     {
         return FaqModel::with('categori')->paginate(5);
     }
+    public function getfaqList()
+    {
+        return FaqModel::with('categori')
+                        ->orderBy('id', 'desc')
+                        ->take(10)
+                        ->get();
+    }
     public function delete($id)
     {
         if(FaqModel::where('id',$id)->delete()){

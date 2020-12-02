@@ -219,12 +219,12 @@ footer-->
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
                             <h5 class="text-uppercase mb-3">Quick Links</h5>
                             <ul class="footer-nav-ul">
-                                <li><a href="">Home</a></li>
-                                <li><a href="">About us</a></li>
-                                <li><a href="">resources</a></li>
-                                <li><a href="">portfolio</a></li>
-                                <li><a href="">blog</a></li>
-                                <li><a href="">faq</a></li>
+                                <li><a href="{{ url('home/') }}">Home</a></li>
+                                <li><a href="{{ url('about-us/') }}">About us</a></li>
+                                <li><a href="{{ url('product/') }}">Products</a></li>
+                                <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
+                                <li><a href="{{ url('blog/') }}">blog</a></li>
+                                <li><a href="{{ url('faq/') }}">faq</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">

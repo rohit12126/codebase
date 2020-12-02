@@ -55,6 +55,16 @@
   font-size:15px;
 }
 </style>
+
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Products</a></li>
+        <li class="breadcrumb-item active">@if(isset($product)) Edit @else Add @endif Product</li>
+        </ol>
+    </div>
+@endsection
 <div class="container-fluid">
     <div class="fade-in">
 
@@ -63,7 +73,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>@if(isset($product)) Edit @else Add @endif Product</h4>
+                        <h4>@if(isset($product)) Edit @else Add @endif Item</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
@@ -71,44 +81,35 @@
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="select3">Select Categoty</label>
-                                        <span class="mandatory">*</span>
-                                        <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
-                                            <option value="">Please select</option>
+                                        <label for="select3">Select Category</label>
+                                        <span>
+                                            <a href="{{ route('admin.category') }}" style="text-decoration: none;">
+                                                <i class="fa fa-plus category-add" title="Click here to add category"></i>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                            </a>
+                                        </span>
+                                        <select class="form-control" id="select3" name="category_id" >
+                                            <option value="0">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Product Name</label>
+                                        <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Product name" name="name" class="form-control" required value="{{ @$product->name }}" title="Name of product">
+                                        <input type="text" placeholder="Name" name="name" class="form-control" required value="{{ @$product->name }}" >
                                     </div>
                                     <div class="form-group">
-                                        <label>Purchase Price</label>
-                                        <input type="number" placeholder="Purchase Price" name="purchase_price" class="form-control" required value="{{ @$product->purchase_price }}" title="Enter Purchase price of product">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Sale Price</label>
+                                        <label>Price</label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
+                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of item">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Stock Quantity</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}" title="Enter Stock Quantity of product">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about product" >{{ @$product->description }}</textarea>
-                                    </div>
-
+                                    
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
-                                        <select name="status" id="" class="form-control" title="Is product Active or Inactive ?">
+                                        <select name="status" id="" class="form-control" title="Is item Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
                                             <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
@@ -117,18 +118,24 @@
                                     <div class="form-group">
                                         <label for="">Is Accessory ?</label>
                                         <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is product accessory ?">
+                                        <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
-                                    <div style="display: flex;flex-direction: row;">
-                                        <button type="submit" class="btn btn-primary" title="Submit Product">
-                                            Submit
+
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about item" >{{ @$product->description }}</textarea>
+                                    </div>
+
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
+                                            @if(@$product) Update @else Submit @endif
                                         </button>
                                                 
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" style="margin-left: 10px;">
-                                            Back
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancle">
+                                            Cancle
                                         </a>
                                     </div>
                                 </div>
@@ -139,18 +146,18 @@
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title=" This is Product Image Preview" >
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
                                             <label class="btn btn-primary" >
                                                 Upload
                                             </label>
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload Images Here">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
                                             @if($key > 0)
                                             <i class="fa fa-times del"></i>
                                             @endif
                                             </div>
                                             @endforeach
-                                        <i class="fa fa-plus imgAdd" title="U may add more images"></i>
+                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
                                     </div>
 
@@ -159,14 +166,14 @@
                                         <br><div class="container">
                                         <div class="row">
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview" title=" This is Product Image Preview">
+                                                <div class="imagePreview" title="Item image preview">
                                                 </div>
-                                            <label class="btn btn-primary" title="Upload Images Here">
+                                            <label class="btn btn-primary" title="Upload image here">
                                                 Upload
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload image here">
                                             </label>
                                             </div>
-                                            <i class="fa fa-plus imgAdd" title="U may add more images"></i>
+                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                             </div>
                                         </div>
                                         @endif
@@ -220,6 +227,11 @@ $(function() {
 </script>
 <script>
     $("#myform").validate({
+        /* onkeyup: true,
+        rules: {
+            "purchase_price": { "priceCheck": { data: "sale_price" } },
+            "sale_price": { "priceCheck": { data: "purchase_price" } }             
+        }, */
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();
@@ -231,7 +243,6 @@ $(function() {
     function addMore() {
         document.getElementById('moreImage').innerHTML += '<div><hr><input id="file-input" type="file" name="image[]" class="form-control mb-2" onchange="openFile(event)" accept="image/*"><bottun class="btn btn-danger btn-sm" onclick="return this.parentNode.remove();">-</button><img id="output"><div>';
     }
-
 </script>
 
 @endsection

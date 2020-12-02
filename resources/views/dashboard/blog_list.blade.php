@@ -8,6 +8,15 @@
 </style>
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Blogs</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -21,7 +30,7 @@
                                 <h4>Blog List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right" title="Create Blog Now">
                                     Create Blog
                                 </a>
                             </div>
@@ -76,11 +85,5 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$('.page-link').click(function(e){
-    e.preventDefault();
-    $('#page').val($(this).text());
-    $('form').submit();
-});
-</script>
+
 @endsection

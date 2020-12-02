@@ -13,9 +13,7 @@ class ProductManager
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
-            'purchase_price' => $req->purchase_price,
             'sale_price' => $req->sale_price,
-            'stock_qty' => $req->stock_qty,
             'description' => $req->description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
@@ -48,9 +46,7 @@ class ProductManager
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
-            'purchase_price' => $req->purchase_price,
             'sale_price' => $req->sale_price,
-            'stock_qty' => $req->stock_qty,
             'description' => $req->description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
@@ -111,9 +107,9 @@ class ProductManager
             if ($req->stock_less) {
                 $order->where('stock_qty', '<=', $req->stock_less);
             }
-            return $order->orderBy('id', 'desc')->paginate(4);
+            return $order->orderBy('id', 'desc')->paginate(10);
         } else {
-            return ProductModel::with('images')->orderBy('id', 'desc')->paginate(4);
+            return ProductModel::with('images')->orderBy('id', 'desc')->paginate(10);
         }
     }
 

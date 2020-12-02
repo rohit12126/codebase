@@ -10,6 +10,15 @@
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Orders</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -71,10 +80,10 @@
                             </div>
                             <hr>
                             <div class="d-flex">
-                                <button type="submit" class="btn btn-primary mt-0 mr-4">
+                                <button type="submit" class="btn btn-primary mt-0 mr-4" title="Submit Filters">
                                     Submit
                                 </button>
-                                <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Clear Filters">
                                     Back
                                 </a>
                             </div>
@@ -161,12 +170,6 @@
             , showButtonPanel: true
             , dateFormat: 'dd M yy',
 
-        });
-
-        $('.page-link').click(function(e) {
-            e.preventDefault();
-            $('#page').val($(this).text());
-            $('form').submit();
         });
     });
 

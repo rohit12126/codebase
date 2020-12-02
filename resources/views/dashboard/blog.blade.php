@@ -4,11 +4,20 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.blog.list') }}">Blogs</a></li>
+            <li class="breadcrumb-item active">@if(isset($blog)) Edit @else Add @endif Blog</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
     <div class="fade-in">
-
         @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
@@ -37,9 +46,9 @@
                                         <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$blog->title }}">
                                     </div>
                                     <div class="form-group"> 
-                                        <label>Description</label>
+                                        <label>Body</label>
                                         <span class="mandatory">*</span>
-                                        <textarea placeholder="Description" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
+                                        <textarea placeholder="Add Blog Body here" id="content" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
@@ -54,7 +63,7 @@
                                             Submit
                                         </button>
                                         <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                            Back
+                                            Cancle
                                         </a>
                                     </div>
                                 </div>
@@ -81,7 +90,7 @@
                                     <hr>
                                     <div class="form-group" id="moreImage">
                                         <label for="">Blog Category </label><br>
-                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}}>
+                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}} title="Find all Blog Catagories Here">
                                             Jump to Blog Category Section
                                         </a>    
                                     </div>
@@ -102,7 +111,24 @@
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+<script src="{{ asset('js/ckeditor.js') }}"></script>
+<style>
+.ck-editor__editable {
+    min-height: 200px;
+}
+</style>
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#content' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
 <script>
 $(function() {
     $(document).on("change",".uploadFile", function()

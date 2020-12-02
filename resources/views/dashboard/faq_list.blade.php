@@ -8,6 +8,15 @@
 </style>
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">FAQ</li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -21,7 +30,7 @@
                                 <h4>FAQ List</h4>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right">
+                                <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right" title="Create New FAQ">
                                     Create FAQ
                                 </a>
                             </div>
@@ -47,7 +56,11 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->title }}</td>
                                     <td>{{ $value->body }}</td>
+                                    @if($value->categori==null)
+                                    <td>No Category Assigned</td>
+                                    @else
                                     <td>{{$value->categori->category}}</td>
+                                    @endif
                                     <td>
                                         <a class="btn btn-info" href="{{ url('admin/edit_faq', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
@@ -76,11 +89,5 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script>
-$('.page-link').click(function(e){
-    e.preventDefault();
-    $('#page').val($(this).text());
-    $('form').submit();
-});
-</script>
+
 @endsection

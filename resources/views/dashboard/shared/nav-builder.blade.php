@@ -39,24 +39,17 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find All Categories Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.category') }}">
-            <i class="cil-grid c-sidebar-nav-icon"></i>
-            Category
-        </a>
-    </li>
-
-    <li class="c-sidebar-nav-item" title="Find All Products Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.product.list') }}">
+    <li class="c-sidebar-nav-item" title="Find All items Here">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
-            Product
+            Items
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Users Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.user') }}">
             <i class="cil-user c-sidebar-nav-icon"></i>
-            User
+            Users
         </a>
     </li>
 
@@ -73,8 +66,8 @@ if(!function_exists('renderDropdown')){
             Blogs
         </a>
     </li>
-
-    <li class="c-sidebar-nav-item" title="Find All CMS Pages Here">
+    {{-- Uncomment below code for CMS and Review Modules --}}
+   {{--  <li class="c-sidebar-nav-item" title="Find All CMS Pages Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.page.list') }}">
             <i class="cil-grid c-sidebar-nav-icon"></i>
             CMS
@@ -85,7 +78,7 @@ if(!function_exists('renderDropdown')){
             <i class="cil-list c-sidebar-nav-icon"></i>
             Reviews
         </a>
-    </li>
+    </li> --}}
     <li class="c-sidebar-nav-item" title="Find All FAQ Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.faq.list') }}">
             <i class="cil-grid c-sidebar-nav-icon"></i>

@@ -4,6 +4,8 @@ namespace App\Classes;
 
 use App\FaqCategory;
 use App\Classes\HelperManager as Common;
+use App\Faq;
+
 
 class FaqCategoryManager
 {
@@ -39,6 +41,7 @@ class FaqCategoryManager
     public static function delete($id)
     {
         if ($category = self::getCategoryById($id)) {
+            Faq::where('category', $id)->update(['category' => self::getCategoryLatestId()]);
             $category->delete();
             return true;
         } else {
@@ -54,5 +57,9 @@ class FaqCategoryManager
     public static function getCategoryById($id)
     {
         return FaqCategory::find($id);
+    }
+    public static function getCategoryLatestId()
+    {
+        return FaqCategory::latest()->first()->id;
     }
 }

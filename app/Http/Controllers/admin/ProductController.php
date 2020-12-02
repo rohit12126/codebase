@@ -26,11 +26,11 @@ class ProductController extends Controller
     {
         $response = ProductManager::add($req);
         if($response == true){
-            Common::setMessage(__('product_add_success'));
+            Common::setMessage(__('item_add_success'));
         }else{
-            Common::setMessage(__('product_add_failed'), 'error');
+            Common::setMessage(__('item_add_failed'), 'error');
         }
-        return redirect()->route('admin.product.list');
+        return redirect()->route('admin.item.list');
     }
 
     public function editProduct($id)
@@ -45,21 +45,21 @@ class ProductController extends Controller
     {
         $response = ProductManager::edit($req);
         if($response == true){
-            Common::setMessage(__('product_update_success'));
+            Common::setMessage(__('item_update_success'));
             return back();
         }else{
-            Common::setMessage(__('product_update_falied'), 'error');
+            Common::setMessage(__('item_update_falied'), 'error');
         }
-        return redirect()->route('admin.product.list');
+        return redirect()->route('admin.item.list');
     }
 
     public function deleteProduct($id)
     {
         $response = ProductManager::delete($id);
         if($response == true){
-            Common::setMessage(__('product_delete_success'));
+            Common::setMessage(__('item_delete_success'));
         }else{
-            Common::setMessage(__('product_delete_failed'), 'error');
+            Common::setMessage(__('item_delete_failed'), 'error');
         }
         return back();
     }

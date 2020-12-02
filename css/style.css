@@ -20241,3 +20241,20 @@ body {
   cursor:pointer;
   font-size:15px;
 }
+
+.category-add {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 21, 0.9);
+  color: #fff;
+  box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.2);
+  text-align: center;
+  line-height: 20px !important;
+  margin-top: 0px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.category-add-text {
+  font-size: 10px;
+}

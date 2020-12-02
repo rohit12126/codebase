@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-//use App\Classes\BlogManager;
+use App\Classes\FaqManager;
 
 class HomeController extends Controller
 {
+    public function __construct(
+        FaqManager $faqManager
+    )
+    {
+        $this->faqManager = $faqManager;
+    }
+
     public function home()
     {
         return view('frontend.home');
@@ -15,7 +22,8 @@ class HomeController extends Controller
 
     public function faq()
     {
-        return view('frontend.faq');
+        $faq_list = $this->faqManager->getfaqList(5);
+        return view('frontend.faq',compact('faq_list'));
     }
 
     public function aboutUs()

@@ -4,6 +4,15 @@
 
 @endsection
 
+@section('breadcrumb')
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.category') }}">Category</a></li>
+        </ol>
+    </div>
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -27,15 +36,15 @@
                                             required value="{{ @$category->name }}">
                                     </div>
                                     <div class="d-flex pt-2" >
-                                    <button type="submit" class="btn btn-primary mt-0 mr-3">
+                                    <button type="submit" title="@if(isset($category)) Update @else Submit @endif" class="btn btn-primary mt-0 mr-3">
                                         @if(isset($category)) Update @else Submit @endif
                                     </button>
                                     @if(isset($category))
-                                    <a href="{{route('admin.category')}}" class="btn btn-danger text-white">
+                                    <a href="{{route('admin.category')}}" title="Cancle" class="btn btn-danger text-white">
                                         Cancel
                                     </a>
                                     @else
-                                    <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
+                                    <a onclick="$('.addForm').hide('slow');" title="Cancle" class="btn btn-danger text-white">
                                         Cancel
                                     </a>
                                     @endif
@@ -57,7 +66,7 @@
                     <div class="col-10">
                         <h4>Category List</h4>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2" title="Add New Category">
                         <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
                             Create Category
                         </button>
@@ -79,12 +88,11 @@
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
-                                    <button class="btn btn-info" type="button" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top" data-original-title="Tooltip on top"
+                                    <button class="btn btn-info" type="button" title="Edit Category"
                                         onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
                                         <i class="cil-pencil"></i>
                                     </button>
-                                    <a class="btn btn-danger" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                    <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
                                         <i class="cil-trash"></i>
                                     </a>
                                 </td>
