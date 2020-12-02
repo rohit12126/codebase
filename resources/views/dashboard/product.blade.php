@@ -82,9 +82,9 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Category</label>
-                                        <span>
+                                        <span title="Click here to add category">
                                             <a href="{{ route('admin.category') }}" style="text-decoration: none;">
-                                                <i class="fa fa-plus category-add" title="Click here to add category"></i>
+                                                <i class="fa fa-plus category-add" ></i>
                                                 <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
                                             </a>
                                         </span>
@@ -191,10 +191,7 @@
 </div>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-<style>
 
-</style>
 @endsection
 
 @section('javascript')
@@ -227,11 +224,6 @@ $(function() {
 </script>
 <script>
     $("#myform").validate({
-        /* onkeyup: true,
-        rules: {
-            "purchase_price": { "priceCheck": { data: "sale_price" } },
-            "sale_price": { "priceCheck": { data: "purchase_price" } }             
-        }, */
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();

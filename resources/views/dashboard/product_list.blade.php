@@ -59,11 +59,6 @@
                                         </a>
                                     </div>
                                 </div>
-                                {{-- <div class="col">
-                                <label>Stock Less Quantity</label>
-                                <input type="text" placeholder="Stock Less Quantity" name="stock_less" class="form-control"
-                                    value="{{ @$_POST['stock_less'] }}" autocomplete="off">
-                                </div> --}}
                             </div>
                         </form>
                             </div>

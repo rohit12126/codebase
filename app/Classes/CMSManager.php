@@ -61,7 +61,7 @@ class CMSManager
 
     public static function getPageListPaginated($req)
     {
-       return CMS::orderBy('id', 'desc')->paginate(4);
+       return CMS::orderBy('id', 'desc')->paginate(10);
     }
 
     public static function getPageById($id)

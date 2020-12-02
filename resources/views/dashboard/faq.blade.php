@@ -34,6 +34,12 @@
                                     <div class="form-group">
                                         <label for="select3">Select Categoty</label>
                                         <span class="mandatory">*</span>
+                                        <span title="Click here to add category">
+                                            <a href="{{url('admin/faq-category')}}" style="text-decoration: none;">
+                                                <i class="fa fa-plus category-add" ></i>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                            </a>
+                                        </span>
                                         <select class="form-control" id="select3" name="category_id" required>
                                             <option value="">Please select Or Create new</option>
                                             @foreach($category_list as $key => $value)
@@ -70,16 +76,6 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="col-6">
-                                <div class="form-group" id="moreImage">
-                                <label for="">FAQ Category </label><br>
-                                    <div class="col">
-                                        <a class="btn btn-primary  text-white" href={{url('admin/faq-category')}} title="Find All FAQ Categories Here">
-                                            Jump to FAQ Category Section
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,10 +86,10 @@
 </div>
 
 @endsection
-
-@section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+@section('javascript')
 <script>
     $("#myform").validate({
         submitHandler: function(form) {

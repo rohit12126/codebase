@@ -40,7 +40,7 @@ class FaqManager
     }
     public function getfaqListPaginated()
     {
-        return FaqModel::with('categori')->paginate(5);
+        return FaqModel::with('categori')->paginate(10);
     }
     public function getfaqList()
     {

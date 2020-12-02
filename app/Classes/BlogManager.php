@@ -76,7 +76,7 @@ class BlogManager
 
     public static function getBlogListPaginated($req)
     {
-        return BlogModel::paginate(1);
+        return BlogModel::paginate(10);
     }
 
     public static function getBlogById($id)
@@ -84,9 +84,9 @@ class BlogManager
         return BlogModel::find($id);
     }
 
-    public function getBlogs($paginate)
+    public function getBlogs()
     {
-        $blogs = BlogModel::with('catergory')->paginate($paginate);
+        $blogs = BlogModel::with('catergory')->paginate(10);
         return $blogs;
     }
 

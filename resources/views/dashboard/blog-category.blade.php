@@ -42,12 +42,14 @@
                                             <option value="0" @if (isset($category->status) && $category->status =='0') {{ "selected"}} @endif>Inactive</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        @if(isset($category)) Update @else Submit @endif
-                                    </button>
-                                    <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
-                                        Cancel
-                                    </a>
+                                    <div class="d-flex pt-2">
+                                        <button type="submit" class="btn btn-primary mt-0 mr-3">
+                                            @if(isset($category)) Update @else Submit @endif
+                                        </button>
+                                        <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
+                                            Cancel
+                                        </a>
+                                    </div>
                                 </div>
                         </form>
                     </div>
@@ -115,6 +117,7 @@
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 <script>
     $('.addForm').hide();
     $("#myform").validate({

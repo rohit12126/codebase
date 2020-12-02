@@ -31,8 +31,14 @@
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="select3">Select Categoty</label>
+                                        <label for="select3">Select Category</label>
                                         <span class="mandatory">*</span>
+                                        <span title="Click here to add category">
+                                            <a href="{{url('admin/blog-category')}}" style="text-decoration: none;">
+                                                <i class="fa fa-plus category-add" ></i>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                            </a>
+                                        </span>
                                         <select class="form-control" id="select3" name="category_id" required>
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
@@ -87,13 +93,6 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="form-group" id="moreImage">
-                                        <label for="">Blog Category </label><br>
-                                        <a class="btn btn-primary  text-white" href={{url('admin/blog-category')}} title="Find all Blog Catagories Here">
-                                            Jump to Blog Category Section
-                                        </a>    
-                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -107,11 +106,13 @@
 </div>
 
 @endsection
-
 @section('javascript')
+
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 <script src="{{ asset('js/ckeditor.js') }}"></script>
+
 <style>
 .ck-editor__editable {
     min-height: 200px;
@@ -151,6 +152,5 @@ $(function() {
             form.submit();
         }
     });
-
 </script>
 @endsection

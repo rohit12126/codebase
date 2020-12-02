@@ -73,10 +73,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{-- @if(@!$_POST) --}}
                         {{ @$faq_list->links() }}
-                            
-                        {{-- @endif --}}
                     </div>
                 </div>
             </div>

@@ -94,7 +94,6 @@ class ProductManager
     {
         if (
             $req->product_name !== null
-            || $req->stock_less !== null
             || $req->product_status !== null
         ) {
             $order = ProductModel::with('images');
@@ -104,9 +103,7 @@ class ProductManager
             if($req->product_name){
                 $order->where('name', 'like', '%' . $req->product_name . '%');
             }
-            if ($req->stock_less) {
-                $order->where('stock_qty', '<=', $req->stock_less);
-            }
+            
             return $order->orderBy('id', 'desc')->paginate(10);
         } else {
             return ProductModel::with('images')->orderBy('id', 'desc')->paginate(10);
@@ -118,9 +115,9 @@ class ProductManager
         return ProductModel::with('images')->find($id);
     }
 
-    public function getProducts($paginate)
+    public function getProducts()
     {
-        $products = ProductModel::with('images', 'catergory')->paginate($paginate);
+        $products = ProductModel::with('images', 'catergory')->paginate(10);
         return $products;
     }
 

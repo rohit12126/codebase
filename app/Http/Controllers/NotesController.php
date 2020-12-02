@@ -27,7 +27,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $notes = Notes::with('user')->with('status')->paginate( 20 );
+        $notes = Notes::with('user')->with('status')->paginate( 10 );
         return view('dashboard.notes.notesList', ['notes' => $notes]);
     }
 
