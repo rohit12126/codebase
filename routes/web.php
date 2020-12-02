@@ -29,12 +29,14 @@ Route::group(['middleware' => ['get.menu']], function () {
         
         Route::get('/admin/dashboard','admin\DashboardController@index')->name('admin.dashboard');
 
+        /* Category Module Routes */
         Route::get('admin/category', 'admin\CategoryController@index')->name('admin.category');
         Route::post('admin/category', 'admin\CategoryController@addCategory')->name('admin.category');
         Route::get('admin/edit_category/{id?}', 'admin\CategoryController@editCategory');//->name('admin.categoryedit');
         Route::post('admin/edit_category/{id?}', 'admin\CategoryController@editSubmitCategory');//->name('admin.categoryedit');
         Route::get('admin/delete_category/{id?}', 'admin\CategoryController@deleteCategory');
 
+        /* Item (Product/Accessory) Module Routes */
         Route::get('admin/item', 'admin\ProductController@index')->name('admin.item');
         Route::post('admin/item', 'admin\ProductController@addProduct')->name('admin.item');
         Route::get('admin/edit_item/{id?}', 'admin\ProductController@editProduct');
@@ -43,6 +45,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/item-list', 'admin\ProductController@productList')->name('admin.item.list');
         Route::get('admin/delete_item/{id?}', 'admin\ProductController@deleteProduct');
 
+        /* User Module Routes */
         Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
         Route::post('admin/user', 'admin\UserController@addUser')->name('admin.user');
         Route::get('admin/edit_user/{id?}', 'admin\UserController@editUser'); 
@@ -50,22 +53,25 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/delete_user/{id?}', 'admin\UserController@deleteUser');
         Route::get('admin/user_login/{id?}', 'admin\UserController@proxyLogin');
 
+        /* Admin Change Password Module Routes */
         Route::get('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password'); 
         Route::post('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password');
-        
+
+        /* Order Module Routes */
         Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
         Route::post('admin/order', 'admin\OrderController@index')->name('admin.order');
         Route::get('admin/order_details/{order_no?}', 'admin\OrderController@orderDetails');
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
         
         Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
-
+        /* Blog Category Module Routes */
         Route::get('admin/blog-category', 'admin\BlogCategoryController@index')->name('admin.blog.category');
         Route::post('admin/blog-category', 'admin\BlogCategoryController@addCategory')->name('admin.blog.category');
         Route::get('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editCategory');//->name('admin.categoryedit');
         Route::post('admin/blog_edit_category/{id?}', 'admin\BlogCategoryController@editSubmitCategory');//->name('admin.categoryedit');
         Route::get('admin/blog_delete_category/{id?}', 'admin\BlogCategoryController@deleteCategory');
-
+        
+        /* Blog Module Routes*/
         Route::get('admin/blog', 'admin\BlogController@index')->name('admin.blog');
         Route::post('admin/blog', 'admin\BlogController@addBlog')->name('admin.blog');
         Route::get('admin/edit_blog/{id?}', 'admin\BlogController@editBlog');
@@ -73,11 +79,16 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
+        Route::get('admin/check-exist-slug/', 'admin\BlogController@checkExistSlug')->name('admin.checkExistSlug');
+
+        /* Reviews Module Routes */
         Route::get('/admin/reviews' , 'admin\ReviewController@allActive')->name('admin.aprooved');
         Route::get('/admin/new/reviews' , 'admin\ReviewController@allInActive')->name('admin.toaprooved');
         Route::get('admin/review/delete/{id?}', 'admin\ReviewController@delete');
         Route::get('admin/review/approv/{id?}', 'admin\ReviewController@approv');
         Route::get('admin/review/disapprov/{id?}', 'admin\ReviewController@disapprov');
+
+        /* FAQ Module Routes */
         Route::get('admin/faq','admin\FaqController@index')->name('admin.faq');
         Route::post('admin/faq','admin\FaqController@addFaq')->name('admin.faq');
         Route::post('admin/faq/category','admin\FaqController@addFaqCategory')->name('admin.faq.category');
@@ -86,12 +97,14 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/edit_faq/{id?}', 'admin\FaqController@editFaq');
         Route::post('admin/edit_faq/{id?}', 'admin\FaqController@editSubmitFaq');
 
+        /* FAQ Category Module Routes */
         Route::get('admin/faq-category', 'admin\FaqCategoryController@index')->name('admin.faq.category');
         Route::post('admin/faq-category', 'admin\FaqCategoryController@addCategory')->name('admin.faq.category');
         Route::get('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editCategory');
         Route::post('admin/faq_edit_category/{id?}', 'admin\FaqCategoryController@editSubmitCategory');
         Route::get('admin/faq_delete_category/{id?}', 'admin\FaqCategoryController@deleteCategory');
 
+        /* CMS Module Routes */
         Route::get('admin/cms', 'admin\CMSController@index')->name('admin.cms');
         Route::post('admin/cms', 'admin\CMSController@addPage')->name('admin.cms');
         Route::get('admin/edit_cms/{id?}', 'admin\CMSController@editPage');
@@ -99,11 +112,17 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::post('admin/page-list', 'admin\CMSController@pageList')->name('admin.page.list');
         Route::get('admin/delete_page/{id?}', 'admin\CMSController@deletePage');
+        
+        /* Enquiries Module Routes */
         Route::get('admin/enquiries', 'admin\EnquiryController@list')->name('admin.enquiries');
         Route::get('admin/update-enquiry/{id?}', 'admin\EnquiryController@contected');
 
     });
-
+    /* 
+    * Admin Theme Default Routes
+    * Need to remove after completion
+    *
+    */
     Route::group(['middleware' => ['role:user']], function () {
         Route::get('/colors', function () {
             return view('dashboard.colors');
@@ -273,6 +292,8 @@ Route::group(['middleware' => ['get.menu']], function () {
         });
     });
 });
+
+
 /*user dashboard Routes*/
 Route::prefix('account')->group(function () {
 Route::get('/profile',                 'ProfileController@index')->name('profile');

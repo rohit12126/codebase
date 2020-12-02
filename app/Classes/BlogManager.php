@@ -16,6 +16,7 @@ class BlogManager
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
+            'slug' => $req->slug,
             'description' => $req->description,
             'image' => $file_name,
             'status' => $req->status
@@ -57,6 +58,32 @@ class BlogManager
         } else {
             return false;
         }
+    }
+
+    public static function checkExistSlug($req)
+    {
+        if (!empty($req->id)) {
+            $blog = BlogModel::where('slug', '=', $req->slug)
+                ->where('id', '!=', $req->id)
+                ->first();
+        } else {
+            $blog = BlogModel::where('slug', '=', $req->slug)->first();
+        }
+
+        if ($blog->isNotEmpty()) {
+            /* slug exist */
+            $response = array(
+                'status' => true,
+                'message' => "Slug is already in exist!"
+            );
+        } else {
+            /* slug not exist */
+            $response = array(
+                'status' => false,
+                'message' => "Slug is available for use!"
+            );
+        }
+        return $response;
     }
 
     public static function delete($id)

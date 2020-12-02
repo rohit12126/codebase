@@ -42,14 +42,19 @@
                                         <select class="form-control" id="select3" name="category_id" required>
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                            <option value="{{ $value->id }}" @if($value->id == @$blog->category_id) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if($value->id == @$blog->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$blog->title }}">
+                                        <input type="text" placeholder="Title" name="title" id="title" class="form-control" required value="{{ @$blog->title }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>URL Slug</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" required value="{{ @$blog->slug }}">
                                     </div>
                                     <div class="form-group"> 
                                         <label>Body</label>
@@ -119,6 +124,7 @@
 }
 </style>
 <script>
+    /* Editor */
 	ClassicEditor
 		.create( document.querySelector( '#content' ), {
 			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
@@ -129,28 +135,36 @@
 		.catch( err => {
 			console.error( err.stack );
 		} );
-</script>
-<script>
-$(function() {
-    $(document).on("change",".uploadFile", function()
-    {
-        if (this.files && this.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('.previewImage').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(this.files[0]);
-        }
-    });
-});
-</script>
 
-<script>
+    /* Image Preview */
+    $(function() {
+        $(document).on("change",".uploadFile", function()
+        {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.previewImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    });
+
+    /* Form Validation */
     $("#myform").validate({
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();
         }
     });
+/* Slug generation */
+var slug = function(str) {
+    var $slug = '';
+    var trimmed = $.trim(str);
+    $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+    replace(/-+/g, '-').
+    replace(/^-|-$/g, '');
+    return $slug.toLowerCase();
+}
 </script>
 @endsection
