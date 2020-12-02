@@ -55,7 +55,7 @@
           
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
-              <div class="card text-white bg-primary cursor-pointer" title="Total Active Accessories" onclick="window.location='{{ route('admin.product.list') }}'">
+              <div class="card text-white bg-primary cursor-pointer" title="Total Active Accessories" onclick="window.location='{{ route('admin.item.list') }}'">
                   <div class="card-body pb-0">
                     <div class="text-value-lg">{{ $data['accessoryCount'] }}</div>
                     <div>Total Accessories</div>
@@ -90,7 +90,7 @@
         </div>
     </div>
 </div>
-<form method="GET" id="activeProductForm" action="{{ route('admin.product.list') }}" enctype="multipart/form-data">
+<form method="GET" id="activeProductForm" action="{{ route('admin.item.list') }}" enctype="multipart/form-data">
 <input type="hidden" name="product_status" value="1">
 </form>
 <script>
