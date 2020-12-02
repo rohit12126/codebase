@@ -60,13 +60,14 @@
                                             <option @if (isset($faq->status) && $faq->status =='0') {{ "selected"}} @endif value="0">Inactive</option>
                                         </select>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary" title="save">
-                                    @if(isset($faq)) Update @else Submit @endif
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Go Back to previous Page">
-                                        Back
-                                    </a>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary  mr-4 mt-0" title="@if(isset($faq)) Update @else Submit @endif">
+                                        @if(isset($faq)) Update @else Submit @endif
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancle">
+                                            Cancle
+                                        </a>
+                                    </div>
                                 </div>
                             </form>
                             <div class="col-6">

@@ -81,10 +81,16 @@
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="select3">Select Categoty</label>
+                                        <label for="select3">Select Category</label>
                                         <span class="mandatory">*</span>
+                                        <span>
+                                            <a href="{{ route('admin.category') }}" style="text-decoration: none;">
+                                                <i class="fa fa-plus category-add" title="Click here to add category"></i>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                            </a>
+                                        </span>
                                         <select class="form-control" id="select3" name="category_id" required title="Select a Catagory of product">
-                                            <option value="">Please select</option>
+                                            <option value="0">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
@@ -105,11 +111,7 @@
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Sale Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of product">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Stock Quantity</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Stock Quantity" name="stock_qty" class="form-control" required value="{{ @$product->stock_qty }}" title="Enter Stock Quantity of product">
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Description</label>
                                         <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about product" >{{ @$product->description }}</textarea>
@@ -127,18 +129,18 @@
                                     <div class="form-group">
                                         <label for="">Is Accessory ?</label>
                                         <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is product accessory ?">
+                                        <select name="is_accessory" id="" class="form-control" title="Is Product Accessory ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
                                             <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
-                                    <div style="display: flex;flex-direction: row;">
-                                        <button type="submit" class="btn btn-primary" title="Submit Product">
-                                            Submit
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
+                                            @if(@$product) Update @else Submit @endif
                                         </button>
                                                 
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" style="margin-left: 10px;">
-                                            Back
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancle">
+                                            Cancle
                                         </a>
                                     </div>
                                 </div>
@@ -149,18 +151,18 @@
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title=" This is Product Image Preview" >
+                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Product image preview" >
                                                 </div>
                                             <label class="btn btn-primary" >
                                                 Upload
                                             </label>
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload Images Here">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
                                             @if($key > 0)
                                             <i class="fa fa-times del"></i>
                                             @endif
                                             </div>
                                             @endforeach
-                                        <i class="fa fa-plus imgAdd" title="U may add more images"></i>
+                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
                                     </div>
 
@@ -169,14 +171,14 @@
                                         <br><div class="container">
                                         <div class="row">
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview" title=" This is Product Image Preview">
+                                                <div class="imagePreview" title="Product image preview">
                                                 </div>
-                                            <label class="btn btn-primary" title="Upload Images Here">
+                                            <label class="btn btn-primary" title="Upload image here">
                                                 Upload
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
+                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload image here">
                                             </label>
                                             </div>
-                                            <i class="fa fa-plus imgAdd" title="U may add more images"></i>
+                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                             </div>
                                         </div>
                                         @endif
@@ -229,7 +231,27 @@ $(function() {
 });
 </script>
 <script>
+    $.validator.addMethod("priceCheck", function (value, element, options)
+    {
+        console.log(value);
+        console.log(element);
+        console.log(options.data);
+        //we need the validation error to appear on the correct element
+        /* var targetEl = $('input[name="'+options.data+'"]'),
+            bothEmpty = (value == targetEl.val() == ''); */
+
+        //trigger error class on target input
+        /* (bothEmpty) ? targetEl.addClass('error') : targetEl.removeClass('error');
+        return !bothEmpty; */
+    },
+        "Friend's name and email required."
+    );
     $("#myform").validate({
+        /* onkeyup: true,
+        rules: {
+            "purchase_price": { "priceCheck": { data: "sale_price" } },
+            "sale_price": { "priceCheck": { data: "purchase_price" } }             
+        }, */
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();
