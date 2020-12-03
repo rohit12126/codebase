@@ -8352,3 +8352,119 @@ h5 {
     font-size: 18px;
     margin: 0;
 }
+
+.product-detail-view{
+	padding: 2rem 1rem;
+}
+.product-detail-back{
+	font-size: 0.875rem;
+	text-decoration: underline;
+}
+.product-detail-heading{
+	font-size: 30px;
+	line-height: 27px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.product-detail-slider
+{
+	margin: 2rem 0;
+	text-align: center;
+}
+.product-detail-slider .slick-list{
+	max-width: 620px;
+	margin: 0 auto;
+}
+.product-detail-slider .slick-dots{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9;
+	width: 50px;
+}
+.product-detail-slider .slick-dots li{
+	width: 50px;
+	height: 50px;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.product-detail-slider .slick-dots a{
+	display: flex;
+	padding: 3px;
+	width: 100%;
+	border: 1px solid #ddd;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.product-detail-slider .slick-dots .slick-active a{
+	border-color: #F94E57;
+}
+.product-detail-slider img{
+	max-width: 100%;
+}
+.product-detail-slider .slick-arrow{
+	display: none;
+}
+.slick-slide:focus{
+	outline: none;
+}
+.product-price,.product-sku-no
+{
+	font-size: 24px;
+	line-height: 27px;
+}
+.product-price{
+	font-weight: 600;
+}
+.product-price-tax,.product-sku{
+	display: block;
+	font-size: 12px;
+	line-height: 15px;
+	color: #9B9B9B;
+}
+.pd-feature-box{
+	font-size: 0.875rem;
+	line-height: 20px;
+	padding: 2rem 0;
+	text-align: center;
+}
+.pd-feature-box img{
+	max-height: 24px;
+	margin-bottom: 0.875rem;
+}
+.product-wallpaper-slider{
+	width: 100%;
+	overflow: hidden;
+}
+.product-wallpaper-slider .slick-slide{
+	padding: 0 10px;
+}
+.product-wallpaper-slider .slick-slide:not(.slick-active)
+{
+	opacity:0.5;
+}
+.product-wallpaper-slider .slick-arrow
+{
+	display: block;
+	height: 100%;
+	width: 15%;
+	z-index: 999;
+}
+.product-wallpaper-slider .slick-arrow:before{
+	visibility: hidden;
+}
+.light-bg {
+	background-color: #FFF4EB;
+}
+.free-card{
+	text-align: center;
+}
+.free-card h4{
+	margin: 1.5rem 0;
+	font-weight: 600;
+}
+.free-card p{
+	max-width: 260px;
+	margin: 0 auto;
+}

@@ -20258,3 +20258,45 @@ body {
 .category-add-text {
   font-size: 10px;
 }
+
+
+/*================================*/
+/*========= Dahsbord Block Design =========*/
+/*================================*/
+
+.dashboard-block{
+  padding-bottom: 20px;
+}
+.dashboard-block .icons-block{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  background: #ccc;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+.dashboard-block.first-block{
+  background: linear-gradient(90deg, rgba(50,31,219,1) 0%, rgba(143,132,249,1) 100%);
+}
+.dashboard-block.second-block{
+  background: linear-gradient(90deg, rgba(51,153,255,1) 0%, rgba(4,123,242,1) 100%);
+}
+.dashboard-block.third-block{
+  background: rgb(249,177,21);
+  background: linear-gradient(90deg, rgba(249,177,21,1) 0%, rgba(249,118,21,1) 100%);
+}
+.dashboard-block.fourth-block{
+  background: rgb(133,2,221);
+  background: linear-gradient(90deg, rgba(133,2,221,1) 0%, rgba(253,29,29,1) 100%);
+}
+.dashboard-block.fifth-block{
+  background: rgb(21,242,249);
+  background: linear-gradient(90deg, rgba(21,242,249,1) 0%, rgba(21,85,249,1) 100%);
+}
+.dashboard-block.sixth-block{
+  background: rgb(249,21,112);
+  background: linear-gradient(90deg, rgba(249,21,112,1) 0%, rgba(249,214,21,1) 100%);
+}
