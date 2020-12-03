@@ -130,8 +130,8 @@
                          <div class="form-group">
                             <label for="Email">Email <span class="mandatory">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="{{ __('E-Mail Address') }}" autocomplete="new-password" value="{{ old('email') }}">
+                            <div class="email_error"> </div>
                          </div>
-                         <div class="email_error"> </div>
                          <div class="form-group">
                             <label for="Password">Password <span class="mandatory">*</span><a href="{{ route('password.request') }}" class="link">Forgot password?</a></label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="******" autocomplete="new-password">
@@ -163,26 +163,33 @@
                         <form id="signupform" >
                             <div class="form-flexed-row">
                                <div class="form-group">
-                                  <label for="Name">First Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="Name" name="name" placeholder="John" autocomplete="new-firstName" value="" required="true">
+                                  <label for="Name">First Name <span class="mandatory">*</span></label>
+                                  <input type="text" class="form-control" id="Name" name="name" placeholder="John" autocomplete="new-firstName" value="">
                                </div>
                                <div class="form-group">
-                                  <label for="lastName">Last Name <span class="mandatory">*</span></label><input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" autocomplete="new-lastName" value="" required="true">
+                                  <label for="lastName">Last Name <span class="mandatory">*</span></label>
+                                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" autocomplete="new-lastName" value="">
                                </div>
                             </div>
                             <div class="form-group">
-                               <label for="Email">Email<span class="mandatory">*</span></label><input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="" required="true">
+                               <label for="Email">Email<span class="mandatory">*</span></label>
+                               <input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" autocomplete="new-email" value="" >
                                <div class="Email_error"> </div>
                             </div>
                             <div class="form-group">
-                               <label for="number">Mobile Number <span class="mandatory">*</span></label><input type="text" pattern="[7-9]{1}[0-9]{9}" class="form-control" title="Please input a valid mobile number" id="mobile" name="mobile" placeholder="xxxxxxxxxx" maxlength="14" autocomplete="new-number" value="" required="true">
+                               <label for="number">Mobile Number <span class="mandatory">*</span></label>
+                               <input type="text"  class="form-control" id="mobile" name="mobile" placeholder="e.g. xxx-xxx-xxxx" maxlength="14" autocomplete="new-number" value="" >
+                               <label class="text-success text-success font-weight-bold mobile-eg-text">e.g. 7385025569 (10 digit mobile number).</label>
                             </div>
                             <div class="form-flexed-row">
                                <div class="form-group">
-                                  <label for="Password">Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="" required="true">
+                                  <label for="Password">Password <span class="mandatory">*</span></label>
+                                  <input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="">
                                   <div class="password_error"> </div>
                                </div>
                                <div class="form-group">
-                                  <label for="re-password">Confirm Password <span class="mandatory">*</span></label><input type="password" class="form-control" id="re-password" name="password_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="" required="true">
+                                  <label for="re-password">Confirm Password <span class="mandatory">*</span></label>
+                                  <input type="password" class="form-control" id="re-password" name="password_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="">
                                   <div class="password_confirmation_error"> </div>
                                </div>
                             </div>
@@ -304,29 +311,33 @@ footer-->
 
 </html>
 @yield('scripts')
-<script>
-    jQuery(document).ready(function() {
 
-        /* Login functionality */
-        jQuery('#loginform').submit(function(e) {
-            e.preventDefault();
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<script>
+    /* Login validation functionality */
+    jQuery("#loginform").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 5
+            }
+        },
+        messages: {
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            email: "Please enter a valid email address"
+        },
+        submitHandler: function(form) {
             var email = $("#email").val();
             var password = $("#password").val();
-            
-            if (email.length === 0) {
-                $(".email_error").html('<span class="text-danger" role="alert"> Email field is required.</span>');
-                return false;
-            } else {
-                $(".email_error").html('');
-            }
-
-            if (password.length === 0) {
-                $(".password_error").html('<span class="text-danger" role="alert"> Password field is required.</span>');
-                return false;
-            } else {
-                $(".password_error").html('');
-            }
-            
             jQuery.ajax({
                 url: "{{ url('/login') }}",
                 dataType: 'json',
@@ -340,16 +351,64 @@ footer-->
                     if (result.status == "success") {
                         window.location.href = "{{ route('account')}}";
                     } else {
-                        $(".email_error").html('<span class="text-danger" role="alert"> '+result.message+'</span>');
+                        $(".email_error").html('<lable class="error" role="alert"> '+result.message+'</lable>');
                         return false;
                     }
                 }
-            });
-        });
+            });   
+        }
+    });
 
-        jQuery('#signupform').submit(function(e) {
-            e.preventDefault();
-            
+    jQuery.validator.addMethod("phonenu", function (value, element) {
+        if ( /^\d{3}-?\d{3}-?\d{4}$/g.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "Please enter a valid mobile number");
+    
+    /* Sign Up validation functionality */
+    jQuery("#signupform").validate({
+        rules: {
+            name: {
+                required: true
+            },
+            lastName: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            mobile: {
+                phonenu: true,
+                required: true
+            },
+            password: {
+                required: true,
+            },
+            password_confirmation : {
+                minlength : 5,
+                equalTo : "#Password"
+            }
+        },
+        messages: {
+            name: {
+                required: "Name field is required.",
+            },
+            lastName: {
+                required: "Last Name field is required.",
+            },
+            password: {
+                required: "Password field is required.",
+            },
+            password_confirmation: {
+                equalTo : "Password and confirm password did not match."
+            },
+            email: "Please enter a valid email address",
+            mobile: "Please enter a valid mobile number"
+        },
+        submitHandler: function(form) {
             $(".Email_error").html('');
             $(".password_error").html('');
             $(".password_confirmation_error").html('');
@@ -365,13 +424,8 @@ footer-->
             var password_error = "";
             var password_confirmation_error = "";
 
-            name = name + lastName;
+            name = name +' '+ lastName;
 
-            if (Password != Repassword) {
-                $(".password_not_match_error").html('<span class="text-danger" role="alert">Password and confirm password did not match.</span>');
-                return false;
-            }
-            
             jQuery.ajax({
                 url: "{{ url('/register') }}",
                 dataType: 'json',
@@ -391,15 +445,15 @@ footer-->
                         
                         $.each( result.errors, function( key, value ) {
                             if (key == 'password') {
-                                $(".password_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                                $(".password_error").html('<lable class="text-danger" role="alert"> '+value+'</lable>');
                             }
 
                             if (key == 'password_confirmation') {
-                                $(".password_confirmation_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                                $(".password_confirmation_error").html('<lable class="text-danger" role="alert"> '+value+'</lable>');
                             }
 
                             if (key == 'email') {
-                                $(".Email_error").html('<span class="text-danger" role="alert"> '+value+'</span>');
+                                $(".Email_error").html('<lable class="text-danger" role="alert"> '+value+'</lable>');
                             }
                         });
                         
@@ -407,8 +461,29 @@ footer-->
                     }
                 }
             });
-        });
+        }
+    });
 
+
+    jQuery(document).ready(function() {
+        $("#Password").keyup(function(){
+            var number = /([0-9])/;
+            var alphabets = /([a-zA-Z])/;
+            var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+            if ($(this).val().length < 6) {
+                $(this).css("border", "5px solid #e82d2d");
+                $(".password_error").html('<span class="weak-password">Weak (should be atleast 5 characters.)</span>');
+            } else {
+                if ($(this).val().match(number) && $(this).val().match(alphabets) && $(this).val().match(special_characters)) {
+                    $(this).css("border", "5px solid #5dc17e");
+                    $(".password_error").html('<span class="strong-password">Strong password</span>');
+                } else {
+                    $(this).css("border", "5px solid #f08b10");
+                    $(".password_error").html('<span class="medium-password">Medium (should include alphabets, numbers and special characters.)</span>');
+                }
+            }
+        });
+        
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
             var rowId = $( this ).children('.rowId').val();

@@ -48,12 +48,14 @@
                                         </span>
                                         @enderror
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        @if(isset($user)) Update @else Submit @endif
-                                    </button>
-                                    <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
-                                        Cancel
-                                    </a>
+                                    <div class="d-flex pt-2" >
+                                        <button type="submit" class="btn btn-primary  mt-0 mr-3">
+                                            @if(isset($user)) Update @else Submit @endif
+                                        </button>
+                                        <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
+                                            Cancel
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="col-6">
 
@@ -69,7 +71,7 @@
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="password" placeholder="Password" name="password" class="form-control" @if(!@$user) required @endif value="">
-                                        @if(@$user) <span class="text-danger">Leave blank if don't want to change</span> @endif
+                                        @if(@$user) <span class="text-warning font-weight-bold">Leave blank if don't want to change</span> @endif
 
                                         @error('password')
                                         <span class="text-danger" role="alert">

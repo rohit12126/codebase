@@ -34,6 +34,6 @@ class Product extends Model implements ReviewRateable
      */
     public function catergory()
     {
-        return $this->belongsTo('App\Models\Category');
+        return $this->hasOne('App\Models\Category', 'id'); 
     }
 }

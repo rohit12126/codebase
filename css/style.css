@@ -20300,3 +20300,6 @@ body {
   background: rgb(249,21,112);
   background: linear-gradient(90deg, rgba(249,21,112,1) 0%, rgba(249,214,21,1) 100%);
 }
+.error{
+  color: red;
+}

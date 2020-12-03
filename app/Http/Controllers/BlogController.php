@@ -31,8 +31,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $paginate = 5;
-        $blogs = $this->blogManager->getBlogs($paginate);
+        $blogs = $this->blogManager->getBlogs();
         return view('frontend.blog-list', ['blogs' => $blogs]);
     }
 

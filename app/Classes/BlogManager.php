@@ -16,11 +16,12 @@ class BlogManager
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
+            'slug' => $req->slug,
             'description' => $req->description,
             'image' => $file_name,
             'status' => $req->status
         ];
-        if ($product = BlogModel::create($data)) {
+        if ($blog = BlogModel::create($data)) {
             return true;
         } else {
             return false;
@@ -29,9 +30,9 @@ class BlogManager
 
     public static function edit($req)
     {
-        $product = null;
+        $blog = null;
         if ($exist = self::getBlogById($req->id)) {
-            $product = $exist;
+            $blog = $exist;
         } else {
             return false;
         }
@@ -47,16 +48,43 @@ class BlogManager
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
+            'slug' => $req->slug,
             'description' => $req->description,
             'image' => $file_name,
             'status' => $req->status
         ];
-        //dd($data);
-        if ($product->fill($data)->save()) {
+        
+        if ($blog->fill($data)->save()) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public static function checkExistSlug($req)
+    {
+        if (!empty($req->blogId)) {
+            $blog = BlogModel::where('slug', '=', $req->slug)
+                ->where('id', '!=', $req->blogId)
+                ->first();
+        } else {
+            $blog = BlogModel::where('slug', '=', $req->slug)->first();
+        }
+
+        if (!is_null($blog)) {
+            /* slug exist */
+            $response = array(
+                'status' => true,
+                'message' => "Slug is exist!"
+            );
+        } else {
+            /* slug not exist */
+            $response = array(
+                'status' => false,
+                'message' => "Slug not found!"
+            );
+        }
+        return $response;
     }
 
     public static function delete($id)
@@ -76,7 +104,7 @@ class BlogManager
 
     public static function getBlogListPaginated($req)
     {
-        return BlogModel::paginate(1);
+        return BlogModel::paginate(10);
     }
 
     public static function getBlogById($id)
@@ -84,9 +112,9 @@ class BlogManager
         return BlogModel::find($id);
     }
 
-    public function getBlogs($paginate)
+    public function getBlogs()
     {
-        $blogs = BlogModel::with('catergory')->paginate($paginate);
+        $blogs = BlogModel::with('catergory')->paginate(10);
         return $blogs;
     }
 

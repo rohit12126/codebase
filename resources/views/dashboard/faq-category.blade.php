@@ -40,12 +40,14 @@
                                             <option value="0" @if (isset($category->status) && $category->status =='0') {{ "selected"}} @endif>Inactive</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">
-                                        @if(isset($category)) Update @else Submit @endif
-                                    </button>
-                                    <a onclick="$('.addForm').hide('slow');" href="{{route('admin.faq.category')}}" class="btn btn-danger text-white">
-                                        Cancel
-                                    </a>
+                                    <div class="d-flex pt-2">
+                                        <button type="submit" class="btn btn-primary mt-0 mr-3">
+                                            @if(isset($category)) Update @else Submit @endif
+                                        </button>
+                                        <a onclick="$('.addForm').hide('slow');" href="{{route('admin.faq.category')}}" class="btn btn-danger text-white">
+                                            Cancel
+                                        </a>
+                                    </div>
                                 </div>
                         </form>
                     </div>

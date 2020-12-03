@@ -12,14 +12,14 @@ class ReviewManager
 
     public function getAllActiveReviews()
     {
-        $review = DB::table('reviews')->where('approved', 1)->paginate(5);
+        $review = DB::table('reviews')->where('approved', 1)->paginate(10);
 
         return $review;
     }
 
     public function getAllInActiveReviews()
     {
-        $review = DB::table('reviews')->where('approved', 0)->paginate(5);
+        $review = DB::table('reviews')->where('approved', 0)->paginate(10);
         return $review;
     }
 

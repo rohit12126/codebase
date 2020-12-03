@@ -79,4 +79,11 @@ class BlogController extends Controller
         }
         return back();
     }
+
+    public function checkExistSlug(Request $req)
+    {
+        $response = $this->blogManager->checkExistSlug($req);
+        echo json_encode($response);
+    }
+    
 }
