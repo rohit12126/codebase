@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         <label>URL Slug</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" required value="{{ @$blog->slug }}">
+                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" required value="{{ @$blog->slug }}" readonly="true">
                                     </div>
                                     <div class="form-group"> 
                                         <label>Body</label>
@@ -105,7 +105,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </div>
@@ -135,7 +134,6 @@
 		.catch( err => {
 			console.error( err.stack );
 		} );
-
     /* Image Preview */
     $(function() {
         $(document).on("change",".uploadFile", function()
@@ -157,14 +155,20 @@
             form.submit();
         }
     });
-/* Slug generation */
-var slug = function(str) {
-    var $slug = '';
-    var trimmed = $.trim(str);
-    $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
-    replace(/-+/g, '-').
-    replace(/^-|-$/g, '');
-    return $slug.toLowerCase();
-}
+
+    /* Slug generation */
+    $("#title").keyup(function() {
+        var title = $(this).val();
+        //var blogId = $('#blog-id').val();
+        
+        var $slug = '';
+        var trimmed = title.trim();
+        $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+        replace(/-+/g, '-').
+        replace(/^-|-$/g, '');
+        $slug.toLowerCase();
+        
+        $("#slug").val($slug);
+    });
 </script>
 @endsection
