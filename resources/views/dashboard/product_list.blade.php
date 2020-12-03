@@ -77,6 +77,7 @@
                                     <th></th>
                                     <th>Name</th>
                                     <th>Price</th>
+                                    <th>Type</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -95,6 +96,7 @@
                                     </td>
                                     <td>{{ $value->name }}</td>
                                     <td>$ {{ $value->sale_price }}</td>
+                                    <td>@if ($value->is_accessory == 1) {{ "Accessory" }} @else {{ "Product" }} @endif </td>
                                     <td>
                                         <a class="btn btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
                                             <i class="cil-pencil"></i>
@@ -105,7 +107,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                         {{ @$product_list->appends(request()->query())->links() }}
