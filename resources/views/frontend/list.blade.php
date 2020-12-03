@@ -11,8 +11,11 @@
                 @endforeach
             </ul>
             <div class="tab-content content-s ection pt-3 pb-3">
+                @php
+                    $i=0;    
+                @endphp
                 @foreach ($productArr as $key => $products)
-                    <div class="tab-pane active" id="{{$key}}">
+                    <div class="tab-pane @if($i == 0) active @endif" id="{{$key}}">
                         @foreach ($products as $product)
                             <div class="products-list-row">
                                 <div class="products-list-col">
@@ -28,6 +31,9 @@
                             </div>
                         @endforeach
                     </div>
+                    @php
+                        $i++;    
+                    @endphp 
                 @endforeach
                {{--  <div class="tab-pane fade" id="menu1">
                 <div class="products-list-row">
