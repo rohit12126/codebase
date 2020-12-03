@@ -60,8 +60,8 @@
     <div class="c-subheader px-3">
         <ol class="breadcrumb border-0 m-0">
         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Products</a></li>
-        <li class="breadcrumb-item active">@if(isset($product)) Edit @else Add @endif Product</li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Items</a></li>
+        <li class="breadcrumb-item active">@if(isset($product)) Edit @else Add @endif Item</li>
         </ol>
     </div>
 @endsection
@@ -81,15 +81,15 @@
                                 <div class="col-6">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="select3">Select Category</label>
+                                        <label for="select3">Select Category<span class="mandatory">*</span></label>
                                         <span title="Click here to add category">
                                             <a href="{{ route('admin.category') }}" style="text-decoration: none;">
                                                 <i class="fa fa-plus category-add" ></i>
                                                 <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
                                             </a>
                                         </span>
-                                        <select class="form-control" id="select3" name="category_id" >
-                                            <option value="0">Please select</option>
+                                        <select class="form-control" id="select3" name="category_id" required="true">
+                                            <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
                                             <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach

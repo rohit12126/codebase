@@ -106,7 +106,7 @@ class ProductManager
             
             return $order->orderBy('id', 'desc')->paginate(10);
         } else {
-            return ProductModel::with('images')->orderBy('id', 'desc')->paginate(10);
+            return ProductModel::with('images', 'catergory')->orderBy('id', 'desc')->paginate(10);
         }
     }
 
@@ -118,6 +118,13 @@ class ProductManager
     public function getProducts()
     {
         $products = ProductModel::with('images', 'catergory')->paginate(10);
+        return $products;
+    }
+
+    public function getProductsByCategoryId($categoryId) {
+        $products = ProductModel::with('images', 'catergory')
+            ->where('category_id', $categoryId)
+            ->get();
         return $products;
     }
 

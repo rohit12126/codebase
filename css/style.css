@@ -20258,3 +20258,7 @@ body {
 .category-add-text {
   font-size: 10px;
 }
+
+.error{
+  color: red;
+}
