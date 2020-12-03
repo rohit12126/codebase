@@ -22,7 +22,7 @@
                                 <tr>
                                     <td class="product-thumbnail"><a href="#"><img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1"></a></td>
                                     <td class="product-name" data-title="Product"><a href="#">{{$product->name}}</a></td>
-                                    <td class="product-price" data-title="Price">₹ {{$product->price}}</td>
+                                    <td class="product-price" data-title="Price">$ {{$product->price}}</td>
                                     <td class="product-quantity" data-title="Quantity">
                                         <div class="quantity">
                                             <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
@@ -32,7 +32,7 @@
                                             <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
                                         </div>
                                     </td>
-                                    <td class="product-subtotal" data-title="Total">₹ {{ $product->price * $product->qty}}</td>
+                                    <td class="product-subtotal" data-title="Total">$ {{ $product->price * $product->qty}}</td>
                                     <td class="product-remove" data-title="Remove">
                                         <a href="#" class="item_remove">
                                             <input type="hidden" class="rowId" value="{{$product->rowId}}">
@@ -74,11 +74,11 @@
                                 <tr>
                                     <td class="cart_total_label">Cart Subtotal</td>
                                     <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
-                                    <td class="cart_total_amount">₹ {{$cartSubTotal}}</td>
+                                    <td class="cart_total_amount">$ {{$cartSubTotal}}</td>
                                 </tr>
                                 <tr>
                                     <td class="cart_total_label">Total</td>
-                                    <td class="cart_total_amount"><strong>₹ {{$cartSubTotal}}</strong></td>
+                                    <td class="cart_total_amount"><strong>$ {{$cartSubTotal}}</strong></td>
                                 </tr>
                             </tbody>
                         </table>
