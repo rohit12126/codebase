@@ -36,13 +36,13 @@
                 <div class="product_info">
                 <h6 class="product_title"><a href="http://127.0.0.1:8000/product/detail?id=1">{{$item->product->name}}</a></h6>
                 <div class="product_price">
-                    <span class="price">₹ {{$item->product->purchase_price}}</span>
-                    <del>₹ {{$item->product->sale_price}}</del>
+                    <span class="price">$ {{$item->product->purchase_price}}</span>
+                    <del>$ {{$item->product->sale_price}}</del>
                     <div class="on_sale">
                         @php
                         $discount = $item->product->sale_price - $item->product->purchase_price;
                         @endphp
-                        <span>₹ {{$discount}} Off</span>
+                        <span>$ {{$discount}} Off</span>
                     </div>
                 </div>
                     <div class="pr_desc">

@@ -16,153 +16,25 @@
                 @endphp
                 @foreach ($productArr as $key => $products)
                     <div class="tab-pane @if($i == 0) active @endif" id="{{$key}}">
-                        @foreach ($products as $product)
-                            <div class="products-list-row">
+                        <div class="products-list-row">
+                            @foreach ($products as $product)
                                 <div class="products-list-col">
                                     <div class="products-list-product">
                                         <a href="" class="">
-                                            <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg" class="d-block w-100" alt="...">
+                                            <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
                                             <a href="#" class="btn btn-outline-secondary">Configure</a>
                                         </a>
                                         <div class="products-list-title"><h2>{{$product->name}}</h2></div>
                                         <div class="products-list-price">$ {{$product->sale_price}}</div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                     @php
                         $i++;    
                     @endphp 
                 @endforeach
-               {{--  <div class="tab-pane fade" id="menu1">
-                <div class="products-list-row">
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>2-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-panama_2.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-air.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>4-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-nimbus_2.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>2-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-glanzstuck_0.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-glanzstuck_0.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="menu2">
-                <div class="products-list-row">
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>2-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-panama_2.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-air.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>4-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-nimbus_2.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>2-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-glanzstuck_0.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                        <div class="products-list-col">
-                            <div class="products-list-product">
-                                <a href="" class="">
-                                    <img src="https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-glanzstuck_0.jpg" class="d-block w-100" alt="...">
-                                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                                </a>
-                                <div class="products-list-title"><h2>3-Sitzer Tom</h2></div>
-                                <div class="products-list-price">ab 1.399 €</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
