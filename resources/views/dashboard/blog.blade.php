@@ -47,6 +47,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Title" name="title" id="title" class="form-control" required value="{{ @$blog->title }}">
@@ -159,16 +160,40 @@
     /* Slug generation */
     $("#title").keyup(function() {
         var title = $(this).val();
-        //var blogId = $('#blog-id').val();
-        
+
+        var slug = generateSlug(title);
+        $("#slug").val($slug);
+    });
+
+    function generateSlug(title) {
         var $slug = '';
         var trimmed = title.trim();
         $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
         replace(/-+/g, '-').
         replace(/^-|-$/g, '');
         $slug.toLowerCase();
-        
-        $("#slug").val($slug);
-    });
+        return $slug;
+    }
+
+    function checkExistSlug(slug) {
+        var blogId = $("#blog-id").val();
+        jQuery.ajax({
+            url: "{{ url('/admin/check-exist-slug/') }}",
+            dataType: 'json',
+            method: 'get',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data: {
+                slug : slug,
+                blogId : blogId
+            },
+            success: function(result) {
+                if (result.status == "success") {
+                    
+                } else {
+                    
+                }
+            }
+        });   
+    }
 </script>
 @endsection

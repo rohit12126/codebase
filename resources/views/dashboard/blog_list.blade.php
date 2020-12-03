@@ -41,9 +41,8 @@
                             <thead>
                                 <tr>
                                     <th>S No.</th>
+                                    <th></th>
                                     <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -51,11 +50,10 @@
                                 @foreach($blog_list as $key => $value)
                                 <tr>
                                     <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->title }}</td>
-                                    <td>{{ $value->description }}</td>
                                     <td>
                                         <img src="{{ url('') }}/upload/blog/{{ @$value->image}}" width="50" />
                                     </td>
+                                    <td>{{ $value->title }}</td>
                                     <td>
                                         <a class="btn btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>

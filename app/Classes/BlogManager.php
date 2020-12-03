@@ -21,7 +21,7 @@ class BlogManager
             'image' => $file_name,
             'status' => $req->status
         ];
-        if ($product = BlogModel::create($data)) {
+        if ($blog = BlogModel::create($data)) {
             return true;
         } else {
             return false;
@@ -30,9 +30,9 @@ class BlogManager
 
     public static function edit($req)
     {
-        $product = null;
+        $blog = null;
         if ($exist = self::getBlogById($req->id)) {
-            $product = $exist;
+            $blog = $exist;
         } else {
             return false;
         }
@@ -48,11 +48,12 @@ class BlogManager
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
+            'slug' => $req->slug,
             'description' => $req->description,
             'image' => $file_name,
             'status' => $req->status
         ];
-        //dd($data);
+        
         if ($product->fill($data)->save()) {
             return true;
         } else {

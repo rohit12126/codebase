@@ -74,7 +74,7 @@
                             <thead>
                                 <tr>
                                     <th>S No.</th>
-                                    <th>Image</th>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Action</th>
