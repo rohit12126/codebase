@@ -42,7 +42,7 @@
                                         <select class="form-control" id="select3" name="category_id" required>
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                                <option value="{{ $value->id }}" @if($value->id == @$blog->category_id) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if(isset($blog) && ($value->id == $blog->category_id) ) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -50,17 +50,18 @@
                                         
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Title" name="title" id="title" class="form-control" required value="{{ @$blog->title }}">
+                                        <input type="hidden" name="blogId" id="blog-id" value="@if (isset($blog->id)) {{ $blog->id }} @else {{ '0' }} @endif">
+                                        <input type="text" placeholder="Title" name="title" id="title" class="form-control" required value="@if(isset($blog)) {{ $blog->title }} @endif">
                                     </div>
                                     <div class="form-group">
                                         <label>URL Slug</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" required value="{{ @$blog->slug }}" readonly="true">
+                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" required value="@if(isset($blog)) {{ $blog->slug }} @endif" readonly="true">
                                     </div>
                                     <div class="form-group"> 
                                         <label>Body</label>
                                         <span class="mandatory">*</span>
-                                        <textarea placeholder="Add Blog Body here" id="content" name="description" class="form-control" required>{{ @$blog->description }}</textarea>
+                                        <textarea placeholder="Add Blog Body here" id="content" name="description" class="form-control" required>@if(isset($blog)) {{ $blog->description }} @endif</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
@@ -160,40 +161,55 @@
     /* Slug generation */
     $("#title").keyup(function() {
         var title = $(this).val();
-
         var slug = generateSlug(title);
-        $("#slug").val($slug);
+
+        $("#slug").val(slug);
     });
 
-    function generateSlug(title) {
+    function generateSlug(title, recall = false) {
         var $slug = '';
         var trimmed = title.trim();
-        $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+        
+        $slug = trimmed.toLowerCase().replace(/[^a-z0-9-]/gi, '-').
         replace(/-+/g, '-').
         replace(/^-|-$/g, '');
-        $slug.toLowerCase();
+        
+        if (recall) {
+            $slug = $slug + '-' + Math.floor(Math.random() * 90 + 10);
+        }
+
+        var isExist = checkExistSlug($slug);
+
+        if (isExist) {
+          $slug = generateSlug(title, true);
+          return $slug;
+        } 
+
         return $slug;
     }
 
     function checkExistSlug(slug) {
+        
         var blogId = $("#blog-id").val();
+        let isExist = false;
         jQuery.ajax({
             url: "{{ url('/admin/check-exist-slug/') }}",
             dataType: 'json',
             method: 'get',
+            async: false,
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             data: {
                 slug : slug,
                 blogId : blogId
             },
             success: function(result) {
-                if (result.status == "success") {
-                    
-                } else {
-                    
+                if (result.status == true) {
+                    isExist = true;
                 }
             }
-        });   
+        });
+
+        return isExist;
     }
 </script>
 @endsection

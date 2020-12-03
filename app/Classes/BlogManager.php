@@ -54,7 +54,7 @@ class BlogManager
             'status' => $req->status
         ];
         
-        if ($product->fill($data)->save()) {
+        if ($blog->fill($data)->save()) {
             return true;
         } else {
             return false;
@@ -63,25 +63,25 @@ class BlogManager
 
     public static function checkExistSlug($req)
     {
-        if (!empty($req->id)) {
+        if (!empty($req->blogId)) {
             $blog = BlogModel::where('slug', '=', $req->slug)
-                ->where('id', '!=', $req->id)
+                ->where('id', '!=', $req->blogId)
                 ->first();
         } else {
             $blog = BlogModel::where('slug', '=', $req->slug)->first();
         }
 
-        if ($blog->isNotEmpty()) {
+        if (!is_null($blog)) {
             /* slug exist */
             $response = array(
                 'status' => true,
-                'message' => "Slug is already in exist!"
+                'message' => "Slug is exist!"
             );
         } else {
             /* slug not exist */
             $response = array(
                 'status' => false,
-                'message' => "Slug is available for use!"
+                'message' => "Slug not found!"
             );
         }
         return $response;
