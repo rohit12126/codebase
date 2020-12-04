@@ -1,111 +1,144 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
-<div class="section">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-xl-9 col-lg-8">
-				<div class="row">
-                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-						<div class="product-image">
-                            <div class="product_img_box">
-                                @if (isset($product[0]->images[0]->image))
-                                <img id="product_img" src="{{ asset('upload/product/'.$product[0]->images[0]->image)}}" data-zoom-image="{{ asset('upload/product/'.$product[0]->images[0]->image)}}" alt="product_img1"><a href="#" class="product_img_zoom" title="Zoom">
-                                        <span class="linearicons-zoom-in"></span>
-                                    </a>
-                                @else
-                                    <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                @endif
-                            </div>
-                            <div id="pr_item_gallery" class="product_gallery_item slick_slider" data-slides-to-show="4" data-slides-to-scroll="1" data-infinite="false">
-                            @if (isset($product[0]->images[0]->image))
-                                @foreach ($product[0]->images as $image)
-                                    <div class="item">
-                                        <a href="#" class="product_gallery_item " data-image="{{ asset('upload/product/'.$image->image)}}" data-zoom-image="{{ asset('upload/product/'.$image->image)}}">
-                                            <img src="{{ asset('upload/product/'.$image->image)}}" alt="product_small_img1"></a>
-                                    </div>
-                                @endforeach
-                            @endif
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="pr_detail">
-                            <div class="product_description">
-                                <h4 class="product_title"><a href="#">₹ {{$product[0]->name}}</a></h4>
-                                <div class="product_price">
-                                    <span class="price">₹ {{$product[0]->purchase_price}}</span>
-                                    <del>₹ {{$product[0]->sale_price}}</del>
-                                    <div class="on_sale">
-                                        @php
-                                            $discount = $product[0]->sale_price - $product[0]->purchase_price;
-                                        @endphp
-                                        <span>₹ {{$discount}} Off</span>
-                                    </div>
-                                </div>
-                                <div class="pr_desc">
-                                    <p>{{$product[0]->description}}</p>
-                                </div>
-                            </div>
-                            <hr><div class="cart_extra">
-                                <div class="cart-product-quantity">
-                                    <div class="quantity">
-                                        @php
-                                            $qty = 0;
-                                            if (!empty($cart)) {
-                                                $qty = $cart->qty;
-                                            }
-                                        @endphp
-                                        <input type="button" value="-" class="minus remove-from-cart">
-
-                                        <input type="text" name="quantity" value="{{$qty}}" title="Qty" class="qty" >
-                                        
-                                        <input type="button" value="+" class="plus add-to-cart">
-                                    </div>
-                                </div>
-                                <input type="hidden" class="product-id" value="{{$product[0]->id}}">
-                                <div class="cart_btn">
-                                    <button class="btn btn-fill-out btn-addtocart add-to-cart" type="button">
-                                    <i class="icon-basket-loaded"></i> Add to cart</button>
-                                </div>
-                            </div>
-                            <hr>
-                            </div>
-                        </div>
+<section class="product-detail-view">
+        <div class="container">
+            <span class="product-detail-back">
+                <a href="" class="d-inline-block">&lt; back to overview</a>
+            </span>
+            <div class="text-md-center">
+                <h1 class="product-detail-heading">2 block custom closet</h1>
+            </div>
+            <div class="product-detail-slider">
+                <div data-thumb="{{URL::asset('/images/products/1.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/1.png')}}"></a></div>
+                <div data-thumb="{{URL::asset('/images/products/2.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/2.png')}}"></a></div>
+                <div data-thumb="{{URL::asset('/images/products/1.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/1.png')}}"></a></div>
+                <div data-thumb="{{URL::asset('/images/products/2.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/2.png')}}"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="product-sku-no">UGG-BB-PUR-07</span>
+                    <span class="product-sku">SKU (Stock Keeping Unit)</span>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <span class="product-price">&#36; 599.67</span>
+                    <span class="product-price-tax">Incl. VAT</span>
+                </div>
+            </div>
+            <div class="pt-4 pb-4 d-flex justify-content-center">
+                <a href="#stt" class="btn btn-outline-secondary mr-3"><i class="linearicons-cart"></i> Buy now</a>
+                <a href="#stt" class="btn btn-outline-secondary"><i class="linearicons-cart-plus"></i> add to cart</a>
+            </div>
+        </div>
+    </section>
+    <section class="product-detail-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-property.png')}}" alt="">
+                        <span class="d-block">
+                            <strong>100 Days Comfortably Test.</strong>
+                        </span>
+                        <span>
+                            We pick up your closet for free.
+                        </span>
                     </div>
                 </div>
-        		<div class="row">
-                    <div class="col-12">
-                        <div class="large_divider clearfix">
-                            @if(isset($product[1]))
-                            @foreach($product[1] as $reviews)
-                            <li>
-                                <div class="comment_block">
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:80%">
-                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="customer_meta">
-                                        <span class="review_author">Rated {{$reviews->rating}} Out of 5</span>
-                                        <span class="comment-date">{{date("F j, y", strtotime($reviews->created_at))}}</span>
-                                    </p>
-                                    <div class="description">
-                                        <p>{{$reviews->body}}</p>
-                                    </div>
-                                </div>
-                            </li>
-                            @endforeach
-                            @endif
-                        </div>
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-stars.png')}}" alt="" class="pt-2">
+                        <span class="d-block">
+                            <strong>Excellent service.</strong>
+                        </span>
+                        <span>
+                            We are also there for you after the purchase.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-delivery.png')}}" alt="">
+                        <span class="d-block">
+                            <strong>Free premium delivery.</strong>
+                        </span>
+                        <span>
+                            We pick up your closet for free.
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <section class="product-wallpaper-slider">
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/01_tom_detail_gestell.jpg" alt="" />
+        </div>
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/02_tom_3-sitzer_freisteller.jpg" alt="" />
+        </div>
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/03_tom_detail.jpg" alt="" />
+        </div>
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/04_tom_3-sitzer_freistellerplus.jpg" alt="" />
+        </div>
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/05_tom_3-sitzer_angeschnitten.jpg" alt="">
+        </div>
+        <div>
+            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/06_tom_ecksofa.jpg" alt="" />
+        </div>
+    </section>
+    <section class="section light-bg">
+        <div class="container">
+            <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
+            <div id="accordion">
+                <div class="faq-card">
+                  <div class="faq-card-header">
+                    <a class="faq-card-link" data-toggle="collapse" href="#fq" aria-expanded="false">
+                        What is so special about Custom Closet?
+                    </a>
+                  </div>
+                  <div id="fq" class="collapse" data-parent="#accordion">
+                    <div class="faq-card-body">
+                      <p>
+                        As an online sofa brand, Custom Closet manufactures designer sofas and sells them exclusively via www.customcloset.com. We do not compromise on quality; we want to develop high-quality sofas and offer them to you directly. We also convince our customers with our comprehensive services: free fabric and leather samples, our online room planner, and a personal product consultation by telephone, e-mail, chat or in our showrooms make your decision easy when buying a sofa.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-card">
+                  <div class="faq-card-header">
+                    <a class="faq-card-link" data-toggle="collapse" href="#fq1" aria-expanded="false">
+                        Why can Custom Closet offer such great prices?
+                  </a>
+                  </div>
+                  <div id="fq1" class="collapse" data-parent="#accordion">
+                    <div class="faq-card-body">
+                        <p>
+                        Custom Closet only produces to order and sells its products online. We do this directly and without intermediaries. We pass on these cost savings directly to our customers who find high-quality designer sofas at surprisingly low prices.
+                        </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-card">
+                  <div class="faq-card-header">
+                    <a class="faq-card-link" data-toggle="collapse" href="#fq2">
+                        What quality standards does Custom Closet have?
+                  </a>
+                  </div>
+                  <div id="fq2" class="collapse" data-parent="#accordion">
+                    <div class="faq-card-body">
+                      <p>
+                        When it comes to quality, we do not compromise on our products! Demanding designs and high-quality materials are painstakingly used with every Custom Closet sofa. Seating comfort and design language are equally important to us. To live up to our product claims, every sofa undergoes a rigorous quality control before leaving production. This ensures that our customers receive their order in perfect condition.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- END SECTION SHOP -->
 @endsection
 

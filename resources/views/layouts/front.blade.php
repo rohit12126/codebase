@@ -36,8 +36,8 @@
     <link rel="stylesheet" href="{{ asset('css/css-owl.theme.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-owl.theme.default.min.css')}}"><!-- Magnific Popup CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-magnific-popup.css')}}">Slick CSS -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-slick.css')}}"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}">Style CSS -->
+    <link rel="stylesheet" href="{{ asset('css/css-slick.css')}}"> 
+    <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">
 </head>
@@ -304,7 +304,7 @@ footer-->
   <!--<script src="{{ asset('js/js-jquery.appear.js')}}"></script>--> <!-- jquery.parallax-scroll js -->
   <!--<script src="{{ asset('js/js-jquery.parallax-scroll.js')}}"></script>--> <!-- jquery.dd.min js -->
   <!--<script src="{{ asset('js/js-jquery.dd.min.js')}}"></script>--> <!-- slick js -->
-  <!-- <script src="{{ asset('js/js-slick.min.js')}}"></script> elevatezoom js -->
+   <!--  slick js -->
   <!-- <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>scripts js -->
   <!-- <script src="{{ asset('js/js-scripts.js')}}"></script> -->
   <!-- <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script> -->
@@ -317,8 +317,30 @@ footer-->
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+<script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script>
+    $(".product-detail-slider").slick({
+        autoplay: false,
+        dots: true,
+        infinite: false,
+        customPaging : function(slider, i) {
+            var thumb = $(slider.$slides[i]).data('thumb');
+            return '<a><img src="'+thumb+'"></a>';
+        }
+    });
+    $('.product-wallpaper-slider').slick({
+        autoplay: true,
+        arrows: true,
+        speed: 1000,
+        autoplaySpeed: 5000,
+        centerMode: true,
+        dots: false,
+        centerPadding: '15%',
+        infinite: true,
+        slidesToShow: 1, 
+        slidesToScroll: 1,
+        lazyLoad: 'progressive'
+    });
     /* Login validation functionality */
     jQuery("#loginform").validate({
         rules: {
@@ -517,9 +539,17 @@ footer-->
                     counterPlus =  counter++;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
                     //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
+<<<<<<< HEAD
                 }
         }
             else {
+=======
+                    //console.log('down');
+                }
+        }
+            else {
+                //console.log("UP")
+>>>>>>> 59290d6fe4ed160f25a330feaebf645ffc11624f
                 if ( $(window).scrollTop() <= 700) {
                     counterPlus =  counter--;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
@@ -531,4 +561,6 @@ footer-->
         });
         
     });
+
+ 
 </script>
