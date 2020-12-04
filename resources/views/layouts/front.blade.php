@@ -22,8 +22,9 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&amp;display=swap"
         rel="stylesheet"> -->
-     <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
-     <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script>
+    <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer=""></script>
+    <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
+    <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
 
     <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css-ionicons.min.css')}}">
@@ -40,9 +41,116 @@
     <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">
+    <style>
+    #page{
+    width:100%;
+    height:100%;
+    position:absolute;
+    }
+
+    /* Our normalize css */
+    *{
+    margin:0;
+    box-sizing: border-box;
+    }
+
+    /* Our wrapper */
+    .wrapper{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate3d(-50%,-50%,0);
+    overflow:hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    /* Our image information */
+    .before,
+    .after {
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow: hidden;
+    }
+
+    .content-image{
+    height:100%;
+    max-width:none;
+    }
+
+    .after{
+    width:125px;
+    }
+
+    .scroller{
+    width: 50px;
+    height:50px;
+    position: absolute;
+    left:100px;
+    top:50%;
+    transform:translateY(-50%);
+    border-radius:50%;
+    background-color: transparent;
+    opacity:0.9;
+    pointer-events:auto;
+    cursor: pointer;
+    }
+
+    .scroller:hover{
+    opacity:1;
+    }
+
+    .scrolling{
+    pointer-events:none;
+    opacity:1;
+    }
+
+    .scroller__thumb{
+    width:100%;
+    height:100%;
+    padding:5px;
+    }
+
+    .scroller:before,
+    .scroller:after{
+    content:" ";
+    display: block;
+    width: 7px;
+    height: 9999px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3.5px;
+    z-index: 30;
+    transition:0.1s;
+    }
+    .scroller:before{
+    top:100%;
+    }
+    .scroller:after{
+    bottom:100%;
+    }
+
+    /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+    .scroller{
+    border: 5px solid #fff;
+    }
+    .scroller:before,
+    .scroller:after{
+    background: #fff;
+    }
+</style>
 </head>
 
-<body>
+<body >
 <header class="head-bar">
         <div class="main-header clearfix">
             <div class="head-info d-inline-block">
@@ -75,7 +183,6 @@
                 </nav>
             </div>
             <div class="head-shopbar d-inline-block float-right">
-                
                 <span class="head-shop-icon">
                     @guest
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
@@ -315,6 +422,67 @@ footer-->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
+<script>
+    // I hope this over-commenting helps. Let's do this!
+    // Let's use the 'active' variable to let us know when we're using it
+    let active = false;
+
+    // First we'll have to set up our event listeners
+    // We want to watch for clicks on our scroller
+    document.querySelector('.scroller').addEventListener('mousedown',function(){
+    active = true;
+    // Add our scrolling class so the scroller has full opacity while active
+    document.querySelector('.scroller').classList.add('scrolling');
+    });
+    // We also want to watch the body for changes to the state,
+    // like moving around and releasing the click
+    // so let's set up our event listeners
+    document.body.addEventListener('mouseup',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('mouseleave',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+
+    // Let's figure out where their mouse is at
+    document.body.addEventListener('mousemove',function(e){
+    if (!active) return;
+    // Their mouse is here...
+    let x = e.pageX;
+    // but we want it relative to our wrapper
+    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+    // Okay let's change our state
+    scrollIt(x);
+    });
+
+    // Let's use this function
+    function scrollIt(x){
+    let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+    document.querySelector('.after').style.width = transform+"px";
+    document.querySelector('.scroller').style.left = transform-25+"px";
+    }
+
+    // Let's set our opening state based off the width, 
+    // we want to show a bit of both images so the user can see what's going on
+    scrollIt(150);
+
+    // And finally let's repeat the process for touch events
+    // first our middle scroller...
+    document.querySelector('.scroller').addEventListener('touchstart',function(){
+    active = true;
+    document.querySelector('.scroller').classList.add('scrolling');
+    });
+    document.body.addEventListener('touchend',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('touchcancel',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+</script>
 <script>
     $(".product-detail-slider").slick({
         autoplay: false,
