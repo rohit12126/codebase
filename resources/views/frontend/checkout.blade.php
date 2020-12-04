@@ -57,7 +57,8 @@
                     <div class="payment_option">
                         </div>
                 </div>
-                <a class="btn btn-fill-out" href="{{route('addmoney.paywithpaypal')}}">Paypal</a> <a class="btn btn-fill-out" href="{{route('stripe')}}">Stripe</a>
+                <a class="btn btn-fill-out" href="{{route('addmoney.paywithpaypal')}}">Paypal</a>
+                {{-- <a class="btn btn-fill-out" href="{{route('stripe')}}">Stripe</a> --}}
             </div>
         </div>
     </div>

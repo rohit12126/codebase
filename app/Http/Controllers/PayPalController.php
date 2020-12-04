@@ -44,11 +44,16 @@ class PaypalController extends Controller
     }
     public function payWithpaypal(Request $request)
     {
+        $orders = $this->cartManager->getCartContain();
+        if($orders->isEmpty()) {
+            return redirect('cart/');
+        }
+
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         $i=0;
         $currency = 'USD';
-        $orders = $this->cartManager->getCartContain();
+
         foreach($orders as $key => $product)
             {
                 $items[$i] = new Item();

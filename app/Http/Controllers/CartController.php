@@ -44,13 +44,16 @@ class CartController extends Controller
     public function index(Request $req) {
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
-        
-        return view('frontend.cart',
-            [
-                'products' => $productList,
-                'cartSubTotal' => $cartSubTotal,
-            ]
-        );
+        if(!$productList->isEmpty()) {
+            return view('frontend.cart',
+                [
+                    'products' => $productList,
+                    'cartSubTotal' => $cartSubTotal,
+                ]
+            );
+        } else {
+            return view('frontend.empty-cart');
+        }
     }
 
     /**
@@ -60,11 +63,16 @@ class CartController extends Controller
      */
     public function getAddresses(Request $req) {
 
+        $productList = $this->cartManager->getCartContain();
+        
+        if($productList->isEmpty()) {
+            return redirect('cart/');
+        }
+        
         $isTemp = 0;
         $userId = 0;
         $shippingAddresses = [];
         $billingAddresses = [];
-        $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
         if (Auth::check()) {
             $userId = Auth::user()->id;
