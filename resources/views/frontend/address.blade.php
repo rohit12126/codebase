@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="toggle_info">
-                        <span><i class="fas fa-user"></i>Returning customer? <a href="#loginform" data-toggle="collapse" class="collapsed" aria-expanded="false">Click here to login</a></span>
+                        <span><i class="fas fa-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
                     </div>
                     <div class="panel-collapse collapse login_form" id="loginform">
                         <div class="panel-body">

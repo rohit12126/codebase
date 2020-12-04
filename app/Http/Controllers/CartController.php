@@ -160,8 +160,22 @@ class CartController extends Controller
     public function addToCart(Request $req) {
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
-        // dd($product->images[0]->image);
+        
         $this->cartManager->addToCart($product);
+
+        $cartCount = $this->cartManager->count();
+
+        $data = [
+            'cartCount' => $cartCount
+        ];
+
+        $response = [
+            'status'=>true,
+            'message'=>"Item successfully added to the cart.",
+            'data' => $data
+        ];
+        
+        echo json_encode($response);
     }
     
     /**
@@ -173,6 +187,8 @@ class CartController extends Controller
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
         $this->cartManager->removeFromCart($product);
+
+        //$this->cartManager->count();
     }
 
     /**

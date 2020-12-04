@@ -89,7 +89,8 @@
                     <a href="" title="Favorite"><img src="{{URL::asset('/images/icon/hearticon.png')}}" alt=""></a>
                 </span>
                 <span class="head-shop-icon">
-                    <a href="" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
+                    <a href="{{ route('cart') }}" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
+                    <span class="cart-count" style="color: red"> {{$cartCount}} </span>
                 </span>
                 <span class="head-shop-icon main-toggler d-lg-none">
                     <span class="burger">
@@ -307,6 +308,8 @@ footer-->
   <!-- <script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>scripts js -->
   <!-- <script src="{{ asset('js/js-scripts.js')}}"></script> -->
   <!-- <script src="{{ asset('js/alert.js')}}" type="text/javascript"></script> -->
+  <script src="{{ asset('js/bootstrap-notify.min.js')}}"></script>
+  
 </body>
 
 </html>
@@ -514,11 +517,9 @@ footer-->
                     counterPlus =  counter++;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
                     //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
-                    console.log('down');
                 }
         }
             else {
-                console.log("UP")
                 if ( $(window).scrollTop() <= 700) {
                     counterPlus =  counter--;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
