@@ -101,6 +101,7 @@ class RegisterController extends Controller
             $this->validator($request->all())->validate();
             $user = $this->create($request->all());
             $this->guard()->login($user);
+            dd(Auth::user());
             $response = array(
                 'status' => 'success',
                 'response_code' => 200

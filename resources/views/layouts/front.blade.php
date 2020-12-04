@@ -461,9 +461,6 @@ footer-->
                     password_confirmation : Repassword
                 },
                 success: function(result) {
-                    console.log(123456);
-                    console.log(result);
-                    return false;
                     if (result.status == "success") {
                         window.location.href = "{{ route('account')}}";
                     } else {
