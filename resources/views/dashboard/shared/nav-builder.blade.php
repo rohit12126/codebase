@@ -30,7 +30,7 @@ if(!function_exists('renderDropdown')){
 }
 ?>
 
-<div class="c-sidebar-brand">Custom Closets</div>
+<h3 class="c-sidebar-brand">Custom Closets</h3>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
         <a class="c-sidebar-nav-link" href="{{ route('admin.dashboard') }}" >

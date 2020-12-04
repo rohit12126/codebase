@@ -48,7 +48,7 @@
             <div class="head-info d-inline-block">
                 <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
                     Custom Closet
-                </a><div class=""></div>
+                </a>
             </div>
             <div class="head-navbar d-inline-block">
                 <nav class="head-nav">

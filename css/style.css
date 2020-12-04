@@ -20268,8 +20268,8 @@ body {
   padding-bottom: 20px;
 }
 .dashboard-block .icons-block{
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20278,27 +20278,48 @@ body {
   border-radius: 50%;
   margin-right: 40px;
 }
+.dashboard-block .text-value-count{
+  font-size: 2.4rem;
+}
 .dashboard-block.first-block{
-  background: linear-gradient(90deg, rgba(50,31,219,1) 0%, rgba(143,132,249,1) 100%);
+  background: linear-gradient(90deg, rgba(143,132,249,1) 0%, rgba(50,31,219,1) 100%);
+}
+.dashboard-block.first-block .icons-block{
+  background: rgba(50,31,219,1);
 }
 .dashboard-block.second-block{
   background: linear-gradient(90deg, rgba(51,153,255,1) 0%, rgba(4,123,242,1) 100%);
+}
+.dashboard-block.second-block .icons-block{
+  background: rgba(4,123,242,1);
 }
 .dashboard-block.third-block{
   background: rgb(249,177,21);
   background: linear-gradient(90deg, rgba(249,177,21,1) 0%, rgba(249,118,21,1) 100%);
 }
+.dashboard-block.third-block .icons-block{
+  background: rgba(249,118,21,1);
+}
 .dashboard-block.fourth-block{
   background: rgb(133,2,221);
   background: linear-gradient(90deg, rgba(133,2,221,1) 0%, rgba(253,29,29,1) 100%);
+}
+.dashboard-block.fourth-block .icons-block{
+  background: rgba(253,29,29,1);
 }
 .dashboard-block.fifth-block{
   background: rgb(21,242,249);
   background: linear-gradient(90deg, rgba(21,242,249,1) 0%, rgba(21,85,249,1) 100%);
 }
+.dashboard-block.fifth-block .icons-block{
+  background: rgba(21,85,249,1);
+}
 .dashboard-block.sixth-block{
-  background: rgb(249,21,112);
-  background: linear-gradient(90deg, rgba(249,21,112,1) 0%, rgba(249,214,21,1) 100%);
+  background: rgb(34,193,195);
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.dashboard-block.sixth-block .icons-block{
+  background: rgba(253,187,45,1);
 }
 .error{
   color: red;
