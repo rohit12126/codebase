@@ -11,44 +11,6 @@
                     <div class="toggle_info">
                         <span><i class="fas fa-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
                     </div>
-                    <div class="panel-collapse collapse login_form" id="loginform">
-                        <div class="panel-body">
-                            <p>If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.</p>
-                            <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                                <div class="form-group">
-                                    <input type="text" required="" class="form-control" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}">
-                                </div>
-                                @error('email')
-                                <span class="text-danger" role="alert">
-                                    {{ $message }}
-                                </span>
-                                @enderror
-                                <div class="form-group">
-                                    <input class="form-control" required="" type="password" placeholder="{{ __('Password') }}" name="password">
-                                </div>
-                                @error('password')
-                                <span class="text-danger" role="alert">
-                                    {{ $message }}
-                                </span>
-                                @enderror
-                                <div class="login_footer form-group">
-                                    <a href="{{ route('password.request') }}">Forgot password?</a>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-fill-out btn-block" name="login">Log in</button>
-                                </div>
-                                <div class="different_login">
-                                    <span> or</span>
-                                </div>
-                                <div class="form-note text-center">Don't Have an Account? 
-                                    @if (Route::has('password.request'))
-                                        <a href="{{ route('register') }}"> Sign up now</a>
-                                    @endif
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         @endif
@@ -61,23 +23,75 @@
         </div>
         <form method="post" action="{{route('address.save')}}">
         @csrf
+            <div class="address-billing-wrapper">
+                <div class="custom-card-block mb-4">
+                    <div class="custom-card-header">
+                        <h3>Billing List Detials</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <div class="row align-items-center">
+                            @foreach ($billingAddresses as $address)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">                        
+                                    <div class="custome-radio">
+                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                    </div>
+                                    <div class="card-body">
+                                    <h4 class="card-title">{{$address->name}}</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                    <p class="card-text">{{$address->address}}</p>
+                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal11">Edit</a>
+                                        <a href="#" class="card-link">Delete</a>
+                                    </div>                        
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="address-billing-wrapper">
+                <div class="custom-card-block mb-4">
+                    <div class="custom-card-header">
+                        <h3>Shipping List Detials</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <div class="row align-items-center">
+                            @foreach ($shippingAddresses as $address)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">                        
+                                    <div class="custome-radio">
+                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                    </div>
+                                    <div class="card-body">
+                                    <h4 class="card-title">{{$address->name}}</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                    <p class="card-text">{{$address->address}}</p>
+                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="card-link">Edit</a>
+                                        <a href="#" class="card-link">Delete</a>
+                                    </div>                        
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">
                         <h4>Billing Details</h4>
                     </div>
-                    @foreach ($billingAddresses as $address)
-                        <div class="form-group">
-                            <input type="radio" name="billing_address" value="{{$address->id}}">
-                            <label for="">
-                            {{$address->name}}<br/>
-                            {{$address->mobile}}<br/>
-                            {{$address->address}}<br/>
-                            {{$address->city.", ".$address->state.", ".$address->country }}<br/>
-                            {{$address->zipcode}}<br/>
-                            </label>
-                        </div>
-                    @endforeach
                     <div class="form-group">
                         <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
                     </div>
@@ -101,36 +115,28 @@
                     <div class="heading_s1">
                         <h4>Shipping Details</h4>
                     </div>
-                    @foreach ($shippingAddresses as $address)
+                    <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" />
+                    <label for="">Same As Billing Address</label>
+                    
+                    <div class="collapse in show" id="collapseExample">
                         <div class="form-group">
-                            <input type="radio" name="shipping_address" value="{{$address->id}}">
-                            <label for="">
-                            {{$address->name}}<br/>
-                            {{$address->mobile}}<br/>
-                            {{$address->address}}<br/>
-                            {{$address->city.", ".$address->city.", ".$address->city }}<br/>
-                            {{$address->zipcode}}<br/>
-                            </label>
+                            <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
                         </div>
-                    @endforeach
-                    <input type="checkbox" id="filladdress" name="filladdress"/>
-                    <div class="form-group">
-                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
+                        <div class="form-group">
+                            <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-fill-out btn-block">Continue</a>
@@ -138,6 +144,23 @@
         </form>  
     </div>
 </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Hello
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- END SECTION SHOP -->
 <script>
 $(document).ready(function(){

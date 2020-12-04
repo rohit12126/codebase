@@ -1,44 +1,56 @@
 <div class="row">
-    <div class="col-lg-6">
-        <div class="card mb-3 mb-lg-0">
-            <div class="card-header">
-            
-                <h3>Billing Address</h3>
+    <div class="address-billing-wrapper">
+        <div class="custom-card-block mb-4">
+            <div class="custom-card-header">
+                <h3>Billing List Detials</h3>
             </div>
-            <div class="card-body">
-            @foreach($shippingAddress as $sAddress)
-            <address>
-            <?php echo(str_replace(',','</br>',$sAddress->address))?></br>
-            @isset($sAddress->city){{$sAddress->city}}</br>@endisset
-            @isset($sAddress->state){{$sAddress->state}}</br>@endisset
-            @isset($sAddress->zipcode){{$sAddress->zipcode}}</br>@endisset
-            @isset($sAddress->country){{$sAddress->country}}@endisset
-            </address>
-                <!-- <p>New York</p> -->
-                <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->
-            @endforeach
-            </div><hr>
+            <div class="custom-card-body">
+                <div class="row align-items-center">
+                    @foreach ($billingAddress as $address)
+                    <div class="col-md-4 mb-3">
+                        <div class="card">                        
+                            <div class="card-body">
+                            <h4 class="card-title">{{$address->name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                            <p class="card-text">{{$address->address}}</p>
+                            <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal11">Edit</a>
+                                <a href="#" class="card-link">Delete</a>
+                            </div>                        
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-6">
-        <div class="card">
-            <div class="card-header">
-                <h3>Shipping Address</h3>
+    
+    <div class="address-billing-wrapper">
+        <div class="custom-card-block mb-4">
+            <div class="custom-card-header">
+                <h3>Shipping List Detials</h3>
             </div>
-            <div class="card-body">
-               
-            @foreach($billingAddress as $bAddress)
-            
-            <address>
-            @php echo(str_replace(',','</br>',$bAddress->address))@endphp</br>
-            @isset($bAddress->city){{$bAddress->city}}</br>@endisset
-                @isset($bAddress->state){{$bAddress->state}}</br>@endisset
-                @isset($bAddress->zipcode){{$bAddress->zipcode}}</br>@endisset
-                @isset($bAddress->country){{$bAddress->country}}@endisset
-            </address><hr>
-                <!-- <p>New York</p> -->
-                <!-- <a href="#" class="btn btn-fill-out">Edit</a> -->
-            @endforeach
+            <div class="custom-card-body">
+                <div class="row align-items-center">
+                    @foreach ($shippingAddress as $address)
+                    <div class="col-md-4 mb-3">
+                        <div class="card">                        
+                            <div class="card-body">
+                            <h4 class="card-title">{{$address->name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                            <p class="card-text">{{$address->address}}</p>
+                            <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="card-link">Edit</a>
+                                <a href="#" class="card-link">Delete</a>
+                            </div>                        
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
