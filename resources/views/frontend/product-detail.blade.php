@@ -4,7 +4,7 @@
 <section class="product-detail-view">
         <div class="container">
             <span class="product-detail-back">
-                <a href="url('product/')" class="d-inline-block">&lt; back to list</a>
+                <a href="{{url('product/')}}" class="d-inline-block">&lt; back to list</a>
             </span>
             <div class="text-md-center">
                 <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
