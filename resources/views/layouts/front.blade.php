@@ -539,17 +539,9 @@ footer-->
                     counterPlus =  counter++;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
                     //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
-<<<<<<< HEAD
                 }
         }
             else {
-=======
-                    //console.log('down');
-                }
-        }
-            else {
-                //console.log("UP")
->>>>>>> 59290d6fe4ed160f25a330feaebf645ffc11624f
                 if ( $(window).scrollTop() <= 700) {
                     counterPlus =  counter--;
                     $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
