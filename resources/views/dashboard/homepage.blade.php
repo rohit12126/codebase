@@ -26,8 +26,9 @@
                             <div class="icons-block">
                                 <i class="cil-user"></i>
                             </div>
-                            <div>
-                                <div class="text-value-lg">{{ $data['userCount'] }}</div>
+                            <div class="">
+                                <small>USERS</small>
+                                <div class="text-value-count">{{ $data['userCount'] }}</div>
                                 <div>Total Users</div>
                             </div>
                         </div>
@@ -42,10 +43,11 @@
                     <div class="card-body pb-0">
                       <div class="d-flex">
                         <div class="icons-block">
-                            <i class="cil-user"></i>
+                            <i class="cil-basket"></i>
                         </div>
                         <div>
-                            <div class="text-value-lg">{{ $data['orderCount'] }}</div>
+                            <small>ORDERS</small>
+                            <div class="text-value-count">{{ $data['orderCount'] }}</div>
                                 <div>Total Orders</div>
                             </div>
                        </div>
@@ -60,10 +62,11 @@
                     <div class="card-body pb-0">
                         <div class="d-flex">
                             <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-3d"></i>
                             </div>
                             <div>
-                                <div class="text-value-lg">{{ $data['productsCount'] }}</div>
+                                <small>PRODUCTS</small>
+                                <div class="text-value-count">{{ $data['productsCount'] }}</div>
                                 <div>Total Products</div>
                             </div>
                         </div>
@@ -78,10 +81,11 @@
                   <div class="card-body pb-0">
                     <div class="d-flex">
                             <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-applications-settings"></i>
                             </div>
                             <div>
-                                <div class="text-value-lg">{{ $data['accessoryCount'] }}</div>
+                                <small>ACCESSORIES</small>
+                                <div class="text-value-count">{{ $data['accessoryCount'] }}</div>
                                 <div>Total Accessories</div>
                             </div>
                         </div>
@@ -95,10 +99,11 @@
                     <div class="card-body pb-0">
                     <div class="d-flex">
                         <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-clone"></i>
                         </div>
                         <div>
-                            <div class="text-value-lg">{{ $data['cancleOrderCount'] }}</div>
+                            <small>USERS</small>
+                            <div class="text-value-count">{{ $data['cancleOrderCount'] }}</div>
                             <div>Total Cancelled Orders</div>
                         </div>
                     </div>
@@ -110,14 +115,15 @@
             </div>
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
-              <div class="card text-white cursor-pointer dashboard-block six-block" title="Total Active Blogs" onclick="window.location='{{ route('admin.blog.list') }}'">
+              <div class="card text-white cursor-pointer dashboard-block sixth-block" title="Total Active Blogs" onclick="window.location='{{ route('admin.blog.list') }}'">
                   <div class="card-body pb-0">
                     <div class="d-flex">
                         <div class="icons-block">
-                            <i class="cil-user"></i>
+                            <i class="cil-clone"></i>
                         </div>
                         <div>
-                            <div class="text-value-lg">{{ $data['blogCount'] }}</div>
+                            <small>BLOGS</small>
+                            <div class="text-value-count">{{ $data['blogCount'] }}</div>
                             <div>Total Blogs</div>
                         </div>
                     </div>
