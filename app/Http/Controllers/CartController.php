@@ -169,12 +169,13 @@ class CartController extends Controller
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
         
-        $this->cartManager->addToCart($product);
+        $productQty =  $this->cartManager->addToCart($product);
 
         $cartCount = $this->cartManager->count();
 
         $data = [
-            'cartCount' => $cartCount
+            'cartCount' => $cartCount,
+            'productQty' => $productQty
         ];
 
         $response = [
@@ -194,9 +195,22 @@ class CartController extends Controller
     public function removeFromCart(Request $req) {
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
-        $this->cartManager->removeFromCart($product);
+        $productQty = $this->cartManager->removeFromCart($product);
+        
+        $cartCount = $this->cartManager->count();
 
-        //$this->cartManager->count();
+        $data = [
+            'cartCount' => $cartCount,
+            'productQty' => $productQty
+        ];
+
+        $response = [
+            'status'=>true,
+            'message'=>"Item successfully removed from the cart.",
+            'data' => $data
+        ];
+        
+        echo json_encode($response);
     }
 
     /**
@@ -208,7 +222,22 @@ class CartController extends Controller
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
-        $this->cartManager->updateCart($product, $qty);
+        $productQty = $this->cartManager->updateCart($product, $qty);
+        
+        $cartCount = $this->cartManager->count();
+
+        $data = [
+            'cartCount' => $cartCount,
+            'productQty' => $productQty
+        ];
+
+        $response = [
+            'status'=>true,
+            'message'=>"Item successfully added to the cart.",
+            'data' => $data
+        ];
+        
+        echo json_encode($response);
     }
 
     /**
@@ -219,5 +248,18 @@ class CartController extends Controller
     public function removeProduct(Request $req) {
         $rowId = $req->input('rowId');
         $this->cartManager->removeProduct($rowId);
+        $cartCount = $this->cartManager->count();
+
+        $data = [
+            'cartCount' => $cartCount
+        ];
+
+        $response = [
+            'status'=>true,
+            'message'=>"Item successfully removed from the cart.",
+            'data' => $data
+        ];
+        
+        echo json_encode($response);
     }
 }

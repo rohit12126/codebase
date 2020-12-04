@@ -27,7 +27,7 @@
                                         <div class="quantity">
                                             <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
                                             
-                                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" size="4" productId="{{$product->id}}">
+                                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
                                             
                                             <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
                                         </div>
@@ -102,13 +102,14 @@
             jQuery.ajax({
                 url: "{{ url('/cart/add-cart') }}",
                 method: 'post',
+                dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId
                 },
                 success: function(result){
-                    alert("Item successfully added to the cart.");
-                    location.reload(true);
+                    $('#qty'+productId).val(result.data.productQty);
+                    $('.cart-count').html(result.data.cartCount);
                 }
             });
         });
@@ -119,13 +120,14 @@
             jQuery.ajax({
                 url: "{{ url('/cart/remove-from-cart') }}",
                 method: 'post',
+                dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId
                 },
                 success: function(result){
-                    alert("Item successfully removed from the cart.");
-                    location.reload(true);
+                    $('#qty'+productId).val(result.data.productQty);
+                    $('.cart-count').html(result.data.cartCount);
                 }
             });
         });
@@ -138,14 +140,15 @@
             jQuery.ajax({
                 url: "{{ url('/cart/update-cart') }}",
                 method: 'post',
+                dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId,
                     qty : qty
                 },
-                success: function(result){
-                    alert("Item quantity updated successfully.");
-                    location.reload(true);
+                success: function(result) {
+                    $(this).val(result.data.productQty);
+                    $('.cart-count').html(result.data.cartCount);
                 }
             });
         });

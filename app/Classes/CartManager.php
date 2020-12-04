@@ -34,6 +34,8 @@ class CartManager
         } else {
             $this->addProduct($product);
         }
+
+        return $qty;
     }
 
     /**
@@ -61,6 +63,9 @@ class CartManager
             } else {
                 $this->removeProduct($rowId, $product->id);
             }
+
+        return $qty;
+        
         } else {
             return false;
         }
@@ -185,17 +190,20 @@ class CartManager
     {
         $set = false;
         $rowId = '';
+        $productId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
                 $rowId = $item->rowId;
+                $productId = $product->id;
                 $set = true;
                 break;
             }
         }
         if ($set == 1 || $set == true) {
             $data = ['qty'=> $qty];
-            $this->updateProduct($rowId, $data);
+            $this->updateProduct($rowId, $data, $productId);
+            /* row */
         } else {
             $this->addProduct($product, $qty);
         }
