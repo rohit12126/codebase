@@ -1616,7 +1616,7 @@ button:focus {
 .cart_count, .wishlist_count {
 	position: relative;
 	top: -3px;
-	left: 0;
+	left: -5px;
 	font-size: 11px;
 	background-color: #FF324D;
 	border-radius: 50px;
@@ -7543,6 +7543,7 @@ a:hover {
 
 .head-shop-icon {
 	display: inline-block;
+	position: relative;
 }
 
 .head-shop-icon img {
