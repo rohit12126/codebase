@@ -86,11 +86,8 @@
                 </span>
 
                 <span class="head-shop-icon">
-                    <a href="" title="Favorite"><img src="{{URL::asset('/images/icon/hearticon.png')}}" alt=""></a>
-                </span>
-                <span class="head-shop-icon">
                     <a href="{{ route('cart') }}" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
-                    <span class="cart-count" style="color: red"> {{$cartCount}} </span>
+                    <span class="cart-count cart_count"> {{$cartCount}} </span>
                 </span>
                 <span class="head-shop-icon main-toggler d-lg-none">
                     <span class="burger">
