@@ -43,7 +43,7 @@
                     <div class="card-body pb-0">
                       <div class="d-flex">
                         <div class="icons-block">
-                            <i class="cil-user"></i>
+                            <i class="cil-basket"></i>
                         </div>
                         <div>
                             <small>ORDERS</small>
@@ -62,7 +62,7 @@
                     <div class="card-body pb-0">
                         <div class="d-flex">
                             <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-3d"></i>
                             </div>
                             <div>
                                 <small>PRODUCTS</small>
@@ -81,7 +81,7 @@
                   <div class="card-body pb-0">
                     <div class="d-flex">
                             <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-applications-settings"></i>
                             </div>
                             <div>
                                 <small>ACCESSORIES</small>
@@ -99,7 +99,7 @@
                     <div class="card-body pb-0">
                     <div class="d-flex">
                         <div class="icons-block">
-                                <i class="cil-user"></i>
+                                <i class="cil-clone"></i>
                         </div>
                         <div>
                             <small>USERS</small>
@@ -119,7 +119,7 @@
                   <div class="card-body pb-0">
                     <div class="d-flex">
                         <div class="icons-block">
-                            <i class="cil-user"></i>
+                            <i class="cil-clone"></i>
                         </div>
                         <div>
                             <small>BLOGS</small>
