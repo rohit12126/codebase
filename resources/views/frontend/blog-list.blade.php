@@ -33,7 +33,7 @@
                         </div>
                         <div class="blog-post-content">
                             <p class="blog-post-para">
-                            {{$blog->description}}
+                            {!! $blog->description !!}
                             </p>
                         </div>
                         <div class="blog-more-tag">
