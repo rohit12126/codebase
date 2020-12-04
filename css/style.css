@@ -11670,7 +11670,7 @@ html:not([dir="rtl"])
   .c-sidebar .c-sidebar-nav-link:hover,
   .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     color: #fff;
-    background: #321fdb;
+    background: #1fb6db;
   }
 
   .c-sidebar .c-sidebar-nav-link:hover .c-sidebar-nav-icon,
@@ -20305,7 +20305,7 @@ body {
   background: linear-gradient(90deg, rgb(2, 221, 170) 0%, rgb(42, 136, 203) 100%);
 }
 .dashboard-block.fourth-block .icons-block{
-  background: rgba(253,29,29,1);
+  background: rgb(7, 98, 160);
 }
 .dashboard-block.fifth-block{
   background: rgb(21,242,249);
