@@ -20,7 +20,7 @@
                             @foreach ($products as $product)
                                 <div class="products-list-col">
                                     <div class="products-list-product">
-                                        <a href="#" class="">
+                                        <a href="{{ route('product.detail',['id' => $product->id]) }}" class="">
                                             <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
                                             <a href="javascript:void(0);" class="btn btn-outline-secondary add-to-cart">
                                                 <input type="hidden" class="product-id" value="{{$product->id}}">
@@ -46,14 +46,6 @@
 <script>
     jQuery(document).ready(function(){
         
-        jQuery.notify({
-            // options
-            message: 'Hello World' 
-        },{
-            // settings
-            type: 'danger'
-        });
-
         jQuery('.add-to-cart').click(function(e) {
             var productId = $(this).children( ".product-id" ).val();
             e.preventDefault();
@@ -66,13 +58,6 @@
                     productId : productId
                 },
                 success: function(result) {
-                    /* $.notify({
-                        // options
-                        message: 'Hello World' 
-                    },{
-                        // settings
-                        type: 'danger'
-                    }); */
                     $('.cart-count').html(result.data.cartCount);
                 }
             });

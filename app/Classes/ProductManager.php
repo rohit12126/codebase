@@ -136,10 +136,14 @@ class ProductManager
     }
     public function getProductWithReview($productId)
     {
-        $product[] = ProductModel::with('images', 'catergory')->find($productId);
-        if (!is_null($product[0])) {
-            $product[] = $product[0]->getRecentRatings($product[0]->id, 5, 'desc');
+        $product = ProductModel::with('images', 'catergory')->find($productId);
+        $productData = [
+            'product' => $product,
+            'productReview' => ""
+        ];
+        if (!is_null($product)) {
+            $productData['productReview'] = $product->getRecentRatings($product->id, 5, 'desc');
         }
-        return $product;
+        return $productData;
     }
 }

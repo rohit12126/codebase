@@ -4,16 +4,19 @@
 <section class="product-detail-view">
         <div class="container">
             <span class="product-detail-back">
-                <a href="" class="d-inline-block">&lt; back to overview</a>
+                <a href="url('product/')" class="d-inline-block">&lt; back to list</a>
             </span>
             <div class="text-md-center">
-                <h1 class="product-detail-heading">2 block custom closet</h1>
+                <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
             </div>
             <div class="product-detail-slider">
-                <div data-thumb="{{URL::asset('/images/products/1.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/1.png')}}"></a></div>
-                <div data-thumb="{{URL::asset('/images/products/2.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/2.png')}}"></a></div>
-                <div data-thumb="{{URL::asset('/images/products/1.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/1.png')}}"></a></div>
-                <div data-thumb="{{URL::asset('/images/products/2.png')}}"><a data-fancybox="gallery" href="{{URL::asset('/images/products/1.png')}}"><img src="{{URL::asset('/images/products/2.png')}}"></a></div>
+                @foreach ($productData['product']->images as $image)
+                    <div data-thumb="{{ asset('upload/product/'.$image->image)}}">
+                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                            <img src="{{ asset('upload/product/'.$image->image)}}">
+                        </a>
+                    </div>
+                @endforeach
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -21,13 +24,17 @@
                     <span class="product-sku">SKU (Stock Keeping Unit)</span>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <span class="product-price">&#36; 599.67</span>
+                    <span class="product-price">$ {{$productData['product']->sale_price}}</span>
                     <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>
             <div class="pt-4 pb-4 d-flex justify-content-center">
-                <a href="#stt" class="btn btn-outline-secondary mr-3"><i class="linearicons-cart"></i> Buy now</a>
-                <a href="#stt" class="btn btn-outline-secondary"><i class="linearicons-cart-plus"></i> add to cart</a>
+                <a href="{{url('checkout/address/')}}" class="btn btn-outline-secondary mr-3"><i class="linearicons-cart"></i> Buy now</a>
+                
+                <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
+                    <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                    <i class="linearicons-cart-plus"></i> Add to cart
+                </a>
             </div>
         </div>
     </section>
@@ -70,7 +77,7 @@
             </div>
         </div>
     </section>
-    <section class="product-wallpaper-slider">
+    {{-- <section class="product-wallpaper-slider">
         <div>
             <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/01_tom_detail_gestell.jpg" alt="" />
         </div>
@@ -89,8 +96,8 @@
         <div>
             <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/06_tom_ecksofa.jpg" alt="" />
         </div>
-    </section>
-    <section class="section light-bg">
+    </section> --}}
+    {{-- <section class="section light-bg">
         <div class="container">
             <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
             <div id="accordion">
@@ -138,7 +145,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 <!-- END SECTION SHOP -->
 @endsection
 
@@ -152,13 +159,13 @@
             jQuery.ajax({
                 url: "{{ url('/cart/add-cart') }}",
                 method: 'post',
+                dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId
                 },
                 success: function(result){
-                    alert("Item successfully added to the cart.");
-                    location.reload(true);
+                    $('.cart-count').html(result.data.cartCount);
                 }
             });
         });

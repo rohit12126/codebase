@@ -67,10 +67,11 @@ class ProductController extends Controller
     public function detail(Request $req) {
         $productId = $req->input('id');
         $cart = [];
-        $product = $this->productManager->getProductWithReview($productId);
+        $productData = $this->productManager->getProductWithReview($productId);
+        //dd($productData);
         $cart = $this->cartManager->getProduct($productId);
         return view('frontend.product-detail',
-            ['product' => $product, 'cart'=>$cart]
+            ['productData' => $productData, 'cart'=>$cart]
         );
     }
     /**
