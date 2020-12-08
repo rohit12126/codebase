@@ -26,9 +26,9 @@ class HelperManager
         if(!is_null($file))
         {
             $file_name = time().'_file_'.$file->getClientOriginalName();
-
+            echo $file_name."<br/>";
             $image_resize = Image::make($file->getRealPath());              
-            // $image_resize->resize(1356, 450);
+            
             $image_resize->save(base_path($file_path).'/'.$file_name);
             return $file_name ;
         }
