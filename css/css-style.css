@@ -8551,3 +8551,8 @@ h5 {
     color: #5dc17e;
     font-weight: 600;
 }
+.checkinputforsameinfo{
+		position: absolute;
+		right: 15px;
+		top: 3px;
+}
