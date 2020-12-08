@@ -23,7 +23,7 @@
         </div>
         <form method="post" action="{{route('address.save')}}">
         @csrf
-            @if ($isTemp !=0)
+            @if ($isTemp !=1)
                 <div class="address-billing-wrapper">
                     <div class="custom-card-block mb-4">
                         <div class="custom-card-header">
