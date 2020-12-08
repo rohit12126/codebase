@@ -310,6 +310,7 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 /* Product Routes */
 Route::get('product/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
+Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
 
 /* Blog Routes */
 Route::get('blog/', 'BlogController@index')->name('blog.list');
