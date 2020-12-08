@@ -3,7 +3,7 @@
 <!-- START SECTION SHOP -->
 <div class="blog-view">
     <div class="">
-    <h2 class="pt-5 pb-3 text-center">Blogs</h2>
+    <h2 class="pt-3 pb-3 text-center">Blogs</h2>
     <div class="section blog-list-view">
         <div class="">
             <div class="blog-row justify-content-center">

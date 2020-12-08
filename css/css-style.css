@@ -8403,6 +8403,7 @@ h5 {
 }
 .product-detail-slider img{
 	max-width: 100%;
+	margin: 0 auto;
 }
 .product-detail-slider .slick-arrow{
 	display: none;
@@ -8663,6 +8664,115 @@ h5 {
     color: #787878;
     font-weight: bold;
 }
+
+
+.blog-view-card{
+	color: #787878;
+}
+.blog-view-title{
+	font-size: 2.5625em;
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+.blog-view-card img{
+	margin-bottom: 1rem;
+}
+.blog-view-card h2, .blog-view-card h3,.blog-view-card h4, .blog-view-card h5
+{
+	padding: 0;
+	margin: 40px 0 0;
+	font-weight: 600;
+	color: #333;
+}
+.blog-view-card h2
+{
+	font-size: 1.9375em;
+}
+.blog-view-card h3
+{
+	font-size: 1.1875em;
+}
+.blog-view-card h4
+{
+	font-size: 1.4375em;
+}
+.blog-sidebar-item{
+	margin-bottom: 1rem;
+}
+.blog-sidebar-item .blog-col{
+	width: 100%;
+}
+.blog-back-btn{
+	border-radius: 16px;
+	display: inline-block;
+	width: 100%;
+	max-width: 140px;
+	background-color: #533163;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 0px;
+	transition: background-color 0.2s;
+	padding: 10px 15px;
+	margin: 0;
+	font-size: 0.6875em;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #FFF;
+	height: auto;
+	line-height: 1;
+	margin-bottom: 0.875rem;
+}
+.blog-back-btn:hover{
+	color: #fff;
+}
+.blog-back-btn span{
+	margin-right: 0.4rem;
+}
+.blog-share-btn{
+	background-color: #f65458;
+}
+
+.blog-sidebar-title{
+	color: #505050;
+	text-align: center;
+	font-size: 1.4375em;
+	font-weight: 600;
+	margin-bottom: 2.5rem;
+}
+
+.blog-post-arrows{  
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	padding: 26px 0 24px;
+	text-align: center;
+}
+.blog-post-switcher{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.blog-post-switcher-button
+{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin-right: -4px;
+	border-radius: 50px;
+	background-color: #f94e57;
+	text-align: center;
+}
+.blog-post-switcher-button i
+{
+	line-height: 50px;
+	font-size: 1.125rem;
+	color: #fff;
+}
+.blog-post-number{
+	color: #8d8d8d;
+}
+
 @media (max-width: 1199px) {
 	.blog-col {
 			width: 50%;
