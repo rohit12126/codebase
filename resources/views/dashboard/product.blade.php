@@ -98,12 +98,12 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" required value="{{ @$product->name }}" >
+                                        <input type="text" placeholder="Name" name="name" class="form-control" value="{{ @$product->name }}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" required value="{{ @$product->sale_price }}" title="Enter sale price of item">
+                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ @$product->sale_price }}" >
                                     </div>
                                     
                                     <div class="form-group">
@@ -126,7 +126,7 @@
 
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control" required title="Tell Custumers something about item" >{{ @$product->description }}</textarea>
+                                        <textarea placeholder="Description" name="description" class="form-control"  title="Tell Custumers something about item" >{{ @$product->description }}</textarea>
                                     </div>
 
                                     <div class="d-flex pt-4">
@@ -221,12 +221,27 @@ $(function() {
 </script>
 <script>
     $("#myform").validate({
+        rules: {
+            category_id: {
+                required: true
+            },
+            name: {
+                required: true
+            },
+            sale_price: {
+                required: true
+            }
+        },
+        messages: {
+            category_id: "Please select a category",
+            name: "Please provide a Name",
+            sale_price: "Please provide a Price"
+        },
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();
         }
     });
-
 </script>
 <script>
     function addMore() {
