@@ -23,37 +23,38 @@
         </div>
         <form method="post" action="{{route('address.save')}}">
         @csrf
-            <div class="address-billing-wrapper">
-                <div class="custom-card-block mb-4">
-                    <div class="custom-card-header">
-                        <h4>Billing List Detials</h4>
-                    </div>
-                    <div class="custom-card-body">
-                        <div class="row align-items-center">
-                            @foreach ($billingAddresses as $address)
-                            <div class="col-md-4 mb-3">
-                                <div class="card">                        
-                                    <div class="custome-radio">
-                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
-                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                    </div>
-                                    <div class="card-body">
-                                    <h4 class="card-title">{{$address->name}}</h4>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                    <p class="card-text">{{$address->address}}</p>
-                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal11">Edit</a>
-                                        <a href="#" class="card-link">Delete</a>
-                                    </div>                        
+            @if ($isTemp !=0)
+                <div class="address-billing-wrapper">
+                    <div class="custom-card-block mb-4">
+                        <div class="custom-card-header">
+                            <h3>Billing List Detials</h3>
+                        </div>
+                        <div class="custom-card-body">
+                            <div class="row align-items-center">
+                                @foreach ($billingAddresses as $address)
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">                        
+                                        <div class="custome-radio">
+                                            <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                            <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                        </div>
+                                        <div class="card-body">
+                                        <h4 class="card-title">{{$address->name}}</h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                        <p class="card-text">{{$address->address}}</p>
+                                        <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal11">Edit</a>
+                                            <a href="#" class="card-link">Delete</a>
+                                        </div>                        
+                                        </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
 
             <div class="address-billing-wrapper">
                 <div class="custom-card-block mb-4">
@@ -80,13 +81,12 @@
                                     </div>                        
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            @endif
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">

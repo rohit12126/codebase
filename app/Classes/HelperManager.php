@@ -25,10 +25,10 @@ class HelperManager
     {
         if(!is_null($file))
         {
-            $file_name = time().'_file_'.$file->getClientOriginalName();
+            $original_name = "images.".$file->getClientOriginalExtension();
+            $file_name = time().'_file_'.rand(100,999).$original_name;
 
             $image_resize = Image::make($file->getRealPath());              
-            // $image_resize->resize(1356, 450);
             $image_resize->save(base_path($file_path).'/'.$file_name);
             return $file_name ;
         }

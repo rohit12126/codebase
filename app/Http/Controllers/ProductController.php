@@ -74,6 +74,7 @@ class ProductController extends Controller
             ['productData' => $productData, 'cart'=>$cart]
         );
     }
+    
     /**
      * Store a Review of the product.
      *
@@ -100,5 +101,23 @@ class ProductController extends Controller
         return response()->json(['success' => '1']);
     }
 
+    /**
+     * Store a Review of the product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function accessory() {
+        $productArr = [];
+        $categories = $this->categoryManager->getCategoryList();
+        foreach ($categories as $key => $category) {
+            $productData = $this->productManager->getProductsByCategoryId($category->id);
+            if($productData->isNotEmpty()) {
+                $useForElementId = substr(md5($category->id), 0, 6);
+                $categories[$key]->elementId = $useForElementId;
+                $productArr[$useForElementId] = $productData;
+            }
+        }
+        return view('frontend.accessory-list', ['productArr' => $productArr, 'categories'=> $categories]);
+    }
 
 }

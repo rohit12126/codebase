@@ -152,11 +152,12 @@
                                                 Upload
                                             </label>
                                             <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
-                                            @if($key > 0)
-                                            <i class="fa fa-times del"></i>
-                                            @endif
+                                            <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
+                                            {{-- @if($key > 0) --}}
+                                                <i class="fa fa-times del"></i>
+                                            {{-- @endif --}}
                                             </div>
-                                            @endforeach
+                                        @endforeach
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
                                     </div>
