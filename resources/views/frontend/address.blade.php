@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="toggle_info">
-                        <span><i class="fas fa-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
+                        <span><i class="linearicons-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                         <h4>Shipping Details</h4>
                         <div class="checkinputforsameinfo">
                             <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" />
-                            <label for="">Same As Billing Address</label>
+                            <label for="filladdress">Same As Billing Address</label>
                         </div>
                     </div>
                     <div class="collapse in show" id="collapseExample">
