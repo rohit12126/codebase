@@ -26,7 +26,6 @@
                                     <td class="product-quantity" data-title="Quantity">
                                         <div class="quantity">
                                             <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
-                                            
                                             <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
                                             
                                             <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
