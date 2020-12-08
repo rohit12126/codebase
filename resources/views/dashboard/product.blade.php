@@ -149,13 +149,14 @@
                                                 <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
                                                 <label class="btn btn-primary" >Upload</label>
-                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
+                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload only jpeg, jpg or png image here">
                                                 <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
                                                 <i class="fa fa-times del"></i>
                                             </div>
-                                        @endforeach
+                                            @endforeach
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
+                                        <div>Upload only jpeg, jpg or png image here</div>
                                     </div>
 
                                         @else
@@ -165,13 +166,14 @@
                                             <div class="col-sm-4 imgUp">
                                                 <div class="imagePreview" title="Item image preview">
                                                 </div>
-                                            <label class="btn btn-primary" title="Upload image here">
-                                                Upload
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload image here">
-                                            </label>
+                                                <label class="btn btn-primary" title="Upload only jpeg, jpg or png image here">
+                                                    Upload
+                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload only jpeg, jpg or png image here">
+                                                </label>
                                             </div>
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
-                                            </div>
+                                        </div>
+                                        <div>Upload only jpeg, jpg or png image here</div>
                                         </div>
                                         @endif
                                     </div>
@@ -202,20 +204,25 @@ $(document).on("click", "i.del" , function() {
 	$(this).parent().remove();
 });
 $(function() {
-    $(document).on("change",".uploadFile", function()
-    {
+    $(document).on("change",".uploadFile", function() {
         var uploadFile = $(this);
         var files = !!this.files ? this.files : [];
+        
         if (!files.length || !window.FileReader) return; 
-        if (/^image/.test( files[0].type)){
-            var reader = new FileReader(); 
-            reader.readAsDataURL(files[0]);
- 
-            reader.onloadend = function(){
-                uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+    
+        if (files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
+
+            if (/^image/.test( files[0].type)) {
+                var reader = new FileReader(); 
+                reader.readAsDataURL(files[0]);
+    
+                reader.onloadend = function(){
+                    uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
+                }
             }
+        } else {
+            return false;
         }
-      
     });
 });
 </script>
@@ -235,7 +242,7 @@ $(function() {
         messages: {
             category_id: "Please select a category",
             name: "Please provide a Name",
-            sale_price: "Please provide a Price"
+            sale_price: "Please provide a Price",
         },
         submitHandler: function(form) {
             // do other things for a valid form
