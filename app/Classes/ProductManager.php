@@ -63,7 +63,6 @@ class ProductManager
             if ($req->image) {
                 foreach ($req->image as $key => $image) {
                     $file_name = Common::uploadFile($image, 'upload/product');
-                    echo "PM:-".$file_name."<br/>";
                     if (is_array($req->storeimage) && in_array($key, array_keys($req->storeimage))) {
                         ProductImageModel::where("id", $key)->where('product_id', $product->id)->update(['image' => $file_name]);
                     } else {
@@ -73,7 +72,6 @@ class ProductManager
                         ]);
                     }
                 }
-                dd('Check');
             }
             
             return true;
