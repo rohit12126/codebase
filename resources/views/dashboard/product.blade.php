@@ -49,7 +49,7 @@
   color:#fff;
   box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
   text-align:center;
-  line-height:30px;
+  line-height:18px;
   margin-top:0px;
   cursor:pointer;
   font-size:15px;
@@ -148,14 +148,10 @@
                                             <div class="col-sm-4 imgUp">
                                                 <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
-                                            <label class="btn btn-primary" >
-                                                Upload
-                                            </label>
-                                            <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
-                                            <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
-                                            {{-- @if($key > 0) --}}
+                                                <label class="btn btn-primary" >Upload</label>
+                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"title="Upload image here">
+                                                <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
                                                 <i class="fa fa-times del"></i>
-                                            {{-- @endif --}}
                                             </div>
                                         @endforeach
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
