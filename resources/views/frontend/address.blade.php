@@ -7,7 +7,7 @@
 	<div class="container">
         @if ($isTemp !=0)
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="toggle_info">
                         <span><i class="fas fa-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
                     </div>
@@ -56,30 +56,29 @@
                     </div>
                 </div>
 
-                <div class="address-billing-wrapper">
-                    <div class="custom-card-block mb-4">
-                        <div class="custom-card-header">
-                            <h3>Shipping List Detials</h3>
-                        </div>
-                        <div class="custom-card-body">
-                            <div class="row align-items-center">
-                                @foreach ($shippingAddresses as $address)
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">                        
-                                        <div class="custome-radio">
-                                            <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
-                                            <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                        </div>
-                                        <div class="card-body">
-                                        <h4 class="card-title">{{$address->name}}</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                        <p class="card-text">{{$address->address}}</p>
-                                        <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <a href="#" class="card-link">Edit</a>
-                                            <a href="#" class="card-link">Delete</a>
-                                        </div>                        
-                                        </div>
+            <div class="address-billing-wrapper">
+                <div class="custom-card-block mb-4">
+                    <div class="custom-card-header">
+                        <h4>Shipping List Detials</h4>
+                    </div>
+                    <div class="custom-card-body">
+                        <div class="row align-items-center">
+                            @foreach ($shippingAddresses as $address)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">                        
+                                    <div class="custome-radio">
+                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                    </div>
+                                    <div class="card-body">
+                                    <h4 class="card-title">{{$address->name}}</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                    <p class="card-text">{{$address->address}}</p>
+                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="card-link">Edit</a>
+                                        <a href="#" class="card-link">Delete</a>
+                                    </div>                        
                                     </div>
                                 </div>
                                 @endforeach
@@ -113,12 +112,13 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="heading_s1">
+                    <div class="heading_s1 p-relative">
                         <h4>Shipping Details</h4>
+                        <div class="checkinputforsameinfo">
+                            <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" />
+                            <label for="">Same As Billing Address</label>
+                        </div>
                     </div>
-                    <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" />
-                    <label for="">Same As Billing Address</label>
-                    
                     <div class="collapse in show" id="collapseExample">
                         <div class="form-group">
                             <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
@@ -140,7 +140,9 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-fill-out btn-block">Continue</a>
+                <div class="text-center col-md-12">
+                <button type="submit" class="btn btn-fill-out col-md-4">Continue</a>
+                </div>
             </div>
         </form>  
     </div>
