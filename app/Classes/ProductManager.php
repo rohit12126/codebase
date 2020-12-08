@@ -53,17 +53,17 @@ class ProductManager
             
         ];
         if ($product->fill($data)->save()) {
-            dump($req->storeimage);
-            if (isset($req->storeimage) && is_array($req->storeimage) && $req->storeimage !== null) {
-                dump("check I");
+            
+            if (is_null($req->storeimage)) {
+                ProductImageModel::where('product_id', $req->id)->delete();
+            } else {
                 ProductImageModel::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
             }
-            
+
             if ($req->image) {
-                dd($req->image);
                 foreach ($req->image as $key => $image) {
                     $file_name = Common::uploadFile($image, 'upload/product');
-                    
+                    echo "PM:-".$file_name."<br/>";
                     if (is_array($req->storeimage) && in_array($key, array_keys($req->storeimage))) {
                         ProductImageModel::where("id", $key)->where('product_id', $product->id)->update(['image' => $file_name]);
                     } else {
@@ -73,8 +73,9 @@ class ProductManager
                         ]);
                     }
                 }
+                dd('Check');
             }
-            dd('dsds');
+            
             return true;
         } else {
             return false;
