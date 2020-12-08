@@ -24,6 +24,13 @@ class ProductController extends Controller
 
     public function addProduct(Request $req)
     {
+        $this->validate(
+            $req, 
+            [
+                'image' => 'required',
+                'image.*' => 'mimes:jpeg,jpg,png|max:4000',
+            ]
+        );
         $response = ProductManager::add($req);
         if($response == true){
             Common::setMessage(__('item_add_success'));
