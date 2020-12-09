@@ -1,95 +1,99 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
-<div class="section">
-	<div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="table-responsive shop_cart_table">
-                	<table class="table">
-                        <thead>
-                            <tr>
-                                <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">Quantity</th>
-                                <th class="product-subtotal">Total</th>
-                                <th class="product-remove">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($products as $product)
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1"></a></td>
-                                    <td class="product-name" data-title="Product"><a href="#">{{$product->name}}</a></td>
-                                    <td class="product-price" data-title="Price">$ {{$product->price}}</td>
-                                    <td class="product-quantity" data-title="Quantity">
-                                        <div class="quantity">
-                                            <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
-                                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
-                                            
-                                            <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal" data-title="Total">$ {{ $product->price * $product->qty}}</td>
-                                    <td class="product-remove" data-title="Remove">
-                                        <a href="#" class="item_remove">
-                                            <input type="hidden" class="rowId" value="{{$product->rowId}}">
-                                            <i class="ti-close"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-            	<div class="medium_divider"></div>
-            	<div class="divider center_icon"><i class="ti-shopping-cart-full"></i></div>
-            	<div class="medium_divider"></div>
-            </div>
-        </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <div class="row">
-            <div class="col-md-12">
-                <div class="border p-3 p-md-4">
-                    <div class="heading_s1 mb-3">
-                        <h6>Cart Totals</h6>
+<section class="section">
+    <div class="container">
+        <table class="cart-box">
+            <thead>
+                <tr>
+                    <th class="d-none d-md-table-cell">Sr. No.</th>
+                    <th class=""><span class="d-none d-md-block">Product image</span> <span class="d-block d-md-none">Products</span></th>
+                    <th class="d-none d-md-table-cell">Product name</th>
+                    <th class="d-none d-md-table-cell">unit price</th>
+                    <th class="d-none d-md-table-cell">Quantity</th>
+                    <th class="d-none d-md-table-cell">Total</th>
+                    <th class="d-none d-md-table-cell">GST</th>
+                    <th class="d-none d-md-table-cell">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($products as $product)
+            <tr>
+                <td>1</td>
+                <td>
+                    <div class="pa-cart-img">
+                    <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td class="cart_total_label">Cart Subtotal</td>
-                                    <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
-                                    <td class="cart_total_amount">$ {{$cartSubTotal}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cart_total_label">Total</td>
-                                    <td class="cart_total_amount"><strong>$ {{$cartSubTotal}}</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="text-right">
-                        <a href="{{url('/checkout/address')}}" class="btn btn-fill-out">Proceed To CheckOut</a>
+                </td
+                ><td>{{$product->name}}</td>
+                <td>$ {{$product->price}}</td>
+                <td>
+                <div class="cart-product-quantity">
+                    <div class="quantity">
+                        <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
+                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
+                        <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
                     </div>
                 </div>
+                </td>
+                <td>
+                    <label>$ 400.00</label>
+                </td>
+                <td>
+                    <label>$ 48.00</label>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
+                    <i class="fa fa-trash"></i></button>&nbsp;
+                    <a href="">
+                        <button type="button" class="btn btn-outline-secondary cart-btn"><i class="fa fa-eye"></i></button>
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+            <tr>
+                <td colspan="4" class="cart-total text-left text-lg-right">
+                    <p class="m-0">Sub Total:</p>
+                </td>
+                <td class="cart-total-price">
+                    <p class="m-0"><label id="stquantity">0</label></p>
+                </td>
+                <td class="cart-total-price">
+                    <p class="m-0"><label id="stotal">₹ 0.00</label></p>
+                </td>
+                <td class="cart-total-price">
+                    <p class="m-0"><label id="stgst">₹ 0.00</label></p>
+                </td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="grand-total">
+            <!-- <p>
+                Apply Coupon Code Get 10% Discount :
+                <span><input type="text" id="couponcode"></span>
+                <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
+            </p> -->
+            <div class="cart-row">
+                <span>Shipping charges :</span>
+                <span id="shiptotal">₹ 0.00</span>
             </div>
+            <div class="cart-row">
+                <span>Discount :</span>
+                <span id="discount">₹ 0.00</span>
+            </div>
+            <div class="cart-row">
+                <span>Grand total :</span>
+                <span id="grandtotal">
+                    <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
+                    $ {{$cartSubTotal}}
+                </span>
+            </div>
+            <a href="{{url('/product')}}" class="btn btn-outline-secondary">Continue Shopping</a>
+            <a href="{{url('/checkout/address')}}" class="btn btn-outline-secondary">Proceed to checkout</a>            
         </div>
     </div>
-</div>
+</section>
 <!-- END SECTION SHOP -->
 @endsection
 
