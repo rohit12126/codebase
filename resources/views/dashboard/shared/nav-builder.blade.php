@@ -33,14 +33,14 @@ if(!function_exists('renderDropdown')){
 <h3 class="c-sidebar-brand">Custom Closets</h3>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.dashboard') }}" >
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'dashboard') c-active @endif" href="{{ route('admin.dashboard') }}" >
             <i class="cil-speedometer c-sidebar-nav-icon"></i>
-            Dashboard
+            Dashboard 
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find All items Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.item.list') }}">
+    <li class="c-sidebar-nav-item " title="Find All items Here">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'item-list' || request()->segment(2) == 'item' || request()->segment(2) == 'category') c-active @endif" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Items
         </a>

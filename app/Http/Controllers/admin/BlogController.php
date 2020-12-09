@@ -51,6 +51,7 @@ class BlogController extends Controller
 
     public function editBlog($id)
     {
+        
         $blog = $this->blogManager->getBlogById($id);
         $blog_list = $this->blogManager->getBlogList();
         $category_list = $this->blogCategoryManager->getCategoryList();
@@ -59,6 +60,16 @@ class BlogController extends Controller
 
     public function editSubmitBlog(Request $req)
     {
+        $imgRequired ='';
+        if(is_null($req->storeimage)) {
+            $imgRequired = 'required|';
+        }
+        $this->validate(
+            $req, 
+            [
+                'image' => $imgRequired.'mimes:jpeg,jpg,png|max:4000',
+            ]
+        );
         $response = $this->blogManager->edit($req);
         if($response == true){
             Common::setMessage(__('blog_update_success'));

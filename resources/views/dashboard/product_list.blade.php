@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="col-4 d-flex align-items-center pt-2">
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                            Search
+                                            <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
                                         <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
                                             <i class="cil-reload"></i>
