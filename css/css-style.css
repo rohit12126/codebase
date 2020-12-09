@@ -8953,3 +8953,179 @@ h5 {
 	right: 3px;
 	top: 12px;
 }
+
+.product-detail2 .img-tile{
+	max-width: 50%;
+	flex: 0 0 50%;
+	padding: 5px;
+}
+.product-detail2 .product-list-inner{
+	height: auto;
+	padding: 15px;
+	overflow: hidden;
+}
+.product-detail2 .product-list-inner img
+{
+	transition: all 0.4s;
+	will-change: transform;
+}
+.product-detail2 .product-list-inner img:hover{
+	transform: scale(1.04);
+	cursor: url(../img/icon/zoom.png),crosshair;
+}
+.pdp-title{
+	color: #282c3f;
+	padding: 0 20px 0 0;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1;
+}
+.product2-category{
+	color: #535665;
+	padding-top: 5px;
+	font-size: 20px;
+	opacity: .8;
+	font-weight: 400;
+	line-height: 1.2;
+	margin-bottom: 0;
+}
+.pdp-discount-container {
+	color: #696e79;
+	font-size: 14px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.pdp-price {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1;
+	cursor: pointer;
+}
+.pdp-mrp, .pdp-price {
+	color: #282c3f;
+	margin-right: 12px;
+}
+.pdp-discount-container strong {
+	color: #282c3f;
+	font-weight: 500;
+}
+.pdp-mrp {
+	height: 22px;
+	opacity: .8;
+	font-size: 20px;
+	line-height: 1.2;
+}
+.pdp-discount {
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: .5px;
+	color: #F94E57;
+}
+.product-detail2 hr{
+	margin: 14px 0;
+	border-color: #d4d5d9;
+}
+.pdp-selling-price {
+	position: relative;
+}
+.pdp-selling-price {
+	font-size: 16px;
+	margin: 0 0 10px;
+}
+.pdp-vatInfo {
+	color: #03a685;
+	font-weight: 500;
+	font-size: 14px;
+	display: block;
+	margin: 5px 10px 0 0;
+}
+.pincode-deliveryContainer {
+	margin-top: 30px;
+}
+.pincode-deliveryContainer>h4 {
+	color: #282c3f;
+	font-size: 16px;
+	margin: 0;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.pincode-deliveryContainer>form {
+	margin: 16px 0 0;
+	padding: 0;
+	position: relative;
+}
+.pincode-code {
+	border-radius: 5px;
+	border: 1px solid #d4d5d9;
+	-webkit-box-shadow: 0;
+	box-shadow: 0;
+	padding: 10px;
+	font-size: 16px;
+	min-width: 160px;
+	outline: 0;
+	width: 250px;
+}
+.pincode-button {
+	outline: 0;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	background-color: #fff;
+	border: 0;
+	color: #F94E57;
+	text-transform: capitalize;
+}
+.pincode-check {
+	position: relative;
+	left: -60px;
+	background-color: transparent;
+}
+.pincode-enterPincode {
+	font-size: 13px;
+	color: #282c3f;
+	margin: 8px 0 0;
+}
+.sku-number span{
+	color: #666;
+	font-size: 0.875rem;
+}
+.pdp-product-description-content {
+	color: #282c3f;
+	line-height: 1.6;
+	font-size: 0.975rem;
+	margin-top: 0.875rem;
+	font-weight: 300;
+	width: 84%;
+}
+.rating-counter{
+	margin-top: 0.375rem;
+	font-size: 0.875rem;
+}
+.rating-counter span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.rating-points {
+	line-height: normal;
+	display: inline-block;
+	color: #fff;
+	padding: 2px 4px 2px 6px;
+	border-radius: 3px;
+	font-weight: 500;
+	font-size: 17px;
+	vertical-align: middle;
+	background-color: #ffb309;
+}
+.rating-star {
+	margin: 2px 0 0 2px;
+	height: 10px;
+	vertical-align: top;
+}
+.rating-count-no {
+	padding-left: 8px;
+	font-weight: 500;
+	color: #878787;
+}
+.rating-amp{
+	font-weight: 500;
+}
