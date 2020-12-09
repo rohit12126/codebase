@@ -50,10 +50,13 @@ class ProductController extends Controller
 
     public function editSubmitProduct(Request $req)
     {
+        if(is_null($req->storeimage)) {
+            $imgRequired = 'required|';
+        }
         $this->validate(
             $req, 
             [
-                'image' => 'array|max:5',
+                'image' => $imgRequired.'array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
             ]
         );
