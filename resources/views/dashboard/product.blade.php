@@ -70,11 +70,6 @@
 
         @include('partials.alert_msg')
         <div class="row">
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    <div>{{$error}}</div>
-                @endforeach
-            @endif
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -96,27 +91,27 @@
                                         <select class="form-control" id="select3" name="category_id" required="true">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                            <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if (old('category_id') == $value->id) selected @endif  @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" value="{{ @$product->name }}" >
+                                        <input type="text" placeholder="Name" name="name" class="form-control" value="{{ old('name', @$product->name) }}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Price</label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ @$product->sale_price }}" >
+                                        <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ old('sale_price', @$product->sale_price) }}" >
                                     </div>
                                     
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is item Active or Inactive ?">
-                                            <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
+                                            <option @if (old('status') == 1) selected @endif @if(@$product->status == 1) selected @endif value="1">Active</option>
+                                            <option @if (old('status') == 0) selected @endif @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 
@@ -124,14 +119,14 @@
                                         <label for="">Is Accessory ?</label>
                                         <span class="mandatory">*</span>
                                         <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
-                                            <option @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
-                                            <option @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
+                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
+                                            <option @if (old('is_accessory') == 0) selected @endif @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control"  title="Tell Custumers something about item" >{{ @$product->description }}</textarea>
+                                        <textarea placeholder="Description" name="description" class="form-control"  title="Tell Custumers something about item" >{{  old('is_accessory', @$product->description) }}</textarea>
                                     </div>
 
                                     <div class="d-flex pt-4">
@@ -154,14 +149,13 @@
                                                 <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
                                                 <label class="btn btn-primary" >Upload</label>
-                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload only jpeg, jpg or png image here">
+                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
                                                 <i class="fa fa-times del"></i>
                                             </div>
                                             @endforeach
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
-                                        <div>Upload only jpeg, jpg or png image here</div>
                                     </div>
 
                                         @else
@@ -171,16 +165,20 @@
                                             <div class="col-sm-4 imgUp">
                                                 <div class="imagePreview" title="Item image preview">
                                                 </div>
-                                                <label class="btn btn-primary" title="Upload only jpeg, jpg or png image here">
+                                                <label class="btn btn-primary" title="Only image type jpg/png/jpeg is allowed">
                                                     Upload
-                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload only jpeg, jpg or png image here">
+                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 </label>
                                             </div>
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
-                                        <div>Upload only jpeg, jpg or png image here</div>
-                                        </div>
                                         @endif
+                                    </div>
+                                    <div class="image-error"></div>
+                                    @if($errors->has('image'))
+                                        <div class="error">{{ $errors->first('image') }}</div>
+                                    @endif
+                                    <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +187,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </div>
@@ -214,20 +211,28 @@ $(function() {
         var files = !!this.files ? this.files : [];
         
         if (!files.length || !window.FileReader) return; 
-    
-        //if (files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
+        
+        if (files[0].size > '4000000') { 
+            $('.image-error').addClass("error");
+            $('.image-error').html('Please upload a image less than 4MB size');
+            return false;
+        }
 
+        if (files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
+        
             if (/^image/.test( files[0].type)) {
                 var reader = new FileReader(); 
                 reader.readAsDataURL(files[0]);
-    
+                
                 reader.onloadend = function(){
                     uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
                 }
             }
-        /* } else {
+        } else {
+            $('.image-error').addClass("error");
+            $('.image-error').html('Please upload a image with jpg/png/jpeg extension.');
             return false;
-        } */
+        }
     });
 });
 </script>
@@ -247,7 +252,7 @@ $(function() {
         messages: {
             category_id: "Please select a category",
             name: "Please provide a Name",
-            sale_price: "Please provide a Price",
+            sale_price: "Please provide a Price"
         },
         submitHandler: function(form) {
             // do other things for a valid form
