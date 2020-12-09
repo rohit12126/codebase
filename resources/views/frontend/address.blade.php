@@ -6,15 +6,15 @@
 <div class="section">
 	<div class="container">
         @if ($isTemp !=0)
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col-lg-12">
                     <div class="toggle_info">
                         <!-- <span><i class="linearicons-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span> -->
                         <p class="p-relative mb-3">
-                            <i class="linearicons-user"></i> Returning Customer? Login here for a better experience. <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a>
+                            Returning Customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login" id="loginModal">Login here</a> for a better experience.
                         </p>
                         <p class="p-relative mb-3">
-                            Don't have an Account yet? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Join us here.</a>
+                            Don't have an Account yet? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Join us .</a>
                         </p>
                         <p class="p-relative mb-3">
                             I want to continue as guest.
@@ -23,80 +23,17 @@
                 </div>
             </div>
         @endif
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
             	<div class="medium_divider"></div>
             	<div class="divider center_icon"><i class="linearicons-credit-card"></i></div>
             	<div class="medium_divider"></div>
             </div>
-        </div>
+        </div> -->
         <form method="post" action="{{route('address.save')}}">
         @csrf
-            @if ($isTemp !=1)
-                <div class="address-billing-wrapper">
-                    <div class="custom-card-block mb-4">
-                        <div class="custom-card-header">
-                            <h3>Billing List Detials</h3>
-                        </div>
-                        <div class="custom-card-body">
-                            <div class="row align-items-center">
-                                @foreach ($billingAddresses as $address)
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">                        
-                                        <div class="custome-radio">
-                                            <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
-                                            <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                        </div>
-                                        <div class="card-body">
-                                        <h4 class="card-title">{{$address->name}}</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                        <p class="card-text">{{$address->address}}</p>
-                                        <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <a href="#" class="card-link" data-toggle="modal" data-target="#exampleModal11">Edit</a>
-                                            <a href="#" class="card-link">Delete</a>
-                                        </div>                        
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            <div class="address-billing-wrapper">
-                <div class="custom-card-block mb-4">
-                    <div class="custom-card-header">
-                        <h4>Shipping List Detials</h4>
-                    </div>
-                    <div class="custom-card-body">
-                        <div class="row align-items-center">
-                            @foreach ($shippingAddresses as $address)
-                            <div class="col-md-4 mb-3">
-                                <div class="card">                        
-                                    <div class="custome-radio">
-                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
-                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                    </div>
-                                    <div class="card-body">
-                                    <h4 class="card-title">{{$address->name}}</h4>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                    <p class="card-text">{{$address->address}}</p>
-                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="card-link">Edit</a>
-                                        <a href="#" class="card-link">Delete</a>
-                                    </div>                        
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-</div>
-            @endif
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
@@ -104,23 +41,63 @@
                             <div class="heading_s1">
                                 <h4>Billing Details</h4>
                             </div>
-                            <div class="form-group">
-                                <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
+                            @if ($isTemp !=1)
+                            <div class="address-billing-wrapper">
+                                <div class="custom-card-block mb-3">
+                                    <div class="custom-card-body">
+                                        <div class="row align-items-center">
+                                            @foreach ($billingAddresses as $address)
+                                            <div class="col-md-12 mb-3">
+                                                <div class="card">                        
+                                                    <div class="custome-radio">
+                                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                                    </div>
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">{{$address->name}}</h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                                    <p class="card-text">{{$address->address}}</p>
+                                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                    <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                        <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
+                                                    </div>                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
+                            <div class="pb-3">
+                                <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                    + Add New
+                                </a>
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" placeholder="City / Town *">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" placeholder="State / County *">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
+                            @endif
+
+                            <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2">
+                                <div class="pt-3 pb-3">
+                                    <div class="form-group">
+                                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" placeholder="City / Town *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" placeholder="State / County *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -131,7 +108,38 @@
                                     <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
                                 </div>
                             </div>
+                            
                             <div class="collapse in show" id="collapseExample">
+                            @if ($isTemp !=1)
+                            <div class="address-billing-wrapper">
+                                <div class="custom-card-block mb-4">
+                                    <div class="custom-card-body">
+                                        <div class="row align-items-center">
+                                            @foreach ($shippingAddresses as $address)
+                                            <div class="col-md-12 mb-3">
+                                                <div class="card">                        
+                                                    <div class="custome-radio">
+                                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                                    </div>
+                                                    <div class="card-body">
+                                                    <h5 class="card-title">{{$address->name}}</h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                                    <p class="card-text">{{$address->address}}</p>
+                                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                        <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                        <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
+                                                    </div>                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
                                 <div class="form-group">
                                     <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
                                 </div>
@@ -220,7 +228,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-fill-out btn-block">Place Order</a>
+                    <button type="submit" class="btn btn-fill-out btn-block">Place Order</button>
+                    <!-- <a href="#" class="btn btn-fill-out btn-block"></a> -->
                 </div>
                 </div>
 
@@ -252,13 +261,13 @@
 <script>
 $(document).ready(function(){
     $("#filladdress").on("click", function(){
-         if (this.checked) { 
-                $("#ship_name").val($("#bill_name").val());
-                $("#ship_phone").val($("#bill_phone").val());
-                $("#ship_address").val($("#bill_address").val());
-                $("#ship_city").val($("#bill_city").val());  
-                $("#ship_state").val($("#bill_state").val());  
-                $("#ship_zipcode").val($("#bill_zipcode").val());                         
+    if (this.checked) { 
+        $("#ship_name").val($("#bill_name").val());
+        $("#ship_phone").val($("#bill_phone").val());
+        $("#ship_address").val($("#bill_address").val());
+        $("#ship_city").val($("#bill_city").val());  
+        $("#ship_state").val($("#bill_state").val());  
+        $("#ship_zipcode").val($("#bill_zipcode").val());                         
     }
     else {
         $("#ship_name").val('');

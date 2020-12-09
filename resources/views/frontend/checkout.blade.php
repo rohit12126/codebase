@@ -5,14 +5,14 @@
 <!-- START SECTION SHOP -->
 <div class="section">
 	<div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
             	<div class="medium_divider"></div>
             	<div class="divider center_icon"><i class="linearicons-credit-card"></i></div>
             	<div class="medium_divider"></div>
             </div>
-        </div>
-        <div class="col-md-12">
+        </div> -->
+        <!-- <div class="col-md-12">
             <div class="order_review">
                 <div class="heading_s1">
                     <h4>Your Orders</h4>
@@ -60,7 +60,19 @@
                 <a class="btn btn-fill-out" href="{{route('addmoney.paywithpaypal')}}">Paypal</a>
                 {{-- <a class="btn btn-fill-out" href="{{route('stripe')}}">Stripe</a> --}}
             </div>
-        </div>
+        </div> -->
+    </div>
+    <div class="row justify-content-center pt-5 pb-5">
+            <div class="col-md-6">
+                <div class="text-center order_complete">
+                	<i class="linearicons-checkmark-circle"></i>
+                    <div class="heading_s1 pt-3">
+                  	<h3>Your order is completed!</h3>
+                    </div>
+                  	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
+                    <a href="{{url('/product')}}" class="btn btn-fill-out">Continue Shopping</a>
+                </div>
+            </div>
     </div>
 </div>
 <!-- END SECTION SHOP -->

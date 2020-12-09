@@ -21,12 +21,32 @@
             <div class="col-lg-2 mb-5 mb-lg-0">
                 <div class="blog-sticky">
                     <a href="{{ url('blog/') }}" class="blog-back-btn">
-                        <span class="linearicons-arrow-left"></span>back
+                        <span class="linearicons-arrow-left"></span> back
                     </a>
-                    <a href="" class="blog-back-btn blog-share-btn">
-                        <span class="linearicons-share"></span>share
+                    <a class="blog-back-btn blog-share-btn" data-toggle="collapse" href="#shareIcons" role="button" aria-expanded="false" aria-controls="shareIcons">
+                        <span class="linearicons-share"></span> share
+                    </a>
+                    <div class="collapse" id="shareIcons">
+                        <a class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php">
+                            <img src="{{URL::asset('/images/facebook.svg')}}" alt="">
+                            Facebook
                         </a>
+                        <a class="blog-back-btn d-block twitter-icon" role="button" data-sharer="twitter" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php">
+                            <img src="{{URL::asset('/images/twitter.svg')}}" alt="">
+                            Twitter
+                        </a>  
+                        <!-- <a class="blog-back-btn d-block linkedin-icon" role="button" data-sharer="linkedin" data-url="">
+                            <img src="img/icon/linkedin.svg" alt="">
+                            Linkedin
+                        </a> -->
+                        <a class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="">
+                            <img src="{{URL::asset('/images/pinterest.svg')}}" alt="">
+                            pinterest
+                        </a>
+                    </div>
                 </div>
+
+
             </div>
             <div class="col-lg-7 mb-5 mb-lg-0 pr-3">
                 <article class="blog-view-card mb-4">
@@ -64,7 +84,7 @@
             </div>
             <div class="blog-sidebar col-lg-3 col-md-6 col-sm-8 col-11">
                 <div class="blog-sidebar-item">
-                    <h3 class="blog-sidebar-title">Related Blogs</h3>
+                    <h3 class="blog-sidebar-title">Recent Blogs</h3>
                     <div class="blog-col">
                         <article class="blog-list-card">
                             <p class="blog-list-title">

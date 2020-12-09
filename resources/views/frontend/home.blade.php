@@ -52,7 +52,7 @@
     </section>
     <h1 class="pt-5 pb-5 text-center">A Closet For Life</h1>
     <section class="home-swip-section p-relative d-flex justify-content-center">
-        <!-- <div class="first-slide">
+        <div class="first-slide">
             <picture>
                 <source type="image/webp" srcset="https://www.thefarmersdog.com/images/bowl-mixed-dd8a9c.webp">
                 <source type="image/png" srcset="/images/bowl-ingredients-eb0c55.png">
@@ -65,20 +65,21 @@
                 <source type="image/png" srcset="/images/bowl-mixed-08422a.png">
                 <img alt="Bowl of The Farmer's Dog" class="Yq0BZd">
             </picture>
-        </div>  -->
+        </div>  
         <!-- <div class="mover"></div> -->
-        <div id="page">
+        <!-- <div id="page">
          <div class="wrapper">
             <div class="before">
-               <img class="content-image" src="https://farm2.staticflickr.com/1638/26145024230_06acd55d1b_b.jpg" draggable="false"/>   </div>
+               <img class="content-image" src="https://farm2.staticflickr.com/1638/26145024230_06acd55d1b_b.jpg" draggable="false"/>   
+            </div>
             <div class="after">
                <img class="content-image" src="https://farm2.staticflickr.com/1663/25814974803_d4c55ff708_b.jpg" draggable="false"/>
             </div>
             <div class="scroller">
                <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
             </div>
-         </div>
-      </div>
+         </div> -->
+        </div>
     </section>
     <section class="home-products-section" id="stt">
         <div class="pd-block-wrap">
