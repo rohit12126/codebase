@@ -1,15 +1,7 @@
 @extends('dashboard.base')
 
 @section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/froala_editor.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/froala_style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/plugins/code_view.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/plugins/image_manager.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/plugins/image.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/plugins/table.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/froala_editor_css/plugins/video.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+    
 @endsection
 
 @section('breadcrumb')
@@ -126,55 +118,17 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
-
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
-
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/froala_editor.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js//plugins/align.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/code_beautifier.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/code_view.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/draggable.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/image.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/image_manager.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/link.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/lists.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/paragraph_format.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/paragraph_style.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/table.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/video.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/url.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/froala_editor_js/plugins/entities.min.js') }}"></script>
-
-{{-- <script src="{{ asset('js/ckeditor.js') }}"></script> --}}
+<script src="{{ asset('js/ckeditor.js') }}"></script>
 
 <style>
-/* .ck-editor__editable {
+.ck-editor__editable {
     min-height: 200px;
-} */
+}
 </style>
 <script>
+    
     /* Editor */
-    (function () {
-      const editorInstance = new FroalaEditor('#content', {
-        enter: FroalaEditor.ENTER_P,
-        placeholderText: null,
-        events: {
-          initialized: function () {
-            const editor = this
-            this.el.closest('form').addEventListener('submit', function (e) {
-              console.log(editor.$oel.val())
-              e.preventDefault()
-            })
-          }
-        }
-      })
-    })()
-
-    /* Editor */
-    /* ClassicEditor
+    ClassicEditor
 		.create( document.querySelector( '#content' ), {
 			
 		} )
@@ -183,7 +137,7 @@
 		} )
 		.catch( err => {
 			console.error( err.stack );
-		} ); */
+		} );
     /* Image Preview */
     $(function() {
         $(document).on("change",".uploadFile", function()
@@ -241,9 +195,10 @@
     /* Slug generation */
     $("#title").keyup(function() {
         var title = $(this).val();
-        var slug = generateSlug(title);
-
-        $("#slug").val(slug);
+        if($(this).val().length > 3) {
+            var slug = generateSlug(title);
+            $("#slug").val(slug);
+        }
     });
 
     function generateSlug(title, recall = false) {
