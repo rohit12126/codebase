@@ -140,6 +140,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
+                                    <label for="">Image <span class="mandatory">*</span></label>
                                     <div class="form-group" id="moreImage">
                                      <div class="container">
                                         <div class="row">
