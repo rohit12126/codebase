@@ -2,8 +2,21 @@
 @section('content')
 <!-- START SECTION SHOP -->
 <div class="blog-view">
-    <div class="">
-    <h2 class="pt-3 pb-3 text-center">Blogs</h2>
+    <div class="blog-view-inner">
+    <h2 class="pt-5 pb-3 text-center">Blogs</h2>
+    <div>
+        <ul class="nav justify-content-center products-tab-ul mb-3">
+            <li class="">
+                <a class="btn btn-outline-secondary active">All</a>
+            </li>
+            <li class="">
+                <a class="btn btn-outline-secondary">sofa set</a>
+            </li>
+            <li class="">
+                <a class="btn btn-outline-secondary">furniture</a>
+            </li>
+        </ul>.
+    </div>
     <div class="section blog-list-view">
         <div class="">
             <div class="blog-row justify-content-center">

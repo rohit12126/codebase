@@ -2,19 +2,19 @@
 @section('content')
 <!-- START SECTION Blog -->
 <div class="section blog-view">
-    <div class="container">
+    <div class="blog-view-inner">
         <div class="row justify-content-center">
             <div class="col-lg-2 mb-5 mb-lg-0">
                 <div class="blog-sticky">
-                    <a href="" class="blog-back-btn">
-                        <span class="linearicons-arrow-left"></span> back
+                    <a href="{{ url('blog/') }}" class="blog-back-btn">
+                        <span class="linearicons-arrow-left"></span>back
                     </a>
                     <a href="" class="blog-back-btn blog-share-btn">
-                        <span class="linearicons-share"></span> share
+                        <span class="linearicons-share"></span>share
                         </a>
                 </div>
             </div>
-            <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="col-lg-7 mb-5 mb-lg-0 pr-3">
                 <article class="blog-view-card mb-4">
                     <h1 class="blog-view-title text-capitalize"> 
                         {{$blog->title}}
@@ -34,7 +34,7 @@
                         Lorem ipsum dolor sit amet 
                     </h2>
                 </article>
-                <div class="blog-post-arrows">
+                <!-- <div class="blog-post-arrows">
                     <div class="blog-post-switcher">
                         <a class="blog-post-switcher-button mr-3" href="">
                             <i class="linearicons-arrow-left"></i>
@@ -46,11 +46,11 @@
                             <i class="linearicons-arrow-right"></i>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <div class="blog-sidebar col-lg-4 col-md-6 col-sm-8 col-11">
+            <div class="blog-sidebar col-lg-3 col-md-6 col-sm-8 col-11">
                 <div class="blog-sidebar-item">
-                    <h3 class="blog-sidebar-title">Categories</h3>
+                    <h3 class="blog-sidebar-title">Related Blogs</h3>
                     <div class="blog-col">
                         <article class="blog-list-card">
                             <p class="blog-list-title">

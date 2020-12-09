@@ -83,36 +83,52 @@
     <section class="home-products-section" id="stt">
         <div class="pd-block-wrap">
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-tom_1.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-tom_1.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-view_1.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-view_1.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
             <div class="pd-block">
-                <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-set_2.jpg')}}" class="d-block w-100" alt="...">
-                <a href="#" class="btn btn-outline-secondary">Configure</a>
+                <div class="pd-inner">
+                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-set_2.jpg')}}" alt="...">
+                    <a href="#" class="btn btn-outline-secondary">Configure</a>
+                </div>
             </div>
         </div>
     </section>
