@@ -126,11 +126,10 @@
 }
 </style>
 <script>
-    
     /* Editor */
     ClassicEditor
 		.create( document.querySelector( '#content' ), {
-			
+            
 		} )
 		.then( editor => {
 			window.editor = editor;
