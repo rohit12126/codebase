@@ -44,10 +44,11 @@
                 </td>
                 <td>
                     <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
-                    <i class="fa fa-trash"></i></button>&nbsp;
-                    <a href="">
+                        <i class="linearicons-trash2"></i>
+                    </button>
+                    <!-- <a href="">
                         <button type="button" class="btn btn-outline-secondary cart-btn"><i class="fa fa-eye"></i></button>
-                    </a>
+                    </a> -->
                 </td>
             </tr>
             @endforeach
@@ -56,13 +57,13 @@
                     <p class="m-0">Sub Total:</p>
                 </td>
                 <td class="cart-total-price">
-                    <p class="m-0"><label id="stquantity">0</label></p>
+                    <p class="m-0"><label id="stquantity">${{$cartSubTotal}}</label></p>
                 </td>
                 <td class="cart-total-price">
-                    <p class="m-0"><label id="stotal">₹ 0.00</label></p>
+                    <p class="m-0"><label id="stotal">$ 0.00</label></p>
                 </td>
                 <td class="cart-total-price">
-                    <p class="m-0"><label id="stgst">₹ 0.00</label></p>
+                    <p class="m-0"><label id="stgst">$ 0.00</label></p>
                 </td>
                 <td></td>
             </tr>
@@ -76,11 +77,11 @@
             </p> -->
             <div class="cart-row">
                 <span>Shipping charges :</span>
-                <span id="shiptotal">₹ 0.00</span>
+                <span id="shiptotal">$ 0.00</span>
             </div>
             <div class="cart-row">
                 <span>Discount :</span>
-                <span id="discount">₹ 0.00</span>
+                <span id="discount">$ 0.00</span>
             </div>
             <div class="cart-row">
                 <span>Grand total :</span>
@@ -89,8 +90,10 @@
                     $ {{$cartSubTotal}}
                 </span>
             </div>
-            <a href="{{url('/product')}}" class="btn btn-outline-secondary">Continue Shopping</a>
-            <a href="{{url('/checkout/address')}}" class="btn btn-outline-secondary">Proceed to checkout</a>            
+            <div class="pt-3">
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary">Continue Shopping</a>
+                <a href="{{url('/checkout/address')}}" class="btn btn-outline-secondary proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
+            </div>
         </div>
     </div>
 </section>

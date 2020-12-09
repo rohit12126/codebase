@@ -9,7 +9,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="toggle_info">
-                        <span><i class="linearicons-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span>
+                        <!-- <span><i class="linearicons-user"></i>Returning customer? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a></span> -->
+                        <p class="p-relative mb-3">
+                            <i class="linearicons-user"></i> Returning Customer? Login here for a better experience. <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Click here to login</a>
+                        </p>
+                        <p class="p-relative mb-3">
+                            Don't have an Account yet? <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">Join us here.</a>
+                        </p>
+                        <p class="p-relative mb-3">
+                            I want to continue as guest.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -90,60 +99,134 @@
             @endif
             <div class="row">
                 <div class="col-md-6">
-                    <div class="heading_s1">
-                        <h4>Billing Details</h4>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" placeholder="City / Town *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" placeholder="State / County *">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading_s1">
+                                <h4>Billing Details</h4>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" placeholder="City / Town *">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" placeholder="State / County *">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="heading_s1 p-relative">
+                                <h4>Shipping Details</h4>
+                                <div class="checkinputforsameinfo custome-checkbox">
+                                    <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="form-check-input"/>
+                                    <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
+                                </div>
+                            </div>
+                            <div class="collapse in show" id="collapseExample">
+                                <div class="form-group">
+                                    <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
+                                </div>
+                            </div>
+                        </div>                    
                     </div>
                 </div>
+
                 <div class="col-md-6">
-                    <div class="heading_s1 p-relative">
-                        <h4>Shipping Details</h4>
-                        <div class="checkinputforsameinfo">
-                            <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" />
-                            <label for="filladdress">Same As Billing Address</label>
+                <div class="order_review">
+                    <div class="heading_s1">
+                        <h4>Your Orders</h4>
+                    </div>
+                    <div class="table-responsive order_table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Blue Dress For Woman <span class="product-qty">x 2</span></td>
+                                    <td>$90.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Lether Gray Tuxedo <span class="product-qty">x 1</span></td>
+                                    <td>$55.00</td>
+                                </tr>
+                                <tr>
+                                    <td>woman full sliv dress <span class="product-qty">x 3</span></td>
+                                    <td>$204.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>SubTotal</th>
+                                    <td class="product-subtotal">$349.00</td>
+                                </tr>
+                                <tr>
+                                    <th>Shipping</th>
+                                    <td>Free Shipping</td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td class="product-subtotal">$349.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="payment_method">
+                        <div class="heading_s1">
+                            <h4>Payment</h4>
+                        </div>
+                        <div class="payment_option">
+                            <!-- <div class="custome-radio">
+                                <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="option3" checked="">
+                                <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
+                                <p data-method="option3" class="payment-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration. </p>
+                            </div>
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios4" value="option4">
+                                <label class="form-check-label" for="exampleRadios4">Check Payment</label>
+                                <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                            </div> -->
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
+                                <label class="form-check-label" for="exampleRadios5">Paypal</label>
+                                <p data-method="option5" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="collapse in show" id="collapseExample">
-                        <div class="form-group">
-                            <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
-                        </div>
-                    </div>
+                    <a href="#" class="btn btn-fill-out btn-block">Place Order</a>
                 </div>
-                <div class="text-center col-md-12">
+                </div>
+
+                <!-- <div class="text-center col-md-12">
                 <button type="submit" class="btn btn-fill-out col-md-4">Continue</a>
-                </div>
+                </div> -->
             </div>
         </form>  
     </div>

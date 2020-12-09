@@ -3,6 +3,20 @@
 <!-- START SECTION Blog -->
 <div class="section blog-view">
     <div class="blog-view-inner">
+        <h2 class="pt-3 pb-3 text-center">Blogs</h2>
+        <div>
+            <ul class="nav justify-content-center products-tab-ul mb-3">
+                <li class="">
+                    <a href="#" class="btn btn-outline-secondary">All</a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn btn-outline-secondary">sofa set</a>
+                </li>
+                <li class="">
+                    <a href="#" class="btn btn-outline-secondary">furniture</a>
+                </li>
+            </ul>.
+        </div>
         <div class="row justify-content-center">
             <div class="col-lg-2 mb-5 mb-lg-0">
                 <div class="blog-sticky">

@@ -5967,9 +5967,9 @@ footer .widget_title {
 .toggle_info i {
 	margin-right: 10px;
 	color: #FF324D;
-	position: absolute;
+	/* position: absolute;
 	left: 0;
-	top: 5px;
+	top: 5px; */
 }
 .login_form .panel-body, .coupon_form .panel-body {
 	border: 1px solid #ddd;
@@ -8904,4 +8904,9 @@ h5 {
 .grand-total .cart-row:nth-child(4) {
 	border-radius: 0 0 10px 10px;
 	margin-bottom: 20px
+}
+.grand-total .proceed-btn i{
+	position: absolute;
+	right: 3px;
+	top: 12px;
 }
