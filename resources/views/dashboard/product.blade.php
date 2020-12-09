@@ -70,6 +70,11 @@
 
         @include('partials.alert_msg')
         <div class="row">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div>{{$error}}</div>
+                @endforeach
+            @endif
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
@@ -210,7 +215,7 @@ $(function() {
         
         if (!files.length || !window.FileReader) return; 
     
-        if (files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
+        //if (files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
 
             if (/^image/.test( files[0].type)) {
                 var reader = new FileReader(); 
@@ -220,9 +225,9 @@ $(function() {
                     uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url("+this.result+")");
                 }
             }
-        } else {
+        /* } else {
             return false;
-        }
+        } */
     });
 });
 </script>
