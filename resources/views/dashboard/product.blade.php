@@ -40,20 +40,6 @@
   background-color:rgba(255,255,255,0.6);
   cursor:pointer;
 }
-.imgAdd
-{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background-color:#4bd7ef;
-  color:#fff;
-  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
-  text-align:center;
-  line-height:18px;
-  margin-top:0px;
-  cursor:pointer;
-  font-size:15px;
-}
 </style>
 
 @section('breadcrumb')
@@ -155,7 +141,9 @@
                                                 <i class="fa fa-times del"></i>
                                             </div>
                                             @endforeach
-                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
+                                            <div class="imgAdd d-flex align-items-center justify-content-center">
+                                                <i class="fa fa-plus" title="Click to add more images"></i>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -173,7 +161,9 @@
                                                 </label>
                                                 <div class="image-error0"></div>
                                             </div>
-                                            <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
+                                            <div class="imgAdd d-flex align-items-center justify-content-center">
+                                                <i class="fa fa-plus" title="Click to add more images"></i>
+                                            </div>
                                         </div>
                                         @endif
                                     </div>
