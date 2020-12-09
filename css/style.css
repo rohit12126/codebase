@@ -20228,18 +20228,17 @@ body {
   cursor:pointer;
 }
 .imgAdd {
-  width:30px;
-  height:30px;
-  border-radius:50%;
+  width:130px;
+  height:120px;
   background-color:#4bd7ef;
   color:#fff;
   box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
   text-align:center;
   line-height:30px;
   margin-top:0px;
-  padding-top: 7px;
   cursor:pointer;
-  font-size:15px;
+  font-size:45px;
+  margin-left: 15px;
 }
 
 .category-add {
@@ -20323,4 +20322,5 @@ body {
 }
 .error{
   color: red;
+  font-size: 11px;
 }

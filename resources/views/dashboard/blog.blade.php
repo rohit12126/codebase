@@ -118,28 +118,32 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-<script src="{{ asset('js/ckeditor.js') }}"></script>
-
+{{-- <script src="{{ asset('js/ckeditor.js') }}"></script> --}}
+<script src="https://cdn.tiny.cloud/1/098a7fwykgj46lh6yvnoanltfdod66fvcthx2xkw2je9xzjv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <style>
 .ck-editor__editable {
     min-height: 200px;
 }
 </style>
 <script>
-    
     /* Editor */
-    ClassicEditor
+   /*  ClassicEditor
 		.create( document.querySelector( '#content' ), {
-			
+            
 		} )
 		.then( editor => {
 			window.editor = editor;
 		} )
 		.catch( err => {
 			console.error( err.stack );
-		} );
+		} ); */
     /* Image Preview */
     $(function() {
+        
+        tinymce.init({
+            selector: '#content'
+        });
+
         $(document).on("change",".uploadFile", function()
         {
             var files = !!this.files ? this.files : [];

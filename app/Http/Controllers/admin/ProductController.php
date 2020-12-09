@@ -50,6 +50,7 @@ class ProductController extends Controller
 
     public function editSubmitProduct(Request $req)
     {
+        $imgRequired ='';
         if(is_null($req->storeimage)) {
             $imgRequired = 'required|';
         }
