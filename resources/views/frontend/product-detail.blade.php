@@ -146,6 +146,9 @@
             </div>
         </div>
     </section> --}}
+
+    <!--Alert-->
+    <!--Alert-->
 <!-- END SECTION SHOP -->
 @endsection
 
@@ -166,6 +169,17 @@
                 },
                 success: function(result){
                     $('.cart-count').html(result.data.cartCount);
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Product has been added to your cart successfully',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        customClass: {
+                            container: 'custom-success-popup-container',
+                            popup: 'custom-success-popup',
+                        }
+                    })
                 }
             });
         });

@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
     <style>
     #page{
     width:100%;
@@ -422,6 +423,7 @@ footer-->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
+<script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script>
     // I hope this over-commenting helps. Let's do this!
     // Let's use the 'active' variable to let us know when we're using it
