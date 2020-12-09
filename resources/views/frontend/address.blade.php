@@ -258,6 +258,10 @@
     </div>
   </div>
 <!-- END SECTION SHOP -->
+@endsection
+@section('scripts')
+
+
 <script>
 $(document).ready(function(){
     $("#filladdress").on("click", function(){
@@ -289,6 +293,10 @@ $(document).ready(function(){
         if ($(this).is(':checked')) {
             $(".bill").removeAttr("required");
         }
+    });
+    $(window).on('load',function(){
+        // $('#myModal').modal('show');
+        $('#exampleModal').modal('show');
     });
 });
 </script>

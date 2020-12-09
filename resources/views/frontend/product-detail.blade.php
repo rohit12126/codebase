@@ -1,44 +1,83 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
-<section class="product-detail-view">
-        <div class="container">
-            <span class="product-detail-back">
-                <a href="{{url('product/')}}" class="d-inline-block">&lt; back to list</a>
-            </span>
-            <div class="text-md-center">
-                <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
-            </div>
-            <div class="product-detail-slider">
+<section class="section product-detail2">
+    <div class="container-lx">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="d-flex flex-wrap">
                 @foreach ($productData['product']->images as $image)
-                    <div data-thumb="{{ asset('upload/product/'.$image->image)}}">
-                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
-                            <img src="{{ asset('upload/product/'.$image->image)}}">
-                        </a>
+                    <div class="img-tile">
+                        <div class="product-list-inner">
+                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                                <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
+                            </a>
+                        </div>
                     </div>
                 @endforeach
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <span class="product-sku-no">UGG-BB-PUR-07</span>
-                    <span class="product-sku">SKU (Stock Keeping Unit)</span>
-                </div>
-                <div class="col-md-6 text-md-right">
-                    <span class="product-price">$ {{$productData['product']->sale_price}}</span>
-                    <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>
-            <div class="pt-4 pb-4 d-flex justify-content-center">
-                <a href="{{url('checkout/address/')}}" class="btn btn-outline-secondary mr-3"><i class="linearicons-cart"></i> Buy now</a>
-                
-                <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
-                    <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
-                    <i class="linearicons-cart-plus"></i> Add to cart
-                </a>
+            <div class="col-lg-4">
+                <h1 class="pdp-title">
+                    {{$productData['product']->name}}
+                </h1>
+                <h2 class="product2-category">sofa set, furniture</h2>
+                <div class="rating-counter">
+                        <span>
+                           <div class="rating-points">3.8
+                               <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star"></div>
+                        </span>
+                        <span class="rating-count-no"><span><span>1,67,992 Ratings&nbsp;</span><span class="rating-amp">&amp;</span><span>&nbsp;23,456 Reviews</span></span></span>
+                    </div>
+                <hr>
+                <p class="pdp-discount-container">
+                    <span class="pdp-price" tabindex="0"><strong>&#36;{{$productData['product']->sale_price}}</strong></span>
+                    <!-- <span class="pdp-mrp"><s>&#36;4599</s></span>
+                    <span class="pdp-discount">(50% OFF)</span> -->
+                </p>
+                <p class="pdp-selling-price">
+                    <span class="pdp-vatInfo">inclusive of all taxes</span>
+                </p>
+                <p class="sku-number">
+                    <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
+                </p>
+                <div class="pt-3 pb-3 d-flex">
+                    <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
+                        <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                        <i class="linearicons-cart-plus"></i> Add to cart
+                    </a>
+                </div>
+                <!-- <div class="pincode-checkServiceAbilityhalfCard">
+                    <div class="pincode-deliveryContainer">
+                       <h4>
+                           Delivery Options 
+                           <span class="linearicons-truck"></span>
+                       </h4>
+                       <form autocomplete="off"><input type="text" placeholder="Enter pincode" class="pincode-code" value="" name="pincode"><input type="submit" class="pincode-check pincode-button" value="Check"></form>
+                       <p class="pincode-enterPincode">Please enter PIN code to check Delivery Availability</p>
+                    </div>
+                 </div> -->
+                 <hr>
+                 <div class="pincode-checkServiceAbilityhalfCard">
+                    <div class="pincode-deliveryContainer">
+                       <h4>
+                           Product Details
+                           <span class="linearicons-document"></span>
+                       </h4>
+                       <p class="pdp-product-description-content">
+                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
+                       </p>
+                       <p class="pdp-product-description-content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="product-detail-features">
+    </div>
+</section>
+<hr>
+<section class="product-detail-features">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -77,7 +116,53 @@
             </div>
         </div>
     </section>
-    {{-- <section class="product-wallpaper-slider">
+    <hr>
+    <div class="container pt-5">
+        <div class="comments">
+            <h5 class="product_tab_title">2 Review For <span>{{$productData['product']->name}}</span></h5>
+            <ul class="list_none comment_list mt-4">
+                <li>
+                    <div class="comment_img">
+                        <img src="{{URL::asset('/images/about3.jpg')}}" alt="user1">
+                    </div>
+                    <div class="comment_block">
+                        <div class="rating_wrap">
+                            <div class="rating">
+                                <div class="product_rate" style="width:80%"></div>
+                            </div>
+                        </div>
+                        <p class="customer_meta">
+                            <span class="review_author">Alea Brooks</span>
+                            <span class="comment-date">March 5, 2018</span>
+                        </p>
+                        <div class="description">
+                            <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="comment_img">
+                        <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2">
+                    </div>
+                    <div class="comment_block">
+                        <div class="rating_wrap">
+                            <div class="rating">
+                                <div class="product_rate" style="width:60%"></div>
+                            </div>
+                        </div>
+                        <p class="customer_meta">
+                            <span class="review_author">Grace Wong</span>
+                            <span class="comment-date">June 17, 2018</span>
+                        </p>
+                        <div class="description">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section class="product-wallpaper-slider">
         <div>
             <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/01_tom_detail_gestell.jpg" alt="" />
         </div>
@@ -96,7 +181,7 @@
         <div>
             <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/06_tom_ecksofa.jpg" alt="" />
         </div>
-    </section> --}}
+    </section> 
     {{-- <section class="section light-bg">
         <div class="container">
             <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
