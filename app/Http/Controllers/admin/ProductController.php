@@ -27,7 +27,7 @@ class ProductController extends Controller
         $this->validate(
             $req, 
             [
-                'image' => 'required',
+                'image' => 'required|array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
             ]
         );
@@ -50,6 +50,13 @@ class ProductController extends Controller
 
     public function editSubmitProduct(Request $req)
     {
+        $this->validate(
+            $req, 
+            [
+                'image' => 'array|max:5',
+                'image.*' => 'mimes:jpeg,jpg,png|max:4000',
+            ]
+        );
         $response = ProductManager::edit($req);
         if($response == true){
             Common::setMessage(__('item_update_success'));
