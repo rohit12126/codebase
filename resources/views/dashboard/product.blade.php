@@ -167,8 +167,9 @@
                                                 </div>
                                                 <label class="btn btn-primary" title="Only image type jpg/png/jpeg is allowed">
                                                     Upload
-                                                <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
+                                                <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 </label>
+                                                <div class="image-error0"></div>
                                             </div>
                                             <i class="fa fa-plus imgAdd" title="Click to add more images"></i>
                                         </div>
@@ -199,8 +200,11 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script>
+
+var imgClickCount = 0;
 $(".imgAdd").click(function(){
-  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i></div>');
+  imgClickCount++;
+  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+'"></div></div>');
 });
 $(document).on("click", "i.del" , function() {
 	$(this).parent().remove();
@@ -208,13 +212,14 @@ $(document).on("click", "i.del" , function() {
 $(function() {
     $(document).on("change",".uploadFile", function() {
         var uploadFile = $(this);
+        var id = $(this).attr("id");
         var files = !!this.files ? this.files : [];
-        
+        $('.image-error'+id).html('');
         if (!files.length || !window.FileReader) return; 
         
         if (files[0].size > '4000000') { 
-            $('.image-error').addClass("error");
-            $('.image-error').html('Please upload a image less than 4MB size');
+            $('.image-error'+id).addClass("error");
+            $('.image-error'+id).html('Please upload a image less than 4MB size');
             return false;
         }
 
@@ -229,8 +234,8 @@ $(function() {
                 }
             }
         } else {
-            $('.image-error').addClass("error");
-            $('.image-error').html('Please upload a image with jpg/png/jpeg extension.');
+            $('.image-error'+id).addClass("error");
+            $('.image-error'+id).html('Please upload a image with jpg/png/jpeg extension.');
             return false;
         }
     });
