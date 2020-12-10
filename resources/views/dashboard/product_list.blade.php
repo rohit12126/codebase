@@ -23,18 +23,16 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-10">
                             @include('partials.alert_msg')
-                        <form method="GET" action="{{ url()->current() }}" enctype="multipart/form-data">
-                            
-                            <input type="hidden" name="page" id="page" value="" />
+                        <form method="GET" action="{{ url()->current() }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="form-group">
                                         <label>Search via Name</label>
-                                        <input type="text" placeholder="Item Name" name="product_name"
+                                        <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
                                             class="form-control" value="{{ @$_GET['product_name'] }}">
                                         </div>
                                     </div>
@@ -52,7 +50,7 @@
                                     </div>
                                     <div class="col-4 d-flex align-items-center pt-2">
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                            Search
+                                            <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
                                         <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
                                             <i class="cil-reload"></i>

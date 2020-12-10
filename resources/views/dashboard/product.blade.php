@@ -84,12 +84,21 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" value="{{ old('name', @$product->name) }}" >
+                                        <input type="text" maxlength="200" placeholder="Name" name="name" class="form-control" value="{{ old('name', @$product->name) }}" >
                                     </div>
                                     <div class="form-group">
-                                        <label>Price</label>
+                                        <label>Price In <b>$</b></label>
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ old('sale_price', @$product->sale_price) }}" >
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="">Is Accessory ?</label>
+                                        <span class="mandatory">*</span>
+                                        <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
+                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
+                                            <option @if (old('is_accessory') == 0) selected @endif @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
+                                        </select>
                                     </div>
                                     
                                     <div class="form-group">
@@ -102,17 +111,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="">Is Accessory ?</label>
-                                        <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
-                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
-                                            <option @if (old('is_accessory') == 0) selected @endif @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label>Description</label>
-                                        <textarea placeholder="Description" name="description" class="form-control"  title="Tell Custumers something about item" >{{  old('is_accessory', @$product->description) }}</textarea>
+                                        <span class="mandatory">*</span>
+                                        <textarea placeholder="Description" id="content" name="description" class="form-control"  title="Tell Custumers something about item" >{{  old('description', @$product->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
 
                                     <div class="d-flex pt-4">
@@ -159,7 +163,7 @@
                                                     Upload
                                                 <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 </label>
-                                                <div class="image-error0"></div>
+                                                <div class="image-error0 error-img"></div>
                                             </div>
                                             <div class="imgAdd d-flex align-items-center justify-content-center">
                                                 <i class="fa fa-plus" title="Click to add more images"></i>
@@ -167,7 +171,7 @@
                                         </div>
                                         @endif
                                     </div>
-                                    <div class="image-error"></div>
+                                    <div class="image-error error-img"></div>
                                     @if($errors->has('image'))
                                         <div class="error">{{ $errors->first('image') }}</div>
                                     @endif
@@ -185,23 +189,29 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-
 @endsection
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<script src="https://cdn.tiny.cloud/1/098a7fwykgj46lh6yvnoanltfdod66fvcthx2xkw2je9xzjv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
 
 var imgClickCount = 0;
 $(".imgAdd").click(function(){
   imgClickCount++;
-  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"><img src="{{ url('/download.jpeg') }}" class="previewImage'+imgClickCount+' w-100 h-100" width="100" /></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+'"></div></div>');
+  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"><img src="{{ url('/download.jpeg') }}" class="previewImage'+imgClickCount+' w-100 h-100" width="100" /></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+' error-img"></div></div>');
 });
 $(document).on("click", "i.del" , function() {
 	$(this).parent().remove();
 });
 $(function() {
+    
+    tinymce.init({
+            selector: '#content'
+    });
+
     $(document).on("change",".uploadFile", function() {
         var uploadFile = $(this);
         var id = $(this).attr("id");

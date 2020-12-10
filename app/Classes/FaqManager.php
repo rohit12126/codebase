@@ -38,9 +38,15 @@ class FaqManager
     {
         return FaqCategoryModel::get();
     }
-    public function getfaqListPaginated()
+    public function getfaqListPaginated($req)
     {
-        return FaqModel::with('categori')->paginate(10);
+        $order = FaqModel::with('categori');
+        if ( $req->title !== null ) {
+            $order->where('title', 'like', '%' . $req->title . '%');
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return FaqModel::with('categori')->orderBy('id', 'desc')->paginate(10);
+        }
     }
     public function getfaqList()
     {

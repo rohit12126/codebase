@@ -33,7 +33,7 @@
                                     <div class="form-group">
                                         <label>Current Password</label>
                                         <span class="mandatory">*</span>
-                                        <input type="password" placeholder="Current Password" name="current_password" class="form-control" required autocomplete="off" />
+                                        <input type="password" maxlength="150" placeholder="Current Password" name="current_password" class="form-control" required autocomplete="off" />
                                         @error('current_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <label>New Password</label>
                                         <span class="mandatory">*</span>
-                                        <input type="password" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off" />
+                                        <input type="password" maxlength="150" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off" />
                                         @error('new_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -53,7 +53,7 @@
                                     <div class="form-group">
                                         <label>Confirm Password</label>
                                         <span class="mandatory">*</span>
-                                        <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" required autocomplete="off" />
+                                        <input type="password" maxlength="150" placeholder="Confirm Password" name="confirm_password" class="form-control" required autocomplete="off" />
                                         @error('confirm_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}

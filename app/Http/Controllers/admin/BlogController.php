@@ -26,9 +26,9 @@ class BlogController extends Controller
         $this->blogCategoryManager = $blogCategoryManager;
     }
 
-    public function index()
+    public function index(Request $req)
     {
-        $category_list = $this->blogCategoryManager->getCategoryList();
+        $category_list = $this->blogCategoryManager->getCategoryList($req);
         return view('dashboard.blog', compact('category_list'));
     }
 
@@ -40,6 +40,16 @@ class BlogController extends Controller
 
     public function addBlog(Request $req)
     {
+        $this->validate(
+            $req, 
+            [
+                'image' => 'required|mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
+            ], [
+                'description' => 'content field is required',
+            ]
+        );
+        
         $response = $this->blogManager->add($req);
         if($response == true){
             Common::setMessage(__('blog_add_success'));
@@ -49,16 +59,30 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.list');
     }
 
-    public function editBlog($id)
+    public function editBlog(Request $req, $id)
     {
+        
         $blog = $this->blogManager->getBlogById($id);
         $blog_list = $this->blogManager->getBlogList();
-        $category_list = $this->blogCategoryManager->getCategoryList();
+        $category_list = $this->blogCategoryManager->getCategoryList($req);
         return view('dashboard.blog', compact('blog_list', 'category_list', 'blog'));
     }
 
     public function editSubmitBlog(Request $req)
     {
+        $imgRequired ='';
+        if(is_null($req->storeimage)) {
+            $imgRequired = 'required|';
+        }
+        $this->validate(
+            $req, 
+            [
+                'image' => $imgRequired.'mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
+            ], [
+                'description' => 'content field is required',
+            ]
+        );
         $response = $this->blogManager->edit($req);
         if($response == true){
             Common::setMessage(__('blog_update_success'));

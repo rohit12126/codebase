@@ -46,9 +46,14 @@ class BlogCategoryManager
         }
     }
 
-    public static function getCategoryList()
+    public static function getCategoryList($req)
     {
-        return BlogCategory::get();
+        if ( $req->name !== null ) {
+            $order = BlogCategory::where('name', 'like', '%' . $req->name . '%');
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return BlogCategory::orderBy('id', 'desc')->paginate(10);
+        }
     }
 
     public static function getCategoryById($id)

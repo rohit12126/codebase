@@ -27,7 +27,27 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-10">
-                                <h4>FAQ List</h4>
+                                <form method="GET" action="{{ url()->current() }}">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Search via Title</label>
+                                                <input type="text" placeholder="Title" name="title"
+                                                    class="form-control" value="{{ @$_GET['title'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="{{route('admin.faq.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                    <i class="cil-reload"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-2">
                                 <a href="{{ route('admin.faq') }}" class="btn btn-primary btn-sm pull-right" title="Create New FAQ">

@@ -30,7 +30,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>FAQ Category Name</label>
-                                        <input type="text" placeholder="FAQ category name" name="name" class="form-control"
+                                        <input type="text" maxlength="150" placeholder="FAQ category name" name="name" class="form-control"
                                             required value="{{ @$category->category }}">
                                     </div>
                                     <div class="form-group">
@@ -63,7 +63,27 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-10">
-                        <h4>FAQ Category List</h4>
+                        <form method="GET" action="{{ url()->current() }}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                        <label>Search via Name</label>
+                                        <input type="text" placeholder="Name" name="name"
+                                            class="form-control" value="{{ @$_GET['name'] }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center pt-2">
+                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
+                                        <a href="{{route('admin.faq.category')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                            <i class="cil-reload"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-2">
                         {{-- @if(!isset($category)) --}}

@@ -96,7 +96,7 @@ class ProductManager
     }
 
     public static function getProductListPaginated($req)
-    {
+    { 
         if (
             $req->product_name !== null
             || $req->product_status !== null

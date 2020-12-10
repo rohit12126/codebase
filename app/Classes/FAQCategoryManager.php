@@ -49,8 +49,14 @@ class FaqCategoryManager
         }
     }
 
-    public static function getCategoryList()
+    public static function getCategoryList($req)
     {
+        if ( $req->name !== null ) {
+            $order = FaqCategory::where('category', 'like', '%' . $req->name . '%');
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return FaqCategory::orderBy('id', 'desc')->paginate(10);
+        }
         return FaqCategory::get();
     }
 

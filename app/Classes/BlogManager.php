@@ -4,7 +4,7 @@ namespace App\Classes;
 
 use App\Models\Blog as BlogModel;
 use App\Classes\HelperManager as Common;
-
+use DB;
 class BlogManager
 {
     public static function add($req)
@@ -104,7 +104,12 @@ class BlogManager
 
     public static function getBlogListPaginated($req)
     {
-        return BlogModel::paginate(10);
+        if ( $req->title !== null ) {
+            $order = BlogModel::where('title', 'like', '%' . $req->title . '%');
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return BlogModel::orderBy('id', 'desc')->paginate(10);
+        }
     }
 
     public static function getBlogById($id)

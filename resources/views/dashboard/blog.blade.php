@@ -50,7 +50,7 @@
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
                                         <input type="hidden" name="blogId" id="blog-id" value="@if (isset($blog->id)) {{ $blog->id }} @else {{ '0' }} @endif">
-                                        <input type="text" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
+                                        <input type="text" maxlength="200" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
                                     </div>
                                     <div class="form-group">
                                         <label>URL Slug</label>
@@ -58,9 +58,12 @@
                                         <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" value="{{ old('slug', @$blog->slug) }}" readonly="true">
                                     </div>
                                     <div class="form-group"> 
-                                        <label>Body</label>
+                                        <label>Content</label>
                                         <span class="mandatory">*</span>
                                         <textarea id="content" name="description" class="form-control" required="true">{{ old('description', @$blog->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error ">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
@@ -81,7 +84,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
-                                        <label for="">Blog Image </label>
+                                        <label for="">Featured Image </label>
                                         <span class="mandatory">*</span>
                                         <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
@@ -97,7 +100,10 @@
                                                 Upload
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
-                                            <div class="image-error"></div>
+                                            <div class="image-error error-img"></div>
+                                            @if($errors->has('image'))
+                                                <div class="error error-img">{{ $errors->first('image') }}</div>
+                                            @endif
                                         </div>
                                         <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
                                     </div>

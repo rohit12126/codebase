@@ -9,9 +9,9 @@ use App\Classes\HelperManager as Common;
 
 class FaqCategoryController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $category_list = FAQCategoryManager::getCategoryList();
+        $category_list = FAQCategoryManager::getCategoryList($req);
         return view('dashboard.faq-category', compact('category_list'));
     }
 
@@ -26,7 +26,7 @@ class FaqCategoryController extends Controller
         return back();
     }
 
-    public function editCategory($id)
+    public function editCategory(Request $req, $id)
     {
         $category = FAQCategoryManager::getCategoryById($id);
         $category_list = FAQCategoryManager::getCategoryList();

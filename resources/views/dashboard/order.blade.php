@@ -28,76 +28,81 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Order Filter</h4>
-                    </div>
-                    <div class="card-body">
-                        @include('partials.alert_msg')
-                        <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data">
-                            @csrf
-                            <input type="hidden" name="page" id="page" value="" />
-                            <div class="row">
-                                <div class="col-6">
-                                    <label>From Date</label>
-                                    <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_POST['from_date'] }}" id="from_date" autocomplete="off">
-                                    @error('name')
-                                    <span class="text-danger" role="alert">
-                                        {{ $message }}
-                                    </span>
-                                    @enderror
-                                    <label>Order No.</label>
-                                    <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_POST['order_no'] }}" autocomplete="off">
-                                    @error('order_no')
-                                    <span class="text-danger" role="alert">
-                                        {{ $message }}
-                                    </span>
-                                    @enderror
-                                    <label>Product Name</label>
+                        <div class="row">
+                            <div class="col-10">
+                                <form method="GET" action="{{ url()->current() }}">
+                                    <div class="container">
 
-                                    <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_POST['product_name'] }}">
-                                </div>
-                                <div class="col-6">
-                                    <label>To Date</label>
-                                    <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_POST['to_date'] }}" id="to_date">
-                                    @error('email')
-                                    <span class="text-danger" role="alert">
-                                        {{ $message }}
-                                    </span>
-                                    @enderror
-
-                                    <label>Order Status</label>
-                                    <select name="order_status" id="" class="form-control">
-                                        <option value="">Select Order Status</option>
-                                        <option value="1" @if(@$_POST['order_status']==1) selected @endif </option>In
-                                            Process
-                                        </option>
-                                        <option value="2" @if(@$_POST['order_status']==2) selected @endif </option>Delivered
-                                        </option>
-                                        <option value="3" @if(@$_POST['order_status']==3) selected @endif </option>Cancelled
-                                        </option>
-                                    </select>
-
-                                </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>From Date</label>
+                                                <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_GET['from_date'] }}" id="from_date" autocomplete="off">
+                                                @error('name')
+                                                <span class="text-danger" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                                @enderror
+                                                <label>Order No.</label>
+                                                <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_GET['order_no'] }}" autocomplete="off">
+                                                @error('order_no')
+                                                <span class="text-danger" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                                @enderror
+                                                <label>Product Name</label>
+                                                <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>To Date</label>
+                                                <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_GET['to_date'] }}" id="to_date">
+                                                @error('email')
+                                                <span class="text-danger" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                                @enderror
+            
+                                                <label>Order Status</label>
+                                                <select name="order_status" id="" class="form-control">
+                                                    <option value="">Select Order Status</option>
+                                                    <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>In
+                                                        Process
+                                                    </option>
+                                                    <option value="2" @if(@$_GET['order_status']==2) selected @endif </option>Delivered
+                                                    </option>
+                                                    <option value="3" @if(@$_GET['order_status']==3) selected @endif </option>Cancelled
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="{{route('admin.order')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                    <i class="cil-reload"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                       {{--  <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Search via Name</label>
+                                                <input type="text" placeholder="Name" name="name"
+                                                    class="form-control" value="{{ @$_GET['name'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="{{route('admin.category')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                    <i class="cil-reload"></i>
+                                                </a>
+                                            </div>
+                                        </div> --}}
+                                    </div>
+                                </form>
                             </div>
-                            <hr>
-                            <div class="d-flex">
-                                <button type="submit" class="btn btn-primary mt-0 mr-4" title="Submit Filters">
-                                    Submit
-                                </button>
-                                <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Clear Filters">
-                                    Back
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Order List</h4>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered table-hover datatable">

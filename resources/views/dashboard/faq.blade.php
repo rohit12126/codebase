@@ -50,7 +50,7 @@
                                     <div class="form-group">
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Title" name="title" class="form-control" required value="{{ @$faq->title }}">
+                                        <input type="text" maxlength="200" placeholder="Title" name="title" class="form-control" required value="{{ @$faq->title }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Description</label>

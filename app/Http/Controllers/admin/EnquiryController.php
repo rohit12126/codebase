@@ -27,9 +27,9 @@ class EnquiryController extends Controller
         return view('frontend.contact');
     }
 
-    public function list()
+    public function list(Request $req)
     {
-        $enquieies=$this->enquiryManager->getEnquiryListPaginated();
+        $enquieies=$this->enquiryManager->getEnquiryListPaginated($req);
         return view('dashboard.enquiries',compact('enquieies'));
     }
     public function contected($id)

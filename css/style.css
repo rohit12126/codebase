@@ -20322,5 +20322,7 @@ body {
 }
 .error{
   color: red;
+}
+.error-img{
   font-size: 11px;
 }

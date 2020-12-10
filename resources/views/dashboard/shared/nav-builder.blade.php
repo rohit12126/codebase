@@ -33,35 +33,35 @@ if(!function_exists('renderDropdown')){
 <h3 class="c-sidebar-brand">Custom Closets</h3>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.dashboard') }}" >
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'dashboard') c-active @endif" href="{{ route('admin.dashboard') }}" >
             <i class="cil-speedometer c-sidebar-nav-icon"></i>
-            Dashboard
+            Dashboard 
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find All items Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.item.list') }}">
+    <li class="c-sidebar-nav-item " title="Find All items Here">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'item-list' || request()->segment(2) == 'item' || request()->segment(2) == 'category') c-active @endif" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Items
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Users Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.user') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'user' ||request()->segment(2) ==  'edit_user') c-active @endif" href="{{ route('admin.user') }}">
             <i class="cil-user c-sidebar-nav-icon"></i>
             Users
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Orders Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.order') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'order' || request()->segment(2) == 'order_details') c-active @endif" href="{{ route('admin.order') }}">
             <i class="cil-cart c-sidebar-nav-icon"></i>
             Orders
         </a>
     </li>
 
     <li class="c-sidebar-nav-item" title="Find All Orders Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.blog.list') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'blog-list' || request()->segment(2) == 'blog' || request()->segment(2) ==  'blog-category') c-active @endif" href="{{ route('admin.blog.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Blogs
         </a>
@@ -80,19 +80,19 @@ if(!function_exists('renderDropdown')){
         </a>
     </li> --}}
     <li class="c-sidebar-nav-item" title="Find All FAQ Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.faq.list') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'faq-list' || request()->segment(2) == 'faq') c-active @endif" href="{{ route('admin.faq.list') }}">
             <i class="cil-grid c-sidebar-nav-icon"></i>
             FAQ
         </a>
     </li>
     <li class="c-sidebar-nav-item"title="Check All Enquries Here">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.enquiries') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'enquiries') c-active @endif" href="{{ route('admin.enquiries') }}">
             <i class="cil-address-book c-sidebar-nav-icon"></i>
             Enquiries
         </a>
     </li>
     <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.change.password') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'change-password') c-active @endif" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
             Change Password
         </a>
