@@ -54,14 +54,14 @@
     <section class="home-swip-section p-relative d-flex justify-content-center">
         <div class="first-slide">
             <picture>
-                <source type="image/webp" srcset="https://www.thefarmersdog.com/images/bowl-mixed-dd8a9c.webp">
+                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-after.jpg')}}">
                 <source type="image/png" srcset="/images/bowl-ingredients-eb0c55.png">
                 <img alt="Bowl of ingredients" class="inc454" >
             </picture>
         </div>
         <div class="second-slide">
             <picture>
-                <source type="image/webp" srcset="https://www.thefarmersdog.com/images/bowl-ingredients-8dd243.webp">
+                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-before.jpg')}}">
                 <source type="image/png" srcset="/images/bowl-mixed-08422a.png">
                 <img alt="Bowl of The Farmer's Dog" class="Yq0BZd">
             </picture>
@@ -85,49 +85,49 @@
         <div class="pd-block-wrap">
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-tom_1.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/1.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/2.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/3.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/4.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-view_1.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/5.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/6.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/7.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-set_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/8.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
