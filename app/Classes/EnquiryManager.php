@@ -21,9 +21,27 @@ class EnquiryManager
             return false;
         }
     }
-    public static function getEnquiryListPaginated()
+    public static function getEnquiryListPaginated($req)
     {
-        return Enquiry::paginate(10);
+       // name,email,phone,connected
+        if (
+            $req->name !== null
+            || $req->email !== null
+            || $req->phone !== null
+            || $req->connected !== null
+        ) {
+            $order = new Enquiry;
+            if ($req->product_status) {
+                $order->where('status', $req->product_status);
+            }
+            if($req->product_name){
+                $order->where('name', 'like', '%' . $req->product_name . '%');
+            }
+            
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return Enquiry::orderBy('id', 'desc')->paginate(10);
+        }
     }
     public static function contected($id)
     {
