@@ -71,9 +71,24 @@ class UserManager
         }
     }
 
-    public static function getUserList()
+    public static function getUserList($req)
     {
-        return UserModel::where('menuroles', 'user')->get();
+        if (
+            $req->email !== null
+            || $req->name !== null
+        ) {
+            $order = UserModel::where('menuroles', 'user');
+            if ($req->name) {
+                $order->where('name', 'like', '%' . $req->name . '%');
+            }
+            if($req->email){
+                $order->where('email', 'like', '%' . $req->email . '%');
+            }
+            
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return UserModel::where('menuroles', 'user')->orderBy('id', 'desc')->paginate(10);
+        }
     }
 
     public static function getUserById($id)

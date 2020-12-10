@@ -23,7 +23,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-10">
                             @include('partials.alert_msg')
                         <form method="GET" action="{{ url()->current() }}" enctype="multipart/form-data">

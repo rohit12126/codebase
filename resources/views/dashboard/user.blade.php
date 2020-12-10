@@ -100,9 +100,37 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-
                             <div class="col-10">
-                                <h4>User List</h4>
+                                <form method="GET" action="{{ url()->current() }}" enctype="multipart/form-data">
+                                    
+                                    <input type="hidden" name="page" id="page" value="" />
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Search via Name</label>
+                                                <input type="text" placeholder="Name" name="name"
+                                                    class="form-control" value="{{ @$_GET['name'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Search via Email</label>
+                                                <input type="text" placeholder="Email" name="email"
+                                                    class="form-control" value="{{ @$_GET['email'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="{{route('admin.user')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                    <i class="cil-reload"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-2">
                                 {{-- @if(!isset($category)) --}}

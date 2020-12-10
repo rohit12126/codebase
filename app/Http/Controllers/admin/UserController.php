@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $user_list = UserManager::getUserList();
+        $user_list = UserManager::getUserList($req);
         return view('dashboard.user', compact('user_list'));
     }
 

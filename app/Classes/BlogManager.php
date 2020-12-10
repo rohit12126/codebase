@@ -104,6 +104,7 @@ class BlogManager
 
     public static function getBlogListPaginated($req)
     {
+        
         return BlogModel::paginate(10);
     }
 
