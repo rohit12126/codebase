@@ -46,9 +46,16 @@
                                         <button type="submit" class="btn btn-primary mt-0 mr-3">
                                             @if(isset($category)) Update @else Submit @endif
                                         </button>
-                                        <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
-                                            Cancel
-                                        </a>
+                                        
+                                        @if(isset($category)) 
+                                            <a href="{{route('admin.blog.category')}}" class="btn btn-danger text-white">
+                                                Cancel
+                                            </a>
+                                        @else 
+                                            <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
+                                                Cancel
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                         </form>
@@ -65,7 +72,27 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-10">
-                        <h4>Blog Category List</h4>
+                        <form method="GET" action="{{ url()->current() }}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                        <label>Search via Name</label>
+                                        <input type="text" placeholder="Name" name="name"
+                                            class="form-control" value="{{ @$_GET['name'] }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center pt-2">
+                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
+                                        <a href="{{route('admin.blog.category')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                            <i class="cil-reload"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-2">
                         {{-- @if(!isset($category)) --}}
@@ -104,6 +131,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ @$category_list->links() }}
                 </div>
             </div>
         </div>

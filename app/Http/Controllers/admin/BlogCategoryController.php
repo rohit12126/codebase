@@ -9,9 +9,9 @@ use App\Classes\HelperManager as Common;
 
 class BlogCategoryController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $category_list = BlogCategoryManager::getCategoryList();
+        $category_list = BlogCategoryManager::getCategoryList($req);
         return view('dashboard.blog-category', compact('category_list'));
     }
 
@@ -26,10 +26,10 @@ class BlogCategoryController extends Controller
         return back();
     }
 
-    public function editCategory($id)
+    public function editCategory(Request $req, $id)
     {
         $category = BlogCategoryManager::getCategoryById($id);
-        $category_list = BlogCategoryManager::getCategoryList();
+        $category_list = BlogCategoryManager::getCategoryList($req);
         return view('dashboard.blog-category', compact('category_list', 'category'));
     }
 
