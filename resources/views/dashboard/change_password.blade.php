@@ -60,13 +60,14 @@
                                         </span>
                                         @enderror
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Submit
-                                    </button>
-                                    <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                        Back
-                                    </a>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
+                                            Submit
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                            Back
+                                        </a>
+                                    </div>
                                 </div>
 
                             </div>
