@@ -32,7 +32,7 @@
                                     <div class="form-group">
                                         <label>Category Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="category name" name="name" class="form-control"
+                                        <input type="text" maxlength="150" placeholder="category name" name="name" class="form-control"
                                             required value="{{ @$category->name }}">
                                     </div>
                                     <div class="d-flex pt-2" >
@@ -70,7 +70,7 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                         <label>Search via Name</label>
-                                        <input type="text" placeholder="Name" name="name"
+                                        <input type="text" maxlength="150" placeholder="Name" name="name"
                                             class="form-control" value="{{ @$_GET['name'] }}">
                                         </div>
                                     </div>

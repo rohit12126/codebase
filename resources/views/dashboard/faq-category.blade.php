@@ -30,7 +30,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label>FAQ Category Name</label>
-                                        <input type="text" placeholder="FAQ category name" name="name" class="form-control"
+                                        <input type="text" maxlength="150" placeholder="FAQ category name" name="name" class="form-control"
                                             required value="{{ @$category->category }}">
                                     </div>
                                     <div class="form-group">

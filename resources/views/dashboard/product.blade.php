@@ -84,7 +84,7 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Name" name="name" class="form-control" value="{{ old('name', @$product->name) }}" >
+                                        <input type="text" maxlength="200" placeholder="Name" name="name" class="form-control" value="{{ old('name', @$product->name) }}" >
                                     </div>
                                     <div class="form-group">
                                         <label>Price In <b>$</b></label>

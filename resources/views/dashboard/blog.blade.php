@@ -50,7 +50,7 @@
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
                                         <input type="hidden" name="blogId" id="blog-id" value="@if (isset($blog->id)) {{ $blog->id }} @else {{ '0' }} @endif">
-                                        <input type="text" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
+                                        <input type="text" maxlength="200" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
                                     </div>
                                     <div class="form-group">
                                         <label>URL Slug</label>

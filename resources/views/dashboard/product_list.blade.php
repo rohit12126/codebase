@@ -32,7 +32,7 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                         <label>Search via Name</label>
-                                        <input type="text" placeholder="Item Name" name="product_name"
+                                        <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
                                             class="form-control" value="{{ @$_GET['product_name'] }}">
                                         </div>
                                     </div>
