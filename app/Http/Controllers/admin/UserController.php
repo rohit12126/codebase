@@ -33,10 +33,10 @@ class UserController extends Controller
         return back();
     }
 
-    public function editUser($id)
+    public function editUser(Request $req, $id)
     {
         $user = UserManager::getUserById($id);
-        $user_list = UserManager::getUserList();
+        $user_list = UserManager::getUserList($req);
         return view('dashboard.user', compact('user_list', 'user'));
     }
 

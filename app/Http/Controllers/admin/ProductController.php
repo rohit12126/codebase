@@ -10,9 +10,9 @@ use App\Classes\HelperManager as Common;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $category_list = CategoryManager::getCategoryList();
+        $category_list = CategoryManager::getCategoryList($req);
         return view('dashboard.product', compact('category_list'));
     }
 
@@ -29,6 +29,7 @@ class ProductController extends Controller
             [
                 'image' => 'required|array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
             ]
         );
         $response = ProductManager::add($req);
@@ -40,11 +41,11 @@ class ProductController extends Controller
         return redirect()->route('admin.item.list');
     }
 
-    public function editProduct($id)
+    public function editProduct(Request $req, $id)
     {
         $product = ProductManager::getProductById($id);
         $product_list = ProductManager::getProductList();
-        $category_list = CategoryManager::getCategoryList();
+        $category_list = CategoryManager::getCategoryList($req);
         return view('dashboard.product', compact('product_list', 'category_list', 'product'));
     }
 
@@ -59,6 +60,7 @@ class ProductController extends Controller
             [
                 'image' => $imgRequired.'array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
             ]
         );
         $response = ProductManager::edit($req);

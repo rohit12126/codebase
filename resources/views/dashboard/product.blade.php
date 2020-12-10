@@ -112,7 +112,11 @@
 
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea placeholder="Description" id="content" name="description" class="form-control"  title="Tell Custumers something about item" >{{  old('is_accessory', @$product->description) }}</textarea>
+                                        <span class="mandatory">*</span>
+                                        <textarea placeholder="Description" id="content" name="description" class="form-control"  title="Tell Custumers something about item" >{{  old('description', @$product->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
 
                                     <div class="d-flex pt-4">
@@ -184,7 +188,6 @@
 </div>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
 
 @endsection
 

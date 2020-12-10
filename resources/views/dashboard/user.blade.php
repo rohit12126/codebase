@@ -101,8 +101,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-10">
-                                <form method="GET" action="{{ url()->current() }}" enctype="multipart/form-data">
-                                    
+                                <form method="GET" action="{{ url()->current() }}">
                                     <input type="hidden" name="page" id="page" value="" />
                                     <div class="container">
                                         <div class="row">
@@ -179,6 +178,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ @$user_list->appends(request()->query())->links() }}
                     </div>
                 </div>
             </div>

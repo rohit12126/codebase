@@ -61,9 +61,18 @@ class CategoryManager
         }
     }
 
-    public static function getCategoryList()
+    public static function getCategoryList($req)
     {
-        return CategoryModel::with('image')->get();
+        if ( $req->name !== null ) {
+            $order = CategoryModel::with('image');
+            if ($req->name) {
+                $order->where('name', 'like', '%' . $req->name . '%');
+            }
+            
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return CategoryModel::with('image')->orderBy('id', 'desc')->paginate(10);
+        }
     }
 
     public static function getCategoryById($id)
