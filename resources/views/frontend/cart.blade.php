@@ -39,7 +39,7 @@
                     <label>$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
+                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" onclick="">
                         <i class="linearicons-trash2"></i>
                     </button>
                     <!-- <a href="">
