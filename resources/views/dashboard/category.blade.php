@@ -65,7 +65,6 @@
                 <div class="row">
                     <div class="col-10">
                         <form method="GET" action="{{ url()->current() }}">
-                            <input type="hidden" name="page" id="page" value="" />
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4">

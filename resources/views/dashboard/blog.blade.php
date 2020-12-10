@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group" id="moreImage">
-                                        <label for="">Blog Image </label>
+                                        <label for="">Featured Image </label>
                                         <span class="mandatory">*</span>
                                         <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
