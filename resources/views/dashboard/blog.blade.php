@@ -78,7 +78,7 @@
                                             Submit
                                         </button>
                                         <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                            Cancle
+                                            Cancel
                                         </a>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

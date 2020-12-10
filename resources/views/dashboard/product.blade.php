@@ -124,8 +124,8 @@
                                             @if(@$product) Update @else Submit @endif
                                         </button>
                                                 
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancle">
-                                            Cancle
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancel">
+                                            Cancel
                                         </a>
                                     </div>
                                 </div>

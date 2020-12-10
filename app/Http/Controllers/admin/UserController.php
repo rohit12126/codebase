@@ -98,4 +98,29 @@ class UserController extends Controller
             return view('dashboard.change_password');
         }
     }
+
+    public function profile(Request $req)
+    {
+        if ( count($req->all()) > 0) {
+            $req->validate([
+                'name'    => 'required',
+                'email'   => 'required|unique:users,email,'.$req->id
+            ]);
+            
+            $response = UserManager::updateProfile($req);
+            if ($response == true) {
+                Common::setMessage(__('profile_update_success'));
+            } else {
+                Common::setMessage( __('profile_update_failed'), 'error');
+            }
+            return back();
+        } else {
+            $userId = Auth::guard('admin')->user()->id;
+            
+            $user = UserManager::getProfile($userId);
+            
+            return view('dashboard.profile', compact('user'));
+        }
+    }
+    
 }

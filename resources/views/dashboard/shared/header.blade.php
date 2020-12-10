@@ -51,10 +51,25 @@
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-file"></use>
                         </svg> Projects<span class="badge badge-primary ml-auto">42</span></a> --}}
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('admin.change.password') }}">
+                    
+                    <a class="dropdown-item" href="{{ url('/') }}">
+                        <svg class="c-icon mr-2">
+                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-settings"></use>
+                        </svg> Go to Website
+                    </a>
+                    <a class="dropdown-item" href="{{ route('admin.change.password') }}">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-lock-locked"></use>
-                        </svg> Change Password</a><a class="dropdown-item" href="#">
+                        </svg> Change Password
+                    </a>
+                    {{-- <div class="dropdown-divider"></div> --}}
+                    <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                        <svg class="c-icon mr-2">
+                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
+                        </svg> User
+                    </a>
+                    
+                    <a class="dropdown-item" href="#">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-account-logout"></use>
                         </svg>

@@ -83,7 +83,7 @@
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Message</th>
-                                    <th>Contected ?</th>
+                                    <th>Connected ?</th>
                                 </tr>
                             </thead>
                             <tbody>

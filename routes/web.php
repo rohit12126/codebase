@@ -56,6 +56,8 @@ Route::group(['middleware' => ['get.menu']], function () {
         /* Admin Change Password Module Routes */
         Route::get('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password'); 
         Route::post('admin/change-password', 'admin\UserController@changePassword')->name('admin.change.password');
+        Route::get('admin/profile', 'admin\UserController@profile')->name('admin.profile');
+        Route::post('admin/profile', 'admin\UserController@profile')->name('admin.profile');
 
         /* Order Module Routes */
         Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');

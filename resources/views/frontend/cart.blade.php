@@ -7,10 +7,11 @@
             <thead>
                 <tr>
                     <th class="d-none d-md-table-cell">Sr. No.</th>
-                    <th class=""><span class="d-none d-md-block">Product image</span> <span class="d-block d-md-none">Products</span></th>
-                    <th class="d-none d-md-table-cell">Product name</th>
-                    <th class="d-none d-md-table-cell">unit price</th>
+                    <th class=""><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
+                    <th class="d-none d-md-table-cell">Product Name</th>
+                    <th class="d-none d-md-table-cell">Unit Price</th>
                     <th class="d-none d-md-table-cell">Quantity</th>
+                    <th class="d-none d-md-table-cell">Total</th>
                     <th class="d-none d-md-table-cell">Action</th>
                 </tr>
             </thead>
@@ -22,20 +23,21 @@
                     <div class="pa-cart-img">
                         <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
-                    <!-- <h5>{{$product->name}}</h5> -->
                 </td>
                 <td>{{$product->name}}</td>
-                <td>$ {{$product->price}}</td>
+                <td>$ {{number_format($product->price,2)}}</td>
                 <td>
-                <div class="cart-product-quantity">
-                    <div class="quantity">
-                        <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
-                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
-                        <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
+                    <div class="cart-product-quantity">
+                        <div class="quantity">
+                            <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
+                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
+                            <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
+                        </div>
                     </div>
-                </div>
                 </td>
-
+                <td>
+                    <label>$ {{number_format($product->price * $product->qty, 2)}}</label>
+                </td>
                 <td>
                     <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
                         <i class="linearicons-trash2"></i>
@@ -47,12 +49,15 @@
             </tr>
             @endforeach
             <tr>
+                <td></td>
                 <td colspan="4" class="cart-total text-left text-lg-right">
                     <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
                     <span><label id="stquantity">${{$cartSubTotal}}</label></span>
                 </td>
+
+
                 <td></td>
             </tr>
             </tbody>
@@ -64,13 +69,15 @@
                 <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
             </p> -->
             <!-- <div class="cart-row">
+           {{--  <div class="cart-row">
                 <span>Shipping charges :</span>
                 <span id="shiptotal">$ 0.00</span>
             </div>
             <div class="cart-row">
                 <span>Discount :</span>
                 <span id="discount">$ 0.00</span>
-            </div> -->
+            </div> --}}
+           -->
             <div class="cart-row">
                 <span>Grand total :</span>
                 <span id="grandtotal">

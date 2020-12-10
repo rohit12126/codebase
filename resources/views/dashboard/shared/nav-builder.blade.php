@@ -91,12 +91,12 @@ if(!function_exists('renderDropdown')){
             Enquiries
         </a>
     </li>
-    <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
+    {{-- <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'change-password') c-active @endif" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>
             Change Password
         </a>
-    </li>
+    </li> --}}
 
     <li class="c-sidebar-nav-item" title="Before Closing Window, LogOut By Clicking Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.logout') }}">

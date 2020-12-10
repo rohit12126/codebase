@@ -71,6 +71,26 @@ class UserManager
         }
     }
 
+    public static function getProfile($userId) {
+        
+        return UserModel::where('id', $userId)->first();
+    }
+
+    public static function updateProfile($req) {
+
+        $user = self::getUserById($req->id);
+        $data = [
+            'name' => $req->name,
+            'email' => $req->email
+        ];
+        
+        if ($user->fill($data)->update()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static function getUserList($req)
     {
         if (

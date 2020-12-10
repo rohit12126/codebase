@@ -62,8 +62,9 @@
                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                     @endif
                     <p>
-                        {{$blog->description}}
+                        {!! $blog->description !!}
                     </p>
+                    
                     <h2>
                         Lorem ipsum dolor sit amet 
                     </h2>
