@@ -63,6 +63,8 @@
     "faq_category_update_success" : "FAQ Category udated successfully!",
     "faq_category_update_failed" : "Something went wrong unable to update FAQ Category!",
     "faq_category_delete_success" : "FAQ Category deleted successfully!",
-    "faq_category_delete_failed" : "Something went wrong unable to delete FAQ Category!"
+    "faq_category_delete_failed" : "Something went wrong unable to delete FAQ Category!",
+    "profile_update_success" : "Profile updated successfully!",
+    "profile_update_failed" : "Something went wrong unable to update Profile!"
 
 }

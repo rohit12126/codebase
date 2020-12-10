@@ -104,9 +104,10 @@ class UserController extends Controller
         if ( count($req->all()) > 0) {
             $req->validate([
                 'name'    => 'required',
-                'email'    => 'required'
+                'email'   => 'required|unique:users,email,'.$req->id
             ]);
-            $response = UserManager::changePassword($req);
+            
+            $response = UserManager::updateProfile($req);
             if ($response == true) {
                 Common::setMessage(__('profile_update_success'));
             } else {
@@ -114,7 +115,11 @@ class UserController extends Controller
             }
             return back();
         } else {
-            return view('dashboard.profile');
+            $userId = Auth::guard('admin')->user()->id;
+            
+            $user = UserManager::getProfile($userId);
+            
+            return view('dashboard.profile', compact('user'));
         }
     }
     
