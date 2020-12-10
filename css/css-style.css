@@ -8974,10 +8974,14 @@ h5 {
 	padding: 15px;
 	overflow: hidden;
 }
+.product-detail2 .product-list-inner a{
+	display: flex;
+}
 .product-detail2 .product-list-inner img
 {
 	transition: all 0.4s;
 	will-change: transform;
+	width: 100%;
 }
 .product-detail2 .product-list-inner img:hover{
 	transform: scale(1.04);
