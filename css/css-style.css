@@ -7674,6 +7674,14 @@ a:hover {
 .auth-modal .form-tabs-content .form-group .link:hover {
 	color: inherit;
 }
+.auth-modal .modal-header .close{
+	position: absolute;
+	right: -45px;
+	top: -45px;
+	color: #fff;
+	opacity: 1;
+	font-size: 50px;
+}
 .form-flexed-row{
 	display: flex;
 	width: 100%;
@@ -8873,6 +8881,7 @@ h5 {
 	padding: 20px;
 	border: 1px solid #eee;
 	text-transform: capitalize;
+	color: #555;
 }
 
 .pa-cart-img img {
@@ -8943,6 +8952,7 @@ h5 {
 	display: inline-block;
 	text-align: left;
 	color: #f74d56;
+	font-size: 24px;
 }
 .grand-total .cart-row:nth-child(4) {
 	border-radius: 0 0 10px 10px;

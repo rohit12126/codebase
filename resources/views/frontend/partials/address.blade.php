@@ -1,9 +1,7 @@
 <div class="row">
     <div class="address-billing-wrapper">
+        <h4 class="pb-3 pt-2">Billing List Detials</h4>
         <div class="custom-card-block mb-4">
-            <div class="custom-card-header">
-                <h3>Billing List Detials</h3>
-            </div>
             <div class="custom-card-body">
                 <div class="row align-items-center">
                     @foreach ($billingAddress as $address)
@@ -28,10 +26,8 @@
     </div>
     
     <div class="address-billing-wrapper">
+        <h4 class="pb-3 pt-2">Shipping List Detials</h4>
         <div class="custom-card-block mb-4">
-            <div class="custom-card-header">
-                <h3>Shipping List Detials</h3>
-            </div>
             <div class="custom-card-body">
                 <div class="row align-items-center">
                     @foreach ($shippingAddress as $address)

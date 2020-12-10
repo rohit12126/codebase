@@ -126,7 +126,6 @@
                                     <td>{{ ucwords($value->user->name) }}</td>
                                     <td>{{ $value->order_status }}</td>
                                     <td>{{ $value->grand_total }}</td>
-
                                     <td>
                                         <a class="btn btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
                                             <i class="cil-arrow-thick-to-right"></i>
@@ -138,7 +137,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                         {{ @$order_list->links() }}

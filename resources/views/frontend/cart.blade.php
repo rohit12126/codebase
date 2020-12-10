@@ -7,9 +7,9 @@
             <thead>
                 <tr>
                     <th class="d-none d-md-table-cell">Sr. No.</th>
-                    <th class=""><span class="d-none d-md-block">Product image</span> <span class="d-block d-md-none">Products</span></th>
-                    <th class="d-none d-md-table-cell">Product name</th>
-                    <th class="d-none d-md-table-cell">unit price</th>
+                    <th class=""><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
+                    <th class="d-none d-md-table-cell">Product Name</th>
+                    <th class="d-none d-md-table-cell">Unit Price</th>
                     <th class="d-none d-md-table-cell">Quantity</th>
                     <th class="d-none d-md-table-cell">Total</th>
                     <th class="d-none d-md-table-cell">Action</th>
@@ -21,19 +21,19 @@
                 <td>1</td>
                 <td>
                     <div class="pa-cart-img">
-                    <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
+                        <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
-                </td
-                ><td>{{$product->name}}</td>
+                </td>
+                <td>{{$product->name}}</td>
                 <td>$ {{number_format($product->price,2)}}</td>
                 <td>
-                <div class="cart-product-quantity">
-                    <div class="quantity">
-                        <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
-                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
-                        <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
+                    <div class="cart-product-quantity">
+                        <div class="quantity">
+                            <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
+                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
+                            <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
+                        </div>
                     </div>
-                </div>
                 </td>
                 <td>
                     <label>$ {{number_format($product->price * $product->qty, 2)}}</label>
@@ -51,17 +51,13 @@
             <tr>
                 <td></td>
                 <td colspan="4" class="cart-total text-left text-lg-right">
-                    <p class="m-0">Sub Total:</p>
+                    <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <p class="m-0"><label id="stquantity">${{$cartSubTotal}}</label></p>
+                    <span><label id="stquantity">${{$cartSubTotal}}</label></span>
                 </td>
-               {{--  <td class="cart-total-price">
-                    <p class="m-0"><label id="stotal">$ 0.00</label></p>
-                </td>
-                <td class="cart-total-price">
-                    <p class="m-0"><label id="stgst">$ 0.00</label></p>
-                </td> --}}
+
+
                 <td></td>
             </tr>
             </tbody>
@@ -72,6 +68,7 @@
                 <span><input type="text" id="couponcode"></span>
                 <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
             </p> -->
+            <!-- <div class="cart-row">
            {{--  <div class="cart-row">
                 <span>Shipping charges :</span>
                 <span id="shiptotal">$ 0.00</span>
@@ -80,6 +77,7 @@
                 <span>Discount :</span>
                 <span id="discount">$ 0.00</span>
             </div> --}}
+           -->
             <div class="cart-row">
                 <span>Grand total :</span>
                 <span id="grandtotal">
@@ -88,8 +86,8 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary">Continue Shopping</a>
-                <a href="{{url('/checkout/address')}}" class="btn btn-outline-secondary proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded">Continue Shopping</a>
+                <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
     </div>
