@@ -17,7 +17,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-4df0vdr5Yrg/X7uYSLQpdUI/AAAAAAAAOmk/EHR3k1dqf5MP_XUaO03eaJrbpXw-BXzCgCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/first-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <a href="#stt" class="btn btn-outline-secondary">see the sofas</a>
@@ -29,7 +29,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-cagoug-4R40/X7uYTTggzoI/AAAAAAAAOms/ztG_A_wU0DQ_donL_Fodi4Z54uyTtl99wCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/second-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <button class="btn btn-outline-secondary">see the sofas</button>
@@ -41,7 +41,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-UmMZt8z9qY8/X7uYSirXxYI/AAAAAAAAOmo/-xMw4Cm685Q6CjISh9fVsFQPJZFIw2dnQCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/third-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <button class="btn btn-outline-secondary">see the sofas</button>
