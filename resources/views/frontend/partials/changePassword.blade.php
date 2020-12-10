@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h3>Update Your Account Details</h3>
+        <h3>Update Your Password Details</h3>
     </div>
     <div class="card-body">
         <form method="POST" id="form-change-password" role="form" method="POST" action="{{ url('/user/credentials') }}" >
