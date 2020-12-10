@@ -40,6 +40,13 @@ class BlogController extends Controller
 
     public function addBlog(Request $req)
     {
+        $this->validate(
+            $req, 
+            [
+                'image' => 'required|mimes:jpeg,jpg,png|max:4000',
+            ]
+        );
+        
         $response = $this->blogManager->add($req);
         if($response == true){
             Common::setMessage(__('blog_add_success'));

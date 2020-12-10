@@ -52,9 +52,15 @@
                                         <button type="submit" class="btn btn-primary  mt-0 mr-3">
                                             @if(isset($user)) Update @else Submit @endif
                                         </button>
-                                        <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
-                                            Cancel
-                                        </a>
+                                        @if(isset($user))
+                                            <a href="{{route('admin.user')}}" title="Cancle" class="btn btn-danger text-white">
+                                                Cancel
+                                            </a>
+                                        @else 
+                                            <a onclick="$('.addForm').hide('slow');" class="btn btn-danger text-white">
+                                                Cancel
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-6">

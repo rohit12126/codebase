@@ -159,7 +159,7 @@
                                                     Upload
                                                 <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 </label>
-                                                <div class="image-error0"></div>
+                                                <div class="image-error0 error-img"></div>
                                             </div>
                                             <div class="imgAdd d-flex align-items-center justify-content-center">
                                                 <i class="fa fa-plus" title="Click to add more images"></i>
@@ -167,7 +167,7 @@
                                         </div>
                                         @endif
                                     </div>
-                                    <div class="image-error"></div>
+                                    <div class="image-error error-img"></div>
                                     @if($errors->has('image'))
                                         <div class="error">{{ $errors->first('image') }}</div>
                                     @endif
@@ -198,7 +198,7 @@
 var imgClickCount = 0;
 $(".imgAdd").click(function(){
   imgClickCount++;
-  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"><img src="{{ url('/download.jpeg') }}" class="previewImage'+imgClickCount+' w-100 h-100" width="100" /></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+'"></div></div>');
+  $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"><img src="{{ url('/download.jpeg') }}" class="previewImage'+imgClickCount+' w-100 h-100" width="100" /></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+' error-img"></div></div>');
 });
 $(document).on("click", "i.del" , function() {
 	$(this).parent().remove();

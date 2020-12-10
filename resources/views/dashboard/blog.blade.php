@@ -97,9 +97,9 @@
                                                 Upload
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
-                                            <div class="image-error"></div>
+                                            <div class="image-error error-img"></div>
                                             @if($errors->has('image'))
-                                                <div class="error">{{ $errors->first('image') }}</div>
+                                                <div class="error error-img">{{ $errors->first('image') }}</div>
                                             @endif
                                         </div>
                                         <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
