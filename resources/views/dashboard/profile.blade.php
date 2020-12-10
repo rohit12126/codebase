@@ -33,7 +33,7 @@
                                     <div class="form-group">
                                         <label>Name</label>
                                         <span class="mandatory">*</span> 
-                                        <input type="hidden" name="id" value="">
+                                        <input type="hidden" name="id" value="{{$user->id}}">
                                         <input type="text" maxlength="150" placeholder="Name" name="name" value="{{ old('name', $user->name) }}" class="form-control" required autocomplete="off" />
                                         @if($errors->has('name'))
                                             <div class="error ">{{ $errors->first('name') }}</div>
