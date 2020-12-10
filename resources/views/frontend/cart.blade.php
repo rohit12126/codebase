@@ -12,7 +12,6 @@
                     <th class="d-none d-md-table-cell">unit price</th>
                     <th class="d-none d-md-table-cell">Quantity</th>
                     <th class="d-none d-md-table-cell">Total</th>
-                    <th class="d-none d-md-table-cell">GST</th>
                     <th class="d-none d-md-table-cell">Action</th>
                 </tr>
             </thead>
@@ -26,7 +25,7 @@
                     </div>
                 </td
                 ><td>{{$product->name}}</td>
-                <td>$ {{$product->price}}</td>
+                <td>$ {{number_format($product->price,2)}}</td>
                 <td>
                 <div class="cart-product-quantity">
                     <div class="quantity">
@@ -37,10 +36,7 @@
                 </div>
                 </td>
                 <td>
-                    <label>$ 400.00</label>
-                </td>
-                <td>
-                    <label>$ 48.00</label>
+                    <label>$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td>
                     <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
@@ -53,18 +49,19 @@
             </tr>
             @endforeach
             <tr>
+                <td></td>
                 <td colspan="4" class="cart-total text-left text-lg-right">
                     <p class="m-0">Sub Total:</p>
                 </td>
                 <td class="cart-total-price">
                     <p class="m-0"><label id="stquantity">${{$cartSubTotal}}</label></p>
                 </td>
-                <td class="cart-total-price">
+               {{--  <td class="cart-total-price">
                     <p class="m-0"><label id="stotal">$ 0.00</label></p>
                 </td>
                 <td class="cart-total-price">
                     <p class="m-0"><label id="stgst">$ 0.00</label></p>
-                </td>
+                </td> --}}
                 <td></td>
             </tr>
             </tbody>
@@ -75,14 +72,14 @@
                 <span><input type="text" id="couponcode"></span>
                 <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
             </p> -->
-            <div class="cart-row">
+           {{--  <div class="cart-row">
                 <span>Shipping charges :</span>
                 <span id="shiptotal">$ 0.00</span>
             </div>
             <div class="cart-row">
                 <span>Discount :</span>
                 <span id="discount">$ 0.00</span>
-            </div>
+            </div> --}}
             <div class="cart-row">
                 <span>Grand total :</span>
                 <span id="grandtotal">
