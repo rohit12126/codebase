@@ -22,8 +22,8 @@
                                     <div class="products-list-product">
                                         <a href="{{ route('product.detail',['id' => $product->id]) }}" class="">
                                             <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
-                                            <a href="javascript:void(0);" class="btn btn-outline-secondary add-to-cart">
-                                                <input type="hidden" class="product-id" value="{{$product->id}}">
+                                            <a href="#" class="btn btn-outline-secondary {{-- add-to-cart --}}">
+                                                {{-- <input type="hidden" class="product-id" value="{{$product->id}}"> --}}
                                                 Configure
                                             </a>
                                         </a>
