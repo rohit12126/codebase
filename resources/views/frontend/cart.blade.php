@@ -11,8 +11,6 @@
                     <th class="d-none d-md-table-cell">Product name</th>
                     <th class="d-none d-md-table-cell">unit price</th>
                     <th class="d-none d-md-table-cell">Quantity</th>
-                    <th class="d-none d-md-table-cell">Total</th>
-                    <th class="d-none d-md-table-cell">GST</th>
                     <th class="d-none d-md-table-cell">Action</th>
                 </tr>
             </thead>
@@ -22,10 +20,11 @@
                 <td>1</td>
                 <td>
                     <div class="pa-cart-img">
-                    <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
+                        <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
-                </td
-                ><td>{{$product->name}}</td>
+                    <!-- <h5>{{$product->name}}</h5> -->
+                </td>
+                <td>{{$product->name}}</td>
                 <td>$ {{$product->price}}</td>
                 <td>
                 <div class="cart-product-quantity">
@@ -36,12 +35,7 @@
                     </div>
                 </div>
                 </td>
-                <td>
-                    <label>$ 400.00</label>
-                </td>
-                <td>
-                    <label>$ 48.00</label>
-                </td>
+
                 <td>
                     <button type="button" class="btn btn-outline-secondary cart-btn" onclick="">
                         <i class="linearicons-trash2"></i>
@@ -54,16 +48,10 @@
             @endforeach
             <tr>
                 <td colspan="4" class="cart-total text-left text-lg-right">
-                    <p class="m-0">Sub Total:</p>
+                    <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <p class="m-0"><label id="stquantity">${{$cartSubTotal}}</label></p>
-                </td>
-                <td class="cart-total-price">
-                    <p class="m-0"><label id="stotal">$ 0.00</label></p>
-                </td>
-                <td class="cart-total-price">
-                    <p class="m-0"><label id="stgst">$ 0.00</label></p>
+                    <span><label id="stquantity">${{$cartSubTotal}}</label></span>
                 </td>
                 <td></td>
             </tr>
@@ -75,14 +63,14 @@
                 <span><input type="text" id="couponcode"></span>
                 <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
             </p> -->
-            <div class="cart-row">
+            <!-- <div class="cart-row">
                 <span>Shipping charges :</span>
                 <span id="shiptotal">$ 0.00</span>
             </div>
             <div class="cart-row">
                 <span>Discount :</span>
                 <span id="discount">$ 0.00</span>
-            </div>
+            </div> -->
             <div class="cart-row">
                 <span>Grand total :</span>
                 <span id="grandtotal">
@@ -91,8 +79,8 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary">Continue Shopping</a>
-                <a href="{{url('/checkout/address')}}" class="btn btn-outline-secondary proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded">Continue Shopping</a>
+                <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
     </div>

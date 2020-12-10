@@ -16,17 +16,19 @@
                     </thead>
                     <tbody>
                         @foreach($orders as $order)
-                        
                         <tr>
-                         <td>{{$order->order_no}}</td>
-                         <td>{{date("F j y", strtotime($order->created_at))}}</td>
-                         <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancel")}}</td>
-                         <td>{{$order->grand_total}}</td>
-                         <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>
-                         <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
-                         </td>
-                     </tr>
-                     @endforeach
+                            <td>{{$order->order_no}}</td>
+                            <td>{{date("F j y", strtotime($order->created_at))}}</td>
+                            <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancel")}}</td>
+                            <td>{{$order->grand_total}}</td>
+                            <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>
+                            <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                        <tr>
+                            <td colspan="5"><h5 class="text-center">You've not place any order yet  </h5></td>
+                        </tr>
                    </tbody>
                </table>
            </div>

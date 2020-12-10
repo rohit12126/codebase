@@ -192,7 +192,6 @@
                     <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
                     @endauth
                 </span>
-
                 <span class="head-shop-icon">
                     <a href="{{ route('cart') }}" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
                     <span class="cart-count cart_count"> {{$cartCount}} </span>
@@ -213,8 +212,8 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Custom Closet</h4>
+          <div class="modal-header border-bottom-0 p-0 position-realtive">
+            <!-- <h4 class="modal-title" id="exampleModalLabel">Custom Closet</h4> -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -239,10 +238,11 @@
                             <div class="email_error"> </div>
                          </div>
                          <div class="form-group">
-                            <label for="Password">Password <span class="mandatory">*</span><a href="{{ route('password.request') }}" class="link">Forgot password?</a></label>
+                            <label for="Password">Password <span class="mandatory">*</span></label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="******" autocomplete="new-password">
                          </div>
                          <div class="password_error"> </div>
+                         <a href="{{ route('password.request') }}" class="link">Forgot password?</a>
                          <div class="form-group form-button"><button type="submit" id="login" class="btn btn-auth">Login</button></div>
                          <div class="divider-line"><span class="">OR</span></div>
                          <div class="social-auth">
@@ -444,7 +444,7 @@ footer-->
         dots: false,
         centerPadding: '15%',
         infinite: true,
-        slidesToShow: 1, 
+        slidesToShow: 3, 
         slidesToScroll: 1,
         lazyLoad: 'progressive'
     });

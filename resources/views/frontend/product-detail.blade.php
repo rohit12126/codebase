@@ -65,11 +65,54 @@
                            <span class="linearicons-document"></span>
                        </h4>
                        <p class="pdp-product-description-content">
-                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
+                           <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
+                            -->
+                           {{$productData['product']->description}}
                        </p>
-                       <p class="pdp-product-description-content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
-                        </p>
+                    </div>
+                    <hr/>
+                    <div class="comments">
+                        <h5 class="product_tab_title">2 Review For <span>{{$productData['product']->name}}</span></h5>
+                        <ul class="list_none comment_list mt-4">
+                            <li>
+                                <div class="comment_img">
+                                    <img src="{{URL::asset('/images/about3.jpg')}}" alt="user1">
+                                </div>
+                                <div class="comment_block">
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width:80%"></div>
+                                        </div>
+                                    </div>
+                                    <p class="customer_meta">
+                                        <span class="review_author">Alea Brooks</span>
+                                        <span class="comment-date">March 5, 2018</span>
+                                    </p>
+                                    <div class="description">
+                                        <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="comment_img">
+                                    <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2">
+                                </div>
+                                <div class="comment_block">
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width:60%"></div>
+                                        </div>
+                                    </div>
+                                    <p class="customer_meta">
+                                        <span class="review_author">Grace Wong</span>
+                                        <span class="comment-date">June 17, 2018</span>
+                                    </p>
+                                    <div class="description">
+                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -117,120 +160,32 @@
         </div>
     </section>
     <hr>
-    <div class="container pt-5">
-        <div class="comments">
-            <h5 class="product_tab_title">2 Review For <span>{{$productData['product']->name}}</span></h5>
-            <ul class="list_none comment_list mt-4">
-                <li>
-                    <div class="comment_img">
-                        <img src="{{URL::asset('/images/about3.jpg')}}" alt="user1">
-                    </div>
-                    <div class="comment_block">
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:80%"></div>
-                            </div>
-                        </div>
-                        <p class="customer_meta">
-                            <span class="review_author">Alea Brooks</span>
-                            <span class="comment-date">March 5, 2018</span>
-                        </p>
-                        <div class="description">
-                            <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="comment_img">
-                        <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2">
-                    </div>
-                    <div class="comment_block">
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:60%"></div>
-                            </div>
-                        </div>
-                        <p class="customer_meta">
-                            <span class="review_author">Grace Wong</span>
-                            <span class="comment-date">June 17, 2018</span>
-                        </p>
-                        <div class="description">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <section class="product-wallpaper-slider">
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/01_tom_detail_gestell.jpg" alt="" />
-        </div>
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/02_tom_3-sitzer_freisteller.jpg" alt="" />
-        </div>
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/03_tom_detail.jpg" alt="" />
-        </div>
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/04_tom_3-sitzer_freistellerplus.jpg" alt="" />
-        </div>
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/05_tom_3-sitzer_angeschnitten.jpg" alt="">
-        </div>
-        <div>
-            <img class="img-fluid" src="https://www.sitzfeldt.com/sites/default/files/styles/780breit/public/06_tom_ecksofa.jpg" alt="" />
-        </div>
-    </section> 
-    {{-- <section class="section light-bg">
-        <div class="container">
-            <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
-            <div id="accordion">
-                <div class="faq-card">
-                  <div class="faq-card-header">
-                    <a class="faq-card-link" data-toggle="collapse" href="#fq" aria-expanded="false">
-                        What is so special about Custom Closet?
-                    </a>
-                  </div>
-                  <div id="fq" class="collapse" data-parent="#accordion">
-                    <div class="faq-card-body">
-                      <p>
-                        As an online sofa brand, Custom Closet manufactures designer sofas and sells them exclusively via www.customcloset.com. We do not compromise on quality; we want to develop high-quality sofas and offer them to you directly. We also convince our customers with our comprehensive services: free fabric and leather samples, our online room planner, and a personal product consultation by telephone, e-mail, chat or in our showrooms make your decision easy when buying a sofa.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-card">
-                  <div class="faq-card-header">
-                    <a class="faq-card-link" data-toggle="collapse" href="#fq1" aria-expanded="false">
-                        Why can Custom Closet offer such great prices?
-                  </a>
-                  </div>
-                  <div id="fq1" class="collapse" data-parent="#accordion">
-                    <div class="faq-card-body">
-                        <p>
-                        Custom Closet only produces to order and sells its products online. We do this directly and without intermediaries. We pass on these cost savings directly to our customers who find high-quality designer sofas at surprisingly low prices.
-                        </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-card">
-                  <div class="faq-card-header">
-                    <a class="faq-card-link" data-toggle="collapse" href="#fq2">
-                        What quality standards does Custom Closet have?
-                  </a>
-                  </div>
-                  <div id="fq2" class="collapse" data-parent="#accordion">
-                    <div class="faq-card-body">
-                      <p>
-                        When it comes to quality, we do not compromise on our products! Demanding designs and high-quality materials are painstakingly used with every Custom Closet sofa. Seating comfort and design language are equally important to us. To live up to our product claims, every sofa undergoes a rigorous quality control before leaving production. This ensures that our customers receive their order in perfect condition.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+    <div class="container pt-5 pb-5">
+        <h3 class="pb-3 text-center">Related Products</h3>
+        <section class="product-wallpaper-slider">
+            <div>
+                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="" /></a>
+                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                <div class="products-list-price">$ 10.00</div>
             </div>
-        </div>
-    </section> --}}
+            <div>
+                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="" /></a>
+                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                <div class="products-list-price">$ 10.00</div>
+            </div>
+            <div>
+                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="" /></a>
+                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                <div class="products-list-price">$ 10.00</div>                
+            </div>
+            <div>
+                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="" /></a>
+                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                <div class="products-list-price">$ 10.00</div>                
+            </div>
+        </section> 
+        <div class="text-center pt-5"><a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a></div>
+    </div>
 
     <!--Alert-->
     <!--Alert-->
