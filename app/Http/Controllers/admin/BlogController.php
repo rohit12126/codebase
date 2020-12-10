@@ -44,6 +44,9 @@ class BlogController extends Controller
             $req, 
             [
                 'image' => 'required|mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
+            ], [
+                'description' => 'content field is required',
             ]
         );
         
@@ -75,6 +78,9 @@ class BlogController extends Controller
             $req, 
             [
                 'image' => $imgRequired.'mimes:jpeg,jpg,png|max:4000',
+                'description' => 'required'
+            ], [
+                'description' => 'content field is required',
             ]
         );
         $response = $this->blogManager->edit($req);

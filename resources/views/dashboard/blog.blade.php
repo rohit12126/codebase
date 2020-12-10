@@ -58,9 +58,12 @@
                                         <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" value="{{ old('slug', @$blog->slug) }}" readonly="true">
                                     </div>
                                     <div class="form-group"> 
-                                        <label>Body</label>
+                                        <label>Content</label>
                                         <span class="mandatory">*</span>
                                         <textarea id="content" name="description" class="form-control" required="true">{{ old('description', @$blog->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error ">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
