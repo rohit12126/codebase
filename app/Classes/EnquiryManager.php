@@ -23,22 +23,52 @@ class EnquiryManager
     }
     public static function getEnquiryListPaginated($req)
     {
-       // name,email,phone,connected
         if (
             $req->name !== null
             || $req->email !== null
             || $req->phone !== null
             || $req->connected !== null
         ) {
-            $order = new Enquiry;
-            if ($req->product_status) {
-                $order->where('status', $req->product_status);
-            }
-            if($req->product_name){
-                $order->where('name', 'like', '%' . $req->product_name . '%');
+            $order = '';
+            
+            if ($req->name) {
+                $order = Enquiry::where('name', 'like', '%' . $req->name . '%');
             }
             
-            return $order->orderBy('id', 'desc')->paginate(10);
+            if($req->email) {
+                if (!empty($order)) {
+                    $order->where('email', 'like', '%' . $req->email . '%');
+                } else {
+                    $order = Enquiry::where('email', 'like', '%' . $req->email . '%');
+                }
+            }
+
+            if($req->phone){
+                if (!empty($order)) {
+                    $order->where('phone_nu', 'like', '%' . $req->phone . '%');
+                } else {
+                    $order = Enquiry::where('phone_nu', 'like', '%' . $req->phone . '%');
+                }
+            }
+            
+            if($req->connected) {
+                $connected = $req->connected;
+                if ($req->connected == 2) {
+                    $connected = 0;
+                }
+
+                if (!empty($order)) {
+                    $order->where('connected', $connected);
+                } else {
+                    $order = Enquiry::where('connected', $connected);
+                }
+            }
+
+            if (!empty($order)) {
+                return $order->orderBy('id', 'desc')->paginate(10);
+            } else {
+                return Enquiry::orderBy('id', 'desc')->paginate(10);
+            }
         } else {
             return Enquiry::orderBy('id', 'desc')->paginate(10);
         }
