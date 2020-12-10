@@ -17,7 +17,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-4df0vdr5Yrg/X7uYSLQpdUI/AAAAAAAAOmk/EHR3k1dqf5MP_XUaO03eaJrbpXw-BXzCgCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/first-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <a href="#stt" class="btn btn-outline-secondary">see the sofas</a>
@@ -29,7 +29,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-cagoug-4R40/X7uYTTggzoI/AAAAAAAAOms/ztG_A_wU0DQ_donL_Fodi4Z54uyTtl99wCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/second-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <button class="btn btn-outline-secondary">see the sofas</button>
@@ -41,7 +41,7 @@
                     <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
                 </div>
                 <div class="slider-inner-block">
-                    <img src="https://lh3.googleusercontent.com/-UmMZt8z9qY8/X7uYSirXxYI/AAAAAAAAOmo/-xMw4Cm685Q6CjISh9fVsFQPJZFIw2dnQCK8BGAsYHg/s0/2020-11-23.jpg" class="d-block w-100" alt="...">
+                    <img src="{{URL::asset('/images/third-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
                     <button class="btn btn-outline-secondary">see the sofas</button>
@@ -54,14 +54,14 @@
     <section class="home-swip-section p-relative d-flex justify-content-center">
         <div class="first-slide">
             <picture>
-                <source type="image/webp" srcset="https://www.thefarmersdog.com/images/bowl-mixed-dd8a9c.webp">
+                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-after.jpg')}}">
                 <source type="image/png" srcset="/images/bowl-ingredients-eb0c55.png">
                 <img alt="Bowl of ingredients" class="inc454" >
             </picture>
         </div>
         <div class="second-slide">
             <picture>
-                <source type="image/webp" srcset="https://www.thefarmersdog.com/images/bowl-ingredients-8dd243.webp">
+                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-before.jpg')}}">
                 <source type="image/png" srcset="/images/bowl-mixed-08422a.png">
                 <img alt="Bowl of The Farmer's Dog" class="Yq0BZd">
             </picture>
@@ -85,49 +85,49 @@
         <div class="pd-block-wrap">
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-tom_1.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/1.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/2.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/3.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/4.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-view_1.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/5.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/6.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/7.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
             <div class="pd-block">
                 <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-set_2.jpg')}}" alt="...">
+                    <img src="{{URL::asset('/images/home/8.png')}}" alt="...">
                     <a href="#" class="btn btn-outline-secondary">Configure</a>
                 </div>
             </div>
