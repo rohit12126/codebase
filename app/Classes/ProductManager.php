@@ -5,6 +5,7 @@ namespace App\Classes;
 use App\Models\Product as ProductModel;
 use App\Models\ProductImage as ProductImageModel;
 use App\Classes\HelperManager as Common;
+use Illuminate\Support\Facades\DB;
 
 class ProductManager
 {
@@ -144,11 +145,22 @@ class ProductManager
         $product = ProductModel::with('images', 'catergory')->find($productId);
         $productData = [
             'product' => $product,
-            'productReview' => ""
+            'productReview' => "",
+            'reviewCount'=>'',
+            'averageRating'=>''
         ];
         if (!is_null($product)) {
             $productData['productReview'] = $product->getRecentRatings($product->id, 5, 'desc');
+            $productData['reviewCount'] = $this->reviewCount($product->id);
+            $productData['averageRating']=  $product->averageRating();
         }
         return $productData;
+    }
+
+    public function reviewCount($id){
+        $count = DB::table('reviews')->where('reviewrateable_id', '=', $id)
+            ->where('approved', '=' , 1)
+            ->count();
+        return $count;
     }
 }
