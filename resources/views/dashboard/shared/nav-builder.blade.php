@@ -92,7 +92,7 @@ if(!function_exists('renderDropdown')){
             Reviews
         </a>
     </li> --}}
-    <li class="c-sidebar-nav-item" title="Find All FAQ Here">
+    {{-- <li class="c-sidebar-nav-item" title="Find All FAQ Here">
         <a class="c-sidebar-nav-link @if(
             request()->segment(2) == 'faq-list'
             || request()->segment(2) == 'faq'
@@ -103,7 +103,7 @@ if(!function_exists('renderDropdown')){
             <i class="cil-grid c-sidebar-nav-icon"></i>
             FAQ
         </a>
-    </li>
+    </li> --}}
     <li class="c-sidebar-nav-item"title="Check All Enquries Here">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'enquiries') c-active @endif" href="{{ route('admin.enquiries') }}">
             <i class="cil-address-book c-sidebar-nav-icon"></i>

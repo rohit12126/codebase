@@ -33,4 +33,40 @@ class HelperManager
             return $file_name ;
         }
     }
+
+    public static function parseEditorContentAndImages($content, $imgPath) {
+        libxml_use_internal_errors(true);
+
+        $dom = new \DomDocument();
+
+        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img){
+
+            $data = $img->getAttribute('src');
+            
+            if (filter_var($data, FILTER_VALIDATE_URL)) {
+                continue;
+            } 
+            list($type, $data) = explode(';', $data);
+
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            $image_name = $imgPath.time().$k.'.png';
+            
+            $path =  $image_name;
+
+            file_put_contents($path, $data);
+
+            $img->removeAttribute('src');
+
+            $img->setAttribute('src', url('/').'/'.$path);
+        }
+
+        return $dom->saveHTML();
+    }
 }

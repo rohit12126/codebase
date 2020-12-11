@@ -11,11 +11,13 @@ class ProductManager
 {
     public static function add($req)
     {
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
+
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
             'sale_price' => $req->sale_price,
-            'description' => $req->description,
+            'description' => $description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
         ];
@@ -37,12 +39,15 @@ class ProductManager
 
     public static function edit($req)
     {
+        
         $product = null;
         if ($exist = self::getProductById($req->id)) {
             $product = $exist;
         } else {
             return false;
         }
+        
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
 
         $data = [
             'name' => $req->name,
@@ -51,7 +56,6 @@ class ProductManager
             'description' => $req->description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
-            
         ];
         if ($product->fill($data)->save()) {
             
@@ -74,7 +78,7 @@ class ProductManager
                     }
                 }
             }
-            
+        
             return true;
         } else {
             return false;
