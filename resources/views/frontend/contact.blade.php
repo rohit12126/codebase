@@ -115,6 +115,20 @@
                                 </div>
                                 @endif
                             </div>
+                            <div class="form-group col-md-12 ">
+                                <select name="reason" id="reason" class="form-control {{ $errors->has('reason') ? 'error' : '' }}">
+                                    <option value="Basic Enquiry">Basic Enquiry</option>
+                                    <option value="Order Related">Order Related</option>
+                                    <option value="Issue Not Resolved">Issue Not Resolved</option>
+                                    <option value="Feedback">Feedback</option>
+                                </select>
+                                
+                                @if ($errors->has('reason'))
+                                <div class="error">
+                                    {{ $errors->first('reason') }}
+                                </div>
+                                @endif
+                            </div>
                             <div class="form-group col-md-12">
                                 <textarea required="" placeholder="Message *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
                                 @if ($errors->has('message'))
