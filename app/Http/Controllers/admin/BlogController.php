@@ -50,7 +50,7 @@ class BlogController extends Controller
             ]
         );
         
-        $response = $this->blogManager->add($req);
+        $response = $this->blogManager->add($req); 
         if($response == true){
             Common::setMessage(__('blog_add_success'));
         }else{
