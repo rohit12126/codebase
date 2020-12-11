@@ -33,7 +33,7 @@ class BlogManager
             
             $file_name = Common::uploadFile($req->image, 'upload/blog/content');
 
-            $path = url('upload/blog/content/') . $image_name;
+            $path = url('upload/blog/content/') .'/' .$file_name;
 
             $img->removeAttribute('src');
 
@@ -63,6 +63,41 @@ class BlogManager
 
     public static function edit($req)
     {
+        $description = $req->input('description');
+
+        libxml_use_internal_errors(true);
+
+        $dom = new \DomDocument();
+
+        $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $k => $img){
+
+            $data = $img->getAttribute('src');
+            if (filter_var($data, FILTER_VALIDATE_URL)) {
+                continue;
+            } 
+            list($type, $data) = explode(';', $data);
+
+            list(, $data)      = explode(',', $data);
+
+            $data = base64_decode($data);
+
+            $image_name = time().$k.'.png';
+            
+            $file_name = Common::uploadFile($req->image, 'upload/blog/content');
+
+            $path = url('upload/blog/content/') .'/' .$file_name;
+
+            $img->removeAttribute('src');
+
+            $img->setAttribute('src', $path);
+        }
+
+        $description = $dom->saveHTML();
+
         $blog = null;
         if ($exist = self::getBlogById($req->id)) {
             $blog = $exist;
@@ -82,7 +117,7 @@ class BlogManager
             'category_id' => $req->category_id,
             'title' => $req->title,
             'slug' => $req->slug,
-            'description' => $req->description,
+            'description' => $description,
             'image' => $file_name,
             'status' => $req->status
         ];
