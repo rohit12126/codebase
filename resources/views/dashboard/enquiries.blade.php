@@ -59,6 +59,19 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Reason</label>
+                                                    <select name="reason" id="reason" class="form-control">
+                                                        <option value="">Please select</option>
+                                                        <option @if(isset($_GET['reason']) && $_GET['reason'] == "Basic Enquiry") selected @endif value="Basic Enquiry">Basic Enquiry</option>
+                                                        <option @if(isset($_GET['reason']) && $_GET['reason'] == "Order Related") selected @endif value="Order Related">Order Related</option>
+                                                        <option @if(isset($_GET['reason']) && $_GET['reason'] == "Issue Not Resolved") selected @endif value="Issue Not Resolved">Issue Not Resolved</option>
+                                                        <option @if(isset($_GET['reason']) && $_GET['reason'] == "Feedback") selected @endif value="Feedback">Feedback</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
                                             <div class="col-4 d-flex align-items-center pt-2">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -82,6 +95,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th>Reason</th>
                                     <th>Message</th>
                                     <th>Connected ?</th>
                                 </tr>
@@ -93,6 +107,8 @@
                                     <td>{{$value->name}}</td>
                                     <td>{{$value->email}}</td>
                                     <td>{{$value->phone_nu}}</td>
+                                    <td>{{$value->reason}}</td>
+                                    
                                     <td>{{$value->message}}</td>
                                     <td>
                                     @if($value->connected == 0)

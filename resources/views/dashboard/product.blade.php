@@ -93,10 +93,10 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="">Is Accessory ?</label>
+                                        <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is Item Accessory ?">
-                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Accessory</option>
+                                        <select name="is_accessory" id="" class="form-control" title="Is Hardware ?">
+                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Hardware</option>
                                             <option @if (old('is_accessory') == 0) selected @endif @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
