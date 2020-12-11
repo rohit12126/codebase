@@ -86,12 +86,13 @@ if(!function_exists('renderDropdown')){
             CMS
         </a>
     </li>
+    --}}
     <li class="c-sidebar-nav-dropdown" title="Product Reviews">
         <a class="c-sidebar-nav-link" href="{{ route('admin.aprooved') }}">
             <i class="cil-list c-sidebar-nav-icon"></i>
-            Reviews
+            Product Reviews
         </a>
-    </li> --}}
+    </li>
     {{-- <li class="c-sidebar-nav-item" title="Find All FAQ Here">
         <a class="c-sidebar-nav-link @if(
             request()->segment(2) == 'faq-list'

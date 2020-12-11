@@ -25,7 +25,7 @@
                 <h2 class="product2-category">sofa set, furniture</h2>
                 <div class="rating-counter">
                         <span>
-                           <div class="rating-points">5
+                           <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star"></div>
                         </span>
                         <span class="rating-count-no"><span><span>{{$productData['reviewCount']}} Ratings&nbsp;</span><span class="rating-amp">&amp;</span><span>&nbsp;Reviews</span></span></span>
@@ -42,7 +42,13 @@
                 <p class="sku-number">
                     <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
                 </p>
+                
                 <div class="pt-3 pb-3 d-flex">
+                    <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
+                        <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                        <i class="linearicons-cart-plus"></i> Buy Now
+                    </a>
+
                     <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
                         <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                         <i class="linearicons-cart-plus"></i> Add to cart
