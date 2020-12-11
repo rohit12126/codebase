@@ -60,6 +60,13 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>@if(isset($product)) Edit @else Add @endif Item</h4>
+                        @if ($errors->any())
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
