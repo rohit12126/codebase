@@ -29,7 +29,7 @@ class FaqCategoryController extends Controller
     public function editCategory(Request $req, $id)
     {
         $category = FAQCategoryManager::getCategoryById($id);
-        $category_list = FAQCategoryManager::getCategoryList();
+        $category_list = FAQCategoryManager::getCategoryList($req);
         return view('dashboard.faq-category', compact('category_list', 'category'));
     }
 

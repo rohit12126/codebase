@@ -22,7 +22,10 @@ class BlogManager
         foreach($images as $k => $img){
 
             $data = $img->getAttribute('src');
-
+            
+            if (filter_var($data, FILTER_VALIDATE_URL)) {
+                continue;
+            } 
             list($type, $data) = explode(';', $data);
 
             list(, $data)      = explode(',', $data);
