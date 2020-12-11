@@ -9,7 +9,7 @@ class BlogManager
 {
     public static function add($req)
     {
-        $description = Common::parseEditorContentAndImages($req->input('description'));
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/blog/content/');
 
         $file_name = "";
         if ($req->image) {
@@ -32,7 +32,7 @@ class BlogManager
 
     public static function edit($req)
     {
-        $description = Common::parseEditorContentAndImages($req->input('description'));
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/blog/content/');
 
         $blog = null;
         if ($exist = self::getBlogById($req->id)) {

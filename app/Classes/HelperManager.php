@@ -34,7 +34,7 @@ class HelperManager
         }
     }
 
-    public static function parseEditorContentAndImages($content) {
+    public static function parseEditorContentAndImages($content, $imgPath) {
         libxml_use_internal_errors(true);
 
         $dom = new \DomDocument();
@@ -56,7 +56,7 @@ class HelperManager
 
             $data = base64_decode($data);
 
-            $image_name = 'upload/blog/content/'.time().$k.'.png';
+            $image_name = $imgPath.time().$k.'.png';
             
             $path =  $image_name;
 
