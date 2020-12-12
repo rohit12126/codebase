@@ -13,6 +13,7 @@ class EnquiryManager
             'name' => $req->name,
             'email' => $req->email,
             'phone_nu' => $req->phone,
+            'reason' => $req->reason,
             'message' => $req->message
         ];
         if (Enquiry::create($data)) {
@@ -28,6 +29,7 @@ class EnquiryManager
             || $req->email !== null
             || $req->phone !== null
             || $req->connected !== null
+            || $req->reason !== null
         ) {
             $order = '';
             
@@ -48,6 +50,14 @@ class EnquiryManager
                     $order->where('phone_nu', 'like', '%' . $req->phone . '%');
                 } else {
                     $order = Enquiry::where('phone_nu', 'like', '%' . $req->phone . '%');
+                }
+            }
+            
+            if($req->reason){
+                if (!empty($order)) {
+                    $order->where('reason', $req->reason);
+                } else {
+                    $order = Enquiry::where('reason', $req->reason);
                 }
             }
             

@@ -42,7 +42,7 @@
                                         <select class="form-control" id="select3" name="category_id">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                                <option @if (old('category_id') == $value->id) selected @endif value="{{ $value->id }}" @if(isset($blog) && ($value->id == $blog->category_id) ) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if(isset($blog) && ($value->id == $blog->category_id) ) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -60,7 +60,7 @@
                                     <div class="form-group"> 
                                         <label>Content</label>
                                         <span class="mandatory">*</span>
-                                        <textarea id="content" name="description" class="form-control" required="true">{{ old('description', @$blog->description) }}</textarea>
+                                        <textarea id="content" name="description" class="form-control summernote" required="true">{{ old('description', @$blog->description) }}</textarea>
                                         @if($errors->has('description'))
                                             <div class="error ">{{ $errors->first('description') }}</div>
                                         @endif
@@ -69,8 +69,8 @@
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control">
-                                            <option @if (old('status') == 1) selected @endif @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
-                                            <option @if (old('status') == 0) selected @endif @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
                                     <div class="d-flex pt-4">
@@ -124,8 +124,17 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-{{-- <script src="{{ asset('js/ckeditor.js') }}"></script> --}}
-<script src="https://cdn.tiny.cloud/1/098a7fwykgj46lh6yvnoanltfdod66fvcthx2xkw2je9xzjv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+{{-- Editor js--}}
+ <!-- include Bootstrap and summernote css/js -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+
 <style>
 .ck-editor__editable {
     min-height: 200px;
@@ -133,23 +142,12 @@
 </style>
 <script>
     /* Editor */
-   /*  ClassicEditor
-		.create( document.querySelector( '#content' ), {
-            
-		} )
-		.then( editor => {
-			window.editor = editor;
-		} )
-		.catch( err => {
-			console.error( err.stack );
-		} ); */
     /* Image Preview */
     $(function() {
-        
-        tinymce.init({
-            selector: '#content'
+        $('.summernote').summernote({
+            height: 200
         });
-
+        
         $(document).on("change",".uploadFile", function()
         {
             var files = !!this.files ? this.files : [];
@@ -205,7 +203,7 @@
     /* Slug generation */
     $("#title").keyup(function() {
         var title = $(this).val();
-        if($(this).val().length > 3) {
+        if($(this).val().length > 2) {
             var slug = generateSlug(title);
             $("#slug").val(slug);
         }

@@ -9,6 +9,8 @@ class BlogManager
 {
     public static function add($req)
     {
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/blog/content/');
+
         $file_name = "";
         if ($req->image) {
             $file_name = Common::uploadFile($req->image, 'upload/blog');
@@ -17,7 +19,7 @@ class BlogManager
             'category_id' => $req->category_id,
             'title' => $req->title,
             'slug' => $req->slug,
-            'description' => $req->description,
+            'description' => $description,
             'image' => $file_name,
             'status' => $req->status
         ];
@@ -30,6 +32,8 @@ class BlogManager
 
     public static function edit($req)
     {
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/blog/content/');
+
         $blog = null;
         if ($exist = self::getBlogById($req->id)) {
             $blog = $exist;
@@ -44,12 +48,11 @@ class BlogManager
             $file_name =  $req->storeimage;
         }
         
-
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
             'slug' => $req->slug,
-            'description' => $req->description,
+            'description' => $description,
             'image' => $file_name,
             'status' => $req->status
         ];
@@ -127,5 +130,11 @@ class BlogManager
     {
         $blog = BlogModel::with('catergory')->find($blogId);
         return $blog;
+    }
+
+    public function getRecentBlogs()
+    {
+        $recentBlogs = BlogModel::latest()->take(3)->get();
+        return $recentBlogs;
     }
 }

@@ -68,7 +68,7 @@ class ProductController extends Controller
         $productId = $req->input('id');
         $cart = [];
         $productData = $this->productManager->getProductWithReview($productId);
-        //dd($productData);
+        
         $cart = $this->cartManager->getProduct($productId);
         return view('frontend.product-detail',
             ['productData' => $productData, 'cart'=>$cart]
@@ -102,7 +102,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Store a Review of the product.
+     * Accessory List
      *
      * @return \Illuminate\Http\Response
      */

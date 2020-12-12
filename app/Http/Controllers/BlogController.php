@@ -44,8 +44,10 @@ class BlogController extends Controller
     public function detail(Request $req) {
         $blogId = $req->input('id');
         $blog = $this->blogManager->getBlog($blogId);
+        $recent = $this->blogManager->getRecentBlogs();
         return view('frontend.blog-detail',
-            ['blog' => $blog]
+            ['blog' => $blog,
+            'recent' => $recent]
         );
     }
 }

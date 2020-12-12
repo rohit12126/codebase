@@ -24,6 +24,7 @@ class ProductController extends Controller
 
     public function addProduct(Request $req)
     {
+       dd($_FILES);
         $this->validate(
             $req, 
             [
@@ -31,7 +32,7 @@ class ProductController extends Controller
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
                 'description' => 'required'
             ]
-        );
+        ); 
         $response = ProductManager::add($req);
         if($response == true){
             Common::setMessage(__('item_add_success'));

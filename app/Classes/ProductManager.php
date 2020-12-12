@@ -5,16 +5,19 @@ namespace App\Classes;
 use App\Models\Product as ProductModel;
 use App\Models\ProductImage as ProductImageModel;
 use App\Classes\HelperManager as Common;
+use Illuminate\Support\Facades\DB;
 
 class ProductManager
 {
     public static function add($req)
     {
+	$description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
+
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
             'sale_price' => $req->sale_price,
-            'description' => $req->description,
+            'description' => $description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
         ];
@@ -36,12 +39,15 @@ class ProductManager
 
     public static function edit($req)
     {
+        
         $product = null;
         if ($exist = self::getProductById($req->id)) {
             $product = $exist;
         } else {
             return false;
         }
+        
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
 
         $data = [
             'name' => $req->name,
@@ -50,7 +56,6 @@ class ProductManager
             'description' => $req->description,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
-            
         ];
         if ($product->fill($data)->save()) {
             
@@ -73,7 +78,7 @@ class ProductManager
                     }
                 }
             }
-            
+        
             return true;
         } else {
             return false;
@@ -144,11 +149,28 @@ class ProductManager
         $product = ProductModel::with('images', 'catergory')->find($productId);
         $productData = [
             'product' => $product,
-            'productReview' => ""
+            'productReview' => "",
+            'reviewCount'=>'',
+            'averageRating'=>''
         ];
         if (!is_null($product)) {
+            
             $productData['productReview'] = $product->getRecentRatings($product->id, 5, 'desc');
+            
+            $productData['reviewCount'] = $this->reviewCount($product->id);
+            $productData['averageRating'] =  DB::table('reviews')
+                ->where('reviewrateable_type', 'App/Models/Product')
+                ->where('reviewrateable_id', $product->id)
+                ->avg('rating');
+                
         }
         return $productData;
+    }
+
+    public function reviewCount($id){
+        $count = DB::table('reviews')->where('reviewrateable_id', '=', $id)
+            ->where('approved', '=' , 1)
+            ->count();
+        return $count;
     }
 }

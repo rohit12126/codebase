@@ -26,6 +26,7 @@
                 </div>
                 @else
                 @foreach ($blogs as $blog)
+                
                 <div class="blog-col">
                     <a href="blog-view.php">
                         <article class="blog-list-card">
