@@ -262,8 +262,11 @@ class CartController extends Controller
         $this->cartManager->removeProduct($rowId);
         $cartCount = $this->cartManager->count();
 
+        $cartSubTotal = $this->cartManager->subTotal();
+
         $data = [
-            'cartCount' => $cartCount
+            'cartCount' => $cartCount,
+            'cartSubTotal' => $cartSubTotal
         ];
 
         $response = [
