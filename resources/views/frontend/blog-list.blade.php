@@ -43,7 +43,7 @@
                             <div class="blog-foot">
                                 <div class="blog-read-time">
                                     <i class="linearicons-clock3"></i>
-                                    <p>2 mins Read</p>
+                                    <p>{{$blog->catergory->name}}</p>
                                 </div>
                                 <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                                     <span class="blog-view-button">View</span>

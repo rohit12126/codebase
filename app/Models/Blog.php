@@ -20,6 +20,7 @@ class Blog extends Model
      */
     public function catergory()
     {
-        return $this->belongsTo('App\Models\BlogCategory');
+        return $this->belongsTo('App\Models\BlogCategory', 'category_id');
     }
+
 }

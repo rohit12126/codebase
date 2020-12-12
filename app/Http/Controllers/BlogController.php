@@ -32,6 +32,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = $this->blogManager->getBlogs();
+        
         return view('frontend.blog-list', ['blogs' => $blogs]);
     }
 
@@ -44,7 +45,7 @@ class BlogController extends Controller
     public function detail(Request $req) {
         $blogId = $req->input('id');
         $blog = $this->blogManager->getBlog($blogId);
-        $recent = $this->blogManager->getRecentBlogs();
+        $recent = $this->blogManager->getRecentBlogs($blogId);
         return view('frontend.blog-detail',
             ['blog' => $blog,
             'recent' => $recent]
