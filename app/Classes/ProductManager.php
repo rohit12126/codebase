@@ -145,7 +145,7 @@ class ProductManager
         return $product;
     }
     public function getProductWithReview($productId)
-    {
+    {   
         $product = ProductModel::with('images', 'catergory')->find($productId);
         $productData = [
             'product' => $product,

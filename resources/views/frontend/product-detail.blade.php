@@ -22,7 +22,7 @@
                     {{$productData['product']->name}}
                     
                 </h1>
-                <h2 class="product2-category">sofa set, furniture</h2>
+                <h2 class="product2-category">{{$productData['product']->catergory->name}}</h2>
                 <div class="rating-counter">
                         <span>
                            <div class="rating-points">{{ number_format($productData['averageRating'],1)}}

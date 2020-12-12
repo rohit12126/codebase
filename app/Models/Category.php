@@ -18,10 +18,10 @@ class Category extends Model
     }
     
     /**
-     * Get the product that belongs the category.
+     * Get the product that owns the category.
      */
     public function product()
     {
-        return $this->belongsTo('App\Models\Product', 'category_id', 'id');
+        return $this->hasOne('App\Models\Product', 'category_id', 'id'); 
     }
 }
