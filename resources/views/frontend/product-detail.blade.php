@@ -6,15 +6,27 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="d-flex flex-wrap">
-                @foreach ($productData['product']->images as $image)
+                    {{--  Multiple images case --}}
+                @if (count($productData['product']->images) > 1)
+                    @foreach ($productData['product']->images as $image)
+                        <div class="img-tile">
+                            <div class="product-list-inner">
+                                <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                                    <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    {{-- for Full Width --}}
                     <div class="img-tile">
                         <div class="product-list-inner">
-                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
-                                <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
+                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
+                                <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
                             </a>
                         </div>
                     </div>
-                @endforeach
+                @endif   
                 </div>
             </div>
             <div class="col-lg-4">
