@@ -7,14 +7,13 @@
     <div>
         <ul class="nav justify-content-center products-tab-ul mb-3">
             <li class="">
-                <a class="btn btn-outline-secondary active">All</a>
+                <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($categoryId)) active  @endif">All</a>
             </li>
-            <li class="">
-                <a class="btn btn-outline-secondary">sofa set</a>
-            </li>
-            <li class="">
-                <a class="btn btn-outline-secondary">furniture</a>
-            </li>
+            @foreach ($blogsCategories as $cat)
+                <li class="">
+                    <a href="{{ route('blog.list',['category_id' => $cat->id]) }}" class="btn btn-outline-secondary @if($categoryId == $cat->id) active  @endif">{{ $cat->name }}</a>
+                </li>
+            @endforeach
         </ul>.
     </div>
     <div class="section blog-list-view">
@@ -28,7 +27,7 @@
                 @foreach ($blogs as $blog)
                 
                 <div class="blog-col">
-                    <a href="blog-view.php">
+                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                         <article class="blog-list-card">
                             <p class="blog-list-title">
                                 <a href="{{ route('blog.detail',['id' => $blog->id]) }}">{{$blog->title}}</a>

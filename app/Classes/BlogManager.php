@@ -120,9 +120,13 @@ class BlogManager
         return BlogModel::find($id);
     }
 
-    public function getBlogs()
+    public function getBlogs($categoryId = '')
     {
-        $blogs = BlogModel::with('catergory')->paginate(10);
+        $blogs = BlogModel::with('catergory');
+        if (!empty($categoryId)) {
+            $blogs = $blogs->where('category_id', $categoryId);
+        }
+        $blogs = $blogs->paginate(10);
         return $blogs;
     }
 
