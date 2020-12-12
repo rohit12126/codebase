@@ -24,6 +24,7 @@ class ProductController extends Controller
 
     public function addProduct(Request $req)
     {
+        // dd($req);
         $this->validate(
             $req, 
             [

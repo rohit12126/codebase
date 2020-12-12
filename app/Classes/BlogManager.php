@@ -131,4 +131,10 @@ class BlogManager
         $blog = BlogModel::with('catergory')->find($blogId);
         return $blog;
     }
+
+    public function getRecentBlogs()
+    {
+        $recentBlogs = BlogModel::latest()->take(3)->get();
+        return $recentBlogs;
+    }
 }

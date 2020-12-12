@@ -86,36 +86,18 @@
             <div class="blog-sidebar col-lg-3 col-md-6 col-sm-8 col-11">
                 <div class="blog-sidebar-item">
                     <h3 class="blog-sidebar-title">Recent Blogs</h3>
+                    @foreach($recent as $blog)
                     <div class="blog-col">
-                        <article class="blog-list-card">
-                            <p class="blog-list-title">
-                                Custom closet blog one
-                            </p>
-                            <img src="{{URL::asset('/images/blog/blog-post.jpg')}}" alt="" class="blog-img">
-                            <div class="blog-foot">
-                                <div class="blog-read-time">
-                                    <svg id="Untitled-Page%201" viewBox="0 0 20 20" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px" width="20px" height="20px">
-                                    <g id="Layer%201">
-                                    <path id="Ellipse" d="M 1 10 C 1 5.0293 5.0295 1 10 1 C 14.9705 1 19 5.0293 19 10 C 19 14.9707 14.9705 19 10 19 C 5.0295 19 1 14.9707 1 10 Z" stroke="#b9b9b9" stroke-width="2" fill="none"></path>
-                                    <path id="Line" d="M 10 10 L 10 6 " stroke="#b9b9b9" stroke-width="2" fill="none"></path>
-                                    <path id="Line2" d="M 10.5 9.5 L 5.5 13.5 " stroke="#b9b9b9" stroke-width="2" fill="none"></path>
-                                    </g>
-                                    </svg>
-                                    <p>2 mins Read</p>
-                                </div>
-                                <a href="blog-view.php">
-                                    <span class="blog-view-button">View</span>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="blog-col">
-                        <a href="">
+                        <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                             <article class="blog-list-card">
                                 <p class="blog-list-title">
-                                    Custom closet blog two
+                                {{$blog->title}}
                                 </p>
-                                <img src="{{URL::asset('/images/blog/blog-post.jpg')}}" alt="" class="blog-img">
+                                @if (isset($blog->image))
+                                <img id="product_img" src="{{ asset('upload/blog/'.$blog->image)}}" data-zoom-image="{{ asset('upload/blog/'.$blog->image)}}" alt="product_img1">
+                                @else
+                                    <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                @endif
                                 <div class="blog-foot">
                                     <div class="blog-read-time">
                                         <svg id="Untitled-Page%201" viewBox="0 0 20 20" style="background-color:#ffffff00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0px" y="0px" width="20px" height="20px">
@@ -127,13 +109,14 @@
                                         </svg>
                                         <p>2 mins Read</p>
                                     </div>
-                                    <a href="blog-view.php">
+                                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                                         <span class="blog-view-button">View</span>
                                     </a>
                                 </div>
                             </article>
                         </a>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

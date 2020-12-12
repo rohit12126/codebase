@@ -20,14 +20,15 @@
             <div class="col-lg-4">
                 <h1 class="pdp-title">
                     {{$productData['product']->name}}
+                    
                 </h1>
                 <h2 class="product2-category">sofa set, furniture</h2>
                 <div class="rating-counter">
                         <span>
-                           <div class="rating-points">3.8
+                           <div class="rating-points">5
                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star"></div>
                         </span>
-                        <span class="rating-count-no"><span><span>1,67,992 Ratings&nbsp;</span><span class="rating-amp">&amp;</span><span>&nbsp;23,456 Reviews</span></span></span>
+                        <span class="rating-count-no"><span><span>{{$productData['reviewCount']}} Ratings&nbsp;</span><span class="rating-amp">&amp;</span><span>&nbsp;Reviews</span></span></span>
                     </div>
                 <hr>
                 <p class="pdp-discount-container">
@@ -72,30 +73,15 @@
                     </div>
                     <hr/>
                     <div class="comments">
-                        <h5 class="product_tab_title">2 Review For <span>{{$productData['product']->name}}</span></h5>
+                    @empty($productData['reviewCount'])
+                        <h5 class="product_tab_title"> {{$productData['reviewCount']}} Review For <span>{{$productData['product']->name}}</span></h5>
+                    @endempty    
                         <ul class="list_none comment_list mt-4">
+                          @foreach($productData['productReview'] as $review)
                             <li>
+                            
                                 <div class="comment_img">
-                                    <img src="{{URL::asset('/images/about3.jpg')}}" alt="user1">
-                                </div>
-                                <div class="comment_block">
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:80%"></div>
-                                        </div>
-                                    </div>
-                                    <p class="customer_meta">
-                                        <span class="review_author">Alea Brooks</span>
-                                        <span class="comment-date">March 5, 2018</span>
-                                    </p>
-                                    <div class="description">
-                                        <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="comment_img">
-                                    <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2">
+                                    <!-- <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2"> -->
                                 </div>
                                 <div class="comment_block">
                                     <div class="rating_wrap">
@@ -104,14 +90,15 @@
                                         </div>
                                     </div>
                                     <p class="customer_meta">
-                                        <span class="review_author">Grace Wong</span>
-                                        <span class="comment-date">June 17, 2018</span>
+                                        <span class="review_author">{{$review->title}}</span>
+                                        <span class="comment-date">{{ \Carbon\Carbon::parse($review->created_at)->format('d F Y')}}</span>
                                     </p>
                                     <div class="description">
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                                        <p>{{$review->body}}</p>
                                     </div>
                                 </div>
                             </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
