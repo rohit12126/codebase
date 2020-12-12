@@ -24,8 +24,7 @@ class ProductController extends Controller
 
     public function addProduct(Request $req)
     {
-       dd($_FILES);
-        $this->validate(
+       $this->validate(
             $req, 
             [
                 'image' => 'required|array|max:5',
