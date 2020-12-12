@@ -159,8 +159,8 @@
                     Custom Closet
                 </a>
             </div>
-            <div class="head-navbar d-inline-block">
-                <nav class="head-nav">
+            <div class="head-navbar d-flex float-right">
+                <nav class="head-nav d-flex align-items-center">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
                             <a href="{{ url('home/') }}" class="head-nav-link">Installation</a>
@@ -182,31 +182,39 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="head-shopbar d-inline-block float-right">
-                <span class="head-shop-icon">
-                    @guest
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                    @endguest
-                    @auth
-                    <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                    @endauth
-                </span>
-                <span class="head-shop-icon">
-                    <a href="{{ route('cart') }}" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
-                    <span class="cart-count cart_count"> {{$cartCount}} </span>
-                </span>
-                <span class="head-shop-icon main-toggler d-lg-none">
-                    <span class="burger">
-                        <span></span>
+                <div class="head-shopbar d-flex ">
+                    <span class="head-shop-icon">
+                        @guest
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
+                                <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                                <label class="mb-0">Account</label>
+                            </a>
+                        @endguest
+                        @auth
+                            <a href="{{url('/account')}}" title="Account">
+                                <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                                <label class="mb-0">Account</label>
+                            </a>
+                        @endauth
                     </span>
-                </span>
+                    <span class="head-shop-icon">
+                        <a href="{{ route('cart') }}" title="Shopping Cart">
+                            <img src="{{URL::asset('/images/icon/carticon.png')}}" alt="">
+                            <label>Cart</label>
+                        </a>
+                        <span class="cart-count cart_count"> {{$cartCount}} </span>
+                    </span>
+                    <span class="head-shop-icon main-toggler d-lg-none">
+                        <span class="burger">
+                            <span></span>
+                        </span>
+                    </span>
+                </div>                
             </div>
+
         </div>
         <div class="head-alert-bar">
-            <span> Informationen zur aktuellen Situation bei Custom Closet. </span>
-            <span class="actioninfo-icon"><strong>i</strong></span>
-            <span><a href="">Mehr erfahren</a></span>
+            60 YEARS OF EXCELLENCE &nbsp;|&nbsp; SEE OUR NEWEST ADDITIONS &nbsp;|&nbsp; UNLIMITED DESIGN POSSIBILITIES 
         </div>
     </header>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -56,8 +56,10 @@
             </a>
         </div>
     </section>
-    <h1 class="pt-5 pb-5 text-center">A Closet For Life</h1>
-    <section class="home-swip-section p-relative d-flex justify-content-center">
+    
+    <h1 class="pt-5 mb-3 heading_s3 text-center">A Closet For Life</h1>
+
+    <section class="home-swip-section p-relative">
         <!-- <div class="first-slide">
             <picture>
                 <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-after.jpg')}}">
