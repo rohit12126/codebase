@@ -36,6 +36,14 @@
                                         <input type="text" maxlength="150" placeholder="category name" name="name" class="form-control"
                                             required value="{{ @$category->name }}">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <span class="mandatory">*</span>
+                                        <select name="status" id="status" class="form-control">
+                                            <option @if(@$category->status == 0) selected @endif value="0">In-Active</option>
+                                            <option @if(@$category->status == 1) selected @endif value="1">Active</option>
+                                        </select>
+                                    </div>
                                     <div class="d-flex pt-2" >
                                     <button type="submit" title="@if(isset($category)) Update @else Submit @endif" class="btn btn-primary mt-0 mr-3">
                                         @if(isset($category)) Update @else Submit @endif

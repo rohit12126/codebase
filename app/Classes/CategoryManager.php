@@ -10,7 +10,7 @@ class CategoryManager
 {
     public static function add($req)
     {
-        if ($category = CategoryModel::create(['name' => $req->name])) {
+        if ($category = CategoryModel::create(['name' => $req->name, 'status'=> $req->status])) {
             if ($req->image) {
                 $file_name = Common::uploadFile($req->image, 'upload/category');
                 CategoryImageModel::create([
@@ -33,7 +33,7 @@ class CategoryManager
             return false;
         }
 
-        if ($category->fill(['name' => $req->name])->save()) {
+        if ($category->fill(['name' => $req->name, 'status'=> $req->status])->save()) {
             if ($req->image) {
                 $file_name = Common::uploadFile($req->image, 'upload/category');
                 if (@$category->image !== null) {

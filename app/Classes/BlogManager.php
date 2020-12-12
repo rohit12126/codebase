@@ -126,7 +126,8 @@ class BlogManager
         if (!empty($categoryId)) {
             $blogs = $blogs->where('category_id', $categoryId);
         }
-        $blogs = $blogs->paginate(10);
+        $blogs = $blogs->where('status', 1)
+            ->paginate(10);
         return $blogs;
     }
 
@@ -140,6 +141,7 @@ class BlogManager
     {
         $recentBlogs = BlogModel::with('catergory')
             ->where('id', '!=', $blogId)
+            ->where('status', 1)
             ->latest()
             ->take(3)
             ->get();

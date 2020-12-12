@@ -56,6 +56,11 @@ class BlogCategoryManager
         }
     }
 
+    public static function getBlogCategoryList()
+    {
+        return BlogCategory::where('status',1)->orderBy('id', 'desc')->paginate(10);
+    }
+
     public static function getCategoryById($id)
     {
         return BlogCategory::find($id);

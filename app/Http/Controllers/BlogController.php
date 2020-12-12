@@ -32,8 +32,8 @@ class BlogController extends Controller
     public function index(Request $req)
     {
         $categoryId = $req->category_id;
-        $blogsCategories = $this->blogCategoryManager->getCategoryList($req);
-        $blogs = $this->blogManager->getBlogs($categoryId);
+        $blogsCategories = $this->blogCategoryManager->getBlogCategoryList();
+        $blogs = $this->blogManager->getBlogs($categoryId); 
         return view('frontend.blog-list', [
             'blogs' => $blogs,
             'blogsCategories'=> $blogsCategories,
