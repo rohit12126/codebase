@@ -56,7 +56,7 @@
 
     /* Our wrapper */
     .wrapper{
-    width: 900px;
+    width: 715px;
     height: 600px;
     position: absolute;
     left:50%;
@@ -158,11 +158,11 @@
                     Custom Closet
                 </a>
             </div>
-            <div class="head-navbar d-inline-block">
-                <nav class="head-nav">
+            <div class="head-navbar d-flex float-right">
+                <nav class="head-nav d-flex align-items-center">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
-                            <a href="{{ url('home/') }}" class="head-nav-link">Home</a>
+                            <a href="{{ url('home/') }}" class="head-nav-link">Installation</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
@@ -174,38 +174,46 @@
                             <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('faq/') }}" class="head-nav-link">Faq</a>
+                            <a href="{{ url('faq/') }}" class="head-nav-link">Resources</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="head-shopbar d-inline-block float-right">
-                <span class="head-shop-icon">
-                    @guest
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                    @endguest
-                    @auth
-                    <a href="{{url('/account')}}" title="Account"><img src="{{URL::asset('/images/icon/usericon.png')}}" alt=""></a>
-                    @endauth
-                </span>
-                <span class="head-shop-icon">
-                    <a href="{{ route('cart') }}" title="Shopping Cart"><img src="{{URL::asset('/images/icon/carticon.png')}}" alt=""></a>
-                    <span class="cart-count cart_count"> {{$cartCount}} </span>
-                </span>
-                <span class="head-shop-icon main-toggler d-lg-none">
-                    <span class="burger">
-                        <span></span>
+                <div class="head-shopbar d-flex ">
+                    <span class="head-shop-icon">
+                        @guest
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
+                                <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                                <label class="mb-0">Account</label>
+                            </a>
+                        @endguest
+                        @auth
+                            <a href="{{url('/account')}}" title="Account">
+                                <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                                <label class="mb-0">Account</label>
+                            </a>
+                        @endauth
                     </span>
-                </span>
+                    <span class="head-shop-icon">
+                        <a href="{{ route('cart') }}" title="Shopping Cart">
+                            <img src="{{URL::asset('/images/icon/carticon.png')}}" alt="">
+                            <label>Cart</label>
+                        </a>
+                        <span class="cart-count cart_count"> {{$cartCount}} </span>
+                    </span>
+                    <span class="head-shop-icon main-toggler d-lg-none">
+                        <span class="burger">
+                            <span></span>
+                        </span>
+                    </span>
+                </div>                
             </div>
+
         </div>
         <div class="head-alert-bar">
-            <span> Informationen zur aktuellen Situation bei Custom Closet. </span>
-            <span class="actioninfo-icon"><strong>i</strong></span>
-            <span><a href="">Mehr erfahren</a></span>
+            60 YEARS OF EXCELLENCE &nbsp;|&nbsp; SEE OUR NEWEST ADDITIONS &nbsp;|&nbsp; UNLIMITED DESIGN POSSIBILITIES 
         </div>
     </header>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -321,15 +329,15 @@ footer-->
         <div class="footer-inner m-auto content-section">
         <div class="pre-footer">
                     <div class="row m-0 text-center text-sm-left">
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
-                            <h5 class="text-uppercase mb-3">About Us</h5>
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
+                            <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit culpa neque.
                                 <br><a href="">More about us &gt;&gt;</a>
                             </p>
                         </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
-                            <h5 class="text-uppercase mb-3">Quick Links</h5>
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
+                            <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
                             <ul class="footer-nav-ul">
                                 <li><a href="{{ url('home/') }}">Home</a></li>
                                 <li><a href="{{ url('about-us/') }}">About us</a></li>
@@ -339,8 +347,8 @@ footer-->
                                 <li><a href="{{ url('faq/') }}">faq</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0">
-                            <h5 class="text-uppercase mb-3">Showrooms</h5>
+                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
+                            <h5 class="text-uppercase mb-3"><span>Showrooms</span></h5>
                             <ul class="footer-nav-ul">
                                 <li><a href="">Berlin</a></li>
                                 <li><a href="">Cologne</a></li>
@@ -350,8 +358,8 @@ footer-->
                                 <li><a href="">Stuttgart</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <h5 class="text-uppercase mb-3">Help</h5>
+                        <div class="col-sm-6 col-lg-3 footer-col">
+                            <h5 class="text-uppercase mb-3"><span>Help</span></h5>
                             <ul class="footer-nav-ul">
                                 <li>
                                     <a href="" class="font-weight-bold">+49 (0)30 60 988 588</a>
@@ -425,6 +433,67 @@ footer-->
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 
 <script>
+    // I hope this over-commenting helps. Let's do this!
+    // Let's use the 'active' variable to let us know when we're using it
+    let active = false;
+
+    // First we'll have to set up our event listeners
+    // We want to watch for clicks on our scroller
+    document.querySelector('.scroller').addEventListener('mousedown',function(){
+    active = true;
+    // Add our scrolling class so the scroller has full opacity while active
+    document.querySelector('.scroller').classList.add('scrolling');
+    });
+    // We also want to watch the body for changes to the state,
+    // like moving around and releasing the click
+    // so let's set up our event listeners
+    document.body.addEventListener('mouseup',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('mouseleave',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+
+    // Let's figure out where their mouse is at
+    document.body.addEventListener('mousemove',function(e){
+    if (!active) return;
+    // Their mouse is here...
+    let x = e.pageX;
+    // but we want it relative to our wrapper
+    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+    // Okay let's change our state
+    scrollIt(x);
+    });
+
+    // Let's use this function
+    function scrollIt(x){
+    let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+    document.querySelector('.after').style.width = transform+"px";
+    document.querySelector('.scroller').style.left = transform-25+"px";
+    }
+
+    // Let's set our opening state based off the width, 
+    // we want to show a bit of both images so the user can see what's going on
+    scrollIt(150);
+
+    // And finally let's repeat the process for touch events
+    // first our middle scroller...
+    document.querySelector('.scroller').addEventListener('touchstart',function(){
+    active = true;
+    document.querySelector('.scroller').classList.add('scrolling');
+    });
+    document.body.addEventListener('touchend',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('touchcancel',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+
+
     $(".product-detail-slider").slick({
         autoplay: false,
         dots: true,
@@ -616,38 +685,38 @@ footer-->
         });
         
         /** Home page animation */
-        var scrollValue = $('.home-slider-section').innerHeight();
-        var previousScroll = 0;    
-        var counter = 1;
-        var counterPlus = 0;
-        $(window).scroll(function () {
-        var currentScroll = $(this).scrollTop();
-        console.log(currentScroll,"currentScroll")
-        console.log(scrollValue,"scrollValue")
-        if (currentScroll > previousScroll){
-            if ( $(window).scrollTop() >= (scrollValue - 100) && counter < 101) {
-                counterPlus =  counter++;
-                $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
-                //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
-            }
-        }
-        else {
-            if(counter < 0){
-                counter = 100;
-            }
-            if(currentScroll === 0){
-                counter = 0
-            }
-            console.log(counter,currentScroll,"scroll previous")
-            // if ( $(window).scrollTop() <= 700 ) {
-                counterPlus =  counter--;
-                $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
-                //$('.mover').css("transform", 'translate(' + +counterPlus+ '%, -50%)')
-            // }
+        // var scrollValue = $('.home-slider-section').innerHeight();
+        // var previousScroll = 0;    
+        // var counter = 1;
+        // var counterPlus = 0;
+        // $(window).scroll(function () {
+        // var currentScroll = $(this).scrollTop();
+        // console.log(currentScroll,"currentScroll")
+        // console.log(scrollValue,"scrollValue")
+        // if (currentScroll > previousScroll){
+        //     if ( $(window).scrollTop() >= (scrollValue - 100) && counter < 101) {
+        //         counterPlus =  counter++;
+        //         $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+        //         //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
+        //     }
+        // }
+        // else {
+        //     if(counter < 0){
+        //         counter = 100;
+        //     }
+        //     if(currentScroll === 0){
+        //         counter = 0
+        //     }
+        //     console.log(counter,currentScroll,"scroll previous")
+        //     // if ( $(window).scrollTop() <= 700 ) {
+        //         counterPlus =  counter--;
+        //         $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
+        //         //$('.mover').css("transform", 'translate(' + +counterPlus+ '%, -50%)')
+        //     // }
             
-        }
-        previousScroll = currentScroll;
-        });
+        // }
+        // previousScroll = currentScroll;
+        // });
         
     });
 
