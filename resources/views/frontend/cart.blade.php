@@ -166,8 +166,7 @@
                     rowId : rowId
                 },
                 success: function(result){
-                    alert("Item successfully removed from the cart.");
-
+                    
                     $('#subQty').html(result.data.cartSubTotal);
                     $('.grand_total').html(result.data.cartSubTotal);
                     $('#grand_total').val(result.data.cartSubTotal);
