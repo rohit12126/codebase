@@ -25,7 +25,6 @@
                 </div>
                 @else
                 @foreach ($blogs as $blog)
-                
                 <div class="blog-col">
                     <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                         <article class="blog-list-card">
