@@ -20,9 +20,9 @@
         <div class="">
             <div class="blog-row justify-content-center">
                 @if($blogs->isEmpty()) 
-                <div class="col-md-12 col-12 text-center">
-                    <h3>No Blog available.</h3>
-                </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <h3>No Blog available.</h3>
+                    </div>
                 @else
                 @foreach ($blogs as $blog)
                 <div class="blog-col">

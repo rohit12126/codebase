@@ -14,21 +14,27 @@
                 @endforeach
             </ul>
             <div class="products-list-row">
-                @foreach ($products as $key => $product)
-                    <div class="products-list-col">
-                        <div class="products-list-product">
-                            <a href="{{ route('product.detail',['id' => $product->id]) }}" class="">
-                                <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
-                                <a href="#" class="btn btn-outline-secondary {{-- add-to-cart --}}">
-                                    {{-- <input type="hidden" class="product-id" value="{{$product->id}}"> --}}
-                                    Configure
-                                </a>
-                            </a>
-                            <div class="products-list-title"><h2>{{$product->name}}</h2></div>
-                            <div class="products-list-price">$ {{$product->sale_price}}</div>
-                        </div>
+                @if($products->isEmpty()) 
+                    <div class="col-md-12 col-12 text-center">
+                        <h3>No Product available.</h3>
                     </div>
-                @endforeach
+                @else
+                    @foreach ($products as $key => $product)
+                        <div class="products-list-col">
+                            <div class="products-list-product">
+                                <a href="{{ route('product.detail',['id' => $product->id]) }}" class="">
+                                    <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
+                                    <a href="#" class="btn btn-outline-secondary {{-- add-to-cart --}}">
+                                        {{-- <input type="hidden" class="product-id" value="{{$product->id}}"> --}}
+                                        Configure
+                                    </a>
+                                </a>
+                                <div class="products-list-title"><h2>{{$product->name}}</h2></div>
+                                <div class="products-list-price">$ {{$product->sale_price}}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
