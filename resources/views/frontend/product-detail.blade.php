@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="d-flex flex-wrap">
-                    @if (is_null($productData['product']->images))    
+                    @if (!is_null($productData['product']->images))    
                         @if (count($productData['product']->images) > 1)
                             {{--  Multiple images case --}}
                             @foreach ($productData['product']->images as $image)

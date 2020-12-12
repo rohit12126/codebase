@@ -617,7 +617,7 @@ footer-->
         
         /* Remove from cart functionality */
         jQuery('.item_remove').click(function(e) {
-            var rowId = $( this ).children('.rowId').val();
+            var rowId = $( this ).children('.rowId').val(); 
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/remove-product') }}",
