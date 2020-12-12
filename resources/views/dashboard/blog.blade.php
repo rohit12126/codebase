@@ -42,7 +42,7 @@
                                         <select class="form-control" id="select3" name="category_id">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                                <option @if (old('category_id') == $value->id) selected @endif value="{{ $value->id }}" @if(isset($blog) && ($value->id == $blog->category_id) ) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if(isset($blog) && ($value->id == $blog->category_id) ) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -69,8 +69,8 @@
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control">
-                                            <option @if (old('status') == 1) selected @endif @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
-                                            <option @if (old('status') == 0) selected @endif @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
                                     <div class="d-flex pt-4">

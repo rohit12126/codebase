@@ -74,7 +74,7 @@
                        <p class="pdp-product-description-content">
                            <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
                             -->
-                           {{$productData['product']->description}}
+                           {!!$productData['product']->description!!}
                        </p>
                     </div>
                     <hr/>

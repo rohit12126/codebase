@@ -84,7 +84,7 @@
                                         <select class="form-control" id="select3" name="category_id" required="true">
                                             <option value="">Please select</option>
                                             @foreach($category_list as $key => $value)
-                                                <option value="{{ $value->id }}" @if (old('category_id') == $value->id) selected @endif  @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
+                                                <option value="{{ $value->id }}" @if($value->id == @$product->category_id) selected @endif>{{$value->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -103,8 +103,12 @@
                                         <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>
                                         <select name="is_accessory" id="" class="form-control" title="Is Hardware ?">
-                                            <option @if (old('is_accessory') == 1) selected @endif @if(@$product->is_accessory == 1) selected @endif value="1">Hardware</option>
-                                            <option @if (old('is_accessory') == 0) selected @endif @if( @$product->is_accessory == 0 &&@$product->is_accessory != null) selected @endif value="0">Product</option>
+                                            {{-- @if (old('is_accessory') == 1) selected @endif --}}
+                                            {{--  @if (old('is_accessory') == 0) selected @endif --}}
+                                            <option @if(@$product->is_accessory == 1) selected @endif value="1">Hardware</option>
+                                            <option @if(
+                                                @$product->is_accessory == 0
+                                                && @$product->is_accessory != null ) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
                                     
@@ -112,8 +116,8 @@
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is item Active or Inactive ?">
-                                            <option @if (old('status') == 1) selected @endif @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if (old('status') == 0) selected @endif @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
+                                            <option @if(@$product->status == 1) selected @endif value="1">Active</option>
+                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 

@@ -13,7 +13,6 @@ class ReviewManager
     public function getAllActiveReviews()
     {
         $review = DB::table('reviews')->where('approved', 1)->paginate(10);
-
         return $review;
     }
 
