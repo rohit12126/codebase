@@ -161,17 +161,16 @@
             jQuery.ajax({
                 url: "{{ url('/cart/remove-product') }}",
                 method: 'post',
+                dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     rowId : rowId
                 },
                 success: function(result){
-                    
                     $('#subQty').html(result.data.cartSubTotal);
+                    $("#row"+rowId).remove();
                     $('.grand_total').html(result.data.cartSubTotal);
                     $('#grand_total').val(result.data.cartSubTotal);
-                    
-                    $("#row"+rowId).remove(); 
                 }
             });
         });
