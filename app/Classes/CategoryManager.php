@@ -75,6 +75,13 @@ class CategoryManager
         }
     }
 
+    public static function getProductCategoryList()
+    {
+        return CategoryModel::with('image')
+            ->where('status', 1)
+            ->orderBy('id', 'desc')->paginate(10);
+    }
+    
     public static function getCategoryById($id)
     {
         return CategoryModel::with('image')->find($id);

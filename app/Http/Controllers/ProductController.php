@@ -46,7 +46,7 @@ class ProductController extends Controller
     public function index(Request $req)
     {   
         $categoryId = $req->category_id;
-        $categories = $this->categoryManager->getCategoryList($req);
+        $categories = $this->categoryManager->getProductCategoryList();
         
         $products = $this->productManager->getProductsByCategoryId($categoryId);
         
