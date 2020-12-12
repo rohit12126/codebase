@@ -154,9 +154,15 @@ class ProductManager
             'averageRating'=>''
         ];
         if (!is_null($product)) {
+            
             $productData['productReview'] = $product->getRecentRatings($product->id, 5, 'desc');
+            
             $productData['reviewCount'] = $this->reviewCount($product->id);
-            $productData['averageRating']=  $product->averageRating();
+            $productData['averageRating'] =  DB::table('reviews')
+                ->where('reviewrateable_type', 'App/Models/Product')
+                ->where('reviewrateable_id', $product->id)
+                ->avg('rating');
+                
         }
         return $productData;
     }
