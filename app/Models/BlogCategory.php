@@ -17,6 +17,7 @@ class BlogCategory extends Model
      */
     public function blog()
     {
-        return $this->hasOne('App\Models\Blog');
+        return $this->hasOne('App\Models\Blog', 'category_id', 'id');
     }
+
 }

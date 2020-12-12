@@ -120,9 +120,14 @@ class BlogManager
         return BlogModel::find($id);
     }
 
-    public function getBlogs()
+    public function getBlogs($categoryId = '')
     {
-        $blogs = BlogModel::with('catergory')->paginate(10);
+        $blogs = BlogModel::with('catergory');
+        if (!empty($categoryId)) {
+            $blogs = $blogs->where('category_id', $categoryId);
+        }
+        $blogs = $blogs->where('status', 1)
+            ->paginate(10);
         return $blogs;
     }
 
@@ -132,9 +137,14 @@ class BlogManager
         return $blog;
     }
 
-    public function getRecentBlogs()
+    public function getRecentBlogs($blogId)
     {
-        $recentBlogs = BlogModel::latest()->take(3)->get();
+        $recentBlogs = BlogModel::with('catergory')
+            ->where('id', '!=', $blogId)
+            ->where('status', 1)
+            ->latest()
+            ->take(3)
+            ->get();
         return $recentBlogs;
     }
 }

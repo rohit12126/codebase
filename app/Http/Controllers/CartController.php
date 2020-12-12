@@ -175,7 +175,8 @@ class CartController extends Controller
 
         $data = [
             'cartCount' => $cartCount,
-            'productQty' => $productQty
+            'productQty' => $productQty,
+            'productPrice' => $product->sale_price
         ];
 
         $response = [
@@ -201,7 +202,8 @@ class CartController extends Controller
 
         $data = [
             'cartCount' => $cartCount,
-            'productQty' => $productQty
+            'productQty' => $productQty,
+            'productPrice' => $product->sale_price
         ];
 
         $response = [
@@ -228,7 +230,8 @@ class CartController extends Controller
 
         $data = [
             'cartCount' => $cartCount,
-            'productQty' => $productQty
+            'productQty' => $productQty,
+            'productPrice' => $product->sale_price
         ];
 
         $response = [

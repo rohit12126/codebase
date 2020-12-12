@@ -7,28 +7,26 @@
     <div>
         <ul class="nav justify-content-center products-tab-ul mb-3">
             <li class="">
-                <a class="btn btn-outline-secondary active">All</a>
+                <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($categoryId)) active  @endif">All</a>
             </li>
-            <li class="">
-                <a class="btn btn-outline-secondary">sofa set</a>
-            </li>
-            <li class="">
-                <a class="btn btn-outline-secondary">furniture</a>
-            </li>
+            @foreach ($blogsCategories as $cat)
+                <li class="">
+                    <a href="{{ route('blog.list',['category_id' => $cat->id]) }}" class="btn btn-outline-secondary @if($categoryId == $cat->id) active  @endif">{{ $cat->name }}</a>
+                </li>
+            @endforeach
         </ul>.
     </div>
     <div class="section blog-list-view">
         <div class="">
             <div class="blog-row justify-content-center">
                 @if($blogs->isEmpty()) 
-                <div class="col-md-12 col-12 text-center">
-                    <h3>No Blog available.</h3>
-                </div>
+                    <div class="col-md-12 col-12 text-center">
+                        <h3>No Blog available.</h3>
+                    </div>
                 @else
                 @foreach ($blogs as $blog)
-                
                 <div class="blog-col">
-                    <a href="blog-view.php">
+                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                         <article class="blog-list-card">
                             <p class="blog-list-title">
                                 <a href="{{ route('blog.detail',['id' => $blog->id]) }}">{{$blog->title}}</a>
@@ -43,7 +41,7 @@
                             <div class="blog-foot">
                                 <div class="blog-read-time">
                                     <i class="linearicons-clock3"></i>
-                                    <p>2 mins Read</p>
+                                    <p>{{$blog->catergory->name}}</p>
                                 </div>
                                 <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                                     <span class="blog-view-button">View</span>

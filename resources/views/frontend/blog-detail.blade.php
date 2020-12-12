@@ -3,7 +3,7 @@
 <!-- START SECTION Blog -->
 <div class="section blog-view">
     <div class="blog-view-inner">
-        <h2 class="pt-3 pb-3 text-center">Blogs</h2>
+        <h2 class="pt-3 pb-3 text-center">{{$blog->title}}</h2>
         <div class="row justify-content-center">
             <div class="col-lg-2 mb-5 mb-lg-0">
                 <div class="blog-sticky">
@@ -37,24 +37,12 @@
             </div>
             <div class="col-lg-7 mb-5 mb-lg-0 pr-3">
                 <article class="blog-view-card mb-4">
-                    <h1 class="blog-view-title text-capitalize"> 
+                    {{-- <h1 class="blog-view-title text-capitalize"> 
                         {{$blog->title}}
-                    </h1>
-                    @if (isset($blog->image))
-                    <img id="product_img" src="{{ asset('upload/blog/'.$blog->image)}}" data-zoom-image="{{ asset('upload/blog/'.$blog->image)}}" alt="product_img1">
-                    <!-- <a href="#" class="product_img_zoom" title="Zoom">
-                        <span class="linearicons-zoom-in"></span>
-                    </a> -->
-                    @else
-                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                    @endif
+                    </h1> --}}
                     <p>
                         {!! $blog->description !!}
                     </p>
-                    
-                    <h2>
-                        Lorem ipsum dolor sit amet 
-                    </h2>
                 </article>
                 <!-- <div class="blog-post-arrows">
                     <div class="blog-post-switcher">
@@ -94,7 +82,7 @@
                                         <path id="Line2" d="M 10.5 9.5 L 5.5 13.5 " stroke="#b9b9b9" stroke-width="2" fill="none"></path>
                                         </g>
                                         </svg>
-                                        <p>2 mins Read</p>
+                                        <p>{{$blog->catergory->name}}</p>
                                     </div>
                                     <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                                         <span class="blog-view-button">View</span>

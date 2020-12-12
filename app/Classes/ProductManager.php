@@ -132,9 +132,11 @@ class ProductManager
     }
 
     public function getProductsByCategoryId($categoryId) {
-        $products = ProductModel::with('images', 'catergory')
-            ->where('category_id', $categoryId)
-            ->where('status', 1)
+        $products = ProductModel::with('images', 'catergory');
+        if (!empty($categoryId)) {
+            $products = $products->where('category_id', $categoryId);
+        }
+        $products = $products->where('status', 1)
             ->get();
         return $products;
     }
@@ -145,7 +147,7 @@ class ProductManager
         return $product;
     }
     public function getProductWithReview($productId)
-    {
+    {   
         $product = ProductModel::with('images', 'catergory')->find($productId);
         $productData = [
             'product' => $product,

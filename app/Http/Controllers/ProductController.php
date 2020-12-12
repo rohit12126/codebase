@@ -45,17 +45,16 @@ class ProductController extends Controller
      */
     public function index(Request $req)
     {   
-        $productArr = [];
-        $categories = $this->categoryManager->getCategoryList($req);
-        foreach ($categories as $key => $category) {
-            $productData = $this->productManager->getProductsByCategoryId($category->id);
-            if($productData->isNotEmpty()) {
-                $useForElementId = substr(md5($category->id), 0, 6);
-                $categories[$key]->elementId = $useForElementId;
-                $productArr[$useForElementId] = $productData;
-            }
-        }
-        return view('frontend.list', ['productArr' => $productArr, 'categories'=> $categories]);
+        $categoryId = $req->category_id;
+        $categories = $this->categoryManager->getProductCategoryList();
+        
+        $products = $this->productManager->getProductsByCategoryId($categoryId);
+        
+        return view('frontend.list', [
+            'products' => $products,
+            'categories'=> $categories,
+            'categoryId' =>$categoryId
+        ]);
     }
 
     

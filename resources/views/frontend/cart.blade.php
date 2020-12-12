@@ -16,9 +16,12 @@
                 </tr>
             </thead>
             <tbody>
+            @php
+                $i=1;    
+            @endphp
             @foreach ($products as $product)
             <tr>
-                <td>1</td>
+                <td>{{ $i }}</td>
                 <td>
                     <div class="pa-cart-img">
                         <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
@@ -29,17 +32,18 @@
                 <td>
                     <div class="cart-product-quantity">
                         <div class="quantity">
-                            <input type="button" value="-" class="minus remove-from-cart" productId="{{$product->id}}">
+                            <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}">
                             <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
-                            <input type="button" value="+" class="plus add-to-cart" productId="{{$product->id}}">
+                            <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                         </div>
                     </div>
                 </td>
                 <td>
-                    <label>$ {{number_format($product->price * $product->qty, 2)}}</label>
+                    <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" onclick="">
+                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
+                        <input type="hidden" class="rowId" value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
                     </button>
                     <!-- <a href="">
@@ -47,6 +51,9 @@
                     </a> -->
                 </td>
             </tr>
+            @php
+                $i++;    
+            @endphp
             @endforeach
             <tr>
                 <td></td>
@@ -56,8 +63,6 @@
                 <td class="cart-total-price">
                     <span><label id="stquantity">${{$cartSubTotal}}</label></span>
                 </td>
-
-
                 <td></td>
             </tr>
             </tbody>
@@ -111,6 +116,8 @@
                     productId : productId
                 },
                 success: function(result){
+                    var  productTotal = result.data.productQty * result.data.productPrice;
+                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                 }

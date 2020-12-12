@@ -20,6 +20,7 @@ class CartManager
         $qty = 1;
         $rowId = '';
         $contains = $this->getCartContain();
+        
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
                 $qty = $item->qty + $qty;
