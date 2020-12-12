@@ -6,27 +6,29 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="d-flex flex-wrap">
-                    {{--  Multiple images case --}}
-                @if (count($productData['product']->images) > 1)
-                    @foreach ($productData['product']->images as $image)
-                        <div class="img-tile">
-                            <div class="product-list-inner">
-                                <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
-                                    <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
-                                </a>
+                    @if (is_null($productData['product']->images))    
+                        @if (count($productData['product']->images) > 1)
+                            {{--  Multiple images case --}}
+                            @foreach ($productData['product']->images as $image)
+                                <div class="img-tile">
+                                    <div class="product-list-inner">
+                                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                                            <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            {{-- for Full Width --}}
+                            <div class="img-tile">
+                                <div class="product-list-inner">
+                                    <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
+                                        <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                @else
-                    {{-- for Full Width --}}
-                    <div class="img-tile">
-                        <div class="product-list-inner">
-                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
-                                <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                @endif   
+                        @endif   
+                    @endif
                 </div>
             </div>
             <div class="col-lg-4">
@@ -34,7 +36,9 @@
                     {{$productData['product']->name}}
                     
                 </h1>
-                <h2 class="product2-category">{{$productData['product']->catergory->name}}</h2>
+                <h2 class="product2-category"> @if(isset($productData['product']->catergory->name)) 
+                    {{$productData['product']->catergory->name}}
+                    @else {{ "-" }} @endif</h2>
                 <div class="rating-counter">
                         <span>
                            <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
