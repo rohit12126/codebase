@@ -615,24 +615,6 @@ footer-->
             }
         });
         
-        /* Remove from cart functionality */
-        jQuery('.item_remove').click(function(e) {
-            var rowId = $( this ).children('.rowId').val(); 
-            e.preventDefault();
-            jQuery.ajax({
-                url: "{{ url('/cart/remove-product') }}",
-                method: 'post',
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data: {
-                    rowId : rowId
-                },
-                success: function(result){
-                    alert("Item successfully removed from the cart.");
-                    location.reload(true);
-                }
-            });
-        });
-
         /** Home page animation */
         var scrollValue = $('.home-slider-section').innerHeight();
         var previousScroll = 0;    

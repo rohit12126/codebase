@@ -6,7 +6,6 @@
         <table class="cart-box">
             <thead>
                 <tr>
-                    <th class="d-none d-md-table-cell">Sr. No.</th>
                     <th class=""><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
                     <th class="d-none d-md-table-cell">Product Name</th>
                     <th class="d-none d-md-table-cell">Unit Price</th>
@@ -20,8 +19,7 @@
                 $i=1;    
             @endphp
             @foreach ($products as $product)
-            <tr>
-                <td>{{ $i }}</td>
+            <tr id="row{{$product->rowId}}">
                 <td>
                     <div class="pa-cart-img">
                         <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
@@ -61,7 +59,7 @@
                     <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <span><label id="stquantity">${{$cartSubTotal}}</label></span>
+                    <span><label id="subQty" >${{$cartSubTotal}}</label></span>
                 </td>
                 <td></td>
             </tr>
@@ -85,9 +83,9 @@
            -->
             <div class="cart-row">
                 <span>Grand total :</span>
-                <span id="grandtotal">
-                    <input type="hidden" name="grand_total" value="{{$cartSubTotal}}">
-                    $ {{$cartSubTotal}}
+                <span id="grandtotal" >
+                    <input type="hidden" name="grand_total" id="grand_total" value="{{$cartSubTotal}}">
+                    <span class="grand_total">$ {{$cartSubTotal}}</span> 
                 </span>
             </div>
             <div class="pt-3">
@@ -120,12 +118,20 @@
                     $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
+                
+                    $('#subQty').html(result.data.cartSubTotal);
+                    $('.grand_total').html(result.data.cartSubTotal);
+                    $('#grand_total').val(result.data.cartSubTotal);
                 }
             });
         });
-        /* Remove from cart functionality */
+        /* Decrease product quantity functionality */
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $( this ).attr('productId');
+            
+            if($('#qty'+productId).val() == 1)
+            return false;
+
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/remove-from-cart') }}",
@@ -136,8 +142,32 @@
                     productId : productId
                 },
                 success: function(result){
+                    var  productTotal = result.data.productQty * result.data.productPrice;
+                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
+
+                    $('#subQty').html(result.data.cartSubTotal);
+                    $('.grand_total').html(result.data.cartSubTotal);
+                    $('#grand_total').val(result.data.cartSubTotal);
+                }
+            });
+        });
+
+        /* Remove product from cart functionality */
+        jQuery('.item_remove').click(function(e) {
+            var rowId = $( this ).children('.rowId').val(); 
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/remove-product') }}",
+                method: 'post',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    rowId : rowId
+                },
+                success: function(result){
+                    alert("Item successfully removed from the cart.");
+                    $("#row"+rowId).remove(); 
                 }
             });
         });
@@ -157,8 +187,14 @@
                     qty : qty
                 },
                 success: function(result) {
+                    var  productTotal = result.data.productQty * result.data.productPrice;
+                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
                     $(this).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
+
+                    $('#subQty').html(result.data.cartSubTotal);
+                    $('.grand_total').html(result.data.cartSubTotal);
+                    $('#grand_total').val(result.data.cartSubTotal);
                 }
             });
         });

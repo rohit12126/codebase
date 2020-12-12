@@ -173,10 +173,13 @@ class CartController extends Controller
 
         $cartCount = $this->cartManager->count();
 
+        $cartSubTotal = $this->cartManager->subTotal();
+
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price
+            'productPrice' => $product->sale_price,
+            'cartSubTotal' => $cartSubTotal
         ];
 
         $response = [
@@ -200,10 +203,13 @@ class CartController extends Controller
         
         $cartCount = $this->cartManager->count();
 
+        $cartSubTotal = $this->cartManager->subTotal();
+
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price
+            'productPrice' => $product->sale_price,
+            'cartSubTotal' => $cartSubTotal
         ];
 
         $response = [
@@ -224,14 +230,17 @@ class CartController extends Controller
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
-        $productQty = $this->cartManager->updateCart($product, $qty);
-        
+        $this->cartManager->updateCart($product, $qty);
+
         $cartCount = $this->cartManager->count();
+
+        $cartSubTotal = $this->cartManager->subTotal();
 
         $data = [
             'cartCount' => $cartCount,
-            'productQty' => $productQty,
-            'productPrice' => $product->sale_price
+            'productQty' => $qty,
+            'productPrice' => $product->sale_price,
+            'cartSubTotal' => $cartSubTotal
         ];
 
         $response = [

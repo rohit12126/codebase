@@ -219,7 +219,7 @@
                 success: function(result){
                     $('.cart-count').html(result.data.cartCount);
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'bottom-end',
                         icon: 'success',
                         title: 'Product has been added to your cart successfully',
                         showConfirmButton: false,
