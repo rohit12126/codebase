@@ -60,7 +60,7 @@
                 </p>
                 
                 <div class="pt-3 pb-3 d-flex">
-                    <a href="javascript:void(0)" class="btn btn-outline-secondary add-to-cart">
+                    <a href="javascript:void(0)" class="btn btn-outline-secondary buy-now">
                         <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                         <i class="linearicons-cart-plus"></i> Buy Now
                     </a>
@@ -267,6 +267,23 @@
                 success: function(result){
                     alert("Item quantity updated successfully.");
                     location.reload(true);
+                }
+            });
+        });
+        /* Buy Now Functionality */
+        jQuery('.buy-now').click(function(e) {
+            var productId = $(".product-id").val();
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/add-cart') }}",
+                method: 'post',
+                dataType: "json",
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    productId : productId
+                },
+                success: function(result){
+                    window.location.href = "{{ route('address.get') }}";
                 }
             });
         });
