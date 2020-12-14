@@ -112,7 +112,14 @@ class LoginController extends Controller
         $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
 
         if (\Auth::attempt($this->getCredentials($request))) {
-            return Common::response('success', 'Logged in successfully!');
+            $redirectUrl = url()->previous();
+            if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+               // 
+            } else {
+                $redirectUrl = route('account');
+            }
+
+            return Common::response('success', 'Logged in successfully!', ['redirect' => $redirectUrl] );
         }
 
         return Common::response('error', 'These credentials do not match our records.!');
