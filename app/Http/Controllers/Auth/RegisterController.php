@@ -102,9 +102,19 @@ class RegisterController extends Controller
             $this->validator($request->all())->validate();
             $user = $this->create($request->all());
             $this->guard()->login($user);
+
+            $redirectUrl = url()->previous();
+            
+            if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+               // 
+            } else {
+                $redirectUrl = route('account');
+            }
+
             $response = array(
                 'status' => 'success',
-                'response_code' => 200
+                'response_code' => 200,
+                'redirect' => $redirectUrl
             );
         }
         echo json_encode($response);

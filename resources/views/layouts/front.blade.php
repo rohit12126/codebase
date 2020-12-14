@@ -558,7 +558,7 @@ footer-->
                 },
                 success: function(result) {
                     if (result.status == "success") {
-                        window.location.href = "{{ route('account')}}";
+                        window.location.href = result.data.redirect;
                     } else {
                         
                         $.each( result.errors, function( key, value ) {
