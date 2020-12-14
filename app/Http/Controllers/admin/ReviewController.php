@@ -22,14 +22,14 @@ class ReviewController extends Controller
         $this->reviewManager = $reviewManager;
     }
     
-    public function allActive()
+    public function allActive(Request $req)
     {
-        $approved = $this->reviewManager->getAllActiveReviews();
+        $approved = $this->reviewManager->getAllActiveReviews($req);
         return view('dashboard.approved_review_list', compact('approved'));
     }
-    public function allInActive()
+    public function allInActive(Request $req)
     {
-        $approved = $this->reviewManager->getAllInActiveReviews();
+        $approved = $this->reviewManager->getAllInActiveReviews($req);
         return view('dashboard.new_review_list', compact('approved'));
 
     }
