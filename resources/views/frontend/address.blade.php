@@ -57,10 +57,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    <div class="d-flex justify-content-end align-items-center">
-                                                    <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                    {{-- <div class="d-flex justify-content-end align-items-center">
+                                                        <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                        
+                                                    </div>                         --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,10 +126,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    <div class="d-flex justify-content-end align-items-center">
+                                                    {{-- <div class="d-flex justify-content-end align-items-center">
                                                         <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                        
+                                                    </div> --}}                        
                                                     </div>
                                                 </div>
                                             </div>

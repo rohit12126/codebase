@@ -54,16 +54,17 @@ class PaypalController extends Controller
         $i=0;
         $currency = 'USD';
 
-        foreach($orders as $key => $product)
-            {
+        foreach($orders as $key => $product) {
                 $items[$i] = new Item();
                 $items[$i]->setName($product->name)
                 ->setCurrency($currency)
                 ->setQuantity($product->qty)
                         ->setPrice($product->price); 
                 $i++;
-            } 
+        } 
+        
         $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
+        
         $itemList = new ItemList();
         $itemList->setItems($items);
         $amount = new Amount();
