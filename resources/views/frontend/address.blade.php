@@ -266,9 +266,22 @@
 
 <script>
 $(document).ready(function() {
+    /* on load function check for bill and ship is checked than remove require */
+    
+    if ($('input:radio[name="shipping_address"]').is(':checked')) {
+        $(".ship").removeAttr("required");
+    }
+
+    if ($('input:radio[name="billing_address"]').is(':checked')) {
+        $(".bill").removeAttr("required");
+    }
+
+
     /*Same as Bill address functionality*/
     $("#filladdress").on("click", function(){
-        if (this.checked) { 
+        if (this.checked) {
+            $(".ship").removeAttr("required");
+            
             $("#ship_name").val($("#bill_name").val());
             $("#ship_phone").val($("#bill_phone").val());
             $("#ship_address").val($("#bill_address").val());
