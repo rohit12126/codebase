@@ -61,10 +61,10 @@ class ProfileController extends Controller
                 ->getAddresses($user->id,2,0);
         $this->cartManager->synchCart($user->id);
         return view('frontend.account',[
-            'user' => $user,
-            'orders' => $orders,
-            'shippingAddress' => $shippingAddress,
-            'billingAddress' => $billingAddress
+                'user' => $user,
+                'orders' => $orders,
+                'shippingAddress' => $shippingAddress,
+                'billingAddress' => $billingAddress
             ]);
     }
     /**
@@ -73,7 +73,9 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function orderDetails($order){
+        
         $data = $this->orderManager->getProductsByOrderNUmber($order);
+        
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
