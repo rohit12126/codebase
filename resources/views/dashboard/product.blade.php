@@ -103,8 +103,6 @@
                                         <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>
                                         <select name="is_accessory" id="" class="form-control" title="Is Hardware ?">
-                                            {{-- @if (old('is_accessory') == 1) selected @endif --}}
-                                            {{--  @if (old('is_accessory') == 0) selected @endif --}}
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Hardware</option>
                                             <option @if(
                                                 @$product->is_accessory == 0
@@ -117,7 +115,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control" title="Is item Active or Inactive ?">
                                             <option @if(@$product->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$product->status == 0 && @$product->status != null) selected @endif value="0">In-Active</option>
+                                            <option @if(@$product->status == 0)  selected @endif value="0">In-Active</option>
                                         </select>
                                     </div>
 
