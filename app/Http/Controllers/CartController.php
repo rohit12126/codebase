@@ -105,30 +105,18 @@ class CartController extends Controller
         $userId = 0;
         $bill = 0;
         $ship = 0;
+
+        /* User check */
         if (Auth::check()) {
             $userId = Auth::user()->id;
         } else {
+            /* Guest User */
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
         }
-        if(!isset($req->shipping_address)){
-            $shippingAddress=[
-                'name'=>$req->ship_name,
-                'phone'=>$req->ship_phone,
-                'address'=>$req->ship_address,
-                'city'=>$req->ship_city,
-                'state'=>$req->ship_state,
-                'zipcode'=>$req->ship_zipcode,
-                'user_id'=>$userId,
-                'type'=>1,
-                'temp_user'=>$isTemp,
-            ];
-        $ship = AddressManager::add($shippingAddress);
-        $ship =$ship['id'];
-        }else{
-            $ship = $req->shipping_address;
-        }
-        if(!isset($req->billing_address)){
+
+        /* Billing Address */
+        if (!isset($req->billing_address)) {
             $billingAddress=[
                 'name'=>$req->bill_name,
                 'phone'=>$req->bill_phone,
@@ -142,22 +130,41 @@ class CartController extends Controller
             ];
         $bill = AddressManager::add($billingAddress);
         $bill = $bill['id'];
-        }else{
+        } else {
             $bill = $req->billing_address;
         }
+
+        /* Shipping Address */
+        if (!isset($req->shipping_address)) {
+            $shippingAddress=[
+                'name'=>$req->ship_name,
+                'phone'=>$req->ship_phone,
+                'address'=>$req->ship_address,
+                'city'=>$req->ship_city,
+                'state'=>$req->ship_state,
+                'zipcode'=>$req->ship_zipcode,
+                'user_id'=>$userId,
+                'type'=>1,
+                'temp_user'=>$isTemp,
+            ];
+        $ship = AddressManager::add($shippingAddress);
+        $ship = $ship['id'];
+        } else {
+            $ship = $req->shipping_address;
+        }
+
         $productList = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
         session([
             'ship' => $ship,
             'bill' => $bill,
-            'isTemp'=>$isTemp,
-            'userId'=>$userId]);
-         return view(
-            'frontend.checkout',
-            [
-                'productList' => $productList,
-                'cartSubTotal' => $cartSubTotal
-            ]);   
+            'isTemp' => $isTemp,
+            'userId' => $userId
+        ]);
+
+        if ($req->payment_option == 'paypal') {
+            return redirect()->route('addmoney.paywithpaypal');
+        }
     }
     
     /**

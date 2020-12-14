@@ -49,7 +49,7 @@ class PaypalController extends Controller
             return redirect('cart/');
         }
 
-        $payer = new Payer();
+        $payer = new Payer(); 
         $payer->setPaymentMethod('paypal');
         $i=0;
         $currency = 'USD';
