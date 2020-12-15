@@ -94,7 +94,7 @@ class OrderController extends Controller
         }
         
         $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order->order_no);
-        dd($order);
+        
         if (!is_null($order->user)) {
             $email = $order->user->email;
         } else {
