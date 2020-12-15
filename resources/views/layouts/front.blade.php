@@ -162,7 +162,7 @@
                 <nav class="head-nav d-flex align-items-center">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
-                            <a href="{{ url('home/') }}" class="head-nav-link">Installation</a>
+                            <a href="{{ url('installation/') }}" class="head-nav-link">Installation</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
