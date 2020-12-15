@@ -36,9 +36,9 @@ class HomeController extends Controller
         return view('frontend.installation');
     }
 
-    public function resources()
+    public function resourcePage()
     {
-        return view('frontend.resources');
+        return view('frontend.resource-page');
     }
 
 }
