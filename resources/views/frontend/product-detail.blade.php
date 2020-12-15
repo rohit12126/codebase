@@ -51,7 +51,7 @@
             </a>
             <a href="javascript:void(0)" class="btn btn-fill-out configure">
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
-                <i class="linearicons-cart-plus"></i> Add to cart
+                <i class="linearicons-wrench"></i> Configure
             </a>
         </div>
     </section>
