@@ -26,39 +26,39 @@
                         <div class="row"> 
                             <div class="col-10">
                             @include('partials.alert_msg')
-                        <form method="GET" action="{{ url()->current() }}">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="form-group">
-                                        <label>Search via Name</label>
-                                        <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
-                                            class="form-control" value="{{ @$_GET['product_name'] }}">
+                                <form method="GET" action="{{ url()->current() }}">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                <label>Search via Name</label>
+                                                <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
+                                                    class="form-control" value="{{ @$_GET['product_name'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label>Filter via Status</label>
+                                                    <select name="product_status" id="" class="form-control">
+                                                        <option value="">Select Status</option>
+                                                        <option value="1" @if(@$_GET['product_status']==1) selected @endif </option>Active
+                                                        </option>
+                                                        <option value="0" @if(@$_GET['product_status']==2) selected @endif </option>In-Active
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                    <i class="cil-reload"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="form-group">
-                                            <label>Filter via Status</label>
-                                            <select name="product_status" id="" class="form-control">
-                                                <option value="">Select Status</option>
-                                                <option value="1" @if(@$_GET['product_status']==1) selected @endif </option>Active
-                                                </option>
-                                                <option value="0" @if(@$_GET['product_status']==2) selected @endif </option>In-Active
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center pt-2">
-                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                            <i class="cil-reload"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                </form>
                             </div>
                             <div class="col-2">
                                 <a href="{{ route('admin.item') }}" title="Add New Item" class="btn btn-primary btn-sm pull-right">

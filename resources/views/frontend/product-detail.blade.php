@@ -45,6 +45,39 @@
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                 <i class="linearicons-cart-plus"></i> Buy Now
             </a>
+            <div class="col-lg-4">
+                <h1 class="pdp-title">
+                    {{$productData['product']->name}}
+                    
+                </h1>
+                <h2 class="product2-category"> @if(isset($productData['product']->catergory->name)) 
+                    {{$productData['product']->catergory->name}}
+                    @else {{ "-" }} @endif</h2>
+                <div class="rating-counter">
+                        <span>
+                           <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
+                               <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star"></div>
+                        </span>
+                        <span class="rating-count-no"><span><span>{{$productData['reviewCount']}} Ratings&nbsp;</span><span class="rating-amp">&amp;</span><span>&nbsp;Reviews</span></span></span>
+                    </div>
+                <hr>
+                <p class="pdp-discount-container">
+                    <span class="pdp-price" tabindex="0"><strong>&#36;{{$productData['product']->sale_price}}</strong></span>
+                    <!-- <span class="pdp-mrp"><s>&#36;4599</s></span>
+                    <span class="pdp-discount">(50% OFF)</span> -->
+                </p>
+                <p class="pdp-selling-price">
+                    <span class="pdp-vatInfo">inclusive of all taxes</span>
+                </p>
+                <p class="sku-number">
+                    <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
+                </p>
+                
+                <div class="pt-3 pb-3 d-flex">
+                    <a href="javascript:void(0)" class="btn btn-outline-secondary buy-now">
+                        <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                        <i class="linearicons-cart-plus"></i> Buy Now
+                    </a>
 
             <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
@@ -429,6 +462,23 @@
                 success: function(result){
                     alert("Item quantity updated successfully.");
                     location.reload(true);
+                }
+            });
+        });
+        /* Buy Now Functionality */
+        jQuery('.buy-now').click(function(e) {
+            var productId = $(".product-id").val();
+            e.preventDefault();
+            jQuery.ajax({
+                url: "{{ url('/cart/add-cart') }}",
+                method: 'post',
+                dataType: "json",
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    productId : productId
+                },
+                success: function(result){
+                    window.location.href = "{{ route('address.get') }}";
                 }
             });
         });

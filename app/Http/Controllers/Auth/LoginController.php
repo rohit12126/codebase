@@ -11,7 +11,8 @@ use Illuminate\Support\MessageBag;
 use App\SocialIdentity;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use App\Mail\UserRegistration;
+use Illuminate\Support\Facades\Mail;
 class LoginController extends Controller
 {
     /*
@@ -87,6 +88,8 @@ class LoginController extends Controller
                    'email' => $providerUser->getEmail(),
                    'name'  => $providerUser->getName(),
                ]);
+
+               Mail::to($user->email)->send(new UserRegistration($user));
            }
 
            $user->identities()->create([
@@ -112,7 +115,14 @@ class LoginController extends Controller
         $this->validate($request, ['email' => 'required|email', 'password' => 'required']);
 
         if (\Auth::attempt($this->getCredentials($request))) {
-            return Common::response('success', 'Logged in successfully!');
+            $redirectUrl = url()->previous();
+            if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+               // 
+            } else {
+                $redirectUrl = route('account');
+            }
+
+            return Common::response('success', 'Logged in successfully!', ['redirect' => $redirectUrl] );
         }
 
         return Common::response('error', 'These credentials do not match our records.!');

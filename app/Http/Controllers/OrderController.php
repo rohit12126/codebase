@@ -9,7 +9,8 @@ use App\Classes\CartManager;
 use App\Classes\GuestUserManager;
 use App\Classes\AddressManager;
 use App\Classes\OrderManager;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderConfirm;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -49,11 +50,11 @@ class OrderController extends Controller
      */
    
     public function addOrder(Request $req) {
-        if($request->session()->has('userId')){
+        if($req->session()->has('userId')){
         $isTempUser = $req->session()->get('isTemp');
         $userId = $req->session()->get('userId');
 
-        if(strpos(url()->previous(), 'order/add-order') == false){
+        if(strpos(url()->previous(), 'order/add-order') == false) {
             $orderNumber = $this->orderManager->generateOrderNumber();
             
             $orderData['order_no'] = $orderNumber;
@@ -84,16 +85,30 @@ class OrderController extends Controller
             $this->cartManager->destroyCartDB($userId);
             $product = $this->orderManager->getProductsByOrder($order->order_no);
             $req->session()->forget(['bill', 'ship']);
-        }else{
-            $order = $this->orderManager->getLastOrder($userId,$isTempUser);
-            $product = $this->orderManager->getProductsByOrder($order->order_no);
-            }
-        return view('frontend.order-success',
-            [
+        } else {
+                $order = $this->orderManager->getLastOrder($userId,$isTempUser);
+                $product = [];
+                if (!is_null($order)) {
+                    $product = $this->orderManager->getProductsByOrder($order->order_no);
+                }
+        }
+        
+        $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order->order_no);
+        
+        if (!is_null($order->user)) {
+            $email = $order->user->email;
+        } else {
+            $email = $order->getShippingAddress->email;
+        }
+
+        if (!empty($email)) {
+            Mail::to($email)->send(new OrderConfirm($order));
+        }
+
+        return view('frontend.order-success', [
                 'order' => $order,
                 'product' => $product,
-            ]
-            );
+            ]);
         }
         return redirect('/');
     }

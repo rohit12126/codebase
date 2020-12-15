@@ -49,21 +49,22 @@ class PaypalController extends Controller
             return redirect('cart/');
         }
 
-        $payer = new Payer();
+        $payer = new Payer(); 
         $payer->setPaymentMethod('paypal');
         $i=0;
         $currency = 'USD';
 
-        foreach($orders as $key => $product)
-            {
+        foreach($orders as $key => $product) {
                 $items[$i] = new Item();
                 $items[$i]->setName($product->name)
                 ->setCurrency($currency)
                 ->setQuantity($product->qty)
                         ->setPrice($product->price); 
                 $i++;
-            } 
+        } 
+        
         $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
+        
         $itemList = new ItemList();
         $itemList->setItems($items);
         $amount = new Amount();

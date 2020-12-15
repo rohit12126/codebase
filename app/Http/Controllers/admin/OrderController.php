@@ -19,6 +19,7 @@ class OrderController extends Controller
     public function orderDetails($order)
     {
         $order = OrderManager::getOrderByOrderNUmberWithOrderAddress($order);
+        
         return view('dashboard.order_details', compact('order'));
     }
 

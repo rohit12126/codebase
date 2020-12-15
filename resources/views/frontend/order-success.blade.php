@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    <div class="heading_s1">
+    {{-- <div class="heading_s1">
         <h5>Let us Know How Much you Like our products !</h5>
     </div>
     <div class="col-lg-9">
@@ -61,13 +61,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
    </div>
  </div>
 </div>  
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
