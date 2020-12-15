@@ -148,7 +148,6 @@
                                             <div class="col-sm-4 imgUp">
                                                 <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
-                                                <label class="btn btn-primary" >Upload</label>
                                                 <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
                                                 <i class="fa fa-times del"></i>
