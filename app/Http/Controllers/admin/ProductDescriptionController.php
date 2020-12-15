@@ -45,7 +45,7 @@ class ProductDescriptionController extends Controller
         return back();
     }
 
-    public function deleteCategory($id)
+    public function deleteProductDescription($id)
     {
         $response = ProductDescriptionManager::delete($id);
         if($response == true){
