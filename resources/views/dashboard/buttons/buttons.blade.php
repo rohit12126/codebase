@@ -109,7 +109,7 @@
                       <button class="btn btn-block btn-outline-primary" type="button">Primary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                      <button class="btn btn-block btn-outline-secondary" type="button">Secondary</button>
+                      <button class="btn btn-block btn-fill-out" type="button">Secondary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                       <button class="btn btn-block btn-outline-success" type="button">Success</button>
@@ -137,7 +137,7 @@
                       <button class="btn btn-block btn-outline-primary active" type="button" aria-pressed="true">Primary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                      <button class="btn btn-block btn-outline-secondary active" type="button" aria-pressed="true">Secondary</button>
+                      <button class="btn btn-block btn-fill-out active" type="button" aria-pressed="true">Secondary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                       <button class="btn btn-block btn-outline-success active" type="button" aria-pressed="true">Success</button>
@@ -165,7 +165,7 @@
                       <button class="btn btn-block btn-outline-primary" type="button" disabled="">Primary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                      <button class="btn btn-block btn-outline-secondary" type="button" disabled="">Secondary</button>
+                      <button class="btn btn-block btn-fill-out" type="button" disabled="">Secondary</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                       <button class="btn btn-block btn-outline-success" type="button" disabled="">Success</button>
@@ -481,7 +481,7 @@
                       <button class="btn btn-sm btn-primary" type="button">Standard Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
-                      <button class="btn btn-sm btn-outline-secondary" type="button">Outline Button</button>
+                      <button class="btn btn-sm btn-fill-out" type="button">Outline Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-sm btn-ghost-success" type="button">Ghost Button</button>
@@ -499,7 +499,7 @@
                       <button class="btn btn-primary" type="button">Standard Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
-                      <button class="btn btn-outline-secondary" type="button">Outline Button</button>
+                      <button class="btn btn-fill-out" type="button">Outline Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-ghost-success" type="button">Ghost Button</button>
@@ -517,7 +517,7 @@
                       <button class="btn btn-lg btn-primary" type="button">Standard Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
-                      <button class="btn btn-lg btn-outline-secondary" type="button">Outline Button</button>
+                      <button class="btn btn-lg btn-fill-out" type="button">Outline Button</button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
                       <button class="btn btn-lg btn-ghost-success" type="button">Ghost Button</button>
@@ -543,7 +543,7 @@
                       </button>
                     </div>
                     <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
-                      <button class="btn btn-outline-secondary" type="button">
+                      <button class="btn btn-fill-out" type="button">
                         <svg class="c-icon">
                           <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lightbulb"></use>
                         </svg> Outline Button
@@ -595,7 +595,7 @@
                     <div class="card-header"><strong>Block Level Buttons</strong></div>
                     <div class="card-body">
                       <p>Add this class<code>.btn-block</code></p>
-                      <button class="btn btn-outline-secondary btn-lg btn-block" type="button">Block level button</button>
+                      <button class="btn btn-fill-out btn-lg btn-block" type="button">Block level button</button>
                       <button class="btn btn-outline-primary btn-lg btn-block" type="button">Block level button</button>
                       <button class="btn btn-outline-success btn-lg btn-block" type="button">Block level button</button>
                       <button class="btn btn-outline-info btn-lg btn-block" type="button">Block level button</button>

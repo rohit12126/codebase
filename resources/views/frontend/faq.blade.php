@@ -6,22 +6,22 @@
             <h1 class="mt-3 mb-5 heading1">questions &amp; answers</h1>
             <div class="row justify-content-center">
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="#fcompany" class="btn btn-outline-secondary w-100">Company</a>
+                    <a href="#fcompany" class="btn btn-fill-out w-100">Company</a>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="#faq1" class="btn btn-outline-secondary w-100">faq1</a>
+                    <a href="#faq1" class="btn btn-fill-out w-100">faq1</a>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="" class="btn btn-outline-secondary w-100">faq2</a>
+                    <a href="" class="btn btn-fill-out w-100">faq2</a>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="" class="btn btn-outline-secondary w-100">faq3</a>
+                    <a href="" class="btn btn-fill-out w-100">faq3</a>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="" class="btn btn-outline-secondary w-100">faq4</a>
+                    <a href="" class="btn btn-fill-out w-100">faq4</a>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 mb-2">
-                    <a href="" class="btn btn-outline-secondary w-100">faq5</a>
+                    <a href="" class="btn btn-fill-out w-100">faq5</a>
                 </div>
             </div>
         </div>
