@@ -7994,7 +7994,7 @@ h5 {
 }
 .btn-outline-secondary
 {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	padding: 10px 40px;
 	border-radius: 0;
 }
