@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-md-6">
-                    <a data-fancybox class="resources-card" href="https://youtu.be/VelzyKeK6V8">
+                    <a data-fancybox class="resources-card" href="https://youtu.be/VelzyKeK6V8" target="_blank">
                         <div class="resources-icon">
                             <img src="{{URL::asset('/images/icon/video.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/video-white.svg')}}" class="white-svg">
