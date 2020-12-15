@@ -9394,7 +9394,7 @@ h5 {
 	.installation-col{
 	  box-sizing: border-box;
 	  width: 100%;
-	  max-width: 340px;
+	  max-width: 460px;
 	  padding: 0 15px;
 	}
 	.installation-card
@@ -9421,6 +9421,7 @@ h5 {
 	  color: white;
 	  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
 	  text-align: center;
+	  text-transform: capitalize;
 	}
 	.installation-card .step-tag:before
 	{
@@ -9501,6 +9502,17 @@ h5 {
 		.ic3, .ic4{
 		  margin-top: 10rem;
 		}
+	}
+	.step1,.step2,.step3,.step4{
+		position: relative;
+	}
+	.step-of{
+		position: absolute;
+		top: 1%;
+		left: -1%;
+		width: 100px;
+		height: 4px;
+		background-color: #000;
 	}
   /* =============================================================================== */
 .projects-wrap .blog-col{
