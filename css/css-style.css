@@ -9274,3 +9274,223 @@ h5 {
 .product_rate::before,.rating::before{
 	content: "\e98d\e98d\e98d\e98d\e98d";
 }
+/* =============================================================================== */
+	.anim-line {
+	stroke-dashoffset: 284.9;
+	stroke-dasharray: 0px, 999999px;
+	}
+	.anim-cirlce{
+	  stroke-dashoffset: 161.273;
+	stroke-dasharray: 0px, 999999px;
+	}
+	.anim-fill-cirlce{
+	fill: #D8D8D8;
+	}
+	.anim-arrow {
+	  transform: translateX(-20px);
+	  opacity: 0;
+	  visibility: hidden;
+	}
+	#TimelineAnim-mob .anim-arrow {
+	  transform: translateX(0);
+	  transform: translateY(-20px);
+	}
+	
+	.active .anim-cirlce{
+	  stroke-dasharray: 160.3160400390625;
+	 stroke-dashoffset: 160.3160400390625;
+	  animation: anim-cirlce 1s ease-in-out forwards;
+	}
+	
+	.active .anim-fill-cirlce{
+	  animation: anim-fill-cirlce 1.5s ease-in-out forwards;
+	}
+	
+	.active .anim-line{
+	  stroke-dasharray: 283.8000068664551;
+	 stroke-dashoffset: 283.8000068664551;
+	  animation: anim-cirlce 2s ease-in-out forwards;
+	}
+	
+	#TimelineAnim-mob .active .anim-arrow {
+	  animation: anim-arrow-mob 1s ease-in-out forwards;
+	  animation-delay: 1.5s;
+	}
+	
+	.active .anim-arrow {
+	  animation: anim-arrow 1s ease-in-out forwards;
+	  animation-delay: 1.5s;
+	}
+	
+	.active .anim-line{
+	animation-delay: 1s;
+	}
+	@keyframes anim-fill-cirlce {
+	  0% {
+		fill: #D8D8D8;
+		}
+	  100% {
+		  fill: rgb(248, 78, 87);
+	  }
+	}
+	
+	@keyframes anim-arrow {
+	  0% {
+		transform: translateX(-20px);
+		opacity: 0;
+		visibility: hidden;
+		}
+	  100% {
+		transform: translateX(0px);
+		opacity: 1;
+		visibility: visible;
+	  }
+	}
+	
+	@keyframes anim-arrow-mob {
+	  0% {
+		transform: translateY(-20px);
+		opacity: 0;
+		visibility: hidden;
+		}
+	  100% {
+		transform: translateY(0px);
+		opacity: 1;
+		visibility: visible;
+	  }
+	}
+	
+	@keyframes anim-cirlce {
+	  to {
+		stroke-dashoffset: 0;
+	  }
+	}
+	.installation-svg
+	{
+		position: absolute;
+		top: 40%;
+		left: 0;
+		transform: rotate(90deg);
+	}
+	.installation-row{
+		display: flex;
+		width: 100%;
+		box-sizing: border-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.installation-col{
+	  box-sizing: border-box;
+	  width: 100%;
+	  max-width: 340px;
+	  padding: 0 15px;
+	}
+	.installation-card
+	{
+	  background: #fff;
+	  position: relative;
+	  color: #333;
+	  border: 1px solid #aaa;
+	  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.5);
+	  border-bottom: 5px solid rgba(249, 78, 87, 0.85);
+	  margin: 0 auto;
+	  margin-bottom: 2.5rem;
+	}
+	.installation-card .step-tag
+	{
+	  width: 50px;
+	  padding: 5px 0px;
+	  line-height: 15px;
+	  position: absolute;
+	  z-index: 98;
+	  top: -10px;
+	  left: 20px;
+	  background-color: rgba(249 78 87 / 0.85);
+	  color: white;
+	  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+	  text-align: center;
+	}
+	.installation-card .step-tag:before
+	{
+	  content: '';
+	  position: absolute;
+	  top: 0px;
+	  left: -10px;
+	  z-index: 2;
+	  border-right: 10px solid #F94E57;
+	  border-bottom: 0px solid transparent;
+	  border-top: 10px solid transparent;
+	}
+	.step-number{
+		font-size: 1.25rem;
+		display: block;
+		margin-top: 1rem;
+		margin-bottom: 0.4rem;
+	}
+	.installation-thumb{
+		position: relative;
+	}
+	.installation-thumb img{
+		width: 100%;
+	}
+	.thumb-title{
+	  padding: 0px 20px;
+	  position: absolute;
+	  z-index: 98;
+	  left: -10px;
+	  display: inline-block;
+	  color: #fff;
+	  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+	  background-color: rgba(249, 78, 87, 0.85);
+	  bottom: 10px;
+	  cursor: pointer;
+	}
+	.thumb-title:before
+	{
+	  content: '';
+	  position: absolute;
+	  bottom: -10px;
+	  left: 0px;
+	  z-index: 2;
+	  border-left: 10px solid transparent;
+	  border-bottom: 0px solid transparent;
+	  border-top: 10px solid #F94E57;
+	}
+	.thumb-title h2{
+	  margin-top: 1.25rem;
+	  margin-bottom: 0.625rem;
+	  font-size: 1.25rem;
+	  line-height: 1.25;
+	  font-weight: 500;
+	  color: #fff;
+	  text-transform: capitalize;
+	}
+	.installation-content{
+		padding: 15px 10px;
+	}
+	.installation-content p{
+	  text-align: left;
+	  padding: 0px 10px;
+	  border-radius: 3px;
+	  margin-bottom: 20px;
+	  font-size: 1rem;
+	  font-weight: 300;
+	  line-height: 1.4;
+	}
+	@media(max-width:575px){
+	  .installation-col{
+		  margin: 0 auto;
+	  }
+	}
+	@media(min-width:576px){
+		.ic2{
+			margin-top: 20rem;
+		}
+		.ic3, .ic4{
+		  margin-top: 10rem;
+		}
+	}
+  /* =============================================================================== */

@@ -40,12 +40,12 @@
                     <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-fill-out cart-btn item_remove" >
+                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
                         <input type="hidden" class="rowId" value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
                     </button>
                     <!-- <a href="">
-                        <button type="button" class="btn btn-fill-out cart-btn"><i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-outline-secondary cart-btn"><i class="fa fa-eye"></i></button>
                     </a> -->
                 </td>
             </tr>
