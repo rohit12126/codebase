@@ -20,7 +20,7 @@
                     <img src="{{URL::asset('/images/first-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <a href="#stt" class="btn btn-outline-secondary">see the sofas</a>
+                    <a href="#stt" class="btn btn-fill-out">see the sofas</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -32,7 +32,7 @@
                     <img src="{{URL::asset('/images/second-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <button class="btn btn-outline-secondary">see the sofas</button>
+                    <button class="btn btn-fill-out">see the sofas</button>
                 </div>
             </div>
             <div class="carousel-item">
@@ -44,7 +44,7 @@
                     <img src="{{URL::asset('/images/third-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <button class="btn btn-outline-secondary">see the sofas</button>
+                    <button class="btn btn-fill-out">see the sofas</button>
                 </div>
             </div>
           </div>
@@ -92,52 +92,68 @@
     <section class="home-products-section" id="stt">
         <div class="pd-block-wrap">
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/1.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/1.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/2.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/2.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/3.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/3.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/4.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/4.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/5.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/5.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/6.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/6.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/7.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/7.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
             <div class="pd-block">
-                <div class="pd-inner">
-                    <img src="{{URL::asset('/images/home/8.png')}}" alt="...">
-                    <a href="#" class="btn btn-outline-secondary">Configure</a>
-                </div>
+                <a href="">
+                    <div class="pd-inner">
+                        <img src="{{URL::asset('/images/home/8.png')}}" alt="...">
+                        <a href="#" class="btn btn-fill-out">Configure</a>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

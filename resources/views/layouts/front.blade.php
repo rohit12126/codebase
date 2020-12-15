@@ -425,12 +425,13 @@ footer-->
 </body>
 
 </html>
-@yield('scripts')
-
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
+
+@yield('scripts')
+
 
 <script>
    
@@ -663,29 +664,6 @@ footer-->
     document.querySelector('.scroller').classList.remove('scrolling');
     });
 
-
-    $(".product-detail-slider").slick({
-        autoplay: false,
-        dots: true,
-        infinite: false,
-        customPaging : function(slider, i) {
-            var thumb = $(slider.$slides[i]).data('thumb');
-            return '<a><img src="'+thumb+'"></a>';
-        }
-    });
-    $('.product-wallpaper-slider').slick({
-        autoplay: true,
-        arrows: true,
-        speed: 1000,
-        autoplaySpeed: 5000,
-        centerMode: true,
-        dots: false,
-        centerPadding: '15%',
-        infinite: true,
-        slidesToShow: 3, 
-        slidesToScroll: 1,
-        lazyLoad: 'progressive'
-    });
 
         /** Home page animation */
         // var scrollValue = $('.home-slider-section').innerHeight();

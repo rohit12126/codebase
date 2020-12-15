@@ -40,12 +40,12 @@
                     <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
+                    <button type="button" class="btn btn-fill-out cart-btn item_remove" >
                         <input type="hidden" class="rowId" value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
                     </button>
                     <!-- <a href="">
-                        <button type="button" class="btn btn-outline-secondary cart-btn"><i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-fill-out cart-btn"><i class="fa fa-eye"></i></button>
                     </a> -->
                 </td>
             </tr>
@@ -61,7 +61,6 @@
                 <td class="cart-total-price">
                     <span><label id="subQty" >${{$cartSubTotal}}</label></span>
                 </td>
-                <td></td>
             </tr>
             </tbody>
         </table>
@@ -69,7 +68,7 @@
             <!-- <p>
                 Apply Coupon Code Get 10% Discount :
                 <span><input type="text" id="couponcode"></span>
-                <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
+                <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-fill-out">Apply</a>
             </p> -->
             <!-- <div class="cart-row">
            {{--  <div class="cart-row">
@@ -89,7 +88,7 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded">Continue Shopping</a>
+                <a href="{{url('/product')}}" class="btn btn-fill-out rounded">Continue Shopping</a>
                 <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
