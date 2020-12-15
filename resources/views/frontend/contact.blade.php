@@ -29,11 +29,12 @@
     padding: .375rem .75rem;
 }
 </style>
-<div class="main_content">
+<div class="main_content pb-5">
 
 <!-- START SECTION CONTACT -->
 <div class="section pb_70">
 	<div class="container">
+        <h1 class="pt-4 pb-4 mb-5 heading_s3 text-center">Contact Us</h1>
         <div class="row">
             <div class="col-xl-4 col-md-6">
             	<div class="contact_wrap contact_style3">
@@ -41,7 +42,7 @@
                         <i class="linearicons-map2"></i>
                     </div>
                     <div class="contact_text">
-                        <span>Address</span>
+                        <span>Reach us at</span>
                         <p>123 Street, Old Trafford, London, UK</p>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
                         <i class="linearicons-envelope-open"></i>
                     </div>
                     <div class="contact_text">
-                        <span>Email Address</span>
+                        <span>Drop a mail</span>
                         <a href="mailto:info@sitename.com">info@yourmail.com </a>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                         <i class="linearicons-tablet2"></i>
                     </div>
                     <div class="contact_text">
-                        <span>Phone</span>
+                        <span>Call Us</span>
                         <p>+ 457 789 789 65</p>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
 <!-- END SECTION CONTACT -->
 
 <!-- START SECTION CONTACT -->
-<div class="section pt-0">
+<div class="section pt-0 pb-5">
 	<div class="container">
     	<div class="row">
         	<div class="col-lg-6">

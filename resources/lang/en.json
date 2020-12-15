@@ -4,50 +4,66 @@
     "password_change_success" : "Password Change Successfully!",
     "password_change_failed" : "Password could not be change!",
     "admin_login_failed" : "These credentials do not match to our records!",
+    
     "category_add_success" : "Category added successfully!",
     "category_add_failed" : "Something went wrong unable to add Category!",
     "category_update_success" : "Category updated successfully!",
     "category_update_failed" : "Something went wrong unable to update Category!",
     "category_delete_success" : "Category deleted successfully!",
     "category_delete_failed" : "Something went wrong unable to delete Category!",
+    
+    "product_description_add_success" : "Description added successfully!",
+    "product_description_add_failed" : "Something went wrong unable to add Description!",
+    "product_description_update_success" : "Description updated successfully!",
+    "product_description_update_failed" : "Something went wrong unable to update Description!",
+    "product_description_delete_success" : "Description deleted successfully!",
+    "product_description_delete_failed" : "Something went wrong unable to delete Description!",
+    
     "blog_category_add_success" : "Blog category added successfully!",
     "blog_category_add_failed" : "Something went wrong unable to add Blog Category!",
     "blog_category_update_success" : "Blog Category udated successfully!",
     "blog_category_update_failed" : "Something went wrong unable to update Blog Category!",
     "blog_category_delete_success" : "Blog Category deleted successfully!",
     "blog_category_delete_failed" : "Something went wrong unable to delete Blog Category!",
+    
     "item_add_success" : "Item added successfully!",
     "item_add_failed" : "Something went wrong unable to add Item!",
     "item_update_success" : "Item updated successfully!",
     "item_update_falied" : "Something went wrong unable to update Item!",
     "item_delete_success" : "Item deleted successfully!",
     "item_delete_failed" : "Something went wrong unable to delete Item!",
+    
     "blog_add_success" : "Blog added Successfully!",
     "blog_add_failed" : "Something went wrong unable to add Blog!",
     "blog_update_success" : "Blog updated successfully!",
     "blog_update_falied" : "Something went wrong unable to update Blog!",
     "blog_delete_success" : "Blog deleted Successfully!",
     "blog_delete_failed" : "Something went wrong unable to delete Blog!",
+    
     "review_delete_success" :"Review deleted successfully!",
     "review_delete_failed" :"Something went wrong unable to delete Review!",
     "review_aproov_success":"Review approved successfully!",
     "review_aproov_failed":"Something went wrong unable to approve Review!",
     "review_disaproov_success":"Review disapproved Successfully!",
     "review_disaproov_failed":"Something went wrong unable to disapprove Review!",
+    
     "page_add_success" : "Page added successfully!",
     "page_add_failed" : "Something went wrong unable to add Page!",
     "page_update_success" : "Page updated successfully!",
     "page_update_falied" : "Something went wrong unable to update Page!",
     "page_delete_success" : "Page deleted successfully!",
     "page_delete_failed" : "Something went wrong unable to delete Page!",
+    
     "order_status_change_success" : "Order status changed successfully!",
     "order_status_change_failed" : "Something went wrong unable to change status of Order!",
+    
     "user_add_success" : "User added successfully!",
     "user_add_failed" : "Something went wrong unable to add User!",
     "user_update_success" : "User updated successfully!",
     "user_update_failed" : "Something went wrong unable to update User!",
     "user_delete_success" : "User deleted successfully!",
     "user_delete_failed" : "Something went wrong unable to delete User!",
+    
     "faq_add_success": "Faq Added Successfully!",
     "faq_add_failed" :"Failed to Add Faq!",
     "faq_catagorey_add_success":"Faq Categorey Added Successfully",
@@ -56,14 +72,17 @@
     "faq_delete_failed":"Something went wrong unable to delete FAQ",
     "faq_update_success":"FAQ Updated Successfully",
     "faq_update_failed":"Something went wrong unable to update FAQ",
+    
     "enqury_contect_success":"Successfully Marked Connected",
     "enqury_contect_failed":"Failed to updated Enqury Status Try Again",
+    
     "faq_category_add_success" : "FAQ category added successfully!",
     "faq_category_add_failed" : "Something went wrong unable to add FAQ Category!",
     "faq_category_update_success" : "FAQ Category udated successfully!",
     "faq_category_update_failed" : "Something went wrong unable to update FAQ Category!",
     "faq_category_delete_success" : "FAQ Category deleted successfully!",
     "faq_category_delete_failed" : "Something went wrong unable to delete FAQ Category!",
+    
     "profile_update_success" : "Profile updated successfully!",
     "profile_update_failed" : "Something went wrong unable to update Profile!"
 

@@ -177,7 +177,7 @@
                             <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('faq/') }}" class="head-nav-link">Resources</a>
+                            <a href="{{ url('resource/') }}" class="head-nav-link">Resources</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
