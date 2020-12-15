@@ -2,7 +2,7 @@
 @section('content')
 <!-- START SECTION SHOP -->
 <div class="">
-<section class="section p-0">
+    <section class="section p-0">
         <div class="section-inner">
             <div class="section-img-wrapper about-bg1">
                 <div class="section-img-content">

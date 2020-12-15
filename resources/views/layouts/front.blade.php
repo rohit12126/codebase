@@ -168,13 +168,16 @@
                             <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
                         </li>
                         <li class="head-nav-li">
+                            <a href="{{ url('projects/') }}" class="head-nav-link">Projects</a>
+                        </li>
+                        <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('faq/') }}" class="head-nav-link">Resources</a>
+                            <a href="{{ url('resource/') }}" class="head-nav-link">Resources</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>

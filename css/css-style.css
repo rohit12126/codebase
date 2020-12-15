@@ -7994,7 +7994,7 @@ h5 {
 }
 .btn-outline-secondary
 {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	padding: 10px 40px;
 	border-radius: 0;
 }
@@ -8044,23 +8044,23 @@ h5 {
 }
 .about-bg1
 {
-	background-image: url(../../images/about.jpg);
+	background-image: url(../images/about.jpg);
 }
 .about-bg2
 {
-	background-image: url(../../images/about1.jpg);
+	background-image: url(../images/about1.jpg);
 }
 .about-bg3
 {
-	background-image: url(../../images/about2.jpg);
+	background-image: url(../images/about2.jpg);
 }
 .about-bg4
 {
-	background-image: url(../../images/about3.jpg);
+	background-image: url(../images/about3.jpg);
 }
 .about-bg5
 {
-	background-image: url(../../images/about4.jpg);
+	background-image: url(../images/about4.jpg);
 }
 .section-img-content, .section-text-wrapper h2
 {
@@ -8724,7 +8724,7 @@ h5 {
 		right: 15px;
 		top: 3px;
 }
-.blog-list-view,.blog-view{
+.blog-list-view,.blog-view, .projects-wrap{
 	background-color: #f4f4f4;
 }
 .blog-list-view{
@@ -9503,3 +9503,19 @@ h5 {
 		}
 	}
   /* =============================================================================== */
+.projects-wrap .blog-col{
+	width: 50%;
+}
+.projects-wrap .blog-list-title{
+	font-weight: 300;
+	text-align: center;
+	font-size: 1.25rem;
+}
+.projects-wrap .blog-view-button {
+	position: unset;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
