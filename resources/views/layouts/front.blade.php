@@ -562,7 +562,7 @@ footer-->
                 },
                 success: function(result) {
                     if (result.status == "success") {
-                        window.location.href = result.data.redirect;
+                        window.location.href = result.redirect;
                     } else {
                         
                         $.each( result.errors, function( key, value ) {
