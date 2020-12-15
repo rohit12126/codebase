@@ -30,6 +30,14 @@ class Product extends Model implements ReviewRateable
     }
 
     /**
+     * Get the imagess for the product.
+     */
+    public function description()
+    {
+        return $this->hasMany('App\Models\ProductDescription');
+    }
+
+    /**
      * Get the category belongs to the product.
      */
     public function catergory()
