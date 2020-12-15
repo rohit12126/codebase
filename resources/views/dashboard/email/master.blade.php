@@ -108,7 +108,7 @@
                     </tr>
                     @yield('content')
                     
-                    <tr>
+                    {{-- <tr>
                         <td align="center" style=" padding: 5px; background-color: #ff7361;" bgcolor="#1b9ba3">
                             <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                                 <tr>
@@ -146,7 +146,7 @@
                                 </tr>
                             </table>
                         </td>
-                    </tr>
+                    </tr> --}}
                 </table>
             </td>
         </tr>
