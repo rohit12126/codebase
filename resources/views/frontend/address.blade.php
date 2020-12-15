@@ -203,10 +203,10 @@
                                     <th>SubTotal</th>
                                     <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <th>Shipping</th>
                                     <td class="shipping_price">$ {{"10.00"}}</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <th>Total</th>
                                     <td class="product-subtotal">$ {{number_format($cartSubTotal+10, 2)}}</td>
@@ -326,10 +326,12 @@ $(document).ready(function() {
         }
     });
     
-    /* jQuery("#checkoutForm").validate({
+    jQuery("#checkoutForm").validate({
         rules: {
             email: {
-                required: true,
+                required: function() { 
+                  return !$('input:radio[name="shipping_address"]').is(':checked'); 
+                },
                 email: true
             }
         },
@@ -339,7 +341,7 @@ $(document).ready(function() {
         submitHandler: function(form) {
             form.submit(); 
         }
-    }); */
+    });
 
 
     //$(window).on('load',function(){
