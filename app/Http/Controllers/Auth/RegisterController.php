@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Auth;
-
+use App\Mail\UserRegistration;
+use Illuminate\Support\Facades\Mail;
 class RegisterController extends Controller
 {
     /*
@@ -102,6 +103,11 @@ class RegisterController extends Controller
             $this->validator($request->all())->validate();
             $user = $this->create($request->all());
             $this->guard()->login($user);
+            
+            if (Auth::check()) {
+                $user = Auth::user();
+                Mail::to($user->email)->send(new UserRegistration($user));
+            }
 
             $redirectUrl = url()->previous();
             
