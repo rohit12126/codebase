@@ -119,4 +119,13 @@ class ProductController extends Controller
         return view('frontend.accessory-list', ['productArr' => $productArr, 'categories'=> $categories]);
     }
 
+    /**
+     * Configure page for Roomle
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function configure() {
+        return view('frontend.configure');
+    } 
+    
 }

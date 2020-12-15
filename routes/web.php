@@ -313,6 +313,7 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 Route::get('product/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
 Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
+Route::get('configure/', 'ProductController@configure')->name('configure');
 
 /* Blog Routes */
 Route::get('blog/', 'BlogController@index')->name('blog.list');
