@@ -326,17 +326,46 @@ $(document).ready(function() {
         }
     });
     
+    jQuery.validator.addMethod("phonenu", function (value, element) {
+        if ( /^\d{3}-?\d{3}-?\d{4}$/g.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "Please enter a valid mobile number");
+
     jQuery("#checkoutForm").validate({
         rules: {
-            email: {
+            ship_email: {
                 required: function() { 
                   return !$('input:radio[name="shipping_address"]').is(':checked'); 
                 },
                 email: true
+            },
+            ship_phone: {
+                required: function() { 
+                  return !$('input:radio[name="shipping_address"]').is(':checked'); 
+                },
+                phonenu: true
+            },
+            bill_email: {
+                required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                },
+                email: true
+            },
+            bill_phone: {
+                required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                },
+                phonenu: true
             }
         },
         messages: {
-            email: "Please enter a valid email address"
+            ship_email: "Please enter a valid email address",
+            ship_phone: "Please enter a valid phone number",
+            bill_phone: "Please enter a valid phone number",
+            bill_email: "Please enter a valid email address"
         },
         submitHandler: function(form) {
             form.submit(); 
