@@ -323,7 +323,7 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::get('faq/', 'HomeController@faq')->name('faq');
 Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
 Route::get('installation/', 'HomeController@installation')->name('installation');
-Route::get('resources/', 'HomeController@resources')->name('resources');
+Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
