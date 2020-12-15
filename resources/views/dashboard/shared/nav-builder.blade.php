@@ -38,15 +38,20 @@ if(!function_exists('renderDropdown')){
             Dashboard 
         </a>
     </li>
-
+    <li class="c-sidebar-nav-item" title="Find All Categories Here">
+        <a class="c-sidebar-nav-link @if(
+            request()->segment(2) == 'category'
+            || request()->segment(2) == 'edit_category'
+        ) c-active @endif" href="{{ route('admin.category') }}">
+        <i class="cil-grid c-sidebar-nav-icon"></i>
+            Category
+        </a>
+    </li>
     <li class="c-sidebar-nav-item " title="Find All items Here">
         <a class="c-sidebar-nav-link @if(
             request()->segment(2) == 'item-list'
             ||request()->segment(2) == 'item'
-            || request()->segment(2) == 'category'
             || request()->segment(2) == 'edit_item'
-            || request()->segment(2) == 'edit_category'
-            
         ) c-active @endif" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Items
