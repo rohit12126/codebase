@@ -325,6 +325,7 @@ Route::get('faq/', 'HomeController@faq')->name('faq');
 Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
 Route::get('installation/', 'HomeController@installation')->name('installation');
 Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
+Route::get('projects/', 'HomeController@projects')->name('projects');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');

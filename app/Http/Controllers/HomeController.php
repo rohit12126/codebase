@@ -41,4 +41,8 @@ class HomeController extends Controller
         return view('frontend.resource-page');
     }
 
+    public function projects()
+    {
+        return view('frontend.projects');
+    }
 }
