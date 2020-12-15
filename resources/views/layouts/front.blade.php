@@ -168,6 +168,9 @@
                             <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
                         </li>
                         <li class="head-nav-li">
+                            <a href="{{ url('projects/') }}" class="head-nav-link">Projects</a>
+                        </li>
+                        <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
                         </li>
                         <li class="head-nav-li">
