@@ -8453,6 +8453,15 @@ h5 {
 {
     width: 100%;
 }
+.product-list-inner{
+    height: 330px;
+    padding: 15px;
+    background-color: #fbfbfb;
+    padding-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .products-list-product .btn
 {
     position: absolute;
