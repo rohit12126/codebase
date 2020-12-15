@@ -4,13 +4,14 @@
         <div class="container text-center">
             <h1 class="mb-5">Installation</h1>
         </div>
-        <div class="content-section position-relative">
+        <div class="container position-relative">
             <svg version="1.1" id="TimelineAnim" class="installation-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 906.2 53.5" style="enable-background:new 0 0 906.2 53.5;" xml:space="preserve" aiv="cls: active; out_cls: outView;">
                 <g class="step1">
+                <g class="step-of"></g>
                 <g>
-                <line style="fill:none;stroke:#D8D8D8;stroke-width:2;stroke-miterlimit:10;" x1="88.8" y1="26.8" x2="329.6" y2="26.8"></line>
-                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:2;stroke-miterlimit:10;" x1="88.8" y1="26.8" x2="329.6" y2="26.8"></line>
-                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;" points="190.5,38.8
+                <line style="fill:none;stroke:#D8D8D8;stroke-width:4;stroke-miterlimit:10;" x1="88.8" y1="26.8" x2="329.6" y2="26.8"></line>
+                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:4;stroke-miterlimit:10;" x1="88.8" y1="26.8" x2="329.6" y2="26.8"></line>
+                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:5;stroke-linecap:square;stroke-miterlimit:10;" points="190.5,38.8
                 201.3,26.8 201.3,26.8 190.5,14.6 "></polyline>
                 </g>
                 <g>
@@ -19,15 +20,15 @@
                 <path style="fill:none;stroke:#FFF4EB;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,5.0062;" d="M114.3,26.8
                 c0-14.1-11.4-25.5-25.5-25.5S63.3,12.6,63.3,26.8s11.4,25.5,25.5,25.5S114.3,40.9,114.3,26.8z"></path>
                 </g>
-                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;" d="M114.3,26.8
+                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" d="M114.3,26.8
                 c0-14.1-11.4-25.5-25.5-25.5S63.3,12.6,63.3,26.8s11.4,25.5,25.5,25.5S114.3,40.9,114.3,26.8z"></path>
                 </g>
                 </g>
                 <g class="step2">
                 <g>
-                <line style="fill:none;stroke:#D8D8D8;stroke-width:2;stroke-miterlimit:10;" x1="329.3" y1="26.8" x2="570.1" y2="26.8"></line>
-                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:2;stroke-miterlimit:10;" x1="329.3" y1="26.8" x2="570.1" y2="26.8"></line>
-                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;" points="431,38.8
+                <line style="fill:none;stroke:#D8D8D8;stroke-width:4;stroke-miterlimit:10;" x1="329.3" y1="26.8" x2="570.1" y2="26.8"></line>
+                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:4;stroke-miterlimit:10;" x1="329.3" y1="26.8" x2="570.1" y2="26.8"></line>
+                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:5;stroke-linecap:square;stroke-miterlimit:10;" points="431,38.8
                 441.9,26.8 441.9,26.8 431,14.6 "></polyline>
                 </g>
                 <g>
@@ -36,15 +37,15 @@
                 <path style="fill:none;stroke:#FFF4EB;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,5.0062;" d="M354.8,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S354.8,40.9,354.8,26.8z"></path>
                 </g>
-                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;" d="M354.8,26.8
+                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" d="M354.8,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S354.8,40.9,354.8,26.8z"></path>
                 </g>
                 </g>
                 <g class="step3" aiv="cls: active; out_cls: outView;">
                 <g>
-                <line style="fill:none;stroke:#D8D8D8;stroke-width:2;stroke-miterlimit:10;" x1="570.1" y1="26.8" x2="809.6" y2="26.8"></line>
-                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:2;stroke-miterlimit:10;" x1="570.1" y1="26.8" x2="809.6" y2="26.8"></line>
-                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;" points="671.2,38.8
+                <line style="fill:none;stroke:#D8D8D8;stroke-width:4;stroke-miterlimit:10;" x1="570.1" y1="26.8" x2="809.6" y2="26.8"></line>
+                <line class="anim-line" style="fill:none;stroke:#F94E57;stroke-width:4;stroke-miterlimit:10;" x1="570.1" y1="26.8" x2="809.6" y2="26.8"></line>
+                <polyline class="anim-arrow" style="fill:none;stroke:#F94E57;stroke-width:5;stroke-linecap:square;stroke-miterlimit:10;" points="671.2,38.8
                 682,26.8 682,26.8 671.2,14.6 "></polyline>
                 </g>
                 <g>
@@ -53,7 +54,7 @@
                 <path style="fill:none;stroke:#FFF4EB;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,5.0062;" d="M595.6,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S595.6,40.9,595.6,26.8z"></path>
                 </g>
-                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;" d="M595.6,26.8
+                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" d="M595.6,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S595.6,40.9,595.6,26.8z"></path>
                 </g>
                 </g>
@@ -64,7 +65,7 @@
                 <path style="fill:none;stroke:#FFF4EB;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,5.0062;" d="M835.1,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S835.1,40.9,835.1,26.8z"></path>
                 </g>
-                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;" d="M835.1,26.8
+                <path class="anim-cirlce" style="fill:none;stroke:#F94E57;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" d="M835.1,26.8
                 c0-14.1-11.4-25.5-25.5-25.5s-25.5,11.4-25.5,25.5s11.4,25.5,25.5,25.5S835.1,40.9,835.1,26.8z"></path>
                 </g>
                 </g>
