@@ -30,7 +30,7 @@
             	<div class="medium_divider"></div>
             </div>
         </div> -->
-        <form method="post" action="{{route('address.save')}}">
+        <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
             
             <div class="row">
@@ -83,6 +83,9 @@
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="email" name="bill_email" id="bill_email" value="" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
@@ -151,6 +154,9 @@
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
@@ -320,6 +326,22 @@ $(document).ready(function() {
         }
     });
     
+    /* jQuery("#checkoutForm").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            email: "Please enter a valid email address"
+        },
+        submitHandler: function(form) {
+            form.submit(); 
+        }
+    }); */
+
+
     //$(window).on('load',function(){
         // $('#myModal').modal('show');
         //$('#exampleModal').modal('show');
