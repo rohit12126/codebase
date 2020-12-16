@@ -162,10 +162,13 @@
                 <nav class="head-nav d-flex align-items-center">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
-                            <a href="{{ url('home/') }}" class="head-nav-link">Installation</a>
+                            <a href="{{ url('installation/') }}" class="head-nav-link">Installation</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('projects/') }}" class="head-nav-link">Projects</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
@@ -174,7 +177,7 @@
                             <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('faq/') }}" class="head-nav-link">Resources</a>
+                            <a href="{{ url('resource/') }}" class="head-nav-link">Resources</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
@@ -425,12 +428,13 @@ footer-->
 </body>
 
 </html>
-@yield('scripts')
-
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
+
+@yield('scripts')
+
 
 <script>
    
@@ -558,7 +562,7 @@ footer-->
                 },
                 success: function(result) {
                     if (result.status == "success") {
-                        window.location.href = result.data.redirect;
+                        window.location.href = result.redirect;
                     } else {
                         
                         $.each( result.errors, function( key, value ) {
@@ -663,29 +667,6 @@ footer-->
     document.querySelector('.scroller').classList.remove('scrolling');
     });
 
-
-    $(".product-detail-slider").slick({
-        autoplay: false,
-        dots: true,
-        infinite: false,
-        customPaging : function(slider, i) {
-            var thumb = $(slider.$slides[i]).data('thumb');
-            return '<a><img src="'+thumb+'"></a>';
-        }
-    });
-    $('.product-wallpaper-slider').slick({
-        autoplay: true,
-        arrows: true,
-        speed: 1000,
-        autoplaySpeed: 5000,
-        centerMode: true,
-        dots: false,
-        centerPadding: '15%',
-        infinite: true,
-        slidesToShow: 3, 
-        slidesToScroll: 1,
-        lazyLoad: 'progressive'
-    });
 
         /** Home page animation */
         // var scrollValue = $('.home-slider-section').innerHeight();

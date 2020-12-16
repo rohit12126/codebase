@@ -11,7 +11,8 @@ use Illuminate\Support\MessageBag;
 use App\SocialIdentity;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use App\Mail\UserRegistration;
+use Illuminate\Support\Facades\Mail;
 class LoginController extends Controller
 {
     /*
@@ -87,6 +88,8 @@ class LoginController extends Controller
                    'email' => $providerUser->getEmail(),
                    'name'  => $providerUser->getName(),
                ]);
+
+               Mail::to($user->email)->send(new UserRegistration($user));
            }
 
            $user->identities()->create([

@@ -41,35 +41,45 @@
     </div>
     <hr>
             <div class="col-md-12">
-            	<div class="compare_box">
-               
+                <div class="compare_box">
+                
                     <div class="table-responsive">
                     <table class="table">
-                  <thead>
-                      <tr>
-                          <th>Product</th>
-                          <th>Preview Image</th>
-                          <th>Quantity</th>
-                          <th>Price</th>
-                          <th></th>
-                         
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Preview Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            
                         </tr>
                     </thead>
                         <tbody>
                             @foreach($data->productList as $product)
                             <tr>
                             <td>{{$product->product->name}}</td>
-                            <td>@if (isset($product->product->images[0]->image))
-                                        <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
-                                    @else
-                                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                    @endif
+                            <td>
+                                @if (isset($product->product->images[0]->image))
+                                    <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                @else
+                                    <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                @endif
                             </td>
+                            <td>$ {{$product->price}}</td>
                             <td>{{$product->product_quantity}}</td>
-                            <td>{{$product->price}}</td>
+                            <td>$ {{$product->price * $product->product_quantity}}</td>
                             </tr>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Order total</th>
+                                <th>$ {{$data->grand_total}}</th>
+                            </tr>
+                        </tfoot>
                     </table>
                     </div>
                 </div>

@@ -36,6 +36,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_category/{id?}', 'admin\CategoryController@editSubmitCategory');//->name('admin.categoryedit');
         Route::get('admin/delete_category/{id?}', 'admin\CategoryController@deleteCategory');
 
+        /* Product Decription Module Routes */
+        Route::get('admin/product/description', 'admin\ProductDescriptionController@index')->name('admin.product.description');
+        Route::post('admin/product/description', 'admin\ProductDescriptionController@addProductDescription')->name('admin.product.description');
+        Route::get('admin/product/edit_description/{id?}', 'admin\ProductDescriptionController@editProductDescription')->name('admin.product.edit.description');
+        Route::post('admin/product/edit_description/{id?}', 'admin\ProductDescriptionController@editSubmitProductDescription')->name('admin.product.edit.description');
+        Route::get('admin/product/delete_description/{id?}', 'admin\ProductDescriptionController@deleteProductDescription');
+
         /* Item (Product/Accessory) Module Routes */
         Route::get('admin/item', 'admin\ProductController@index')->name('admin.item');
         Route::post('admin/item', 'admin\ProductController@addProduct')->name('admin.item');
@@ -44,6 +51,24 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/item-list', 'admin\ProductController@productList')->name('admin.item.list');
         Route::post('admin/item-list', 'admin\ProductController@productList')->name('admin.item.list');
         Route::get('admin/delete_item/{id?}', 'admin\ProductController@deleteProduct');
+
+        /* Product Module Routes */
+        /* Route::get('admin/product', 'admin\ProductController@index')->name('admin.product');
+        Route::post('admin/product', 'admin\ProductController@addProduct')->name('admin.product');
+        Route::get('admin/edit_product/{id?}', 'admin\ProductController@editProduct');
+        Route::post('admin/edit_product/{id?}', 'admin\ProductController@editSubmitProduct');
+        Route::get('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
+        Route::post('admin/product-list', 'admin\ProductController@productList')->name('admin.product.list');
+        Route::get('admin/delete_product/{id?}', 'admin\ProductController@deleteProduct'); */
+
+        /* Hardware Module Routes */
+        /* Route::get('admin/hardware', 'admin\ProductController@index')->name('admin.hardware');
+        Route::post('admin/hardware', 'admin\ProductController@addProduct')->name('admin.hardware');
+        Route::get('admin/edit_hardware/{id?}', 'admin\ProductController@editProduct');
+        Route::post('admin/edit_hardware/{id?}', 'admin\ProductController@editSubmitProduct');
+        Route::get('admin/hardware-list', 'admin\ProductController@productList')->name('admin.hardware.list');
+        Route::post('admin/hardware-list', 'admin\ProductController@productList')->name('admin.hardware.list');
+        Route::get('admin/delete_hardware/{id?}', 'admin\ProductController@deleteProduct'); */
 
         /* User Module Routes */
         Route::get('admin/user', 'admin\UserController@index')->name('admin.user');
@@ -313,6 +338,7 @@ Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallb
 Route::get('product/', 'ProductController@index')->name('product.list');
 Route::get('product/detail','ProductController@detail')->name('product.detail');
 Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
+Route::get('configure/', 'ProductController@configure')->name('configure');
 
 /* Blog Routes */
 Route::get('blog/', 'BlogController@index')->name('blog.list');
@@ -322,6 +348,9 @@ Route::get('home/', 'HomeController@home')->name('home');
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('faq/', 'HomeController@faq')->name('faq');
 Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
+Route::get('installation/', 'HomeController@installation')->name('installation');
+Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
+Route::get('projects/', 'HomeController@projects')->name('projects');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');

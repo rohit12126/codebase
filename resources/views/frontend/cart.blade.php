@@ -61,7 +61,6 @@
                 <td class="cart-total-price">
                     <span><label id="subQty" >${{$cartSubTotal}}</label></span>
                 </td>
-                <td></td>
             </tr>
             </tbody>
         </table>
@@ -69,7 +68,7 @@
             <!-- <p>
                 Apply Coupon Code Get 10% Discount :
                 <span><input type="text" id="couponcode"></span>
-                <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-outline-secondary">Apply</a>
+                <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-fill-out">Apply</a>
             </p> -->
             <!-- <div class="cart-row">
            {{--  <div class="cart-row">

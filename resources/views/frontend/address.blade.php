@@ -30,10 +30,9 @@
             	<div class="medium_divider"></div>
             </div>
         </div> -->
-        <form method="post" action="{{route('address.save')}}">
+        <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
-
-
+            
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
@@ -58,10 +57,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    <div class="d-flex justify-content-end align-items-center">
-                                                    <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                    {{-- <div class="d-flex justify-content-end align-items-center">
+                                                        <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                        
+                                                    </div>                         --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,6 +83,9 @@
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="" placeholder="Phone *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control bill" required="" type="email" name="bill_email" id="bill_email" value="" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
@@ -119,7 +121,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <div class="card">                        
                                                     <div class="custome-radio">
-                                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                                        <input class="form-check-input" type="radio" name="shipping_address" value="{{$address->id}}" id="{{$address->id}}">
                                                         <label class="form-check-label label_info" for="{{$address->id}}"></label>
                                                     </div>
                                                     <div class="card-body">
@@ -127,10 +129,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    <div class="d-flex justify-content-end align-items-center">
+                                                    {{-- <div class="d-flex justify-content-end align-items-center">
                                                         <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                        
+                                                    </div> --}}                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,25 +141,37 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="pb-3">
+                                <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                    + Add New
+                                </a>
+                            </div>
                             @endif
-                                <div class="form-group">
-                                    <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
+                            <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3">
+                                <div class="pt-3 pb-3">
+                                    <div class="form-group">
+                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="" placeholder="Email *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" placeholder="City / Town *">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" placeholder="State / County *">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
-                                </div>
+                            </div>
                             </div>
                         </div>                    
                     </div>
@@ -177,31 +191,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($productList as $product)
                                 <tr>
-                                    <td>Blue Dress For Woman <span class="product-qty">x 2</span></td>
-                                    <td>$90.00</td>
+                                    <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
+                                    <td>$ {{number_format($product->price * $product->qty, 2)}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Lether Gray Tuxedo <span class="product-qty">x 1</span></td>
-                                    <td>$55.00</td>
-                                </tr>
-                                <tr>
-                                    <td>woman full sliv dress <span class="product-qty">x 3</span></td>
-                                    <td>$204.00</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>SubTotal</th>
-                                    <td class="product-subtotal">$349.00</td>
+                                    <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <th>Shipping</th>
-                                    <td>Free Shipping</td>
-                                </tr>
+                                    <td class="shipping_price">$ {{"10.00"}}</td>
+                                </tr> --}}
                                 <tr>
                                     <th>Total</th>
-                                    <td class="product-subtotal">$349.00</td>
+                                    <td class="product-subtotal">$ {{number_format($cartSubTotal+10, 2)}}</td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -222,9 +230,9 @@
                                 <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
                             </div> -->
                             <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="option5" checked="">
+                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
                                 <label class="form-check-label" for="exampleRadios5">Paypal</label>
-                                <p data-method="option5" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
+                                <p data-method="paypal" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
                             </div>
                         </div>
                     </div>
@@ -242,7 +250,7 @@
 </div>
 
   <!-- Modal -->
-<div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -256,48 +264,119 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 <!-- END SECTION SHOP -->
 @endsection
 @section('scripts')
 
 
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
+    /* on load function check for bill and ship is checked than remove require */
+    
+    if ($('input:radio[name="shipping_address"]').is(':checked')) {
+        $(".ship").removeAttr("required");
+    }
+
+    if ($('input:radio[name="billing_address"]').is(':checked')) {
+        $(".bill").removeAttr("required");
+    }
+
+
+    /*Same as Bill address functionality*/
     $("#filladdress").on("click", function(){
-    if (this.checked) { 
-        $("#ship_name").val($("#bill_name").val());
-        $("#ship_phone").val($("#bill_phone").val());
-        $("#ship_address").val($("#bill_address").val());
-        $("#ship_city").val($("#bill_city").val());  
-        $("#ship_state").val($("#bill_state").val());  
-        $("#ship_zipcode").val($("#bill_zipcode").val());                         
-    }
-    else {
-        $("#ship_name").val('');
-        $("#ship_phone").val('');
-        $("#ship_address").val('');
-        $("#ship_city").val('');
-        $("#ship_state").val('');
-        $("#ship_zipcode").val('');           
-    }
+        if (this.checked) {
+            $(".ship").removeAttr("required");
+            
+            $("#ship_name").val($("#bill_name").val());
+            $("#ship_phone").val($("#bill_phone").val());
+            $("#ship_address").val($("#bill_address").val());
+            $("#ship_city").val($("#bill_city").val());  
+            $("#ship_state").val($("#bill_state").val());  
+            $("#ship_zipcode").val($("#bill_zipcode").val());                         
+        } else {
+            $("#ship_name").val('');
+            $("#ship_phone").val('');
+            $("#ship_address").val('');
+            $("#ship_city").val('');
+            $("#ship_state").val('');
+            $("#ship_zipcode").val('');           
+        }
     });
+
+    /*
+     * Bill Address:- Remove require from form in
+     * case of value selected from address list
+    */
     $('input:radio[name="shipping_address"]').change(
     function(){
         if ($(this).is(':checked')) {
             $(".ship").removeAttr("required");
         }
     });
+
+    /*
+     * Ship Address:- Remove require from form in
+     * case of value selected from address list
+    */
     $('input:radio[name="billing_address"]').change(
     function(){
         if ($(this).is(':checked')) {
             $(".bill").removeAttr("required");
         }
     });
-    $(window).on('load',function(){
+    
+    jQuery.validator.addMethod("phonenu", function (value, element) {
+        if ( /^\d{3}-?\d{3}-?\d{4}$/g.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "Please enter a valid mobile number");
+
+    jQuery("#checkoutForm").validate({
+        rules: {
+            ship_email: {
+                required: function() { 
+                  return !$('input:radio[name="shipping_address"]').is(':checked'); 
+                },
+                email: true
+            },
+            ship_phone: {
+                required: function() { 
+                  return !$('input:radio[name="shipping_address"]').is(':checked'); 
+                },
+                phonenu: true
+            },
+            bill_email: {
+                required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                },
+                email: true
+            },
+            bill_phone: {
+                required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                },
+                phonenu: true
+            }
+        },
+        messages: {
+            ship_email: "Please enter a valid email address",
+            ship_phone: "Please enter a valid phone number",
+            bill_phone: "Please enter a valid phone number",
+            bill_email: "Please enter a valid email address"
+        },
+        submitHandler: function(form) {
+            form.submit(); 
+        }
+    });
+
+
+    //$(window).on('load',function(){
         // $('#myModal').modal('show');
         //$('#exampleModal').modal('show');
-    });
+    //});
 });
 </script>
 @endsection

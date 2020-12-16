@@ -31,4 +31,18 @@ class HomeController extends Controller
         return view('frontend.about-us');
     }
 
+    public function installation()
+    {
+        return view('frontend.installation');
+    }
+
+    public function resourcePage()
+    {
+        return view('frontend.resource-page');
+    }
+
+    public function projects()
+    {
+        return view('frontend.projects');
+    }
 }

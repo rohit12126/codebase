@@ -77,20 +77,18 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Order Quantity</th>
-                                <th>Purchase Price</th>
-                                <th>Sale Price</th>
-
+                                <th>Price</th> 
+                                <th>Quantity</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($order->productList as $key => $value)
                             <tr>
                                 <td>{{ $value->product->name }}</td>
+                                <td>$ {{ $value->price }}</td>
                                 <td>{{ $value->product_quantity }}</td>
-                                <td>{{ $value->product->purchase_price }}</td>
-                                <td>{{ $value->price }}</td>
-
+                                <td>$ {{ $value->price * $value->product_quantity }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -99,8 +97,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 </div>
 </div>
