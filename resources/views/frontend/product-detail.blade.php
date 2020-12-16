@@ -35,7 +35,6 @@
                 <div class="col-lg-4">
                     <h1 class="pdp-title">
                         {{$productData['product']->name}}
-                        
                     </h1>
                     <h2 class="product2-category"> @if(isset($productData['product']->catergory->name)) 
                         {{$productData['product']->catergory->name}}
@@ -52,7 +51,7 @@
                     <hr>
                     <p class="pdp-discount-container">
                         <span class="pdp-price" tabindex="0">
-                            <strong>&#36;{{$productData['product']->sale_price}}</strong>
+                            <strong>$ {{$productData['product']->sale_price}}</strong>
                         </span> 
                     </p>
                         <!-- <span class="pdp-mrp"><s>&#36;4599</s></span>
@@ -74,9 +73,6 @@
                         <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart-plus"></i> Add to cart
-                        </a>
-                        <a href="{{ url('configure/') }}" class="btn btn-fill-out">
-                            Configure
                         </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
