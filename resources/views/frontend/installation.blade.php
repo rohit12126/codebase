@@ -5,7 +5,7 @@
             <h1 class="mb-5">Installation</h1>
         </div>
         <div class="container position-relative">
-            <svg version="1.1" id="TimelineAnim" class="installation-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 906.2 53.5" style="enable-background:new 0 0 906.2 53.5;" xml:space="preserve" aiv="cls: active; out_cls: outView;">
+            <svg version="1.1" id="TimelineAnim" class="installation-svg d-none d-md-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 906.2 53.5" style="enable-background:new 0 0 906.2 53.5;" xml:space="preserve" aiv="cls: active; out_cls: outView;">
                 <g class="step1">
                 <g class="step-of"></g>
                 <g>
@@ -90,6 +90,27 @@
                             </p>
                         </div>
                     </div>
+                </div>
+                <div class="installation-col">
+                    <div class="installation-card ic2" data-aos="fade-left"  data-aos-offset="250"  data-aos-duration="1000" data-aos-once="ture">
+                        <div class="step-tag">
+                            <span class="step-number">2</span>
+                            <span>step</span>
+                        </div>
+                        <div class="installation-thumb">
+                            <img src="{{URL::asset('/images/installation/installation2.jpg')}}" alt="">
+                            <div class="thumb-title">
+                                <h2>Pick Your Doors & Design Your Closet</h2>
+                            </div>
+                        </div>
+                        <div class="installation-content">
+                            <p>
+                                Meet with a professional designer at your local showroom to go over styles, colors, weights, materials, hardware, and product configurations.
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+                <div class="installation-col">
                     <div class="installation-card ic3" data-aos="fade-right" data-aos-offset="150" data-aos-duration="1000" data-aos-once="ture">
                         <div class="step-tag">
                             <span class="step-number">3</span>
@@ -109,23 +130,6 @@
                     </div>
                 </div>
                 <div class="installation-col">
-                    <div class="installation-card ic2" data-aos="fade-left"  data-aos-offset="250"  data-aos-duration="1000" data-aos-once="ture">
-                        <div class="step-tag">
-                            <span class="step-number">2</span>
-                            <span>step</span>
-                        </div>
-                        <div class="installation-thumb">
-                            <img src="{{URL::asset('/images/installation/installation2.jpg')}}" alt="">
-                            <div class="thumb-title">
-                                <h2>Pick Your Doors & Design Your Closet</h2>
-                            </div>
-                        </div>
-                        <div class="installation-content">
-                            <p>
-                                Meet with a professional designer at your local showroom to go over styles, colors, weights, materials, hardware, and product configurations.
-                            </p>
-                        </div>
-                    </div>
                     <div class="installation-card ic4" data-aos="fade-left" data-aos-offset="50"  data-aos-duration="1000" data-aos-once="ture">
                         <div class="step-tag">
                             <span class="step-number">4</span>

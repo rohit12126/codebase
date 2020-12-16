@@ -9393,13 +9393,15 @@ h5 {
 	}
 	.installation-col{
 	  box-sizing: border-box;
-	  width: 100%;
+	  width: 45%;
 	  max-width: 460px;
 	  padding: 0 15px;
 	}
 	.installation-card
 	{
 	  background: #fff;
+	  width: 100%;
+	  max-width: 460px;
 	  position: relative;
 	  color: #333;
 	  border: 1px solid #aaa;
@@ -9412,7 +9414,7 @@ h5 {
 		content: "";
 		position: absolute;
 		top: 35%;
-		right: -4%;
+		right: -1rem;
 		width: 2rem;
 		height: 2rem;
 		transform: rotate(45deg);
@@ -9421,7 +9423,10 @@ h5 {
 		z-index: 1;
 	}
 	.ic2:after,.ic4:after{
-		left: -4%;
+		left: -1rem;
+	}
+	.ic3:after,.ic4:after{
+		top: 27%;
 	}
 	.installation-card .step-tag
 	{
@@ -9458,7 +9463,7 @@ h5 {
 	.installation-thumb{
 		position: relative;
 		background-color: #fff;
-		padding: 10px;
+		padding: 10px 10px 0 10px;
 		z-index: 2;
 	}
 	.installation-thumb img{
@@ -9508,17 +9513,76 @@ h5 {
 	  font-weight: 300;
 	  line-height: 1.4;
 	}
-	@media(max-width:575px){
-	  .installation-col{
-		  margin: 0 auto;
-	  }
-	}
-	@media(min-width:576px){
+	@media(min-width:1200){
 		.ic2{
 			margin-top: 20rem;
 		}
-		.ic3, .ic4{
-		  margin-top: 10rem;
+		.ic3{
+			margin-top: -10rem;
+		}
+		.ic4{
+		  margin-top: 9rem;
+		}
+	}
+	@media(max-width:1199px){
+		.installation-svg{
+			top: 36%;
+		}
+		.installation-card::after{
+			top: 28%;
+		}
+		.ic2 {
+			margin-top: 16rem;
+		}
+		.ic3::after, .ic4::after {
+			top: 16%;
+		}
+		.ic4{
+			margin-top: 6rem;
+		}
+	}
+	@media(max-width:991px){
+		.thumb-title h2 {
+			margin-top: 1rem;
+			font-size: 1rem;
+			line-height: 1.2;
+		}
+		.installation-svg {
+			width: 130%;
+			left: -14%;
+		}
+		.installation-col{
+			width: 44%;
+		}
+		.installation-card::after {
+			top: 34%;
+		}
+		.ic3::after, .ic4::after {
+			top: 20%;
+		}
+		.ic3 {
+			margin-top: -8rem;
+		}
+	}
+	@media(max-width: 767px){
+		.installation-col{
+			width: 100%;
+			max-width: 100%;
+		}
+		.installation-card::after{
+			content: none;
+		}
+		.ic3::after, .ic4::after {
+			top: 26%;
+		}
+		.ic2{
+			margin-top: 0;
+		}
+		.ic3{
+			margin-top: 0;
+		}
+		.ic4{
+		  margin-top: 0;
 		}
 	}
   /* =============================================================================== */
