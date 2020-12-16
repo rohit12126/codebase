@@ -150,15 +150,18 @@ class ProductManager
     public function getProductWithReview($productId)
     {   
         $product = ProductModel::with('images', 'catergory', 'productDescription')->find($productId);
+
         if (is_null($product)){
             return false;
         }
+
         $productData = [
             'product' => $product,
             'productReview' => "",
             'reviewCount'=>'',
             'averageRating'=>''
         ];
+        
         if (!is_null($product)) {
             
             $productData['productReview'] = ReviewManager::getAllActiveReviewsByProductId($product->id); 
