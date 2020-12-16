@@ -75,20 +75,86 @@
             </picture>
         </div>   -->
         <!-- <div class="mover"></div> -->
+
+
         <div id="page">
          <div class="wrapper">
             <div class="before">
-               <img class="content-image" src="{{URL::asset('/images/home/bifolddoors.jpg')}}" draggable="false"/>   
+                <div id="hotspotImg" class="responsive-hotspot-wrap">
+                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" width="1920" height="700">
+                    <div class="hot-spot" x="300" y="43">
+                        <div class="circle"></div>
+                        <div class="tooltip">
+                            <div class="img-row">
+                                <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                            </div>
+                            <div class="text-row">
+                            <h4>Lorem Ipsum</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hot-spot" x="1171" y="224">
+                        <div class="circle"></div>
+                        <div class="tooltip">
+                            <div class="img-row">
+                                <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                            </div>
+                            <div class="text-row">
+                            <h4>Lorem Ipsum</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="after">
-               <img class="content-image" src="{{URL::asset('/images/home/slidingdoors.jpg')}}" draggable="false"/>
+            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
+                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="" width="1920" height="700">
+                    <div class="hot-spot" x="300" y="43">
+                        <div class="circle"></div>
+                        <div class="tooltip">
+                            <div class="img-row">
+                                <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                            </div>
+                            <div class="text-row">
+                            <h4>Lorem Ipsum</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hot-spot" x="550" y="360">
+                        <div class="circle"></div>
+                        <div class="tooltip">
+                            <div class="img-row">
+                                <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                            </div>
+                            <div class="text-row">
+                            <h4>Lorem Ipsum</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="scroller">
-               <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
+               <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
+               </svg>
             </div>
          </div>
         </div>
+
+
     </section>
+
+    <div class="container">
+
+        </div>
+
+
     <section class="home-products-section" id="stt">
         <div class="pd-block-wrap">
             <div class="pd-block">

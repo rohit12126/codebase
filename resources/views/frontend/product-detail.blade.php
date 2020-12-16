@@ -6,7 +6,7 @@
         <div class="container-lx">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="d-flex flex-wrap">
+                    <div class="d-flex flex-wrap justify-content-center">
                         @if (!is_null($productData['product']->images))    
                             @if (count($productData['product']->images) > 1)
                                 {{--  Multiple images case --}}

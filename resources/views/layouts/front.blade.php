@@ -78,7 +78,7 @@
     position: absolute;
     top:0;
     left:0;
-    pointer-events:none;
+    /* pointer-events:none; */
     overflow: hidden;
     }
 
@@ -110,7 +110,7 @@
     }
 
     .scrolling{
-    pointer-events:none;
+    /* pointer-events:none; */
     opacity:1;
     }
 
@@ -449,7 +449,19 @@ footer-->
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
-
+<script src="{{ asset('js/jquery.hotspot.js')}}"></script>
+<script>
+    if ($('#hotspotImg').length > 0) {
+	     $('#hotspotImg').hotSpot({
+           bindselector: 'click'
+         });
+    }
+    // if ($('#secondhotspotImg').length > 0) {
+	// 	$('#secondhotspotImg').hotSpot({
+    //         bindselector: 'click'
+    //     });
+	// }
+</script>
 @yield('scripts')
 
 
@@ -626,18 +638,16 @@ footer-->
 
     // I hope this over-commenting helps. Let's do this!
     // Let's use the 'active' variable to let us know when we're using it
+
     let active = false;
 
-    // First we'll have to set up our event listeners
-    // We want to watch for clicks on our scroller
+
     document.querySelector('.scroller').addEventListener('mousedown',function(){
     active = true;
-    // Add our scrolling class so the scroller has full opacity while active
+
     document.querySelector('.scroller').classList.add('scrolling');
     });
-    // We also want to watch the body for changes to the state,
-    // like moving around and releasing the click
-    // so let's set up our event listeners
+
     document.body.addEventListener('mouseup',function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
@@ -647,18 +657,20 @@ footer-->
     document.querySelector('.scroller').classList.remove('scrolling');
     });
 
-    // Let's figure out where their mouse is at
+ 
     document.body.addEventListener('mousemove',function(e){
     if (!active) return;
-    // Their mouse is here...
+
     let x = e.pageX;
-    // but we want it relative to our wrapper
+
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-    // Okay let's change our state
+
     scrollIt(x);
+
     });
 
     // Let's use this function
+
     function scrollIt(x){
     let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
     document.querySelector('.after').style.width = transform+"px";
@@ -667,10 +679,12 @@ footer-->
 
     // Let's set our opening state based off the width, 
     // we want to show a bit of both images so the user can see what's going on
+
     scrollIt(150);
 
     // And finally let's repeat the process for touch events
     // first our middle scroller...
+    
     document.querySelector('.scroller').addEventListener('touchstart',function(){
     active = true;
     document.querySelector('.scroller').classList.add('scrolling');
@@ -683,41 +697,6 @@ footer-->
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
     });
-
-
-        /** Home page animation */
-        // var scrollValue = $('.home-slider-section').innerHeight();
-        // var previousScroll = 0;    
-        // var counter = 1;
-        // var counterPlus = 0;
-        // $(window).scroll(function () {
-        // var currentScroll = $(this).scrollTop();
-        // console.log(currentScroll,"currentScroll")
-        // console.log(scrollValue,"scrollValue")
-        // if (currentScroll > previousScroll){
-        //     if ( $(window).scrollTop() >= (scrollValue - 100) && counter < 101) {
-        //         counterPlus =  counter++;
-        //         $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
-        //         //$('.mover').css("transform", 'translate(' + -counterPlus+ '%, -50%)')
-        //     }
-        // }
-        // else {
-        //     if(counter < 0){
-        //         counter = 100;
-        //     }
-        //     if(currentScroll === 0){
-        //         counter = 0
-        //     }
-        //     console.log(counter,currentScroll,"scroll previous")
-        //     // if ( $(window).scrollTop() <= 700 ) {
-        //         counterPlus =  counter--;
-        //         $('.Yq0BZd').css("clip-path", 'inset(0px ' +counterPlus+ '% 0px 0px)')
-        //         //$('.mover').css("transform", 'translate(' + +counterPlus+ '%, -50%)')
-        //     // }
-            
-        // }
-        // previousScroll = currentScroll;
-        // });
         
     });
 
