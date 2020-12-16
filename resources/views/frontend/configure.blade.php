@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="pt-4 pb-4 d-flex justify-content-center">
-            <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
+            <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
                 <i class="linearicons-cart-plus"></i> Buy Now
             </a>
             <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
@@ -207,6 +207,23 @@
         slidesToShow: 1, 
         slidesToScroll: 1,
         lazyLoad: 'progressive'
+    });
+            /* Buy Now Functionality */
+    jQuery('.buy-now').click(function(e) {
+        var productId = $(".product-id").val();
+        e.preventDefault();
+        jQuery.ajax({
+            url: "{{ url('/cart/add-cart') }}",
+            method: 'post',
+            dataType: "json",
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data: {
+                productId : productId
+            },
+            success: function(result){
+                window.location.href = "{{ route('address.get') }}";
+            }
+        });
     });
 </script>
 
