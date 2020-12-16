@@ -182,13 +182,13 @@ sup {
 a {
   text-decoration: none;
   background-color: transparent;
-  color: #321fdb;
+  color: #F94E57;
 }
 
 @media (hover: hover), (-ms-high-contrast: none) {
   a:hover {
     text-decoration: underline;
-    color: #321fdb;
+    color: #F94E57;
   }
 }
 
@@ -995,7 +995,7 @@ html:not([dir="rtl"]) .breadcrumb-item + .breadcrumb-item {
 
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
-  color: #8a93a2;
+  color: #222;
   content: "/";
 }
 
@@ -1015,8 +1015,8 @@ html:not([dir="rtl"]) .breadcrumb-item + .breadcrumb-item::before {
   text-decoration: none;
 }
 
-.breadcrumb-item.active {
-  color: #8a93a2;
+.breadcrumb-item.active a {
+  color: #333;
 }
 
 .btn-group,
@@ -1265,31 +1265,31 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #321fdb;
-  border-color: #321fdb;
+  background-color: #6c757d;
+  border-color: #6c757d;
 }
 
 @media (hover: hover), (-ms-high-contrast: none) {
   .btn-primary:hover {
     color: #fff;
-    background-color: #2a1ab9;
-    border-color: #2819ae;
+    background-color: #565656;
+    border-color: #565656;
   }
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #2a1ab9;
-  border-color: #2819ae;
+  background-color: #565656;
+  border-color: #565656;
   box-shadow: 0 0 0 0.2rem rgba(81, 65, 224, 0.5);
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #fff;
-  background-color: #321fdb;
-  border-color: #321fdb;
+  background-color: #565656;
+  border-color: #565656;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -1520,15 +1520,15 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #e55353;
-  border-color: #e55353;
+  background-color: #F94E57;
+  border-color: #F94E57;
 }
 
 @media (hover: hover), (-ms-high-contrast: none) {
   .btn-danger:hover {
     color: #fff;
-    background-color: #e03232;
-    border-color: #de2727;
+    background-color: #dd424d;
+    border-color: #dd424d;
   }
 }
 
@@ -7523,6 +7523,7 @@ html:not([dir="rtl"]) .c-header-brand.c-header-brand-xl-down-center {
 .c-header-toggler:hover,
 .c-header-toggler:focus {
   text-decoration: none;
+  outline: none;
 }
 
 .c-header-toggler:not(:disabled):not(.c-disabled) {
@@ -11594,7 +11595,7 @@ html:not([dir="rtl"])
 
 .c-sidebar {
   color: #fff;
-  background: #3c4b64;
+  background: #2f353a;
 }
 
 *[dir="rtl"] .c-sidebar.c-sidebar-right {
@@ -11607,7 +11608,7 @@ html:not([dir="rtl"])
 
 .c-sidebar .c-sidebar-brand {
   color: #fff;
-  background: rgba(0, 0, 21, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .c-sidebar .c-sidebar-header {
@@ -11658,7 +11659,7 @@ html:not([dir="rtl"])
 .c-sidebar .c-sidebar-nav-link.c-active,
 .c-sidebar .c-active.c-sidebar-nav-dropdown-toggle {
   color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: #F94E57;
 }
 
 .c-sidebar .c-sidebar-nav-link.c-active .c-sidebar-nav-icon,
@@ -11670,7 +11671,7 @@ html:not([dir="rtl"])
   .c-sidebar .c-sidebar-nav-link:hover,
   .c-sidebar .c-sidebar-nav-dropdown-toggle:hover {
     color: #fff;
-    background: #1fb6db;
+    background: #F94E57;
   }
 
   .c-sidebar .c-sidebar-nav-link:hover .c-sidebar-nav-icon,
@@ -11760,11 +11761,11 @@ html:not([dir="rtl"])
 }
 
 .c-sidebar .c-sidebar-footer {
-  background: rgba(0, 0, 21, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .c-sidebar .c-sidebar-minimizer {
-  background-color: rgba(0, 0, 21, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .c-sidebar .c-sidebar-minimizer::before {
@@ -20211,7 +20212,7 @@ body {
   display:block;
   /* border-radius:0px; */
   /* box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2); */
-  margin-top:-5px;
+  /* margin-top:-5px; */
 }
 .imgUp {
   margin-bottom:15px;
@@ -20264,7 +20265,10 @@ body {
 /*================================*/
 
 .dashboard-block{
-  padding-bottom: 20px;
+  height: calc(100% - 1.5rem);
+}
+.dashboard-block .card-body>div>div:last-child{
+  width: 40%;
 }
 .dashboard-block .icons-block{
   width: 80px;
@@ -20275,7 +20279,6 @@ body {
   font-size: 42px;
   background: #ccc;
   border-radius: 50%;
-  margin-right: 40px;
 }
 .dashboard-block .text-value-count{
   font-size: 2.4rem;

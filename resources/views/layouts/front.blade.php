@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/media.min.css')}}">
     <style>
     #page{
     width:100%;
@@ -158,8 +159,77 @@
                     Custom Closet
                 </a>
             </div>
-            <div class="head-navbar d-flex float-right">
-                <nav class="head-nav d-flex align-items-center">
+            <div class="head-shopbar d-inline-block float-right">
+                <span class="head-shop-icon">
+                    @guest
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
+                            <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                            <label class="mb-0">Account</label>
+                        </a>
+                    @endguest
+                    @auth
+                        <a href="{{url('/account')}}" title="Account">
+                            <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
+                            <label class="mb-0">Account</label>
+                        </a>
+                    @endauth
+                </span>
+                <span class="head-shop-icon head-carticon">
+                    <a href="{{ route('cart') }}" title="Shopping Cart">
+                        <img src="{{URL::asset('/images/icon/carticon.png')}}" alt="">
+                        <label>Cart</label>
+                    </a>
+                    <span class="cart-count cart_count"> {{$cartCount}} </span>
+                </span>
+                <span class="head-shop-icon main-toggler d-lg-none">
+                    <span class="header-burger">
+                        <span></span>
+                    </span>
+                </span>
+            </div>
+            <div class="head-navbar d-inline-block float-right">
+                <nav class="head-nav">
+                    <ul class="head-nav-ul mt-lg-1 mr-lg-3">
+                        <li class="head-nav-li">
+                            <a href="{{ url('installation/') }}" class="head-nav-link">Installation</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('projects/') }}" class="head-nav-link">Projects</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('resource/') }}" class="head-nav-link">Resources</a>
+                        </li>
+                        <li class="head-nav-li">
+                            <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="head-alert-bar">
+            <span> Informationen zur aktuellen Situation bei Custom Closet. </span>
+            <span class="actioninfo-icon"><strong>i</strong></span>
+            <span><a href="">Mehr erfahren</a></span>
+        </div>
+    </header>
+    <!-- <header class="head-bar">
+        <div class="main-header clearfix">
+            <div class="head-info d-inline-block">
+                <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
+                    Custom Closet
+                </a>
+            </div>
+            <div class="head-navbar d-inline-block">
+                <nav class="head-nav">
                     <ul class="head-nav-ul">
                         <li class="head-nav-li">
                             <a href="{{ url('installation/') }}" class="head-nav-link">Installation</a>
@@ -184,7 +254,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="head-shopbar d-flex ">
+                <div class="head-shopbar d-inline-block float-right">
                     <span class="head-shop-icon">
                         @guest
                             <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
@@ -199,7 +269,7 @@
                             </a>
                         @endauth
                     </span>
-                    <span class="head-shop-icon">
+                    <span class="head-shop-icon head-carticon">
                         <a href="{{ route('cart') }}" title="Shopping Cart">
                             <img src="{{URL::asset('/images/icon/carticon.png')}}" alt="">
                             <label>Cart</label>
@@ -213,12 +283,11 @@
                     </span>
                 </div>                
             </div>
-
         </div>
         <div class="head-alert-bar">
             60 YEARS OF EXCELLENCE &nbsp;|&nbsp; SEE OUR NEWEST ADDITIONS &nbsp;|&nbsp; UNLIMITED DESIGN POSSIBILITIES 
         </div>
-    </header>
+    </header> -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -434,7 +503,19 @@ footer-->
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 
 @yield('scripts')
-
+<script>
+    $(".main-toggler").on("click", function () {
+        $(".main-toggler").toggleClass("opened");
+        $(".head-navbar").toggleClass("nav-open");
+        $(".head-nav-li").removeClass("active");
+    });
+    $(".link-cover").on("click", function () {
+        $(this).parent().addClass("active");
+    });
+    $(".head-dropdown-back").on("click", function () {
+        $(".head-nav-li").removeClass("active");
+    });    
+</script>
 
 <script>
    

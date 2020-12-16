@@ -60,8 +60,8 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-2">
-                                <a href="{{ route('admin.item') }}" title="Add New Item" class="btn btn-primary btn-sm pull-right">
+                            <div class="col-2 d-flex align-items-center">
+                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-primary btn-sm pull-right">
                                     Create Item
                                 </a>
                             </div>
@@ -124,4 +124,7 @@
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 
+<script>
+    document.querySelectorAll('[data-toggle="tooltip"]').forEach(function(element){new coreui.Tooltip(element,{offset:function offset(_ref){var placement=_ref.placement,reference=_ref.reference,popper=_ref.popper;console.log(placement);console.log(reference);console.log(popper);if(placement==='bottom'){return[0,popper.height/2];}else{return[];}}});});
+</script>
 @endsection

@@ -8,7 +8,8 @@
 <style>
 .imagePreview {
     width: 100%;
-    height: 90px;
+    height: 120px;
+    margin-bottom: 1rem;
     background-position: center center;
   background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
   background-color:#fff;
