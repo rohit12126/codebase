@@ -36,6 +36,13 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_category/{id?}', 'admin\CategoryController@editSubmitCategory');//->name('admin.categoryedit');
         Route::get('admin/delete_category/{id?}', 'admin\CategoryController@deleteCategory');
 
+        /* Product Decription Module Routes */
+        Route::get('admin/product/description', 'admin\ProductDescriptionController@index')->name('admin.product.decription');
+        Route::post('admin/product/description', 'admin\ProductDescriptionController@addProductDescription')->name('admin.product.decription');
+        Route::get('admin/product/edit_description/{id?}', 'admin\ProductDescriptionController@editProductDescription');//->name('admin.categoryedit');
+        Route::post('admin/product/edit_description/{id?}', 'admin\ProductDescriptionController@editSubmitProductDescription');//->name('admin.categoryedit');
+        Route::get('admin/product/delete_description/{id?}', 'admin\ProductDescriptionController@deleteCategory');
+
         /* Item (Product/Accessory) Module Routes */
         Route::get('admin/item', 'admin\ProductController@index')->name('admin.item');
         Route::post('admin/item', 'admin\ProductController@addProduct')->name('admin.item');

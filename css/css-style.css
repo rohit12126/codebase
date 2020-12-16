@@ -9428,6 +9428,21 @@ h5 {
 	  margin: 0 auto;
 	  margin-bottom: 2.5rem;
 	}
+	.installation-card:after{
+		content: "";
+		position: absolute;
+		top: 35%;
+		right: -4%;
+		width: 2rem;
+		height: 2rem;
+		transform: rotate(45deg);
+		background-color: #fff;
+		box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+	.ic2:after,.ic4:after{
+		left: -4%;
+	}
 	.installation-card .step-tag
 	{
 	  width: 50px;
@@ -9462,6 +9477,9 @@ h5 {
 	}
 	.installation-thumb{
 		position: relative;
+		background-color: #fff;
+		padding: 10px;
+		z-index: 2;
 	}
 	.installation-thumb img{
 		width: 100%;
@@ -9522,17 +9540,6 @@ h5 {
 		.ic3, .ic4{
 		  margin-top: 10rem;
 		}
-	}
-	.step1,.step2,.step3,.step4{
-		position: relative;
-	}
-	.step-of{
-		position: absolute;
-		top: 1%;
-		left: -1%;
-		width: 100px;
-		height: 4px;
-		background-color: #000;
 	}
   /* =============================================================================== */
 .projects-wrap .blog-col{

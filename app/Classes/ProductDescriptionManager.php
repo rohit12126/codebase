@@ -10,7 +10,9 @@ class ProductDescriptionManager
     public static function add($req)
     {
         $data = [
-            'name' => $req->name,
+            'product_id' => $req->product_id,
+            'title'=> $req->title,
+            'description'=> $req->description,
             'status'=> $req->status
         ];
         if ($category = ProductDescription::create($data)) {
@@ -30,7 +32,9 @@ class ProductDescriptionManager
             return false;
         }
         $data = [
-            'name' => $req->name,
+            'product_id' => $req->product_id,
+            'title'=> $req->title,
+            'description'=> $req->description,
             'status'=> $req->status
         ];
         if ($category->fill($data)->save()) {
@@ -51,12 +55,12 @@ class ProductDescriptionManager
         }
     }
 
-    public static function getCategoryList($req)
+    public static function getProductDescriptionList($req)
     {
-        if ( $req->name !== null ) {
-            $order = ProductDescription::with('image');
-            if ($req->name) {
-                $order->where('name', 'like', '%' . $req->name . '%');
+        if ( $req->title !== null ) {
+            
+            if ($req->title) {
+                $order = ProductDescription::where('title', 'like', '%' . $req->title . '%');
             }
             
             return $order->orderBy('id', 'desc')->paginate(10);
@@ -65,11 +69,11 @@ class ProductDescriptionManager
         }
     }
 
-    public static function getProductCategoryList()
+    /* public static function getProductDescriptionList()
     {
         return ProductDescription::where('status', 1)
             ->orderBy('id', 'desc')->paginate(10);
-    }
+    } */
     
     public static function getProductDescriptionById($id)
     {
