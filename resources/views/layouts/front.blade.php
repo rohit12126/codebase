@@ -187,16 +187,32 @@
                 <div class="head-shopbar d-flex ">
                     <span class="head-shop-icon">
                         @guest
-                            <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login" >
                                 <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
                                 <label class="mb-0">Account</label>
                             </a>
+                            <div class="dropdown-menu">
+                                <ul> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal">My Account</a></li> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal">Orders</a></li> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal">My Address</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal">Logout</a></li>
+                                </ul>
+                            </div>
                         @endguest
                         @auth
                             <a href="{{url('/account')}}" title="Account">
                                 <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
                                 <label class="mb-0">Account</label>
                             </a>
+                            <div class="dropdown-menu">
+                                <ul> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="{{ url('blog/') }}">My Account</a></li> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="{{ url('blog/') }}">Orders</a></li> 
+                                    <li><a class="dropdown-item nav-link nav_item" href="{{ url('blog/') }}">My Address</a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" href="404.html">Logout</a></li>
+                                </ul>
+                            </div>
                         @endauth
                     </span>
                     <span class="head-shop-icon">
@@ -335,7 +351,7 @@ footer-->
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
                             <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit culpa neque.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
                                 <br><a href="">More about us &gt;&gt;</a>
                             </p>
                         </div>
@@ -345,9 +361,10 @@ footer-->
                                 <li><a href="{{ url('home/') }}">Home</a></li>
                                 <li><a href="{{ url('about-us/') }}">About us</a></li>
                                 <li><a href="{{ url('product/') }}">Products</a></li>
-                                <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
+                                <li><a href="{{ url('projects/') }}">Projects</a></li>
                                 <li><a href="{{ url('blog/') }}">blog</a></li>
-                                <li><a href="{{ url('faq/') }}">faq</a></li>
+                                <li><a href="{{ url('resource/') }}">Resource</a></li>
+                                <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
@@ -376,13 +393,13 @@ footer-->
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4">
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/fb-white.png')}}" alt=""></a>
+                                    <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/insta-white.png')}}" alt=""></a>
+                                    <a href="" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest-white.png')}}" alt=""></a>
+                                    <a href="" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
                                 </span>
                             </div>
                         </div>

@@ -7566,6 +7566,29 @@ a:hover {
 	width: 22px;
 	margin: 0 5px;
 }
+.head-shop-icon .dropdown-menu{
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    pointer-events: none;
+}
+.head-shop-icon .dropdown-menu li{
+	list-style: none;
+	text-align: left;
+}
+.head-shop-icon .dropdown-menu li a{
+	align-items: flex-start;
+	font-size: 14px;
+}
+.head-shop-icon:hover .dropdown-menu{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0px;
+    pointer-events: auto;
+}
 
 .head-alert-bar {
 	background-color: #F94E57;
@@ -7887,7 +7910,7 @@ h5 {
 }
 .footer-socialicon
 {   
-	margin-right: 2rem;
+	margin-right: 1rem;
 }
 .footer-socialicon img
 {

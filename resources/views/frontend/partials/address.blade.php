@@ -1,6 +1,6 @@
 <div class="row">
     <div class="address-billing-wrapper">
-        <h4 class="pb-3 pt-2">Billing List Detials</h4>
+        <h4 class="pb-3 pt-2">Billing List Details</h4>
         <div class="custom-card-block mb-4">
             <div class="custom-card-body">
                 <div class="row align-items-center">
@@ -26,7 +26,7 @@
     </div>
     
     <div class="address-billing-wrapper">
-        <h4 class="pb-3 pt-2">Shipping List Detials</h4>
+        <h4 class="pb-3 pt-2">Shipping List Details</h4>
         <div class="custom-card-block mb-4">
             <div class="custom-card-body">
                 <div class="row align-items-center">
