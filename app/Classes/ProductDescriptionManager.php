@@ -48,7 +48,7 @@ class ProductDescriptionManager
     public static function delete($id)
     {
         if ($productDescription = self::getProductDescriptionById($id)) {
-            $category->delete();
+            $productDescription->delete();
             return true;
         } else {
             return false;
@@ -57,15 +57,16 @@ class ProductDescriptionManager
 
     public static function getProductDescriptionList($req)
     {
+        
         if ( $req->title !== null ) {
             
             if ($req->title) {
                 $order = ProductDescription::where('title', 'like', '%' . $req->title . '%');
             }
             
-            return $order->orderBy('id', 'desc')->paginate(10);
+            return $order->where('product_id',$req->product_id)->orderBy('id', 'desc')->paginate(10);
         } else {
-            return ProductDescription::orderBy('id', 'desc')->paginate(10);
+            return ProductDescription::where('product_id',$req->product_id)->orderBy('id', 'desc')->paginate(10);
         }
     }
 

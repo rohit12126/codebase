@@ -47,6 +47,28 @@ if(!function_exists('renderDropdown')){
             Category
         </a>
     </li>
+    {{-- <li class="c-sidebar-nav-item " title="Find All Hardware Here">
+        <a class="c-sidebar-nav-link @if(
+            request()->segment(2) == 'hardware-list'
+            ||request()->segment(2) == 'hardware'
+            || request()->segment(2) == 'edit_hardware'
+        ) c-active @endif" href="{{ route('admin.hardware.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            Hardware
+        </a>
+    </li>
+    
+    <li class="c-sidebar-nav-item " title="Find All Product Here">
+        <a class="c-sidebar-nav-link @if(
+            request()->segment(2) == 'product-list'
+            ||request()->segment(2) == 'product'
+            || request()->segment(2) == 'edit_product'
+        ) c-active @endif" href="{{ route('admin.product.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            Product
+        </a>
+    </li> --}}
+
     <li class="c-sidebar-nav-item " title="Find All items Here">
         <a class="c-sidebar-nav-link @if(
             request()->segment(2) == 'item-list'

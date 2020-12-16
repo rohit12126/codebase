@@ -9283,6 +9283,26 @@ h5 {
 .product_rate::before,.rating::before{
 	content: "\e98d\e98d\e98d\e98d\e98d";
 }
+.related-slider .slick-prev, .related-slider .slick-next {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    background-color: #f84e57;
+    z-index: 9;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    border-radius: 50%;
+}
+.related-slider .slick-prev:before{
+	font-family: 'Linearicons' !important;
+	content: "\ec3b";
+	color:#fff;
+}
+.related-slider .slick-next:before{
+	font-family: 'Linearicons' !important;
+	content: "\ec3c";
+	color:#fff;
+}
 /* =============================================================================== */
 	.anim-line {
 	stroke-dashoffset: 284.9;
