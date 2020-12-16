@@ -100,40 +100,38 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-9">
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via Name</label>
-                                                <input type="text" placeholder="Name" name="name"
-                                                    class="form-control" value="{{ @$_GET['name'] }}">
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-group mb-0">
+                                            <label>Search via Name</label>
+                                            <input type="text" placeholder="Name" name="name"
+                                                class="form-control" value="{{ @$_GET['name'] }}">
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via Email</label>
-                                                <input type="text" placeholder="Email" name="email"
-                                                    class="form-control" value="{{ @$_GET['email'] }}">
-                                                </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group mb-0">
+                                            <label>Search via Email</label>
+                                            <input type="text" placeholder="Email" name="email"
+                                                class="form-control" value="{{ @$_GET['email'] }}">
                                             </div>
-                                            <div class="col-4 d-flex align-items-center pt-2">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="{{route('admin.user')}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                                    <i class="cil-reload"></i>
-                                                </a>
-                                            </div>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end">
+                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="{{route('admin.user')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <i class="cil-reload"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-2">
+                            <div class="col-3 d-flex align-items-end justify-content-end">
                                 {{-- @if(!isset($category)) --}}
-                                <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');" title="Create New Usere Here">
-                                    Create User
+                                <button class="btn btn-danger" onclick="$('.addForm').show('slow');" title="Create New Usere Here">
+                                    <i class="cil-plus"></i> Create User
                                 </button>
                                 {{-- @endif --}}
                             </div>
