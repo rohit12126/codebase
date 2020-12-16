@@ -3593,7 +3593,7 @@ html:not([dir="rtl"]) .card-link + .card-link {
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+  padding: 1.25rem;
   margin-bottom: 0;
   border-bottom: 1px solid;
   background-color: #fff;
@@ -9824,8 +9824,8 @@ html:not([dir="rtl"]) .page-item:last-child .page-link {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #321fdb;
-  border-color: #321fdb;
+  background-color: #F94E57;
+  border-color: #F94E57;
 }
 
 .page-item.disabled .page-link {

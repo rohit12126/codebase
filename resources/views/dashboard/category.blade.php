@@ -71,64 +71,62 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-9">
                         <form method="GET" action="{{ url()->current() }}">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="form-group">
-                                        <label>Search via Name</label>
-                                        <input type="text" maxlength="150" placeholder="Name" name="name"
-                                            class="form-control" value="{{ @$_GET['name'] }}">
-                                        </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group mb-0">
+                                    <label>Search via Name</label>
+                                    <input type="text" maxlength="150" placeholder="Name" name="name"
+                                        class="form-control" value="{{ @$_GET['name'] }}">
                                     </div>
-                                    <div class="col-4 d-flex align-items-center pt-2">
-                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="{{route('admin.category')}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                            <i class="cil-reload"></i>
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="col-4 d-flex align-items-end">
+                                    <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                    <a href="{{route('admin.category')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                        <i class="cil-reload"></i>
+                                    </a>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col-2 d-flex align-items-center" title="Add New Category">
-                        <button class="btn btn-primary btn-sm pull-right mt-0" onclick="$('.addForm').show('slow');">
-                            Create Category
+                    <div class="col-3 d-flex align-items-end justify-content-end" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category">
+                        <button class="btn btn-danger pull-right mt-0" onclick="$('.addForm').show('slow');">
+                            <i class="cil-plus"></i> Create Category
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
-                    <table class="table table-striped table-bordered datatable">
-                        <thead>
-                            <tr>
-                                <th>S No.</th>
-                                <th>Name</th>
-                                <th>Action</th>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-bordered datatable">
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Name</th>
+                            <th>Action</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($category_list as $key => $value)
-                            <tr>
-                                <td>{{ $key+1 }}</td>
-                                <td>{{ $value->name }}</td>
-                                <td>
-                                    <button class="btn btn-info" type="button" title="Edit Category"
-                                        onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
-                                        <i class="cil-pencil"></i>
-                                    </button>
-                                    <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
-                                        <i class="cil-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($category_list as $key => $value)
+                        <tr>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $value->name }}</td>
+                            <td>
+                                <button class="btn btn-info" type="button" title="Edit Category"
+                                    onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
+                                    <i class="cil-pencil"></i>
+                                </button>
+                                <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                    <i class="cil-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

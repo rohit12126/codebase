@@ -24,20 +24,19 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row"> 
-                            <div class="col-10">
+                            <div class="col-9">
                             @include('partials.alert_msg')
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
                                         <div class="row">
                                             <div class="col-4">
-                                                <div class="form-group">
+                                                <div class="form-group mb-0">
                                                 <label>Search via Name</label>
                                                 <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
                                                     class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
                                             </div>
                                             <div class="col-4">
-                                                <div class="form-group">
+                                                <div class="form-group mb-0">
                                                     <label>Filter via Status</label>
                                                     <select name="product_status" id="" class="form-control">
                                                         <option value="">Select Status</option>
@@ -48,7 +47,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-4 d-flex align-items-center pt-2">
+                                            <div class="col-4 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
@@ -57,12 +56,11 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
                                 </form>
                             </div>
-                            <div class="col-2 d-flex align-items-center">
-                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-primary btn-sm pull-right">
-                                    Create Item
+                            <div class="col-3 d-flex align-items-end justify-content-end">
+                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger pull-right">
+                                    <i class="cil-plus"></i>  Create Item
                                 </a>
                             </div>
                         </div>
@@ -123,8 +121,7 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-
-<script>
+<!-- <script>
     document.querySelectorAll('[data-toggle="tooltip"]').forEach(function(element){new coreui.Tooltip(element,{offset:function offset(_ref){var placement=_ref.placement,reference=_ref.reference,popper=_ref.popper;console.log(placement);console.log(reference);console.log(popper);if(placement==='bottom'){return[0,popper.height/2];}else{return[];}}});});
-</script>
+</script> -->
 @endsection
