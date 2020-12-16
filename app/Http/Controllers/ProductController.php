@@ -120,12 +120,18 @@ class ProductController extends Controller
     }
 
     /**
-     * Configure page for Roomle
+     * Configure page for Product
      *
      * @return \Illuminate\Http\Response
      */
-    public function configure() {
-        return view('frontend.configure');
+    public function configure(Request $req) {
+        $productId = $req->input('id');
+        $cart = [];
+        $productData = $this->productManager->getProductWithReview($productId);
+        
+        $cart = $this->cartManager->getProduct($productId);
+        return view('frontend.configure',
+            ['productData' => $productData, 'cart'=>$cart]
+        );
     } 
-    
 }
