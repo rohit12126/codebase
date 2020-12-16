@@ -24,32 +24,31 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-12">
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label>Search via Name</label>
                                                     <input type="text" placeholder="Name" name="name"
                                                     class="form-control" value="{{ @$_GET['name'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label>Search via Email</label>
                                                     <input type="text" placeholder="Email" name="email"
                                                     class="form-control" value="{{ @$_GET['email'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                 <label>Search via Phone</label>
                                                 <input type="number" placeholder="Phone" name="phone"
                                                     class="form-control" value="{{ @$_GET['phone'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                 <label>Is connected ?</label>
                                                     <select name="connected" id="connected" class="form-control">
@@ -59,8 +58,8 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
+                                            <div class="col-3">
+                                                <div class="form-group mb-0">
                                                 <label>Reason</label>
                                                     <select name="reason" id="reason" class="form-control">
                                                         <option value="">Please select</option>
@@ -71,8 +70,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            
-                                            <div class="col-4 d-flex align-items-center pt-2">
+                                            <div class="col-3 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
@@ -81,7 +79,6 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
                                 </form>
                             </div>
                         </div>

@@ -29,51 +29,64 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-12">
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
-
                                         <div class="row">
-                                            <div class="col-6">
-                                                <label>From Date</label>
-                                                <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_GET['from_date'] }}" id="from_date" autocomplete="off">
-                                                @error('name')
-                                                <span class="text-danger" role="alert">
-                                                    {{ $message }}
-                                                </span>
-                                                @enderror
-                                                <label>Order No.</label>
-                                                <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_GET['order_no'] }}" autocomplete="off">
-                                                @error('order_no')
-                                                <span class="text-danger" role="alert">
-                                                    {{ $message }}
-                                                </span>
-                                                @enderror
-                                                <label>Product Name</label>
-                                                <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label>From Date</label>
+                                                    <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_GET['from_date'] }}" id="from_date" autocomplete="off">
+                                                    @error('name')
+                                                    <span class="text-danger" role="alert">
+                                                        {{ $message }}
+                                                    </span>
+                                                    @enderror
+                                                </div>
                                             </div>
-                                            <div class="col-6">
-                                                <label>To Date</label>
-                                                <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_GET['to_date'] }}" id="to_date">
-                                                @error('email')
-                                                <span class="text-danger" role="alert">
-                                                    {{ $message }}
-                                                </span>
-                                                @enderror
-            
-                                                <label>Order Status</label>
-                                                <select name="order_status" id="" class="form-control">
-                                                    <option value="">Select Order Status</option>
-                                                    <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>In
-                                                        Process
-                                                    </option>
-                                                    <option value="2" @if(@$_GET['order_status']==2) selected @endif </option>Delivered
-                                                    </option>
-                                                    <option value="3" @if(@$_GET['order_status']==3) selected @endif </option>Cancelled
-                                                    </option>
-                                                </select>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label>To Date</label>
+                                                    <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_GET['to_date'] }}" id="to_date">
+                                                    @error('email')
+                                                    <span class="text-danger" role="alert">
+                                                        {{ $message }}
+                                                    </span>
+                                                    @enderror
+                                                </div>
                                             </div>
-                                            <div class="col-4 d-flex align-items-center pt-2">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label>Order No.</label>
+                                                    <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_GET['order_no'] }}" autocomplete="off">
+                                                    @error('order_no')
+                                                    <span class="text-danger" role="alert">
+                                                        {{ $message }}
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group mb-0">
+                                                    <label>Order Status</label>
+                                                    <select name="order_status" id="" class="form-control">
+                                                        <option value="" hidden>Select Order Status</option>
+                                                        <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>In
+                                                            Process
+                                                        </option>
+                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option>Delivered
+                                                        </option>
+                                                        <option value="3" @if(@$_GET['order_status']==3) selected @endif </option>Cancelled
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group mb-0">
+                                                    <label>Product Name</label>
+                                                    <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
@@ -99,7 +112,6 @@
                                                 </a>
                                             </div>
                                         </div> --}}
-                                    </div>
                                 </form>
                             </div>
                         </div>

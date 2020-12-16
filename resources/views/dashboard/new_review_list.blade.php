@@ -26,10 +26,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-9">
                                 <h4>Non Aproved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
@@ -61,10 +60,9 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
                                 </form>
                             </div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <a href="{{ route('admin.aprooved') }}" class="btn btn-primary btn-sm pull-right">
                                     Aproved Review
                                 </a>

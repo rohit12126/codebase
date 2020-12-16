@@ -26,32 +26,30 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-9">
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via Title</label>
-                                                <input type="text" placeholder="Title" name="title"
-                                                    class="form-control" value="{{ @$_GET['title'] }}">
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-group mb-0">
+                                            <label>Search via Title</label>
+                                            <input type="text" placeholder="Title" name="title"
+                                                class="form-control" value="{{ @$_GET['title'] }}">
                                             </div>
-                                            <div class="col-4 d-flex align-items-center pt-2">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="{{route('admin.blog.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                                    <i class="cil-reload"></i>
-                                                </a>
-                                            </div>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end">
+                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="{{route('admin.blog.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <i class="cil-reload"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-2">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-primary btn-sm pull-right" title="Create Blog Now">
-                                    Create Blog
+                            <div class="col-3 d-flex align-items-end justify-content-end">
+                                <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create Blog Now">
+                                    <i class="cil-plus"></i> Create Blog
                                 </a>
                             </div>
                         </div>

@@ -26,46 +26,44 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-10">
-                                <h4>Aproved Review List</h4>
+                            <div class="col-9">
+                                <h4 class="mb-3">Aproved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via Item Name</label>
-                                                <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
-                                                    class="form-control" value="{{ @$_GET['product_name'] }}">
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="form-group mb-0">
+                                            <label>Search via Item Name</label>
+                                            <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
+                                                class="form-control" value="{{ @$_GET['product_name'] }}">
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via User Name</label>
-                                                <input type="text" placeholder="User Name" maxlength="200" name="user_name"
-                                                    class="form-control" value="{{ @$_GET['user_name'] }}">
-                                                </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="form-group mb-0">
+                                            <label>Search via User Name</label>
+                                            <input type="text" placeholder="User Name" maxlength="200" name="user_name"
+                                                class="form-control" value="{{ @$_GET['user_name'] }}">
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                <label>Search via Review</label>
-                                                <input type="text" placeholder="Review" maxlength="200" name="review"
-                                                    class="form-control" value="{{ @$_GET['review'] }}">
-                                                </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="form-group mb-0">
+                                            <label>Search via Review</label>
+                                            <input type="text" placeholder="Review" maxlength="200" name="review"
+                                                class="form-control" value="{{ @$_GET['review'] }}">
                                             </div>
-                                            <div class="col-4 d-flex align-items-center pt-2">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="{{route('admin.aprooved')}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                                    <i class="cil-reload"></i>
-                                                </a>
-                                            </div>
+                                        </div>
+                                        <div class="col-3 d-flex align-items-end">
+                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="{{route('admin.aprooved')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <i class="cil-reload"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-2">
-                                <a href="{{ route('admin.toaprooved') }}" class="btn btn-primary btn-sm pull-right">
+                            <div class="col-3 d-flex align-items-end justify-content-end">
+                                <a href="{{ route('admin.toaprooved') }}" class="btn btn-primary pull-right">
                                     Non Aproved Review
                                 </a>
                             </div>
