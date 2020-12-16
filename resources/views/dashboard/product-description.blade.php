@@ -46,7 +46,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label>Status</label>
+                                        <label>Status </label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="status" class="form-control">
                                             <option @if(@$productDescription->status == 0) selected @endif value="0">In-Active</option>
@@ -88,6 +88,7 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                         <label>Search via Title</label>
+                                        <input type="hidden" name="product_id" value="{{ $productId }}">
                                         <input type="text" maxlength="150" placeholder="Title" name="title"
                                             class="form-control" value="{{ @$_GET['title'] }}">
                                         </div>
