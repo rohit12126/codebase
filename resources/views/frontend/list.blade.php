@@ -27,7 +27,7 @@
                                         <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
                                     </div>
                                 </a>
-                                <a href="{{ url('configure/') }}" class="btn btn-fill-out">
+                                <a href="{{ route('product.configure', ['id' => $product->id]) }}" class="btn btn-fill-out">
                                     Configure
                                 </a>
                                 <div class="products-list-title"><h2>{{$product->name}}</h2></div>

@@ -7802,14 +7802,14 @@ a:hover {
 	position: relative;
 	display: inline-block;
 }
-.pre-footer .footer-col h5:after{
+.pre-footer .footer-col h5>span:after{
 	content: "";
 	display: block;
-	width: 50px;
+	width: 100%;
 	height: 2px;
 	background: #f64e56;
 	position: absolute;
-	left: 16px;
+	left: 0px;
 	top: 23px;
 }
 .footer-email-wrapper {

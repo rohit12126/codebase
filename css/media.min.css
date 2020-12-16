@@ -226,10 +226,6 @@
         max-width: 50%;
     }
 }
-@media (min-width: 768px)
-{
-    
-}
 @media (max-width: 767px) {
     .cart-box tr {
         display: flex;
@@ -272,7 +268,16 @@
     {
         width: 100%;
     }
-    .blog-col{
+    .blog-col,
+    .projects-wrap .blog-col{
+        width: 100%;
+    }
+    .footer-socialicon-wrapper{
+        justify-content: center;
+        padding-left: 30px;
+    }
+    .grid-column-image-wrapper{
+        height: 350px;
         width: 100%;
     }
 }

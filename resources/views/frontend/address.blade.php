@@ -40,7 +40,7 @@
                             <div class="heading_s1">
                                 <h4>Billing Details</h4>
                             </div>
-                            @if ($isTemp !=1)
+                            {{-- @if ($isTemp !=1)
                             <div class="address-billing-wrapper">
                                 <div class="custom-card-block mb-3">
                                     <div class="custom-card-body">
@@ -57,10 +57,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    {{-- <div class="d-flex justify-content-end align-items-center">
+                                                    <div class="d-flex justify-content-end align-items-center">
                                                         <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                         --}}
+                                                    </div>                         
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,9 +74,9 @@
                                     + Add New
                                 </a>
                             </div>
-                            @endif
+                            @endif --}}
 
-                            <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2">
+                            {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">
                                         <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="" placeholder="Name *">
@@ -100,7 +100,7 @@
                                         <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" placeholder="Postcode / ZIP *">
                                     </div>
                                 </div>
-                            </div>
+                            {{-- </div> --}}
                         </div>
                         <div class="col-md-12">
                             <div class="heading_s1 p-relative">
@@ -110,9 +110,8 @@
                                     <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
                                 </div>
                             </div>
-                            
                             <div class="collapse in show" id="collapseExample">
-                            @if ($isTemp !=1)
+                           {{--  @if ($isTemp !=1)
                             <div class="address-billing-wrapper">
                                 <div class="custom-card-block mb-4">
                                     <div class="custom-card-body">
@@ -129,10 +128,10 @@
                                                     <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                     <p class="card-text">{{$address->address}}</p>
                                                     <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    {{-- <div class="d-flex justify-content-end align-items-center">
+                                                     <div class="d-flex justify-content-end align-items-center">
                                                         <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                         <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div> --}}                        
+                                                    </div>                         
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,8 +145,8 @@
                                     + Add New
                                 </a>
                             </div>
-                            @endif
-                            <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3">
+                            @endif --}}
+                            {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">
                                         <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
@@ -171,7 +170,7 @@
                                         <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" placeholder="Postcode / ZIP *">
                                     </div>
                                 </div>
-                            </div>
+                            {{-- </div> --}}
                             </div>
                         </div>                    
                     </div>
@@ -274,13 +273,13 @@
 $(document).ready(function() {
     /* on load function check for bill and ship is checked than remove require */
     
-    if ($('input:radio[name="shipping_address"]').is(':checked')) {
+   /*  if ($('input:radio[name="shipping_address"]').is(':checked')) {
         $(".ship").removeAttr("required");
     }
 
     if ($('input:radio[name="billing_address"]').is(':checked')) {
         $(".bill").removeAttr("required");
-    }
+    } */
 
 
     /*Same as Bill address functionality*/
@@ -308,23 +307,23 @@ $(document).ready(function() {
      * Bill Address:- Remove require from form in
      * case of value selected from address list
     */
-    $('input:radio[name="shipping_address"]').change(
+    /* $('input:radio[name="shipping_address"]').change(
     function(){
         if ($(this).is(':checked')) {
             $(".ship").removeAttr("required");
         }
-    });
+    }); */
 
     /*
      * Ship Address:- Remove require from form in
      * case of value selected from address list
     */
-    $('input:radio[name="billing_address"]').change(
+    /* $('input:radio[name="billing_address"]').change(
     function(){
         if ($(this).is(':checked')) {
             $(".bill").removeAttr("required");
         }
-    });
+    }); */
     
     jQuery.validator.addMethod("phonenu", function (value, element) {
         if ( /^\d{3}-?\d{3}-?\d{4}$/g.test(value)) {
@@ -334,38 +333,67 @@ $(document).ready(function() {
         };
     }, "Please enter a valid mobile number");
 
+    jQuery.validator.addMethod("postcode", function (value, element) {
+        if ( /^[0-9]{5,6}$/g.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "Please enter a valid postcode");
+
+    
     jQuery("#checkoutForm").validate({
         rules: {
             ship_email: {
-                required: function() { 
+                /* required: function() { 
                   return !$('input:radio[name="shipping_address"]').is(':checked'); 
-                },
+                }, */
+                required: true,
                 email: true
             },
             ship_phone: {
-                required: function() { 
+                /* required: function() { 
                   return !$('input:radio[name="shipping_address"]').is(':checked'); 
-                },
+                }, */
+                required: true,
                 phonenu: true
             },
             bill_email: {
-                required: function() { 
+                /* required: function() { 
                   return !$('input:radio[name="billing_address"]').is(':checked'); 
-                },
+                }, */
+                required: true,
                 email: true
             },
             bill_phone: {
-                required: function() { 
+                /* required: function() { 
                   return !$('input:radio[name="billing_address"]').is(':checked'); 
-                },
+                }, */
+                required: true,
                 phonenu: true
+            },
+            bill_zipcode: {
+                /* required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                }, */
+                required: true,
+                postcode: true
+            },
+            ship_zipcode: {
+                /* required: function() { 
+                  return !$('input:radio[name="billing_address"]').is(':checked'); 
+                }, */
+                required: true,
+                postcode: true
             }
         },
         messages: {
             ship_email: "Please enter a valid email address",
             ship_phone: "Please enter a valid phone number",
             bill_phone: "Please enter a valid phone number",
-            bill_email: "Please enter a valid email address"
+            bill_email: "Please enter a valid email address",
+            bill_zipcode: "Please enter a valid postcode",
+            ship_zipcode: "Please enter a valid postcode"
         },
         submitHandler: function(form) {
             form.submit(); 
