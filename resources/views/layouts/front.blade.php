@@ -39,8 +39,9 @@
     <link rel="stylesheet" href="{{ asset('css/css-slick.css')}}"> 
     <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/media.min.css')}}">
     <style>
     #page{
     width:100%;
@@ -56,7 +57,7 @@
 
     /* Our wrapper */
     .wrapper{
-    width: 715px;
+    max-width: 715px;
     height: 600px;
     position: absolute;
     left:50%;
@@ -64,6 +65,7 @@
     transform:translate3d(-50%,-50%,0);
     overflow:hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width:100%;
     }
 
     /* Our image information */
@@ -146,6 +148,11 @@
     .scroller:before,
     .scroller:after{
     background: #fff;
+    }
+    @media{
+        .wrapper{
+            transform: translate3d(-50%,-50%,0) scale(.8);
+        }
     }
 </style>
 </head>
@@ -374,7 +381,7 @@ footer-->
                                 <li><a href="">Terms &amp; Conditions</a></li>
                                 <li><a href="">privacy policy</a></li>
                             </ul>
-                            <div class="d-flex w-100 align-items-center mt-4">
+                            <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
                                     <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/fb-white.png')}}" alt=""></a>
                                 </span>
