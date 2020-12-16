@@ -5,6 +5,7 @@ namespace App\Classes;
 use App\Models\Product as ProductModel;
 use App\Models\ProductImage as ProductImageModel;
 use App\Classes\HelperManager as Common;
+use App\Classes\ReviewManager;
 use Illuminate\Support\Facades\DB;
 
 class ProductManager
@@ -148,23 +149,29 @@ class ProductManager
     }
     public function getProductWithReview($productId)
     {   
-        $product = ProductModel::with('images', 'catergory')->find($productId);
+        $product = ProductModel::with('images', 'catergory', 'productDescription')->find($productId);
+
+        if (is_null($product)){
+            return false;
+        }
+
         $productData = [
             'product' => $product,
             'productReview' => "",
             'reviewCount'=>'',
             'averageRating'=>''
         ];
+        
         if (!is_null($product)) {
             
-            $productData['productReview'] = $product->getRecentRatings($product->id, 5, 'desc');
+            $productData['productReview'] = ReviewManager::getAllActiveReviewsByProductId($product->id); 
+            //$product->getRecentRatings($product->id, 5, 'desc');
             
             $productData['reviewCount'] = $this->reviewCount($product->id);
             $productData['averageRating'] =  DB::table('reviews')
                 ->where('reviewrateable_type', 'App/Models/Product')
                 ->where('reviewrateable_id', $product->id)
                 ->avg('rating');
-                
         }
         return $productData;
     }
