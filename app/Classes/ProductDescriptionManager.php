@@ -9,7 +9,7 @@ class ProductDescriptionManager
 {
     public static function add($req)
     {
-        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/product-description');
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/product-description/');
         $data = [
             'product_id' => $req->product_id,
             'title'=> $req->title,
@@ -26,7 +26,7 @@ class ProductDescriptionManager
 
     public static function edit($req)
     {
-        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/product-description');
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/product-description/');
 
         $category = null;
         if ($exist = self::getProductDescriptionById($req->id)) {
