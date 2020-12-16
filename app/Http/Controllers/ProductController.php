@@ -67,12 +67,15 @@ class ProductController extends Controller
         $productId = $req->input('id');
         $cart = [];
         $productData = $this->productManager->getProductWithReview($productId);
-        
-        $cart = $this->cartManager->getProduct($productId);
-        return view('frontend.product-detail',
-            ['productData' => $productData, 'cart'=>$cart]
-        );
-    }
+        if ($productData) {
+            $cart = $this->cartManager->getProduct($productId);
+            return view('frontend.product-detail',
+                ['productData' => $productData, 'cart'=>$cart]
+            );
+        }
+
+        return redirect()->route('product.list');
+}
     
     /**
      * Store a Review of the product.
@@ -128,10 +131,13 @@ class ProductController extends Controller
         $productId = $req->input('id');
         $cart = [];
         $productData = $this->productManager->getProductWithReview($productId);
-        
-        $cart = $this->cartManager->getProduct($productId);
-        return view('frontend.configure',
-            ['productData' => $productData, 'cart'=>$cart]
-        );
+        if ($productData) {
+            $cart = $this->cartManager->getProduct($productId);
+            
+            return view('frontend.configure',
+                ['productData' => $productData, 'cart'=>$cart]
+            );
+        }
+        return redirect()->route('product.list');
     } 
 }

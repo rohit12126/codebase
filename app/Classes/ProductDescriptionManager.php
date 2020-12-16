@@ -63,6 +63,7 @@ class ProductDescriptionManager
         
         if ( $req->title !== null ) {
             
+            $order =  "";
             if ($req->title) {
                 $order = ProductDescription::where('title', 'like', '%' . $req->title . '%');
             }

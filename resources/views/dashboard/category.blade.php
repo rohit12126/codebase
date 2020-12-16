@@ -94,8 +94,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-2" title="Add New Category">
-                        <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
+                    <div class="col-2 d-flex align-items-center" title="Add New Category">
+                        <button class="btn btn-primary btn-sm pull-right mt-0" onclick="$('.addForm').show('slow');">
                             Create Category
                         </button>
                     </div>

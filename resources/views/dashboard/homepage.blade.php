@@ -21,8 +21,8 @@
         <div class="row">
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white cursor-pointer dashboard-block first-block" title="Active Users" onclick="window.location='{{ route('admin.user') }}'">
-                    <div class="card-body pb-0">
-                        <div class="d-flex">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
                             <div class="icons-block">
                                 <i class="cil-user"></i>
                             </div>
@@ -40,8 +40,8 @@
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white cursor-pointer dashboard-block second-block" title="Total Orders" onclick="window.location='{{ route('admin.order') }}'">
-                    <div class="card-body pb-0">
-                      <div class="d-flex">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
                         <div class="icons-block">
                             <i class="cil-basket"></i>
                         </div>
@@ -59,8 +59,8 @@
            
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white cursor-pointer dashboard-block third-block" id="activeProduct">
-                    <div class="card-body pb-0">
-                        <div class="d-flex">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
                             <div class="icons-block">
                                 <i class="cil-3d"></i>
                             </div>
@@ -78,8 +78,8 @@
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
               <div class="card text-white cursor-pointer dashboard-block fourth-block" title="Total Active Accessories" onclick="window.location='{{ route('admin.item.list') }}'">
-                  <div class="card-body pb-0">
-                    <div class="d-flex">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
                             <div class="icons-block">
                                 <i class="cil-applications-settings"></i>
                             </div>
@@ -96,8 +96,8 @@
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white cursor-pointer dashboard-block fifth-block" title="Total Cancelled Orders" onclick="window.location='{{ route('admin.order') }}'">
-                    <div class="card-body pb-0">
-                    <div class="d-flex">
+                    <div class="card-body">
+                    <div class="d-flex justify-content-between">
                         <div class="icons-block">
                                 <i class="cil-clone"></i>
                         </div>
@@ -116,8 +116,8 @@
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
               <div class="card text-white cursor-pointer dashboard-block sixth-block" title="Total Active Blogs" onclick="window.location='{{ route('admin.blog.list') }}'">
-                  <div class="card-body pb-0">
-                    <div class="d-flex">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
                         <div class="icons-block">
                             <i class="cil-clone"></i>
                         </div>

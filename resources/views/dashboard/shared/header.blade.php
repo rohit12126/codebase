@@ -73,7 +73,7 @@
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-account-logout"></use>
                         </svg>
-                        <form action="{{ route('admin.logout') }}" method="GET"> @csrf <button type="submit" class="btn btn-ghost-dark btn-block">Logout</button></form>
+                        <form action="{{ route('admin.logout') }}" method="GET" class="mb-0"> @csrf <button type="submit" class="btn p-0">Logout</button></form>
                     </a>
                 </div>
             </li>

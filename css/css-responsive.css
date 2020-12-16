@@ -503,7 +503,7 @@
 	padding: 16px 8px;
 }
 .cart_count, .wishlist_count {
-	top: 0;
+	top: -6px;
 }
 .navbar .navbar-collapse .navbar-nav:not([class*="bg_"]):not([class*="bg-"]) {
 	background-color: #fff;
