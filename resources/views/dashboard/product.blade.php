@@ -222,9 +222,11 @@ $(".imgAdd").click(function(){
   imgClickCount++;
   $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"><img src="{{ url('/download.jpeg') }}" class="previewImage'+imgClickCount+' w-100 h-100" width="100" /></div><label class="btn btn-primary">Upload<input type="file" name="image[]" required class="uploadFile img" id="'+imgClickCount+'" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label><i class="fa fa-times del"></i><div class="image-error'+imgClickCount+' error-img"></div></div>');
 });
+
 $(document).on("click", "i.del" , function() {
 	$(this).parent().remove();
 });
+
 $(function() {
     $('.summernote').summernote({
             height: 200
