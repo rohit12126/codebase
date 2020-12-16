@@ -96,6 +96,9 @@
                                     <td>$ {{ $value->sale_price }}</td>
                                     <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                     <td>
+                                        <a class="btn btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
+                                            <i class="cil-playlist-add"></i>
+                                        </a>
                                         <a class="btn btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
                                             <i class="cil-pencil"></i>
                                         </a>
