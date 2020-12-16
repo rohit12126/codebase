@@ -9304,7 +9304,7 @@ h5 {
 	color:#fff;
 }
 /* =============================================================================== */
-	.anim-line {
+.anim-line {
 	stroke-dashoffset: 284.9;
 	stroke-dasharray: 0px, 999999px;
 	}
@@ -9324,33 +9324,27 @@ h5 {
 	  transform: translateX(0);
 	  transform: translateY(-20px);
 	}
-	
 	.active .anim-cirlce{
 	  stroke-dasharray: 160.3160400390625;
 	 stroke-dashoffset: 160.3160400390625;
 	  animation: anim-cirlce 1s ease-in-out forwards;
 	}
-	
 	.active .anim-fill-cirlce{
 	  animation: anim-fill-cirlce 1.5s ease-in-out forwards;
 	}
-	
 	.active .anim-line{
 	  stroke-dasharray: 283.8000068664551;
 	 stroke-dashoffset: 283.8000068664551;
 	  animation: anim-cirlce 2s ease-in-out forwards;
 	}
-	
 	#TimelineAnim-mob .active .anim-arrow {
 	  animation: anim-arrow-mob 1s ease-in-out forwards;
 	  animation-delay: 1.5s;
 	}
-	
 	.active .anim-arrow {
 	  animation: anim-arrow 1s ease-in-out forwards;
 	  animation-delay: 1.5s;
 	}
-	
 	.active .anim-line{
 	animation-delay: 1s;
 	}
@@ -9362,7 +9356,6 @@ h5 {
 		  fill: rgb(248, 78, 87);
 	  }
 	}
-	
 	@keyframes anim-arrow {
 	  0% {
 		transform: translateX(-20px);
@@ -9375,7 +9368,6 @@ h5 {
 		visibility: visible;
 	  }
 	}
-	
 	@keyframes anim-arrow-mob {
 	  0% {
 		transform: translateY(-20px);
@@ -9388,14 +9380,12 @@ h5 {
 		visibility: visible;
 	  }
 	}
-	
 	@keyframes anim-cirlce {
 	  to {
 		stroke-dashoffset: 0;
 	  }
 	}
-	.installation-svg
-	{
+	.installation-svg{
 		position: absolute;
 		top: 40%;
 		left: 0;
@@ -9448,8 +9438,7 @@ h5 {
 	.ic3:after,.ic4:after{
 		top: 27%;
 	}
-	.installation-card .step-tag
-	{
+	.installation-card .step-tag{
 	  width: 50px;
 	  padding: 5px 0px;
 	  line-height: 15px;
@@ -9463,8 +9452,7 @@ h5 {
 	  text-align: center;
 	  text-transform: capitalize;
 	}
-	.installation-card .step-tag:before
-	{
+	.installation-card .step-tag:before{
 	  content: '';
 	  position: absolute;
 	  top: 0px;
@@ -9501,8 +9489,7 @@ h5 {
 	  bottom: 10px;
 	  cursor: pointer;
 	}
-	.thumb-title:before
-	{
+	.thumb-title:before{
 	  content: '';
 	  position: absolute;
 	  bottom: -10px;
@@ -9533,7 +9520,7 @@ h5 {
 	  font-weight: 300;
 	  line-height: 1.4;
 	}
-	@media(min-width:1200){
+	@media(min-width:768px){
 		.ic2{
 			margin-top: 20rem;
 		}
