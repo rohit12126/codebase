@@ -27,7 +27,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-9">
-                                <h4>Non Aproved Review List</h4>
+                                <h4>Non Approved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
                                         <div class="row">
                                             <div class="col-4">
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-3">
                                 <a href="{{ route('admin.aprooved') }}" class="btn btn-primary btn-sm pull-right">
-                                    Aproved Review
+                                    Approved Review
                                 </a>
                             </div>
                         </div>
