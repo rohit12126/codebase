@@ -45,7 +45,9 @@ class OrderManager
                     WHEN 2 THEN "Delivered"
                     WHEN 3 THEN "Cancelled"
                     ELSE "" END) AS order_status')
-            )->with('user')->latest();
+                )
+                ->with('user', 'getShippingAddress', 'getBillingAddress')
+                ->latest();
             if ($req->order_status) {
                 $order->where('status', $req->order_status);
             }
@@ -81,7 +83,7 @@ class OrderManager
                     WHEN 2 THEN "Delivered"
                     WHEN 3 THEN "Cancelled"
                     ELSE "" END) AS order_status')
-            )->with('user')->latest()->paginate(10);
+            )->with('user', 'getShippingAddress', 'getBillingAddress')->latest()->paginate(10);
         }
     }
 
