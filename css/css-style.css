@@ -8614,6 +8614,10 @@ h5 {
 .product-wallpaper-slider .slick-arrow:before{
 	visibility: hidden;
 }
+.configure-product-slider{
+	max-width: 1200px;
+	margin:0 auto;
+}
 .light-bg {
 	background-color: #FFF4EB;
 }
