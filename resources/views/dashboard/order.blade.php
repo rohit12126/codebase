@@ -139,10 +139,10 @@
                                     <td>{{ $value->order_status }}</td>
                                     <td>{{ $value->grand_total }}</td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
+                                        <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
                                             <i class="cil-arrow-thick-to-right"></i>
                                         </a>
-                                        {{-- <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
+                                        {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
                                         onclick="return confirm('Are you sure you want to delete this user?');">
                                         <i class="cil-trash"></i>
                                         </a> --}}

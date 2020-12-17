@@ -92,8 +92,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-3 d-flex align-items-end justify-content-end" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category">
-                        <button class="btn btn-danger pull-right mt-0" onclick="$('.addForm').show('slow');">
+                    <div class="col-3 d-flex align-items-end justify-content-end">
+                        <button class="btn btn-danger pull-right mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
                             <i class="cil-plus"></i> Create Category
                         </button>
                     </div>
@@ -115,11 +115,10 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $value->name }}</td>
                             <td>
-                                <button class="btn btn-info" type="button" title="Edit Category"
-                                    onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
+                                <button class="btn btn-sm btn-info" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
                                     <i class="cil-pencil"></i>
                                 </button>
-                                <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
                                     <i class="cil-trash"></i>
                                 </a>
                             </td>
@@ -151,4 +150,5 @@
     @if (isset($category)) $('.addForm').show(); @endif
 
 </script>
+
 @endsection

@@ -107,9 +107,9 @@
                                     <td>{{$value->reason}}</td>
                                     
                                     <td>{{$value->message}}</td>
-                                    <td>
+                                    <td class="text-center">
                                     @if($value->connected == 0)
-                                        <a class="btn btn-primary" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" title="Contected">
+                                        <a class="btn btn-sm btn-primary d-inline-block" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" title="Contected">
                                             <i class="cil-check"></i>
                                         </a>
                                     @endif

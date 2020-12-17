@@ -45,7 +45,7 @@
 
 @section('breadcrumb')
     <div class="c-subheader px-3">
-        <ol class="breadcrumb border-0 m-0">
+        <ol class="breadcrumb breadcrumb-custom border-0 m-0">
         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Items</a></li>
         <li class="breadcrumb-item active">@if(isset($product)) Edit @else Add @endif Item</li>

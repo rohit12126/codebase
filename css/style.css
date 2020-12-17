@@ -20337,9 +20337,14 @@ body {
   color: #F94E57;
   font-size: 0.875rem;
 }
+.breadcrumb-custom a:hover{
+  color: #F94E57;
+}
 .breadcrumb-custom .breadcrumb-item.active{
   font-size: 0.875rem;
+  color: #3c4b64;
 }
 .breadcrumb-custom .breadcrumb-item::before {
   padding-left: 0 !important;
+  color: #222 !important;
 }
