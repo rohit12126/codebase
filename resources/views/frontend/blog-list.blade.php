@@ -29,23 +29,21 @@
                         <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
                             <article class="blog-list-card">
                                 <p class="blog-list-title">
-                                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">{{$blog->title}}</a>
+                                    {{$blog->title}}
                                 </p>
-                                <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
+                                <div class="img-block">
                                     @if (isset($blog->image))
                                         <img src="{{ asset('upload/blog/'.$blog->image)}}" alt="product_img1" class="blog-img">
                                     @else
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1" class="blog-img">
                                     @endif
-                                </a>
+                                </div>
                                 <div class="blog-foot">
                                     <div class="blog-read-time">
                                         <i class="linearicons-clock3"></i>
                                         <p>{{$blog->catergory->name}}</p>
-                                    </div>
-                                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
-                                        <span class="blog-view-button">View</span>
-                                    </a>
+                                    </div>                                    
+                                    <span class="blog-view-button">View</span>
                                 </div>
                             </article>
                         </a>
