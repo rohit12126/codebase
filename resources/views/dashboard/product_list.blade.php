@@ -69,13 +69,12 @@
                         <table class="table table-striped table-bordered datatable">
                             <thead>
                                 <tr>
-                                    <th>S No.</th>
-                                    <th></th>
+                                    <th class="serial-number-th">S No.</th>
+                                    <th>Product Thumbnail</th>
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Type</th>
                                     <th>Action</th>
-
                                 </tr>
                             </thead>
                             <tbody>

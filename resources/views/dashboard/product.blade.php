@@ -6,28 +6,12 @@
 
 @section('content')
 <style>
-.imagePreview {
-    width: 100%;
-    height: 120px;
-    margin-bottom: 1rem;
-    background-position: center center;
-  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
-  background-color:#fff;
-    background-size: cover;
-  background-repeat:no-repeat;
-    display: inline-block;
-  box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
-}
 .btn-primary
 {
   display:block;
   border-radius:0px;
   box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
   margin-top:-5px;
-}
-.imgUp
-{
-  margin-bottom:15px;
 }
 .del
 {
@@ -134,7 +118,7 @@
                                             @if(@$product) Update @else Submit @endif
                                         </button>
                                                 
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white" title="Cancel">
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white"  title="Cancel">
                                             Cancel
                                         </a>
                                     </div>
@@ -147,15 +131,15 @@
                                         @if(isset($product->images) && count(@$product->images) > 0)
                                         @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview"style="background: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
+                                                <div class="imagePreview"style="background-image: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
                                                 <input type="file" name="image[]" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 <input type="hidden" placeholder="Stock Quantity" name="storeimage[{{ $value->id }}]" class="form-control" required value="{{ $value->id }}">
                                                 <i class="fa fa-times del"></i>
                                             </div>
                                             @endforeach
-                                            <div class="imgAdd d-flex align-items-center justify-content-center">
-                                                <i class="fa fa-plus" title="Click to add more images"></i>
+                                            <div class="imgAdd d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="right" title="Click to add more images">
+                                                <i class="fa fa-plus"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +152,7 @@
                                                 <div class="imagePreview" title="Item image preview">
                                                     <img src="{{ url('/download.jpeg') }}" class="previewImage0 w-100 h-100" width="100" />
                                                 </div>
-                                                <label class="btn btn-primary" title="Only image type jpg/png/jpeg is allowed">
+                                                <label class="btn btn-danger"  title="Only image type jpg/png/jpeg is allowed">
                                                     Upload
                                                 <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
                                                 </label>
@@ -207,7 +191,7 @@
 {{-- Editor js--}}
 
 <!-- include Bootstrap and summernote css/js -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -230,7 +214,12 @@ $(document).on("click", "i.del" , function() {
 
 $(function() {
     $('.summernote').summernote({
-            height: 200
+            height: 200,
+            popover: {
+                image: [],
+                link: [],
+                air: []
+            }
     });
 
     $(document).on("change",".uploadFile", function() {
