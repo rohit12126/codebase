@@ -38,8 +38,9 @@ class ProductDescriptionManager
             'product_id' => $req->product_id,
             'title'=> $req->title,
             'description'=> $description,
-            'status'=> $req->status
+            'status'=> (int)$req->status
         ];
+        
         if ($category->fill($data)->save()) {
             
             return true;
