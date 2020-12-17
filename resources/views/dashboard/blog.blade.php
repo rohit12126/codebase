@@ -86,9 +86,7 @@
                                     <div class="form-group" id="moreImage">
                                         <label for="">Featured Image </label>
                                         <span class="mandatory">*</span>
-                                        <div class="col-sm-4 imgUp">
                                             <div class="imagePreview" title=" This is Blog Image Preview">
-                                                
                                                 @if(isset($blog->image))
                                                     <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage w-100 h-100" width="100" />
                                                     <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
@@ -96,15 +94,14 @@
                                                     <img src="{{ url('/download.jpeg') }}" class="previewImage w-100 h-100" width="100" />
                                                 @endif
                                             </div>
-                                            <label class="btn btn-primary" title="Upload Images Here">
-                                                Upload
+                                            <label class="btn btn-danger w-100" title="Change or Upload Image">
+                                            <i class="cil-plus"></i> Upload
                                                 <input type="file" name="image" required class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Upload Images Here">
                                             </label>
                                             <div class="image-error error-img"></div>
                                             @if($errors->has('image'))
                                                 <div class="error error-img">{{ $errors->first('image') }}</div>
                                             @endif
-                                        </div>
                                         <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
                                     </div>
                                 </div>
@@ -126,7 +123,6 @@
 
 {{-- Editor js--}}
  <!-- include Bootstrap and summernote css/js -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -145,7 +141,12 @@
     /* Image Preview */
     $(function() {
         $('.summernote').summernote({
-            height: 200
+            height: 200,
+            popover: {
+                image: [],
+                link: [],
+                air: []
+            }
         });
         
         $(document).on("change",".uploadFile", function()
