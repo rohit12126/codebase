@@ -94,9 +94,11 @@ class OrderController extends Controller
         }
         
         $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order->order_no);
-        
+        dump($order);
         $email = $order->getBillingAddress->email;
         
+        dd($email);
+
         if (!empty($email)) {
             Mail::to($email)->send(new OrderConfirm($order));
         }
