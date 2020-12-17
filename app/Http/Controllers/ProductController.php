@@ -108,14 +108,14 @@ class ProductController extends Controller
         
         $product = $this->productManager->getProductById($req->productId);
         
-        /* Future Bg  Guset<-->User Conflic */
+        
         $reviewData = DB::table('reviews')
             ->where('reviewrateable_id', $req->productId)
             ->where('author_id', $order->user_id)
             ->first();
 
         if (!is_null($reviewData)) {
-            
+            /* Update rating */
             $rating = $product->updateRating($reviewData->id, [
                 'title' => 'Product Review',
                 'body' => $req->review,
@@ -126,6 +126,7 @@ class ProductController extends Controller
             return response()->json(['success' => '1']);
         }
 
+        /* Create rating */
         $rating = $product->rating([
             'title' => 'Product Review',
             'body' => $req->review,

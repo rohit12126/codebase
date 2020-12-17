@@ -74,6 +74,7 @@ if(!function_exists('renderDropdown')){
             request()->segment(2) == 'item-list'
             ||request()->segment(2) == 'item'
             || request()->segment(2) == 'edit_item'
+            || request()->segment(2) == 'product'
         ) c-active @endif" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
             Items
