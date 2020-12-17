@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <div class="c-subheader px-3">
-        <ol class="breadcrumb border-0 m-0">
+        <ol class="breadcrumb breadcrumb-custom border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Items</a></li>
             <li class="breadcrumb-item active"><a href="{{ route('admin.product.description', ['product_id' => $productId]) }}">Product Description</a></li>
@@ -81,19 +81,19 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-9">
                         <form method="GET" action="{{ url()->current() }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4">
-                                        <div class="form-group">
+                                        <div class="form-group mb-0">
                                         <label>Search via Title</label>
                                         <input type="hidden" name="product_id" value="{{ $productId }}">
                                         <input type="text" maxlength="150" placeholder="Title" name="title"
                                             class="form-control" value="{{ @$_GET['title'] }}">
                                         </div>
                                     </div>
-                                    <div class="col-4 d-flex align-items-center pt-2">
+                                    <div class="col-4 d-flex align-items-end">
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
@@ -105,9 +105,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-2" title="Add New Description">
-                        <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
-                            Create Description
+                    <div class="col-3 d-flex justify-content-end align-items-end" title="Add New Description">
+                        <button class="btn btn-danger" onclick="$('.addForm').show('slow');">
+                        <i class="cil-plus"></i> Create Description
                         </button>
                     </div>
                 </div>

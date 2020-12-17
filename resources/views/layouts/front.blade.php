@@ -222,9 +222,7 @@
             </div>
         </div>
         <div class="head-alert-bar">
-            <span> Informationen zur aktuellen Situation bei Custom Closet. </span>
-            <span class="actioninfo-icon"><strong>i</strong></span>
-            <span><a href="">Mehr erfahren</a></span>
+            60 YEARS OF EXCELLENCE &nbsp;|&nbsp; SEE OUR NEWEST ADDITIONS &nbsp;|&nbsp; UNLIMITED DESIGN POSSIBILITIES 
         </div>
     </header>
     <!-- <header class="head-bar">
