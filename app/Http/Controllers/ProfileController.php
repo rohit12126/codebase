@@ -54,7 +54,7 @@ class ProfileController extends Controller
         
         $user = $this->userManager
                 ->getCurrentUser();
-        if(is_null($user)){
+        if (is_null($user)) {
             return redirect('/');
         } 
         $orders = $this->orderManager
