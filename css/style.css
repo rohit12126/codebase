@@ -20333,3 +20333,13 @@ body {
 .breadcrumb-custom{
   background-color: transparent !important;
 }
+.breadcrumb-custom a{
+  color: #F94E57;
+  font-size: 0.875rem;
+}
+.breadcrumb-custom .breadcrumb-item.active{
+  font-size: 0.875rem;
+}
+.breadcrumb-custom .breadcrumb-item::before {
+  padding-left: 0 !important;
+}
