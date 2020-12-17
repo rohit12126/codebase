@@ -37,9 +37,9 @@
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                 <i class="linearicons-cart-plus"></i> Add to cart
             </a>
-            <a href="#" class="btn btn-fill-out">
+            {{-- <a href="#" class="btn btn-fill-out">
                 Configure
-            </a>
+            </a> --}}
         </div>
     </section>
 

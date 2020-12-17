@@ -28,7 +28,6 @@ class OrderConfirm extends Mailable
      */
     public function build()
     {
-        dd($this->data);
         return $this->view('dashboard.email.order_confirm')->with('data', $this->data);
     }
 }
