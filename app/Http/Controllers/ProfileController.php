@@ -27,7 +27,7 @@ class ProfileController extends Controller
         AddressManager $addressManager
     )
     {
-        $this->middleware('auth');
+        
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
         $this->userManager =$userManager;
@@ -50,9 +50,13 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function account(){
+    public function account() {
+        
         $user = $this->userManager
                 ->getCurrentUser();
+        if (is_null($user)) {
+            return redirect('/');
+        } 
         $orders = $this->orderManager
                     ->getOrderByUserId($user->id);
         $shippingAddress =  $this->addressManager

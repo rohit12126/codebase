@@ -15,13 +15,16 @@ class OrderManager
 {
     public static function orderStatusChange($req)
     {
-        $order = self::getOrderByOrderNUmber($req->order_no);
+        $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
         if ($order->fill(['status' => $req->order_status])->save()) {
 
             $data['order_no'] = $order->order_no;
             $data['buyer_name'] = ucwords($order->user->name);
             $data['status'] = $order->order_status;
-            Mail::to($order->user->email)->send(new OrderStatusChange($data));
+            
+            $email = $order->getBillingAddress->email;
+            
+            Mail::to($email)->send(new OrderStatusChange($data));
             return true;
         } else {
             return false;

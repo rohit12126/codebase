@@ -11,6 +11,7 @@ use App\Classes\CartManager;
 use App\Classes\UserManager;
 use App\Classes\OrderManager;
 use App\Classes\CategoryManager;
+use App\Classes\GuestUserManager;
 
 class ProductController extends Controller
 {
@@ -93,23 +94,44 @@ class ProductController extends Controller
              return response()->json(['error'=>$validator->messages()->first()],Response::HTTP_INTERNAL_SERVER_ERROR);
         }
         
-        $user = $this->userManager->getCurrentUser();
+        //$user = $this->userManager->getCurrentUser();
 
-        /* if (is_null($user)) {
-
-        } */
+        $order = OrderManager::getOrderByOrderNUmber($req->orderNum);
+        
+        if ($order->temp_user == 0) {
+            //registered user
+            $user = UserManager::getUserById($order->user_id);
+        } else {
+            //temp user
+            $user = GuestUserManager::getUser($order->user_id);
+        }
         
         $product = $this->productManager->getProductById($req->productId);
         
-        /* $review = DB::table('reviews')
+        
+        $reviewData = DB::table('reviews')
             ->where('reviewrateable_id', $req->productId)
-            //->where('author_id', $user->)
-            ->first(); */
+            ->where('author_id', $order->user_id)
+            ->first();
 
+        if (!is_null($reviewData)) {
+            /* Update rating */
+            $rating = $product->updateRating($reviewData->id, [
+                'title' => 'Product Review',
+                'body' => $req->review,
+                'rating' => $req->rating,
+                'approved' => true // This is optional and defaults to false
+            ]);
+
+            return response()->json(['success' => '1']);
+        }
+
+        /* Create rating */
         $rating = $product->rating([
             'title' => 'Product Review',
             'body' => $req->review,
             'rating' => $req->rating,
+            'approved' => true
         ], $user);
         return response()->json(['success' => '1']);
     }
