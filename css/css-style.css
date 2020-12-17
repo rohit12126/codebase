@@ -8597,8 +8597,15 @@ h5 {
 	width: 100%;
 	overflow: hidden;
 }
+.product-wallpaper-slider .slick-track
+{
+    display: flex !important;
+}
 .product-wallpaper-slider .slick-slide{
 	padding: 0 10px;
+	height: inherit !important;
+	align-items: center;
+    display: flex;
 }
 .product-wallpaper-slider .slick-slide:not(.slick-active)
 {
