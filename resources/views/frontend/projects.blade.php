@@ -10,11 +10,11 @@
                             <div class="blog-list-title">
                                 Custom closet project one
                             </div>
-                            <img src="{{URL::asset('/images/projects/projects1.jpg')}}" alt="" class="blog-img">
+                            <div class="img-block">
+                                <img src="{{URL::asset('/images/projects/projects1.jpg')}}" alt="" class="blog-img">
+                            </div>
                             <div class="blog-foot">
-                                <a href="">
-                                    <span class="blog-view-button">View</span>
-                                </a>
+                                <span class="blog-view-button">View</span>
                             </div>
                         </article>
                     </a>
