@@ -130,7 +130,7 @@
                             </div>
                             <div class="col-3 d-flex align-items-end justify-content-end">
                                 {{-- @if(!isset($category)) --}}
-                                <button class="btn btn-danger" onclick="$('.addForm').show('slow');" title="Create New Usere Here">
+                                <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
                                     <i class="cil-plus"></i> Create User
                                 </button>
                                 {{-- @endif --}}
@@ -158,15 +158,15 @@
                                     <td>{{ $value->email }}</td>
                                     <td>{{ $value->mobile }}</td>
                                     <td>
-                                        <a class="btn btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
+                                        <a class="btn btn-sm btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
                                             Login as {{ ucwords($value->name) }}
                                         </a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
+                                        <a class="btn btn-sm btn-info" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
+                                        <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
 

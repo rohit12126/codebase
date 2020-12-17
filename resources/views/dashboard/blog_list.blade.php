@@ -48,7 +48,7 @@
                                 </form>
                             </div>
                             <div class="col-3 d-flex align-items-end justify-content-end">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create Blog Now">
+                                <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create New Blog" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New Blog">
                                     <i class="cil-plus"></i> Create Blog
                                 </a>
                             </div>
@@ -73,10 +73,10 @@
                                     </td>
                                     <td>{{ $value->title }}</td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
+                                        <a class="btn btn-sm btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                        <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
