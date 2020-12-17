@@ -37,7 +37,9 @@
     <link rel="stylesheet" href="{{ asset('css/css-owl.theme.default.min.css')}}"><!-- Magnific Popup CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-magnific-popup.css')}}">Slick CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-slick.css')}}"> 
-    <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/fancybox.min.css')}}">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
@@ -440,6 +442,7 @@ footer-->
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.hotspot.js')}}"></script>
+<script src="{{ asset('js/fancybox.min.js')}}"></script>
 <script>
     if ($('#hotspotImg').length > 0) {
 	     $('#hotspotImg').hotSpot({

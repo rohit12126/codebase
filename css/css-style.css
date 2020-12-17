@@ -9126,11 +9126,16 @@ h5 {
 	max-width: 50%;
 	flex: 0 0 50%;
 	padding: 5px;
+	margin-bottom: 1rem;
 }
 .product-detail2 .product-list-inner{
 	height: auto;
-	padding: 15px;
+	margin: 15px;
+	padding: 0;
 	overflow: hidden;
+	display: flex;
+	height: 100%;
+	align-items: center;
 }
 .product-detail2 .product-list-inner a{
 	display: flex;
@@ -9144,6 +9149,10 @@ h5 {
 .product-detail2 .product-list-inner img:hover{
 	transform: scale(1.04);
 	cursor: url(../img/icon/zoom.png),crosshair;
+}
+.product-detail2 .btn{
+	padding: 8px 20px;
+    font-size: 0.875rem;
 }
 .pdp-title{
 	color: #282c3f;

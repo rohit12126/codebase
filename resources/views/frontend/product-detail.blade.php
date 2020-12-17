@@ -3,9 +3,9 @@
 <!-- START SECTION SHOP -->
 
     <section class="section product-detail2">
-        <div class="container-lx">
+        <div class="container-xl">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     <div class="d-flex flex-wrap justify-content-center">
                         @if (!is_null($productData['product']->images))    
                             @if (count($productData['product']->images) > 1)
@@ -32,7 +32,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <h1 class="pdp-title">
                         {{$productData['product']->name}}
                     </h1>
