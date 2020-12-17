@@ -9039,7 +9039,7 @@ h5 {
 	padding: 20px;
 	border: 1px solid #eee;
 	text-transform: capitalize;
-	color: #555;
+	color: #000;
 }
 
 .pa-cart-img img {
@@ -9767,4 +9767,64 @@ body { margin: 0; }
 #secondhotspotImg{
 	width:715px;
 	position: relative;
+}
+
+.track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 100px;
+	margin-top: 80px;
+	max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -28px;
+    position: relative
+}
+.track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 0%;
+    left: 0;
+    top: 28px;
+    transition: all  0.5s;
+}
+.track .step.active:before {
+    background: #f94e57;
+    width: 100%;
+}
+.track .step.active .icon {
+    background: #f94e57;
+    color: #fff;
+}
+.track .icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd;
+    font-size: 1.4rem;
+    transition: all  0.3s;
+    text-align: center;
+}
+.track .step.active .text {
+    font-weight: 400;
+    color: #000
+}
+.track .text {
+    display: block;
+    margin-top: 7px
 }

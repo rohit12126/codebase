@@ -74,6 +74,10 @@
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
+
+                        <a href="{{ route('product.configure', ['id' => $productData['product']->id]) }}" class="btn btn-fill-out">
+                            Configure
+                        </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
                         <div class="pincode-deliveryContainer">

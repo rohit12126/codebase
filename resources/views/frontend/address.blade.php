@@ -287,6 +287,7 @@ $(document).ready(function() {
         if (this.checked) {
             $(".ship").removeAttr("required");
             
+            $("#ship_email").val($("#bill_email").val());
             $("#ship_name").val($("#bill_name").val());
             $("#ship_phone").val($("#bill_phone").val());
             $("#ship_address").val($("#bill_address").val());
@@ -299,7 +300,8 @@ $(document).ready(function() {
             $("#ship_address").val('');
             $("#ship_city").val('');
             $("#ship_state").val('');
-            $("#ship_zipcode").val('');           
+            $("#ship_zipcode").val('');
+            $("#ship_email").val('');           
         }
     });
 

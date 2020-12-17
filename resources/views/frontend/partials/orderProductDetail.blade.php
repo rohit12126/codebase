@@ -5,45 +5,57 @@
 
 <!-- START SECTION SHOP -->
 <div class="section">
+    <div class="container">
+        <h1 class="text-center mb-5">Order Tracking</h1>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h6>Tracking No. #: <span class="font-weight-bold">#{{$data->order_no}}</span></h6>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+        <div class="track">
+            <div class="step active"> <span class="icon"> <i class="linearicons-check"></i> </span> 
+                <span class="text">Order confirmed</span> 
+            </div>
+            <div class="step text-center"> <span class="icon"> <i class="linearicons-truck"></i> </span> 
+                <span class="text"> Shipped</span> 
+            </div>
+            <div class="step text-right"> <span class="icon"> <i class="linearicons-thumbs-up"></i> </span> 
+                <span class="text"> Delivered </span> 
+            </div>
+        </div>
+    </div>
 	<div class="container">
         <div class="row">
-        <div class="col-lg-6">
-        <div class="card mb-3 mb-lg-0">
-            <div class="card-header">
-            
-                <h3>Order Id : {{$data->order_no}}</h3>
+            <div class="d-flex w-100 pt-3 pb-3">
+                <div class="col-lg-6">
+                    <div class="card mb-3 mb-lg-0">
+                        <div class="card-header">
+                            <h5>Billing Address</h5>
+                        </div>
+                        <div class="card-body">
+                        {{ $data->getBillingAddress->address }}            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-3 mb-lg-0">
+                        <div class="card-header">
+                        
+                            <h5>Shipping Address</h5>
+                        </div>
+                        <div class="card-body">
+                        {{ $data->getShippingAddress->address }}            
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="card mb-3 mb-lg-0">
-            <div class="card-header">
-            
-                <h3>Billing Address</h3>
-            </div>
-            <div class="card-body">
-            {{ $data->getBillingAddress->address }}            
-        </div>
-    </div>
-    
-    </div>
-    <div class="col-lg-3">
-        <div class="card mb-3 mb-lg-0">
-            <div class="card-header">
-            
-                <h3>Shipping Address</h3>
-            </div>
-            <div class="card-body">
-            {{ $data->getShippingAddress->address }}            
-        </div>
-    </div>
-    
-    </div>
-    <hr>
+            <hr>
             <div class="col-md-12">
-                <div class="compare_box">
-                
-                    <div class="table-responsive">
+                <div class="cart-box">
+                    <div class="">
                     <table class="table">
                     <thead>
                         <tr>
@@ -71,8 +83,7 @@
                                 <td>$ {{$product->price * $product->product_quantity}}</td>
                                 <td>
                                     <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
-                                    <i class="icon-basket-loaded"></i>
-                                    Give a Review</a>
+                                    <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>
                                 </td>
                             </tr>
                             @endforeach
