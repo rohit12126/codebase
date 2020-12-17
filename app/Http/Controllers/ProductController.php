@@ -86,7 +86,7 @@ class ProductController extends Controller
     public function rating(Request $req){
         $validator = Validator::make($req->all(), [
             'review' => 'required|string',
-            'rating' => 'required|integer',
+            'rating' => 'required|integer'
         ]);
          
         if ($validator->fails()) {
@@ -94,7 +94,18 @@ class ProductController extends Controller
         }
         
         $user = $this->userManager->getCurrentUser();
+
+        /* if (is_null($user)) {
+
+        } */
+        
         $product = $this->productManager->getProductById($req->productId);
+        
+        /* $review = DB::table('reviews')
+            ->where('reviewrateable_id', $req->productId)
+            //->where('author_id', $user->)
+            ->first(); */
+
         $rating = $product->rating([
             'title' => 'Product Review',
             'body' => $req->review,

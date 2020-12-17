@@ -323,10 +323,10 @@ Route::group(['middleware' => ['get.menu']], function () {
 
 /*user dashboard Routes*/
 Route::prefix('account')->group(function () {
-Route::get('/profile',                 'ProfileController@index')->name('profile');
-Route::get('/',                 'ProfileController@account')->name('account');
-Route::post('/update',                 'ProfileController@update')->name('account.update');
-Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
+    Route::get('/profile',                 'ProfileController@index')->name('profile');
+    Route::get('/',                 'ProfileController@account')->name('account');
+    Route::post('/update',                 'ProfileController@update')->name('account.update');
+    Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
 });
 Route::get('stripe', 'StripePaymentController@stripe')->name('stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
