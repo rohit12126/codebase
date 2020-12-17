@@ -58,11 +58,11 @@
                                         @if(isset($productDescription)) Update @else Submit @endif
                                     </button>
                                     @if(isset($productDescription))
-                                    <a href="{{route('admin.product.description', ['product_id' => $productId])}}" title="Cancle" class="btn btn-danger text-white">
+                                    <a href="{{route('admin.product.description', ['product_id' => $productId])}}" title="Cancel" class="btn btn-danger text-white">
                                         Cancel
                                     </a>
                                     @else
-                                    <a onclick="$('.addForm').hide('slow');" title="Cancle" class="btn btn-danger text-white">
+                                    <a onclick="$('.addForm').hide('slow');"  title="Cancel" class="btn btn-danger text-white">
                                         Cancel
                                     </a>
                                     @endif
@@ -83,30 +83,28 @@
                 <div class="row">
                     <div class="col-9">
                         <form method="GET" action="{{ url()->current() }}">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="form-group mb-0">
-                                        <label>Search via Title</label>
-                                        <input type="hidden" name="product_id" value="{{ $productId }}">
-                                        <input type="text" maxlength="150" placeholder="Title" name="title"
-                                            class="form-control" value="{{ @$_GET['title'] }}">
-                                        </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group mb-0">
+                                    <label>Search via Title</label>
+                                    <input type="hidden" name="product_id" value="{{ $productId }}">
+                                    <input type="text" maxlength="150" placeholder="Title" name="title"
+                                        class="form-control" value="{{ @$_GET['title'] }}">
                                     </div>
-                                    <div class="col-4 d-flex align-items-end">
-                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </button>
-                                        <a href="{{route('admin.product.description', ['product_id' => $productId])}}" title="Reset Filters"  class="btn btn-danger text-white">
-                                            <i class="cil-reload"></i>
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="col-4 d-flex align-items-end">
+                                    <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                    <a href="{{route('admin.product.description', ['product_id' => $productId])}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                        <i class="cil-reload"></i>
+                                    </a>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col-3 d-flex justify-content-end align-items-end" title="Add New Description">
-                        <button class="btn btn-danger" onclick="$('.addForm').show('slow');">
+                    <div class="col-3 d-flex justify-content-end align-items-end">
+                        <button class="btn btn-danger" onclick="$('.addForm').show('slow');" data-toggle="tooltip" data-placement="bottom" title="Add New Description">
                         <i class="cil-plus"></i> Create Description
                         </button>
                     </div>
@@ -127,11 +125,11 @@
                             <td>{{ $key+1 }}</td>
                             <td>{{ $value->title }}</td>
                             <td>
-                                <button class="btn btn-info" type="button" title="Edit Description"
+                                <button class="btn btn-sm btn-info" type="button" title="Edit Description"
                                     onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
                                     <i class="cil-pencil"></i>
                                 </button>
-                                <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
+                                <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
                                     <i class="cil-trash"></i>
                                 </a>
                             </td>

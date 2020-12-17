@@ -48,10 +48,10 @@
                 </div>
             </div>
           </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="linearicons-chevron-left" aria-hidden="true"></span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="linearicons-chevron-right" aria-hidden="true"></span>
             </a>
         </div>
