@@ -108,9 +108,9 @@
 @if(!$productData['product']->images->isEmpty())
     <section class="configure-product-slider pl-0 pr-0 pt-5">
         <h1 class="pt-5 mb-5 heading_s3 text-center">Product Gallery</h1>
-        <div class="configure-slider">
+        <div class="configure-slider product-wallpaper-slider">
             @foreach ($productData['product']->images as $img)
-                <div class="d-flex justify-content-center align-items-center p-2">
+                <div class="">
                     <img src="{{ asset('upload/product/'.$img->image)}}" alt="">
                 </div>
             @endforeach
@@ -168,7 +168,7 @@
     $('.configure-slider').slick({
         autoplay: true,
         arrows: true,
-        speed: 1000,
+        speed: 2000,
         autoplaySpeed: 1200,
         dots: false,
         centerPadding: '15%',

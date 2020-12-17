@@ -93,7 +93,7 @@
                         </form>
                     </div>
                     <div class="col-3 d-flex align-items-end justify-content-end">
-                        <button class="btn btn-danger pull-right mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
+                        <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
                             <i class="cil-plus"></i> Create Category
                         </button>
                     </div>
@@ -103,7 +103,7 @@
                 <table class="table table-striped table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>S No.</th>
+                            <th class="serial-number-th">S No.</th>
                             <th>Name</th>
                             <th>Action</th>
 

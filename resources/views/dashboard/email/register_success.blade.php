@@ -1,19 +1,16 @@
  @extends('dashboard.email.master')
  @section('content')
+
  <tr>
-    <td align="center" style="padding: 35px 35px 20px 35px; background-color: #ffffff;" bgcolor="#ffffff">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
-            <tr>
-                <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;"> <img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px;" /><br>
-                    <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">Hello {{ $data->name }}!  Thank You For Registration! </h2>
-                </td>
-            </tr>
-            <tr>
-                <td align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;">
-                    <p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;"> Continue Shopping <a href="{{url('/product')}}"> Click Here </a> </p>
-                </td>
-            </tr>
-        </table>
+    <td style="font-family: 'Lato',sans-serif;">
+    <strong>Hi, <strong>{{ $data->name }}</strong>!</strong>
+    <br><br><br>
+    Thank you for signing up with custom closet.
+    <br>To get started, visit our website&nbsp;by clicking the button below.<br><br> <br><strong>
+        Have you purchased from custom closet before?<br><br></strong>If you've previously purchased products from custom closet, you can request to import them into your account.<br>
+        Please visit our Contact page to submit a request.&nbsp;
+        <br><br><br><br>
+    <div><a style="background-color:#FF324D;color:#fff;font-size:18px;padding:10px 0;border:solid 1px #FF324D!important;border-radius:4px;text-decoration:none;display:block;width:270px;text-align:center;font-weight:bold;margin:0 auto" href="{{url('/contact-us')}}" target="_blank">Visit custom closet</a></div>
     </td>
 </tr>
 @endsection

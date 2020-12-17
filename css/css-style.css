@@ -7543,9 +7543,12 @@ a:hover {
     transition: border-color 0.25s;
     position: relative;
 }
-
 .head-shop-icon {
-    display: inline-block;
+	display: inline-block;
+	font-size: 0.80rem;
+}
+.head-carticon label{
+	margin-left: 5px;
 }
 .head-shop-icon label{
 	cursor: pointer;
@@ -8597,8 +8600,15 @@ h5 {
 	width: 100%;
 	overflow: hidden;
 }
+.product-wallpaper-slider .slick-track
+{
+    display: flex !important;
+}
 .product-wallpaper-slider .slick-slide{
 	padding: 0 10px;
+	height: inherit !important;
+	align-items: center;
+    display: flex;
 }
 .product-wallpaper-slider .slick-slide:not(.slick-active)
 {
@@ -8791,10 +8801,17 @@ h5 {
 	text-overflow: ellipsis;
 	margin-bottom: 0;
 }
+.blog-list-card .img-block{
+	height: 260px;
+	position: relative;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .blog-img{
 	max-width: 100%;
-	margin: .940rem auto;
-	display: block;
+	max-height: 100%;
+	width: 100%;
 }
 .blog-foot {
 	padding: 25px;
