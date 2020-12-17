@@ -12,6 +12,7 @@ class Address extends Model
         'address',
         'type',
         'name',
+        'email',
         'mobile',
         'country',
         'state',

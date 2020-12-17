@@ -114,12 +114,13 @@ class CartController extends Controller
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
         }
-
+        
         /* Billing Address */
         if (!isset($req->billing_address)) {
             $billingAddress=[
                 'name'=>$req->bill_name,
-                'phone'=>$req->bill_phone,
+                'mobile'=>$req->bill_phone,
+                'email'=>$req->bill_email,
                 'address'=>$req->bill_address,
                 'city'=>$req->bill_city,
                 'state'=>$req->bill_state,
@@ -133,13 +134,14 @@ class CartController extends Controller
         } else {
             $bill = $req->billing_address;
         }
-
+              
         /* Shipping Address */
         if (!isset($req->shipping_address)) {
             $shippingAddress=[
                 'name'=>$req->ship_name,
-                'phone'=>$req->ship_phone,
+                'mobile'=>$req->ship_phone,
                 'address'=>$req->ship_address,
+                'email'=>$req->ship_email,
                 'city'=>$req->ship_city,
                 'state'=>$req->ship_state,
                 'zipcode'=>$req->ship_zipcode,
