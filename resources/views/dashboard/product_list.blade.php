@@ -59,7 +59,7 @@
                                 </form>
                             </div>
                             <div class="col-3 d-flex align-items-end justify-content-end">
-                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger pull-right">
+                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger">
                                     <i class="cil-plus"></i>  Create Item
                                 </a>
                             </div>
@@ -94,13 +94,13 @@
                                     <td>$ {{ $value->sale_price }}</td>
                                     <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                     <td>
-                                        <a class="btn btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
+                                        <a class="btn btn-sm btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
                                             <i class="cil-playlist-add"></i>
                                         </a>
-                                        <a class="btn btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
+                                        <a class="btn btn-sm btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
+                                        <a class="btn btn-sm btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>
@@ -121,7 +121,6 @@
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<!-- <script>
-    document.querySelectorAll('[data-toggle="tooltip"]').forEach(function(element){new coreui.Tooltip(element,{offset:function offset(_ref){var placement=_ref.placement,reference=_ref.reference,popper=_ref.popper;console.log(placement);console.log(reference);console.log(popper);if(placement==='bottom'){return[0,popper.height/2];}else{return[];}}});});
-</script> -->
+<script src="{{ asset('js/tooltips.js') }}"></script>
+
 @endsection

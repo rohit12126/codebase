@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <div class="c-subheader px-3">
-        <ol class="breadcrumb border-0 m-0">
+        <ol class="breadcrumb breadcrumb-custom border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Items</a></li>
             <li class="breadcrumb-item active"><a href="{{ route('admin.product.description', ['product_id' => $productId]) }}">Product Description</a></li>
@@ -81,19 +81,19 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-9">
                         <form method="GET" action="{{ url()->current() }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4">
-                                        <div class="form-group">
+                                        <div class="form-group mb-0">
                                         <label>Search via Title</label>
                                         <input type="hidden" name="product_id" value="{{ $productId }}">
                                         <input type="text" maxlength="150" placeholder="Title" name="title"
                                             class="form-control" value="{{ @$_GET['title'] }}">
                                         </div>
                                     </div>
-                                    <div class="col-4 d-flex align-items-center pt-2">
+                                    <div class="col-4 d-flex align-items-end">
                                         <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
@@ -105,40 +105,40 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-2" title="Add New Description">
-                        <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
-                            Create Description
+                    <div class="col-3 d-flex justify-content-end align-items-end" title="Add New Description">
+                        <button class="btn btn-danger" onclick="$('.addForm').show('slow');">
+                        <i class="cil-plus"></i> Create Description
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
-                    <table class="table table-striped table-bordered datatable">
-                        <thead>
-                            <tr>
-                                <th>S No.</th>
-                                <th>Title</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($productDescriptionList as $key => $value)
-                            <tr>
-                                <td>{{ $key+1 }}</td>
-                                <td>{{ $value->title }}</td>
-                                <td>
-                                    <button class="btn btn-info" type="button" title="Edit Description"
-                                        onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
-                                        <i class="cil-pencil"></i>
-                                    </button>
-                                    <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
-                                        <i class="cil-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-bordered datatable">
+                    <thead>
+                        <tr>
+                            <th class="serial-number-th">S No.</th>
+                            <th>Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($productDescriptionList as $key => $value)
+                        <tr>
+                            <td>{{ $key+1 }}</td>
+                            <td>{{ $value->title }}</td>
+                            <td>
+                                <button class="btn btn-info" type="button" title="Edit Description"
+                                    onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
+                                    <i class="cil-pencil"></i>
+                                </button>
+                                <a class="btn btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
+                                    <i class="cil-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -155,7 +155,7 @@
 {{-- Editor js--}}
 
 <!-- include Bootstrap and summernote css/js -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -168,7 +168,12 @@
     /* intialize Editor */
     $(function() {
         $('.summernote').summernote({
-                height: 200
+                height: 200,
+                popover: {
+                    image: [],
+                    link: [],
+                    air: []
+                }
         });
     });
 

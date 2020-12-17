@@ -27,7 +27,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-9">
-                                <h4 class="mb-3">Aproved Review List</h4>
+                                <h4 class="mb-3">Approved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
                                     <div class="row">
                                         <div class="col-3">
@@ -63,8 +63,8 @@
                                 </form>
                             </div>
                             <div class="col-3 d-flex align-items-end justify-content-end">
-                                <a href="{{ route('admin.toaprooved') }}" class="btn btn-primary pull-right">
-                                    Non Aproved Review
+                                <a href="{{ route('admin.toaprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger pull-right">
+                                    Non Approved Review
                                 </a>
                             </div>
                         </div>
@@ -91,10 +91,10 @@
                                     <td>{{ $value->product_name }}</td>
                                     <td>{{ $value->user_name }}</td>
                                     <td>
-                                        <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-info" title="DisApprove This Review" >
+                                        <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-sm btn-info" title="DisApprove This Review" >
                                             <i class="cil-thumb-down"></i>
                                         </a>
-                                        <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
+                                        <a class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>

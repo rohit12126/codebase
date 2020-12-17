@@ -60,30 +60,13 @@
     <h1 class="pt-5 mb-3 heading_s3 text-center">A Closet For Life</h1>
 
     <section class="home-swip-section p-relative">
-        <!-- <div class="first-slide">
-            <picture>
-                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-after.jpg')}}">
-                <source type="image/png" srcset="/images/bowl-ingredients-eb0c55.png">
-                <img alt="Bowl of ingredients" class="inc454" >
-            </picture>
-        </div>
-        <div class="second-slide">
-            <picture>
-                <source type="image/webp" srcset="{{URL::asset('/images/home-scroll-before.jpg')}}">
-                <source type="image/png" srcset="/images/bowl-mixed-08422a.png">
-                <img alt="Bowl of The Farmer's Dog" class="Yq0BZd">
-            </picture>
-        </div>   -->
-        <!-- <div class="mover"></div> -->
-
-
         <div id="page">
          <div class="wrapper">
             <div class="before">
                 <div id="hotspotImg" class="responsive-hotspot-wrap">
                     <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" width="1920" height="700">
-                    <div class="hot-spot" x="300" y="43">
-                        <div class="circle"></div>
+                    <div class="hot-spot" x="300" y="43" >
+                        <div class="circle" ></div>
                         <div class="tooltip">
                             <div class="img-row">
                                 <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
@@ -113,16 +96,7 @@
             <div id="secondhotspotImg" class="responsive-hotspot-wrap">
                     <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="" width="1920" height="700">
                     <div class="hot-spot" x="300" y="43">
-                        <div class="circle"></div>
-                        <div class="tooltip">
-                            <div class="img-row">
-                                <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
-                            </div>
-                            <div class="text-row">
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                        </div>
+                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
                     </div>
 
                     <div class="hot-spot" x="550" y="360">
@@ -149,11 +123,6 @@
 
 
     </section>
-
-    <div class="container">
-
-        </div>
-
 
     <section class="home-products-section" id="stt">
         <div class="pd-block-wrap">
@@ -257,4 +226,21 @@
            </div>
         </div>
     </section>
+
+    <div class="modal fade" id="hotSpotModal" tabindex="-1" aria-labelledby="hotSpotModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header position-realtive">
+                <h4 class="text-center">Watch Bifold Installation video</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe width="766" height="415" src="https://www.youtube.com/embed/VelzyKeK6V8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+
 @endsection
