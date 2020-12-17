@@ -20330,7 +20330,7 @@ body {
 .error-img{
   font-size: 11px;
 }
-.breadcrumb-custom{
+/* .breadcrumb-custom{
   background-color: transparent !important;
 }
 .breadcrumb-custom a{
@@ -20347,4 +20347,7 @@ body {
 .breadcrumb-custom .breadcrumb-item::before {
   padding-left: 0 !important;
   color: #222 !important;
+} */
+.serial-number-th{
+  width: 70px;
 }
