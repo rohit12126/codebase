@@ -135,7 +135,7 @@
                                 <tr>
                                     <td>{{ $value->order_no }}</td>
                                     <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
-                                    <td>{{ ucwords($value->user->name) }}</td>
+                                    <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
                                     <td>{{ $value->order_status }}</td>
                                     <td>{{ $value->grand_total }}</td>
                                     <td>
