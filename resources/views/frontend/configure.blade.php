@@ -10,7 +10,7 @@
                 <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
             </div>
             <div class="product-detail-slider">
-                @if(!$productData['product']->images[0]->image)
+                @if($productData['product']->images[0]->image)
                     <div data-thumb="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
                         <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
                             <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
