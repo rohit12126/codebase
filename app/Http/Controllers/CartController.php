@@ -84,7 +84,9 @@ class CartController extends Controller
             $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         }
-
+        dump($cartSubTotal);
+        $a = (float) $cartSubTotal;
+        dd($a);
         return view('frontend.address',
             [
                 'shippingAddresses' => $shippingAddresses,
