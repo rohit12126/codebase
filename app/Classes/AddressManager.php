@@ -17,11 +17,13 @@ class AddressManager
 
     public function getAddresses($userId, $type, $isTemp)
     {
+        /* Change first to get to fetch multiople addresses */
         return AddressModel::where([
             'user_id'=> $userId,
             'type'=> $type,
             'temp_user'=> $isTemp
         ])
-        ->get();
+        ->first();
+        //->get();
     }
 }
