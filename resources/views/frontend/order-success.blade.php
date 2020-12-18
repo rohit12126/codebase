@@ -12,7 +12,19 @@
                         <h5>Your order number is {{$order->order_no}}!</h5>
                     </div>
                   	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
-                    <a href="{{ url('/') }}" class="btn btn-fill-out">Continue Shopping</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="row mt-3 mb-3">
+                    <div class="col-sm-4">
+                        <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out w-100 mb-3 mb-sm-0">Home</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{{ url('account/orderdetails/').$order->order_no}}" class="btn btn-sm btn-fill-out w-100 mb-3 mb-sm-0">Order detail</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{{ url('product/') }}" class="btn btn-sm btn-fill-out w-100">Continue Shopping</a>
+                    </div>
                 </div>
             </div>
         </div>

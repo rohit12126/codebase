@@ -138,34 +138,36 @@
         </div>
     </section>
     <hr/>
-    <div class="container pt-5 pb-5">
-        <h3 class="pb-3 text-center">Related Products</h3>
-        <section class="related-slider">
-            <div class="blog-col">
-                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="" /></a>
-                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                <div class="products-list-price">$ 10.00</div>
+    <section class="p-5">
+        <div class="container">
+            <h3 class="pb-3 text-center">Related Products</h3>
+            <div class="related-slider">
+                <div class="blog-col">
+                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="" /></a>
+                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                    <div class="products-list-price">$ 10.00</div>
+                </div>
+                <div class="blog-col">
+                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="" /></a>
+                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                    <div class="products-list-price">$ 10.00</div>
+                </div>
+                <div class="blog-col">
+                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="" /></a>
+                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                    <div class="products-list-price">$ 10.00</div>                
+                </div>
+                <div class="blog-col">
+                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="" /></a>
+                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
+                    <div class="products-list-price">$ 10.00</div>                
+                </div>
+            </div> 
+            <div class="text-center pt-5">
+                <a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a>
             </div>
-            <div class="blog-col">
-                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="" /></a>
-                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                <div class="products-list-price">$ 10.00</div>
-            </div>
-            <div class="blog-col">
-                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="" /></a>
-                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                <div class="products-list-price">$ 10.00</div>                
-            </div>
-            <div class="blog-col">
-                <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="" /></a>
-                <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                <div class="products-list-price">$ 10.00</div>                
-            </div>
-        </section> 
-        <div class="text-center pt-5">
-            <a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a>
         </div>
-    </div>
+    </section>
 @endsection
 
 @section('scripts')
@@ -274,11 +276,10 @@
     dots: false,
     infinite: false,
     slidesToShow: 3,
-    centerPadding: 10%,
     slidesToScroll: 1,
     responsive: [
         {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
