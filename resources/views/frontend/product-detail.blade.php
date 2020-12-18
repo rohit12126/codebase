@@ -274,7 +274,6 @@
     dots: false,
     infinite: false,
     slidesToShow: 3,
-    centerPadding: 10%,
     slidesToScroll: 1,
     responsive: [
         {

@@ -94,6 +94,7 @@ class OrderController extends Controller
         }
         
         $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($order->order_no);
+        
         $email = $order->getBillingAddress->email;
         
         if (!empty($email)) {
