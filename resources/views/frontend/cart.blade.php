@@ -6,12 +6,12 @@
         <table class="cart-box">
             <thead>
                 <tr>
-                    <th class=""><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
-                    <th class="d-none d-md-table-cell">Product Name</th>
-                    <th class="d-none d-md-table-cell">Unit Price</th>
-                    <th class="d-none d-md-table-cell">Quantity</th>
-                    <th class="d-none d-md-table-cell">Total</th>
-                    <th class="d-none d-md-table-cell">Action</th>
+                    <th class="text-center"><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
+                    <th class="d-none d-md-table-cell text-center">Product Name</th>
+                    <th class="d-none d-md-table-cell text-center">Unit Price</th>
+                    <th class="d-none d-md-table-cell text-center">Quantity</th>
+                    <th class="d-none d-md-table-cell text-center">Total</th>
+                    <th class="d-none d-md-table-cell text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,14 +20,14 @@
             @endphp
             @foreach ($products as $product)
             <tr id="row{{$product->rowId}}">
-                <td>
+                <td class="text-center">
                     <div class="pa-cart-img">
                         <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
                 </td>
-                <td>{{$product->name}}</td>
-                <td>$ {{number_format($product->price,2)}}</td>
-                <td>
+                <td class="text-center">{{$product->name}}</td>
+                <td class="text-center">$ {{number_format($product->price,2)}}</td>
+                <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}">
@@ -36,17 +36,14 @@
                         </div>
                     </div>
                 </td>
-                <td>
+                <td class="text-center">
                     <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
-                <td>
+                <td class="text-center action-btn-wrap"> 
                     <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
                         <input type="hidden" class="rowId" value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
                     </button>
-                    <!-- <a href="">
-                        <button type="button" class="btn btn-outline-secondary cart-btn"><i class="fa fa-eye"></i></button>
-                    </a> -->
                 </td>
             </tr>
             @php
@@ -59,7 +56,7 @@
                     <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <span><label id="subQty" >${{$cartSubTotal}}</label></span>
+                    <span><label id="subQty" class="mb-0" >$ {{$cartSubTotal}}</label></span>
                 </td>
             </tr>
             </tbody>
@@ -88,8 +85,8 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded">Continue Shopping</a>
-                <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded mb-3">Continue Shopping</a>
+                <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative mb-3">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
     </div>
@@ -165,7 +162,10 @@
                 data: {
                     rowId : rowId
                 },
-                success: function(result){
+                success: function(result) {
+                    if( result.data.cartCount == 0 ) {
+                        location.reload(true);
+                    }
                     $('#subQty').html(result.data.cartSubTotal);
                     $("#row"+rowId).remove();
                     $('.grand_total').html(result.data.cartSubTotal);

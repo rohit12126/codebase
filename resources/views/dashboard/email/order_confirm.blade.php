@@ -60,13 +60,15 @@
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p class="m_8451886253471966023statusText" style="margin:0;font-family:'Lato',sans-serif;color:white;padding:0;float:left;width:100%;font-size:30px;line-height:normal">
                                                                         We have <strong style="font-family:'Lato',sans-serif!important;letter-spacing:0.5px;font-weight:bold">Placed</strong> your order
+                                                                        <span style="font-weight:bold;font-family:'Lato',sans-serif;padding-left:5px;opacity:0.6;font-size:12px"> on                                                 Tue, 29 Sep
+                                                                               </span>
                                                                     </p>
                                                                     </td>
                                                                 </tr>
                                                                 <tr style="margin:0;padding:0">
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
-                                                                        We know you can't wait to get your hands on them. Our team is working hard while ensuring highest safety standards in these tough times. Deliveries may take longer than usual, You can track your order below.
+                                                                        We know you can't wait to get your hands on them. Our team is working hard while ensuring highest safety standards to deliever your order at the earliest. You can track your order below.
                                                                     </p>
                                                                     </td>
                                                                 </tr>
@@ -79,7 +81,7 @@
                                                                     </a>
                                                                     </td>
                                                                 </tr>
-                                                                <tr style="margin:0;padding:0">
+                                                                <!-- <tr style="margin:0;padding:0">
                                                                     <td valign="top" style="padding:0% 3% 0% 0%">
                                                                     <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;float:left;margin-top:4px;margin-bottom:0px">
                                                                         <span style="color: #000;">Tracking id:
@@ -87,7 +89,7 @@
                                                                         </span>
                                                                     </p>
                                                                     </td>
-                                                                </tr>
+                                                                </tr> -->
                                                             </tbody>
                                                         </table>
                                                         </td>
@@ -123,7 +125,7 @@
                                                 </li>
                                                 <ul style="margin-top:16px!important;padding:0;font-family:'Lato',sans-serif;float:left;width: 50%;list-style:none;line-height:normal;">
                                                     <li style="margin:0;padding:0;float:left;width:100%;font-size:13px;color:#94969f;letter-spacing:0.39px">Your Order No. :</li>
-                                                    <li style="padding:0;float:left;width:100%;font-size:18px;font-family:'Lato',sans-serif;color:#282c3f;margin-top:4px;margin-left:0"> {{ $data->order_no }}</li>
+                                                    <li style="padding:0;float:left;width:100%;font-size:18px;font-family:'Lato',sans-serif;color:#282c3f;margin-top:4px;margin-left:0"> {{ $data->order_no }}</li> 
                                                 </ul>
                                                 <ul style="padding:0;margin:0;list-style:none;font-size:16px;float: left;width: 50%;text-align: right;">
                                                     <li style="color:#94969f;font-size:13px;letter-spacing:0.39px;font-family:'Lato',sans-serif;padding-bottom:7px">Total Payable</li>
@@ -147,10 +149,10 @@
                                                     <img  src="http://ecom.c247.website/images/home/2.png" style="float:left;border-radius:4px;width:100px" width="100">
                                                     <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
                                                         <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
-                                                        <p style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px">DressBerry</p>
-                                                        <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px">  Women Navy Dial Watch MFBTMLDBE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                        </li>
-                                                        <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span id="m_8451886253471966023ItemQuantity-8140818181" style="font-family:'Lato',sans-serif;font-weight:bold">1</span>
+                                                            <p style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px">DressBerry</p>
+                                                            <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px">  Women Navy Dial Watch MFBTMLDBE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                            </li>
+                                                            <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span id="m_8451886253471966023ItemQuantity-8140818181" style="font-family:'Lato',sans-serif;font-weight:bold">1</span>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -164,7 +166,7 @@
                                                     <div style="vertical-align:top;display:table-cell;width:50%;background-repeat:no-repeat;background-size:32px;background-position:right 16px top 16px;background-image:url();border:solid 0.5px rgba(190,147,71,0.11);border-radius:4px;background-color:#ffffff">
                                                         <div style="margin:0;font-size:17px;line-height:23px;padding:20px 20px 20px 20px;color:#282c3f">
                                                         <p style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;color:#282c3f;font-size:25px;margin-bottom:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal">
-                                                            Shipped to
+                                                            Shipping Address
                                                         </p>
                                                         <div style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;font-size:16px;line-height:1.38;letter-spacing:0.29px;color:#7e818c;font-weight:normal;font-stretch:normal;font-style:normal">
                                                             <span><strong style="font-weight:bold;color:#3e4152">{$data->getShippingAddress->name}}</strong>,</span>

@@ -1634,7 +1634,7 @@ button:focus {
 	vertical-align: top;
 	margin-left: -5px;
 	margin-right: -5px;
-	z-index: -1;
+	z-index: 0;
 }
 .cart_trigger .amount {
 	margin-left: 8px;
@@ -1668,7 +1668,14 @@ button:focus {
 .item_remove {
 	float: right;
 	margin-left: 5px;
-	color: #333 !important;
+	color: #333;
+}
+.action-btn-wrap .item_remove{
+	margin-left: 0px;
+	float: none;
+}
+.action-btn-wrap .item_remove i{
+	margin: 0px;
 }
 .cart_list img {
 	border: 1px solid #ddd;
@@ -7593,7 +7600,7 @@ a:hover {
 	-moz-box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
 	font-size: 0.875rem;
-	padding: 0.625rem 0;
+	padding: 0.625rem;
 }
 
 .head-alert-bar a {
@@ -8019,6 +8026,7 @@ h5 {
 .home-swip-section{
 	min-height:700px;
 	position: relative;
+	padding-bottom: 100px;
 }
 .home-swip-section .first-slide{
 	position: absolute;
@@ -8027,6 +8035,139 @@ h5 {
 .home-swip-section .second-slide{
 	position: absolute;
 }
+    #page{
+    width:100%;
+    height:100%;
+    position:absolute;
+    }
+
+    /* Our normalize css */
+    *{
+    margin:0;
+    box-sizing: border-box;
+    }
+
+    /* Our wrapper */
+    .wrapper{
+		max-width: 1200px;
+		height: 600px;
+		position: absolute;
+		left:50%;
+		top:40%;
+		transform:translate3d(-50%,-50%,0);
+		/* overflow:hidden; */
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		width:100%;
+		border: 10px solid;
+		border-image-slice: 1;
+		border-width: 11px;
+		border-image-source: linear-gradient( -72deg, #dedede, #ffffff 16%, #dedede 21%, #ffffff 24%, #454545 27%, #dedede 36%, #ffffff 45%, #ffffff 60%, #dedede 72%, #ffffff 80%, #dedede 84%, #a1a1a1 );
+		box-shadow: 6px -1px 15px #00000038;
+	}
+	.wrapper::after{
+		content: "";
+		display: block;
+		width: 92%;
+		height: 133px;
+		position: absolute;
+		bottom: -4px;
+		left: -3px;
+		background: #00000000;
+		border-radius: 50%;
+		opacity: 0.6;
+		box-shadow: 81px 47px 20px #00000054;
+		z-index: -1;
+	}
+	.wrapper > *::selection{
+		background: transparent !important;
+	}
+    /* Our image information */
+    .before,
+    .after {
+		width:100%;
+		height:100%;
+		background-repeat:no-repeat;
+		background-color: white;
+		background-size: cover;
+		background-position: center;
+		position: absolute;
+		top:0;
+		left:0;
+		/* pointer-events:none; */
+		overflow: hidden;
+    }
+    .before::selection,
+    .after::selection {
+		background: transparent !important;
+	}
+    .content-image{
+		height:100%;
+		max-width:none;
+    }
+
+    .after{
+    	width:125px;
+    }
+
+    .scroller{
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		left: 100px;
+		top: 50%;
+		transform: inherit;
+		background-color: #ec4f05;
+		opacity: 0.9;
+		pointer-events: auto;
+		cursor: pointer;
+    }
+
+    .scroller:hover{
+    	opacity:1;
+    }
+
+    .scrolling{
+    /* pointer-events:none; */
+    opacity:1;
+    }
+
+    .scroller__thumb{
+		width:100%;
+		height:100%;
+		padding:5px;
+    }
+
+    .scroller:before,
+    .scroller:after{
+		content: " ";
+		display: block;
+		width: 15px;
+		height: 270px;
+		position: absolute;
+		left: 50%;
+		margin-left: -3.5px;
+		z-index: 30;
+		transition: 0.1s;
+    }
+    .scroller:before{
+    	top:100%;
+    }
+    .scroller:after{
+    	bottom:100%;
+    }
+
+    /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+    .scroller{
+    	border: 5px solid #fff;
+    }
+    .scroller:before,
+    .scroller:after{
+    	background: #fff;
+    }
+
+
+
+	
 /*==============================================================================================*/
 .section
 {
@@ -9047,7 +9188,8 @@ h5 {
 }
 .cart-product-quantity {
 	margin: 7px 10px 7px 0;
-	display: table;
+	display: flex;
+	justify-content: center;
 }
 .quantity {
 	display: table;
@@ -9126,11 +9268,16 @@ h5 {
 	max-width: 50%;
 	flex: 0 0 50%;
 	padding: 5px;
+	margin-bottom: 1rem;
 }
 .product-detail2 .product-list-inner{
 	height: auto;
-	padding: 15px;
+	margin: 15px;
+	padding: 0;
 	overflow: hidden;
+	display: flex;
+	height: 100%;
+	align-items: center;
 }
 .product-detail2 .product-list-inner a{
 	display: flex;
@@ -9144,6 +9291,10 @@ h5 {
 .product-detail2 .product-list-inner img:hover{
 	transform: scale(1.04);
 	cursor: url(../img/icon/zoom.png),crosshair;
+}
+.product-detail2 .btn{
+	padding: 8px 20px;
+    font-size: 0.875rem;
 }
 .pdp-title{
 	color: #282c3f;
@@ -9684,9 +9835,10 @@ body { margin: 0; }
   background-position: center center;
   position: relative;
 }
-
-
-
+.responsive-hotspot-wrap::selection{
+	background: transparent !important;
+	background-color: transparent !important;
+}
 .hot-spot {
   position: absolute;
   width: 25px;
@@ -9756,10 +9908,12 @@ body { margin: 0; }
 
 .hot-spot .tooltip p:last-child { margin-bottom: 0; }
 #secondhotspotImg{
-	width:715px;
+	width:1200px;
 	position: relative;
 }
-
+#secondhotspotImg img{
+	width:100%;
+}
 .track {
     position: relative;
     background-color: #ddd;
@@ -9819,3 +9973,4 @@ body { margin: 0; }
     display: block;
     margin-top: 7px
 }
+
