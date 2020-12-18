@@ -17,7 +17,7 @@
                     <tbody>
                         @foreach($orders as $order)
                         <tr>
-                            <td>{{$order->order_no}}</td>
+                            <td>#{{$order->order_no}}</td>
                             <td>{{date("F j y", strtotime($order->created_at))}}</td>
                             <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancelled")}}</td>
                             <td>{{$order->grand_total}}</td>
