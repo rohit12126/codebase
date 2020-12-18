@@ -1634,7 +1634,7 @@ button:focus {
 	vertical-align: top;
 	margin-left: -5px;
 	margin-right: -5px;
-	z-index: -1;
+	z-index: 0;
 }
 .cart_trigger .amount {
 	margin-left: 8px;

@@ -385,13 +385,13 @@ footer-->
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
+                                    <a href="https://www.facebook.com/" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
+                                    <a href="https://www.instagram.com/" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
+                                    <a href="https://www.pinterest.com/" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
                                 </span>
                             </div>
                         </div>

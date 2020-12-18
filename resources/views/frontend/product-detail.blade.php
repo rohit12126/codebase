@@ -3,7 +3,7 @@
 <!-- START SECTION SHOP -->
 
     <section class="section product-detail2">
-        <div class="container-xl">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="d-flex flex-wrap justify-content-center">
@@ -267,15 +267,74 @@
         }
     });
     $('.related-slider').slick({
+    autoplay: true,
+    arrows: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    centerPadding: 10%,
+    slidesToScroll: 1,
+    responsive: [
+        {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+        }
+        },
+        {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+        },
+        {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+        }
+    ]
+    });
+    /* $('.related-slider').slick({
         autoplay: true,
         arrows: true,
         speed: 1000,
         autoplaySpeed: 5000,
         dots: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3, 
         slidesToScroll: 1,
-        lazyLoad: 'progressive'
-    });
+        lazyLoad: 'progressive',
+        responsive: [
+        {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true
+        }
+        },
+        {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+        },
+        {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+        }
+    }); */
 </script>
 @endsection

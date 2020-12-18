@@ -387,6 +387,30 @@ $(document).ready(function() {
                 }, */
                 required: true,
                 postcode: true
+            },
+            ship_name: {
+                required: true
+            },
+            ship_city: {
+                required: true
+            },
+            ship_state: {
+                required: true
+            },
+            bill_name: {
+                required: true
+            },
+            bill_city: {
+                required: true
+            },
+            bill_state: {
+                required: true
+            },
+            bill_address: {
+                required: true
+            },
+            ship_address: {
+                required: true
             }
         },
         messages: {
@@ -395,7 +419,15 @@ $(document).ready(function() {
             bill_phone: "Please enter a valid phone number",
             bill_email: "Please enter a valid email address",
             bill_zipcode: "Please enter a valid postcode",
-            ship_zipcode: "Please enter a valid postcode"
+            ship_zipcode: "Please enter a valid postcode",
+            ship_name: "Name field is required.",
+            ship_city: "City field is required.",
+            ship_state: "State field is required.",
+            ship_address: "Address field is required.",
+            bill_name: "Name field is required.",
+            bill_city: "City field is required.",
+            bill_state: "State field is required.",
+            bill_address: "Address field is required.",
         },
         submitHandler: function(form) {
             form.submit(); 
