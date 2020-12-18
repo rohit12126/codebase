@@ -9999,3 +9999,6 @@ body { margin: 0; }
 	width: 100%;
 	max-width: 180px;
 }
+.order-success-img{
+	margin-bottom: 2rem;
+}
