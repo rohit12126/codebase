@@ -85,6 +85,7 @@ class CartController extends Controller
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         }
         dump($cartSubTotal);
+        $cartSubTotal = str_replace(",","", $cartSubTotal);
         $a = (float) $cartSubTotal;
         dd($a);
         return view('frontend.address',
