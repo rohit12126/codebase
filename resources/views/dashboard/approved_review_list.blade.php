@@ -26,32 +26,32 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-xl-9">
                                 <h4 class="mb-3">Approved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
                                     <div class="row">
-                                        <div class="col-3">
-                                            <div class="form-group mb-0">
+                                        <div class="col-sm-6 col-xl-3">
+                                            <div class="form-group mb-xl-0">
                                             <label>Search via Item Name</label>
                                             <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
                                                 class="form-control" value="{{ @$_GET['product_name'] }}">
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div class="form-group mb-0">
+                                        <div class="col-sm-6 col-xl-3">
+                                            <div class="form-group mb-sm-0">
                                             <label>Search via User Name</label>
                                             <input type="text" placeholder="User Name" maxlength="200" name="user_name"
                                                 class="form-control" value="{{ @$_GET['user_name'] }}">
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div class="form-group mb-0">
+                                        <div class="col-sm-6 col-xl-3">
+                                            <div class="form-group mb-sm-0">
                                             <label>Search via Review</label>
                                             <input type="text" placeholder="Review" maxlength="200" name="review"
                                                 class="form-control" value="{{ @$_GET['review'] }}">
                                             </div>
                                         </div>
-                                        <div class="col-3 d-flex align-items-end">
+                                        <div class="col-sm-6 col-xl-3 d-flex align-items-end">
                                             <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
@@ -62,7 +62,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-3 d-flex align-items-end justify-content-end">
+                            <div class="col-xl-3 d-flex align-items-end justify-content-xl-end mt-3 mt-xl-0">
                                 <a href="{{ route('admin.toaprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger pull-right">
                                     Non Approved Review
                                 </a>

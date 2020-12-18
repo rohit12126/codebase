@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Category</label>
@@ -82,7 +82,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <div class="form-group" id="moreImage">
                                         <label for="">Featured Image </label>
                                         <span class="mandatory">*</span>
@@ -91,7 +91,7 @@
                                                     <img src="{{ url('') }}/upload/blog/{{ $blog->image }}" class="previewImage w-100 h-100" width="100" />
                                                     <input type="hidden"  name="storeimage" value="{{ $blog->image }}">
                                                 @else
-                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage w-100 h-100" width="100" />
+                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage"/>
                                                 @endif
                                             </div>
                                             <label class="btn btn-danger w-100" title="Change or Upload Image">

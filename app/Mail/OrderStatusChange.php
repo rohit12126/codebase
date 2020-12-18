@@ -28,6 +28,29 @@ class OrderStatusChange extends Mailable
      */
     public function build()
     {
-        return $this->view('dashboard.email.order_status_change')->with('data', $this->data);
+        $title = "";
+        
+        $status = $this->data['order_status_num'];
+
+        if($status == 1) {
+            $title = "Order Updated - Your Order Has Been Received";
+            $this->data['status'] = 'Updated';
+        } elseif ($status == 2) {
+            $title = "Order Received - Your Order Has Been Received";
+            $this->data['status'] = 'Received';
+        }elseif ($status == 3) {
+            $title = "Order Shipped - Your Order Has Been Shipped";
+            $this->data['status'] = 'Shipped';
+        }elseif ($status == 4) {
+            $title = "Order Delivered - Your Order Has Been Delivered";
+            $this->data['status'] = 'Delivered';
+        }else {
+            $title = "Order Cancelled - Your Order Has Been Cancelled";
+            $this->data['status'] = 'Cancelled';
+        }
+        
+        return $this->view('dashboard.email.order_status_change')
+            ->subject($title)
+            ->with('data', $this->data);
     }
 }

@@ -2,7 +2,7 @@
 @section('content')
 <section class="section projects-wrap">
         <div class="container">
-            <h1 class="text-center mb-5">Projects</h1>
+            <h1 class="pt-4 pb-4 mb-5 heading_s3 text-center">Projects</h1>
             <div class="blog-row justify-content-center">
                 <div class="blog-col">
                     <a href="https://www.straubconstruction.com/portfolio-item/science-city-at-union-station/" target="_blank">
