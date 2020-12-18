@@ -56,10 +56,9 @@
             </a>
         </div>
     </section>
-    
-    <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
 
     <section class="home-swip-section p-relative">
+        <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
         <div id="page">
          <div class="wrapper">
             <div class="before">
@@ -125,6 +124,7 @@
     </section>
 
     <section class="home-products-section" id="stt">
+        <h1 class="pt-5 mb-5 heading_s3 text-center">Our Products</h1>
         <div class="pd-block-wrap">
             <div class="pd-block">
                 <a href="">
