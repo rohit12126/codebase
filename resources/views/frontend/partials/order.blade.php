@@ -7,6 +7,7 @@
                 <table class="table">
                   <thead>
                       <tr>
+                          <th>S.No</th>
                           <th>Order</th>
                           <th>Date</th>
                           <th>Status</th>
@@ -15,6 +16,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php  $i =1; @endphp
                         @foreach($orders as $order)
                         <tr>
                             <td>#{{$order->order_no}}</td>
@@ -25,10 +27,13 @@
                             <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
                             </td>
                         </tr>
+                        @php  $i++; @endphp
                         @endforeach
+                        @if(is_null($orders)))
                         <tr>
                             <td colspan="5"><h5 class="text-center">You've not place any order yet  </h5></td>
                         </tr>
+                        @endif
                    </tbody>
                </table>
            </div>

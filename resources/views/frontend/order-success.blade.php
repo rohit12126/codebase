@@ -8,7 +8,7 @@
                 <div class="text-center order_complete">
                 	<i class="fas fa-check-circle"></i>
                     <div class="heading_s1">
-                        <h3>Your order is completed!</h3>
+                        <h3 class="mb-3">Your order is completed!</h3>
                         <h5>Your order number is {{$order->order_no}}!</h5>
                     </div>
                   	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>

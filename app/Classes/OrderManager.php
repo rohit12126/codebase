@@ -148,7 +148,8 @@ class OrderManager
             ->with('getShippingAddress')
             ->with('getBillingAddress')
             ->with('productList.product')
-            ->where('order_no', $order)->first();
+            ->where('order_no', $order)
+            ->first();
     }
 
     public static function getOrderByUserId($userId)
