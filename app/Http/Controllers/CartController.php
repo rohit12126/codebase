@@ -81,6 +81,8 @@ class CartController extends Controller
         } else {
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
+            $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
+            $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         }
 
         return view('frontend.address',

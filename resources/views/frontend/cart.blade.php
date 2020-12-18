@@ -26,7 +26,7 @@
                     </div>
                 </td>
                 <td class="text-center">{{$product->name}}</td>
-                <td class="text-center">${{number_format($product->price,2)}}</td>
+                <td class="text-center">$ {{number_format($product->price,2)}}</td>
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
@@ -37,7 +37,7 @@
                     </div>
                 </td>
                 <td class="text-center">
-                    <label class="total{{$product->id}}">${{number_format($product->price * $product->qty, 2)}}</label>
+                    <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
                     <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
@@ -56,7 +56,7 @@
                     <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <span><label id="subQty" class="mb-0" >${{$cartSubTotal}}</label></span>
+                    <span><label id="subQty" class="mb-0" >$ {{$cartSubTotal}}</label></span>
                 </td>
             </tr>
             </tbody>
@@ -162,7 +162,10 @@
                 data: {
                     rowId : rowId
                 },
-                success: function(result){
+                success: function(result) {
+                    if( result.data.cartCount == 0 ) {
+                        location.reload(true);
+                    }
                     $('#subQty').html(result.data.cartSubTotal);
                     $("#row"+rowId).remove();
                     $('.grand_total').html(result.data.cartSubTotal);
