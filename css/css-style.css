@@ -1668,7 +1668,14 @@ button:focus {
 .item_remove {
 	float: right;
 	margin-left: 5px;
-	color: #333 !important;
+	color: #333;
+}
+.action-btn-wrap .item_remove{
+	margin-left: 0px;
+	float: none;
+}
+.action-btn-wrap .item_remove i{
+	margin: 0px;
 }
 .cart_list img {
 	border: 1px solid #ddd;
@@ -9047,7 +9054,8 @@ h5 {
 }
 .cart-product-quantity {
 	margin: 7px 10px 7px 0;
-	display: table;
+	display: flex;
+	justify-content: center;
 }
 .quantity {
 	display: table;
