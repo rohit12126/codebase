@@ -1634,7 +1634,7 @@ button:focus {
 	vertical-align: top;
 	margin-left: -5px;
 	margin-right: -5px;
-	z-index: -1;
+	z-index: 0;
 }
 .cart_trigger .amount {
 	margin-left: 8px;
@@ -1668,7 +1668,14 @@ button:focus {
 .item_remove {
 	float: right;
 	margin-left: 5px;
-	color: #333 !important;
+	color: #333;
+}
+.action-btn-wrap .item_remove{
+	margin-left: 0px;
+	float: none;
+}
+.action-btn-wrap .item_remove i{
+	margin: 0px;
 }
 .cart_list img {
 	border: 1px solid #ddd;
@@ -9181,7 +9188,8 @@ h5 {
 }
 .cart-product-quantity {
 	margin: 7px 10px 7px 0;
-	display: table;
+	display: flex;
+	justify-content: center;
 }
 .quantity {
 	display: table;
@@ -9260,11 +9268,16 @@ h5 {
 	max-width: 50%;
 	flex: 0 0 50%;
 	padding: 5px;
+	margin-bottom: 1rem;
 }
 .product-detail2 .product-list-inner{
 	height: auto;
-	padding: 15px;
+	margin: 15px;
+	padding: 0;
 	overflow: hidden;
+	display: flex;
+	height: 100%;
+	align-items: center;
 }
 .product-detail2 .product-list-inner a{
 	display: flex;
@@ -9278,6 +9291,10 @@ h5 {
 .product-detail2 .product-list-inner img:hover{
 	transform: scale(1.04);
 	cursor: url(../img/icon/zoom.png),crosshair;
+}
+.product-detail2 .btn{
+	padding: 8px 20px;
+    font-size: 0.875rem;
 }
 .pdp-title{
 	color: #282c3f;

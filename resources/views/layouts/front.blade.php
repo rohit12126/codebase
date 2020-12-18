@@ -37,7 +37,9 @@
     <link rel="stylesheet" href="{{ asset('css/css-owl.theme.default.min.css')}}"><!-- Magnific Popup CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-magnific-popup.css')}}">Slick CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-slick.css')}}"> 
-    <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}"><!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('css/css-slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/fancybox.min.css')}}">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
@@ -270,13 +272,13 @@ footer-->
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
+                                    <a href="https://www.facebook.com/" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
+                                    <a href="https://www.instagram.com/" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
                                 </span>
                                 <span class="footer-socialicon">
-                                    <a href="" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
+                                    <a href="https://www.pinterest.com/" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
                                 </span>
                             </div>
                         </div>
@@ -327,7 +329,7 @@ footer-->
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.hotspot.js')}}"></script>
-
+<script src="{{ asset('js/fancybox.min.js')}}"></script>
 <script>
     $(window).bind("load", function() { 
         console.log("check window load")

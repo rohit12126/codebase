@@ -114,7 +114,7 @@ class CartController extends Controller
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
         }
-
+        
         /* Billing Address */
         if (!isset($req->billing_address)) {
             $billingAddress=[
