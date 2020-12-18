@@ -35,9 +35,9 @@
                   <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                     @include('frontend.partials.order')
                   </div>
-                  <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                  {{-- <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                     @include('frontend.partials.address')
-                  </div>
+                  </div> --}}
                   <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
 					          @include('frontend.partials.changePassword')
 				  	      </div>

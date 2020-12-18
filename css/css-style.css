@@ -9911,9 +9911,15 @@ body { margin: 0; }
 #secondhotspotImg{
 	width:1200px;
 	position: relative;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 #secondhotspotImg img{
 	width:100%;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 .track {
     position: relative;
