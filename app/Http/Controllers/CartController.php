@@ -92,7 +92,7 @@ class CartController extends Controller
                 'userId' => $userId,
                 'isTemp' => $isTemp,
                 'productList' => $productList,
-                'cartSubTotal' => $cartSubTotal
+                'cartSubTotal' => (float) $cartSubTotal
             ]
         );
     }
