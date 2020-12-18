@@ -7349,6 +7349,9 @@ html:not([dir="rtl"]) .c-header-brand.c-header-brand-center {
 }
 
 @media (max-width: 575.98px) {
+  .imagePreview{
+    height: 330px !important;
+  }
   .c-header-brand.c-header-brand-xs-down-center {
     position: absolute;
     top: 56px;
@@ -20209,6 +20212,15 @@ body {
   display: inline-block;
   box-shadow:0px -3px 6px 2px rgba(0,0,0,0.05);
   margin-bottom: 1rem;
+}
+.previewImage{
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+.imgUp:first-child{
+  padding-left: 0;
 }
 .btn-primary {
   display:block;

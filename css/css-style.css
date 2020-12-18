@@ -5146,13 +5146,13 @@ footer .widget_title {
     position: relative;
     height: 20px;
     font-size: 12px;
-    width: 70px;
+    width: 80px;
     font-family: "Font Awesome 5 Free";
     display: inline-block;
     vertical-align: middle;
 }
 .rating::before {
-	font-size: 12px;
+	font-size: 1rem;
 	content: "\f005\f005\f005\f005\f005";
 	top: 0;
 	position: absolute;
@@ -5170,7 +5170,7 @@ footer .widget_title {
 	color: #F6BC3E;
 }
 .product_rate::before {
-	font-size: 12px;
+	font-size: 1rem;
 	content: "\f005\f005\f005\f005\f005";
 	top: 0;
 	position: absolute;
@@ -7498,12 +7498,12 @@ body {
 	width: 100%;
 	font-family: 'Euclid Circular A';
 	-webkit-text-size-adjust: 100%;
-	padding-top: 108px;
+	padding-top: 114px;
 }
 
 a,
 a:hover {
-	color: #000;
+	color: #F94E57;
 	text-decoration: none;
 }
 .head-bar {
@@ -7548,7 +7548,11 @@ a:hover {
     font-weight: 400;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     transition: border-color 0.25s;
-    position: relative;
+	position: relative;
+	color: #000;
+}
+.head-nav-link:hover{
+	color: #000;
 }
 .head-shop-icon {
 	display: inline-block;
@@ -9972,6 +9976,9 @@ body { margin: 0; }
     transition: all  0.3s;
     text-align: center;
 }
+.track .icon i{
+	line-height: 60px;
+}
 .track .step.active .text {
     font-weight: 400;
     color: #000
@@ -9980,4 +9987,12 @@ body { margin: 0; }
     display: block;
     margin-top: 7px
 }
-
+.rating-img-icon img{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+}
+.rating-img-icon img:not(last-child){
+	margin-right: 4px;
+}

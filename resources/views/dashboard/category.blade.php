@@ -71,10 +71,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-md-9">
                         <form method="GET" action="{{ url()->current() }}">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-4 col-8">
                                     <div class="form-group mb-0">
                                     <label>Search via Name</label>
                                     <input type="text" maxlength="150" placeholder="Name" name="name"
@@ -92,7 +92,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-3 d-flex align-items-end justify-content-end">
+                    <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
                         <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
                             <i class="cil-plus"></i> Create Category
                         </button>
