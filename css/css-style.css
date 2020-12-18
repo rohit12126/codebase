@@ -9995,3 +9995,7 @@ body { margin: 0; }
 	display: inline-block;
 	cursor: pointer;
 }
+.btn-same-w{
+	width: 100%;
+	max-width: 180px;
+}
