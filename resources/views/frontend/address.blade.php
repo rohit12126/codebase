@@ -208,7 +208,7 @@
                                 </tr> --}}
                                 <tr>
                                     <th>Total</th>
-                                    <td class="product-subtotal">$ {{number_format($cartSubTotal+10, 2)}}</td>
+                                    <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
                                 </tr>
                             </tfoot>
                         </table>
