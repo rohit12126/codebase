@@ -53,11 +53,15 @@
                                     <td class="p-1 col-sm-9">
                                         @csrf
                                         <select name="order_status" id="" class="form-control" required>
-                                            <option value="1" @if($order->status == 1) selected @endif </option>In Process
+                                            <option value="1" @if($order->status == 1) selected @endif </option> New
                                             </option>
-                                            <option value="2" @if($order->status == 2) selected @endif </option>Delivered
+                                            <option value="2" @if($order->status == 2) selected @endif </option>Received
                                             </option>
-                                            <option value="3" @if($order->status == 3) selected @endif </option>Cancelled
+                                            <option value="3" @if($order->status == 3) selected @endif </option>Shipped
+                                            </option>
+                                            <option value="4" @if($order->status == 4) selected @endif </option>Delivered
+                                            </option>
+                                            <option value="5" @if($order->status == 5) selected @endif </option>Cancled
                                             </option>
                                         </select>
                                     </td>

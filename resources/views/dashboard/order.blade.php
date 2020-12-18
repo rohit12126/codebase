@@ -65,17 +65,27 @@
                                                     @enderror
                                                 </div>
                                             </div>
+<<<<<<< HEAD
                                             <div class="col-sm-4">
                                                 <div class="form-group mb-sm-0">
+=======
+                                            
+                                            <div class="col-4">
+                                                <div class="form-group mb-0">
+>>>>>>> 57a88f4ccc4cb7abfc8fefc292a66c1e835e0287
                                                     <label>Order Status</label>
                                                     <select name="order_status" id="" class="form-control">
                                                         <option value="" hidden>Select Order Status</option>
-                                                        <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>In
-                                                            Process
+                                                        <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>
+                                                            New
                                                         </option>
-                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option>Delivered
+                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option> Received
                                                         </option>
-                                                        <option value="3" @if(@$_GET['order_status']==3) selected @endif </option>Cancelled
+                                                        <option value="3" @if(@$_GET['order_status']==3) selected @endif </option> Shipped
+                                                        </option>
+                                                        <option value="4" @if(@$_GET['order_status']==4) selected @endif </option> Delivered
+                                                        </option>
+                                                        <option value="5" @if(@$_GET['order_status']==5) selected @endif </option> Cancled
                                                         </option>
                                                     </select>
                                                 </div>
