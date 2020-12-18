@@ -7600,7 +7600,7 @@ a:hover {
 	-moz-box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
 	font-size: 0.875rem;
-	padding: 0.625rem 0;
+	padding: 0.625rem;
 }
 
 .head-alert-bar a {
