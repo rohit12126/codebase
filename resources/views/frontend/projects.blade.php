@@ -10,9 +10,7 @@
                             <div class="blog-list-title">
                                 Custom closet project one
                             </div>
-                            <div class="img-block">
                                 <img src="{{URL::asset('/images/projects/projects1.jpg')}}" alt="" class="blog-img">
-                            </div>
                             <div class="blog-foot">
                                 <span class="blog-view-button">View</span>
                             </div>
