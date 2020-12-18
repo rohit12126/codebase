@@ -42,119 +42,6 @@
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/media.min.css')}}">
-    <style>
-    #page{
-    width:100%;
-    height:100%;
-    position:absolute;
-    }
-
-    /* Our normalize css */
-    *{
-    margin:0;
-    box-sizing: border-box;
-    }
-
-    /* Our wrapper */
-    .wrapper{
-    max-width: 715px;
-    height: 600px;
-    position: absolute;
-    left:50%;
-    top:50%;
-    transform:translate3d(-50%,-50%,0);
-    overflow:hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    width:100%;
-    }
-
-    /* Our image information */
-    .before,
-    .after {
-    width:100%;
-    height:100%;
-    background-repeat:no-repeat;
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top:0;
-    left:0;
-    /* pointer-events:none; */
-    overflow: hidden;
-    }
-
-    .content-image{
-    height:100%;
-    max-width:none;
-    }
-
-    .after{
-    width:125px;
-    }
-
-    .scroller{
-    width: 50px;
-    height:50px;
-    position: absolute;
-    left:100px;
-    top:50%;
-    transform:translateY(-50%);
-    border-radius:50%;
-    background-color: transparent;
-    opacity:0.9;
-    pointer-events:auto;
-    cursor: pointer;
-    }
-
-    .scroller:hover{
-    opacity:1;
-    }
-
-    .scrolling{
-    /* pointer-events:none; */
-    opacity:1;
-    }
-
-    .scroller__thumb{
-    width:100%;
-    height:100%;
-    padding:5px;
-    }
-
-    .scroller:before,
-    .scroller:after{
-    content:" ";
-    display: block;
-    width: 7px;
-    height: 9999px;
-    position: absolute;
-    left: 50%;
-    margin-left: -3.5px;
-    z-index: 30;
-    transition:0.1s;
-    }
-    .scroller:before{
-    top:100%;
-    }
-    .scroller:after{
-    bottom:100%;
-    }
-
-    /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
-    .scroller{
-    border: 5px solid #fff;
-    }
-    .scroller:before,
-    .scroller:after{
-    background: #fff;
-    }
-    @media{
-        .wrapper{
-            transform: translate3d(-50%,-50%,0) scale(.8);
-        }
-    }
-</style>
 </head>
 
 <body >
@@ -440,12 +327,21 @@ footer-->
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.hotspot.js')}}"></script>
+
 <script>
-    if ($('#hotspotImg').length > 0) {
-	     $('#hotspotImg').hotSpot({
-           bindselector: 'click'
-         });
-    }
+    $(window).bind("load", function() { 
+        console.log("check window load")
+        if ($('#hotspotImg').length > 0) {
+            $('#hotspotImg').hotSpot({
+            bindselector: 'click'
+            });
+        }
+    });
+
+    // $(function(){
+    //     $('.cocoen').cocoen();
+    // });
+
     // if ($('#secondhotspotImg').length > 0) {
 	// 	$('#secondhotspotImg').hotSpot({
     //         bindselector: 'click'
@@ -635,10 +531,9 @@ footer-->
                     $(".password_error").html('<span class="medium-password">Medium (should include alphabets, numbers and special characters.)</span>');
                 }
             }
-        });
+    });
         
-
-    // I hope this over-commenting helps. Let's do this!
+// I hope this over-commenting helps. Let's do this!
     // Let's use the 'active' variable to let us know when we're using it
 
     let active = false;
@@ -701,6 +596,5 @@ footer-->
     });
         
     });
-
  
 </script>

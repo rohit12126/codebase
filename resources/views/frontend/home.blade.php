@@ -48,16 +48,16 @@
                 </div>
             </div>
           </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="linearicons-chevron-left" aria-hidden="true"></span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="linearicons-chevron-right" aria-hidden="true"></span>
             </a>
         </div>
     </section>
     
-    <h1 class="pt-5 mb-3 heading_s3 text-center">A Closet For Life</h1>
+    <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
 
     <section class="home-swip-section p-relative">
         <div id="page">
