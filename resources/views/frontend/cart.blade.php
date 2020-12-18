@@ -39,7 +39,7 @@
                 <td class="text-center">
                     <label class="total{{$product->id}}">${{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
-                <td class="text-center"> 
+                <td class="text-center action-btn-wrap"> 
                     <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
                         <input type="hidden" class="rowId" value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
@@ -56,7 +56,7 @@
                     <span>Sub Total:</span>
                 </td>
                 <td class="cart-total-price">
-                    <span><label id="subQty" >${{$cartSubTotal}}</label></span>
+                    <span><label id="subQty" class="mb-0" >${{$cartSubTotal}}</label></span>
                 </td>
             </tr>
             </tbody>
