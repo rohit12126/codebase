@@ -10023,3 +10023,6 @@ body { margin: 0; }
 .custom-success-popup .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{
 	left: -26px;
 }
+.review_form h5{
+	font-size: 1.25rem;
+}
