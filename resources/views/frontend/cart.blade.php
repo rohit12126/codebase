@@ -5,13 +5,13 @@
     <div class="container">
         <table class="cart-box">
             <thead>
-                <tr>
+                <tr class="mb-0">
                     <th class="text-center"><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
-                    <th class="d-none d-md-table-cell text-center">Product Name</th>
-                    <th class="d-none d-md-table-cell text-center">Unit Price</th>
-                    <th class="d-none d-md-table-cell text-center">Quantity</th>
-                    <th class="d-none d-md-table-cell text-center">Total</th>
-                    <th class="d-none d-md-table-cell text-center">Action</th>
+                    <th class="d-none d-lg-table-cell text-center">Product Name</th>
+                    <th class="d-none d-lg-table-cell text-center">Unit Price</th>
+                    <th class="d-none d-lg-table-cell text-center">Quantity</th>
+                    <th class="d-none d-lg-table-cell text-center">Total</th>
+                    <th class="d-none d-lg-table-cell text-center">Action</th>
                 </tr>
             </thead>
             <tbody>

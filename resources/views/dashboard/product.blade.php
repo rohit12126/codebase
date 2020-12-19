@@ -56,7 +56,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     @csrf
                                     <div class="form-group">
                                         <label for="select3">Select Category<span class="mandatory">*</span></label>
@@ -123,7 +123,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6 mt-3 mt-md-0">
                                     <label for="">Image <span class="mandatory">*</span></label>
                                     <div class="form-group" id="moreImage">
                                      <div class="container">

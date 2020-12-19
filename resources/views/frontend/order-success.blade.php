@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="text-center order_complete">
-                	<i class="fas fa-check-circle"></i>
+                	<img src="{{ asset('images/success.png')}}" alt="" class="order-success-img">
                     <div class="heading_s1">
                         <h3 class="mb-3">Your order is completed!</h3>
                         <h5>Your order number is {{$order->order_no}}!</h5>
@@ -14,18 +14,10 @@
                   	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
                 </div>
             </div>
-            <div class="col-10">
-                <div class="row mt-3 mb-3">
-                    <div class="col-sm-4">
-                        <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out w-100 mb-3 mb-sm-0">Home</a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="{{ url('account/orderdetails/').$order->order_no}}" class="btn btn-sm btn-fill-out w-100 mb-3 mb-sm-0">Order detail</a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="{{ url('product/') }}" class="btn btn-sm btn-fill-out w-100">Continue Shopping</a>
-                    </div>
-                </div>
+            <div class="mt-3 mb-3">
+                <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out mb-3 mb-sm-0 btn-same-w">Home</a>
+                <a href="{{ url('account/orderdetails/').$order->order_no}}" class="btn btn-sm btn-fill-out mb-3 mb-sm-0 btn-same-w">Order detail</a>
+                <a href="{{ url('product/') }}" class="btn btn-sm btn-fill-out btn-same-w">Continue Shopping</a>
             </div>
         </div>
     {{-- <div class="heading_s1">

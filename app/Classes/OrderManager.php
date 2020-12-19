@@ -16,11 +16,13 @@ class OrderManager
     public static function orderStatusChange($req)
     {
         $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
+        
         if ($order->fill(['status' => $req->order_status])->save()) {
 
             $data['order_no'] = $order->order_no;
             $data['buyer_name'] = ucwords($order->user->name);
             $data['status'] = $order->order_status;
+            $data['order_status_num'] = $req->order_status;
             
             $email = $order->getBillingAddress->email;
             
@@ -139,9 +141,11 @@ class OrderManager
             '*',
             \DB::raw('(
             CASE status 
-            WHEN 1 THEN "In Progress"
-            WHEN 2 THEN "Delivered"
-            WHEN 3 THEN "Cancelled"
+            WHEN 1 THEN "Updated"
+            WHEN 2 THEN "Received"
+            WHEN 3 THEN "Shipped"
+            WHEN 4 THEN "Delivered"
+            WHEN 5 THEN "Cancled"
             ELSE "" END) AS order_status')
         )
             ->with('user')

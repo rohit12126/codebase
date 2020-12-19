@@ -28,6 +28,8 @@ class UserRegistration extends Mailable
      */
     public function build()
     {
-        return $this->view('dashboard.email.register_success')->with('data', $this->data);
+        return $this->view('dashboard.email.register_success')
+            ->subject('Signup - Welcome to Custom Closet')
+            ->with('data', $this->data);
     }
 }

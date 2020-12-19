@@ -26,17 +26,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-md-9">
                                 <form method="GET" action="{{ url()->current() }}">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <div class="form-group mb-0">
+                                        <div class="col-sm-4 col-8">
+                                            <div class="form-group mb-sm-0">
                                             <label>Search via Title</label>
                                             <input type="text" placeholder="Title" name="title"
                                                 class="form-control" value="{{ @$_GET['title'] }}">
                                             </div>
                                         </div>
-                                        <div class="col-4 d-flex align-items-end">
+                                        <div class="col-sm-4 d-flex align-items-end">
                                             <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
@@ -47,7 +47,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-3 d-flex align-items-end justify-content-end">
+                            <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
                                 <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create New Blog" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New Blog">
                                     <i class="cil-plus"></i> Create Blog
                                 </a>
@@ -73,10 +73,10 @@
                                     </td>
                                     <td>{{ $value->title }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-info" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
+                                        <a class="btn btn-sm btn-info mb-2 mb-sm-0" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
                                             <i class="cil-pencil"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                        <a class="btn btn-sm btn-danger mb-2 mb-sm-0" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>

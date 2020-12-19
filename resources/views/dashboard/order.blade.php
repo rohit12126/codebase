@@ -32,7 +32,7 @@
                             <div class="col-12">
                                 <form method="GET" action="{{ url()->current() }}">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>From Date</label>
                                                     <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_GET['from_date'] }}" id="from_date" autocomplete="off">
@@ -43,7 +43,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>To Date</label>
                                                     <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_GET['to_date'] }}" id="to_date">
@@ -54,7 +54,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label>Order No.</label>
                                                     <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_GET['order_no'] }}" autocomplete="off">
@@ -65,28 +65,38 @@
                                                     @enderror
                                                 </div>
                                             </div>
+<<<<<<< HEAD
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-sm-0">
+=======
+                                            
                                             <div class="col-4">
                                                 <div class="form-group mb-0">
+>>>>>>> 57a88f4ccc4cb7abfc8fefc292a66c1e835e0287
                                                     <label>Order Status</label>
                                                     <select name="order_status" id="" class="form-control">
                                                         <option value="" hidden>Select Order Status</option>
-                                                        <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>In
-                                                            Process
+                                                        <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>
+                                                            New
                                                         </option>
-                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option>Delivered
+                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option> Received
                                                         </option>
-                                                        <option value="3" @if(@$_GET['order_status']==3) selected @endif </option>Cancelled
+                                                        <option value="3" @if(@$_GET['order_status']==3) selected @endif </option> Shipped
+                                                        </option>
+                                                        <option value="4" @if(@$_GET['order_status']==4) selected @endif </option> Delivered
+                                                        </option>
+                                                        <option value="5" @if(@$_GET['order_status']==5) selected @endif </option> Cancled
                                                         </option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group mb-0">
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-sm-0">
                                                     <label>Product Name</label>
                                                     <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-4 d-flex align-items-end">
+                                            <div class="col-sm-4 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
@@ -117,40 +127,42 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered table-hover datatable">
-                            <thead>
-                                <tr>
-                                    <th>Order No.</th>
-                                    <th>Date</th>
-                                    <th>Name</th>
-                                    <th>Status</th>
-                                    <th>Total</th>
-                                    <th>Action</th>
+                        <div class="overflow-auto mb-2">
+                            <table class="table table-striped table-bordered table-hover datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Order No.</th>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                @foreach($order_list as $key => $value)
-                                <tr>
-                                    <td>{{ $value->order_no }}</td>
-                                    <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
-                                    <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
-                                    <td>{{ $value->order_status }}</td>
-                                    <td>{{ $value->grand_total }}</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
-                                            <i class="cil-arrow-thick-to-right"></i>
-                                        </a>
-                                        {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
-                                        onclick="return confirm('Are you sure you want to delete this user?');">
-                                        <i class="cil-trash"></i>
-                                        </a> --}}
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                    @foreach($order_list as $key => $value)
+                                    <tr>
+                                        <td>{{ $value->order_no }}</td>
+                                        <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
+                                        <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
+                                        <td>{{ $value->order_status }}</td>
+                                        <td>{{ $value->grand_total }}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
+                                                <i class="cil-arrow-thick-to-right"></i>
+                                            </a>
+                                            {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
+                                            onclick="return confirm('Are you sure you want to delete this user?');">
+                                            <i class="cil-trash"></i>
+                                            </a> --}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                         {{ @$order_list->links() }}
                     </div>
                 </div>

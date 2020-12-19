@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     @csrf
                                     <div class="form-group">
                                         <label>Title</label>
@@ -81,10 +81,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-md-9">
                         <form method="GET" action="{{ url()->current() }}">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-4 col-8">
                                     <div class="form-group mb-0">
                                     <label>Search via Title</label>
                                     <input type="hidden" name="product_id" value="{{ $productId }}">
@@ -103,7 +103,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-3 d-flex justify-content-end align-items-end">
+                    <div class="col-md-3 d-flex justify-content-md-end mt-3 mt-md-0 align-items-end">
                         <button class="btn btn-danger" onclick="$('.addForm').show('slow');" data-toggle="tooltip" data-placement="bottom" title="Add New Description">
                         <i class="cil-plus"></i> Create Description
                         </button>

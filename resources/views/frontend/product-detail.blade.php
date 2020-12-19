@@ -39,7 +39,7 @@
                     <h2 class="product2-category"> @if(isset($productData['product']->catergory->name)) 
                         {{$productData['product']->catergory->name}}
                         @else {{ "-" }} @endif</h2>
-                    <div class="rating-counter">
+                    <!-- <div class="rating-counter">
                             <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
                                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
                             </div>
@@ -47,6 +47,13 @@
                             <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
                             <span class="rating-amp">&amp;</span>
                             <span>&nbsp;Reviews</span>
+                    </div> -->
+                    <div class="rating-img-icon">
+                        <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
+                        <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
+                        <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
+                        <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
+                        <img src="{{URL::asset('/images/star.png')}}" alt="">
                     </div>
                     <hr>
                     <p class="pdp-discount-container">
