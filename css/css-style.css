@@ -9991,3 +9991,35 @@ body { margin: 0; }
 .order-success-img{
 	margin-bottom: 2rem;
 }
+.custom-success-popup{
+	overflow: hidden !important;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+.custom-success-popup .swal2-header{
+	display: flex;
+}
+.custom-success-popup .swal2-success-ring,.custom-success-popup .swal2-icon{
+	width: 60px !important;
+	height: 60px !important;
+	margin: 0;
+}
+.custom-success-popup .swal2-icon-show{
+	margin-right: 1rem;
+}
+.custom-success-popup .swal2-title{
+	margin-bottom: 0 !important;
+}
+.custom-success-popup .swal2-success-line-tip{
+	width: 20px !important;
+    left: 8px !important;
+    top: 33px !important;
+}
+.custom-success-popup .swal2-success-line-long{
+	width: 35px !important;
+    right: 8px !important;
+    top: 28px !important;
+}
+.custom-success-popup .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{
+	left: -26px;
+}
