@@ -25,7 +25,7 @@
                             </tr> -->
                             <tr>
                                 <td>
-                                <div style="font-size:30px;font-family:'Lato',sans-serif;margin-top:20px;color:#282c3f;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal">
+                                <div style="font-size:30px;font-family:'Lato',sans-serif;margin-top:20px;color:#282c3f;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal;text-transform: capitalize;">
                                     Hello
                                     <span style="font-weight:bold">@if(!is_null($data->user)) {{ $data->user->name }}! @else {{ $data->getShippingAddress->name }}! @endif</span>
                                 </div>
@@ -149,10 +149,12 @@
                                                     <img  src="http://ecom.c247.website/images/home/2.png" style="float:left;border-radius:4px;width:100px" width="100">
                                                     <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
                                                         <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
-                                                            <p style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px">DressBerry</p>
-                                                            <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px">  Women Navy Dial Watch MFBTMLDBE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                            </li>
-                                                            <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span id="m_8451886253471966023ItemQuantity-8140818181" style="font-family:'Lato',sans-serif;font-weight:bold">1</span>
+                                                            <a href="#" style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px;cursor: pointer;text-decoration: none;">DressBerry</a>
+                                                            <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px;">  Women Navy Dial Watch MFBTMLDBE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                        </li>
+                                                        <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">SKU No. <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px">UGG-BB-PUR-07</span>
+                                                        </li>
+                                                        <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span style="font-family:'Lato',sans-serif;font-weight:bold">1</span>
                                                         </li>
                                                     </ul>
                                                 </li>
