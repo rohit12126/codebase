@@ -20,7 +20,7 @@ return [
 
     'driver' => env('SESSION_DRIVER', 'file'),
 
-    
+
     /*
     |--------------------------------------------------------------------------
     | Session Lifetime
@@ -154,7 +154,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', null),
+    'domain' => env('SESSION_DOMAIN', 'ecom.c247.website'),
 
     /*
     |--------------------------------------------------------------------------
