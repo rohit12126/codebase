@@ -169,14 +169,8 @@ class ProductManager
             
             $productData['reviewCount'] = $this->reviewCount($product->id);
 
-            DB::enableQueryLog();
             $productData['averageRating'] =  DB::table('reviews')
-                ->where('reviewrateable_type', 'App/Models/Product')
-                ->where('reviewrateable_id', $product->id)
-                ->avg('rating');
-            $qLog = DB::getQueryLog();   
-            dd($qLog);
-            $productData['avgRating'] =  DB::table('reviews')
+                //->where('reviewrateable_type', 'App/Models/Product') /* In case of product only open it. */
                 ->where('reviewrateable_id', $product->id)
                 ->avg('rating');
         }
