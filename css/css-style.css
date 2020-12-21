@@ -5860,6 +5860,7 @@ footer .widget_title {
 }
 .comment-date {
 	font-style: italic;
+	font-size: 12px;
 }
 .star_rating > span {
 	color: #F6BC3E;
