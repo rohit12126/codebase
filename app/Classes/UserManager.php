@@ -97,7 +97,8 @@ class UserManager
             $req->email !== null
             || $req->name !== null
         ) {
-            $order = UserModel::where('menuroles', 'user');
+            $order = UserModel::where('menuroles', 'user')
+                ->where('is_temp', 0);
             if ($req->name) {
                 $order->where('name', 'like', '%' . $req->name . '%');
             }
@@ -107,7 +108,10 @@ class UserManager
             
             return $order->orderBy('id', 'desc')->paginate(10);
         } else {
-            return UserModel::where('menuroles', 'user')->orderBy('id', 'desc')->paginate(10);
+            return UserModel::where('menuroles', 'user')
+                ->where('is_temp', 0)
+                ->orderBy('id', 'desc')
+                ->paginate(10);
         }
     }
 
