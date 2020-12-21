@@ -20,6 +20,7 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+    
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
