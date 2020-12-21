@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 pr-0 dashboard_menu-wrap">
                 <div class="dashboard_menu">
-                    <span class="user-icon">
+                    <!-- <span class="user-icon">
                       <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
-                    </span>
+                    </span> -->
                     <h5 class="text-center pb-3 user-account-name">User Name</h5>
                     <ul class="nav nav-tabs flex-column" role="tablist">
                       <li class="nav-item">
