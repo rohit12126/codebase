@@ -8,7 +8,7 @@
                     <span class="user-icon">
                       <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
                     </span>
-                    <h5 class="text-center pb-3">User Name</h5>
+                    <h5 class="text-center pb-3 user-account-name">User Name</h5>
                     <ul class="nav nav-tabs flex-column" role="tablist">
                       <li class="nav-item">
                         <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Account details</a>

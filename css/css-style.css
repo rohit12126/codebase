@@ -7297,13 +7297,22 @@ blockquote p:last-child {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd;
+	border: 1px solid #292b2c;
+    background: #f2f2f2;
     border-radius: 50%;
     margin-bottom: 20px;
 }
 .dashboard-section .card-body,.dashboard-section .card-header{
 	padding-left: 0;
 	padding-right: 0;
+}
+.user-account-name{
+	border-bottom: 1px solid #ddd;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 10%;
 }
 /*===================================*
   24.END ELEMENT DESIGN

@@ -117,10 +117,9 @@
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)
                                 <li>
-                                
-                                   <!-- <div class="comment_img"> -->
-                                        <!-- <img src="{{URL::asset('/images/about2.jpg')}}" alt="user2"> -->
-                                    <!-- </div>  -->
+                                    <div class="comment_img">
+                                        <img src="{{URL::asset('/images/review-user.png')}}" alt="">
+                                    </div> 
                                     <div class="comment_block">
                                         <div class="rating_wrap">
                                             <div class="rating">
