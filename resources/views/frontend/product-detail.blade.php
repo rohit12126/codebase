@@ -57,7 +57,9 @@
                         <span class="rating-count-no ml-3"></span>
                         <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
                         <span class="rating-amp">&amp;</span>
-                        <span>&nbsp;Reviews</span>
+                        <a href="{{ url('#comments') }}">
+                            <span>&nbsp;Reviews</span>
+                        </a>
                     </div>
                     <hr>
                     <p class="pdp-discount-container">
@@ -114,7 +116,7 @@
                         </p>
                         </div>
                         <hr/>
-                        <div class="comments">
+                        <div class="comments" id=comments>
                         @empty($productData['reviewCount'])
                             <h5 class="product_tab_title"> Be the first person to rate this product</h5>
                         @endempty    

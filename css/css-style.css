@@ -6093,6 +6093,9 @@ label.label_info {
 .card-body .comments {
 	margin-top: 5px;
 }
+.product-detail2 .comments{
+	scroll-margin-top: 120px;
+}
 /*===================================*
   23.END SHOP DESIGN
 *===================================*/
@@ -10021,6 +10024,9 @@ body { margin: 0; }
 	display: flex;
     justify-content: flex-start;
 	align-items: center;
+	color: #535665;
+}
+.rating-img-icon a{
 	color: #535665;
 }
 .rating-img-icon img{
