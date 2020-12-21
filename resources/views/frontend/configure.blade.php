@@ -150,7 +150,7 @@
                             <div class="comment_block">
                                 <div class="rating_wrap">
                                     <div class="rating">
-                                        <div class="product_rate" style="width:{{ $review->rating * 15}}%"></div>
+                                        <div class="product_rate" style="width:{{ $review->rating * 20}}%"></div>
                                     </div>
                                 </div>
                                 <p class="customer_meta">
