@@ -272,7 +272,7 @@ div.banner_large_pad {
 	height: 100px;
 }
 .padding_eight_all {
-	padding: 8%;
+	padding: 0 4%;
 }
 .padding_eight_lr {
 	padding: 0 8%;
@@ -4686,9 +4686,6 @@ footer .widget_title {
 /*===================================*
   20.START LOGIN REGISTER STYLE
 *===================================*/
-.login_wrap {
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
 .login_register_wrap {
 	display: -ms-flexbox;
 	display: flex;
@@ -5863,6 +5860,7 @@ footer .widget_title {
 }
 .comment-date {
 	font-style: italic;
+	font-size: 12px;
 }
 .star_rating > span {
 	color: #F6BC3E;
@@ -6095,6 +6093,9 @@ label.label_info {
 }
 .card-body .comments {
 	margin-top: 5px;
+}
+.product-detail2 .comments{
+	scroll-margin-top: 120px;
 }
 /*===================================*
   23.END SHOP DESIGN
@@ -7586,6 +7587,13 @@ a:hover {
 	display: inline-block;
 	font-size: 0.80rem;
 }
+.head-user-name label{
+	width: 80px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle
+}
 .head-carticon label{
 	margin-left: 5px;
 }
@@ -7596,6 +7604,13 @@ a:hover {
     height: 25px;
     width: 25px;
     margin: 0 5px;
+}
+.head-user-name img{
+	height: 22px;
+	width: 21px;
+}
+.head-carticon img{
+	margin-top: 1px;
 }
 .head-carticon{
 	position: relative;
@@ -9331,6 +9346,7 @@ h5 {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 1;
+	text-transform: capitalize;
 }
 .product2-category{
 	color: #535665;
@@ -10005,6 +10021,15 @@ body { margin: 0; }
 .track .text {
     display: block;
     margin-top: 7px
+}
+.rating-img-icon{
+	display: flex;
+    justify-content: flex-start;
+	align-items: center;
+	color: #535665;
+}
+.rating-img-icon a{
+	color: #535665;
 }
 .rating-img-icon img{
 	width: 16px;

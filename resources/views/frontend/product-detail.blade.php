@@ -54,6 +54,12 @@
                         <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
                         <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
                         <img src="{{URL::asset('/images/star.png')}}" alt="">
+                        <span class="rating-count-no ml-3"></span>
+                        <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
+                        <span class="rating-amp">&amp;</span>
+                        <a href="{{ url('#comments') }}">
+                            <span>&nbsp;Reviews</span>
+                        </a>
                     </div>
                     <hr>
                     <p class="pdp-discount-container">
@@ -104,15 +110,14 @@
                             <span class="linearicons-document"></span>
                         </h4>
                         <p class="pdp-product-description-content"> 
-                            <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias aliquid voluptates assumenda officiis, cum enim reprehenderit quo iure ut numquam accusamus quasi minus expedita quia. Esse consectetur fuga quos minima?
-                                -->
                             {!!$productData['product']->description!!} 
                         </p>
                         </div>
                         <hr/>
-                        <div class="comments">
+                        <div class="comments" id=comments>
                         @empty($productData['reviewCount'])
-                            <h5 class="product_tab_title"> Be the first person to rate this product</h5>
+                        {{-- <h5 class="pb-3 text-uppercase">Customer reviews</h5> --}}
+                            <p class="product_tab_title text-danger font-italic"> Be the first person to rate this product.</p>
                         @endempty    
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)
@@ -126,10 +131,10 @@
                                                 <div class="product_rate" style="width:60%"></div>
                                             </div>
                                         </div>
-                                        <p class="customer_meta">
+                                        <div class="customer_meta">
                                             <span class="review_author">{{$review->title}}</span>
                                             <span class="comment-date">{{ \Carbon\Carbon::parse($review->created_at)->format('d F Y')}}</span>
-                                        </p>
+                                        </div>
                                         <div class="description">
                                             <p>{{$review->body}}</p>
                                         </div>

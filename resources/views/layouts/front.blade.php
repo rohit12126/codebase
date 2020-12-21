@@ -55,7 +55,7 @@
                 </a>
             </div>
             <div class="head-shopbar d-inline-block float-right">
-                <span class="head-shop-icon">
+                <span class="head-shop-icon head-user-name">
                     @guest
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal" title="Login">
                             <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
