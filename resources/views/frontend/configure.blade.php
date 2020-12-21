@@ -120,19 +120,26 @@
 <section class="section">
     <div class="container">
         <div class="comments">
-            <div class="text-center mb-3">
-                <h3>Reviews &amp; Rating</h3>
-            </div>
-            <div class="rating-counter">
-                <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
+            @if ($productData['reviewCount'] > 0)
+                <div class="text-center mb-3">
+                    <h3>Reviews &amp; Rating</h3>
                 </div>
-                <span class="rating-count-no">
-                        <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
-                        <span class="rating-amp">&amp;</span>
-                        <span>&nbsp;Reviews</span>
-                </span>
-            </div>
+                <div class="rating-counter">
+                    <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
+                    </div>
+                    <span class="rating-count-no">
+                            <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
+                            <span class="rating-amp">&amp;</span>
+                            <span>&nbsp;Reviews</span>
+                    </span>
+                </div>
+            @else
+                <div class="text-center mb-3">
+                    <h5>Be the first to rate this product.</h5>
+                </div>
+            @endif
+
             @if(!$productData['productReview']->isEmpty())
                 <ul class="list_none comment_list mt-4">
                     @foreach ($productData['productReview'] as $review)
