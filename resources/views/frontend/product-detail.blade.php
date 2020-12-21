@@ -13,7 +13,8 @@
                                 @foreach ($productData['product']->images as $image)
                                     <div class="img-tile">
                                         <div class="product-list-inner">
-                                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                                            {{-- {{ asset('upload/product/'.$image->image)}} --}}
+                                            <a data-fancybox="gallery" href="#">
                                                 <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
                                             </a>
                                         </div>
@@ -23,7 +24,8 @@
                                 {{-- for Full Width --}}
                                 <div class="img-tile">
                                     <div class="product-list-inner">
-                                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
+                                        {{-- {{ asset('upload/product/'.$productData['product']->images[0]->image)}} --}}
+                                        <a data-fancybox="gallery" href="#">
                                             <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
                                         </a>
                                     </div>
@@ -154,26 +156,13 @@
         <div class="container">
             <h3 class="pb-3 text-center">Related Products</h3>
             <div class="related-slider">
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>                
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>                
-                </div>
+                @foreach ($relatedProducts as $Rproduct)
+                    <div class="blog-col">
+                        <a href="#"><img class="img-fluid" src="{{ asset('upload/product/'.$Rproduct->images[0]->image)}}" alt="" /></a>
+                        <div class="products-list-title"><h2>{{$Rproduct->name}}</h2></div>
+                        <div class="products-list-price">$ {{$Rproduct->sale_price}}</div>
+                    </div>
+                @endforeach
             </div> 
             <div class="text-center pt-5">
                 <a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a>
