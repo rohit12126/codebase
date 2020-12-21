@@ -366,16 +366,6 @@ footer-->
 </script>
 
 <script>
-/* paypal function */
-paypal.Buttons({
-   createOrder: function(data, actions) {
-     return actions.order.create({      
-       application_context: {
-        shipping_preference: 'NO_SHIPPING'
-      }
-     });
-   }
- }).render('#paypal-button-container');
 
     /* Login validation functionality */
     jQuery("#loginform").validate({
