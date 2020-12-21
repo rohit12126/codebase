@@ -63,7 +63,7 @@
                         </a>
                     @endguest
                     @auth
-                        <a href="{{url('/account')}}" title="Account">
+                        <a href="{{url('/account')}}" title="{{ $userData->name ?? ''}}">
                             <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
                             <label class="mb-0">{{ $userData->name ?? ''}}</label>
                         </a>

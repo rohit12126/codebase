@@ -57,7 +57,10 @@
                         <span class="rating-count-no ml-3"></span>
                         <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
                         <span class="rating-amp">&amp;</span>
-                        <a href="{{ url('#comments') }}">
+                        <!-- <a href="{{ url('#comments') }}">
+                            <span>&nbsp;Reviews</span>
+                        </a> -->
+                        <a href="#comments">
                             <span>&nbsp;Reviews</span>
                         </a>
                     </div>
@@ -116,7 +119,7 @@
                         </p>
                         </div>
                         <hr/>
-                        <div class="comments" id=comments>
+                        <div class="comments" id="comments">
                         @empty($productData['reviewCount'])
                             <h5 class="product_tab_title"> Be the first person to rate this product</h5>
                         @endempty    
@@ -347,5 +350,29 @@
         }
     ]
     });
+</script>
+<script>
+    (function($) {
+    $('a[href*=#]:not([href=#])').click(function() 
+    {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) 
+        {
+        
+        var target = $(this.hash),
+        headerHeight = $(".primary-header").height() + 5; // Get fixed header height
+                
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                
+        if (target.length) 
+        {
+            $('html,body').animate({
+            scrollTop: target.offset().top - 200
+            }, 500);
+            return false;
+        }
+        }
+    });
+    })(jQuery);
 </script>
 @endsection
