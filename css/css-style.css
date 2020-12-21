@@ -10050,3 +10050,17 @@ body { margin: 0; }
 .review_form h5{
 	font-size: 1.25rem;
 }
+.order-success-details-wrap {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    background: #fbfbfb;
+    padding: 30px;
+    color: #333;
+}
+.order-success-details-wrap h5{
+	margin-bottom: 30px;
+    font-size: 22px;
+}
+.order-success-details-wrap .view-invoice-block {
+    margin-top: 30px;
+}
