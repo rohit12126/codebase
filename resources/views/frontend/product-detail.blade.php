@@ -230,7 +230,7 @@
                         icon: 'success',
                         title: 'Product has been added to your cart successfully',
                         showConfirmButton: false,
-                        timer: 1500,
+                        timer: 2500,
                         customClass: {
                             container: 'custom-success-popup-container',
                             popup: 'custom-success-popup',

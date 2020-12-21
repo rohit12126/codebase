@@ -7301,6 +7301,10 @@ blockquote p:last-child {
     border-radius: 50%;
     margin-bottom: 20px;
 }
+.dashboard-section .card-body,.dashboard-section .card-header{
+	padding-left: 0;
+	padding-right: 0;
+}
 /*===================================*
   24.END ELEMENT DESIGN
 *===================================*/
