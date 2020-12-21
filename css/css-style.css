@@ -4343,7 +4343,8 @@ footer .widget_title {
 	border-radius: 10px;
 }
 .contact_style3 .contact_icon {
-	border: 1px solid #FF324D;
+	/* border: 1px solid #FF324D; */
+	box-shadow: 0 0 3px 0 #F94E57;
 	margin: 0 0 5px;
 	height: 80px;
 	width: 80px;
