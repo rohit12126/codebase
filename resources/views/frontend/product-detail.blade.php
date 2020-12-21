@@ -175,7 +175,7 @@
             </div>
         </div>
     </section>
-    <section class="section add-review-wrapper bg-light">
+    <!-- <section class="section add-review-wrapper bg-light">
         <div class="container">
             <div class="review_form field_form">
                 <h5>Add a review</h5>
@@ -205,7 +205,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section> -->
 @endsection
 
 @section('scripts')
