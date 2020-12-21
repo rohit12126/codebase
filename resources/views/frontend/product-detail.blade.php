@@ -13,7 +13,8 @@
                                 @foreach ($productData['product']->images as $image)
                                     <div class="img-tile">
                                         <div class="product-list-inner">
-                                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
+                                            {{-- {{ asset('upload/product/'.$image->image)}} --}}
+                                            <a data-fancybox="gallery" href="#">
                                                 <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
                                             </a>
                                         </div>
@@ -23,7 +24,8 @@
                                 {{-- for Full Width --}}
                                 <div class="img-tile">
                                     <div class="product-list-inner">
-                                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
+                                        {{-- {{ asset('upload/product/'.$productData['product']->images[0]->image)}} --}}
+                                        <a data-fancybox="gallery" href="#">
                                             <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
                                         </a>
                                     </div>
@@ -122,6 +124,7 @@
                             @endif
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)
+                                
                                 <li>
                                     <div class="comment_img">
                                         <img src="{{URL::asset('/images/review-user.png')}}" alt="">
@@ -129,7 +132,10 @@
                                     <div class="comment_block">
                                         <div class="rating_wrap">
                                             <div class="rating">
-                                                <div class="product_rate" style="width:60%"></div>
+                                                @php
+                                                    $rate = $review->rating * 20;
+                                                @endphp
+                                                <div class="product_rate" style="width:{{$rate}}%"></div>
                                             </div>
                                         </div>
                                         <div class="customer_meta">
@@ -150,67 +156,23 @@
         </div>
     </section>
     <hr/>
-    <section class="p-5">
+    <section class="p-5 related-product-wrapper">
         <div class="container">
             <h3 class="pb-3 text-center">Related Products</h3>
             <div class="related-slider">
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-air.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-glanzstuck_0.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-nimbus_2.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>                
-                </div>
-                <div class="blog-col">
-                    <a href="#"><img class="img-fluid" src="{{URL::asset('/images/home/2-sitzer-sitzfeldt-panama_2.jpg')}}" alt="" /></a>
-                    <div class="products-list-title"><h2>4-Sitzer Die</h2></div>
-                    <div class="products-list-price">$ 10.00</div>                
-                </div>
+                @foreach ($relatedProducts as $Rproduct)
+                    <div class="blog-col">
+                        <a href="#"><img class="img-fluid" src="{{ asset('upload/product/'.$Rproduct->images[0]->image)}}" alt="" /></a>
+                        <div class="products-list-title"><h2>{{$Rproduct->name}}</h2></div>
+                        <div class="products-list-price">$ {{$Rproduct->sale_price}}</div>
+                    </div>
+                @endforeach
             </div> 
             <div class="text-center pt-5">
                 <a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a>
             </div>
         </div>
     </section>
-    <!-- <section class="section add-review-wrapper bg-light">
-        <div class="container">
-            <div class="review_form field_form">
-                <h5>Add a review</h5>
-                <form class="row mt-3">
-                    <div class="form-group col-12">
-                        <div class="rating-img-icon">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="form-group col-12">
-                        <textarea required="required" placeholder="Your review *" class="form-control" name="message" rows="4"></textarea>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <input required="required" placeholder="Enter Name *" class="form-control" name="name" type="text">
-                     </div>
-                    <div class="form-group col-md-6">
-                        <input required="required" placeholder="Enter Email *" class="form-control" name="email" type="email">
-                    </div>
-                   
-                    <div class="form-group col-12">
-                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section> -->
 @endsection
 
 @section('scripts')

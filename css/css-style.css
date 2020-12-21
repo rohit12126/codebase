@@ -10094,3 +10094,9 @@ body { margin: 0; }
 .order-success-details-wrap .view-invoice-block {
     margin-top: 30px;
 }
+.related-product-wrapper .blog-col.slick-slide a {
+    display: flex;
+    height: 260px;
+    justify-content: center;
+    align-items: center;
+}

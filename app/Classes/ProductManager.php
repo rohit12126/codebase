@@ -168,8 +168,9 @@ class ProductManager
             //$product->getRecentRatings($product->id, 5, 'desc');
             
             $productData['reviewCount'] = $this->reviewCount($product->id);
+
             $productData['averageRating'] =  DB::table('reviews')
-                ->where('reviewrateable_type', 'App/Models/Product')
+                //->where('reviewrateable_type', 'App/Models/Product') /* In case of product only open it. */
                 ->where('reviewrateable_id', $product->id)
                 ->avg('rating');
         }
