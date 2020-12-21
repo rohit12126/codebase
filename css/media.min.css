@@ -276,10 +276,10 @@
 @media (min-width: 576px)
 {
     .post-footer a:not(:last-child){
-        margin-right: 1.625rem;
+        margin-right: .625rem;
     }
     .post-footer a:not(:first-child){
-        padding-left: 1.625rem;
+        padding-left: .625rem;
     }
 }
 @media (max-width: 575px) {

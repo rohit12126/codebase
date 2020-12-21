@@ -85,39 +85,41 @@
                     </div>
                     <div class="card-body">
                     @include('partials.alert_msg')
-                        <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Reason</th>
-                                    <th>Message</th>
-                                    <th>Connected ?</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($enquieies as $key=>$value)
-                                <tr @if($value->connected == 0) class="table-success"@endif>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{$value->name}}</td>
-                                    <td>{{$value->email}}</td>
-                                    <td>{{$value->phone_nu}}</td>
-                                    <td>{{$value->reason}}</td>
-                                    
-                                    <td>{{$value->message}}</td>
-                                    <td class="text-center">
-                                    @if($value->connected == 0)
-                                        <a class="btn btn-sm btn-primary d-inline-block" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" title="Contected">
-                                            <i class="cil-check"></i>
-                                        </a>
-                                    @endif
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                        <div class="overflow-auto mb-2">
+                            <table class="table table-striped table-bordered datatable">
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Reason</th>
+                                        <th>Message</th>
+                                        <th>Connected ?</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($enquieies as $key=>$value)
+                                    <tr @if($value->connected == 0) class="table-success"@endif>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{$value->name}}</td>
+                                        <td>{{$value->email}}</td>
+                                        <td>{{$value->phone_nu}}</td>
+                                        <td>{{$value->reason}}</td>
+                                        
+                                        <td>{{$value->message}}</td>
+                                        <td class="text-center">
+                                        @if($value->connected == 0)
+                                            <a class="btn btn-sm btn-primary d-inline-block" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" title="Contected">
+                                                <i class="cil-check"></i>
+                                            </a>
+                                        @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                         {{ @$enquieies->links() }}
                     </div>
                 </div>

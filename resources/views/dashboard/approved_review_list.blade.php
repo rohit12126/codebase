@@ -71,37 +71,39 @@
                     </div>
                     <div class="card-body">
                     @include('partials.alert_msg')
-                        <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Rating</th>
-                                    <th>Review</th>
-                                    <th>Item</th>
-                                    <th>User</th> 
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($approved as $key => $value)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->rating }}</td>
-                                    <td>{{ $value->body }}</td>
-                                    <td>{{ $value->product_name }}</td>
-                                    <td>{{ $value->user_name }}</td>
-                                    <td>
-                                        <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-sm btn-info" title="DisApprove This Review" >
-                                            <i class="cil-thumb-down"></i>
-                                        </a>
-                                        <a class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
-                                            <i class="cil-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>                       
-                            @endforeach
-                            </tbody>
-                        </table>
+                        <div class="overflow-auto mb-2">
+                            <table class="table table-striped table-bordered datatable">
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Rating</th>
+                                        <th>Review</th>
+                                        <th>Item</th>
+                                        <th>User</th> 
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($approved as $key => $value)
+                                    <tr>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $value->rating }}</td>
+                                        <td>{{ $value->body }}</td>
+                                        <td>{{ $value->product_name }}</td>
+                                        <td>{{ $value->user_name }}</td>
+                                        <td>
+                                            <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-sm btn-info mb-2 mb-md-0" title="DisApprove This Review" >
+                                                <i class="cil-thumb-down"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-danger mb-2 mb-md-0" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
+                                                <i class="cil-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>                       
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                         {{ @$approved->links() }}
                     </div>
                 </div>

@@ -55,36 +55,38 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Featured Image</th>
-                                    <th>Title</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($blog_list as $key => $value)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>
-                                        <img src="{{ url('') }}/upload/blog/{{ @$value->image}}" width="50" />
-                                    </td>
-                                    <td>{{ $value->title }}</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-info mb-2 mb-sm-0" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
-                                            <i class="cil-pencil"></i>
-                                        </a>
-                                        <a class="btn btn-sm btn-danger mb-2 mb-sm-0" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
-                                            <i class="cil-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
+                        <div class="overflow-auto mb-2">
+                            <table class="table table-striped table-bordered datatable">
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Featured Image</th>
+                                        <th>Title</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($blog_list as $key => $value)
+                                    <tr>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>
+                                            <img src="{{ url('') }}/upload/blog/{{ @$value->image}}" width="50" />
+                                        </td>
+                                        <td>{{ $value->title }}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info mb-2 mb-sm-0" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
+                                                <i class="cil-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-danger mb-2 mb-sm-0" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                                <i class="cil-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                         {{-- @if(@!$_POST) --}}
                         {{ @$blog_list->links() }}
                             
