@@ -148,7 +148,7 @@
                             @endif --}}
                             {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
                                 <div class="pt-3 pb-3">
-                                    <div class="form-group">shippingAddresses
+                                    <div class="form-group">
                                         <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
                                     </div>
                                     <div class="form-group">

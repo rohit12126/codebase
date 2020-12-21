@@ -2,7 +2,7 @@
 
 use App\Classes\CartManager;
 use Illuminate\Contracts\View\View;
-
+use Illuminate\Support\Facades\Auth;
 class CartComposer
 {
     protected $cartManager;
@@ -25,12 +25,16 @@ class CartComposer
         $cartCount = $this->cartManager->count();
         $cartContain = $this->cartManager->getCartContain();
         $cartSubTotal = $this->cartManager->subTotal();
-        
+        $userData = [];
+        if (Auth::check()) {
+            $userData = Auth::user();
+        }
         return $view->with(
             [
               'cartCount' => $cartCount,
               'cartContains' => $cartContain,
-              'cartSubTotal' => $cartSubTotal
+              'cartSubTotal' => $cartSubTotal,
+              'userData' => $userData
             ]
         );
     }
