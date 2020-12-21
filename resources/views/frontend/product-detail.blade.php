@@ -59,7 +59,7 @@
                                 <span>&nbsp;Reviews</span>
                             </a>
                         @else
-                            <p class="product_tab_title text-danger font-italic"> Be the first person to rate this product.</p>
+                            <p class="product_tab_title text-danger font-italic mb-0"> Be the first person to rate this product.</p>
                         @endif
                     </div>
                     <hr>
@@ -364,7 +364,7 @@
         if (target.length) 
         {
             $('html,body').animate({
-            scrollTop: target.offset().top - 200
+            scrollTop: target.offset().top - 150
             }, 500);
             return false;
         }
