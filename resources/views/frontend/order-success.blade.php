@@ -26,7 +26,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <span>Total Amount Paid</span>
-                            <span>$55</span>
+                            <span>$55.00</span>
                         </div>
                     </div>
                     <div class="view-invoice-block">
