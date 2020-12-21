@@ -124,6 +124,9 @@
                             @endif
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)
+                                @php
+                                    dump($review);
+                                @endphp
                                 <li>
                                     <div class="comment_img">
                                         <img src="{{URL::asset('/images/review-user.png')}}" alt="">
