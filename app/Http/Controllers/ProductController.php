@@ -70,7 +70,7 @@ class ProductController extends Controller
         $productData = $this->productManager->getProductWithReview($productId);
         $categoryId = $productData['product']->category_id;
         $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId);
-        
+
         if ($productData) {
             $cart = $this->cartManager->getProduct($productId);
             return view('frontend.product-detail',
