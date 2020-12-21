@@ -54,6 +54,10 @@
                         <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
                         <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
                         <img src="{{URL::asset('/images/star.png')}}" alt="">
+                        <span class="rating-count-no ml-3"></span>
+                        <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
+                        <span class="rating-amp">&amp;</span>
+                        <span>&nbsp;Reviews</span>
                     </div>
                     <hr>
                     <p class="pdp-discount-container">
