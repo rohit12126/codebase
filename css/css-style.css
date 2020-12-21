@@ -5159,7 +5159,7 @@ footer .widget_title {
 	position: absolute;
 	left: 0;
 	float: left;
-	color: #F6BC3E;
+	color: #ddd;
 }
 .product_rate {
 	overflow: hidden;
@@ -5168,7 +5168,7 @@ footer .widget_title {
 	left: 0;
 	position: absolute;
 	padding-top: 1.5em;
-	color: #F6BC3E;
+	color: #fcb040;
 }
 .product_rate::before {
 	font-size: 1rem;
@@ -9490,10 +9490,10 @@ h5 {
     max-width: 60px;
 }
 .rating_wrap .rating{
-	font-family: 'Linearicons' !important;
+	font-family: "Ionicons" !important;
 }
 .product_rate::before,.rating::before{
-	content: "\e98d\e98d\e98d\e98d\e98d";
+	content: "\f2fc\f2fc\f2fc\f2fc\f2fc";
 }
 .related-slider .slick-prev, .related-slider .slick-next {
     height: 50px;
@@ -10049,4 +10049,18 @@ body { margin: 0; }
 }
 .review_form h5{
 	font-size: 1.25rem;
+}
+.order-success-details-wrap {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    background: #fbfbfb;
+    padding: 30px;
+    color: #333;
+}
+.order-success-details-wrap h5{
+	margin-bottom: 30px;
+    font-size: 22px;
+}
+.order-success-details-wrap .view-invoice-block {
+    margin-top: 30px;
 }
