@@ -9,15 +9,35 @@
                 	<img src="{{ asset('images/success.png')}}" alt="" class="order-success-img">
                     <div class="heading_s1">
                         <h3 class="mb-3">Your order is completed!</h3>
-                        <h5>Your order number is {{$order->order_no}}!</h5>
+                        <!-- <h5>Your order number is {{$order->order_no}}!</h5> -->
                     </div>
                   	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
+                </div>
+                <div class="order-success-details-wrap">
+                    <h5>Order Details</h5>
+                    <div class="order-success-detail-block">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Order Number</span>
+                            <span>{{$order->order_no}}</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>SKU Number</span>
+                            <span>UGG-BB-PUR-07</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Total Amount Paid</span>
+                            <span>$55</span>
+                        </div>
+                    </div>
+                    <div class="view-invoice-block">
+                        <a href="#" class="btn btn-sm btn-fill-out">View Invoice</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-12 text-center mt-3 mb-3">
                 <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out mb-3 btn-same-w">Home</a>
-                <a href="{{ url('account/orderdetails/').$order->order_no}}" class="btn btn-sm btn-fill-out mb-3 btn-same-w">Order detail</a>
-                <a href="{{ url('product/') }}" class="btn btn-sm btn-fill-out btn-same-w mb-3">Continue Shopping</a>
+                <a href="{{ url('/blog').$order->order_no}}" class="btn btn-sm btn-fill-out mb-3 btn-same-w">Blog</a>
+                <a href="{{ url('/account') }}" class="btn btn-sm btn-fill-out btn-same-w mb-3">Dashboard</a>
             </div>
         </div>
     {{-- <div class="heading_s1">
