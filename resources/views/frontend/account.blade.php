@@ -1,10 +1,14 @@
 @extends('layouts.front')
 @section('content')
-<div class="section">
+<div class="section dashboard-section">
 	<div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 pr-0 dashboard_menu-wrap">
                 <div class="dashboard_menu">
+                    <span class="user-icon">
+                      <i></i>
+                    </span>
+                    <h5 class="text-center pb-3">User Name</h5>
                     <ul class="nav nav-tabs flex-column" role="tablist">
                       <li class="nav-item">
                         <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Account details</a>

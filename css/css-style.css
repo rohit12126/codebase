@@ -7224,8 +7224,8 @@ blockquote p:last-child {
 .modal-backdrop {
 	z-index: 9999;
 }
-.dashboard_menu {
-	box-shadow: 0 0px 4px 0 #e9e9e9;
+.dashboard_menu-wrap{
+	border-right: 1px solid #ddd;
 }
 .dashboard_menu .nav-tabs li.nav-item a {
 	text-align: left;
@@ -7244,6 +7244,7 @@ blockquote p:last-child {
 }
 .dashboard_content {
 	margin: 0;
+	padding: 15px 30px;
 }
 .dashboard_content .card-header {
 	background-color: transparent;
@@ -7255,7 +7256,7 @@ blockquote p:last-child {
 .dashboard_content .card {
 	border-radius: 0;
 	border: 0;
-	box-shadow: 0 0px 4px 0 #e9e9e9;
+	/* box-shadow: 0 0px 4px 0 #e9e9e9; */
 }
 .dashboard_content .card-body p:last-child {
 	margin: 0;
@@ -7280,6 +7281,24 @@ blockquote p:last-child {
 }
 .dashboard_content label .required {
 	color: #ff0000;
+}
+.dashboard-section{
+	background: #eee;
+}
+.dashboard-section .container{
+	background: #fff;
+    padding: 25px;
+}
+.dashboard-section .user-icon{
+	display: flex;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 /*===================================*
   24.END ELEMENT DESIGN
