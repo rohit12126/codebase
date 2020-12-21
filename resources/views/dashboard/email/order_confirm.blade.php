@@ -60,7 +60,7 @@
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p class="m_8451886253471966023statusText" style="margin:0;font-family:'Lato',sans-serif;color:white;padding:0;float:left;width:100%;font-size:30px;line-height:normal">
                                                                         We have <strong style="font-family:'Lato',sans-serif!important;letter-spacing:0.5px;font-weight:bold">Placed</strong> your order
-                                                                        <span style="font-weight:bold;font-family:'Lato',sans-serif;padding-left:5px;opacity:0.6;font-size:12px"> on                                                 Tue, 29 Sep
+                                                                        <span style="font-weight:bold;font-family:'Lato',sans-serif;padding-left:5px;opacity:0.6;font-size:12px"> on                                                 {{\Carbon\Carbon::createFromFormat('F d,Y', $data->created_at)}}
                                                                                </span>
                                                                     </p>
                                                                     </td>
@@ -145,19 +145,21 @@
                                         <tr style="margin:0;padding:0">
                                             <td style="margin:0;padding:20px 30px 24px 30px;background-color:white;border-radius:8px;font-size:17px;line-height:23px;color:#7e818c;border:solid 0.5px rgba(190,147,71,0.11);padding-top:24px;border-top-left-radius:0;border-top-right-radius:0;margin-top:0">
                                             <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;width:100%;list-style:none;line-height:normal">
-                                                <li style="margin:0;padding:0;display:block;float:left;width:100%;padding-bottom:20px">
-                                                    <img  src="http://ecom.c247.website/images/home/2.png" style="float:left;border-radius:4px;width:100px" width="100">
-                                                    <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
-                                                        <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
-                                                            <a href="#" style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px;cursor: pointer;text-decoration: none;">DressBerry</a>
-                                                            <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px;">  Women Navy Dial Watch MFBTMLDBE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                        </li>
-                                                        <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">SKU No. <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px">UGG-BB-PUR-07</span>
-                                                        </li>
-                                                        <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span style="font-family:'Lato',sans-serif;font-weight:bold">1</span>
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                                @foreach ($data->productList as $product)
+                                                    <li style="margin:0;padding:0;display:block;float:left;width:100%;padding-bottom:20px">
+                                                        <img  src="{{ url('upload/product/'. $product->product->images[0]->image)}}" style="float:left;border-radius:4px;width:100px" width="100">
+                                                        <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
+                                                            <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
+                                                                <a href="#" style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px;cursor: pointer;text-decoration: none;">{{$product->product->name}}</a>
+                                                                {{-- <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px;">  Women Navy Dial Watch MFBTMLDBE2</span> --}}
+                                                            </li>
+                                                            <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">SKU No. <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px">UGG-BB-PUR-07</span>
+                                                            </li>
+                                                            <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">Qty <span style="font-family:'Lato',sans-serif;font-weight:bold">{{ number_format($product->product_quantity)}}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                             </td>
                                         </tr>

@@ -151,7 +151,7 @@ class OrderManager
             ->with('user')
             ->with('getShippingAddress')
             ->with('getBillingAddress')
-            ->with('productList.product')
+            ->with('productList.product.images')
             ->where('order_no', $order)
             ->first();
     }
