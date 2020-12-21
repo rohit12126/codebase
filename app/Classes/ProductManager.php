@@ -172,6 +172,10 @@ class ProductManager
                 ->where('reviewrateable_type', 'App/Models/Product')
                 ->where('reviewrateable_id', $product->id)
                 ->avg('rating');
+
+            $productData['avgRating'] =  DB::table('reviews')
+                ->where('reviewrateable_id', $product->id)
+                ->avg('rating');
         }
         return $productData;
     }
