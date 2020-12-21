@@ -61,7 +61,7 @@
                                 <span>&nbsp;Reviews</span>
                             </a>
                         @else
-                            <p class="product_tab_title text-danger font-italic"> Be the first person to rate this product.</p>
+                            <p class="product_tab_title text-danger font-italic mb-0"> Be the first person to rate this product.</p>
                         @endif
                     </div>
                     <hr>
@@ -336,5 +336,29 @@
         }
     ]
     });
+</script>
+<script>
+    (function($) {
+    $('a[href*=#]:not([href=#])').click(function() 
+    {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) 
+        {
+        
+        var target = $(this.hash),
+        headerHeight = $(".primary-header").height() + 5; // Get fixed header height
+                
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                
+        if (target.length) 
+        {
+            $('html,body').animate({
+            scrollTop: target.offset().top - 150
+            }, 500);
+            return false;
+        }
+        }
+    });
+    })(jQuery);
 </script>
 @endsection
