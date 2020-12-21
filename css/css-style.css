@@ -4343,7 +4343,8 @@ footer .widget_title {
 	border-radius: 10px;
 }
 .contact_style3 .contact_icon {
-	border: 1px solid #FF324D;
+	/* border: 1px solid #FF324D; */
+	box-shadow: 0 0 3px 0 #F94E57;
 	margin: 0 0 5px;
 	height: 80px;
 	width: 80px;
@@ -10009,4 +10010,39 @@ body { margin: 0; }
 }
 .order-success-img{
 	margin-bottom: 2rem;
+}
+.custom-success-popup{
+	overflow: hidden !important;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+.custom-success-popup .swal2-header{
+	display: flex;
+}
+.custom-success-popup .swal2-success-ring,.custom-success-popup .swal2-icon{
+	width: 60px !important;
+	height: 60px !important;
+	margin: 0;
+}
+.custom-success-popup .swal2-icon-show{
+	margin-right: 1rem;
+}
+.custom-success-popup .swal2-title{
+	margin-bottom: 0 !important;
+}
+.custom-success-popup .swal2-success-line-tip{
+	width: 20px !important;
+    left: 8px !important;
+    top: 33px !important;
+}
+.custom-success-popup .swal2-success-line-long{
+	width: 35px !important;
+    right: 8px !important;
+    top: 28px !important;
+}
+.custom-success-popup .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{
+	left: -26px;
+}
+.review_form h5{
+	font-size: 1.25rem;
 }

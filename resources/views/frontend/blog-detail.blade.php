@@ -2,7 +2,7 @@
 @section('content')
 <!-- START SECTION Blog -->
 <div class="section blog-view">
-    <div class="blog-view-inner">
+    <div class="blog-view-inner container-fluid">
         <h2 class="pt-3 pb-3 text-center">{{$blog->title}}</h2>
         <div class="row justify-content-center">
             <div class="col-lg-2 mb-5 mb-lg-0">

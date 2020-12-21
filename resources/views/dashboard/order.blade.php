@@ -65,14 +65,9 @@
                                                     @enderror
                                                 </div>
                                             </div>
-<<<<<<< HEAD
-                                            <div class="col-sm-4">
-                                                <div class="form-group mb-sm-0">
-=======
                                             
                                             <div class="col-4">
                                                 <div class="form-group mb-0">
->>>>>>> 57a88f4ccc4cb7abfc8fefc292a66c1e835e0287
                                                     <label>Order Status</label>
                                                     <select name="order_status" id="" class="form-control">
                                                         <option value="" hidden>Select Order Status</option>

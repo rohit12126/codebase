@@ -80,8 +80,8 @@
                         <tbody>
                             <tr>
                                 <td align="center" style="text-align:center;padding-bottom:50px">
-                                <a href="#" style="text-decoration:none" target="_blank">
-                                <img alt="custom closet" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
+                                <a href="{{url('/')}}" style="text-decoration:none" target="_blank">
+                                    <img alt="custom closet" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
                                 </a>
                                 </td>
                             </tr>

@@ -30,7 +30,7 @@
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
-                            <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}">
+                            <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-grab; cursor: grab;" @endif>
                             <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                         </div>
@@ -111,13 +111,17 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
-                
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    if(result.data.productQty > 1) {
+                        $('#sub'+productId).css("cursor", "pointer");
+                    } else {
+                        $('#sub'+productId).css("cursor", "grab");
+                    }
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -139,13 +143,17 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
-
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    if(result.data.productQty > 1) {
+                        $('#sub'+productId).css("cursor", "pointer");
+                    } else {
+                        $('#sub'+productId).css("cursor", "grab");
+                    }
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -166,10 +174,10 @@
                     if( result.data.cartCount == 0 ) {
                         location.reload(true);
                     }
-                    $('#subQty').html(result.data.cartSubTotal);
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
                     $("#row"+rowId).remove();
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -190,13 +198,17 @@
                 },
                 success: function(result) {
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $(this).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
-
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    if(result.data.productQty > 1) {
+                        $('#sub'+productId).css("cursor", "pointer");
+                    } else {
+                        $('#sub'+productId).css("cursor", "grab");
+                    }
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });

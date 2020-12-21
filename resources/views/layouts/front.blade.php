@@ -191,6 +191,7 @@
                                <label for="number">Mobile Number <span class="mandatory">*</span></label>
                                <input type="text"  class="form-control" id="mobile" name="mobile" placeholder="e.g. xxx-xxx-xxxx" maxlength="14" autocomplete="new-number" value="" >
                                <label class="text-success text-success font-weight-bold mobile-eg-text">e.g. 7385025569 (10 digit mobile number).</label>
+                               <div class="mobile_error"> </div>
                             </div>
                             <div class="form-flexed-row">
                                <div class="form-group">
@@ -432,8 +433,11 @@ footer-->
                 email: true
             },
             mobile: {
-                phonenu: true,
-                required: true
+                //phonenu: true,
+                required: true,
+                digits: true,
+                minlength: 10,
+                maxlength: 14
             },
             password: {
                 required: true,
@@ -505,6 +509,10 @@ footer-->
 
                             if (key == 'email') {
                                 $(".Email_error").html('<lable class="text-danger" role="alert"> '+value+'</lable>');
+                            }
+                            
+                            if (key == 'mobile') {
+                                $(".mobile_error").html('<lable class="text-danger" role="alert"> '+value+'</lable>');
                             }
                         });
                         
