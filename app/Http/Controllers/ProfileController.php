@@ -64,6 +64,7 @@ class ProfileController extends Controller
         $billingAddress=$this->addressManager
                 ->getAddresses($user->id,2,0);
         $this->cartManager->synchCart($user->id);
+        
         return view('frontend.account',[
                 'user' => $user,
                 'orders' => $orders,
