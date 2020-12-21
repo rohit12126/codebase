@@ -72,11 +72,11 @@
 
 <body style="margin: 0 !important; padding: 0 !important;">
     <div style="padding:50px 0;margin:0;background-color:#fbfbfb;font-family: 'Lato',sans-serif;max-width: 680px;margin: 0 auto;">
-        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="font-family: 'Lato',sans-serif;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="660" style="font-family: 'Lato',sans-serif;">
             <tbody>
                 <tr>
                     <td style="border-top:3px solid #FF324D;background-color:#fff;font-family: 'Lato',sans-serif;padding:30px;font-size:15px">
-                    <table width="600" border="0" cellpadding="0" cellspacing="0" style="width:600px;margin:0 auto;background-color:#fff">
+                    <table width="660" border="0" cellpadding="0" cellspacing="0" style="width:660px;margin:0 auto;background-color:#fff">
                         <tbody>
                             <tr>
                                 <td align="center" style="text-align:center;padding-bottom:50px">

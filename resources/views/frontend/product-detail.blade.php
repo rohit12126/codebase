@@ -112,7 +112,7 @@
                         <hr/>
                         <div class="comments">
                         @empty($productData['reviewCount'])
-                            <h5 class="product_tab_title"> {{$productData['reviewCount']}} Review For <span>{{$productData['product']->name}}</span></h5>
+                            <h5 class="product_tab_title"> Be the first person to rate this product</h5>
                         @endempty    
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)
@@ -175,7 +175,7 @@
             </div>
         </div>
     </section>
-    <section class="section add-review-wrapper bg-light">
+    <!-- <section class="section add-review-wrapper bg-light">
         <div class="container">
             <div class="review_form field_form">
                 <h5>Add a review</h5>
@@ -205,7 +205,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section> -->
 @endsection
 
 @section('scripts')
