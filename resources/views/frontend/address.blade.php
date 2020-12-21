@@ -79,6 +79,7 @@
                             {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">
+                                        {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
                                         <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
                                     </div>
                                     <div class="form-group">
@@ -149,25 +150,25 @@
                             {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">
-                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
+                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="{{ $billingAddresses->mobile ?? $userData->mobile ?? '' }}" placeholder="Phone *">
+                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="{{ $billingAddresses->email ?? $userData->email ?? '' }}" placeholder="Email *">
+                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="{{ $billingAddresses->address ?? '' }}" placeholder="Address *">
+                                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" value="{{ $billingAddresses->city ?? '' }}" placeholder="City / Town *">
+                                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" value="{{ $billingAddresses->state ?? '' }}" placeholder="State / County *">
+                                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" value="" placeholder="State / County *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="{{ $billingAddresses->zipcode ?? '' }}" placeholder="Postcode / ZIP *">
+                                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
                                     </div>
                                 </div>
                             {{-- </div> --}}
