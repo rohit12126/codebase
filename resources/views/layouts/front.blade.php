@@ -231,7 +231,7 @@ footer-->
                             <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
-                                <br><a href="">More about us &gt;&gt;</a>
+                                <br><a href="{{ url('about-us/') }}">More about us &gt;&gt;</a>
                             </p>
                         </div>
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
@@ -249,26 +249,26 @@ footer-->
                         <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
                             <h5 class="text-uppercase mb-3"><span>Showrooms</span></h5>
                             <ul class="footer-nav-ul">
-                                <li><a href="">Berlin</a></li>
-                                <li><a href="">Cologne</a></li>
-                                <li><a href="">Frankfurt</a></li>
-                                <li><a href="">Munich</a></li>
-                                <li><a href="">Hamburg</a></li>
-                                <li><a href="">Stuttgart</a></li>
+                                <li><a href="#">Berlin</a></li>
+                                <li><a href="#">Cologne</a></li>
+                                <li><a href="#">Frankfurt</a></li>
+                                <li><a href="#">Munich</a></li>
+                                <li><a href="#">Hamburg</a></li>
+                                <li><a href="#">Stuttgart</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-lg-3 footer-col">
                             <h5 class="text-uppercase mb-3"><span>Help</span></h5>
                             <ul class="footer-nav-ul">
                                 <li>
-                                    <a href="" class="font-weight-bold">+49 (0)30 60 988 588</a>
+                                    <a href="tel:+49 (0)30 60 988 588" class="font-weight-bold">+49 (0)30 60 988 588</a>
                                 </li>
                                 <li>
-                                    <a href="" class="text-underline">service@customcloset.com</a>
+                                    <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
                                 </li>
-                                <li><a href="">contact us</a></li>
-                                <li><a href="">Terms &amp; Conditions</a></li>
-                                <li><a href="">privacy policy</a></li>
+                                <li><a href="#">contact us</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">privacy policy</a></li>
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
