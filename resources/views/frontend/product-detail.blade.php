@@ -152,7 +152,7 @@
         </div>
     </section>
     <hr/>
-    <section class="p-5">
+    <section class="p-5 related-product-wrapper">
         <div class="container">
             <h3 class="pb-3 text-center">Related Products</h3>
             <div class="related-slider">
@@ -169,37 +169,6 @@
             </div>
         </div>
     </section>
-    <!-- <section class="section add-review-wrapper bg-light">
-        <div class="container">
-            <div class="review_form field_form">
-                <h5>Add a review</h5>
-                <form class="row mt-3">
-                    <div class="form-group col-12">
-                        <div class="rating-img-icon">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star-fill.png" alt="">
-                            <img src="http://localhost/codebase/images/star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="form-group col-12">
-                        <textarea required="required" placeholder="Your review *" class="form-control" name="message" rows="4"></textarea>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <input required="required" placeholder="Enter Name *" class="form-control" name="name" type="text">
-                     </div>
-                    <div class="form-group col-md-6">
-                        <input required="required" placeholder="Enter Email *" class="form-control" name="email" type="email">
-                    </div>
-                   
-                    <div class="form-group col-12">
-                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section> -->
 @endsection
 
 @section('scripts')
