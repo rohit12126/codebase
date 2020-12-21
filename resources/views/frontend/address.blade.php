@@ -358,7 +358,10 @@ $(document).ready(function() {
                   return !$('input:radio[name="shipping_address"]').is(':checked'); 
                 }, */
                 required: true,
-                phonenu: true
+                digits: true,
+                minlength: 10,
+                maxlength: 14
+                //phonenu: true
             },
             bill_email: {
                 /* required: function() { 
@@ -372,7 +375,10 @@ $(document).ready(function() {
                   return !$('input:radio[name="billing_address"]').is(':checked'); 
                 }, */
                 required: true,
-                phonenu: true
+                digits: true,
+                minlength: 10,
+                maxlength: 14
+                //phonenu: true
             },
             bill_zipcode: {
                 /* required: function() { 

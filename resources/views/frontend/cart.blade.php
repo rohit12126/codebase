@@ -111,13 +111,13 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                 
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -139,13 +139,13 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('#qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
 
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -166,10 +166,10 @@
                     if( result.data.cartCount == 0 ) {
                         location.reload(true);
                     }
-                    $('#subQty').html(result.data.cartSubTotal);
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
                     $("#row"+rowId).remove();
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
@@ -190,13 +190,13 @@
                 },
                 success: function(result) {
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$'+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $(this).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
 
-                    $('#subQty').html(result.data.cartSubTotal);
-                    $('.grand_total').html(result.data.cartSubTotal);
-                    $('#grand_total').val(result.data.cartSubTotal);
+                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$ '+result.data.cartSubTotal);
+                    $('#grand_total').val('$ '+result.data.cartSubTotal);
                 }
             });
         });
