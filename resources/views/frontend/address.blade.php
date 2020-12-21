@@ -79,13 +79,13 @@
                             {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">
-                                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="{{ $billingAddresses->name ?? '' }}" placeholder="Name *">
+                                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="{{ $billingAddresses->mobile ?? '' }}" placeholder="Phone *">
+                                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="{{ $billingAddresses->mobile ?? $userData->mobile ?? '' }}" placeholder="Phone *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control bill" required="" type="email" name="bill_email" id="bill_email" value="{{ $billingAddresses->email ?? '' }}" placeholder="Email *">
+                                        <input class="form-control bill" required="" type="email" name="bill_email" id="bill_email" value="{{ $billingAddresses->email ?? $userData->email ?? '' }}" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="{{ $billingAddresses->address ?? '' }}" placeholder="Address *">
@@ -149,13 +149,13 @@
                             {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
                                 <div class="pt-3 pb-3">
                                     <div class="form-group">shippingAddresses
-                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="{{ $billingAddresses->name ?? '' }}" placeholder="Name *">
+                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="{{ $billingAddresses->mobile ?? '' }}" placeholder="Phone *">
+                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="{{ $billingAddresses->mobile ?? $userData->mobile ?? '' }}" placeholder="Phone *">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="{{ $billingAddresses->email ?? '' }}" placeholder="Email *">
+                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="{{ $billingAddresses->email ?? $userData->email ?? '' }}" placeholder="Email *">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="{{ $billingAddresses->address ?? '' }}" placeholder="Address *">

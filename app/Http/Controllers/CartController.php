@@ -71,11 +71,14 @@ class CartController extends Controller
         
         $isTemp = 0;
         $userId = 0;
+        
         $shippingAddresses = [];
         $billingAddresses = [];
         $cartSubTotal = $this->cartManager->subTotal();
+        $userData = [];
         if (Auth::check()) {
             $userId = Auth::user()->id;
+            $userData = Auth::user();
             $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         } else {
@@ -95,7 +98,8 @@ class CartController extends Controller
                 'userId' => $userId,
                 'isTemp' => $isTemp,
                 'productList' => $productList,
-                'cartSubTotal' => (float) $cartSubTotal
+                'cartSubTotal' => (float) $cartSubTotal,
+                'userData' => $userData
             ]
         );
     }
