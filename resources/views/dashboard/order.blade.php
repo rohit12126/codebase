@@ -126,19 +126,20 @@
                             <table class="table table-striped table-bordered table-hover datatable">
                                 <thead>
                                     <tr>
+                                        <th>S.No</th>
                                         <th>Order No.</th>
                                         <th>Date</th>
                                         <th>Name</th>
                                         <th>Status</th>
                                         <th>Total</th>
                                         <th>Action</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     @foreach($order_list as $key => $value)
                                     <tr>
+                                        <td>{{ $key+1 }}</td>
                                         <td>{{ $value->order_no }}</td>
                                         <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                         <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
