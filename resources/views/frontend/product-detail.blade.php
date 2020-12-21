@@ -111,8 +111,9 @@
                         </div>
                         <hr/>
                         <div class="comments">
+                        <h5 class="pb-3 text-uppercase">Customer reviews</h5>
                         @empty($productData['reviewCount'])
-                            <h5 class="product_tab_title"> Be the first person to rate this product</h5>
+                            <p class="product_tab_title text-danger font-italic"> Be the first person to rate this product.</p>
                         @endempty    
                             <ul class="list_none comment_list mt-4">
                             @foreach($productData['productReview'] as $review)

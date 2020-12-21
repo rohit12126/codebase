@@ -9,7 +9,7 @@
         <h1 class="text-center mb-5">Order Tracking</h1>
         <div class="row mb-4">
             <div class="col-md-6">
-                <h6>Tracking No. #: <span class="font-weight-bold">#{{$data->order_no}}</span></h6>
+                <h6>Tracking No. : <span class="font-weight-bold">#{{$data->order_no}}</span></h6>
             </div>
             <div class="col-md-6">
 
