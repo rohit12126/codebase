@@ -65,7 +65,7 @@
                     @auth
                         <a href="{{url('/account')}}" title="Account">
                             <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
-                            <label class="mb-0">Account</label>
+                            <label class="mb-0">{{ $userData->name ?? ''}}</label>
                         </a>
                     @endauth
                 </span>
@@ -190,7 +190,6 @@
                             <div class="form-group">
                                <label for="number">Mobile Number <span class="mandatory">*</span></label>
                                <input type="text"  class="form-control" id="mobile" name="mobile" placeholder="e.g. xxx-xxx-xxxx" maxlength="14" autocomplete="new-number" value="" >
-                               <label class="text-success text-success font-weight-bold mobile-eg-text">e.g. 7385025569 (10 digit mobile number).</label>
                                <div class="mobile_error"> </div>
                             </div>
                             <div class="form-flexed-row">
