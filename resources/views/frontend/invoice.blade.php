@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
 </head>
+<style>
+    .download-invoice-block{
+        text-align:center;
+        margin:50px 0;
+    }
+    .btn {
+        display: inline-block;
+        font-weight: 600;
+        color: #212529;
+        text-align: center;
+        vertical-align: middle;
+        border-width: 1px;
+        cursor: pointer;
+        line-height: normal;
+        padding: 15px 45px;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+        font-size:16px;
+        text-decoration: none;
+        border-radius: .2rem;
+        font-family: arial;
+    }
+    .btn-fill-out {
+        background-color: transparent;
+        border: 1px solid #FF324D;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .btn-fill-out::before, .btn-fill-out::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #FF324D;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+        width: 51%;
+    }
+    .btn-fill-out::after {
+        right: 0;
+        left: auto;
+    }
+    .btn-fill-out:hover {
+        color: #FF324D !important;
+    }
+    .btn-fill-out:hover:before, .btn-fill-out:hover:after {
+        width: 0;
+    }
+</style>
 <body>
     <table cellspacing="0" cellpadding="0" style="width: 95%;margin: 2% auto 0;font-family: arial;font-size: 14px;line-height: 18px;padding: 20px 0;">
         <tr>
@@ -13,7 +65,6 @@
            </td>
            <td style="text-align: right;">
             customclosets Innovations Private Limited <br>
-                <a href="{{ route('invoice', ['order_no'=> $order->order_no, 'download'=>'pdf']) }}" target="_blank" class="btn btn-sm btn-fill-out">Download</a>
            </td>
         </tr>
     </table>
@@ -24,7 +75,7 @@
             </th>
         </tr>
         <tr>
-           <td style="padding: 10px;width: 60%;border-right: 2px solid #000;" rowspan="6">
+           <td style="padding: 0 10px 10px;width: 60%;border-right: 2px solid #000;" rowspan="5">
                 Manufactured and Sold by: customclosets Innovations Pvt Ltd <br><br>
                 
                 Phone: +91 988 3333 123 <br>
@@ -122,5 +173,8 @@
             </th>
         </tr>
     </table>
+    <div class="download-invoice-block">
+        <a href="{{ route('invoice', ['order_no'=> $order->order_no, 'download'=>'pdf']) }}" target="_blank" class="btn btn-sm btn-fill-out">Download</a>
+    </dib>
 </body>
 </html>
