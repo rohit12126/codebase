@@ -28,7 +28,7 @@
                                     </div>
                                 </a>
                                 <a href="{{ route('product.configure', ['id' => $product->id]) }}" class="btn btn-fill-out">
-                                    Configure
+                                <i class="linearicons-hammer-wrench"></i> Configure
                                 </a>
                                 <div class="products-list-title"><h2>{{$product->name}}</h2></div>
                                 <div class="products-list-price">$ {{$product->sale_price}}</div>

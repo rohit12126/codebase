@@ -31,7 +31,7 @@
             <div class="pt-4 pb-4 d-flex justify-content-center">
             <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
-                <i class="linearicons-cart-plus"></i> Buy Now
+                <i class="linearicons-cart"></i> Buy Now
             </a>
             <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
