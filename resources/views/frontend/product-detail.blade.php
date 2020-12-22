@@ -50,7 +50,7 @@
                             @if ($i < $avgRate)
                                 <img src="{{URL::asset('/images/star-fill.png')}}" alt="">
                             @else
-                                <img src="{{URL::asset('/images/star.png')}}" alt="">
+                                <img src="{{URL::asset('/images/star.png')}}" alt="" style="cursor:initial;">
                             @endif
                         @endfor
                         <span class="rating-count-no ml-3"></span>
@@ -81,7 +81,7 @@
                         <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
                     </p>
                     
-                    <div class="pt-3 pb-3 d-flex">
+                    <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">
                         <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart"></i> Buy Now
@@ -92,8 +92,8 @@
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
 
-                        <a href="{{ route('product.configure', ['id' => $productData['product']->id]) }}" class="btn btn-fill-out">
-                            <i class="linearicons-hammer-wrench"></i> Configure
+                        <a href="{{ route('product.configure', ['id' => $productData['product']->id]) }}" class="btn btn-fill-out configure-btn">
+                        <i class="linearicons-hammer-wrench"></i> Configure
                         </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
