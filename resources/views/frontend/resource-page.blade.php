@@ -3,7 +3,7 @@
 @section('content')
 <section class="section resources">
         <div class="container">
-            <h1 class="pt-5 mb-5 heading_s3 text-center">Resources</h1>
+            <h1 class="pt-3 mb-5 heading_s3 text-center">Resources</h1>
             <div class="row">
                 <div class="col-xl-4 col-md-6">
                     <a class="resources-card" target="_blank" href="{{URL::asset('assets/resources/general-info-about-cdm-bifolds.pdf')}}">
