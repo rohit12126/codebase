@@ -9,7 +9,6 @@
                 	<img src="{{ asset('images/success.png')}}" alt="" class="order-success-img">
                     <div class="heading_s1">
                         <h3 class="mb-3">Your order is completed!</h3>
-                        <!-- <h5>Your order number is {{$order->order_no}}!</h5> -->
                     </div>
                   	<p>Thank you for your order! Your order is being processed and will be completed within 3-6 hours. You will receive an email confirmation when your order is completed.</p>
                 </div>
@@ -30,7 +29,7 @@
                         </div>
                     </div>
                     <div class="view-invoice-block">
-                        <a href="#" class="btn btn-sm btn-fill-out">View Invoice</a>
+                        <a href="#" target="blank" class="btn btn-sm btn-fill-out">View Invoice</a>
                     </div>
                 </div>
             </div>
