@@ -9,7 +9,7 @@
     <table cellspacing="0" cellpadding="0" style="width: 95%;margin: 2% auto 0;font-family: arial;font-size: 14px;line-height: 18px;padding: 20px 0;">
         <tr>
            <td>
-				<img src="logo.png" width="200px">
+				<img src="{{url('/images/email-img/logo.png')}}" width="200px">
            </td>
            <td style="text-align: right;">
             customclosets Innovations Private Limited <br>
