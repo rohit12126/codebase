@@ -50,23 +50,18 @@
                 $i++;    
             @endphp
             @endforeach
-            <tr>
-                <td></td>
-                <td colspan="4" class="cart-total text-left text-lg-right">
-                    <span>Sub Total:</span>
-                </td>
-                <td class="cart-total-price">
-                    <span><label id="subQty" class="mb-0" >$ {{$cartSubTotal}}</label></span>
-                </td>
-            </tr>
             </tbody>
         </table>
         <div class="grand-total">
-            <!-- <p>
+            <div class="cart-row">
+                <span>Sub Total:</span> 
+                <span><label id="subQty" class="mb-0" >$ {{$cartSubTotal}}</label></span>
+            </div>
+            <!-- <div class="cart-row">
                 Apply Coupon Code Get 10% Discount :
                 <span><input type="text" id="couponcode"></span>
                 <a href="" data-toggle="modal" data-target="#modalLRForm" class="btn btn-fill-out">Apply</a>
-            </p> -->
+            </div> -->
             <!-- <div class="cart-row">
            {{--  <div class="cart-row">
                 <span>Shipping charges :</span>
@@ -77,9 +72,9 @@
                 <span id="discount">$ 0.00</span>
             </div> --}}
            -->
-            <div class="cart-row">
+            <div class="cart-row grand-total-row">
                 <span>Grand Total :</span>
-                <span id="grandtotal" >
+                <span id="grandtotal" class="p-0">
                     <input type="hidden" name="grand_total" id="grand_total" value="{{$cartSubTotal}}">
                     <span class="grand_total">$ {{$cartSubTotal}}</span> 
                 </span>

@@ -6684,7 +6684,7 @@ footer .widget_recent_post .post_img img {
 	content: "";
 	width: 11px;
 	position: absolute;
-	top: 50%;
+	top: 54%;
 	left: 3px;
 	opacity: 0;
 	height: 6px;
@@ -6714,11 +6714,11 @@ footer .widget_recent_post .post_img img {
 .custome-radio input[type="radio"] + .form-check-label::after {
 	content: "";
 	background-color: #FF324D;
-	height: 9px;
-	width: 9px;
+	height: 10px;
+	width: 10px;
 	border-radius: 100%;
 	position: absolute;
-	top: 8px;
+	top: 9px;
 	left: 3px;
 	opacity: 0;
 }
@@ -9317,7 +9317,12 @@ h5 {
 	right: 3px;
 	top: 12px;
 }
-
+.grand-total .cart-row:not(.grand-total-row) span{
+	font-size: 1rem;
+}
+.cart-row:not(.grand-total-row) span:first-child{
+	color: #000;
+}
 .product-detail2 .img-tile{
 	max-width: 50%;
 	flex: 0 0 50%;
