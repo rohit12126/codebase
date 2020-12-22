@@ -84,7 +84,7 @@
                     <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">
                         <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
-                            <i class="linearicons-cart-plus"></i> Buy Now
+                            <i class="linearicons-cart"></i> Buy Now
                         </a>
 
                         <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
@@ -93,7 +93,7 @@
                         </a>
 
                         <a href="{{ route('product.configure', ['id' => $productData['product']->id]) }}" class="btn btn-fill-out configure-btn">
-                            Configure
+                        <i class="linearicons-hammer-wrench"></i> Configure
                         </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">

@@ -183,7 +183,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
         Codebyray\ReviewRateable\ReviewRateableServiceProvider::class,
-       // Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Riskihajar\Terbilang\TerbilangServiceProvider::class,
 
     ],
 
@@ -237,8 +238,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Socialite'=> Laravel\Socialite\Facades\Socialite::class,
-       // 'PDF' => Barryvdh\DomPDF\Facade::class,
-        
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
     ]
 
 ];

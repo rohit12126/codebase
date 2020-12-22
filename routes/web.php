@@ -365,6 +365,7 @@ Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.r
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
 Route::post('checkout','CartController@addAddress')->name('address.save');
 Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');
+Route::get('order/success','OrderController@orderSuccess')->name('order.success');
 
 /*Paypal Payment Routes*/
 Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
@@ -378,5 +379,5 @@ Route::get('/contact-us', 'admin\EnquiryController@index');
 Route::post('/contact-us/store', 'admin\EnquiryController@submit')->name('contact.store');
 
 /* Invoice Generation */
-Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');
+Route::get('invoice', 'OrderController@invoice')->name('invoice');
 

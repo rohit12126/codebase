@@ -13,6 +13,7 @@
            </td>
            <td style="text-align: right;">
             customclosets Innovations Private Limited <br>
+                <a href="{{ route('invoice', ['order_no'=> $order->order_no, 'download'=>'pdf']) }}" target="_blank" class="btn btn-sm btn-fill-out">Download</a>
            </td>
         </tr>
     </table>
@@ -32,15 +33,9 @@
         </tr>
         <tr>
             <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
-                Invoice No. 
-            </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">20120010010160</td>
-        </tr>
-        <tr>
-            <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
                 Order No.
             </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">ORDER202012zSA499</td>
+            <td style="padding-left: 5px;border-bottom:2px solid #000;">{{ $order->order_no }}</td>
         </tr>
         <tr>
             <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
@@ -52,11 +47,11 @@
             <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
                 Order Date
             </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">Dec 04, 2020</td>
+            <td style="padding-left: 5px;border-bottom:2px solid #000;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
         </tr>
         <tr>
             <th style="border-right: 2px solid #000;padding-left: 5px;">Invoice Date</th>
-            <td style="padding-left: 5px;">Dec 04, 2020</td>
+            <td style="padding-left: 5px;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
         </tr>
         <tr>
             <th colspan="3" style="background-color: #eee;border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;">
@@ -65,10 +60,12 @@
         </tr>
         <tr>
             <td style="padding: 10px;text-transform: capitalize;">
-                Name : amitesh patidar <br>
-                Contact Number(s) : 7566258181 <br>
-                Address: Floor-1, 91 Shiv Sagar Colony Gamle Wali Puliya, AB Rd, near IPS Academy, Indore, Madhya <br>
-                Pradesh 452012, India, shivsagar colony, INDORE, MADHYA PRADESH-452012 <br><br>
+                
+                Name : {{$order->getShippingAddress->name}} <br>
+                Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
+                Email : {{$order->getShippingAddress->email}} <br>
+                Address: {{$order->getShippingAddress->address.', '.$order->getShippingAddress->city.', '.$order->getShippingAddress->state.', '.$order->getShippingAddress->country}} <br>
+                Pincode : {{$order->getShippingAddress->zipcode}} <br><br>
             </td>
         </tr>
         <tr>
@@ -78,39 +75,50 @@
 						<th>S. No.</th>
                         <th>Description of Product</th>
                         <th>SKU No.</th>
-                        <th>Payment Mode</th>
-						<th>Quantity</th>
 						<th>Rate / Unit</th>
+                        <th>Quantity</th>
 						<th>Total</th>
                     </tr>
-                    <tr>
-						<td style="padding: 10px;text-align:center;">1</td>
+                    @php
+                        $i=1;    
+                    @endphp
+                    @foreach ($order->productList as $product)
+                        <tr>
+                            <td style="padding: 10px;text-align:center;">{{$i}}.</td>
+                            <td style="padding: 10px;">
+                                {{$product->product->name}}
+                            </td>
+                            <td style="padding: 10px;text-align:center;">
+                                WSMRCTND
+                            </td>
+                            <td style="padding: 10px;text-align:center;">$ {{number_format($product->price, 2)}}</td>
+                            <td style="padding: 10px;text-align:center;">{{number_format($product->product_quantity)}}</td>
+                            <td style="padding: 10px;text-align:center;">$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                        </tr>
+                    @endforeach
+
+                    <tr style="font-weight: bold;">
+                        <td colspan="5" style="text-align: right;padding: 5px;">
+                            Net Amount
+                        </td>
                         <td style="padding: 10px;">
-                            Wakefit - Siliconised Microfibre Reversible
-                            Comforter - 100x90 inch (2.54m x2.29m)
+                            $ {{$order->grand_total}}
                         </td>
-                        <td style="padding: 10px;text-align:center;">
-                            WSMRCTND
-                        </td>
-                        <td style="padding: 10px;text-align:center;">Paypal</td>
-						<td style="padding: 10px;text-align:center;">1</td>
-						<td style="padding: 10px;text-align:center;">$1,002.00</td>
-						<td style="padding: 10px;">$1,002.00</td>
                     </tr>
                     <tr style="font-weight: bold;">
-                        <td colspan="6" style="text-align: right;padding: 5px;">
-                            Final Net Amount
+                        <td colspan="5" style="text-align: right;padding: 5px;">
+                            Payment Mode
                         </td>
                         <td style="padding: 10px;">
-                            $1,002
-                        </td>
+                            Paypal
+                        </td> 
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
             <th colspan="3" style="border-top: 2px solid #000;text-align: left;padding: 5px;">
-                <span style="font-weight: bold;line-height: 22px;">Total Amount(In Words): Dollar One Thousand One Hundred Eighty-Two Only</span>
+                <span style="font-weight: bold;line-height: 22px;">Total Amount(In Words): {{$order->total_text}} Only</span>
             </th>
         </tr>
     </table>
