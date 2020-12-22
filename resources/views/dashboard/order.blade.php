@@ -144,7 +144,7 @@
                                         <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                         <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
                                         <td>{{ $value->order_status }}</td>
-                                        <td>{{ $value->grand_total }}</td>
+                                        <td>&#36;{{ $value->grand_total }}</td>
                                         <td>
                                             <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
                                                 <i class="cil-arrow-thick-to-right"></i>

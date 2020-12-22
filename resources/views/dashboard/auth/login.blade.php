@@ -4,12 +4,14 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-lg-4 col-md-6">
             <div class="card-group">
                 <div class="card p-4">
+                    <a href="{{ url('/') }}" class="d-block m-auto p-0 pr-xl-2 head-logo">
+                        Custom Closet
+                    </a>
                     <div class="card-body">
-                        <h1 class="text-center">Admin Login</h1>
-                        <p class="text-muted">Sign In to your account</p>
+                        <h1 class="text-center text-uppercase login-form-title">Admin Login</h1>
                         <form method="POST" action="{{ route('admin.login.submit') }}">
                             @csrf
                             <div class="input-group mb-3">
@@ -31,9 +33,9 @@
                             @if ($errors->any())
                             <div class="text-danger">{{ implode('', $errors->all(':message')) }}</div>
                             @endif
-                            <div class="row">
-                                <div class="col-6">
-                                    <button class="btn btn-primary px-4" type="submit">{{ __('Login') }}</button>
+                            <div class="row justify-content-center">
+                                <div class="col-6 text-center">
+                                    <button class="btn btn-primary px-4 d-inline-block" type="submit">{{ __('Login') }}</button>
                                 </div>
                         </form>
                         {{-- <div class="col-6 text-right">
@@ -57,6 +59,23 @@
 </div>
 </div>
 </div>
+<style>
+    body {
+        background-image: url({{ asset('images/admin-login-bg.jpg') }});
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    body::before{
+        content: "";
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:rgba(0,0,0,.2)
+    }
+</style>
 
 @endsection
 
