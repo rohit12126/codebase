@@ -33,9 +33,14 @@
                             </tr>
                             <tr>
                                 <th class="p-1">Buyer Name</th>
-                                <td class="p-1">: {{ ucwords($order->user->name) }}</td>
+                                @if ($order->temp_user == 1)
+                                    <td class="p-1">: @if(isset($order->getBillingAddress->name)) {{ ucwords($order->getBillingAddress->name) }} @endif</td>
+                                @else
+                                    <td class="p-1">: {{ ucwords($order->user->name) }}</td>
+                                @endif
                             </tr>
-                            <tr>
+
+                            <tr> 
                                 <th class="p-1">Shipping Address</th>
                                 <td class="p-1">: {{ $order->getShippingAddress->address ?? '' }}</td>
                             </tr>
@@ -45,8 +50,13 @@
                             </tr>
                             <tr>
                                 <th class="p-1">Grand Total</th>
-                                <td class="p-1">: {{ $order->grand_total }}</td>
+                                <td class="p-1">: $ {{ $order->grand_total }}</td>
                             </tr>
+                            <tr>
+                                <th class="p-1">Order Date</th>
+                                <td class="p-1">: {{ date("M j, Y", strtotime($order->created_at)) }}</td>
+                            </tr>
+                            
                         </table>
                     </div>
                     <div class="col-md-6">
