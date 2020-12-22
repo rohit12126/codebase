@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
     <section class="section installation-wrap">
-        <div class="container text-center">
-            <h1 class="mb-5">Installation</h1>
+        <div class="container">
+            <h1 class="pt-0 pb-4 mb-5 heading_s3 text-center">Installation</h1>
         </div>
         <div class="container position-relative">
             <svg version="1.1" id="TimelineAnim" class="installation-svg d-none d-md-block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 906.2 53.5" style="enable-background:new 0 0 906.2 53.5;" xml:space="preserve" aiv="cls: active; out_cls: outView;">

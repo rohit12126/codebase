@@ -83,7 +83,7 @@
                                 </td>
                                 <td>$ {{$product->price}}</td>
                                 <td>{{ number_format($product->product_quantity)}}</td>
-                                <td>$ {{$product->price * $product->product_quantity}}</td>
+                                <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
                                 <td>
                                     <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                     <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>

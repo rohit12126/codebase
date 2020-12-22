@@ -24,23 +24,20 @@
                                 <td>#{{$order->order_no}}</td>
                                 <td>{{date("M j, Y", strtotime($order->created_at))}}</td>
                                 <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancelled")}}</td>
-                                <td>{{$order->grand_total}}</td>
+                                <td>$ {{number_format($order->grand_total, 2)}}</td>
                                 <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>
                                 <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
                                 </td>
                             </tr>
                             @php  $i++; @endphp
                             @endforeach
-                            @if(is_null($orders)))
-                            <tr>
-                                <td colspan="5"><h5 class="text-center">You've not place any order yet  </h5></td>
-                            </tr>
-                            @endif
                         </tbody>
                     </table>
-                
                 @else
-                    <h4>Make you first order <a href="{{route('product.list')}}">click here</a></h4>
+                    <div class="mt-5 text-center">
+                        <h6>You have not placed any order yet. Make you first order</h6>
+                        <a class="btn btn-fill-out mt-4" href="{{route('product.list')}}">Shop Now</a>
+                    </div>
                 @endif
            </div>
        </div>

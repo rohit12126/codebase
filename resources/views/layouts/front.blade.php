@@ -266,9 +266,9 @@ footer-->
                                 <li>
                                     <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
                                 </li>
-                                <li><a href="#" target="_blank">contact us</a></li>
-                                <li><a href="#" target="_blank">Terms &amp; Conditions</a></li>
-                                <li><a href="#" target="_blank">privacy policy</a></li>
+                                <li><a href="{{ url('contact-us/') }}">contact us</a></li>
+                                <li><a href="{{ url('terms-and-conditions/') }}">Terms &amp; Conditions</a></li>
+                                <li><a href="#">privacy policy</a></li>
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
@@ -292,7 +292,7 @@ footer-->
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">
-                            <a href="https://en.sitzfeldt.com/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47955">Returns</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47956">Terms of Service</a>
+                            <a href="https://en.sitzfeldt.com/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47955" target="_blank">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
                         </div>
                     </div>
                 </div>
