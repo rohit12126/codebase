@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="view-invoice-block">
-                        <a href="#" target="blank" class="btn btn-sm btn-fill-out">View Invoice</a>
+                        <a href="#" target="_blank" class="btn btn-sm btn-fill-out">View Invoice</a>
                     </div>
                 </div>
             </div>
