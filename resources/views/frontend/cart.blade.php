@@ -131,7 +131,7 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded mb-3">Continue Shopping</a>
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded mb-3 cart-btn-secondary">Continue Shopping</a>
                 <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative mb-3">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>

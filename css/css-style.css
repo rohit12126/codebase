@@ -7978,6 +7978,9 @@ h5 {
 .footer-nav-wrapper,.post-footer{
 	font-size: 0.875rem;
 }
+.post-footer a{
+	line-height: 1.2 !important;
+}
 .post-footer a:not(:last-child){
 	margin-right: .625rem;
 }
@@ -9227,7 +9230,9 @@ h5 {
 .cart-box {
 	width: 100%;
 }
-
+.cart-btn-secondary{
+	padding: 12px 35px;
+}
 .cart-box th:first-child {
 	border-radius: 10px 0 0 0;
 }

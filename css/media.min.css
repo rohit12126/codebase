@@ -366,6 +366,12 @@
     .quantity .qty{
         width: 36px;
     }
+    .cart-btn-secondary{
+        min-width: 200px;
+    }
+    .grand-total-row{
+        padding: 0 !important;
+    }
 }
 
 @media (min-width: 1400px)
