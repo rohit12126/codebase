@@ -66,7 +66,8 @@
                     </div>
                     <hr>
                     <p class="pdp-discount-container">
-                        <span class="pdp-price" tabindex="0">
+                        <span class="pdp-price 
+                        cursor-none" tabindex="0">
                             <strong>$ {{$productData['product']->sale_price}}</strong>
                         </span> 
                     </p>
