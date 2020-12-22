@@ -78,7 +78,7 @@
             </div> --}}
            -->
             <div class="cart-row">
-                <span>Grand total :</span>
+                <span>Grand Total :</span>
                 <span id="grandtotal" >
                     <input type="hidden" name="grand_total" id="grand_total" value="{{$cartSubTotal}}">
                     <span class="grand_total">$ {{$cartSubTotal}}</span> 

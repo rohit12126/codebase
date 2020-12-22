@@ -200,7 +200,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>SubTotal</th>
+                                    <th>Sub Total</th>
                                     <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
                                 </tr>
                                 {{-- <tr>
@@ -231,8 +231,8 @@
                             </div> -->
                             <div class="custome-radio">
                                 <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
-                                <label class="form-check-label" for="exampleRadios5">Paypal</label>
-                                <p data-method="paypal" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
+                                <label class="form-check-label" for="exampleRadios5">Pay via Paypal</label>
+                                <p data-method="paypal" class="payment-text">You can pay with your credit card if you don't have a PayPal account.</p>
                             </div>
                         </div>
                     </div>
