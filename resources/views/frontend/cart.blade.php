@@ -8,7 +8,7 @@
                 $i=1;    
             @endphp
             @foreach ($products as $product)
-            <div class="row mb-4 contact_style3 pl-0 pr-0" id="row{{$product->rowId}}">
+            <div class="row m-0 mb-4 contact_style3 pl-0 pr-0" id="row{{$product->rowId}}">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                     <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="cart-for-mobile-img">
                 </div>
