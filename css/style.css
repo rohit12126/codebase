@@ -20343,3 +20343,31 @@ body {
 .serial-number-th{
   width: 80px;
 }
+.head-logo {
+  max-width: 180px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+a, a:hover {
+  color: #F94E57;
+  text-decoration: none;
+}
+.login-form-title{
+  position: relative;
+  color: #FF324D;
+  padding-bottom: 0.625rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.login-form-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #FF324D;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+}

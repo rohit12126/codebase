@@ -30,27 +30,30 @@
 	<div class="container">
         <div class="row">
             <div class="d-flex w-100 pt-3 pb-3">
-                <div class="col-lg-6">
-                    <div class="card mb-3 mb-lg-0">
-                        <div class="card-header">
-                            <h5>Billing Address</h5>
-                        </div>
-                        <div class="card-body">
-                        {{ $data->getBillingAddress->address }}            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card mb-3 mb-lg-0">
-                        <div class="card-header">
-                        
-                            <h5>Shipping Address</h5>
-                        </div>
-                        <div class="card-body">
-                        {{ $data->getShippingAddress->address }}            
+                @isset($data->getBillingAddress->address)
+                    <div class="col-lg-6">
+                        <div class="card mb-3 mb-lg-0">
+                            <div class="card-header">
+                                <h5>Billing Address</h5>
+                            </div>
+                            <div class="card-body">
+                            {{ $data->getBillingAddress->address ?? '' }}            
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endisset
+                @isset($data->getShippingAddress->address)
+                    <div class="col-lg-6">
+                        <div class="card mb-3 mb-lg-0">
+                            <div class="card-header">
+                                <h5>Shipping Address</h5>
+                            </div>
+                            <div class="card-body">
+                            {{ $data->getShippingAddress->address ?? '' }}            
+                            </div>
+                        </div>
+                    </div>
+                @endisset
             </div>
             <hr>
             <div class="col-md-12">
@@ -79,7 +82,7 @@
                                     @endif
                                 </td>
                                 <td>$ {{$product->price}}</td>
-                                <td>{{$product->product_quantity}}</td>
+                                <td>{{ number_format($product->product_quantity)}}</td>
                                 <td>$ {{$product->price * $product->product_quantity}}</td>
                                 <td>
                                     <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">

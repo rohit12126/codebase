@@ -6170,6 +6170,9 @@ select option {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+.custom_select .form-control{
+	color: #687188;
+}
 .custom-file-label::after {
 	height: 48px;
 	border: 0;
@@ -8675,7 +8678,7 @@ h5 {
 .products-list-product .btn
 {
     position: absolute;
-    visibility: hidden;
+    opacity: 0;
     bottom: 18%;
     left: 50%;
     transform: translateX(-50%);
@@ -8686,7 +8689,7 @@ h5 {
 }
 .products-list-product:hover .btn
 {
-    visibility: visible;
+	opacity: 1;
 }
 .products-list-title, .products-list-price {
     width: 50%;

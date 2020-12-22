@@ -91,7 +91,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $value->name }}</td>
-                                        <td>$ {{ $value->sale_price }}</td>
+                                        <td>&#36;{{ $value->sale_price }}</td>
                                         <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                         <td>
                                             <a class="btn btn-sm btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">

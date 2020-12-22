@@ -45,4 +45,9 @@ class HomeController extends Controller
     {
         return view('frontend.projects');
     }
+
+    public function termsAndCondition()
+    {
+        return view('frontend.terms-and-conditions');
+    }
 }

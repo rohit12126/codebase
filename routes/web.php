@@ -351,6 +351,7 @@ Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
 Route::get('installation/', 'HomeController@installation')->name('installation');
 Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
 Route::get('projects/', 'HomeController@projects')->name('projects');
+Route::get('terms-and-conditions/', 'HomeController@termsAndCondition')->name('termsAndCondition');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart');
@@ -376,4 +377,6 @@ Route::post('/submit/review', 'ProductController@rating');
 Route::get('/contact-us', 'admin\EnquiryController@index');
 Route::post('/contact-us/store', 'admin\EnquiryController@submit')->name('contact.store');
 
+/* Invoice Generation */
+Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');
 

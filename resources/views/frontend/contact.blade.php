@@ -117,12 +117,14 @@
                                 @endif
                             </div>                           
                             <div class="form-group col-md-12 ">
-                                <select name="reason" id="reason" class="form-control {{ $errors->has('reason') ? 'error' : '' }}">
-                                    <option value="Basic Enquiry">Basic Enquiry</option>
-                                    <option value="Order Related">Order Related</option>
-                                    <option value="Issue Not Resolved">Issue Not Resolved</option>
-                                    <option value="Feedback">Feedback</option>
-                                </select>
+                                <div class="custom_select">
+                                    <select name="reason" id="reason" class="form-control {{ $errors->has('reason') ? 'error' : '' }}">
+                                        <option value="Basic Enquiry">Basic Enquiry</option>
+                                        <option value="Order Related">Order Related</option>
+                                        <option value="Issue Not Resolved">Issue Not Resolved</option>
+                                        <option value="Feedback">Feedback</option>
+                                    </select>
+                                </div>
                                 
                                 @if ($errors->has('reason'))
                                 <div class="error">
