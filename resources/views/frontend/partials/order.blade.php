@@ -31,16 +31,13 @@
                             </tr>
                             @php  $i++; @endphp
                             @endforeach
-                            @if(is_null($orders)))
-                            <tr>
-                                <td colspan="5"><h5 class="text-center">You've not place any order yet  </h5></td>
-                            </tr>
-                            @endif
                         </tbody>
                     </table>
-                
                 @else
-                    <h4>Make you first order <a href="{{route('product.list')}}">click here</a></h4>
+                    <div class="mt-5 text-center">
+                        <h6>You have not placed any order yet. Make you first order</h6>
+                        <a class="btn btn-fill-out mt-4" href="{{route('product.list')}}">Shop Now</a>
+                    </div>
                 @endif
            </div>
        </div>
