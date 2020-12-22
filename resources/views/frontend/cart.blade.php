@@ -175,7 +175,7 @@
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $( this ).attr('productId');
             
-            if($('#qty'+productId).val() == 1)
+            if($('.qty'+productId).val() == 1)
             return false;
 
             e.preventDefault();
