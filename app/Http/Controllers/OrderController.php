@@ -133,11 +133,11 @@ class OrderController extends Controller
 
         if($req->has('download')){
         	// Set extra option
-        	PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        	PDF::setOptions(['dpi' => 5, 'defaultFont' => 'sans-serif']);
         	// pass view file
             $pdf = PDF::loadView('frontend.invoice');
             // download pdf
-            return $pdf->download('pdfview.pdf');
+            return $pdf->download("customclosets-".$req->order_no.'.pdf');
         }
         return view('frontend.invoice');
     }
