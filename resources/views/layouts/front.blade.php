@@ -65,7 +65,7 @@
                     @auth
                         <a href="{{url('/account')}}" title="{{ $userData->name ?? ''}}">
                             <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
-                            <label class="mb-0">{{ $userData->name ?? ''}}</label>
+                            <label class="mb-0">Hi {{ $userData->name ?? ''}}</label>
                         </a>
                     @endauth
                 </span>
@@ -266,9 +266,9 @@ footer-->
                                 <li>
                                     <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
                                 </li>
-                                <li><a href="#">contact us</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">privacy policy</a></li>
+                                <li><a href="#" target="_blank">contact us</a></li>
+                                <li><a href="#" target="_blank">Terms &amp; Conditions</a></li>
+                                <li><a href="#" target="_blank">privacy policy</a></li>
                             </ul>
                             <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
                                 <span class="footer-socialicon">
