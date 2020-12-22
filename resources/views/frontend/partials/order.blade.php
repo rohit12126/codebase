@@ -24,7 +24,7 @@
                                 <td>#{{$order->order_no}}</td>
                                 <td>{{date("M j, Y", strtotime($order->created_at))}}</td>
                                 <td>{{$order->status === 1 ? "In-Process" : ($order->status ===2 ? "Delivered" : "Cancelled")}}</td>
-                                <td>{{$order->grand_total}}</td>
+                                <td>$ {{number_format($order->grand_total, 2)}}</td>
                                 <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>
                                 <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
                                 </td>
