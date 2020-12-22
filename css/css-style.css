@@ -7978,6 +7978,12 @@ h5 {
 .footer-nav-wrapper,.post-footer{
 	font-size: 0.875rem;
 }
+.post-footer a:not(:last-child){
+	margin-right: .625rem;
+}
+.post-footer a:not(:first-child){
+	padding-left: .625rem;
+}
 .footer-nav-ul
 {
 	list-style: none;
@@ -9206,6 +9212,18 @@ h5 {
 }
 
 /*================= CART PAGE =================*/
+.cart-product-description{
+	min-height: 126px;
+	max-width: 75%;
+}
+.cart-product-description h5, .cart-product-description p{
+	word-wrap: break-word;
+}
+.cart-for-mobile-img{
+	display: block;
+	margin: 0 auto;
+	max-width: 250px;
+}
 .cart-box {
 	width: 100%;
 }
@@ -9236,7 +9254,9 @@ h5 {
 	text-transform: capitalize;
 	color: #000;
 }
-
+.cart-total-w{
+	width: 155px;
+}
 .pa-cart-img img {
 	max-width: 100px;
 }

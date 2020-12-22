@@ -284,13 +284,7 @@
     }
 }
 @media (min-width: 576px){
-    .post-footer a:not(:last-child){
-        margin-right: .625rem;
-    }
-    .post-footer a:not(:first-child){
-        padding-left: .625rem;
-    }
-
+    
 }
 @media (max-width: 575px) {
     .post-footer a{
@@ -341,6 +335,36 @@
     .products-list-price{
         font-weight: 400;
         font-size: 16px;
+    } 
+    .swal2-popup.custom-success-popup{
+        max-width: 300px !important;
+        min-width: auto;
+    }
+    .swal2-title{
+        font-size: 0.825rem !important;
+        line-height: 1.2;
+    }
+    .custom-success-popup .swal2-success-ring, .custom-success-popup .swal2-icon{
+        width: 40px !important;
+        height: 40px !important;
+        margin-right: 0.825rem;
+    }
+    .custom-success-popup .swal2-success-line-long {
+        width: 25px !important;
+        right: -9px !important;
+        top: 16px !important;
+    }
+    .custom-success-popup .swal2-success-line-tip {
+        width: 12px !important;
+        left: 8px !important;
+        top: 20px !important;
+    }
+    .custom-success-popup {
+        margin-right: 0.625rem;
+        margin-bottom: 0.625rem;
+    }
+    .quantity .qty{
+        width: 36px;
     }
     .auth-modal .modal-content{
         transform: scale(.8);
