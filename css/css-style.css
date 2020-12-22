@@ -9248,7 +9248,9 @@ h5 {
 	text-transform: capitalize;
 	color: #000;
 }
-
+.cart-total-w{
+	width: 155px;
+}
 .pa-cart-img img {
 	max-width: 100px;
 }

@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </td>
-                <td class="text-center">
+                <td class="text-center cart-total-w">
                     <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
