@@ -262,15 +262,18 @@
     }
     .grand-total .cart-row:first-child {
         border-top: 1px solid #eee;
-        border-radius: 10px 10px 0 0
+        border-radius: 10px 10px 0 0;
     }
     .cart-box th:first-child {
-        border-radius: 10px 10px 0 0
+        border-radius: 10px 10px 0 0;
     }
 }
 @media (max-width: 767px) {
     .page-title {
         margin-bottom: 15px;
+    }
+    .products-list-product .btn{
+        opacity: 1;
     }
 }
 @media (min-width: 576px)
