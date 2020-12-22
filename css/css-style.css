@@ -7978,6 +7978,12 @@ h5 {
 .footer-nav-wrapper,.post-footer{
 	font-size: 0.875rem;
 }
+.post-footer a:not(:last-child){
+	margin-right: .625rem;
+}
+.post-footer a:not(:first-child){
+	padding-left: .625rem;
+}
 .footer-nav-ul
 {
 	list-style: none;
