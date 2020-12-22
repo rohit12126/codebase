@@ -7588,7 +7588,7 @@ a:hover {
 	font-size: 0.80rem;
 }
 .head-user-name label{
-	width: 80px;
+	max-width: 80px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
