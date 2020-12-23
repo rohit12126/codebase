@@ -14,7 +14,7 @@
                                     <div class="img-tile">
                                         <div class="product-list-inner">
                                             {{-- {{ asset('upload/product/'.$image->image)}} --}}
-                                            <a data-fancybox="gallery" href="#">
+                                            <a data-fancybox="gallery" href="{{ asset('upload/product/'.$image->image)}}">
                                                 <img src="{{ asset('upload/product/'.$image->image)}}" class="" alt="...">
                                             </a>
                                         </div>
@@ -25,7 +25,7 @@
                                 <div class="img-tile">
                                     <div class="product-list-inner">
                                         {{-- {{ asset('upload/product/'.$productData['product']->images[0]->image)}} --}}
-                                        <a data-fancybox="gallery" href="#">
+                                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
                                             <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}" class="" alt="...">
                                         </a>
                                     </div>

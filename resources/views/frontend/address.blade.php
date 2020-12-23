@@ -337,8 +337,7 @@ $(document).ready(function() {
     /*Same as Bill address functionality*/
     $("#filladdress").on("click", function(){
         if (this.checked) {
-            $(".ship").removeAttr("required");
-            
+            $(".ship").removeAttr("required"); 
             $("#ship_email").val($("#bill_email").val());
             $("#ship_name").val($("#bill_name").val());
             $("#ship_phone").val($("#bill_phone").val());
@@ -478,14 +477,14 @@ $(document).ready(function() {
             bill_email: "Please enter a valid email address",
             bill_zipcode: "Please enter a valid postcode",
             ship_zipcode: "Please enter a valid postcode",
-            ship_name: "Name field is required.",
-            ship_city: "City field is required.",
-            ship_state: "State field is required.",
-            ship_address: "Address field is required.",
-            bill_name: "Name field is required.",
-            bill_city: "City field is required.",
-            bill_state: "State field is required.",
-            bill_address: "Address field is required.",
+            ship_name: "Please enter a valid name",
+            ship_city: "Please enter a valid city",
+            ship_state: "Please enter a valid state",
+            ship_address: "Please enter a valid address",
+            bill_name: "Please enter a valid name",
+            bill_city: "Please enter a valid city",
+            bill_state: "Please enter a valid state",
+            bill_address: "Please enter a valid address",
         },
         submitHandler: function(form) {
             form.submit(); 

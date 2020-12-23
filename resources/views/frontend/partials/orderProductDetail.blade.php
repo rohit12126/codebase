@@ -57,9 +57,53 @@
             </div>
             <hr>
             <div class="col-md-12">
-                <div class="cart-box">
-                    <div class="">
-                    <table class="table">
+                <div class="cart-for-mobile d-block d-lg-none">
+                @foreach($data->productList as $product)
+                    <div class="row m-0 mb-4 contact_style3 pl-0 pr-0">
+                        <div class="col-md-5 col-lg-3 col-xl-3">
+                            @if (isset($product->product->images[0]->image))
+                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                            @else
+                                <img src="{{ asset('product_images/download.jpeg')}}" class="cart-for-mobile-img" alt="product_img1">
+                            @endif
+                        </div>
+                        <div class="col-md-7 col-lg-9 col-xl-9">
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="text-left cart-product-description">
+                                        <h5 class="mb-4">{{$product->product->name}}</h5>
+                                        <p>
+                                            <span><strong>Unit Price :</strong></span>
+                                            <span>
+                                                $ {{$product->price}}
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
+                                        <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>                          
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span>
+                                            <strong>Quantity :</strong>
+                                        </span>
+                                        <span>
+                                            {{ number_format($product->product_quantity)}}
+                                        </span>
+                                    </div>
+                                    <p class="mb-0">
+                                        <strong>Total :</strong>
+                                        <span> $ {{number_format($product->price * $product->product_quantity, 2)}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                </div>
+                <table class="table cart-box d-none d-lg-table mb-0">
                     <thead>
                         <tr>
                             <th>Product</th>
@@ -70,36 +114,32 @@
                             <th>Give a Review</th>
                         </tr>
                     </thead>
-                        <tbody>
-                            @foreach($data->productList as $product)
-                            <tr>
-                                <td>{{$product->product->name}}</td>
-                                <td>
-                                    @if (isset($product->product->images[0]->image))
-                                        <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
-                                    @else
-                                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                    @endif
-                                </td>
-                                <td>$ {{$product->price}}</td>
-                                <td>{{ number_format($product->product_quantity)}}</td>
-                                <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
-                                <td>
-                                    <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
-                                    <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th>Order total</th>
-                                <th>$ {{$data->grand_total}}</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <tbody>
+                        @foreach($data->productList as $product)
+                        <tr>
+                            <td>{{$product->product->name}}</td>
+                            <td>
+                                @if (isset($product->product->images[0]->image))
+                                    <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                @else
+                                    <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                @endif
+                            </td>
+                            <td>$ {{$product->price}}</td>
+                            <td>{{ number_format($product->product_quantity)}}</td>
+                            <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                            <td>
+                                <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
+                                <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class="grand-total">
+                    <div class="cart-row">
+                        <span>Order total :</span> 
+                        <span><label id="subQty" class="mb-0" >$ {{$data->grand_total}}</label></span>
                     </div>
                 </div>
             </div>
