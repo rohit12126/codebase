@@ -68,14 +68,68 @@
            </td>
         </tr>
     </table>
-    <table cellspacing="0" cellpadding="0" style="width: 95%;margin: 0 auto;border: 2px solid #000;font-family: arial;font-size: 14px;line-height: 18px;">
+    <table cellspacing="0" cellpadding="0" style="width: 95%;margin: 0 auto;border: 1px solid #000;font-family: arial;font-size: 14px;line-height: 18px;">
         <tr>
-            <th colspan="3" style="background-color: #eee;border-bottom: 2px solid #000;text-align: center;">
+            <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;">
                 <span style="font-weight: bold;line-height: 22px;">Invoice</span>
             </th>
         </tr>
         <tr>
-           <td style="padding: 0 10px 10px;width: 60%;border-right: 2px solid #000;" rowspan="5">
+            <td>
+               <table style="width: 100%;border-bottom: 1px solid #000;" cellspacing="0">
+                   <tr>
+                       <td style="padding: 10px;width: 60%;border-right: 1px solid #000;">
+                            Manufactured and Sold by: customclosets Innovations Pvt Ltd <br><br>
+                    
+                            Phone: +91 988 3333 123 <br>
+                            Email: support@customclosets.co
+                       </td>
+                       <td cellspacing="0">
+                        <table style="width: 100%;" cellspacing="0">
+                            <tr>
+                                <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;border-bottom:1px solid #000;">
+                                    Order No.
+                                </td>
+                                <td style="padding: 4px 5px;border-bottom:1px solid #000;">{{ $order->order_no }}</td>
+                            </tr>
+                            <tr>
+                                <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;border-bottom:1px solid #000;">
+                                    Order Via
+                                </td>
+                                <td style="padding: 4px 5px;border-bottom:1px solid #000;">customclosets.co</td>
+                            </tr>
+                            <tr>
+                                <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;border-bottom:1px solid #000;">
+                                    Order Date
+                                </td>
+                                <td style="padding: 4px 5px;border-bottom:1px solid #000;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
+                            </tr>
+                            <tr>
+                                <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;">Invoice Date</td>
+                                <td style="padding: 4px 5px;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
+                            </tr>
+                        </table>
+                       </td>
+                   </tr>
+               </table> 
+            </td>
+        </tr>
+        <tr>
+            <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;">
+                <span style="font-weight: bold;line-height: 22px;">Buyer Details - Shipping Address</span>
+            </th>
+        </tr>
+        <tr>
+            <td style="padding: 10px;text-transform: capitalize;">
+                Name : {{$order->getShippingAddress->name}} <br>
+                Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
+                Email : {{$order->getShippingAddress->email}} <br>
+                Address: {{$order->getShippingAddress->address.', '.$order->getShippingAddress->city.', '.$order->getShippingAddress->state.', '.$order->getShippingAddress->country}} <br>
+                Pincode : {{$order->getShippingAddress->zipcode}} <br><br>
+            </td>
+        </tr>
+        <!-- <tr>
+           <td style="padding: 10px;width: 60%;border-right: 1px solid #000;" rowspan="5">
                 Manufactured and Sold by: customclosets Innovations Pvt Ltd <br><br>
                 
                 Phone: +91 988 3333 123 <br>
@@ -83,29 +137,29 @@
            </td>
         </tr>
         <tr>
-            <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
+            <th style="border-right: 1px solid #000;padding-left: 5px;border-bottom:1px solid #000;">
                 Order No.
             </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">{{ $order->order_no }}</td>
+            <td style="padding-left: 5px;border-bottom:1px solid #000;">{{ $order->order_no }}</td>
         </tr>
         <tr>
-            <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
+            <th style="border-right: 1px solid #000;padding-left: 5px;border-bottom:1px solid #000;">
                 Order Via
             </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">customclosets.co</td>
+            <td style="padding-left: 5px;border-bottom:1px solid #000;">customclosets.co</td>
         </tr>
         <tr>
-            <th style="border-right: 2px solid #000;padding-left: 5px;border-bottom:2px solid #000;">
+            <th style="border-right: 1px solid #000;padding-left: 5px;border-bottom:1px solid #000;">
                 Order Date
             </th>
-            <td style="padding-left: 5px;border-bottom:2px solid #000;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
+            <td style="padding-left: 5px;border-bottom:1px solid #000;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
         </tr>
         <tr>
-            <th style="border-right: 2px solid #000;padding-left: 5px;">Invoice Date</th>
+            <th style="border-right: 1px solid #000;padding-left: 5px;">Invoice Date</th>
             <td style="padding-left: 5px;">{{ date("M j, Y", strtotime($order->created_at)) }}</td>
         </tr>
         <tr>
-            <th colspan="3" style="background-color: #eee;border-top: 2px solid #000;border-bottom: 2px solid #000;text-align: center;">
+            <th colspan="3" style="background-color: #eee;border-top: 1px solid #000;border-bottom: 1px solid #000;text-align: center;">
                 <span style="font-weight: bold;line-height: 22px;">Buyer Details - Shipping Address</span>
             </th>
         </tr>
@@ -118,46 +172,46 @@
                 Address: {{$order->getShippingAddress->address.', '.$order->getShippingAddress->city.', '.$order->getShippingAddress->state.', '.$order->getShippingAddress->country}} <br>
                 Pincode : {{$order->getShippingAddress->zipcode}} <br><br>
             </td>
-        </tr>
+        </tr> -->
         <tr>
-            <td colspan="3">
-                <table style="width: 100%;border:0;" cellspacing="0" border="2">
+            <td>
+                <table style="width: 100%;border-top:1px solid #000;" cellspacing="0">
                     <tr>
-						<th>S. No.</th>
-                        <th>Description of Product</th>
-                        <th>SKU No.</th>
-						<th>Rate / Unit</th>
-                        <th>Quantity</th>
-						<th>Total</th>
+						<th style="border-bottom:1px solid #000;border-right:1px solid #000;">S. No.</th>
+                        <th style="border-bottom:1px solid #000;border-right:1px solid #000;">Description of Product</th>
+                        <th style="border-bottom:1px solid #000;border-right:1px solid #000;">SKU No.</th>
+						<th style="border-bottom:1px solid #000;border-right:1px solid #000;">Rate / Unit</th>
+                        <th style="border-bottom:1px solid #000;border-right:1px solid #000;">Quantity</th>
+						<th style="border-bottom:1px solid #000;">Total</th>
                     </tr>
                     @php
                         $i=1;    
                     @endphp
                     @foreach ($order->productList as $product)
                         <tr>
-                            <td style="padding: 10px;text-align:center;">{{$i}}.</td>
-                            <td style="padding: 10px;">
+                            <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{$i}}.</td>
+                            <td style="padding: 10px;border-right:1px solid #000;border-bottom:1px solid #000;">
                                 {{$product->product->name}}
                             </td>
-                            <td style="padding: 10px;text-align:center;">
+                            <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
                                 WSMRCTND
                             </td>
-                            <td style="padding: 10px;text-align:center;">$ {{number_format($product->price, 2)}}</td>
-                            <td style="padding: 10px;text-align:center;">{{number_format($product->product_quantity)}}</td>
-                            <td style="padding: 10px;text-align:center;">$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                            <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">$ {{number_format($product->price, 2)}}</td>
+                            <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{number_format($product->product_quantity)}}</td>
+                            <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
                         </tr>
                     @endforeach
 
                     <tr style="font-weight: bold;">
-                        <td colspan="5" style="text-align: right;padding: 5px;">
+                        <td colspan="5" style="text-align: right;padding: 5px;border-bottom:1px solid #000;border-right:1px solid #000;">
                             Net Amount
                         </td>
-                        <td style="padding: 10px;">
+                        <td style="padding: 10px;border-bottom:1px solid #000;">
                             $ {{$order->grand_total}}
                         </td>
                     </tr>
                     <tr style="font-weight: bold;">
-                        <td colspan="5" style="text-align: right;padding: 5px;">
+                        <td colspan="5" style="text-align: right;padding: 5px;border-right:1px solid #000;">
                             Payment Mode
                         </td>
                         <td style="padding: 10px;">
@@ -168,7 +222,7 @@
             </td>
         </tr>
         <tr>
-            <th colspan="3" style="border-top: 2px solid #000;text-align: left;padding: 5px;">
+            <th style="border-top: 1px solid #000;text-align: left;padding: 5px;">
                 <span style="font-weight: bold;line-height: 22px;">Total Amount(In Words): {{$order->total_text}} Only</span>
             </th>
         </tr>
