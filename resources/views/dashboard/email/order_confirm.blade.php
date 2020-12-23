@@ -9,20 +9,6 @@
                     <td>
                     <table style="text-align:center;width:100%">
                         <tbody>
-                            <!-- <tr>
-                                <td>
-                                <a>
-                                    <img id="" src="img/logo.png" alt="Custom Closet" style="width:350px;object-fit:contain" class="CToWUd a6T" tabindex="0">
-                                    <div class="a6S" dir="ltr" style="opacity: 1; left: 822px; top: 109px;">
-                                        <div id=":26m" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download">
-                                            <div class="wkMEBb">
-                                            <div class="aSK J-J5-Ji aYr"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                </td>
-                            </tr> -->
                             <tr>
                                 <td>
                                 <div style="font-size:30px;font-family:'Lato',sans-serif;margin-top:20px;color:#282c3f;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal;text-transform: capitalize;">
@@ -74,22 +60,22 @@
                                                                 </tr>
                                                                 <tr style="margin:0;padding:0">
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
-                                                                    <a style="text-decoration:none;float:left;background:white;padding:10px 30px 12px 24px;margin-top:10px;margin-bottom:10px;border-radius:4px;text-transform:uppercase;font-family:'Lato',sans-serif;font-size:4px;line-height:4px" href="#" target="_blank">
+                                                                    <a href="{{url('orderdetails/').$data->order_no}}" style="text-decoration:none;float:left;background:white;padding:10px 30px 12px 24px;margin-top:10px;margin-bottom:10px;border-radius:4px;text-transform:uppercase;font-family:'Lato',sans-serif;font-size:4px;line-height:4px" href="#" target="_blank">
                                                                         <p style="letter-spacing:0.44px;font-family:'Lato',sans-serif;font-weight:bold;font-size:16px;color:black">
                                                                             TRACK MY ORDER
                                                                         </p>
                                                                     </a>
                                                                     </td>
                                                                 </tr>
-                                                                <!-- <tr style="margin:0;padding:0">
+                                                                 <tr style="margin:0;padding:0">
                                                                     <td valign="top" style="padding:0% 3% 0% 0%">
                                                                     <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;float:left;margin-top:4px;margin-bottom:0px">
-                                                                        <span style="color: #000;">Tracking id:
-                                                                        <span style="color:#ffff">7011836664</span>
+                                                                        <span style="color: #000;">
+                                                                        <a href="{{ route('invoice', ['order_no'=> $data->order_no]) }}">View Invoice</a>
                                                                         </span>
                                                                     </p>
                                                                     </td>
-                                                                </tr> -->
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                         </td>
@@ -151,7 +137,6 @@
                                                         <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
                                                             <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
                                                                 <a href="#" style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px;cursor: pointer;text-decoration: none;">{{$product->product->name}}</a>
-                                                                {{-- <span style="max-width:95%;display:inline-block;width:200px;height:17px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;color:#535766;font-size:14px;letter-spacing:0.25px;font-family:'Lato',sans-serif;letter-spacing:0.29px;">  Women Navy Dial Watch MFBTMLDBE2</span> --}}
                                                             </li>
                                                             <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">SKU No. <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px">UGG-BB-PUR-07</span>
                                                             </li>

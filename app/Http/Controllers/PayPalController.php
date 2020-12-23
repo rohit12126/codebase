@@ -21,6 +21,7 @@ use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use App\Classes\CartManager;
 use App\Classes\ProductManager;
+use App\Models\Payment as PaymentModel;
 
 class PaypalController extends Controller
 {
@@ -123,9 +124,22 @@ class PaypalController extends Controller
                 return redirect()->back();
             }
         $payment = Payment::get($payment_id, $this->_api_context);
-                $execution = new PaymentExecution();
-                $execution->setPayerId($request->input("PayerID"));
-                $result = $payment->execute($execution, $this->_api_context);
+        $execution = new PaymentExecution();
+        $execution->setPayerId($request->input("PayerID"));
+        $result = $payment->execute($execution, $this->_api_context);
+        
+        $data = [
+            'payment_id'=>$result->id,
+            'amount'=>$result->transactions[0]->amount->total,
+            'currency'=>$result->transactions[0]->amount->currency,
+            'status'=>$result->state
+        ];
+        
+        $paymentData = PaymentModel::create($data);
+        
+        session(
+            ['payment_id' => $paymentData->id]
+        );
         if ($result->getState() == 'approved') {
         session()->put('success', 'Payment success');
         return redirect()->route('order.addOrder');

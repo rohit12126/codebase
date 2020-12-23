@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-12 text-center mt-3 mb-3">
                 <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out mb-3 btn-same-w">Home</a>
-                <a href="{{ url('/blog').$order->order_no}}" class="btn btn-sm btn-fill-out mb-3 btn-same-w align-top">Blog</a>
+                <a href="{{ url('/blog')}}" class="btn btn-sm btn-fill-out mb-3 btn-same-w align-top">Blog</a>
                 @auth
                     <a href="{{ url('/account') }}" class="btn btn-sm btn-fill-out btn-same-w mb-3 align-top">Dashboard</a>
                 @endauth

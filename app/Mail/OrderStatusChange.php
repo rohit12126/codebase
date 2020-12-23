@@ -32,19 +32,19 @@ class OrderStatusChange extends Mailable
         
         $status = $this->data['order_status_num'];
 
-        if($status == 1) {
-            $title = "Order Updated - Your Order Has Been Received";
+        if ($status == 1) {
+            $title = "Order Received - Your Order Has Been Received";
             $this->data['status'] = 'Updated';
         } elseif ($status == 2) {
-            $title = "Order Received - Your Order Has Been Received";
-            $this->data['status'] = 'Received';
-        }elseif ($status == 3) {
+            $title = "Order Confirmed - Your Order Has Been Confirmed";
+            $this->data['status'] = 'Confirmed';
+        } elseif ($status == 3) {
             $title = "Order Shipped - Your Order Has Been Shipped";
             $this->data['status'] = 'Shipped';
-        }elseif ($status == 4) {
+        } elseif ($status == 4) {
             $title = "Order Delivered - Your Order Has Been Delivered";
             $this->data['status'] = 'Delivered';
-        }else {
+        } else {
             $title = "Order Cancelled - Your Order Has Been Cancelled";
             $this->data['status'] = 'Cancelled';
         }

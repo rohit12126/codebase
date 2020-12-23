@@ -29,7 +29,7 @@ class OrderConfirm extends Mailable
     public function build()
     {
         return $this->view('dashboard.email.order_confirm')
-            ->subject('Order Confirmed - Thank You For Your Order')
+            ->subject('Order Received - Thank You For Your Order') 
             ->with('data', $this->data);
     }
 }

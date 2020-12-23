@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Classes\ProductManager;
 use App\Classes\CartManager;
 use App\Classes\GuestUserManager;
+use App\Classes\UserManager;
 use App\Classes\AddressManager;
 
 use Illuminate\Support\Facades\Auth;
@@ -114,7 +115,7 @@ class CartController extends Controller
         $userId = 0;
         $bill = 0;
         $ship = 0;
-
+        
         /* User check */
         if (Auth::check()) {
             $userId = Auth::user()->id;
@@ -125,8 +126,8 @@ class CartController extends Controller
         }
         
         /* Billing Address */
-        if (!isset($req->billing_address)) {
-            $billingAddress=[
+        if (!isset($req->billing_address) || ($req->isNewAddress == 1)) {
+            $billingAddress= [
                 'name'=>$req->bill_name,
                 'mobile'=>$req->bill_phone,
                 'email'=>$req->bill_email,
@@ -143,9 +144,18 @@ class CartController extends Controller
         } else {
             $bill = $req->billing_address;
         }
-              
+        
+        if ($isTemp == 1) {
+            UserManager::updateTempUser(
+                $userId,
+                $req->bill_email,
+                $req->bill_name,
+                $req->bill_phone
+            );
+        }
         /* Shipping Address */
-        if (!isset($req->shipping_address)) {
+        //if (!isset($req->shipping_address)) {
+        if (!isset($req->billing_address) || ($req->isNewAddress == 1)) {
             $shippingAddress=[
                 'name'=>$req->ship_name,
                 'mobile'=>$req->ship_phone,
@@ -161,7 +171,8 @@ class CartController extends Controller
         $ship = AddressManager::add($shippingAddress);
         $ship = $ship['id'];
         } else {
-            $ship = $req->shipping_address;
+            //$ship = $req->shipping_address;
+            $ship = $req->billing_address;
         }
 
         $productList = $this->cartManager->getCartContain();

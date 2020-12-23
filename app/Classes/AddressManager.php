@@ -23,6 +23,7 @@ class AddressManager
             'type'=> $type,
             'temp_user'=> $isTemp
         ])
+        ->orderBy('id', 'DESC')
         ->first();
         //->get();
     }

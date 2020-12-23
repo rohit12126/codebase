@@ -32,213 +32,245 @@
         </div> -->
         <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
-            
+            <input type="hidden" name="isNewAddress" id="isNewAddress" @if(isset($billingAddresses)) value="0" @else value="1" @endif>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading_s1">
-                                <h4>Billing Details</h4>
-                            </div>
-                            {{-- @if ($isTemp !=1)
+                    @if(isset($billingAddresses))
+                        <div class="row">
                             <div class="address-billing-wrapper">
-                                <div class="custom-card-block mb-3">
+                                <h4>Continue with Current Address</h4>
+                                <div class="custom-card-block mb-3 mt-5">
                                     <div class="custom-card-body">
                                         <div class="row align-items-center">
-                                            @foreach ($billingAddresses as $address)
                                             <div class="col-md-12 mb-3">
                                                 <div class="card">                        
-                                                    <div class="custome-radio">
-                                                        <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
-                                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                                    </div>
+                                                    <input type="hidden" value="{{$billingAddresses->id}}" name="billing_address">
                                                     <div class="card-body">
-                                                    <h5 class="card-title">{{$address->name}}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                                    <p class="card-text">{{$address->address}}</p>
-                                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                    <div class="d-flex justify-content-end align-items-center">
-                                                        <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
-                                                        <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                         
+                                                        <h5 class="card-title">{{$billingAddresses->name}}</h5>
+                                                        <h6 class="card-subtitle mb-2 text-muted">{{$billingAddresses->mobile}}</h6>
+                                                        <p class="card-text">{{$billingAddresses->address}}</p>
+                                                        <p class="card-text">{{$billingAddresses->city.", ".$billingAddresses->state.", ".$billingAddresses->country }} ({{$billingAddresses->zipcode}})</p> 
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="pb-3">
-                                <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-                                    + Add New
-                                </a>
-                            </div>
-                            @endif --}}
-
-                            {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
-                                <div class="pt-3 pb-3">
-                                    <div class="form-group">
-                                        {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
-                                        <input type="text" required="" class="form-control bill" name="bill_name" id="bill_name" value="{{ $billingAddresses->name ?? $userData->name ?? '' }}" placeholder="Name *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" value="{{ $billingAddresses->mobile ?? $userData->mobile ?? '' }}" placeholder="Phone *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control bill" required="" type="email" name="bill_email" id="bill_email" value="{{ $billingAddresses->email ?? $userData->email ?? '' }}" placeholder="Email *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="{{ $billingAddresses->address ?? '' }}" placeholder="Address *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control bill" required="" type="text" id="bill_city" name="bill_city" value="{{ $billingAddresses->city ?? '' }}" placeholder="City / Town *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control bill" required="" type="text" id="bill_state" name="bill_state" value="{{ $billingAddresses->state ?? '' }}" placeholder="State / County *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value="{{ $billingAddresses->zipcode ?? '' }}"  placeholder="Postcode / ZIP *">
-                                    </div>
-                                </div>
-                            {{-- </div> --}}
                         </div>
-                        <div class="col-md-12">
-                            <div class="heading_s1 p-relative">
-                                <h4>Shipping Details</h4>
-                                <div class="checkinputforsameinfo custome-checkbox">
-                                    <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="form-check-input"/>
-                                    <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
+                        <div class="row">
+                            <a class="btn btn-sm btn-danger" title="Add new address" data-toggle="collapse" href="#addressForm" role="button" aria-expanded="false" aria-controls="addressForm" id="addressCollapse">
+                                + Update New
+                            </a>
+                        </div> 
+                    @endif
+                    {{-- Address Form--}}
+                    <div class="mt-5 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="heading_s1">
+                                    <h4>Billing Details</h4>
                                 </div>
-                            </div>
-                            <div class="collapse in show" id="collapseExample">
-                           {{--  @if ($isTemp !=1)
-                            <div class="address-billing-wrapper">
-                                <div class="custom-card-block mb-4">
-                                    <div class="custom-card-body">
-                                        <div class="row align-items-center">
-                                            @foreach ($shippingAddresses as $address)
-                                            <div class="col-md-12 mb-3">
-                                                <div class="card">                        
-                                                    <div class="custome-radio">
-                                                        <input class="form-check-input" type="radio" name="shipping_address" value="{{$address->id}}" id="{{$address->id}}">
-                                                        <label class="form-check-label label_info" for="{{$address->id}}"></label>
-                                                    </div>
-                                                    <div class="card-body">
-                                                    <h5 class="card-title">{{$address->name}}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
-                                                    <p class="card-text">{{$address->address}}</p>
-                                                    <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                     <div class="d-flex justify-content-end align-items-center">
-                                                        <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
-                                                        <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
-                                                    </div>                         
+                                {{-- @if ($isTemp !=1)
+                                <div class="address-billing-wrapper">
+                                    <div class="custom-card-block mb-3">
+                                        <div class="custom-card-body">
+                                            <div class="row align-items-center">
+                                                @foreach ($billingAddresses as $address)
+                                                <div class="col-md-12 mb-3">
+                                                    <div class="card">                        
+                                                        <div class="custome-radio">
+                                                            <input class="form-check-input" type="radio" name="billing_address" value="{{$address->id}}" id="{{$address->id}}">
+                                                            <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                                        </div>
+                                                        <div class="card-body">
+                                                        <h5 class="card-title">{{$address->name}}</h5>
+                                                        <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                                        <p class="card-text">{{$address->address}}</p>
+                                                        <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                                        <div class="d-flex justify-content-end align-items-center">
+                                                            <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                            <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
+                                                        </div>                         
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
+                                <div class="pb-3">
+                                    <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                        + Add New
+                                    </a>
+                                </div>
+                                @endif --}}
+    
+                                {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
+                                    <div class="pt-3 pb-3">
+                                        <div class="form-group">
+                                            {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
+                                            <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(!isset($billingAddresses)) value="{{ $userData->name ?? '' }}" @endif placeholder="Name *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" @if(!isset($billingAddresses)) value="{{ $userData->mobile ?? '' }}" @endif placeholder="Mobile *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control bill" maxlength="150" required="" type="email" name="bill_email" id="bill_email" @if(!isset($billingAddresses)) value="{{ $userData->email ?? '' }}" @endif placeholder="Email *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_state" name="bill_state" value="" placeholder="State / County *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value=""  placeholder="Postcode / ZIP *">
+                                        </div>
+                                    </div>
+                                {{-- </div> --}}
                             </div>
-                            <div class="pb-3">
-                                <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample2">
-                                    + Add New
-                                </a>
-                            </div>
-                            @endif --}}
-                            {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
-                                <div class="pt-3 pb-3">
-                                    <div class="form-group">
-                                        <input type="text" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Phone *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control ship" required="" type="email" name="ship_email" id="ship_email" value="" placeholder="Email *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_state" name="ship_state" value="" placeholder="State / County *">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
+                            <div class="col-md-12">
+                                <div class="heading_s1 p-relative">
+                                    <h4>Shipping Details</h4>
+                                    <div class="checkinputforsameinfo custome-checkbox">
+                                        <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="form-check-input"/>
+                                        <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
                                     </div>
                                 </div>
-                            {{-- </div> --}}
-                            </div>
-                        </div>                    
+                                <div class="collapse in show" id="collapseExample">
+                               {{--  @if ($isTemp !=1)
+                                <div class="address-billing-wrapper">
+                                    <div class="custom-card-block mb-4">
+                                        <div class="custom-card-body">
+                                            <div class="row align-items-center">
+                                                @foreach ($shippingAddresses as $address)
+                                                <div class="col-md-12 mb-3">
+                                                    <div class="card">                        
+                                                        <div class="custome-radio">
+                                                            <input class="form-check-input" type="radio" name="shipping_address" value="{{$address->id}}" id="{{$address->id}}">
+                                                            <label class="form-check-label label_info" for="{{$address->id}}"></label>
+                                                        </div>
+                                                        <div class="card-body">
+                                                        <h5 class="card-title">{{$address->name}}</h5>
+                                                        <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
+                                                        <p class="card-text">{{$address->address}}</p>
+                                                        <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
+                                                         <div class="d-flex justify-content-end align-items-center">
+                                                            <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
+                                                            <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
+                                                        </div>                         
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-3">
+                                    <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                        + Add New
+                                    </a>
+                                </div>
+                                @endif --}}
+                                {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
+                                    <div class="pt-3 pb-3">
+                                        <div class="form-group">
+                                            <input type="text" maxlength="150" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" required="" type="text" id="ship_phone" name="ship_phone" value="" placeholder="Mobile *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" maxlength="150" required="" type="email" name="ship_email" id="ship_email" value="" placeholder="Email *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" maxlength="150" required="" type="text" id="ship_state" name="ship_state" value="" placeholder="State / County *">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
+                                        </div>
+                                    </div>
+                                {{-- </div> --}}
+                                </div>
+                            </div>                    
+                        </div>
                     </div>
                 </div>
-
+                {{-- Address Form --}}
                 <div class="col-md-6">
-                <div class="order_review">
-                    <div class="heading_s1">
-                        <h4>Your Orders</h4>
-                    </div>
-                    <div class="table-responsive order_table">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($productList as $product)
-                                <tr>
-                                    <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
-                                    <td>$ {{number_format($product->price * $product->qty, 2)}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Sub Total</th>
-                                    <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
-                                </tr>
-                                {{-- <tr>
-                                    <th>Shipping</th>
-                                    <td class="shipping_price">$ {{"10.00"}}</td>
-                                </tr> --}}
-                                <tr>
-                                    <th>Total</th>
-                                    <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="payment_method">
+                    <div class="order_review">
                         <div class="heading_s1">
-                            <h4>Payment</h4>
+                            <h4>Your Orders</h4>
                         </div>
-                        <div class="payment_option">
-                            <!-- <div class="custome-radio">
-                                <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="option3" checked="">
-                                <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
-                                <p data-method="option3" class="payment-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration. </p>
+                        <div class="table-responsive order_table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($productList as $product)
+                                    <tr>
+                                        <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
+                                        <td>$ {{number_format($product->price * $product->qty, 2)}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Sub Total</th>
+                                        <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
+                                    </tr>
+                                    {{-- <tr>
+                                        <th>Shipping</th>
+                                        <td class="shipping_price">$ {{"10.00"}}</td>
+                                    </tr> --}}
+                                    <tr>
+                                        <th>Total</th>
+                                        <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="payment_method">
+                            <div class="heading_s1">
+                                <h4>Payment</h4>
                             </div>
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios4" value="option4">
-                                <label class="form-check-label" for="exampleRadios4">Check Payment</label>
-                                <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                            </div> -->
-                            <div class="custome-radio">
-                                <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
-                                <label class="form-check-label" for="exampleRadios5">Pay via Paypal</label>
-                                <p data-method="paypal" class="payment-text">You can pay with your credit card if you don't have a PayPal account.</p>
+                            <div class="payment_option">
+                                <!-- <div class="custome-radio">
+                                    <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="option3" checked="">
+                                    <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
+                                    <p data-method="option3" class="payment-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration. </p>
+                                </div>
+                                <div class="custome-radio">
+                                    <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios4" value="option4">
+                                    <label class="form-check-label" for="exampleRadios4">Check Payment</label>
+                                    <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                </div> -->
+                                <div class="custome-radio">
+                                    <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
+                                    <label class="form-check-label" for="exampleRadios5">Pay via Paypal</label>
+                                    <p data-method="paypal" class="payment-text">You can pay with your credit card if you don't have a PayPal account.</p>
+                                </div>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-fill-out btn-block">Place Order</button>
+                        <!-- <a href="#" class="btn btn-fill-out btn-block"></a> -->
                     </div>
-                    <button type="submit" class="btn btn-fill-out btn-block">Place Order</button>
-                    <!-- <a href="#" class="btn btn-fill-out btn-block"></a> -->
-                </div>
                 </div>
 
                 <!-- <div class="text-center col-md-12">
@@ -272,6 +304,25 @@
 
 <script>
 $(document).ready(function() {
+    $("#addressCollapse").click(function() {
+        if (!$("#addressForm").hasClass('show')) {
+            //open case 
+            $(".ship").show(''); 
+            $(".bill").show('');
+            $("#addressCollapse").text('Close');
+            $("#addressCollapse").attr('title', 'Continue with the current address.');
+            $("#isNewAddress").val(1);
+        } else {
+            //close case
+            $(".ship").val(''); 
+            $(".bill").val('');
+            $(".error").hide('');
+            $("#addressCollapse").text('+ Add New');
+            $("#isNewAddress").val(0);
+        }
+    });
+
+    
     /* on load function check for bill and ship is checked than remove require */
     
    /*  if ($('input:radio[name="shipping_address"]').is(':checked')) {
@@ -440,12 +491,6 @@ $(document).ready(function() {
             form.submit(); 
         }
     });
-
-
-    //$(window).on('load',function(){
-        // $('#myModal').modal('show');
-        //$('#exampleModal').modal('show');
-    //});
 });
 </script>
 @endsection

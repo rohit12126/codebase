@@ -14,7 +14,7 @@ use App\Mail\OrderConfirm;
 use PDF;
 use Terbilang;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Payment as PaymentModel;
 class OrderController extends Controller
 {
     protected $productManager;
@@ -72,6 +72,8 @@ class OrderController extends Controller
             
                 $cartProducts = $this->cartManager->getCartContain();
 
+                //session()
+                
                 foreach ($cartProducts as $key => $product) {
                     $orderProduct = [
                         'order_no' => $orderNumber,
@@ -81,13 +83,17 @@ class OrderController extends Controller
                     ];
                     $this->orderManager->addOrderProduct($orderProduct);
                 }
+                $paymentId = session()->get('payment_id');
                 
+                PaymentModel::where('id', $paymentId)
+                    ->update(['order_no' => $orderNumber]);
+
                 $this->cartManager->destroy();
                 $this->cartManager->destroyCartDB($userId);
                 $product = $this->orderManager->getProductsByOrder($order->order_no);
-                $req->session()->forget(['bill', 'ship']);
+                $req->session()->forget(['bill', 'ship', 'payment_id']);
             } else {
-                    $order = $this->orderManager->getLastOrder($userId,$isTempUser);
+                    $order = $this->orderManager->getLastOrder($userId, $isTempUser);
                     $product = [];
                     if (!is_null($order)) {
                         $product = $this->orderManager->getProductsByOrder($order->order_no);
