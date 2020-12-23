@@ -425,3 +425,12 @@
         line-height: 34px;
     }
 }
+
+@media (max-width: 340px){
+    .post-footer a:not(:last-child){
+        margin-right: 0.325rem;
+    }
+    .post-footer a:not(:first-child) {
+        padding-left: .325rem;
+    }
+}
