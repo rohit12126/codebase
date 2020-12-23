@@ -528,7 +528,7 @@ footer-->
             var number = /([0-9])/;
             var alphabets = /([a-zA-Z])/;
             var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
-            if ($(this).val().length < 6) {
+            if ($(this).val().length < 5) {
                 $(this).css("border", "5px solid #e82d2d");
                 $(".password_error").html('<span class="weak-password">Weak (should be atleast 5 characters.)</span>');
             } else {
