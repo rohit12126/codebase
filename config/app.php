@@ -185,7 +185,6 @@ return [
         Codebyray\ReviewRateable\ReviewRateableServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
-
     ],
 
     /*
