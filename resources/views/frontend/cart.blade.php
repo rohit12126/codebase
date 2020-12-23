@@ -20,7 +20,7 @@
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
-                                         ${{number_format($product->price,2)}}
+                                         $ {{number_format($product->price,2)}}
                                     </span>
                                 </p>
                             </div>
@@ -43,7 +43,7 @@
                             </div>
                             <p class="mb-0">
                                 <strong>Total :</strong>
-                                <span class="total{{$product->id}}"> ${{number_format($product->price * $product->qty, 2)}}</span>
+                                <span class="total{{$product->id}}"> $ {{number_format($product->price * $product->qty, 2)}}</span>
                             </p>
                         </div>
                     </div>

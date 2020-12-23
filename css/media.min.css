@@ -282,6 +282,9 @@
     .pdp-product-description-content{
         width: 100%;
     }
+    .products-list-col{
+        width: 50%;
+    }
 }
 @media (min-width: 576px){
     
