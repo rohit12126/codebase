@@ -170,7 +170,7 @@
                 @endforeach
             </div> 
             <div class="text-center pt-5">
-                <a href="{{ url('product/') }}" class="btn btn-fill-out col-4">View All</a>
+                <a href="{{ url('product/') }}" class="btn btn-fill-out btn-same-w">View All</a>
             </div>
         </div>
     </section>

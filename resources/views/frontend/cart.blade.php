@@ -3,7 +3,58 @@
 <!-- START SECTION SHOP -->
 <section class="section">
     <div class="container">
-        <table class="cart-box">
+        <div class="cart-for-mobile d-block d-lg-none">
+            @php
+                $i=1;    
+            @endphp
+            @foreach ($products as $product)
+            <div class="row m-0 mb-4 contact_style3 pl-0 pr-0" id="row{{$product->rowId}}">
+                <div class="col-md-5 col-lg-3 col-xl-3">
+                    <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="cart-for-mobile-img">
+                </div>
+                <div class="col-md-7 col-lg-9 col-xl-9">
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <div class="text-left cart-product-description">
+                                <h5 class="mb-4">{{$product->name}}</h5>
+                                <p>
+                                    <span><strong>Unit Price :</strong></span>
+                                    <span class="total{{$product->id}}">
+                                         ${{number_format($product->price,2)}}
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-outline-secondary cart-btn item_remove ml-0">
+                                    <input type="hidden" class="rowId" value="{{$product->rowId}}">
+                                    <i class="linearicons-trash2 m-auto"></i>
+                                </button>                                
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="cart-product-quantity">
+                                    <div class="quantity">
+                                        <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+                                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                                        <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                <strong>Total :</strong>
+                                <span class="total{{$product->id}}"> ${{number_format($product->price * $product->qty, 2)}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @php
+                $i++;    
+            @endphp
+            @endforeach
+        </div>
+        <table class="cart-box d-none d-lg-table">
             <thead>
                 <tr class="mb-0">
                     <th class="text-center"><span class="d-none d-md-block">Product Image</span> <span class="d-block d-md-none">Products</span></th>
@@ -31,12 +82,12 @@
                     <div class="cart-product-quantity">
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->id}}" class="minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty" id ="qty{{$product->id}}" size="4" productId="{{$product->id}}">
+                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                         </div>
                     </div>
                 </td>
-                <td class="text-center">
+                <td class="text-center cart-total-w">
                     <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
@@ -80,7 +131,7 @@
                 </span>
             </div>
             <div class="pt-3">
-                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded mb-3">Continue Shopping</a>
+                <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded mb-3 cart-btn-secondary">Continue Shopping</a>
                 <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative mb-3">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
@@ -107,7 +158,7 @@
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
                     $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
-                    $('#qty'+productId).val(result.data.productQty);
+                    $('.qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
                         $('#sub'+productId).css("cursor", "pointer");
@@ -124,7 +175,7 @@
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $( this ).attr('productId');
             
-            if($('#qty'+productId).val() == 1)
+            if($('.qty'+productId).val() == 1)
             return false;
 
             e.preventDefault();
@@ -139,7 +190,7 @@
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
                     $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
-                    $('#qty'+productId).val(result.data.productQty);
+                    $('.qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
                         $('#sub'+productId).css("cursor", "pointer");
