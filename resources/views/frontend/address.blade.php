@@ -304,6 +304,11 @@
 
 <script>
 $(document).ready(function() {
+    /* To Handle Browser Back From Payment page*/
+    if(performance.navigation.type == 2){
+        location.reload(true);
+    }
+    /* To Handle Browser Back */
     $("#addressCollapse").click(function() {
         if (!$("#addressForm").hasClass('show')) {
             //open case 
