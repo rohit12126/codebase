@@ -147,7 +147,7 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="******" autocomplete="new-password">
                          </div>
                          <div class="password_error"> </div>
-                         <a href="{{ route('password.request') }}" class="link">Forgot password?</a>
+                         <a href="{{ route('password.request') }}" class="link">Forgot Password?</a>
                          <div class="form-group form-button"><button type="submit" id="login" class="btn btn-auth">Login</button></div>
                          <div class="divider-line"><span class="">OR</span></div>
                          <div class="social-auth">
@@ -155,13 +155,13 @@
                                 <span class="icon-block">
                                     <img src="{{URL::asset('/logo/google-logo.png')}}" width="40px" class="ico-img">
                                 </span>
-                                Login With Google
+                                Login with Google
                             </a>
                             <a href="{{ url('/login/facebook') }}" class="btn social-btn facebook-btn">
                                 <span class="icon-block">
                                     <img src="{{URL::asset('/logo/facebook-logo.png')}}" width="40px" class="ico-img">
                                 </span>
-                                Login With Facebook
+                                Login with Facebook
                             </a>
                          </div>
                       </form>
@@ -234,7 +234,7 @@ footer-->
                                 <br><a href="{{ url('about-us/') }}">More about us &gt;&gt;</a>
                             </p>
                         </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
+                        <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
                             <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
                             <ul class="footer-nav-ul">
                                 <li><a href="{{ url('home/') }}">Home</a></li>
@@ -246,7 +246,7 @@ footer-->
                                 <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
+                        <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
                             <h5 class="text-uppercase mb-3"><span>Showrooms</span></h5>
                             <ul class="footer-nav-ul">
                                 <li><a href="#">Berlin</a></li>

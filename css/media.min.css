@@ -366,11 +366,14 @@
     .quantity .qty{
         width: 36px;
     }
-    .cart-btn-secondary{
-        min-width: 200px;
+    .cart-btn-secondary,.cart-btn-checkout{
+        padding: 5px !important;
     }
     .grand-total-row{
         padding: 0 !important;
+    }
+    .grand-total .proceed-btn i {
+        display: none;
     }
     .auth-modal .modal-content{
         transform: scale(.8);
@@ -381,6 +384,22 @@
     .auth-modal .form-tabs-content .form-group label{
         letter-spacing: 0;
         font-size: 10px;
+    }
+    .form-tabs-content{
+        padding: 0;
+    }
+    .form-flexed-row{
+        flex-wrap: wrap;
+    }
+    .form-flexed-row div:last-child{
+        margin-left: 0;
+    }
+    .form-flexed-row div:first-child{
+        margin-right: 0;
+    }
+    .products-list-title h2{
+        line-height: 1.2;
+        word-wrap: break-word;
     }
 }
 
