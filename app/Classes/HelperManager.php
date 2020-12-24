@@ -34,6 +34,14 @@ class HelperManager
         }
     }
 
+    public static function generateSlug($name) {
+        $slug = trim($name); 
+        $slug = preg_replace('/[^a-zA-Z0-9 -]/','',$slug );
+        $slug = str_replace(' ','-', $slug);
+        $slug = strtolower($slug);
+        return $slug;
+    }
+
     public static function parseEditorContentAndImages($content, $imgPath) {
         libxml_use_internal_errors(true);
 

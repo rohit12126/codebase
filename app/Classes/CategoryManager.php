@@ -10,7 +10,9 @@ class CategoryManager
 {
     public static function add($req)
     {
-        if ($category = CategoryModel::create(['name' => $req->name, 'status'=> $req->status])) {
+        $slug = self::generateSlug($req->name);
+        
+        if ($category = CategoryModel::create(['name' => $req->name, 'status'=> $req->status, 'slug'=> $slug])) {
             if ($req->image) {
                 $file_name = Common::uploadFile($req->image, 'upload/category');
                 CategoryImageModel::create([
@@ -33,7 +35,9 @@ class CategoryManager
             return false;
         }
 
-        if ($category->fill(['name' => $req->name, 'status'=> $req->status])->save()) {
+        $slug = self::generateSlug($req->name, $req->id);
+
+        if ($category->fill(['name' => $req->name, 'status'=> $req->status, 'slug'=> $slug])->save()) {
             if ($req->image) {
                 $file_name = Common::uploadFile($req->image, 'upload/category');
                 if (@$category->image !== null) {
@@ -47,6 +51,41 @@ class CategoryManager
             }
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public static function generateSlug($name, $catId = 0, $recall = false) {
+        $slug = Common::generateSlug($name);
+        
+        if ($recall) {
+            $slug = $slug . '-' . rand(1,999);
+        }
+
+        $isExist = self::checkExistSlug($slug, $catId);
+        
+        if ($isExist) {
+          $slug = self::generateSlug($name, $catId, true);
+          return $slug;
+        } 
+
+        return $slug;
+    }
+
+    public static function checkExistSlug($slug, $catId = 0)
+    {
+        if (!empty($catId)) {
+            $category = CategoryModel::where('slug', '=', $slug)
+                ->where('id', '!=', $catId)
+                ->first();
+        } else {
+            $category = CategoryModel::where('slug', '=', $slug)->first();
+        }
+
+        if (!is_null($category)) {
+            return true;
+        } else {
+            /* slug not exist */
             return false;
         }
     }

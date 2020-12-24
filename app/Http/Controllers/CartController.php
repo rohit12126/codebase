@@ -197,8 +197,17 @@ class CartController extends Controller
     public function addToCart(Request $req) {
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
+        $message = "Item successfully added to the cart.";
         
-        $productQty =  $this->cartManager->addToCart($product);
+        $status = true;
+        $res =  $this->cartManager->addToCart($product);
+        
+        if ($res['status'] == false) {
+            $status = false;
+            $message = $res['message'];
+        }
+        
+        $productQty = $res['qty'];
 
         $cartCount = $this->cartManager->count();
 
@@ -212,8 +221,8 @@ class CartController extends Controller
         ];
 
         $response = [
-            'status'=>true,
-            'message'=>"Item successfully added to the cart.",
+            'status' => $status,
+            'message' => $message,
             'data' => $data
         ];
         
@@ -259,22 +268,34 @@ class CartController extends Controller
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
-        $this->cartManager->updateCart($product, $qty);
+        
+        $res = $this->cartManager->updateCart($product, $qty);
+        
+        $status = true;
 
+        $message = "Item successfully added to the cart.";
+         
+        if ($res['status'] == false) {
+            $message = $res['message'];
+            $status = false;
+        }
+
+        $productQty = $res['qty'];
+        
         $cartCount = $this->cartManager->count();
 
         $cartSubTotal = $this->cartManager->subTotal();
 
         $data = [
             'cartCount' => $cartCount,
-            'productQty' => $qty,
+            'productQty' => $productQty,
             'productPrice' => $product->sale_price,
             'cartSubTotal' => $cartSubTotal
         ];
 
         $response = [
-            'status'=>true,
-            'message'=>"Item successfully added to the cart.",
+            'status' => $status,
+            'message' => $message,
             'data' => $data
         ];
         

@@ -52,11 +52,6 @@
                                         <input type="hidden" name="blogId" id="blog-id" value="@if (isset($blog->id)) {{ $blog->id }} @else {{ '0' }} @endif">
                                         <input type="text" maxlength="200" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label>URL Slug</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Slug" name="slug" id="slug" class="form-control" value="{{ old('slug', @$blog->slug) }}" readonly="true">
-                                    </div>
                                     <div class="form-group"> 
                                         <label>Content</label>
                                         <span class="mandatory">*</span>
@@ -200,60 +195,5 @@
             form.submit();
         }
     });
-
-    /* Slug generation */
-    $("#title").keyup(function() {
-        var title = $(this).val();
-        if($(this).val().length > 2) {
-            var slug = generateSlug(title);
-            $("#slug").val(slug);
-        }
-    });
-
-    function generateSlug(title, recall = false) {
-        var $slug = '';
-        var trimmed = title.trim();
-        
-        $slug = trimmed.toLowerCase().replace(/[^a-z0-9-]/gi, '-').
-        replace(/-+/g, '-').
-        replace(/^-|-$/g, '');
-        
-        if (recall) {
-            $slug = $slug + '-' + Math.floor(Math.random() * 90 + 10);
-        }
-
-        var isExist = checkExistSlug($slug);
-
-        if (isExist) {
-          $slug = generateSlug(title, true);
-          return $slug;
-        } 
-
-        return $slug;
-    }
-
-    function checkExistSlug(slug) {
-        
-        var blogId = $("#blog-id").val();
-        let isExist = false;
-        jQuery.ajax({
-            url: "{{ url('/admin/check-exist-slug/') }}",
-            dataType: 'json',
-            method: 'get',
-            async: false,
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            data: {
-                slug : slug,
-                blogId : blogId
-            },
-            success: function(result) {
-                if (result.status == true) {
-                    isExist = true;
-                }
-            }
-        });
-
-        return isExist;
-    }
 </script>
 @endsection

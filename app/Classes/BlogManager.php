@@ -15,10 +15,13 @@ class BlogManager
         if ($req->image) {
             $file_name = Common::uploadFile($req->image, 'upload/blog');
         }
+
+        $slug = self::generateSlug($req->title);
+
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
-            'slug' => $req->slug,
+            'slug' => $slug,
             'description' => $description,
             'image' => $file_name,
             'status' => $req->status
@@ -48,10 +51,12 @@ class BlogManager
             $file_name =  $req->storeimage;
         }
         
+        $slug = self::generateSlug($req->title, $req->id);
+
         $data = [
             'category_id' => $req->category_id,
             'title' => $req->title,
-            'slug' => $req->slug,
+            'slug' => $slug,
             'description' => $description,
             'image' => $file_name,
             'status' => $req->status
@@ -64,30 +69,39 @@ class BlogManager
         }
     }
 
-    public static function checkExistSlug($req)
+    public static function generateSlug($name, $blogId = 0, $recall = false) {
+        $slug = Common::generateSlug($name);
+        
+        if ($recall) {
+            $slug = $slug . '-' . rand(1,999);
+        }
+
+        $isExist = self::checkExistSlug($slug, $blogId);
+        
+        if ($isExist) {
+          $slug = self::generateSlug($name, $blogId, true);
+          return $slug;
+        } 
+
+        return $slug;
+    }
+
+    public static function checkExistSlug($slug, $blogId = 0)
     {
-        if (!empty($req->blogId)) {
-            $blog = BlogModel::where('slug', '=', $req->slug)
-                ->where('id', '!=', $req->blogId)
+        if (!empty($blogId)) {
+            $blog = BlogModel::where('slug', '=', $slug)
+                ->where('id', '!=', $blogId)
                 ->first();
         } else {
-            $blog = BlogModel::where('slug', '=', $req->slug)->first();
+            $blog = BlogModel::where('slug', '=', $slug)->first();
         }
 
         if (!is_null($blog)) {
-            /* slug exist */
-            $response = array(
-                'status' => true,
-                'message' => "Slug is exist!"
-            );
+            return true;
         } else {
             /* slug not exist */
-            $response = array(
-                'status' => false,
-                'message' => "Slug not found!"
-            );
+            return false;
         }
-        return $response;
     }
 
     public static function delete($id)

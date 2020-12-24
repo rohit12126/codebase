@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\ProductDescriptionManager;
+use App\Classes\ProductManager;
 use App\Classes\HelperManager as Common;
 
 class ProductDescriptionController extends Controller
@@ -13,7 +14,9 @@ class ProductDescriptionController extends Controller
     {
         $productDescriptionList = ProductDescriptionManager::getProductDescriptionList($req);
         $productId = $req->product_id;
-        return view('dashboard.product-description', compact('productDescriptionList', 'productId'));
+        $product = ProductManager::getProductById($productId);
+        
+        return view('dashboard.product-description', compact('productDescriptionList', 'productId', 'product'));
     }
 
     public function addProductDescription(Request $req)

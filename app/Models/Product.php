@@ -14,8 +14,11 @@ class Product extends Model implements ReviewRateable
         'name', 
         'category_id', 
         'description', 
+        'slug',
         'purchase_price', 
         'sale_price', 
+        'sku',
+        'max_cart_qty',
         'stock_qty',
         'status',
         'is_accessory'

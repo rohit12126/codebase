@@ -42,29 +42,37 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Title</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($page_list as $key => $value)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->title }}</td>
-                                    <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_cms', $value->id) }}" title="Edit">
-                                            <i class="cil-pencil"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_page', $value->id) }}" onclick="return confirm('Are you sure you want to delete this page?');" title="Delete">
-                                            <i class="cil-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                            @if($productDescriptionList->isNotEmpty())
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Title</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($page_list as $key => $value)
+                                    <tr>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $value->title }}</td>
+                                        <td>
+                                            <a class="btn btn-info" href="{{ url('admin/edit_cms', $value->id) }}" title="Edit">
+                                                <i class="cil-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-danger" href="{{ url('admin/delete_page', $value->id) }}" onclick="return confirm('Are you sure you want to delete this page?');" title="Delete">
+                                                <i class="cil-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            @else
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="3" class="text-center">Page list is empty</th>
+                                    </tr>
+                                </tfoot>
+                            @endif
                         </table>
                         {{ @$page_list->links() }}
                     </div>

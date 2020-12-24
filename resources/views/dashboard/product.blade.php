@@ -83,7 +83,11 @@
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ old('sale_price', @$product->sale_price) }}" >
                                     </div>
-                                    
+                                    <div class="form-group">
+                                        <label>Cart Limit</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="number" placeholder="Cart limit" name="max_cart_qty" class="form-control" value="{{ old('max_cart_qty', @$product->max_cart_qty) }}" >
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>

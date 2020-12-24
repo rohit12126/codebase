@@ -92,39 +92,48 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
-                        <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
-                            <i class="cil-plus"></i> Create Category
-                        </button>
-                    </div>
+                    @if(!isset($category))
+                        <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
+                            <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
+                                <i class="cil-plus"></i> Create Category
+                            </button>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered datatable">
-                    <thead>
-                        <tr>
-                            <th class="serial-number-th">S No.</th>
-                            <th>Name</th>
-                            <th>Action</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($category_list as $key => $value)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $value->name }}</td>
-                            <td>
-                                <button class="btn btn-sm btn-info" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
-                                    <i class="cil-pencil"></i>
-                                </button>
-                                <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
-                                    <i class="cil-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
+                    @if($category_list->isNotEmpty())
+                        <thead>
+                            <tr>
+                                <th class="serial-number-th">S No.</th>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($category_list as $key => $value)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $value->name }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
+                                        <i class="cil-pencil"></i>
+                                    </button>
+                                    <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                        <i class="cil-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    @else
+                        <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center">Category list is empty</th>
+                            </tr>
+                        </tfoot>
+                    @endif
                 </table>
             </div>
         </div>

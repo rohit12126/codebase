@@ -95,12 +95,12 @@
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered datatable">
+                        @if($category_list->isNotEmpty())
                         <thead>
                             <tr>
                                 <th>S No.</th>
                                 <th>Name</th>
                                 <th>Action</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -121,6 +121,13 @@
                             </tr>
                             @endforeach
                         </tbody>
+                        @else
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3" class="text-center">FAQ Category list is empty</th>
+                                </tr>
+                            </tfoot>
+                        @endif
                     </table>
                 </div>
             </div>

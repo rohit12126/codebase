@@ -9,6 +9,7 @@ class BlogCategory extends Model
     protected $table = 'blog_category';
     protected $fillable = [
         'name',
+        'slug',
         'status'
     ];
 

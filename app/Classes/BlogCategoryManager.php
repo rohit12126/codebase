@@ -9,8 +9,10 @@ class BlogCategoryManager
 {
     public static function add($req)
     {
+        $slug = self::generateSlug($req->name);
+
         if ($category = BlogCategory::create(
-            ['name' => $req->name, 'status' => $req->status]
+            ['name' => $req->name, 'status' => $req->status, 'slug'=>$slug]
         )) {
             return true;
         } else {
@@ -26,12 +28,50 @@ class BlogCategoryManager
         } else {
             return false;
         }
+        
+        $slug = self::generateSlug($req->name, $req->id);
 
         if ($category->fill(
-            ['name' => $req->name, 'status' => $req->status]
+            ['name' => $req->name, 'status' => $req->status, 'slug'=> $slug]
         )->save()) {
             return true;
         } else {
+            return false;
+        }
+    }
+
+
+    public static function generateSlug($name, $catId = 0, $recall = false) {
+        $slug = Common::generateSlug($name);
+        
+        if ($recall) {
+            $slug = $slug . '-' . rand(1,999);
+        }
+
+        $isExist = self::checkExistSlug($slug, $catId);
+        
+        if ($isExist) {
+          $slug = self::generateSlug($name, $catId, true);
+          return $slug;
+        } 
+
+        return $slug;
+    }
+
+    public static function checkExistSlug($slug, $catId = 0)
+    {
+        if (!empty($catId)) {
+            $category = BlogCategory::where('slug', '=', $slug)
+                ->where('id', '!=', $catId)
+                ->first();
+        } else {
+            $category = BlogCategory::where('slug', '=', $slug)->first();
+        }
+
+        if (!is_null($category)) {
+            return true;
+        } else {
+            /* slug not exist */
             return false;
         }
     }

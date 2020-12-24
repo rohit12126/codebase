@@ -106,6 +106,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
+        
         Route::get('admin/check-exist-slug/', 'admin\BlogController@checkExistSlug')->name('admin.checkExistSlug');
 
         /* Reviews Module Routes */
@@ -354,7 +355,7 @@ Route::get('projects/', 'HomeController@projects')->name('projects');
 Route::get('terms-and-conditions/', 'HomeController@termsAndCondition')->name('termsAndCondition');
 
 /* Cart Routes */
-Route::get('cart/','CartController@index')->name('cart');
+Route::get('cart/','CartController@index')->name('cart'); 
 
 Route::post('cart/add-cart','CartController@addToCart')->name('cart.addCart');
 Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('cart.removeFromCart');
