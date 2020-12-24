@@ -19,6 +19,8 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
+use PayPal\Api\WebProfile;
+use PayPal\Api\InputFields;
 use App\Classes\CartManager;
 use App\Classes\ProductManager;
 use App\Models\Payment as PaymentModel;
@@ -79,13 +81,40 @@ class PaypalController extends Controller
         $redirect_urls = new RedirectUrls();
         $redirect_urls->setReturnUrl(URL::route('payment.status'))
             ->setCancelUrl(URL::route('payment.status'));
+        
+        /* Web Profile exprerience created */ 
+        $inputFields = new InputFields();
 
+        $inputFields->setAllowNote(true)
+            ->setNoShipping(1)
+            ->setAddressOverride(0);
+        
+        $webProfile = new WebProfile();
+
+        $webProfile->setName("Custom Closets" . uniqid())
+            ->setInputFields($inputFields)
+            ->setTemporary(true);
+        $request = clone $webProfile;
+
+        try {
+            $createProfileResponse = $webProfile->create($this->_api_context);
+        } catch (\PayPal\Exception\PayPalConnectionException $ex) {
+            dd($ex);
+            exit(1);
+            session()->put('error', 'Some error occur, sorry for inconvenient');
+            return redirect()->route('home');
+        }
+        
+        $experienceId = $createProfileResponse->getId();
+
+        /* Web Profile exprerience created */ 
         $payment = new Payment();
         $payment->setIntent('Sale')
             ->setPayer($payer)
+            ->setExperienceProfileId($experienceId)
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
-            
+        
         try {
 
             $payment->create($this->_api_context);
@@ -107,7 +136,7 @@ class PaypalController extends Controller
             }
         }
 
-        $request->session()->put('paypal_payment_id', $payment->getId());
+        session()->put('paypal_payment_id', $payment->getId());
         if (isset($redirect_url)) {
 
             return redirect()->away($redirect_url);
