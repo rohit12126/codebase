@@ -17,6 +17,9 @@
     .blog-col {
         width: 50%;
     }
+    .wrapper{
+        overflow: hidden;
+    }
 }
 
 @media(max-width:1140px){
