@@ -8120,6 +8120,7 @@ h5 {
 		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		width: 100%;
 		border: 4px solid #F94E57;
+		overflow: hidden;
 	}
 	.wrapper::after{
 		content: "";
@@ -8142,6 +8143,7 @@ h5 {
 		user-select: none;
 		-moz-user-select: none;
 		-webkit-user-select: none;
+		width: 100%;
 	}
     /* Our image information */
     .before,
@@ -8204,7 +8206,7 @@ h5 {
 		content: " ";
 		display: block;
 		width: 15px;
-		height: 270px;
+		height: 100vh;
 		position: absolute;
 		left: 50%;
 		margin-left: -3.5px;

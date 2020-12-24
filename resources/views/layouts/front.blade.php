@@ -543,10 +543,8 @@ footer-->
 
     document.querySelector('.scroller').addEventListener('mousedown',function(){
     active = true;
-
     document.querySelector('.scroller').classList.add('scrolling');
     });
-
     document.body.addEventListener('mouseup',function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
@@ -554,35 +552,19 @@ footer-->
     document.body.addEventListener('mouseleave',function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
-    });
-
- 
+    }); 
     document.body.addEventListener('mousemove',function(e){
     if (!active) return;
-
     let x = e.pageX;
-
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-
     scrollIt(x);
     });
-
-    // Let's use this function
-
     function scrollIt(x){
     let transform = Math.max(5,(Math.min(x,document.querySelector('.wrapper').offsetWidth-20)));
     document.querySelector('.after').style.width = transform+"px";
     document.querySelector('.scroller').style.left = transform+"px";
     }
-
-    // Let's set our opening state based off the width, 
-    // we want to show a bit of both images so the user can see what's going on
-
-    scrollIt(150);
-
-    // And finally let's repeat the process for touch events
-    // first our middle scroller...
-    
+    scrollIt(150);    
     document.querySelector('.scroller').addEventListener('touchstart',function(){
     active = true;
     document.querySelector('.scroller').classList.add('scrolling');
