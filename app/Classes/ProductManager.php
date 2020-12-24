@@ -6,6 +6,7 @@ use App\Models\Product as ProductModel;
 use App\Models\ProductImage as ProductImageModel;
 use App\Classes\HelperManager as Common;
 use App\Classes\ReviewManager;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class ProductManager
@@ -174,7 +175,25 @@ class ProductManager
         return $products;
     }
 
+    public function getProductsByCategorySlug($catSlug) {
+        $categoryId = '';
+        $category = Category::where('slug', $catSlug)->first();
+
+        if(!is_null($category)) {
+            $categoryId = $category->id;
+        }
+
+        $products = ProductModel::with('images', 'catergory');
+        if (!empty($categoryId)) {
+            $products = $products->where('category_id', $categoryId);
+        }
+        $products = $products->where('status', 1)
+            ->get();
+        return $products;
+    }
+
     public function getProductsByCategoryId($categoryId) {
+        
         $products = ProductModel::with('images', 'catergory');
         if (!empty($categoryId)) {
             $products = $products->where('category_id', $categoryId);
@@ -189,9 +208,42 @@ class ProductManager
         $product = ProductModel::with('images', 'catergory')->find($productId);
         return $product;
     }
+
     public function getProductWithReview($productId)
     {   
         $product = ProductModel::with('images', 'catergory', 'productDescription')->find($productId);
+
+        if (is_null($product)){
+            return false;
+        }
+
+        $productData = [
+            'product' => $product,
+            'productReview' => "",
+            'reviewCount'=>'',
+            'averageRating'=>''
+        ];
+        
+        if (!is_null($product)) {
+            
+            $productData['productReview'] = ReviewManager::getAllActiveReviewsByProductId($product->id); 
+            //$product->getRecentRatings($product->id, 5, 'desc');
+            
+            $productData['reviewCount'] = $this->reviewCount($product->id);
+
+            $productData['averageRating'] =  DB::table('reviews')
+                //->where('reviewrateable_type', 'App/Models/Product') /* In case of product only open it. */
+                ->where('reviewrateable_id', $product->id)
+                ->avg('rating');
+        }
+        return $productData;
+    }
+
+    public function getProductWithReviewBySlug($slug)
+    {   
+        $product = ProductModel::with('images', 'catergory', 'productDescription')
+            ->where('slug', $slug)
+            ->first();
 
         if (is_null($product)){
             return false;

@@ -44,17 +44,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $req)
+    public function index(Request $req, $catSlug ='')
     {   
-        $categoryId = $req->category_id;
         $categories = $this->categoryManager->getProductCategoryList();
         
-        $products = $this->productManager->getProductsByCategoryId($categoryId);
+        $products = $this->productManager->getProductsByCategorySlug($catSlug);
         
         return view('frontend.list', [
             'products' => $products,
             'categories'=> $categories,
-            'categoryId' =>$categoryId
+            'catSlug' =>$catSlug
         ]);
     }
 
@@ -64,14 +63,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function detail(Request $req) {
-        $productId = $req->input('id');
+    public function detail(Request $req, $slug) {
         $cart = [];
-        $productData = $this->productManager->getProductWithReview($productId);
+        $productData = $this->productManager->getProductWithReviewBySlug($slug);
         $categoryId = $productData['product']->category_id;
         $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId);
-
         if ($productData) {
+            $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
             return view('frontend.product-detail',
                 [
@@ -80,9 +78,10 @@ class ProductController extends Controller
                     'relatedProducts' => $relatedProducts,
                 ]
             );
+        } else {
+            return redirect()->route('product.list');
         }
 
-        return redirect()->route('product.list');
 }
     
     /**
@@ -167,17 +166,18 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function configure(Request $req) {
-        $productId = $req->input('id');
+    public function configure(Request $req, $slug) {
         $cart = [];
-        $productData = $this->productManager->getProductWithReview($productId);
+        $productData = $this->productManager->getProductWithReviewBySlug($slug);
         if ($productData) {
+            $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
             
             return view('frontend.configure',
                 ['productData' => $productData, 'cart'=>$cart]
             );
+        } else {
+            return redirect()->route('product.list');
         }
-        return redirect()->route('product.list');
     } 
 }
