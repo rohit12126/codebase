@@ -46,9 +46,11 @@ class OrderManager
                 '*',
                 \DB::raw('(
                     CASE status 
-                    WHEN 1 THEN "In Progress"
-                    WHEN 2 THEN "Delivered"
-                    WHEN 3 THEN "Cancelled"
+                    WHEN 1 THEN "Received"
+                    WHEN 2 THEN "Confirmed"
+                    WHEN 3 THEN "Shipped"
+                    WHEN 4 THEN "Delivered"
+                    WHEN 5 THEN "Cancled"
                     ELSE "" END) AS order_status')
                 )
                 ->with('user', 'getShippingAddress', 'getBillingAddress')
@@ -84,9 +86,11 @@ class OrderManager
                 '*',
                 \DB::raw('(
                     CASE status 
-                    WHEN 1 THEN "In Progress"
-                    WHEN 2 THEN "Delivered"
-                    WHEN 3 THEN "Cancelled"
+                    WHEN 1 THEN "Received"
+                    WHEN 2 THEN "Confirmed"
+                    WHEN 3 THEN "Shipped"
+                    WHEN 4 THEN "Delivered"
+                    WHEN 5 THEN "Cancled"
                     ELSE "" END) AS order_status')
             )->with('user', 'getShippingAddress', 'getBillingAddress')->latest()->paginate(10);
         }
@@ -98,17 +102,25 @@ class OrderManager
         if ($order) {
             switch ($order->status) {
                 case 1:
-                    $status = 'In Process';
+                    $status = 'Received';
                     break;
 
                 case 2:
-                    $status = 'Delivered';
+                    $status = 'Confirmed';
                     break;
 
                 case 3:
-                    $status = 'Cancelled';
+                    $status = 'Shipped';
+                    break;
+
+                case 4:
+                    $status = 'Delivered';
+                    break;
+                case 5:
+                    $status = 'Cancled';
                     break;
             }
+            
             return $status;
         } else {
             return false;
@@ -126,9 +138,11 @@ class OrderManager
             '*',
             \DB::raw('(
             CASE status 
-            WHEN 1 THEN "In Progress"
-            WHEN 2 THEN "Delivered"
-            WHEN 3 THEN "Cancelled"
+            WHEN 1 THEN "Received"
+            WHEN 2 THEN "Confirmed"
+            WHEN 3 THEN "Shipped"
+            WHEN 4 THEN "Delivered"
+            WHEN 5 THEN "Cancled"
             ELSE "" END) AS order_status')
         )
             ->with('user')
