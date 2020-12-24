@@ -124,39 +124,46 @@
                     <div class="card-body">
                         <div class="overflow-auto mb-2">
                             <table class="table table-striped table-bordered table-hover datatable">
-                                <thead>
-                                    <tr>
-                                        <th>S.No</th>
-                                        <th>Order No.</th>
-                                        <th>Date</th>
-                                        <th>Name</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    @foreach($order_list as $key => $value)
-                                    <tr>
-                                        <td>{{ $key+1 }}</td>
-                                        <td>{{ $value->order_no }}</td>
-                                        <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
-                                        <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
-                                        <td>{{ $value->order_status }}</td>
-                                        <td>&#36;{{ $value->grand_total }}</td>
-                                        <td>
-                                            <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
-                                                <i class="cil-arrow-thick-to-right"></i>
-                                            </a>
-                                            {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
-                                            onclick="return confirm('Are you sure you want to delete this user?');">
-                                            <i class="cil-trash"></i>
-                                            </a> --}}
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
+                                @if($order_list->isNotEmpty())
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Order No.</th>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Status</th>
+                                            <th>Total</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($order_list as $key => $value)
+                                            <tr>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $value->order_no }}</td>
+                                                <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
+                                                <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
+                                                <td>{{ $value->order_status }}</td>
+                                                <td>&#36;{{ $value->grand_total }}</td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
+                                                        <i class="cil-arrow-thick-to-right"></i>
+                                                    </a>
+                                                    {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
+                                                    onclick="return confirm('Are you sure you want to delete this user?');">
+                                                    <i class="cil-trash"></i>
+                                                    </a> --}}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                @else
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="7" class="text-center">Order list is empty</th>
+                                        </tr>
+                                    </tfoot>
+                                @endif
                             </table>
                         </div>
                         {{ @$order_list->links() }}

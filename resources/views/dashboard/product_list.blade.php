@@ -68,45 +68,52 @@
                     <div class="card-body">
                         <div class="overflow-auto">
                             <table class="table table-striped table-bordered datatable">
-                                <thead>
-                                    <tr>
-                                        <th class="serial-number-th">S No.</th>
-                                        <th>Product Thumbnail</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Type</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    @foreach($product_list as $key => $value)
-                                    <tr>
-                                        <td>{{ $key+1 }}</td>
-                                        <td>
-                                            @if(count($value->images) > 0)
-                                                <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
-                                            @else
-                                                <img src="{{ url('/download.jpeg') }}" width="50" />
-                                            @endif
-                                        </td>
-                                        <td>{{ $value->name }}</td>
-                                        <td>&#36;{{ $value->sale_price }}</td>
-                                        <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
-                                        <td>
-                                            <a class="btn btn-sm btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
-                                                <i class="cil-playlist-add"></i>
-                                            </a>
-                                            <a class="btn btn-sm btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
-                                                <i class="cil-pencil"></i>
-                                            </a>
-                                            <a class="btn btn-sm btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
-                                                <i class="cil-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
+                                @if($product_list->isNotEmpty())
+                                    <thead>
+                                        <tr>
+                                            <th class="serial-number-th">S No.</th>
+                                            <th>Product Thumbnail</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Type</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($product_list as $key => $value)
+                                        <tr>
+                                            <td>{{ $key+1 }}</td>
+                                            <td>
+                                                @if(count($value->images) > 0)
+                                                    <img src="{{ url('') }}/upload/product/{{ @$value->images[0]->image}}" width="50" />
+                                                @else
+                                                    <img src="{{ url('/download.jpeg') }}" width="50" />
+                                                @endif
+                                            </td>
+                                            <td>{{ $value->name }}</td>
+                                            <td>&#36;{{ $value->sale_price }}</td>
+                                            <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
+                                            <td>
+                                                <a class="btn btn-sm btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
+                                                    <i class="cil-playlist-add"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
+                                                    <i class="cil-pencil"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
+                                                    <i class="cil-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                @else
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="6" class="text-center">Item list is empty</th>
+                                        </tr>
+                                    </tfoot>
+                                @endif
                             </table>
                         </div>
                         {{ @$product_list->appends(request()->query())->links() }}

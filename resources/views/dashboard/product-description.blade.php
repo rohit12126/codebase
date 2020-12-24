@@ -80,6 +80,13 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
+                <div class="row mb-4">
+                    <div class="col-sm-4 col-8">
+                        <div class="form-group mb-0">
+                            <h5><b>Product:</b> {{ $product->name}}</h5> 
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-9">
                         <form method="GET" action="{{ url()->current() }}">
@@ -112,30 +119,38 @@
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered datatable">
-                    <thead>
-                        <tr>
-                            <th class="serial-number-th">S No.</th>
-                            <th>Title</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($productDescriptionList as $key => $value)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $value->title }}</td>
-                            <td>
-                                <button class="btn btn-sm btn-info" type="button" title="Edit Description"
-                                    onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
-                                    <i class="cil-pencil"></i>
-                                </button>
-                                <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
-                                    <i class="cil-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
+                    @if($productDescriptionList->isNotEmpty())
+                        <thead>
+                            <tr>
+                                <th class="serial-number-th">S No.</th>
+                                <th>Title</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($productDescriptionList as $key => $value)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $value->title }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" type="button" title="Edit Description"
+                                        onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
+                                        <i class="cil-pencil"></i>
+                                    </button>
+                                    <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
+                                        <i class="cil-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    @else
+                        <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center">Product description list is empty</th>
+                            </tr>
+                        </tfoot>
+                    @endif
                 </table>
             </div>
         </div>

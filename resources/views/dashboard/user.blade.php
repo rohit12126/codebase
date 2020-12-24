@@ -129,51 +129,59 @@
                                 </form>
                             </div>
                             <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
-                                {{-- @if(!isset($category)) --}}
-                                <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
-                                    <i class="cil-plus"></i> Create User
-                                </button>
-                                {{-- @endif --}}
+                                @if(!isset($user)) 
+                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
+                                        <i class="cil-plus"></i> Create User
+                                    </button>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="overflow-auto">
                             <table class="table table-striped table-bordered table-hover datatable">
-                                <thead>
-                                    <tr>
-                                        <th>S No.</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Mobile</th>
-                                        <th>Proxy Login</th>
-                                        <th>Action</th>
+                                @if($user_list->isNotEmpty())
+                                    <thead>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                            <th>Proxy Login</th>
+                                            <th>Action</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($user_list as $key => $value)
-                                    <tr>
-                                        <td>{{ $key+1 }}</td>
-                                        <td>{{ $value->name }}</td>
-                                        <td>{{ $value->email }}</td>
-                                        <td>{{ $value->mobile }}</td>
-                                        <td>
-                                            <a class="btn btn-sm btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
-                                                Login as {{ ucwords($value->name) }}
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-sm btn-info mb-2 mb-xl-0" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
-                                                <i class="cil-pencil"></i>
-                                            </a>
-                                            <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
-                                                <i class="cil-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($user_list as $key => $value)
+                                        <tr>
+                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $value->email }}</td>
+                                            <td>{{ $value->mobile }}</td>
+                                            <td>
+                                                <a class="btn btn-sm btn-block btn-outline-success" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
+                                                    Login as {{ ucwords($value->name) }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-sm btn-info mb-2 mb-xl-0" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
+                                                    <i class="cil-pencil"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
+                                                    <i class="cil-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                @else
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="6" class="text-center">User list is empty</th>
+                                        </tr>
+                                    </tfoot>
+                                @endif
                             </table>
                         </div>
                         {{ @$user_list->appends(request()->query())->links() }}

@@ -60,38 +60,46 @@
                     <div class="card-body">
                     @include('partials.alert_msg')
                         <table class="table table-striped table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>S No.</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Category</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($faq_list as $key => $value)
-                                
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $value->title }}</td>
-                                    <td>{{ $value->body }}</td>
-                                    @if($value->categori==null)
-                                    <td>No Category Assigned</td>
-                                    @else
-                                    <td>{{$value->categori->category}}</td>
-                                    @endif
-                                    <td>
-                                        <a class="btn btn-info" href="{{ url('admin/edit_faq', $value->id) }}" title="Edit">
-                                            <i class="cil-pencil"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="{{ url('admin/delete_faq', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
-                                            <i class="cil-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                            @if($faq_list->isNotEmpty())
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($faq_list as $key => $value)
+                                    
+                                    <tr>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $value->title }}</td>
+                                        <td>{{ $value->body }}</td>
+                                        @if($value->categori==null)
+                                        <td>No Category Assigned</td>
+                                        @else
+                                        <td>{{$value->categori->category}}</td>
+                                        @endif
+                                        <td>
+                                            <a class="btn btn-info" href="{{ url('admin/edit_faq', $value->id) }}" title="Edit">
+                                                <i class="cil-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-danger" href="{{ url('admin/delete_faq', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                                <i class="cil-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            @else
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="5" class="text-center">FAQ list is empty</th>
+                                    </tr>
+                                </tfoot>
+                            @endif
                         </table>
                         {{ @$faq_list->links() }}
                     </div>

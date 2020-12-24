@@ -106,6 +106,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::post('admin/blog-list', 'admin\BlogController@blogList')->name('admin.blog.list');
         Route::get('admin/delete_blog/{id?}', 'admin\BlogController@deleteBlog');
+        
         Route::get('admin/check-exist-slug/', 'admin\BlogController@checkExistSlug')->name('admin.checkExistSlug');
 
         /* Reviews Module Routes */

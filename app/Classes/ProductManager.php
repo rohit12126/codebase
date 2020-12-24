@@ -12,13 +12,17 @@ class ProductManager
 {
     public static function add($req)
     {
-	$description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
+	    $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
+
+        $slug = self::generateSlug($req->name);
 
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
             'sale_price' => $req->sale_price,
+            'max_cart_qty' => $req->max_cart_qty,
             'description' => $description,
+            'slug' => $slug,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
         ];
@@ -50,11 +54,14 @@ class ProductManager
         
         $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
 
+        $slug = self::generateSlug($req->name, $req->id);
+
         $data = [
             'name' => $req->name,
             'category_id' => $req->category_id,
             'sale_price' => $req->sale_price,
             'description' => $req->description,
+            'slug' => $slug,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
         ];
@@ -82,6 +89,41 @@ class ProductManager
         
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public static function generateSlug($name, $productId = 0, $recall = false) {
+        $slug = Common::generateSlug($name);
+        
+        if ($recall) {
+            $slug = $slug . '-' . rand(1,999);
+        }
+
+        $isExist = self::checkExistSlug($slug, $productId);
+        
+        if ($isExist) {
+          $slug = self::generateSlug($name, $productId, true);
+          return $slug;
+        } 
+
+        return $slug;
+    }
+
+    public static function checkExistSlug($slug, $productId = 0)
+    {
+        if (!empty($productId)) {
+            $product = ProductModel::where('slug', '=', $slug)
+                ->where('id', '!=', $productId)
+                ->first();
+        } else {
+            $product = ProductModel::where('slug', '=', $slug)->first();
+        }
+
+        if (!is_null($product)) {
+            return true;
+        } else {
+            /* slug not exist */
             return false;
         }
     }

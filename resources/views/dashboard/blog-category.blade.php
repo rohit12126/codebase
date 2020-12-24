@@ -71,7 +71,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-9">
                         <form method="GET" action="{{ url()->current() }}">
                             <div class="container">
                                 <div class="row">
@@ -94,42 +94,49 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-2">
-                        {{-- @if(!isset($category)) --}}
-                        <button class="btn btn-primary btn-sm pull-right" onclick="$('.addForm').show('slow');">
-                            Create Blog Category
-                        </button>
-                        {{-- @endif --}}
-                    </div>
+                    @if(!isset($category)) 
+                        <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
+                            <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Blog Category" title="" onclick="$('.addForm').show('slow');">
+                                <i class="cil-plus"></i> Create Blog Category
+                            </button>
+                        </div>
+                    @endif
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered datatable">
-                        <thead>
-                            <tr>
-                                <th>S No.</th>
-                                <th>Name</th>
-                                <th>Action</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($category_list as $key => $value)
-                            <tr>
-                                <td>{{ $key+1 }}</td>
-                                <td>{{ $value->name }}</td>
-                                <td>
-                                    <button class="btn btn-info" type="button" data-toggle="tooltip"
-                                        data-placement="top" title="Tooltip on top" data-original-title="Tooltip on top"
-                                        onclick="window.location='{{ url('admin/blog_edit_category', $value->id) }}'">
-                                        <i class="cil-pencil"></i>
-                                    </button>
-                                    <a class="btn btn-danger" href="{{ url('admin/blog_delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
-                                        <i class="cil-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
+                        @if($category_list->isNotEmpty())
+                            <thead>
+                                <tr>
+                                    <th>S No.</th>
+                                    <th>Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($category_list as $key => $value)
+                                <tr>
+                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>
+                                        <button class="btn btn-info" type="button" data-toggle="tooltip"
+                                            data-placement="top" title="Tooltip on top" data-original-title="Tooltip on top"
+                                            onclick="window.location='{{ url('admin/blog_edit_category', $value->id) }}'">
+                                            <i class="cil-pencil"></i>
+                                        </button>
+                                        <a class="btn btn-danger" href="{{ url('admin/blog_delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                            <i class="cil-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        @else
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3" class="text-center">Blog Category list is empty</th>
+                                </tr>
+                            </tfoot>
+                        @endif
                     </table>
                     {{ @$category_list->links() }}
                 </div>
