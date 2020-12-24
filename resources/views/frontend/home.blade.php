@@ -63,7 +63,7 @@
          <div class="wrapper">
             <div class="before">
                 <div id="hotspotImg" class="responsive-hotspot-wrap">
-                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" width="1920" height="700">
+                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
                     <div class="hot-spot" x="300" y="43" >
                         <div class="circle" ></div>
                         <div class="tooltip">
@@ -93,7 +93,7 @@
             </div>
             <div class="after">
             <div id="secondhotspotImg" class="responsive-hotspot-wrap">
-                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="" width="1920" height="700">
+                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
                     <div class="hot-spot" x="300" y="43">
                         <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
                     </div>
