@@ -39,7 +39,6 @@
                                     <td class="p-1">: {{ ucwords($order->user->name) }}</td>
                                 @endif
                             </tr>
-
                             <tr> 
                                 <th class="p-1">Shipping Address</th>
                                 <td class="p-1">: {{ $order->getShippingAddress->address ?? '' }}</td>
@@ -67,15 +66,31 @@
                                     <td class="p-1 col-sm-9">
                                         @csrf
                                         <select name="order_status" id="" class="form-control" required>
-                                            <option value="1" @if($order->status == 1) selected @endif </option> New
+                                            <option value="1" @if($order->status == 1) selected @else disabled @endif > Received
                                             </option>
-                                            <option value="2" @if($order->status == 2) selected @endif </option>Received
+                                            <option value="2" @if($order->status == 2)
+                                                    selected
+                                                @elseif($order->status == 3 || $order->status == 4 || $order->status == 5)
+                                                    disabled
+                                                @endif > Confirmed
                                             </option>
-                                            <option value="3" @if($order->status == 3) selected @endif </option>Shipped
+                                            <option value="3" @if($order->status == 3)
+                                                    selected
+                                                @elseif($order->status == 1 || $order->status == 4 || $order->status == 5)
+                                                    disabled
+                                                @endif >Shipped
                                             </option>
-                                            <option value="4" @if($order->status == 4) selected @endif </option>Delivered
+                                            <option value="4" @if($order->status == 4)
+                                                    selected
+                                                @elseif($order->status == 2 || $order->status == 1 || $order->status == 5)
+                                                    disabled
+                                                @endif >Delivered
                                             </option>
-                                            <option value="5" @if($order->status == 5) selected @endif </option>Cancled
+                                            <option value="5" @if($order->status == 5)
+                                                    selected
+                                                @elseif($order->status == 2 || $order->status == 3 || $order->status == 4)
+                                                    disabled
+                                                @endif >Cancled
                                             </option>
                                         </select>
                                     </td>

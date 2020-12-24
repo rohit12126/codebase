@@ -197,7 +197,7 @@ class CartController extends Controller
     public function addToCart(Request $req) {
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
-        $message = "Item successfully added to the cart.";
+        $message = "Product successfully added to the cart.";
         
         $status = true;
         $res =  $this->cartManager->addToCart($product);
@@ -252,7 +252,7 @@ class CartController extends Controller
 
         $response = [
             'status'=>true,
-            'message'=>"Item successfully removed from the cart.",
+            'message'=>"Product successfully removed from the cart.",
             'data' => $data
         ];
         
@@ -273,7 +273,7 @@ class CartController extends Controller
         
         $status = true;
 
-        $message = "Item successfully added to the cart.";
+        $message = "Product successfully added to the cart.";
          
         if ($res['status'] == false) {
             $message = $res['message'];
@@ -321,7 +321,7 @@ class CartController extends Controller
 
         $response = [
             'status'=>true,
-            'message'=>"Item successfully removed from the cart.",
+            'message'=>"Product successfully removed from the cart.",
             'data' => $data
         ];
         
