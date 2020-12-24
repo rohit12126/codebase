@@ -16,11 +16,13 @@ class CartManager
      */
     public function addToCart($product)
     {
+
         $set = false;
         $qty = 1;
         $rowId = '';
         $contains = $this->getCartContain();
-        
+
+        $response = ['status' => true, 'message'=> "", 'qty'=> $qty];
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
                 $qty = $item->qty + $qty;
@@ -29,14 +31,64 @@ class CartManager
                 break;
             }
         }
+
         if ($set == 1 || $set == true) {
             $data = ['qty'=> $qty];
-            $this->updateProduct($rowId, $data, $product->id);
+            
+            if ($product->max_cart_qty >= $qty) {
+               $this->updateProduct($rowId, $data, $product->id);
+               $response['qty'] = $qty;
+            } else {
+                $response['status'] = false;
+                $response['message'] = "Unable to update cart (your product cart limit exceeded.)";
+                $response['qty'] = $qty - 1;
+            }
         } else {
             $this->addProduct($product);
         }
 
-        return $qty;
+        return $response;
+    }
+
+    /**
+     * Update cart product
+     *
+     */
+    public function updateCart($product, $qty)
+    {
+        $set = false;
+        $rowId = '';
+        $productId = '';
+        $contains = $this->getCartContain();
+        $productCartQty = 0;
+        $response = ['status' => true, 'message'=> "", 'qty'=> $qty];
+
+        foreach ($contains as $key => $item) {
+            if ($item->id == $product->id) {
+                $rowId = $item->rowId;
+                $productId = $product->id;
+                $productCartQty = $item->qty;
+                $set = true;
+                break;
+            }
+        }
+        
+        if ($product->max_cart_qty >= $qty) { 
+            if ($set == 1 || $set == true) {
+                $data = ['qty'=> $qty];
+                $this->updateProduct($rowId, $data, $productId);
+            } else {
+                $this->addProduct($product, $qty);
+            }
+        } else {
+            $response = [
+                'status' => false,
+                'message'=> "Unable to update cart (your product cart limit exceeded.)",
+                'qty'=> $productCartQty
+            ];
+        } 
+
+        return $response;
     }
 
     /**
@@ -183,33 +235,7 @@ class CartManager
         return Cart::total();
     }
 
-    /**
-     * Update cart product
-     *
-     */
-    public function updateCart($product, $qty)
-    {
-        $set = false;
-        $rowId = '';
-        $productId = '';
-        $contains = $this->getCartContain();
-        foreach ($contains as $key => $item) {
-            if ($item->id == $product->id) {
-                $rowId = $item->rowId;
-                $productId = $product->id;
-                $set = true;
-                break;
-            }
-        }
-        if ($set == 1 || $set == true) {
-            $data = ['qty'=> $qty];
-            $this->updateProduct($rowId, $data, $productId);
-            /* row */
-        } else {
-            $this->addProduct($product, $qty);
-        }
-    }
-
+    
     /**
      * User Cart DB Product add first time
      * 

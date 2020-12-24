@@ -191,12 +191,18 @@
                 data: {
                     productId : productId
                 },
-                success: function(result){
+                success: function(result) {
                     $('.cart-count').html(result.data.cartCount);
+                    var icon = 'success';
+
+                    if (result.status == false) {
+                       icon = 'info';
+                    } 
+
                     Swal.fire({
                         position: 'bottom-end',
-                        icon: 'success',
-                        title: 'Product has been added to your cart successfully',
+                        icon: icon,
+                        title: result.message,
                         showConfirmButton: false,
                         timer: 2500,
                         customClass: {

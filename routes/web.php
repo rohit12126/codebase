@@ -355,7 +355,7 @@ Route::get('projects/', 'HomeController@projects')->name('projects');
 Route::get('terms-and-conditions/', 'HomeController@termsAndCondition')->name('termsAndCondition');
 
 /* Cart Routes */
-Route::get('cart/','CartController@index')->name('cart');
+Route::get('cart/','CartController@index')->name('cart'); 
 
 Route::post('cart/add-cart','CartController@addToCart')->name('cart.addCart');
 Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('cart.removeFromCart');
