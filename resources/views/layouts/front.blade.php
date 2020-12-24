@@ -538,55 +538,8 @@ footer-->
                 }
             }
     });
-        
-// I hope this over-commenting helps. Let's do this!
-    // Let's use the 'active' variable to let us know when we're using it
 
     let active = false;
-
-    /* (function () {
-        if ('touchstart' in window) {
-            window.Evt = {
-                PUSH : 'touchstart',
-                MOVE : 'touchmove',
-                LEAVE : 'touchcancel',
-                RELEASE : 'touchend'
-            };
-        } else {
-            window.Evt = {
-                PUSH : 'mousedown',
-                MOVE : 'mousemove',
-                LEAVE : 'mouseleave',
-                RELEASE : 'mouseup'
-            };
-        }
-    }());
-
-    document.querySelector('.scroller').addEventListener(Evt.PUSH,function(){
-    active = true;
-
-    document.querySelector('.scroller').classList.add('scrolling');
-    });
-
-    document.body.addEventListener(Evt.RELEASE,function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    });
-    document.body.addEventListener(Evt.LEAVE,function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    });
-
- 
-    document.body.addEventListener(Evt.MOVE,function(e){
-    if (!active) return;
-
-    let x = e.pageX;
-
-    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-
-    scrollIt(x);
-    }); */
 
     document.querySelector('.scroller').addEventListener('mousedown',function(){
     active = true;
@@ -604,7 +557,7 @@ footer-->
     });
 
  
-    /* document.body.addEventListener('mousemove',function(e){
+    document.body.addEventListener('mousemove',function(e){
     if (!active) return;
 
     let x = e.pageX;
@@ -612,7 +565,7 @@ footer-->
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
 
     scrollIt(x);
-    }); */
+    });
 
     // Let's use this function
 
@@ -642,21 +595,13 @@ footer-->
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
     });
-    /* document.body.addEventListener('touchmove',function(e){
-    if (!active) return;
-
-    let x = e.pageX;
-
-    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-
-    scrollIt(x);
-    }); */
-    $(window).bind('mousemove touchmove', function(e) {
+    
+    document.body.addEventListener('touchmove',function(e){ 
         if (!active) return;
-        let x = e.pageX;
+        let x = e.touches[0].pageX;
         x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-        scrollIt(x);
-        });
+        scrollIt(x); 
+    });
     });
  
 </script>
