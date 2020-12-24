@@ -34,7 +34,7 @@ class OrderStatusChange extends Mailable
 
         if ($status == 1) {
             $title = "Order Received - Your Order Has Been Received";
-            $this->data['status'] = 'Updated';
+            $this->data['status'] = 'Received';
         } elseif ($status == 2) {
             $title = "Order Confirmed - Your Order Has Been Confirmed";
             $this->data['status'] = 'Confirmed';
@@ -48,7 +48,6 @@ class OrderStatusChange extends Mailable
             $title = "Order Cancelled - Your Order Has Been Cancelled";
             $this->data['status'] = 'Cancelled';
         }
-        
         return $this->view('dashboard.email.order_status_change')
             ->subject($title)
             ->with('data', $this->data);
