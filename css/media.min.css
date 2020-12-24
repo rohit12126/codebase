@@ -6,6 +6,9 @@
 }
 
 @media (max-width: 1199px) {
+    body{
+        padding-top: 106px;
+    }
     .section-img-content, .section-text-wrapper h2,h2
     {
         font-size: 35px;
