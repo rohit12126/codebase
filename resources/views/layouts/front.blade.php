@@ -289,7 +289,7 @@ footer-->
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">
-                            <a href="https://en.sitzfeldt.com/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://en.sitzfeldt.com/node/47955" target="_blank">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
+                            <a href="{{ url('privacy-policy/') }}">Privacy Policy</a> &nbsp;|&nbsp; <a href="{{ url('returns/') }}">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
                         </div>
                     </div>
                 </div>

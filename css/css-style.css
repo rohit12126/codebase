@@ -10170,3 +10170,9 @@ body { margin: 0; }
     max-width: 120px;
     max-height: max-content;
 }
+/* =================404==================== */
+.notfound-title
+{
+	font-size: 10rem;
+    color: #f94e57;
+}
