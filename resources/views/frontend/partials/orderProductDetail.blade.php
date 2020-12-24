@@ -16,13 +16,13 @@
             </div>
         </div>
         <div class="track">
-            <div class="step active"> <span class="icon"> <i class="linearicons-check"></i> </span> 
+            <div class="step @if($data->status == 2) active @endif"> <span class="icon"> <i class="linearicons-check"></i> </span> 
                 <span class="text">Order confirmed</span> 
             </div>
-            <div class="step text-center"> <span class="icon"> <i class="linearicons-truck"></i> </span> 
+            <div class="step text-center @if($data->status == 3) active @endif"> <span class="icon"> <i class="linearicons-truck"></i> </span> 
                 <span class="text"> Shipped</span> 
             </div>
-            <div class="step text-right"> <span class="icon"> <i class="linearicons-thumbs-up"></i> </span> 
+            <div class="step text-right @if($data->status == 4) active @endif"> <span class="icon"> <i class="linearicons-thumbs-up"></i> </span> 
                 <span class="text"> Delivered </span> 
             </div>
         </div>
@@ -62,7 +62,7 @@
                     <div class="row m-0 mb-4 contact_style3 pl-0 pr-0">
                         <div class="col-md-5 col-lg-3 col-xl-3">
                             @if (isset($product->product->images[0]->image))
-                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                             @else
                                 <img src="{{ asset('product_images/download.jpeg')}}" class="cart-for-mobile-img" alt="product_img1">
                             @endif
@@ -120,7 +120,7 @@
                             <td>{{$product->product->name}}</td>
                             <td>
                                 @if (isset($product->product->images[0]->image))
-                                    <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('product_images/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                    <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                 @else
                                     <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                 @endif
