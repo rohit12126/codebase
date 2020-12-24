@@ -9957,7 +9957,7 @@ body { margin: 0; }
 }
 
 .hot-spot .tooltip {
-  background-color: rgba(58, 95, 150, 0.7);
+  background-color: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -10159,4 +10159,12 @@ body { margin: 0; }
 .login-card button{
 	margin: 0 auto;
 	max-width: max-content;
+}
+.drag-indicator{
+	position: absolute;
+    top: 100%;
+    left: -60%;
+    z-index: 999;
+    max-width: 120px;
+    max-height: max-content;
 }

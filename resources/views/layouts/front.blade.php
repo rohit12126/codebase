@@ -604,3 +604,8 @@ footer-->
     });
  
 </script>
+<script>
+    $(".scroller__thumb").on("mouseover", function () {
+        $(".drag-indicator").css("display","none");
+    });
+</script>
