@@ -91,9 +91,9 @@
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
-
-                        <a href="{{ route('product.configure', ['id' => $productData['product']->id]) }}" class="btn btn-fill-out configure-btn">
-                        <i class="linearicons-hammer-wrench"></i> Configure
+                        
+                        <a href="{{ url('product/configure/').'/'.$productData['product']->slug }}" class="btn btn-fill-out configure-btn">
+                            <i class="linearicons-hammer-wrench"></i> Configure
                         </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
@@ -163,7 +163,7 @@
             <div class="related-slider">
                 @foreach ($relatedProducts as $Rproduct)
                     <div class="blog-col">
-                        <a href="#"><img class="img-fluid" src="{{ asset('upload/product/'.$Rproduct->images[0]->image)}}" alt="" /></a>
+                        <a href="{{ url('product/detail/').'/'.$Rproduct->slug }}"><img class="img-fluid" src="{{ asset('upload/product/'.$Rproduct->images[0]->image)}}" alt="" /></a>
                         <div class="products-list-title"><h2>{{$Rproduct->name}}</h2></div>
                         <div class="products-list-price">$ {{$Rproduct->sale_price}}</div>
                     </div>

@@ -11,7 +11,7 @@
                             <tr>
                                 <td>
                                 <div style="font-size:30px;font-family:'Lato',sans-serif;margin-top:20px;color:#282c3f;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal;text-transform: capitalize;">
-                                    Hello
+                                    Dear
                                     <span style="font-weight:bold">{{ $data['buyer_name'] }} </span>
                                 </div>
                                 </td>
@@ -45,8 +45,6 @@
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p class="m_8451886253471966023statusText" style="margin:0;font-family:'Lato',sans-serif;color:white;padding:0;float:left;width:100%;font-size:30px;line-height:normal">
                                                                         We have <strong style="font-family:'Lato',sans-serif!important;letter-spacing:0.5px;font-weight:bold">{{ $data['status'] }}</strong> your order
-                                                                        {{-- <span style="font-weight:bold;font-family:'Lato',sans-serif;padding-left:5px;opacity:0.6;font-size:12px"> on 
-                                                                        {{ date("M j, Y", strtotime($data->created_at)) }}     --}}
                                                                     </p>
                                                                     </td>
                                                                 </tr>
@@ -57,6 +55,14 @@
                                                                             <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                             <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
                                                                                 We know you can't wait to get your hands on them. Our team is working hard while ensuring highest safety standards to deliever your order at the earliest. You can track your order below.
+                                                                            </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @else
+                                                                        <tr style="margin:0;padding:0">
+                                                                            <td style="padding:0% 3% 0% 0%" colspan="2">
+                                                                            <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
+                                                                                Order delievered to destination, for more information, You can track your order below.
                                                                             </p>
                                                                             </td>
                                                                         </tr>
