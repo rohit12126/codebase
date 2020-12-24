@@ -544,8 +544,54 @@ footer-->
 
     let active = false;
 
+    (function () {
+        if ('ontouchstart' in window) {
+            window.Evt = {
+                PUSH : 'touchstart',
+                MOVE : 'touchmove',
+                LEAVE : 'touchcancel',
+                RELEASE : 'touchend'
+            };
+        } else {
+            window.Evt = {
+                PUSH : 'mousedown',
+                MOVE : 'mousemove',
+                LEAVE : 'mouseleave',
+                RELEASE : 'mouseup'
+            };
+        }
+    }());
 
-    document.querySelector('.scroller').addEventListener('mousedown',function(){
+    document.querySelector('.scroller').addEventListener(Evt.PUSH,function(){
+    active = true;
+
+    document.querySelector('.scroller').classList.add('scrolling');
+    });
+
+    document.body.addEventListener(Evt.RELEASE,function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    /* document.body.addEventListener('mouseleave',function(){
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
+    }); */
+
+ 
+    document.body.addEventListener(Evt.MOVE,function(e){
+    if (!active) return;
+
+    let x = e.pageX;
+
+    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+
+    scrollIt(x);
+    });
+
+// and then...
+
+//document.getElementById('mydiv').addEventListener(Evt.PUSH, myStartDragHandler, false);
+    /* document.querySelector('.scroller').addEventListener('mousedown',function(){
     active = true;
 
     document.querySelector('.scroller').classList.add('scrolling');
@@ -569,15 +615,14 @@ footer-->
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
 
     scrollIt(x);
-
-    });
+    }); */
 
     // Let's use this function
 
     function scrollIt(x){
-    let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+    let transform = Math.max(5,(Math.min(x,document.querySelector('.wrapper').offsetWidth-20)));
     document.querySelector('.after').style.width = transform+"px";
-    document.querySelector('.scroller').style.left = transform-25+"px";
+    document.querySelector('.scroller').style.left = transform+"px";
     }
 
     // Let's set our opening state based off the width, 
@@ -588,7 +633,7 @@ footer-->
     // And finally let's repeat the process for touch events
     // first our middle scroller...
     
-    document.querySelector('.scroller').addEventListener('touchstart',function(){
+    /* document.querySelector('.scroller').addEventListener('touchstart',function(){
     active = true;
     document.querySelector('.scroller').classList.add('scrolling');
     });
@@ -599,13 +644,15 @@ footer-->
     document.body.addEventListener('touchcancel',function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
-    });
-        
+    }); */
     });
  
 </script>
 <script>
     $(".scroller__thumb").on("mouseover", function () {
+        $(".drag-indicator").css("display","none");
+    });
+    $(".scroller__thumb").on("mousedown", function () {
         $(".drag-indicator").css("display","none");
     });
 </script>
