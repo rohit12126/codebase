@@ -544,8 +544,8 @@ footer-->
 
     let active = false;
 
-    (function () {
-        if ('ontouchstart' in window) {
+    /* (function () {
+        if ('touchstart' in window) {
             window.Evt = {
                 PUSH : 'touchstart',
                 MOVE : 'touchmove',
@@ -572,10 +572,10 @@ footer-->
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
     });
-    /* document.body.addEventListener('mouseleave',function(){
+    document.body.addEventListener(Evt.LEAVE,function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
-    }); */
+    });
 
  
     document.body.addEventListener(Evt.MOVE,function(e){
@@ -586,12 +586,9 @@ footer-->
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
 
     scrollIt(x);
-    });
+    }); */
 
-// and then...
-
-//document.getElementById('mydiv').addEventListener(Evt.PUSH, myStartDragHandler, false);
-    /* document.querySelector('.scroller').addEventListener('mousedown',function(){
+    document.querySelector('.scroller').addEventListener('mousedown',function(){
     active = true;
 
     document.querySelector('.scroller').classList.add('scrolling');
@@ -607,7 +604,7 @@ footer-->
     });
 
  
-    document.body.addEventListener('mousemove',function(e){
+    /* document.body.addEventListener('mousemove',function(e){
     if (!active) return;
 
     let x = e.pageX;
@@ -633,7 +630,7 @@ footer-->
     // And finally let's repeat the process for touch events
     // first our middle scroller...
     
-    /* document.querySelector('.scroller').addEventListener('touchstart',function(){
+    document.querySelector('.scroller').addEventListener('touchstart',function(){
     active = true;
     document.querySelector('.scroller').classList.add('scrolling');
     });
@@ -644,7 +641,22 @@ footer-->
     document.body.addEventListener('touchcancel',function(){
     active = false;
     document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    /* document.body.addEventListener('touchmove',function(e){
+    if (!active) return;
+
+    let x = e.pageX;
+
+    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+
+    scrollIt(x);
     }); */
+    $(window).bind('mousemove touchmove', function(e) {
+        if (!active) return;
+        let x = e.pageX;
+        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+        scrollIt(x);
+        });
     });
  
 </script>
@@ -653,6 +665,9 @@ footer-->
         $(".drag-indicator").css("display","none");
     });
     $(".scroller__thumb").on("mousedown", function () {
+        $(".drag-indicator").css("display","none");
+    });
+    $(".scroller__thumb").on("touchstart", function () {
         $(".drag-indicator").css("display","none");
     });
 </script>
