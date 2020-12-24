@@ -353,6 +353,9 @@ Route::get('installation/', 'HomeController@installation')->name('installation')
 Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
 Route::get('projects/', 'HomeController@projects')->name('projects');
 Route::get('terms-and-conditions/', 'HomeController@termsAndCondition')->name('termsAndCondition');
+Route::get('404/', 'HomeController@notFound')->name('notFound');
+Route::get('privacy-policy/', 'HomeController@privacyPolicy')->name('privacyPolicy');
+Route::get('returns/', 'HomeController@returns')->name('returns');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart'); 

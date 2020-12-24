@@ -85,6 +85,7 @@ class PaypalController extends Controller
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
+            
         try {
 
             $payment->create($this->_api_context);
