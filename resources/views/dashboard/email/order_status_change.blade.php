@@ -12,7 +12,7 @@
                                 <td>
                                 <div style="font-size:30px;font-family:'Lato',sans-serif;margin-top:20px;color:#282c3f;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal;text-transform: capitalize;">
                                     Hello
-                                    <span style="font-weight:bold">{{ $data['buyer_name'] }} @endif</span>
+                                    <span style="font-weight:bold">{{ $data['buyer_name'] }} </span>
                                 </div>
                                 </td>
                             </tr>
@@ -52,13 +52,15 @@
                                                                 </tr>
                                                                 {{-- if order is not cacnel --}}
                                                                 @if ($data['order_status_num'] != 5)
-                                                                    <tr style="margin:0;padding:0">
-                                                                        <td style="padding:0% 3% 0% 0%" colspan="2">
-                                                                        <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
-                                                                            We know you can't wait to get your hands on them. Our team is working hard while ensuring highest safety standards to deliever your order at the earliest. You can track your order below.
-                                                                        </p>
-                                                                        </td>
-                                                                    </tr>
+                                                                    @if ($data['order_status_num'] != 4)
+                                                                        <tr style="margin:0;padding:0">
+                                                                            <td style="padding:0% 3% 0% 0%" colspan="2">
+                                                                            <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
+                                                                                We know you can't wait to get your hands on them. Our team is working hard while ensuring highest safety standards to deliever your order at the earliest. You can track your order below.
+                                                                            </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endif
                                                                     <tr style="margin:0;padding:0">
                                                                         <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                         <a href="{{url('orderdetails/').$data['order_no']}}" style="text-decoration:none;float:left;background:white;padding:10px 30px 12px 24px;margin-top:10px;margin-bottom:10px;border-radius:4px;text-transform:uppercase;font-family:'Lato',sans-serif;font-size:4px;line-height:4px" href="#" target="_blank">
