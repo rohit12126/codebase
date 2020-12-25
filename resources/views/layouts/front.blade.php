@@ -407,14 +407,6 @@ footer-->
         }
     });
 
-    jQuery.validator.addMethod("phonenu", function (value, element) {
-        if ( /^\d{3}-?\d{3}-?\d{4}$/g.test(value)) {
-            return true;
-        } else {
-            return false;
-        };
-    }, "Please enter a valid mobile number");
-    
     /* Sign Up validation functionality */
     jQuery("#signupform").validate({
         rules: {
@@ -429,7 +421,6 @@ footer-->
                 email: true
             },
             mobile: {
-                //phonenu: true,
                 required: true,
                 digits: true,
                 minlength: 10,
