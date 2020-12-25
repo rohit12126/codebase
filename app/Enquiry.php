@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Enquiry extends Model
 {
     protected $fillable = [
-        'name', 'email', 'phone_nu','message','connected'
+        'name', 'email', 'phone_nu', 'reason', 'message', 'connected'
     ];
 }
