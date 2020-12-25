@@ -342,8 +342,8 @@ Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
 Route::get('product/configure/{slug}', 'ProductController@configure')->name('product.configure');
 
 /* Blog Routes */
-Route::get('blog/', 'BlogController@index')->name('blog.list');
-Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+Route::get('blog/{catSlug?}', 'BlogController@index')->name('blog.list');
+Route::get('blog/detail/{slug}','BlogController@detail')->name('blog.detail');
 
 Route::get('home/', 'HomeController@home')->name('home');
 Route::get('/', 'HomeController@home')->name('home');

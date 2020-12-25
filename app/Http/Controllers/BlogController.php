@@ -29,16 +29,16 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $req)
+    public function index(Request $req, $slug)
     {
-        $categoryId = $req->category_id;
         $blogsCategories = $this->blogCategoryManager->getBlogCategoryList();
-        $blogs = $this->blogManager->getBlogs($categoryId); 
+        $blogs = $this->blogManager->getBlogs($slug); 
         return view('frontend.blog-list', [
             'blogs' => $blogs,
             'blogsCategories'=> $blogsCategories,
-            'categoryId' => $categoryId
+            'catSlug' => $slug
         ]);
+        
     }
 
     

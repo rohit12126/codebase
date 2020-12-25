@@ -10,8 +10,8 @@
                     <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($categoryId)) active  @endif">All</a>
                 </li>
                 @foreach ($blogsCategories as $cat)
-                    <li class="">
-                        <a href="{{ route('blog.list',['category_id' => $cat->id]) }}" class="btn btn-outline-secondary @if($categoryId == $cat->id) active  @endif">{{ $cat->name }}</a>
+                    <li class=""> 
+                        <a href="{{ url('blog/').'/'.$cat->slug }}" class="btn btn-outline-secondary @if($categoryId == $cat->id) active  @endif">{{ $cat->name }}</a>
                     </li>
                 @endforeach
             </ul>.

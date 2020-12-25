@@ -36,10 +36,12 @@ class ProductDescriptionController extends Controller
         $productDescription = ProductDescriptionManager::getProductDescriptionById($id);
         $productDescriptionList = ProductDescriptionManager::getProductDescriptionList($req);
         $productId = $req->product_id;
+        $product = ProductManager::getProductById($productId);
         return view('dashboard.product-description', compact(
             'productDescription',
             'productDescriptionList',
-            'productId'
+            'productId',
+            'product'
         ));
     }
 

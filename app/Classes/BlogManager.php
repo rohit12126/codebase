@@ -3,6 +3,7 @@
 namespace App\Classes;
 
 use App\Models\Blog as BlogModel;
+use App\Models\BlogCategory;
 use App\Classes\HelperManager as Common;
 use DB;
 class BlogManager
@@ -144,7 +145,25 @@ class BlogManager
             ->paginate(10);
         return $blogs;
     }
+    
+    public function getBlogsByCategorySlug($catSlug)
+    {
+        $categoryId = '';
+        $category = BlogCategory::where('slug', $catSlug)->first();
 
+        if(!is_null($category)) {
+            $categoryId = $category->id;
+        }
+
+        $blogs = BlogModel::with('catergory');
+        if (!empty($categoryId)) {
+            $blogs = $blogs->where('category_id', $categoryId);
+        }
+        $blogs = $blogs->where('status', 1)
+            ->paginate(10);
+        return $blogs;
+    }
+    
     public function getBlog($blogId)
     {
         $blog = BlogModel::with('catergory')->find($blogId);
