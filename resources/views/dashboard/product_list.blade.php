@@ -35,7 +35,7 @@
                                                     class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                           {{--  <div class="col-sm-4">
                                                 <div class="form-group mb-sm-0">
                                                     <label>Filter via Status</label>
                                                     <select name="product_status" id="" class="form-control">
@@ -46,7 +46,7 @@
                                                         </option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-sm-4 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
