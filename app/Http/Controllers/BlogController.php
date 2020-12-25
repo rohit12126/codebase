@@ -48,10 +48,11 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function detail(Request $req) {
-        $blogId = $req->input('id');
-        $blog = $this->blogManager->getBlog($blogId);
-        $recent = $this->blogManager->getRecentBlogs($blogId);
+    public function detail(Request $req, $slug) {
+        
+        $blog = $this->blogManager->getBlogBySlug($slug);
+        
+        $recent = $this->blogManager->getRecentBlogs($blog->id);
         return view('frontend.blog-detail',[
             'blog' => $blog,
             'recent' => $recent

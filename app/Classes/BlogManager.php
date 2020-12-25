@@ -170,6 +170,14 @@ class BlogManager
         return $blog;
     }
 
+    public function getBlogBySlug($slug)
+    {
+        $blog = BlogModel::with('catergory')
+            ->where('slug', $slug)
+            ->first();
+        return $blog;
+    }
+
     public function getRecentBlogs($blogId)
     {
         $recentBlogs = BlogModel::with('catergory')

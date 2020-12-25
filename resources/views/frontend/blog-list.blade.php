@@ -11,7 +11,6 @@
                 </li>
                 @foreach ($blogsCategories as $cat)
                     <li class=""> 
-                        
                         <a href="{{ url('blog/').'/'.$cat->slug }}" class="btn btn-outline-secondary @if($catSlug == $cat->slug) active  @endif">{{ $cat->name }}</a>
                     </li>
                 @endforeach
