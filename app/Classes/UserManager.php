@@ -42,13 +42,13 @@ class UserManager
         }
     }
 
-    public static function updateTempUser($userId, $email, $name, $mobile)
+    public static function updateTempUser($userId, $name /* , $email, $mobile */)
     {
         $user = self::getUserById($userId);
         $data = [
-            'email' => $email,
             'name' => $name,
-            'mobile' => $mobile,
+            //'email' => $email,
+            //'mobile' => $mobile,
         ];
         
         if ($user->fill($data)->update()) {

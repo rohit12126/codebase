@@ -171,10 +171,10 @@ class PaypalController extends Controller
             ['payment_id' => $paymentData->id]
         );
         if ($result->getState() == 'approved') {
-        session()->put('success', 'Payment success');
-        return redirect()->route('order.addOrder');
+        //session()->put('success', 'Payment success');
+            return redirect()->route('order.addOrder');
         }
-        session()->put('error', 'Payment Failed');
+        //session()->put('error', 'Payment Failed');
         return redirect()->back();
     }
 }
