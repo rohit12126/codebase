@@ -51,7 +51,7 @@
         <div class="main-header clearfix">
             <div class="head-info d-inline-block">
                 <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
-                    Custom Closet
+                    <img src="{{URL::asset('/images/cutom-inc-logo.png')}}" alt="" class="head-logo">
                 </a>
             </div>
             <div class="head-shopbar d-inline-block float-right">
@@ -564,7 +564,12 @@ footer-->
     document.querySelector('.after').style.width = transform+"px";
     document.querySelector('.scroller').style.left = transform+"px";
     }
-    scrollIt(150);    
+    if (window.matchMedia("(max-width: 1200px)").matches) {
+        scrollIt(screen.width/2);
+    } else {
+        scrollIt(600);
+    }
+
     document.querySelector('.scroller').addEventListener('touchstart',function(){
     active = true;
     document.querySelector('.scroller').classList.add('scrolling');

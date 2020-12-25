@@ -7536,7 +7536,7 @@ body {
 	width: 100%;
 	font-family: 'Euclid Circular A';
 	-webkit-text-size-adjust: 100%;
-	padding-top: 112px;
+	padding-top: 128px;
 }
 
 a,
@@ -7556,16 +7556,18 @@ a:hover {
 .main-header {
     position: relative;
     margin: 0 5%;
-    padding: 1.25rem 0;
+    padding: 1rem 0;
 }
 
 .head-logo {
-    max-width: 180px;
+    max-width: 190px;
     font-size: 22px;
     font-weight: 700;
     color: #000;
 }
-
+.head-shopbar,.head-navbar{
+	padding-top: 0.625rem;
+}
 .head-nav-ul {
     padding: 0;
     margin: 0;
