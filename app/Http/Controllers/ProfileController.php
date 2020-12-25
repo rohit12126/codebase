@@ -44,11 +44,11 @@ class ProfileController extends Controller
         $this->validate(
             $request, 
             [
-                'email' => 'required|email|unique:users, email, '.$request->id.', id',
-                'mobile' => 'required|unique:users, mobile, '.$request->id.', id'
+                'email' => 'required|email|unique:users,email,'.$request->id.',id',
+                'mobile' => 'required|unique:users,mobile,'.$request->id.',id'
             ]
         );
-        
+
         if($this->userManager->edit($request)){
             return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
         }
