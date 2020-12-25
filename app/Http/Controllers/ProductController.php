@@ -66,6 +66,9 @@ class ProductController extends Controller
     public function detail(Request $req, $slug) {
         $cart = [];
         $productData = $this->productManager->getProductWithReviewBySlug($slug);
+        if($productData === false) {
+            return  redirect()->route('notFound');
+        }
         $categoryId = $productData['product']->category_id;
         $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId, $productData['product']->id);
         if ($productData) {
