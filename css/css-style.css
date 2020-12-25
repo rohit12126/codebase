@@ -8214,7 +8214,7 @@ h5 {
 		transition: 0.1s;
     }
     .scroller:before{
-    	top:100%;
+    	top:105%;
     }
     .scroller:after{
     	bottom:100%;
