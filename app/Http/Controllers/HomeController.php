@@ -68,16 +68,6 @@ class HomeController extends Controller
     }
 
     /**
-     * Projects Page
-     *
-     * @return \Illuminate\View
-     */
-    public function projects()
-    {
-        return view('frontend.projects');
-    }
-
-    /**
      * Terms and condition Page
      *
      * @return \Illuminate\View
@@ -115,5 +105,25 @@ class HomeController extends Controller
     public function returns()
     {
         return view('frontend.returns');
+    }
+
+    /**
+     * Projects Page
+     *
+     * @return \Illuminate\View
+     */
+    public function projects()
+    {
+        return view('frontend.projects');
+    }
+
+    /**
+     * Project Detail Page
+     *
+     * @return \Illuminate\View
+     */
+    public function projectDetail()
+    {
+        return view('frontend.project-detail');
     }
 }
