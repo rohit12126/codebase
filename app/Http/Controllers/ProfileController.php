@@ -60,9 +60,9 @@ class ProfileController extends Controller
         $orders = $this->orderManager
                     ->getOrderByUserId($user->id);
         $shippingAddress =  $this->addressManager
-                ->getAddresses($user->id,1,0);
+                ->getAddresses($user->id, 1, 0);
         $billingAddress=$this->addressManager
-                ->getAddresses($user->id,2,0);
+                ->getAddresses($user->id, 2, 0);
         $this->cartManager->synchCart($user->id);
         
         return view('frontend.account',[
@@ -72,6 +72,7 @@ class ProfileController extends Controller
                 'billingAddress' => $billingAddress
             ]);
     }
+    
     /**
      * Get Order Details Of OrderId
      * @param OrderId

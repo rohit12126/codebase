@@ -247,6 +247,7 @@ class ProductManager
     {   
         $product = ProductModel::with('images', 'catergory', 'productDescription')
             ->where('slug', $slug)
+            ->where('status', 1)
             ->first();
 
         if (is_null($product)){
