@@ -4,7 +4,9 @@
         line-height: 29px;
     }
 }
-
+@media (min-width:1200px){
+    
+}
 @media (max-width: 1199px) {
     body{
         padding-top: 106px;
@@ -32,17 +34,6 @@
     }    
     #secondhotspotImg{
         width: 100vw;
-    }
-}
-
-@media(max-width:1140px){
-    .head-nav-link {
-        font-size: 0.7rem;
-        padding: 0 0.5rem;
-    }
-    .head-shop-icon,
-    .head-alert-bar{
-        font-size: 0.7rem;
     }
 }
 
@@ -469,5 +460,8 @@
     }
     #hotspotImg img, #secondhotspotImg img {
         transform: translateX(-30%);
+    }
+    .head-logo{
+        max-width: 170px;
     }
 }
