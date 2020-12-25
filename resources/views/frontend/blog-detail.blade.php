@@ -63,7 +63,7 @@
                     <h3 class="blog-sidebar-title">Recent Blogs</h3>
                     @foreach($recent as $blog)
                     <div class="blog-col">
-                        <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
+                        <a href="{{ url('blog/detail/').'/'.$blog->slug }}">
                             <article class="blog-list-card">
                                 <p class="blog-list-title">
                                 {{$blog->title}}
@@ -84,7 +84,7 @@
                                         </svg>
                                         <p>{{$blog->catergory->name}}</p>
                                     </div>
-                                    <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
+                                    <a href="{{ url('blog/detail/').'/'.$blog->slug }}">
                                         <span class="blog-view-button">View</span>
                                     </a>
                                 </div>
