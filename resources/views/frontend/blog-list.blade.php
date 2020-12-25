@@ -11,7 +11,8 @@
                 </li>
                 @foreach ($blogsCategories as $cat)
                     <li class=""> 
-                        <a href="{{ url('blog/').'/'.$cat->slug }}" class="btn btn-outline-secondary @if($categoryId == $cat->id) active  @endif">{{ $cat->name }}</a>
+                        
+                        <a href="{{ url('blog/').'/'.$cat->slug }}" class="btn btn-outline-secondary @if($catSlug == $cat->slug) active  @endif">{{ $cat->name }}</a>
                     </li>
                 @endforeach
             </ul>.
@@ -26,7 +27,7 @@
                     @else
                     @foreach ($blogs as $blog)
                     <div class="blog-col">
-                        <a href="{{ route('blog.detail',['id' => $blog->id]) }}">
+                        <a href="{{ url('blog/detail/').'/'.$blog->slug }}">
                             <article class="blog-list-card">
                                 <p class="blog-list-title">
                                     {{$blog->title}}
