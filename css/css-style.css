@@ -9975,7 +9975,10 @@ body { margin: 0; }
   width: 280px;
   z-index: 999;
 }
-
+.hot-spot .tip-upside{
+	bottom: calc(100% + 20px);
+	top: auto;
+}
 .hot-spot .tooltip .img-row {
   padding: 10px;
   text-align: center;
