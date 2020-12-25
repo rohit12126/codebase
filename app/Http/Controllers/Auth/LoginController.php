@@ -57,10 +57,11 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback($provider) {
-       
-       try {
-           $user = Socialite::driver($provider)->user();
+        try {
+            $user = Socialite::driver($provider)->user();
+            dd($user);
        } catch (Exception $e) {
+            dd($e);
            return redirect('/login');
        }
 
