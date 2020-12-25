@@ -100,7 +100,7 @@
 
                     <div class="hot-spot" x="550" y="360">
                         <div class="circle"></div>
-                        <div class="tooltip">
+                        <div class="tooltip tip-upside">
                             <div class="img-row">
                                 <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
                             </div>
