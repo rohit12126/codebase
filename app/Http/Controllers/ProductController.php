@@ -172,6 +172,11 @@ class ProductController extends Controller
     public function configure(Request $req, $slug) {
         $cart = [];
         $productData = $this->productManager->getProductWithReviewBySlug($slug);
+        
+        if($productData === false) {
+            return  redirect()->route('notFound');
+        }
+        
         if ($productData) {
             $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
