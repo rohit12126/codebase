@@ -67,7 +67,7 @@ class ProductController extends Controller
         $cart = [];
         $productData = $this->productManager->getProductWithReviewBySlug($slug);
         $categoryId = $productData['product']->category_id;
-        $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId);
+        $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId, $productData['product']->id);
         if ($productData) {
             $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
