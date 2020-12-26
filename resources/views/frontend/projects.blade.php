@@ -5,7 +5,7 @@
             <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Projects</h1>
             <div class="blog-row justify-content-center">
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/science-city-at-union-station/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one

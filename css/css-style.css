@@ -7665,6 +7665,7 @@ a:hover {
 	box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
 	font-size: 0.875rem;
 	padding: 0.625rem;
+	z-index: 999;
 }
 
 .head-alert-bar a {
@@ -9099,7 +9100,7 @@ h5 {
 .blog-view-card h2, .blog-view-card h3,.blog-view-card h4, .blog-view-card h5
 {
 	padding: 0;
-	margin: 40px 0 0;
+	margin: 40px 0 1rem 0;
 	font-weight: 600;
 	color: #333;
 }
@@ -10186,6 +10187,33 @@ body { margin: 0; }
     z-index: 999;
     max-width: 120px;
     max-height: max-content;
+}
+/* ================== projects-detail ==================== */
+.project-main-wrap{
+	width: 100%;
+	height: calc(100vh - 128px);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.project-main-wrap:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+}
+.project-title-wrap{
+	z-index: 9;
+	position: relative;
+}
+.project-main-wrap h1{
+	font-size: 3rem;
+	color: #F4F3E0 !important;
 }
 /* =================404==================== */
 .notfound-title
