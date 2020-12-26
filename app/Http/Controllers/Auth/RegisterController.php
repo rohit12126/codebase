@@ -122,8 +122,7 @@ class RegisterController extends Controller
                 'redirect' => $redirectUrl
             );
         }
-        
-        dd(Auth::user());
+
         echo json_encode($response);
     }
 }
