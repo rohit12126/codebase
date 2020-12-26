@@ -57,22 +57,33 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback($provider) {
-        try {
-            $user = Socialite::driver($provider)->user();
-            dd($user);
-       } catch (Exception $e) {
-            dd($e);
-           return redirect('/login');
-       }
 
-       if($user->getemail()== null){
-        return redirect()->route('register');
+        $userSocial = Socialite::driver($social)->user();
+        $user = User::where(['email' => $userSocial->getEmail()])->first();
+        if($user){
+            Auth::login($user);
+            return redirect()->route('account');
+        }else{
+            return view('auth.register',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
+        }
     }
+            
+//         try {
+//             $user = Socialite::driver($provider)->user();
+//             dd($user);
+//        } catch (Exception $e) {
+//             dd($e);
+//            return redirect('/login');
+//        }
 
-       $authUser = $this->findOrCreateUser($user, $provider);
-       Auth::login($authUser, true);
-       return redirect()->route('account');
-   }
+//        if($user->getemail()== null){
+//         return redirect()->route('register');
+//     }
+
+//        $authUser = $this->findOrCreateUser($user, $provider);
+//        Auth::login($authUser, true);
+//        return redirect()->route('account');
+//    }
    public function findOrCreateUser($providerUser, $provider)
    {
        $account = SocialIdentity::whereProviderName($provider)
