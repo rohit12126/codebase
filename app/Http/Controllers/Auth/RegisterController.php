@@ -116,7 +116,6 @@ class RegisterController extends Controller
             } else {
                 $redirectUrl = route('account');
             }
-            dd(Auth::user());
             $response = array(
                 'status' => 'success',
                 'response_code' => 200,
