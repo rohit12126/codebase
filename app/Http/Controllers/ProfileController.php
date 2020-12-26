@@ -62,6 +62,7 @@ class ProfileController extends Controller
         
         $user = $this->userManager
                 ->getCurrentUser();
+        dd($user);
         if (is_null($user)) {
             return redirect('/');
         } 
