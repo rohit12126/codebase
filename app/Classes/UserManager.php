@@ -138,7 +138,7 @@ class UserManager
     public static function getCurrentUser()
     {
         $user = Auth::user();
-        dd($usr);
+        dd($user);
         return Auth::user();
     }
 }
