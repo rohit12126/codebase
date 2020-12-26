@@ -103,7 +103,8 @@ class RegisterController extends Controller
             $this->validator($request->all())->validate();
             $user = $this->create($request->all());
             $this->guard()->login($user);
-            
+            $user = Auth::user();
+            dd($user);
             if (Auth::check()) {
                 $user = Auth::user();
                 Mail::to($user->email)->send(new UserRegistration($user));
