@@ -129,11 +129,10 @@
                                 </div>
                                 <div class="col-md-6 mt-3 mt-md-0">
                                     <label for="">Image <span class="mandatory">*</span></label>
-                                    <div class="form-group" id="moreImage">
-                                     <div class="container">
+                                    <div id="moreImage">
                                         <div class="row">
-                                        @if(isset($product->images) && count(@$product->images) > 0)
-                                        @foreach($product->images as $key => $value)
+                                            @if(isset($product->images) && count(@$product->images) > 0)
+                                            @foreach($product->images as $key => $value)
                                             <div class="col-sm-4 imgUp">
                                                 <div class="imagePreview"style="background-image: url({{ url('') }}/upload/product/{{ $value->image }});"title="Item image preview" >
                                                 </div>
@@ -145,28 +144,23 @@
                                             <div class="imgAdd d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="right" title="Click to add more images">
                                                 <i class="fa fa-plus"></i>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                        @else
-                                    
-                                        <br><div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-4 imgUp">
-                                                <div class="imagePreview" title="Item image preview">
-                                                    <img src="{{ url('/download.jpeg') }}" class="previewImage0 w-100 h-100" width="100" />
+                                            @else
+                                            <br>
+                                                <div class="col-sm-4 imgUp">
+                                                    <div class="imagePreview" title="Item image preview">
+                                                        <img src="{{ url('/download.jpeg') }}" class="previewImage0 w-100 h-100" width="100" />
+                                                    </div>
+                                                    <label class="btn btn-danger"  title="Only image type jpg/png/jpeg is allowed">
+                                                        Upload
+                                                    <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
+                                                    </label>
+                                                    <div class="image-error0 error-img"></div>
                                                 </div>
-                                                <label class="btn btn-danger"  title="Only image type jpg/png/jpeg is allowed">
-                                                    Upload
-                                                <input type="file" name="image[]" required class="uploadFile img" id="0" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;" title="Only image type jpg/png/jpeg is allowed">
-                                                </label>
-                                                <div class="image-error0 error-img"></div>
-                                            </div>
-                                            <div class="imgAdd d-flex align-items-center justify-content-center">
-                                                <i class="fa fa-plus" title="Click to add more images"></i>
-                                            </div>
+                                                <div class="imgAdd d-flex align-items-center justify-content-center">
+                                                    <i class="fa fa-plus" title="Click to add more images"></i>
+                                                </div>
+                                            @endif
                                         </div>
-                                        @endif
                                     </div>
                                     <div class="image-error error-img"></div>
                                     @if($errors->has('image'))

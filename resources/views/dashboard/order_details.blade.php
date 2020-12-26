@@ -137,5 +137,4 @@
 @endsection
 
 @section('javascript')
-
 @endsection

@@ -9394,6 +9394,11 @@ html:not([dir="rtl"]) .navbar-nav {
     padding-right: 0;
     padding-left: 0;
   }
+  .position-managed-btn{
+    position: absolute;
+    right: 15px;
+    bottom: 1rem;
+  }
 }
 
 @media (min-width: 576px) {
@@ -20238,9 +20243,6 @@ body {
   max-height: 100%;
   max-width: 100%;
 }
-.imgUp:first-child{
-  padding-left: 0;
-}
 .btn-primary {
   display:block;
   /* border-radius:0px; */
@@ -20392,4 +20394,11 @@ a, a:hover {
   bottom: 0;
   right: 0;
   margin: 0 auto;
+}
+.w-max-content{
+  width: max-content;
+}
+.min-w-max-content{
+  min-width: 100%;
+  width: max-content;
 }

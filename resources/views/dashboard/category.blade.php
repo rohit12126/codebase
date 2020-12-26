@@ -109,6 +109,7 @@
             </div>
             <div class="card-body">
                 <div class="overflow-auto table-responsive">
+                    <div class="table-swipe-indicator"></div>
                     <table class="table table-striped table-bordered datatable">
                         @if($category_list->isNotEmpty())
                             <thead>
