@@ -66,6 +66,7 @@ class ProfileController extends Controller
         dump($userID);
         dump(Auth::id());
         dump(Auth::user());
+        dump(auth()->user());
 
         dd($session);
         $user = Auth::user();
