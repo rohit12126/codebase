@@ -166,7 +166,7 @@ class BlogManager
     
     public function getBlog($blogId)
     {
-        $blog = BlogModel::with('catergory')->find($blogId);
+        $blog = BlogModel::with('catergory')->where('status', 1)->find($blogId);
         return $blog;
     }
 
@@ -174,7 +174,11 @@ class BlogManager
     {
         $blog = BlogModel::with('catergory')
             ->where('slug', $slug)
+            ->where('status', 1)
             ->first();
+        if (is_null($blog)){
+            return false;
+        }
         return $blog;
     }
 

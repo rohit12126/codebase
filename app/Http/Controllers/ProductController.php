@@ -66,8 +66,11 @@ class ProductController extends Controller
     public function detail(Request $req, $slug) {
         $cart = [];
         $productData = $this->productManager->getProductWithReviewBySlug($slug);
+        if($productData === false) {
+            return  redirect()->route('notFound');
+        }
         $categoryId = $productData['product']->category_id;
-        $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId);
+        $relatedProducts = $this->productManager->getProductsByCategoryId($categoryId, $productData['product']->id);
         if ($productData) {
             $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
@@ -169,6 +172,11 @@ class ProductController extends Controller
     public function configure(Request $req, $slug) {
         $cart = [];
         $productData = $this->productManager->getProductWithReviewBySlug($slug);
+        
+        if($productData === false) {
+            return  redirect()->route('notFound');
+        }
+        
         if ($productData) {
             $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);

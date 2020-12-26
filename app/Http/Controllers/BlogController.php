@@ -51,7 +51,9 @@ class BlogController extends Controller
     public function detail(Request $req, $slug) {
         
         $blog = $this->blogManager->getBlogBySlug($slug);
-        
+        if($blog === false) {
+            return  redirect()->route('notFound');
+        }
         $recent = $this->blogManager->getRecentBlogs($blog->id);
         return view('frontend.blog-detail',[
             'blog' => $blog,

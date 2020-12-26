@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Notifications\ResetPasswordNotification; // must kept here, to overwrite default
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,6 +57,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Address', 'user_id');
 
+    }
+    public function sendPasswordResetNotification($token)
+    {
+    $this->notify(new ResetPasswordNotification($token));
     }
     public function identities() {
         return $this->hasMany('App\SocialIdentity');

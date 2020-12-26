@@ -66,14 +66,14 @@ class OrderController extends Controller
                 $orderData['billing_address'] = $req->session()->get('bill');
                 $orderData['shipping_address'] = $req->session()->get('ship');
                 $orderData['status'] = 1;
-                $orderData['grand_total'] = (float) $this->cartManager->subTotal();
+                
+                $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
+                $orderData['grand_total'] = (float) $cartSubTotal;
                 
                 $order = $this->orderManager->addOrder($orderData);
             
                 $cartProducts = $this->cartManager->getCartContain();
 
-                //session()
-                
                 foreach ($cartProducts as $key => $product) {
                     $orderProduct = [
                         'order_no' => $orderNumber,

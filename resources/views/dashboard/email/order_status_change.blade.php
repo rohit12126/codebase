@@ -69,7 +69,7 @@
                                                                     @endif
                                                                     <tr style="margin:0;padding:0">
                                                                         <td style="padding:0% 3% 0% 0%" colspan="2">
-                                                                        <a href="{{url('orderdetails/').$data['order_no']}}" style="text-decoration:none;float:left;background:white;padding:10px 30px 12px 24px;margin-top:10px;margin-bottom:10px;border-radius:4px;text-transform:uppercase;font-family:'Lato',sans-serif;font-size:4px;line-height:4px" href="#" target="_blank">
+                                                                        <a href="{{url('account/orderdetails/').'/'.$data['order_no']}}" style="text-decoration:none;float:left;background:white;padding:10px 30px 12px 24px;margin-top:10px;margin-bottom:10px;border-radius:4px;text-transform:uppercase;font-family:'Lato',sans-serif;font-size:4px;line-height:4px" href="#" target="_blank">
                                                                             <p style="letter-spacing:0.44px;font-family:'Lato',sans-serif;font-weight:bold;font-size:16px;color:black">
                                                                                 TRACK MY ORDER
                                                                             </p>

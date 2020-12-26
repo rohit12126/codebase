@@ -41,6 +41,14 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        $this->validate(
+            $request, 
+            [
+                'email' => 'required|email|unique:users,email,'.$request->id.',id',
+                'mobile' => 'required|unique:users,mobile,'.$request->id.',id'
+            ]
+        );
+
         if($this->userManager->edit($request)){
             return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
         }
@@ -60,9 +68,9 @@ class ProfileController extends Controller
         $orders = $this->orderManager
                     ->getOrderByUserId($user->id);
         $shippingAddress =  $this->addressManager
-                ->getAddresses($user->id,1,0);
+                ->getAddresses($user->id, 1, 0);
         $billingAddress=$this->addressManager
-                ->getAddresses($user->id,2,0);
+                ->getAddresses($user->id, 2, 0);
         $this->cartManager->synchCart($user->id);
         
         return view('frontend.account',[
@@ -72,6 +80,7 @@ class ProfileController extends Controller
                 'billingAddress' => $billingAddress
             ]);
     }
+    
     /**
      * Get Order Details Of OrderId
      * @param OrderId

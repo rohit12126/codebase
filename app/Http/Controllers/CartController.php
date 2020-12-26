@@ -148,9 +148,9 @@ class CartController extends Controller
         if ($isTemp == 1) {
             UserManager::updateTempUser(
                 $userId,
-                $req->bill_email,
-                $req->bill_name,
-                $req->bill_phone
+                $req->bill_name
+                //$req->bill_email,
+                //$req->bill_phone
             );
         }
         /* Shipping Address */

@@ -179,6 +179,11 @@
 @section('scripts')
 <script>
     jQuery(document).ready(function(){
+
+        if (performance.navigation.type == 2) {
+            location.reload(true);
+        }
+        
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
             var productId = $(".product-id").val();

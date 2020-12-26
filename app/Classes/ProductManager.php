@@ -192,11 +192,15 @@ class ProductManager
         return $products;
     }
 
-    public function getProductsByCategoryId($categoryId) {
+    public function getProductsByCategoryId($categoryId, $productId = 0) {
         
         $products = ProductModel::with('images', 'catergory');
         if (!empty($categoryId)) {
             $products = $products->where('category_id', $categoryId);
+        }
+
+        if (!empty($productId)) {
+            $products = $products->where('id', '!=', $productId);
         }
         $products = $products->where('status', 1)
             ->get();
@@ -243,6 +247,7 @@ class ProductManager
     {   
         $product = ProductModel::with('images', 'catergory', 'productDescription')
             ->where('slug', $slug)
+            ->where('status', 1)
             ->first();
 
         if (is_null($product)){
