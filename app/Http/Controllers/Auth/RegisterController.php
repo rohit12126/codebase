@@ -108,7 +108,7 @@ class RegisterController extends Controller
                 $user = Auth::user();
                 Mail::to($user->email)->send(new UserRegistration($user));
             }
-
+            
             $redirectUrl = url()->previous();
             
             if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
