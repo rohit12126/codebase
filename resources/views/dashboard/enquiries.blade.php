@@ -27,28 +27,28 @@
                             <div class="col-12">
                                 <form method="GET" action="{{ url()->current() }}">
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
                                                 <div class="form-group">
                                                     <label>Search via Name</label>
                                                     <input type="text" placeholder="Name" name="name"
                                                     class="form-control" value="{{ @$_GET['name'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
                                                 <div class="form-group">
                                                     <label>Search via Email</label>
                                                     <input type="text" placeholder="Email" name="email"
                                                     class="form-control" value="{{ @$_GET['email'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
                                                 <div class="form-group">
                                                 <label>Search via Phone</label>
                                                 <input type="number" placeholder="Phone" name="phone"
                                                     class="form-control" value="{{ @$_GET['phone'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
                                                 <div class="form-group">
                                                 <label>Is connected ?</label>
                                                     <select name="connected" id="connected" class="form-control">
@@ -58,8 +58,8 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <div class="form-group mb-0">
+                                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                                <div class="form-group">
                                                 <label>Reason</label>
                                                     <select name="reason" id="reason" class="form-control">
                                                         <option value="">Please select</option>
@@ -70,7 +70,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-3 d-flex align-items-end">
+                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-end mb-3">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
@@ -85,19 +85,19 @@
                     </div>
                     <div class="card-body">
                     @include('partials.alert_msg')
-                        <div class="overflow-auto mb-2">
+                        <div class="overflow-auto table-responsive">
                             <table class="table table-striped table-bordered datatable">
                                 @if($enquieies->isNotEmpty())
-
+                                <div class="table-swipe-indicator"></div>
                                     <thead>
                                         <tr>
-                                            <th>S No.</th>
+                                            <th class="serial-number-th">S No.</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Reason</th>
                                             <th>Message</th>
-                                            <th>Connected ?</th>
+                                            <th class="action-th">Connected ?</th>
                                         </tr>
                                     </thead>
                                     <tbody>
