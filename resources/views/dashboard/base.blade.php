@@ -128,6 +128,16 @@
         $(".tooltip").remove();
       });
       
+      $(".table-responsive").on("mouseover", function () {
+        $(".table-swipe-indicator").css("display","none");
+      });
+      $(".table-responsive").on("mousedown", function () {
+          $(".table-swipe-indicator").css("display","none");
+      });
+      $(".table-responsive").on("touchstart", function () {
+          $(".table-swipe-indicator").css("display","none");
+      });
+      
       $(window).on('load', function () {
         $('#sitePreloader').fadeOut();
       }); 
