@@ -26,18 +26,18 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-md-9">
+                            <div class="col-md-9 col-sm-8">
                                 <form method="GET" action="{{ url()->current() }}">
                                     <div class="row">
-                                        <div class="col-sm-4 col-8">
-                                            <div class="form-group mb-sm-0">
+                                        <div class="col-sm-6 col-8">
+                                            <div class="form-group mb-0">
                                             <label>Search via Title</label>
                                             <input type="text" placeholder="Title" name="title"
                                                 class="form-control" value="{{ @$_GET['title'] }}">
                                             </div>
                                         </div>
-                                        <div class="col-sm-4 d-flex align-items-end">
-                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                        <div class="col-4 d-flex align-items-end pl-0">
+                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-3 mt-0" >
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
                                             <a href="{{route('admin.blog.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
@@ -47,7 +47,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
+                            <div class="col-md-3 col-sm-4 d-flex align-items-end justify-content-sm-end mt-3 mt-sm-0">
                                 <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create New Blog" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New Blog">
                                     <i class="cil-plus"></i> Create Blog
                                 </a>
@@ -55,15 +55,16 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="overflow-auto mb-2">
+                        <div class="overflow-auto table-responsive mb-2">
+                            <div class="table-swipe-indicator"></div>
                             <table class="table table-striped table-bordered datatable">
                                 @if($blog_list->isNotEmpty())
                                     <thead>
                                         <tr>
-                                            <th>S No.</th>
+                                            <th class="serial-number-th">S No.</th>
                                             <th>Featured Image</th>
                                             <th>Title</th>
-                                            <th>Action</th>
+                                            <th class="action-th">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -25,7 +25,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row position-relative">
                             <div class="col-xl-9">
                                 <h4 class="mb-3">Non Approved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
@@ -45,14 +45,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-xl-3">
-                                                <div class="form-group">
+                                                <div class="form-group mb-sm-0">
                                                 <label>Search via Review</label>
                                                 <input type="text" placeholder="Review" maxlength="200" name="review"
                                                     class="form-control" value="{{ @$_GET['review'] }}">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-3 d-flex align-items-center pt-2">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                            <div class="col-sm-6 col-xl-3 d-flex align-items-end align-items-xl-center pt-2">
+                                                <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-3 mt-0" >
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                                 <a href="{{route('admin.toaprooved')}}" title="Reset Filters"  class="btn btn-danger text-white">
@@ -62,8 +62,8 @@
                                         </div>
                                 </form>
                             </div>
-                            <div class="col-xl-3 d-flex align-items-end justify-content-xl-end mt-3 mt-xl-0">
-                                <a href="{{ route('admin.aprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger pull-right">
+                            <div class="col-xl-3 d-flex align-items-end justify-content-xl-end">
+                                <a href="{{ route('admin.aprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger position-managed-btn-lg mb-xl-3">
                                     Approved Review
                                 </a>
                             </div>
@@ -71,45 +71,48 @@
                     </div>
                     <div class="card-body">
                     @include('partials.alert_msg')
-                        <table class="table table-striped table-bordered datatable">
-                            @if($approved->isNotEmpty())
-                                <thead>
-                                    <tr>
-                                        <th>S No.</th>
-                                        <th>Rating</th>
-                                        <th>Review</th>
-                                        <th>Item</th>
-                                        <th>User</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($approved as $key => $value)
+                        <div class="overflow-auto table-responsive mb-2">
+                            <table class="table table-striped table-bordered datatable">
+                                @if($approved->isNotEmpty())
+                                    <div class="table-swipe-indicator"></div>
+                                    <thead>
                                         <tr>
-                                            <td>{{ $key+1 }}</td>
-                                            <td>{{ $value->rating }}</td>
-                                            <td>{{ $value->body }}</td>
-                                            <td>{{ $value->product_name }}</td>
-                                            <td>{{ $value->user_name }}</td>
-                                            <td>
-                                                <a class="btn btn-info" href="{{ url('admin/review/approv', $value->id) }}" title="Approve This Review">
-                                                    <i class="cil-thumb-up"></i>
-                                                </a>
-                                                <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
-                                                    <i class="cil-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>                       
-                                    @endforeach
-                                </tbody>
-                            @else
-                                <tfoot>
-                                    <tr>
-                                        <th colspan="6" class="text-center">Review list is empty</th>
-                                    </tr>
-                                </tfoot>
-                            @endif
-                        </table>
+                                            <th class="serial-number-th">S No.</th>
+                                            <th>Rating</th>
+                                            <th>Review</th>
+                                            <th>Item</th>
+                                            <th>User</th>
+                                            <th class="action-th">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($approved as $key => $value)
+                                            <tr>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $value->rating }}</td>
+                                                <td>{{ $value->body }}</td>
+                                                <td>{{ $value->product_name }}</td>
+                                                <td>{{ $value->user_name }}</td>
+                                                <td>
+                                                    <a class="btn btn-info" href="{{ url('admin/review/approv', $value->id) }}" title="Approve This Review">
+                                                        <i class="cil-thumb-up"></i>
+                                                    </a>
+                                                    <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
+                                                        <i class="cil-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>                       
+                                        @endforeach
+                                    </tbody>
+                                @else
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="6" class="text-center">Review list is empty</th>
+                                        </tr>
+                                    </tfoot>
+                                @endif
+                            </table>
+                        </div>
                         {{ @$approved->links() }}
                     </div>
                 </div>

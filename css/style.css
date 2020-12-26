@@ -9567,6 +9567,10 @@ html:not([dir="rtl"]) .navbar-nav {
     padding-right: 0;
     padding-left: 0;
   }
+  .position-managed-btn-lg{
+    position: absolute;
+    right: 15px;
+  }
 }
 
 @media (min-width: 1200px) {

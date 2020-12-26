@@ -110,26 +110,29 @@
                 <h4>Order Products</h4>
             </div>
             <div class="card-body">
-                <table class="table table-striped table-bordered table-hover datatable">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Price</th> 
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($order->productList as $key => $value)
-                        <tr>
-                            <td>{{ $value->product->name }}</td>
-                            <td>$ {{ $value->price }}</td>
-                            <td>{{ number_format($value->product_quantity) }}</td>
-                            <td>$ {{ number_format($value->price * $value->product_quantity, 2) }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="overflow-auto table-responsive">
+                    <div class="table-swipe-indicator"></div>
+                    <table class="table table-striped table-bordered table-hover datatable">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th> 
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($order->productList as $key => $value)
+                            <tr>
+                                <td>{{ $value->product->name }}</td>
+                                <td>$ {{ $value->price }}</td>
+                                <td>{{ number_format($value->product_quantity) }}</td>
+                                <td>$ {{ number_format($value->price * $value->product_quantity, 2) }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

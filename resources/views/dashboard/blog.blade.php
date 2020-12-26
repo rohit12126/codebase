@@ -68,14 +68,6 @@
                                             <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
                                         </select>
                                     </div>
-                                    <div class="d-flex pt-4">
-                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
-                                            Submit
-                                        </button>
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
-                                            Cancel
-                                        </a>
-                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="moreImage">
@@ -98,6 +90,16 @@
                                                 <div class="error error-img">{{ $errors->first('image') }}</div>
                                             @endif
                                         <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex mb-2">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
+                                            Submit
+                                        </button>
+                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                            Cancel
+                                        </a>
                                     </div>
                                 </div>
                             </div>
