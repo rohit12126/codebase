@@ -502,9 +502,9 @@ footer-->
                     password_confirmation : Repassword
                 },
                 success: function(result) {
-                    alert('register done');
+                    /* alert('register done');
                     console.log(result);
-                    return false;
+                    return false; */
                     if (result.status == "success") {
                         window.location.href = result.redirect;
                     } else {
