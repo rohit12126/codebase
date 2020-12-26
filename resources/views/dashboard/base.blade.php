@@ -67,6 +67,30 @@
           height:100%;
           overflow: hidden;
       }
+      @media(max-width: 1199){
+        .table-responsive{
+          position: relative;
+        }
+        .table-swipe-indicator{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("../images/swipe.gif");
+            background-color: rgba(1, 1, 1, .2);
+            background-repeat: no-repeat;
+            background-position: 50% 4%;
+            -moz-background-size:142px 60px;
+            -o-background-size:142px 60px;
+            -webkit-background-size: 142px 60px;
+            background-size: 142px 60px;
+            z-index: 999;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+      }
     </style>
   </head>
   <body class="c-app">
