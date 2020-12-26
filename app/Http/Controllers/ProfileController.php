@@ -59,7 +59,8 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function account() {
-        
+        $user = Auth::user();
+        dd($user);
         $user = $this->userManager
                 ->getCurrentUser();
         if (is_null($user)) {
