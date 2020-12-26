@@ -5863,6 +5863,12 @@ footer .widget_title {
 	color: #292b2c;
 	font-weight: 500;
 }
+.ordered-review{
+	text-align: center;
+	font-size: 2.25rem;
+	color: #F6BC3E;
+	cursor: pointer;
+}
 .comment-date {
 	font-style: italic;
 	font-size: 12px;
@@ -7273,10 +7279,10 @@ blockquote p:last-child {
 }
 .dashboard_content .table {
 	margin: 0;
+	border: 1px solid #dee2e6;
 }
 .dashboard_content .table thead th {
 	border: 0;
-	padding-top: 0;
 	font-weight: 600;
 }
 .dashboard_content .table tbody tr:last-child td {
@@ -8108,9 +8114,6 @@ h5 {
     height:100%;
     position:absolute;
     }
-
-
-
     /* Our wrapper */
     .wrapper{
 		max-width: 1200px;
@@ -9231,6 +9234,9 @@ h5 {
 	margin: 0 auto;
 	max-width: 250px;
 }
+.cart-img-hr{
+    margin-bottom: 2rem;
+}
 .cart-box {
 	width: 100%;
 }
@@ -10106,6 +10112,12 @@ body { margin: 0; }
 }
 .custom-success-popup .swal2-icon-show{
 	margin-right: 1rem;
+}
+.swal2-icon.swal2-info{
+	color: #f94e57 !important;
+	border-color: #f94e56cc !important;
+	align-items: center;
+	justify-content: center;
 }
 .custom-success-popup .swal2-title{
 	margin-bottom: 0 !important;

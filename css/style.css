@@ -13421,6 +13421,7 @@ html:not([dir="rtl"]) .c-switch-label .c-switch-slider::after {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .table-responsive > .table-bordered {

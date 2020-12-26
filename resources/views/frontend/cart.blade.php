@@ -9,14 +9,14 @@
             @endphp
             @foreach ($products as $product)
             <div class="row m-0 mb-4 contact_style3 pl-0 pr-0" id="row{{$product->rowId}}">
-                <div class="col-md-5 col-lg-3 col-xl-3">
+                <div class="col-md-5 col-lg-3 col-xl-3 cart-img-hr">
                     <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="cart-for-mobile-img">
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
                     <div>
                         <div class="d-flex justify-content-between">
                             <div class="text-left cart-product-description">
-                                <h5 class="mb-4">{{$product->name}}</h5>
+                                <h5 class="mb-3">{{$product->name}}</h5>
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
