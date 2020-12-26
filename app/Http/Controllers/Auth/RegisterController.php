@@ -121,6 +121,9 @@ class RegisterController extends Controller
                 'response_code' => 200,
                 'redirect' => $redirectUrl
             );
+
+            $session = session()->all();
+            dd($session);
         }
         echo json_encode($response);
     }

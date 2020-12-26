@@ -4,8 +4,8 @@ namespace App\Classes;
 
 use App\User as UserModel;
 use App\Classes\HelperManager as Common;
+use Illuminate\Support\Facades\Auth;
 
-use Auth;
 
 
 class UserManager
