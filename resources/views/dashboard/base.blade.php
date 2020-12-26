@@ -67,7 +67,7 @@
           height:100%;
           overflow: hidden;
       }
-      @media(max-width: 1199){
+      @media(max-width: 1199px){
         .table-responsive{
           position: relative;
         }
@@ -77,10 +77,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url("../images/swipe.gif");
+            background-image: url("{{ asset('images/swipe.gif') }}");
             background-color: rgba(1, 1, 1, .2);
             background-repeat: no-repeat;
-            background-position: 50% 4%;
+            background-position: 50% 5%;
             -moz-background-size:142px 60px;
             -o-background-size:142px 60px;
             -webkit-background-size: 142px 60px;

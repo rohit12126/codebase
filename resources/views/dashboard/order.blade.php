@@ -66,7 +66,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group mb-0">
                                                     <label>Order Status</label>
                                                     <select name="order_status" id="" class="form-control">
@@ -122,18 +122,19 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="overflow-auto mb-2">
+                        <div class="overflow-auto table-responsive mb-2">
+                            <div class="table-swipe-indicator"></div>
                             <table class="table table-striped table-bordered table-hover datatable">
                                 @if($order_list->isNotEmpty())
                                     <thead>
                                         <tr>
-                                            <th>S.No</th>
+                                            <th class="serial-number-th">S.No</th>
                                             <th>Order No.</th>
-                                            <th>Date</th>
+                                            <th class="action-th">Date</th>
                                             <th>Name</th>
                                             <th>Status</th>
                                             <th>Total</th>
-                                            <th>Action</th>
+                                            <th class="action-th">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
