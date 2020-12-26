@@ -57,7 +57,7 @@
         </div>
     </section>
 
-    <section class="home-swip-section p-relative">
+    <section class="home-swip-section">
         <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
         <div id="page">
          <div class="wrapper">

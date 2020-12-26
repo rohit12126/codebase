@@ -6,7 +6,7 @@
 <!-- START SECTION SHOP -->
 <div class="section">
     <div class="container">
-        <h1 class="text-center mb-5">Order Tracking</h1>
+        <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Order Tracking</h1>
         <div class="row mb-4">
             <div class="col-md-6">
                 <h6>Tracking No. : <span class="font-weight-bold">#{{$data->order_no}}</span></h6>
@@ -60,7 +60,7 @@
                 <div class="cart-for-mobile d-block d-lg-none">
                 @foreach($data->productList as $product)
                     <div class="row m-0 mb-4 contact_style3 pl-0 pr-0">
-                        <div class="col-md-5 col-lg-3 col-xl-3">
+                        <div class="col-md-5 col-lg-3 col-xl-3 cart-img-hr">
                             @if (isset($product->product->images[0]->image))
                                 <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                             @else
@@ -162,6 +162,9 @@
         <div class="login_wrap">
               <div class="padding_eight_all bg-white">
                   <form id="review_form">
+                    <div class="form-group">
+                      
+                    </div>
                   <div class="form-group">
                   <label for="review">Write a Review
                   </label>
@@ -173,6 +176,13 @@
                   <div class="form-group">
                   <label for="rating">Rate us Out of 5 :)</label>
                   <span class="mandatory">*</span>
+                    <div class="ordered-review mb-2">
+                        <i class="ion-android-star"></i>
+                        <i class="ion-android-star"></i>
+                        <i class="ion-android-star"></i>
+                        <i class="ion-android-star-outline"></i>
+                        <i class="ion-android-star-outline"></i>
+                    </div>
                       <select class="form-control" name="rating">
                           <option value="1">1</option>
                           <option value="2">2</option>

@@ -24,7 +24,24 @@
     <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer=""></script>
     <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
     <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
-
+    <style>
+        #sitePreloader{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:url("{{URL::asset('/images/loader.gif')}}") no-repeat #FFFFFF 50%;
+            -moz-background-size:140px 89px;
+            -o-background-size:140px 89px;
+            -webkit-background-size: 140px 89px;
+            background-size: 140px 89px;
+            z-index: 9999;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css-ionicons.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/css-themify-icons.css')}}">
@@ -47,6 +64,7 @@
 </head>
 
 <body >
+<div id="sitePreloader"></div>
 <header class="head-bar">
         <div class="main-header clearfix">
             <div class="head-info d-inline-block">
@@ -349,6 +367,9 @@ footer-->
 </script>
 @yield('scripts')
 <script>
+    $(window).load(function(){
+    $('#sitePreloader').fadeOut();
+    });
     $(".main-toggler").on("click", function () {
         $(".main-toggler").toggleClass("opened");
         $(".head-navbar").toggleClass("nav-open");

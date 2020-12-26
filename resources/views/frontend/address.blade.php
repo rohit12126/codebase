@@ -36,36 +36,32 @@
             <div class="row">
                 <div class="col-md-6">
                     @if(isset($billingAddresses))
-                        <div class="row">
+                        <div class="">
                             <div class="address-billing-wrapper">
-                                <h4>Continue with Current Address</h4>
-                                <div class="custom-card-block mb-3 mt-5">
-                                    <div class="custom-card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 mb-3">
-                                                <div class="card">                        
-                                                    <input type="hidden" value="{{$billingAddresses->id}}" name="billing_address">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{$billingAddresses->name}}</h5>
-                                                        <h6 class="card-subtitle mb-2 text-muted">{{$billingAddresses->mobile}}</h6>
-                                                        <p class="card-text">{{$billingAddresses->address}}</p>
-                                                        <p class="card-text">{{$billingAddresses->city.", ".$billingAddresses->state.", ".$billingAddresses->country }} ({{$billingAddresses->zipcode}})</p> 
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="heading_s1">
+                                    <h4>Current Address</h4>
+                                </div>
+                                <div class="custom-card-block mb-4 mt-3">
+                                    <div class="align-items-center">
+                                        <div class="card-body">
+                                            <input type="hidden" value="{{$billingAddresses->id}}" name="billing_address">
+                                            <h5 class="card-title">{{$billingAddresses->name}}</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">{{$billingAddresses->mobile}}</h6>
+                                            <p class="card-text">{{$billingAddresses->address}}</p>
+                                            <p class="card-text">{{$billingAddresses->city.", ".$billingAddresses->state.", ".$billingAddresses->country }} ({{$billingAddresses->zipcode}})</p> 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <a class="btn btn-sm btn-danger" title="Add new address" data-toggle="collapse" href="#addressForm" role="button" aria-expanded="false" aria-controls="addressForm" id="addressCollapse">
+                        <div class="">
+                            <a class="btn btn-sm btn-fill-out" title="Add new address" data-toggle="collapse" href="#addressForm" role="button" aria-expanded="false" aria-controls="addressForm" id="addressCollapse">
                                 + Update New
                             </a>
                         </div> 
                     @endif
                     {{-- Address Form--}}
-                    <div class="mt-5 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
+                    <div class="mt-4 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="heading_s1">
@@ -101,14 +97,14 @@
                                     </div>
                                 </div>
                                 <div class="pb-3">
-                                    <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                    <a class="btn btn-sm btn-fill-out" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
                                         + Add New
                                     </a>
                                 </div>
                                 @endif --}}
     
                                 {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
-                                    <div class="pt-3 pb-3">
+                                    <div class="pb-3">
                                         <div class="form-group">
                                             {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
                                             <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(!isset($billingAddresses)) value="{{ $userData->name ?? '' }}" @endif placeholder="Name *">
@@ -173,13 +169,13 @@
                                     </div>
                                 </div>
                                 <div class="pb-3">
-                                    <a class="btn btn-sm btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                    <a class="btn btn-sm btn-fill-out" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample2">
                                         + Add New
                                     </a>
                                 </div>
                                 @endif --}}
                                 {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample3"> --}}
-                                    <div class="pt-3 pb-3">
+                                    <div class="pb-3">
                                         <div class="form-group">
                                             <input type="text" maxlength="150" required="" class="form-control ship" id="ship_name" name="ship_name" value="" placeholder="Name *">
                                         </div>

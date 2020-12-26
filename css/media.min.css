@@ -9,7 +9,7 @@
 }
 @media (max-width: 1199px) {
     body{
-        padding-top: 106px;
+        padding-top: 122px;
     }
     .section-img-content, .section-text-wrapper h2,h2
     {
@@ -37,7 +37,7 @@
     }
 }
 
-@media(max-width:1140px){
+@media(max-width:1154px){
     .head-nav-link {
         font-size: 0.6rem;
         padding: 0 0.4rem;
@@ -80,12 +80,12 @@
 @media (max-width: 991px) {
     .head-navbar,.head-nav-ul.head-sub-menu
     {
-        height: calc(100vh - 67px);
+        height: calc(100vh - 87px);
         overflow-y: scroll;
         overflow-x: hidden;
         position: fixed;
         left: -100%;
-        top: 67px;
+        top: 87px;
         z-index: 99;
         width: 100%;
         background-color: #FFF;
@@ -294,6 +294,10 @@
     }
     .wrapper{
         height: 400px;
+        transform: translate3d(-50%,-58%,0);
+    }
+    .home-swip-section{
+        min-height: 600px;
     }
     #hotspotImg img,#secondhotspotImg img{
         max-width: unset;
@@ -301,6 +305,16 @@
     #secondhotspotImg img{
         width: auto;
         height: 100%;
+    }
+    .tooltip{
+        transform: scale(0.7);
+        top: -22px !important;
+    }
+    .tip-upside{
+        transform: scale(0.7);
+        bottom: -30px !important;
+        right: auto !important;
+        top: auto !important;
     }
 }
 @media (min-width: 576px){
@@ -371,8 +385,9 @@
     }
     .custom-success-popup .swal2-success-line-long {
         width: 25px !important;
-        right: -9px !important;
+        right: auto !important;
         top: 16px !important;
+        left: 12px !important;
     }
     .custom-success-popup .swal2-success-line-tip {
         width: 12px !important;
@@ -424,6 +439,13 @@
     #hotspotImg img,#secondhotspotImg img{
         transform: translateX(-16%);
     }
+    .item_remove{
+        padding: 5px 10px;
+    }
+    .swal2-icon.swal2-info{
+        font-size: 30px;
+        line-height: 60px;
+    }
 }
 
 @media (min-width: 1400px)
@@ -463,5 +485,9 @@
     }
     .head-logo{
         max-width: 170px;
+    }
+    .head-navbar, .head-nav-ul.head-sub-menu{
+        height: calc(100vh - 82px);
+        top: 82px;
     }
 }
