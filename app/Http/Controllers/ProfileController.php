@@ -27,7 +27,7 @@ class ProfileController extends Controller
         AddressManager $addressManager
     )
     {
-        
+        $this->middleware('auth');
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
         $this->userManager =$userManager;
