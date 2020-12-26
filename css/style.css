@@ -20360,7 +20360,10 @@ body {
   font-size: 11px;
 }
 .serial-number-th{
-  width: 80px;
+  min-width: 80px;
+}
+.action-th{
+  min-width: 130px;
 }
 .head-logo {
   max-width: 190px;
