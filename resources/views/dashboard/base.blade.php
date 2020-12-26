@@ -127,9 +127,10 @@
       $(".btn-danger").on("click", function () {
         $(".tooltip").remove();
       });
+      
       $(window).on('load', function () {
         $('#sitePreloader').fadeOut();
-      });
+      }); 
     </script>
   </body>
 </html>
