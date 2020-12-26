@@ -502,6 +502,8 @@ footer-->
                     password_confirmation : Repassword
                 },
                 success: function(result) {
+                    console.log(result);
+                    return false;
                     if (result.status == "success") {
                         window.location.href = result.redirect;
                     } else {
