@@ -25,7 +25,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row position-relative">
                             <div class="col-xl-9">
                                 <h4 class="mb-3">Approved Review List</h4>
                                 <form method="GET" action="{{ url()->current() }}">
@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-xl-3 d-flex align-items-end">
-                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-3 mt-0" >
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
                                             <a href="{{route('admin.aprooved')}}" title="Reset Filters"  class="btn btn-danger text-white">
@@ -62,8 +62,8 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-xl-3 d-flex align-items-end justify-content-xl-end mt-3 mt-xl-0">
-                                <a href="{{ route('admin.toaprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger pull-right">
+                            <div class="col-xl-3 d-flex align-items-end justify-content-xl-end">
+                                <a href="{{ route('admin.toaprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger position-managed-btn-lg">
                                     Non Approved Review
                                 </a>
                             </div>
@@ -71,17 +71,18 @@
                     </div>
                     <div class="card-body">
                     @include('partials.alert_msg')
-                        <div class="overflow-auto mb-2">
+                        <div class="overflow-auto table-responsive mb-2">
                             <table class="table table-striped table-bordered datatable">
                                 @if($approved->isNotEmpty())
+                                <div class="table-swipe-indicator"></div>
                                     <thead>
                                         <tr>
-                                            <th>S No.</th>
+                                            <th class="serial-number-th">S No.</th>
                                             <th>Rating</th>
                                             <th>Review</th>
                                             <th>Item</th>
                                             <th>User</th> 
-                                            <th>Action</th>
+                                            <th class="action-th">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
