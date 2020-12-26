@@ -5,6 +5,7 @@
         <div class="card-body">
 			<div class="table-responsive">
                 @if (!empty($orders->isNotEmpty()))
+                    <div class="table-swipe-indicator"></div>
                     <table class="table">
                     <thead>
                         <tr>

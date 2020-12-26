@@ -51,11 +51,28 @@
     .mandatory {
       color: red;
       }
+      #sitePreloader{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background:url("{{URL::asset('/images/loader.gif')}}") no-repeat #FFFFFF 50%;
+          -moz-background-size:140px 89px;
+          -o-background-size:140px 89px;
+          -webkit-background-size: 140px 89px;
+          background-size: 140px 89px;
+          z-index: 9999;
+          width:100%;
+          height:100%;
+          overflow: hidden;
+      }
     </style>
   </head>
   <body class="c-app">
+    <div id="sitePreloader"></div>
     <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-
+      <span class="c-sidebar-close-btn">&times;</span>
       @include('dashboard.shared.nav-builder')
 
       @include('dashboard.shared.header')
@@ -78,5 +95,17 @@
     <script src="{{ asset('js/coreui-utils.js') }}"></script>
     <script src="{{ asset('js/tooltips.js') }}"></script>
     @yield('javascript')
+    <script>
+      $(".c-sidebar-close-btn").on("click", function () {
+        $(this).parent().removeClass("c-sidebar-show");
+        $(".c-sidebar-backdrop").removeClass("c-show");
+      });
+      $(".btn-danger").on("click", function () {
+        $(".tooltip").remove();
+      });
+      $(window).on('load', function () {
+        $('#sitePreloader').fadeOut();
+      });
+    </script>
   </body>
 </html>

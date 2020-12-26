@@ -1523,7 +1523,13 @@ fieldset:disabled a.btn {
   background-color: #F94E57;
   border-color: #F94E57;
 }
-
+a.btn-danger:hover
+{
+  color: #fff !important;
+}
+.btn-danger:hover i{
+  color: #fff;
+}
 @media (hover: hover), (-ms-high-contrast: none) {
   .btn-danger:hover {
     color: #fff;
@@ -13749,7 +13755,19 @@ html:not([dir="rtl"]) .c-switch-label .c-switch-slider::after {
   transition: box-shadow 0.3s 0.15s, transform 0.3s, margin-left 0.3s, margin-right 0.3s, width 0.3s, z-index 0s ease 0.3s;
   transition: box-shadow 0.3s 0.15s, transform 0.3s, margin-left 0.3s, margin-right 0.3s, width 0.3s, z-index 0s ease 0.3s, -webkit-transform 0.3s;
 }
-
+.c-sidebar-close-btn{
+  font-size: 3.25rem;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: -2.5rem;
+  display: none;
+  line-height: 0.8;
+  cursor: pointer;
+}
+.c-sidebar-show .c-sidebar-close-btn{
+  display: block;
+}
 .c-sidebar.c-sidebar-unfoldable {
   transition: margin-left 0.3s, margin-right 0.3s, width 0.3s, z-index 0s ease 0s, -webkit-transform 0.3s;
   transition: transform 0.3s, margin-left 0.3s, margin-right 0.3s, width 0.3s, z-index 0s ease 0s;
