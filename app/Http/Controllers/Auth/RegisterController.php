@@ -110,6 +110,7 @@ class RegisterController extends Controller
             }
             
             $redirectUrl = url()->previous();
+            session()->put('userID', Auth::id());
             
             if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
                // 
@@ -121,11 +122,6 @@ class RegisterController extends Controller
                 'response_code' => 200,
                 'redirect' => $redirectUrl
             );
-
-            $session = session()->all();
-            dump(Auth::id());
-            dump(Auth::user());
-            dd($session);
         }
         echo json_encode($response);
     }

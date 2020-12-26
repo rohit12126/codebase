@@ -59,6 +59,15 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function account() {
+        
+        $session = session()->all();
+        
+        $userID = session()->get('userID');
+        dump($userID);
+        dump(Auth::id());
+        dump(Auth::user());
+
+        dd($session);
         $user = Auth::user();
         dd($user);
         $user = $this->userManager
