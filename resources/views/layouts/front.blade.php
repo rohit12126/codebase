@@ -614,4 +614,13 @@ footer-->
     $(".scroller__thumb").on("touchstart", function () {
         $(".drag-indicator").css("display","none");
     });
+    $(".table-responsive").on("mouseover", function () {
+        $(".table-swipe-indicator").css("display","none");
+    });
+    $(".table-responsive").on("mousedown", function () {
+        $(".table-swipe-indicator").css("display","none");
+    });
+    $(".table-responsive").on("touchstart", function () {
+        $(".table-swipe-indicator").css("display","none");
+    });
 </script>
