@@ -27,7 +27,8 @@ class ProfileController extends Controller
         AddressManager $addressManager
     )
     {
-        
+        //$this->middleware('auth');
+        dd($session = session()->all());
         $this->orderManager = $orderManager;
         $this->cartManager = $cartManager;
         $this->userManager =$userManager;
@@ -60,6 +61,15 @@ class ProfileController extends Controller
      */
     public function account() {
         
+        $session = session()->all();
+        
+        dump(Auth::id());
+        dump(Auth::user());
+        dump(auth()->user());
+
+        dd($session);
+        $user = Auth::user();
+        dd($user);
         $user = $this->userManager
                 ->getCurrentUser();
         if (is_null($user)) {

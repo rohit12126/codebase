@@ -41,6 +41,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        dd(session()->all());
         $this->middleware('guest');
     }
 
@@ -116,13 +117,13 @@ class RegisterController extends Controller
             } else {
                 $redirectUrl = route('account');
             }
-
             $response = array(
                 'status' => 'success',
                 'response_code' => 200,
                 'redirect' => $redirectUrl
             );
         }
+        
         echo json_encode($response);
     }
 }

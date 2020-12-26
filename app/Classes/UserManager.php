@@ -7,6 +7,7 @@ use App\Classes\HelperManager as Common;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class UserManager
 {
     public static function add($req)
