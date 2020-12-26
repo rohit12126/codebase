@@ -106,7 +106,6 @@ class RegisterController extends Controller
             
             if (Auth::check()) {
                 $user = Auth::user();
-                echo "435345345345";die;
                 Mail::to($user->email)->send(new UserRegistration($user));
             }
             
