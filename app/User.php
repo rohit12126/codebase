@@ -27,6 +27,8 @@ class User extends Authenticatable
         'is_temp'
     ];
 
+    protected $primaryKey = 'userId';
+
     /**
      * The attributes that should be hidden for arrays.
      *
