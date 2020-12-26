@@ -122,7 +122,7 @@ class RegisterController extends Controller
                 'redirect' => $redirectUrl
             );
         }
-        Session::save();
+        
         echo json_encode($response);
     }
 }
