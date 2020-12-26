@@ -123,6 +123,8 @@ class RegisterController extends Controller
             );
 
             $session = session()->all();
+            dump(Auth::id());
+            dump(Auth::user());
             dd($session);
         }
         echo json_encode($response);
