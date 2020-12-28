@@ -173,7 +173,9 @@ class OrderManager
     public static function getOrderByUserId($userId)
     {
         return OrderModel::with('productList')
-        ->where("user_id", $userId)->get();
+        ->where("user_id", $userId)
+        ->orderBy('id', 'DESC')
+        ->get();
     }
 
     public static function generateOrderNumber(){
