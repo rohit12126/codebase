@@ -65,10 +65,12 @@
                                 </form>
                             </div>
                             <div class="col-xl-3 d-flex align-items-end justify-content-xl-end">
-                                <a href="{{ route('admin.toaprooved') }}" class="btn custom-tooltip btn-danger position-managed-btn-lg">
-                                    <span class="custom-tooltiptext custom-tooltip-top">View Non Approved Review</span>
-                                    Non Approved Review
-                                </a>
+                               <div class="position-managed-btn-lg">
+                                    <a href="{{ route('admin.toaprooved') }}" class="btn custom-tooltip btn-danger">
+                                        <span class="custom-tooltiptext custom-tooltip-top">View Non Approved Review</span>
+                                        Non Approved Review
+                                    </a>
+                               </div>
                             </div>
                         </div>
                     </div>
