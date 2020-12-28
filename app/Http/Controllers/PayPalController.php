@@ -99,7 +99,7 @@ class PaypalController extends Controller
         try {
             $createProfileResponse = $webProfile->create($this->_api_context);
         } catch (\PayPal\Exception\PayPalConnectionException $ex) {
-            dd($ex);
+            // dd($ex);
             exit(1);
             session()->put('error', 'Some error occur, sorry for inconvenient');
             return redirect()->route('home');

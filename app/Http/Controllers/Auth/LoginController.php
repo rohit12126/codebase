@@ -59,9 +59,9 @@ class LoginController extends Controller
     public function handleProviderCallback($provider) {
         try {
             $user = Socialite::driver($provider)->user();
-            dd($user);
+            // dd($user);
        } catch (Exception $e) {
-            dd($e);
+            // dd($e);
            return redirect('/login');
        }
 

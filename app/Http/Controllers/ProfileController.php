@@ -61,13 +61,13 @@ class ProfileController extends Controller
         
         $session = session()->all();
         
-        dump(Auth::id());
-        dump(Auth::user());
-        dump(auth()->user());
+        // dump(Auth::id());
+        // dump(Auth::user());
+        // dump(auth()->user());
 
-        dd($session);
+        // dd($session);
         $user = Auth::user();
-        dd($user);
+        // dd($user);
         $user = $this->userManager
                 ->getCurrentUser();
         if (is_null($user)) {
