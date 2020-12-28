@@ -160,6 +160,7 @@ class BlogManager
             $blogs = $blogs->where('category_id', $categoryId);
         }
         $blogs = $blogs->where('status', 1)
+            ->orderBy("created_at" ,  'DESC')
             ->paginate(10);
         return $blogs;
     }
