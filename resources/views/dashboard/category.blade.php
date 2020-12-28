@@ -48,7 +48,7 @@
                                         <label>Status</label>
                                         <span class="mandatory">*</span>
                                         <select name="status" id="status" class="form-control">
-                                            <option @if(@$category->status == 0) selected @endif value="0">In-Active</option>
+                                            <option @if(@$category->status == 0) selected @endif value="0">InActive</option>
                                             <option @if(@$category->status == 1) selected @endif value="1">Active</option>
                                         </select>
                                     </div>
