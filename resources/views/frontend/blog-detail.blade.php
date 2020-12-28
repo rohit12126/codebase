@@ -14,7 +14,7 @@
                         <span class="linearicons-share"></span> share
                     </a>
                     <div class="collapse" id="shareIcons">
-                        <a target="_blank" class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://www.facebook.com/sharer/sharer.php?u=${{url()->current()}}&t=">
+                        <a target="_blank" class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=">
                             <img src="{{URL::asset('/images/facebook.svg')}}" alt="">
                             Facebook
                         </a>
