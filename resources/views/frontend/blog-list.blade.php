@@ -7,7 +7,7 @@
         <div>
             <ul class="nav justify-content-center products-tab-ul mb-3">
                 <li class="">
-                    <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($categoryId)) active  @endif">All</a>
+                    <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($catSlug)) active  @endif">All</a>
                 </li>
                 @foreach ($blogsCategories as $cat)
                     <li class=""> 
