@@ -82,11 +82,17 @@
                                         <label>Price In <b>$</b></label>
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Price" name="sale_price" class="form-control" value="{{ old('sale_price', @$product->sale_price) }}" >
+                                        @if($errors->has('sale_price'))
+                                            <div class="error">{{ $errors->first('sale_price') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Cart Limit</label>
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Cart limit" name="max_cart_qty" class="form-control" value="{{ old('max_cart_qty', @$product->max_cart_qty) }}" >
+                                        @if($errors->has('max_cart_qty'))
+                                            <div class="error">{{ $errors->first('max_cart_qty') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Is Hardware ?</label>
@@ -261,6 +267,11 @@ $(function() {
                 required: true
             },
             sale_price: {
+                min: 0,
+                required: true
+            }
+            max_cart_qty:{
+                min: 0,
                 required: true
             }
         },

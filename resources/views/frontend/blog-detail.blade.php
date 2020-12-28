@@ -14,11 +14,11 @@
                         <span class="linearicons-share"></span> share
                     </a>
                     <div class="collapse" id="shareIcons">
-                        <a class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php">
+                        <a target="_blank" class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=">
                             <img src="{{URL::asset('/images/facebook.svg')}}" alt="">
                             Facebook
                         </a>
-                        <a class="blog-back-btn d-block twitter-icon" role="button" data-sharer="twitter" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php">
+                        <a target="_blank" class="blog-back-btn d-block twitter-icon" role="button" data-sharer="twitter" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{url()->current()}}">
                             <img src="{{URL::asset('/images/twitter.svg')}}" alt="">
                             Twitter
                         </a>  
@@ -26,7 +26,7 @@
                             <img src="img/icon/linkedin.svg" alt="">
                             Linkedin
                         </a> -->
-                        <a class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="">
+                        <a target="_blank" class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="" href="http://pinterest.com/pinthis?url=${{url()->current()}}">
                             <img src="{{URL::asset('/images/pinterest.svg')}}" alt="">
                             pinterest
                         </a>
