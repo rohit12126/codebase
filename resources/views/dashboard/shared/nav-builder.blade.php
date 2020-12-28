@@ -44,7 +44,7 @@ if(!function_exists('renderDropdown')){
             || request()->segment(2) == 'edit_category'
         ) c-active @endif" href="{{ route('admin.category') }}">
         <i class="cil-grid c-sidebar-nav-icon"></i>
-            Category
+        Product Category
         </a>
     </li>
     {{-- <li class="c-sidebar-nav-item " title="Find All Hardware Here">
@@ -77,7 +77,7 @@ if(!function_exists('renderDropdown')){
             || request()->segment(2) == 'product'
         ) c-active @endif" href="{{ route('admin.item.list') }}">
         <i class="cil-sitemap c-sidebar-nav-icon"></i>
-            Items
+            Products
         </a>
     </li>
 

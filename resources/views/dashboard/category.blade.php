@@ -5,11 +5,18 @@
 @endsection
 
 @section('breadcrumb')
-    <div class="c-subheader px-3">
+    <div class="c-subheader px-3 justify-content-between">
         <ol class="breadcrumb breadcrumb-custom border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active"><a href="{{ route('admin.category') }}">Category</a></li>
         </ol>
+        @if(!isset($category))
+            <div class="d-flex align-items-center">
+                <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
+                    <i class="cil-plus"></i> Create Category
+                </button>
+            </div>
+        @endif
     </div>
 @endsection
 
@@ -50,7 +57,7 @@
                                     <div class="d-flex h-100 align-items-end">
                                     <div class="d-flex">
                                         <button type="submit" title="@if(isset($category)) Update @else Submit @endif" class="btn btn-primary mt-0 mr-3">
-                                            @if(isset($category)) Update @else Submit @endif
+                                            @if(isset($category)) Update @else Create @endif
                                         </button>
                                         @if(isset($category))
                                         <a href="{{route('admin.category')}}" title="Cancle" class="btn btn-danger text-white">
@@ -98,13 +105,6 @@
                             </div>
                         </form>
                     </div>
-                    @if(!isset($category))
-                        <div class="col-md-3 col-sm-4 d-flex align-items-end justify-content-sm-end mt-3 mt-sm-0">
-                            <button class="btn btn-danger mt-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Category" title="Add New Category" onclick="$('.addForm').show('slow');">
-                                <i class="cil-plus"></i> Create Category
-                            </button>
-                        </div>
-                    @endif
                 </div>
             </div>
             <div class="card-body">
@@ -115,7 +115,7 @@
                             <thead>
                                 <tr>
                                     <th class="serial-number-th">S No.</th>
-                                    <th>Name</th>
+                                    <th>Category Name</th>
                                     <th class="action-th">Action</th>
                                 </tr>
                             </thead>
@@ -125,8 +125,8 @@
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-info" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
-                                            <i class="cil-pencil"></i>
+                                        <button class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="bottom" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
+                                            <i class="cil-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Category"></i>
                                         </button>
                                         <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
                                             <i class="cil-trash"></i>

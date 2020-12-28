@@ -5,12 +5,18 @@
 @endsection
 
 @section('breadcrumb')
-    <div class="c-subheader px-3">
+    <div class="c-subheader px-3 justify-content-between">
         <ol class="breadcrumb breadcrumb-custom border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.item.list') }}">Items</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('admin.product.description', ['product_id' => $productId]) }}">Product Description</a></li>
+            <li class="breadcrumb-item active"><a>Product Description</a></li>
+            <!-- <li class="breadcrumb-item active"><a href="{{ route('admin.product.description', ['product_id' => $productId]) }}">Product Description</a></li> -->
         </ol>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-danger" onclick="$('.addForm').show('slow');" data-toggle="tooltip" data-placement="bottom" title="Add New Description">
+            <i class="cil-plus"></i> Create Description
+            </button>
+        </div>
     </div>
 @endsection
 
@@ -115,11 +121,6 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                        <div class="col-md-3 col-sm-4 d-flex align-items-end justify-content-sm-end mt-3 mt-sm-0">
-                            <button class="btn btn-danger" onclick="$('.addForm').show('slow');" data-toggle="tooltip" data-placement="bottom" title="Add New Description">
-                            <i class="cil-plus"></i> Create Description
-                            </button>
                         </div>
                     </div>
                 </div>

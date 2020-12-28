@@ -8,11 +8,16 @@
 </style>
 @endsection
 @section('breadcrumb')
-    <div class="c-subheader px-3">
+    <div class="c-subheader px-3 justify-content-sm-between">
         <ol class="breadcrumb border-0 m-0">
-        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Items</li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Items</li>
         </ol>
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger">
+                <i class="cil-plus"></i>  Create Item
+            </a>
+        </div>
     </div>
     
 @endsection
@@ -30,7 +35,7 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-8">
                                                 <div class="form-group mb-0">
-                                                <label>Search via Name</label>
+                                                <label>Search by Product Name</label>
                                                 <input type="text" placeholder="Item Name" maxlength="200" name="product_name"
                                                     class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
@@ -57,11 +62,6 @@
                                             </div>
                                         </div>
                                 </form>
-                            </div>
-                            <div class="col-md-3 col-sm-4 d-flex align-items-end justify-content-sm-end mt-3 mt-sm-0">
-                                <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger">
-                                    <i class="cil-plus"></i>  Create Item
-                                </a>
                             </div>
                         </div>
                     </div>

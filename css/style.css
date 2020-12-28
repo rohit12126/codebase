@@ -13403,6 +13403,9 @@ html:not([dir="rtl"]) .c-switch-label .c-switch-slider::after {
   .table-responsive-md > .table-bordered {
     border: 0;
   }
+  .breadcrumb.breadcrumb-custom{
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 991.98px) {

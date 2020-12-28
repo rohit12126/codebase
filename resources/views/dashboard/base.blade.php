@@ -123,11 +123,7 @@
       $(".c-sidebar-close-btn").on("click", function () {
         $(this).parent().removeClass("c-sidebar-show");
         $(".c-sidebar-backdrop").removeClass("c-show");
-      });
-      $(".btn-danger").on("click", function () {
-        $(".tooltip").remove();
-      });
-      
+      });      
       $(".table-responsive").on("mouseover", function () {
         $(".table-swipe-indicator").css("display","none");
       });
@@ -137,7 +133,6 @@
       $(".table-responsive").on("touchstart", function () {
           $(".table-swipe-indicator").css("display","none");
       });
-      
       $(window).on('load', function () {
         $('#sitePreloader').fadeOut();
       }); 
