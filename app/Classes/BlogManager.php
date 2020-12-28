@@ -151,7 +151,7 @@ class BlogManager
         $categoryId = '';
         $category = BlogCategory::where('slug', $catSlug)->first();
 
-        if(!is_null($category)) {
+        if(!empty($category)) {
             $categoryId = $category->id;
         }
 
