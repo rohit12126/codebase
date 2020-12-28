@@ -9,19 +9,6 @@
     <meta name="author" content="">
     <meta name="keyword" content="">
     <title>Custom Closets</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/manifest.json">
     
     <!-- Icons-->
@@ -58,10 +45,10 @@
           right: 0;
           bottom: 0;
           background:url("{{URL::asset('/images/loader.gif')}}") no-repeat #FFFFFF 50%;
-          -moz-background-size:140px 89px;
-          -o-background-size:140px 89px;
-          -webkit-background-size: 140px 89px;
-          background-size: 140px 89px;
+          -moz-background-size:84px 84px;
+          -o-background-size:84px 84px;
+          -webkit-background-size: 84px 84px;
+          background-size: 84px 84px;
           z-index: 9999;
           width:100%;
           height:100%;

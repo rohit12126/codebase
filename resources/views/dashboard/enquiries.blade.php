@@ -71,10 +71,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-end mb-3">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <button type="submit" title="Search" class="custom-tooltip btn btn-primary mr-2 mt-0" >
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Search Enquiry</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
-                                                <a href="{{route('admin.enquiries')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <a href="{{route('admin.enquiries')}}" title="Reset Filters"  class="custom-tooltip btn btn-danger text-white">
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Reset Enquiry Search</span>
                                                     <i class="cil-reload"></i>
                                                 </a>
                                             </div>
@@ -112,7 +114,8 @@
                                             <td>{{$value->message}}</td>
                                             <td class="text-center">
                                             @if($value->connected == 0)
-                                                <a class="btn btn-sm btn-primary d-inline-block" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" title="Contected">
+                                                <a class="btn btn-sm btn-primary d-inline-block custom-tooltip" href="{{ url('admin/update-enquiry', $value->id) }}" onclick="return confirm('Are you sure you want to mark contected?');" >
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Mark As Connected</span>
                                                     <i class="cil-check"></i>
                                                 </a>
                                             @endif

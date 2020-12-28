@@ -12,7 +12,8 @@
         </ol>
         <div class="d-flex align-items-center">
             @if(!isset($user)) 
-                <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
+                <button class="btn btn-danger custom-tooltip" onclick="$('.addForm').show('slow');">
+                    <span class="custom-tooltiptext custom-tooltip-bottom">Create New User</span>
                     <i class="cil-plus"></i> Create User
                 </button>
             @endif
@@ -124,10 +125,12 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-4 d-flex align-items-end">
-                                            <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                            <button type="submit" title="Search" class="btn btn-primary custom-tooltip mr-2 mt-0" >
+                                                <span class="custom-tooltiptext custom-tooltip-bottom">Search User</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
-                                            <a href="{{route('admin.user')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                            <a href="{{route('admin.user')}}" class="btn btn-danger text-white custom-tooltip">
+                                                <span class="custom-tooltiptext custom-tooltip-bottom">Reset User Search </span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>
@@ -160,15 +163,17 @@
                                             <td>{{ $value->email }}</td>
                                             <td>{{ $value->mobile }}</td>
                                             <td class="w-max-content">
-                                                <a class="btn btn-sm btn-block btn-outline-success min-w-max-content" href="{{ url('admin/user_login', $value->id) }}" target="_blank" title="Go to User Account">
+                                                <a class="btn btn-sm btn-block btn-outline-success min-w-max-content" href="{{ url('admin/user_login', $value->id) }}" target="_blank">
                                                     Login as {{ ucwords($value->name) }}
                                                 </a>
                                             </td>
                                             <td>
-                                                <a class="btn btn-sm btn-info" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
+                                                <a class="btn btn-sm btn-info custom-tooltip" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Edit User Account</span>
                                                     <i class="cil-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
+                                                <a class="btn btn-sm btn-danger custom-tooltip" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete User Account</span>
                                                     <i class="cil-trash"></i>
                                                 </a>
                                             </td>

@@ -8,14 +8,15 @@
 </style>
 @endsection
 @section('breadcrumb')
-    <div class="c-subheader px-3 justify-content-sm-between">
+    <div class="c-subheader px-3 justify-content-between">
         <ol class="breadcrumb border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">Items</li>
+            <li class="breadcrumb-item active">Products</li>
         </ol>
         <div class="d-flex align-items-center">
-            <a href="{{ route('admin.item') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Add New Item" class="btn btn-danger">
-                <i class="cil-plus"></i>  Create Item
+            <a href="{{ route('admin.item') }}" class="btn btn-danger custom-tooltip">
+                <span class="custom-tooltiptext custom-tooltip-bottom">Add New Product</span>
+                <i class="cil-plus"></i>  Create Product
             </a>
         </div>
     </div>
@@ -53,10 +54,12 @@
                                                 </div>
                                             </div> --}}
                                             <div class="col-4 d-flex align-items-end pl-0">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <button type="submit" title="Search" class="btn btn-primary mr-2 mt-0 custom-tooltip">
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Search Product</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
-                                                <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white custom-tooltip">
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Reset Search Product</span>
                                                     <i class="cil-reload"></i>
                                                 </a>
                                             </div>
@@ -95,13 +98,16 @@
                                             <td>&#36;{{ $value->sale_price }}</td>
                                             <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                             <td>
-                                                <a class="btn btn-sm btn-info" title="Add Product Description" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
+                                                <a class="btn btn-sm btn-info custom-tooltip" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Add Product Description</span>
                                                     <i class="cil-playlist-add"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-info" title="Edit Item" href="{{ url('admin/edit_item', $value->id) }}">
+                                                <a class="btn btn-sm btn-info custom-tooltip" href="{{ url('admin/edit_item', $value->id) }}">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Edit Product</span>
                                                     <i class="cil-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-danger" title="Delete Item"  href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
+                                                <a class="btn btn-sm btn-danger custom-tooltip" href="{{ url('admin/delete_item', $value->id) }}" onclick="return confirm('Are you sure you want to delete this item?');" >
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete Product</span>
                                                     <i class="cil-trash"></i>
                                                 </a>
                                             </td>
@@ -111,7 +117,7 @@
                                 @else
                                     <tfoot>
                                         <tr>
-                                            <th colspan="6" class="text-center">Item list is empty</th>
+                                            <th colspan="6" class="text-center">Product list is empty</th>
                                         </tr>
                                     </tfoot>
                                 @endif

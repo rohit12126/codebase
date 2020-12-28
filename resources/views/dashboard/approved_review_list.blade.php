@@ -52,10 +52,12 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-xl-3 d-flex align-items-end">
-                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-3 mt-0" >
+                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-2 mt-0 custom-tooltip">
+                                                <span class="custom-tooltiptext custom-tooltip-top">Search Review</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
-                                            <a href="{{route('admin.aprooved')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                            <a href="{{route('admin.aprooved')}}"  class="btn custom-tooltip btn-danger text-white">
+                                                <span class="custom-tooltiptext custom-tooltip-top">Reset Review Search</span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>
@@ -63,7 +65,8 @@
                                 </form>
                             </div>
                             <div class="col-xl-3 d-flex align-items-end justify-content-xl-end">
-                                <a href="{{ route('admin.toaprooved') }}" data-toggle="tooltip" data-placement="bottom" data-original-title="Non Aproved Review" class="btn btn-danger position-managed-btn-lg">
+                                <a href="{{ route('admin.toaprooved') }}" class="btn custom-tooltip btn-danger position-managed-btn-lg">
+                                    <span class="custom-tooltiptext custom-tooltip-top">View Non Approved Review</span>
                                     Non Approved Review
                                 </a>
                             </div>
@@ -94,10 +97,12 @@
                                             <td>{{ $value->product_name }}</td>
                                             <td>{{ $value->user_name }}</td>
                                             <td>
-                                                <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-sm btn-info mb-2 mb-md-0" title="DisApprove This Review" >
+                                                <a href="{{ url('admin/review/disapprov', $value->id) }}" class="btn btn-sm btn-info mb-2 mb-md-0 custom-tooltip" >
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Disapprove This Review</span>
                                                     <i class="cil-thumb-down"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-danger mb-2 mb-md-0" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}" title="Delete">
+                                                <a class="btn btn-sm btn-danger mb-2 mb-md-0 custom-tooltip" onclick="return confirm('Are you sure you want to delete this review?');" href="{{ url('admin/review/delete', $value->id) }}">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete This Review</span>
                                                     <i class="cil-trash"></i>
                                                 </a>
                                             </td>
