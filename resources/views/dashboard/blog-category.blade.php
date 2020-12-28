@@ -114,12 +114,12 @@
                             </thead>
                             <tbody>
                                 @foreach($category_list as $key => $value)
-                                <tr>
+                                <tr @if($value->status == 1) class="table-success" @endif>                                
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>
                                         <button class="btn btn-info" type="button" data-toggle="tooltip"
-                                            data-placement="top" title="Tooltip on top" data-original-title="Tooltip on top"
+                                            data-placement="top" title="Edit" data-original-title="Tooltip on top"
                                             onclick="window.location='{{ url('admin/blog_edit_category', $value->id) }}'">
                                             <i class="cil-pencil"></i>
                                         </button>
