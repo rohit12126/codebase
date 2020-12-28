@@ -65,7 +65,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="" class="form-control">
                                             <option @if (isset($blog->status) && $blog->status =='1') {{ "selected"}} @endif value="1">Active</option>
-                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">In-Active</option>
+                                            <option @if (isset($blog->status) && $blog->status =='0') {{ "selected"}} @endif value="0">InActive</option>
                                         </select>
                                     </div>
                                 </div>
