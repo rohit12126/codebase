@@ -20409,3 +20409,17 @@ a, a:hover {
   min-width: 100%;
   width: max-content;
 }
+.has-dropdown-custom{
+  padding-right: 2rem;
+  position: relative;
+}
+.has-dropdown-custom:after{
+  display: inline-block;
+  vertical-align: .255em;
+  content: "";
+  border-top: .4rem solid;
+  border-right: .4rem solid transparent;
+  border-bottom: 0;
+  border-left: .4rem solid transparent;
+  margin-left: 0.5rem;
+}
