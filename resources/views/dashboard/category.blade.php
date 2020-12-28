@@ -89,8 +89,8 @@
                             <div class="row">
                                 <div class="col-sm-6 col-8">
                                     <div class="form-group mb-0">
-                                    <label>Search via Name</label>
-                                    <input type="text" maxlength="150" placeholder="Name" name="name"
+                                    <label>Search by Category Name</label>
+                                    <input type="text" maxlength="150" placeholder="Category Name" name="name"
                                         class="form-control" value="{{ @$_GET['name'] }}">
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                         <button class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="bottom" title="Edit Category" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
                                             <i class="cil-pencil" data-toggle="tooltip" data-placement="bottom" title="Edit Category"></i>
                                         </button>
-                                        <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');">
+                                        <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');" data-toggle="tooltip" data-placement="bottom">
                                             <i class="cil-trash"></i>
                                         </a>
                                     </td>

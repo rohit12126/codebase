@@ -5,11 +5,18 @@
 @endsection
 
 @section('breadcrumb')
-    <div class="c-subheader px-3">
+    <div class="c-subheader px-3 justify-content-between">
         <ol class="breadcrumb border-0 m-0">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.user') }}">Users</a></li>
         </ol>
+        <div class="d-flex align-items-center">
+            @if(!isset($user)) 
+                <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
+                    <i class="cil-plus"></i> Create User
+                </button>
+            @endif
+        </div>
     </div>
 @endsection
 
@@ -126,13 +133,6 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="col-md-3 d-flex align-items-end justify-content-md-end mt-3 mt-md-0">
-                                @if(!isset($user)) 
-                                    <button class="btn btn-danger position-managed-btn" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New User" onclick="$('.addForm').show('slow');" title="Create New User">
-                                        <i class="cil-plus"></i> Create User
-                                    </button>
-                                @endif
                             </div>
                         </div>
                     </div>
