@@ -55,11 +55,11 @@
                                             </div> --}}
                                             <div class="col-4 d-flex align-items-end pl-0">
                                                 <button type="submit" title="Search" class="btn btn-primary mr-2 mt-0 custom-tooltip">
-                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Search Product</span>
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Search Product</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                                 <a href="{{route('admin.item.list')}}" title="Reset Filters"  class="btn btn-danger text-white custom-tooltip">
-                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Reset Search Product</span>
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Reset Search Product</span>
                                                     <i class="cil-reload"></i>
                                                 </a>
                                             </div>

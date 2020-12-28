@@ -126,11 +126,11 @@
                                         </div>
                                         <div class="col-sm-4 d-flex align-items-end">
                                             <button type="submit" title="Search" class="btn btn-primary custom-tooltip mr-2 mt-0" >
-                                                <span class="custom-tooltiptext custom-tooltip-bottom">Search User</span>
+                                                <span class="custom-tooltiptext custom-tooltip-top">Search User</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
                                             <a href="{{route('admin.user')}}" class="btn btn-danger text-white custom-tooltip">
-                                                <span class="custom-tooltiptext custom-tooltip-bottom">Reset User Search </span>
+                                                <span class="custom-tooltiptext custom-tooltip-top">Reset User Search </span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>

@@ -72,11 +72,11 @@
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-end mb-3">
                                                 <button type="submit" title="Search" class="custom-tooltip btn btn-primary mr-2 mt-0" >
-                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Search Enquiry</span>
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Search Enquiry</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                                 <a href="{{route('admin.enquiries')}}" title="Reset Filters"  class="custom-tooltip btn btn-danger text-white">
-                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Reset Enquiry Search</span>
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Reset Enquiry Search</span>
                                                     <i class="cil-reload"></i>
                                                 </a>
                                             </div>

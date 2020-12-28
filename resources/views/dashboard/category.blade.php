@@ -97,11 +97,11 @@
                                 </div>
                                 <div class="col-4 d-flex align-items-end pl-0">
                                     <button type="submit" class="btn btn-primary custom-tooltip mr-1 mr-sm-2 mt-0" >
-                                        <span class="custom-tooltiptext custom-tooltip-bottom">Search Category</span>
+                                        <span class="custom-tooltiptext custom-tooltip-top">Search Category</span>
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </button>
                                     <a href="{{route('admin.category')}}" class="btn btn-danger text-white custom-tooltip">
-                                        <span class="custom-tooltiptext custom-tooltip-bottom">Reset search category</span>
+                                        <span class="custom-tooltiptext custom-tooltip-top">Reset search category</span>
                                         <i class="cil-reload"></i>
                                     </a>
                                 </div>
@@ -129,7 +129,7 @@
                                     <td>{{ $value->name }}</td>
                                     <td>
                                         <button class="btn btn-sm btn-info custom-tooltip" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
-                                            <span class="custom-tooltiptext custom-tooltip-left">Edit Category</span>
+                                            <span class="custom-tooltiptext custom-tooltip-top">Edit Category</span>
                                             <i class="cil-pencil"></i>
                                         </button>
                                         <a class="btn btn-sm btn-danger custom-tooltip" href="{{ url('admin/delete_category', $value->id) }}" onclick="return confirm('Are you sure you want to delete this category?');" data-toggle="tooltip" data-placement="bottom">

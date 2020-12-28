@@ -114,11 +114,11 @@
                                     </div>
                                     <div class="col-4 d-flex align-items-end pl-0">
                                         <button type="submit" title="Search" class="btn btn-primary custom-tooltip mr-2 mt-0" >
-                                            <span class="custom-tooltiptext custom-tooltip-bottom">Search Description</span>
+                                            <span class="custom-tooltiptext custom-tooltip-top">Search Description</span>
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
                                         <a href="{{route('admin.product.description', ['product_id' => $productId])}}" class="custom-tooltip btn btn-danger text-white">
-                                            <span class="custom-tooltiptext custom-tooltip-bottom">Reset Search Description</span>
+                                            <span class="custom-tooltiptext custom-tooltip-top">Reset Search Description</span>
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>

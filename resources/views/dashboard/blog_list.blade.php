@@ -44,11 +44,11 @@
                                         </div>
                                         <div class="col-4 d-flex align-items-end pl-0">
                                             <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-2 mt-0 custom-tooltip">
-                                                <span class="custom-tooltiptext custom-tooltip-bottom">Search Blog</span>
+                                                <span class="custom-tooltiptext custom-tooltip-top">Search Blog</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
                                             <a href="{{route('admin.blog.list')}}" class="btn btn-danger text-white custom-tooltip">
-                                                <span class="custom-tooltiptext custom-tooltip-bottom">Reset  Blog Search</span>
+                                                <span class="custom-tooltiptext custom-tooltip-top">Reset  Blog Search</span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>
