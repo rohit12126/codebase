@@ -92,10 +92,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 d-flex align-items-end">
-                                                <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                                <button type="submit" title="Search" class="btn custom-tooltip btn-primary mr-2 mt-0">
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Search Order</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
-                                                <a href="{{route('admin.order')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                                <a href="{{route('admin.order')}}" title="Reset Filters"  class="btn btn-danger text-white custom-tooltip">
+                                                    <span class="custom-tooltiptext custom-tooltip-bottom">Reset Order Search</span>
                                                     <i class="cil-reload"></i>
                                                 </a>
                                             </div>
@@ -147,7 +149,8 @@
                                                 <td>{{ $value->order_status }}</td>
                                                 <td>&#36;{{ $value->grand_total }}</td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-info" href="{{ url('admin/order_details', $value->order_no) }}" title="Details">
+                                                    <a class="btn btn-sm btn-info custom-tooltip" href="{{ url('admin/order_details', $value->order_no) }}">
+                                                        <span class="custom-tooltiptext custom-tooltip-left">Order Details</span>
                                                         <i class="cil-arrow-thick-to-right"></i>
                                                     </a>
                                                     {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"

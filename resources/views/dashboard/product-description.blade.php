@@ -13,7 +13,8 @@
             <!-- <li class="breadcrumb-item active"><a href="{{ route('admin.product.description', ['product_id' => $productId]) }}">Product Description</a></li> -->
         </ol>
         <div class="d-flex align-items-center">
-            <button class="btn btn-danger" onclick="$('.addForm').show('slow');" data-toggle="tooltip" data-placement="bottom" title="Add New Description">
+            <button class="btn btn-danger custom-tooltip" onclick="$('.addForm').show('slow');">
+            <span class="custom-tooltiptext custom-tooltip-bottom">Create New Description</span>
             <i class="cil-plus"></i> Create Description
             </button>
         </div>
@@ -112,10 +113,12 @@
                                         </div>
                                     </div>
                                     <div class="col-4 d-flex align-items-end pl-0">
-                                        <button type="submit" title="Search" class="btn btn-primary mr-3 mt-0" >
+                                        <button type="submit" title="Search" class="btn btn-primary custom-tooltip mr-2 mt-0" >
+                                            <span class="custom-tooltiptext custom-tooltip-bottom">Search Description</span>
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
-                                        <a href="{{route('admin.product.description', ['product_id' => $productId])}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                        <a href="{{route('admin.product.description', ['product_id' => $productId])}}" class="custom-tooltip btn btn-danger text-white">
+                                            <span class="custom-tooltiptext custom-tooltip-bottom">Reset Search Description</span>
                                             <i class="cil-reload"></i>
                                         </a>
                                     </div>
@@ -142,11 +145,13 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $value->title }}</td>
                                         <td>
-                                            <button class="btn btn-sm btn-info" type="button" title="Edit Description"
+                                            <button class="btn btn-sm btn-info custom-tooltip" type="button"
                                                 onclick="window.location='{{ url('admin/product/edit_description', $value->id).'?product_id='.$productId }}'">
+                                                 <span class="custom-tooltiptext custom-tooltip-top">Edit Description</span>
                                                 <i class="cil-pencil"></i>
                                             </button>
-                                            <a class="btn btn-sm btn-danger" title="Delete Category" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
+                                            <a class="btn btn-sm btn-danger custom-tooltip" href="{{ url('admin/product/delete_description', $value->id).'?product_id='.$productId }}" onclick="return confirm('Are you sure you want to delete this description?');">
+                                                 <span class="custom-tooltiptext custom-tooltip-top">Delete Description</span>
                                                 <i class="cil-trash"></i>
                                             </a>
                                         </td>

@@ -32,10 +32,10 @@
             right: 0;
             bottom: 0;
             background:url("{{URL::asset('/images/loader.gif')}}") no-repeat #FFFFFF 50%;
-            -moz-background-size:140px 89px;
-            -o-background-size:140px 89px;
-            -webkit-background-size: 140px 89px;
-            background-size: 140px 89px;
+            -moz-background-size:84px 84px;
+            -o-background-size:84px 84px;
+            -webkit-background-size: 84px 84px;
+            background-size: 84px 84px;
             z-index: 9999;
             width:100%;
             height:100%;

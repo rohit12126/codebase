@@ -9,11 +9,17 @@
 @endsection
 
 @section('breadcrumb')
-    <div class="c-subheader px-3">
+    <div class="c-subheader px-3 justify-content-between">
         <ol class="breadcrumb border-0 m-0">
         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">Blogs</li>
         </ol>
+        <div class="d-flex align-items-center">
+            <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right custom-tooltip">
+                <span class="custom-tooltiptext custom-tooltip-bottom">Create New Blog</span>
+                <i class="cil-plus"></i> Create Blog
+            </a>
+        </div>
     </div>
 @endsection
 
@@ -37,20 +43,17 @@
                                             </div>
                                         </div>
                                         <div class="col-4 d-flex align-items-end pl-0">
-                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-3 mt-0" >
+                                            <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-2 mt-0 custom-tooltip">
+                                                <span class="custom-tooltiptext custom-tooltip-bottom">Search Blog</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
-                                            <a href="{{route('admin.blog.list')}}" title="Reset Filters"  class="btn btn-danger text-white">
+                                            <a href="{{route('admin.blog.list')}}" class="btn btn-danger text-white custom-tooltip">
+                                                <span class="custom-tooltiptext custom-tooltip-bottom">Reset  Blog Search</span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                            <div class="col-md-3 col-sm-4 d-flex align-items-end justify-content-sm-end mt-3 mt-sm-0">
-                                <a href="{{ route('admin.blog') }}" class="btn btn-danger pull-right" title="Create New Blog" data-toggle="tooltip" data-placement="bottom" data-original-title="Create New Blog">
-                                    <i class="cil-plus"></i> Create Blog
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -76,10 +79,12 @@
                                             </td>
                                             <td>{{ $value->title }}</td>
                                             <td>
-                                                <a class="btn btn-sm btn-info mb-2 mb-sm-0" href="{{ url('admin/edit_blog', $value->id) }}" title="Edit">
+                                                <a class="btn btn-sm btn-info mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/edit_blog', $value->id) }}">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Edit this Blog</span>
                                                     <i class="cil-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-danger mb-2 mb-sm-0" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');" title="Delete">
+                                                <a class="btn btn-sm btn-danger mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/delete_blog', $value->id) }}" onclick="return confirm('Are you sure you want to delete this blog?');">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete this Blog</span>
                                                     <i class="cil-trash"></i>
                                                 </a>
                                             </td>
