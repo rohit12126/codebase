@@ -9083,8 +9083,6 @@ h5 {
     color: #787878;
     font-weight: bold;
 }
-
-
 .blog-view-card{
 	color: #787878;
 }
@@ -9115,6 +9113,9 @@ h5 {
 .blog-view-card h4
 {
 	font-size: 1.4375em;
+}
+.blog-view-card ul, .blog-view-card ol{
+	padding-left:24px;
 }
 .blog-sidebar-item{
 	margin-bottom: 1rem;
