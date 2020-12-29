@@ -17,6 +17,12 @@ class CategoryController extends Controller
 
     public function addCategory(Request $req)
     {
+        $this->validate(
+            $req, 
+            [
+                'name' => 'required|max:80',
+            ]
+        ); 
         $response = CategoryManager::add($req);
         if($response == true){
             Common::setMessage(__('category_add_success'));

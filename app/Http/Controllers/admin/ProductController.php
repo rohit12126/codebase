@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index(Request $req)
     {
-        $category_list = CategoryManager::getCategoryList($req);
+        $category_list = CategoryManager::getActiveCategoryList($req);
         return view('dashboard.product', compact('category_list'));
     }
 
