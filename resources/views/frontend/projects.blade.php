@@ -18,7 +18,7 @@
                     </a>
                 </div>   
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/fort-leavenworth-transient-barracks/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum
@@ -31,7 +31,7 @@
                     </a>
                 </div>
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/one-city-cafe/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one
@@ -44,7 +44,7 @@
                     </a>
                 </div>   
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/heartland-preparedness-center/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum
@@ -57,7 +57,7 @@
                     </a>
                 </div> 
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/lees-summit-fire-station/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one
@@ -70,7 +70,7 @@
                     </a>
                 </div>  
                 <div class="blog-col">
-                    <a href="https://www.straubconstruction.com/portfolio-item/science-city-at-union-station/" target="_blank">
+                    <a href="{{ url('project/detail/') }}" target="_blank">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum
