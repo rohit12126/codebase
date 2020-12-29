@@ -110,7 +110,20 @@ class CategoryManager
             
             return $order->orderBy('id', 'desc')->paginate(10);
         } else {
-            return CategoryModel::with('image')->where('status', 1)->orderBy('id', 'desc')->paginate(10);
+            return CategoryModel::with('image')->orderBy('id', 'desc')->paginate(10);
+        }
+    }
+    public static function getActiveCategoryList($req)
+    {
+        if ( $req->name !== null ) {
+            $order = CategoryModel::with('image');
+            if ($req->name) {
+                $order->where('name', 'like', '%' . $req->name . '%');
+            }
+            
+            return $order->orderBy('id', 'desc')->paginate(10);
+        } else {
+            return CategoryModel::with('image')->where('status' , 1)->orderBy('id', 'desc')->paginate(10);
         }
     }
 
