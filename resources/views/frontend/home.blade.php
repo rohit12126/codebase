@@ -20,7 +20,7 @@
                     <img src="{{URL::asset('/images/first-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <a href="#stt" class="btn btn-fill-out">see the sofas</a>
+                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -32,7 +32,7 @@
                     <img src="{{URL::asset('/images/second-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <button class="btn btn-fill-out">see the sofas</button>
+                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -44,7 +44,7 @@
                     <img src="{{URL::asset('/images/third-slide.jpg')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption-down d-none d-md-block">
-                    <button class="btn btn-fill-out">see the sofas</button>
+                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
                 </div>
             </div>
           </div>
