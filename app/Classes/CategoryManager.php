@@ -110,7 +110,7 @@ class CategoryManager
             
             return $order->orderBy('id', 'desc')->paginate(10);
         } else {
-            return CategoryModel::with('image')->orderBy('id', 'desc')->paginate(10);
+            return CategoryModel::with('image')->where('status', 1)->orderBy('id', 'desc')->paginate(10);
         }
     }
 
