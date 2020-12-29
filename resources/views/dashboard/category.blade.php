@@ -26,6 +26,9 @@
 <div class="container-fluid">
     <div class="fade-in">
         @include('partials.alert_msg')
+        @if($errors->has('name'))
+            <div class="error">{{ $errors->first('name') }}</div>
+        @endif
         <div class="row addForm">
             <div class="col-sm-12">
                 <div class="card">
@@ -164,7 +167,6 @@
 <script>
     $('.addForm').hide();
     $("#myform").validate({
-        
         submitHandler: function (form) {
             // do other things for a valid form
             form.submit();
