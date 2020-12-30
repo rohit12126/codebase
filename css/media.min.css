@@ -300,6 +300,18 @@
         position: unset;
         margin-top: 1rem;
     }
+    .blog-back-btn{
+        max-width: max-content;
+    }
+    .blog-sticky .collapsing{
+        display: flex;
+    }
+    .blog-sticky .collapse.show{
+        display: flex;
+    }
+    #shareIcons .blog-back-btn{
+        margin-right: 0.2rem;
+    }
 }
 @media (max-width: 767px) {
     .page-title {
