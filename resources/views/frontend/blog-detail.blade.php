@@ -3,9 +3,8 @@
 <!-- START SECTION Blog -->
 <div class="section blog-view">
     <div class="blog-view-inner container-fluid">
-        <h2 class="pt-3 pb-3 text-center">{{$blog->title}}</h2>
         <div class="row justify-content-center">
-            <div class="col-lg-2 mb-5 mb-lg-0">
+            <div class="col-lg-2 mb-2 mb-lg-0">
                 <div class="blog-sticky">
                     <a href="{{ url('blog/') }}" class="blog-back-btn">
                         <span class="linearicons-arrow-left"></span> back
@@ -32,16 +31,18 @@
                         </a>
                     </div>
                 </div>
-
-
             </div>
             <div class="col-lg-7 mb-5 mb-lg-0 pr-3">
                 <article class="blog-view-card mb-4">
                     {{-- <h1 class="blog-view-title text-capitalize"> 
                         {{$blog->title}}
                     </h1> --}}
+                    <h1 class="blog-view-title text-capitalize pt-3">{{$blog->title}}</h2>
                     <p>
                         {!! $blog->description !!}
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente deserunt, necessitatibus at illo est perferendis voluptate maxime laboriosam vitae eum totam quibusdam? Animi, ipsum nulla dolor officiis quibusdam expedita.
                     </p>
                 </article>
                 <!-- <div class="blog-post-arrows">

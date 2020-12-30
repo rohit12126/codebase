@@ -3,7 +3,7 @@
 <!-- START SECTION SHOP -->
 <div class="blog-view">
     <div class="blog-view-inner">
-        <h1 class="pt-5 pb-4 mb-4 heading_s3 text-center">Blogs</h1>
+        <h1 class="pt-5 pb-3 mb-4 heading_s3 text-center">Blogs</h1>
         <div class="container">
             <ul class="nav justify-content-center products-tab-ul mb-3 d-none d-md-flex">
                 <li class="">
