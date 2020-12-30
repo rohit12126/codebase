@@ -119,11 +119,13 @@
                         <tr>
                             <td>{{$product->product->name}}</td>
                             <td>
-                                @if (isset($product->product->images[0]->image))
-                                    <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
-                                @else
-                                    <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
-                                @endif
+                                <div class="order-track-img">
+                                    @if (isset($product->product->images[0]->image))
+                                        <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
+                                    @else
+                                        <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                    @endif
+                                </div>
                             </td>
                             <td>$ {{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>

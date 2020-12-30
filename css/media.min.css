@@ -338,6 +338,9 @@
         right: auto !important;
         top: auto !important;
     }
+    .dashboard_content{
+        padding: 0;
+    }
 }
 @media (min-width: 576px){
     
