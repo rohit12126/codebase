@@ -8674,7 +8674,7 @@ h5 {
 	box-shadow: 0 13px 42px 11px rgba(0,0,0,.05);
 	position: absolute;
 	top: calc(100% + 0.625rem);
-	z-index: 999;
+	z-index: 98;
 	width: 100%;
 }
 .products-list-row{

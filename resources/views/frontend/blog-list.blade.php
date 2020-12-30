@@ -4,8 +4,8 @@
 <div class="blog-view">
     <div class="blog-view-inner">
         <h1 class="pt-5 pb-4 mb-4 heading_s3 text-center">Blogs</h1>
-        <div>
-            <ul class="nav justify-content-center products-tab-ul mb-3">
+        <div class="container">
+            <ul class="nav justify-content-center products-tab-ul mb-3 d-none d-md-flex">
                 <li class="">
                     <a href="{{ route('blog.list') }}" class="btn btn-outline-secondary @if(empty($catSlug)) active  @endif">All</a>
                 </li>
@@ -14,7 +14,22 @@
                         <a href="{{ url('blog/').'/'.$cat->slug }}" class="btn btn-outline-secondary @if($catSlug == $cat->slug) active  @endif">{{ $cat->name }}</a>
                     </li>
                 @endforeach
-            </ul>.
+            </ul>
+            <div class="product-category-collapse d-block d-md-none">
+                <button class="btn btn-secondary" data-toggle="collapse" data-target="#categoryCollapse">Categories &nbsp; <i class="ion-android-menu"></i></button>
+                <div id="categoryCollapse" class="collapse category-collapse">
+                    <ul> 
+                        <li class="">
+                            <a href="{{ route('blog.list') }}" class="dropdown-item nav-link nav_item @if(empty($catSlug)) active  @endif">All</a>
+                        </li>
+                        @foreach ($blogsCategories as $cat)
+                            <li class=""> 
+                                <a href="{{ url('blog/').'/'.$cat->slug }}" class="dropdown-item nav-link nav_item @if($catSlug == $cat->slug) active  @endif">{{ $cat->name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="section blog-list-view">
             <div class="">

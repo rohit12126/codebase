@@ -9,7 +9,10 @@
 }
 @media (max-width: 1199px) {
     body{
-        padding-top: 122px;
+        padding-top: 106px;
+    }
+    .main-header{
+        padding: 0.5rem 0;
     }
     .section-img-content, .section-text-wrapper h2,h2
     {
