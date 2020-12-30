@@ -1248,7 +1248,7 @@ button:focus {
 .dark_skin .cart_total {
 	color: #333333;
 }
-.dropdown-toggle::after, .dropdown-toggler::after {
+.dropdown-toggle::after, .dropdown-toggler::after{
 	border: 0 none;
 	content: "\f3d0";
 	font-family: "Ionicons";
@@ -8649,6 +8649,33 @@ h5 {
 .products-tab-ul li
 {
     margin: 0.5rem 1rem;
+}
+.product-category-collapse{
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+.product-category-collapse button{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.product-category-collapse i{
+	font-size: 1.2rem;
+}
+.product-category-collapse ul{
+	list-style: none;
+}
+.product-category-collapse .dropdown-item.active{
+	color: #f94e57;
+}
+.category-collapse{
+	background-color: #fff;
+	box-shadow: 0 13px 42px 11px rgba(0,0,0,.05);
+	position: absolute;
+	top: calc(100% + 0.625rem);
+	z-index: 999;
+	width: 100%;
 }
 .products-list-row{
     width: 100%;

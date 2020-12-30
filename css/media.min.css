@@ -515,4 +515,7 @@
         height: calc(100vh - 82px);
         top: 82px;
     }
+    .product-detail2 .btn{
+        padding: 8px 0;
+    }
 }

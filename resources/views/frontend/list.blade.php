@@ -3,7 +3,7 @@
 <!-- START SECTION SHOP -->
 <section class="products-category section">
         <div class="container">
-            <ul class="nav justify-content-center products-tab-ul mb-4">
+            <ul class="nav justify-content-center products-tab-ul mb-4 d-none d-md-flex">
                 <li class="">
                     <a href="{{ route('product.list') }}" class="btn btn-outline-secondary @if(empty($catSlug)) active  @endif">All</a>
                 </li>
@@ -15,7 +15,22 @@
                     </li>
                 @endforeach
             </ul>
-
+            <div class="product-category-collapse d-block d-md-none">
+                <button class="btn btn-secondary" data-toggle="collapse" data-target="#categoryCollapse">Categories &nbsp; <i class="ion-android-menu"></i></button>
+                <div id="categoryCollapse" class="collapse category-collapse">
+                    <ul> 
+                        <li>
+                            <a href="{{ route('product.list') }}" class="dropdown-item nav-link nav_item @if(empty($catSlug)) active  @endif">All</a>
+                        </li>
+                        @foreach ($categories as $category)
+                            <li class="">
+                                {{-- route('product.list',['category_id' => $category->id]) --}}
+                                <a class="dropdown-item nav-link nav_item @if($category->slug == $catSlug) active  @endif" href="{{ url('product/').'/'.$category->slug }}"> {{ $category->name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
             <div class="products-list-row">
                 @if($products->isEmpty()) 
                     <div class="col-md-12 col-12 text-center">
