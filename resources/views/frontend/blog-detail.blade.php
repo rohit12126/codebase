@@ -3,7 +3,7 @@
 <!-- START SECTION Blog -->
 <div class="section blog-view">
     <div class="blog-view-inner container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center m-0">
             <div class="col-lg-2 mb-2 mb-lg-0">
                 <div class="blog-sticky">
                     <a href="{{ url('blog/') }}" class="blog-back-btn">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 mb-5 mb-lg-0 pr-3">
+            <div class="col-lg-7 mb-5 mb-lg-0 pr-3 bg-white">
                 <article class="blog-view-card mb-4">
                     {{-- <h1 class="blog-view-title text-capitalize"> 
                         {{$blog->title}}
