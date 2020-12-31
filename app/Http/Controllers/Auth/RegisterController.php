@@ -123,6 +123,6 @@ class RegisterController extends Controller
             );
         }
         
-        echo json_encode($response);
+        return json_encode($response);
     }
 }

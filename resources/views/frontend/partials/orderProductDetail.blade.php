@@ -6,6 +6,16 @@
 <!-- START SECTION SHOP -->
 <div class="section">
     <div class="container">
+        @if($data->status == 5)
+        <div class="text-center mt-5">
+            <h2><b>Order is Cancled</b></h2>
+            <h5>Looks like you have Cancled this Order.</h5>
+        </div>
+        <div class="mt-3 mb-3">
+            <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out mb-3 mb-sm-0 btn-same-w">Home</a>
+            <a href="{{ url('product/') }}" class="btn btn-sm btn-fill-out btn-same-w align-top">Continue Shopping</a>
+        </div>
+        @else
         <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Order Tracking</h1>
         <div class="row mb-4">
             <div class="col-md-6">
@@ -26,6 +36,7 @@
                 <span class="text"> Delivered </span> 
             </div>
         </div>
+        @endif
     </div>
 	<div class="container">
         <div class="row">
