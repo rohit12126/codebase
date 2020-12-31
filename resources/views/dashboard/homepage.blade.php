@@ -135,7 +135,7 @@
     </div>
 </div>
 <form method="GET" id="activeProductForm" action="{{ route('admin.item.list') }}" enctype="multipart/form-data">
-<input type="hidden" name="product_status" value="1">
+<input type="hidden" name="type" value="1">
 </form>
 <script>
 $(document).ready(function(){

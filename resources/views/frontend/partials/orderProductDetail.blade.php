@@ -46,7 +46,7 @@
     <div class="container">
         @if($data->status == 5)
         <div class="text-center mt-5">
-            <h2><b>Order is Cancelled</b></h2>
+            <h2><b>This Order is Cancelled</b></h2>
             <h5>Looks like you have Cancelled this Order.</h5>
         </div>
         <div class="text-center mt-3 mb-3">
@@ -128,10 +128,12 @@
                                             </span>
                                         </p>
                                     </div>
+                                    @if($data->status < 5)
                                     <div>
                                         <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                         <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>                          
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
@@ -160,7 +162,9 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
+                            @if($data->status < 5)
                             <th>Give a Review</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -179,10 +183,12 @@
                             <td>$ {{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>
                             <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                            @if($data->status < 5)
                             <td>
                                 <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                 <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

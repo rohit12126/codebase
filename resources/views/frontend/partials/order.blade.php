@@ -51,8 +51,8 @@
                                     {{ $status }}
                                 </td>
                                 <td>$ {{number_format($order->grand_total, 2)}}</td>
-                                <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Cancel</a>
-                                <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 3) disabled @endif">Detail</a>
+                                <td><a href="#" class="btn btn-fill-out btn-sm @if($order->status == 5) disabled @endif">Cancel</a>
+                                <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 5) disabled @endif">Detail</a>
                                 </td>
                             </tr>
                             @php  $i++; @endphp

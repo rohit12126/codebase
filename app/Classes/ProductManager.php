@@ -149,6 +149,7 @@ class ProductManager
         if (
             $req->product_name !== null
             || $req->product_status !== null
+            || $req->type !== null
         ) {
             $order = ProductModel::with('images');
             if ($req->product_status) {
@@ -156,6 +157,9 @@ class ProductManager
             }
             if($req->product_name){
                 $order->where('name', 'like', '%' . $req->product_name . '%');
+            }
+            if($req->type == 1){
+                $order->where('is_accessory', 0);
             }
             
             return $order->orderBy('id', 'desc')->paginate(10);
