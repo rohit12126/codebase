@@ -268,8 +268,8 @@ $(function() {
             sale_price: {
                 min: 0,
                 required: true
-            }
-            max_cart_qty:{
+            },
+            max_cart_qty: {
                 min: 0,
                 required: true
             }
