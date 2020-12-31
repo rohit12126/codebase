@@ -105,31 +105,41 @@
       <div class="login_wrap">
             <div class="padding_eight_all bg-white">
                 <form id="review_form">
-                <div class="form-group">
-                <label for="review">Write a Review
-                </label>
-                <span class="mandatory">*</span>
-                    <div class="input-group-prepend">
-                        <textarea name="review" class="form-control" rows="4" cols="50"></textarea>
+                  <div class="form-group">
+                  <label for="review">Review Tttle</label>
+                  <span class="mandatory">*</span>
+                      <div class="input-group-prepend">
+                          <input type="text" name="title" value="" class="form-control">
+                      </div>
+                  <label for="review">Review Body</label>
+                  <span class="mandatory">*</span>
+                      <div class="input-group-prepend">
+                          <textarea name="review" class="form-control" rows="4" cols="50"></textarea>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="rating">Rate us Out of 5 :)</label>
+                  <span class="mandatory">*</span>
+                    <div class="rating"> 
+                        <input type="radio" name="rating" value="5" id="5">
+                        <label for="5">☆</label> 
+                        <input type="radio" name="rating" value="4" id="4">
+                        <label for="4">☆</label> 
+                        <input type="radio" name="rating" value="3" id="3">
+                        <label for="3">☆</label> 
+                        <input type="radio" name="rating" value="2" id="2">
+                        <label for="2">☆</label> 
+                        <input type="radio" name="rating" value="1" id="1">
+                        <label for="1">☆</label>
                     </div>
-                </div>
-                <div class="form-group">
-                <label for="rating">Rate us Out of 5 :)</label>
-                <span class="mandatory">*</span>
-                    <select class="form-control" name="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <input type="hidden" name="productId" value=""/>
-                </div>
-                    <div class="form-group">
-                        <a href="#" class="btn btn-fill-out btn-block" id="submit_review">We Love to Here :)
-                        </a>
-                    </div>
-                </form>
+                      <input type="hidden" name="productId" value=""/>
+                      <input type="hidden" name="orderNum" value=""/>
+                  </div>
+                      <div class="form-group">
+                          <a href="#" class="btn btn-fill-out btn-block" id="submit_review">We Love to Here :)
+                          </a>
+                      </div>
+                  </form>
             </div>
         </div>
       </div>

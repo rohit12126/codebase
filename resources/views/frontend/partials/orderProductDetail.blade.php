@@ -213,12 +213,13 @@
         <div class="login_wrap">
               <div class="padding_eight_all bg-white">
                   <form id="review_form">
-                    <div class="form-group">
-                      
-                    </div>
                   <div class="form-group">
-                  <label for="review">Write a Review
-                  </label>
+                  <label for="review">Review Tttle</label>
+                  <span class="mandatory">*</span>
+                      <div class="input-group-prepend">
+                          <input type="text" name="title" class="form-control">
+                      </div>
+                  <label for="review">Review Body</label>
                   <span class="mandatory">*</span>
                       <div class="input-group-prepend">
                           <textarea name="review" class="form-control" rows="4" cols="50"></textarea>
@@ -227,13 +228,6 @@
                   <div class="form-group">
                   <label for="rating">Rate us Out of 5 :)</label>
                   <span class="mandatory">*</span>
-                    {{-- <div class="ordered-review mb-2">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star-outline"></i>
-                        <i class="ion-android-star-outline"></i>
-                    </div> --}}
                     <div class="rating"> 
                         <input type="radio" name="rating" value="5" id="5">
                         <label for="5">☆</label> 

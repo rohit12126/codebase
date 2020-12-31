@@ -97,6 +97,7 @@ class ProductController extends Controller
         // dd($req);
         $validator = Validator::make($req->all(), [
             'review' => 'required|string',
+            'title' => 'required|string',
             'rating' => 'required|integer'
         ]);
          
@@ -127,7 +128,7 @@ class ProductController extends Controller
         if (!is_null($reviewData)) {
             /* Update rating */
             $rating = $product->updateRating($reviewData->id, [
-                'title' => 'Product Review',
+                'title' => $req->title,
                 'body' => $req->review,
                 'rating' => $req->rating,
                 'approved' => true // This is optional and defaults to false
@@ -138,7 +139,7 @@ class ProductController extends Controller
 
         /* Create rating */
         $rating = $product->rating([
-            'title' => 'Product Review',
+            'title' => $req->title,
             'body' => $req->review,
             'rating' => $req->rating,
             'approved' => true
