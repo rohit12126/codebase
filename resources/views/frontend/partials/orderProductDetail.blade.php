@@ -64,10 +64,10 @@
             </div>
         </div>
         <div class="track">
-            <div class="step @if($data->status == 2) active @endif"> <span class="icon"> <i class="linearicons-check"></i> </span> 
+            <div class="step @if($data->status >= 2) active @endif"> <span class="icon"> <i class="linearicons-check"></i> </span> 
                 <span class="text">Order confirmed</span> 
             </div>
-            <div class="step text-center @if($data->status == 3) active @endif"> <span class="icon"> <i class="linearicons-truck"></i> </span> 
+            <div class="step text-center @if($data->status >= 3) active @endif"> <span class="icon"> <i class="linearicons-truck"></i> </span> 
                 <span class="text"> Shipped</span> 
             </div>
             <div class="step text-right @if($data->status == 4) active @endif"> <span class="icon"> <i class="linearicons-thumbs-up"></i> </span> 
