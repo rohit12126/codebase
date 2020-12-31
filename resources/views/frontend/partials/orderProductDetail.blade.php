@@ -2,7 +2,45 @@
 @extends('layouts.front')
 @section('content')
 <div class="main_content">
+<style>
+    .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
 
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+</style>
 <!-- START SECTION SHOP -->
 <div class="section">
     <div class="container">
@@ -189,20 +227,25 @@
                   <div class="form-group">
                   <label for="rating">Rate us Out of 5 :)</label>
                   <span class="mandatory">*</span>
-                    <div class="ordered-review mb-2">
+                    {{-- <div class="ordered-review mb-2">
                         <i class="ion-android-star"></i>
                         <i class="ion-android-star"></i>
                         <i class="ion-android-star"></i>
                         <i class="ion-android-star-outline"></i>
                         <i class="ion-android-star-outline"></i>
+                    </div> --}}
+                    <div class="rating"> 
+                        <input type="radio" name="rating" value="5" id="5">
+                        <label for="5">☆</label> 
+                        <input type="radio" name="rating" value="4" id="4">
+                        <label for="4">☆</label> 
+                        <input type="radio" name="rating" value="3" id="3">
+                        <label for="3">☆</label> 
+                        <input type="radio" name="rating" value="2" id="2">
+                        <label for="2">☆</label> 
+                        <input type="radio" name="rating" value="1" id="1">
+                        <label for="1">☆</label>
                     </div>
-                      <select class="form-control" name="rating">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                      </select>
                       <input type="hidden" name="productId" value=""/>
                       <input type="hidden" name="orderNum" value=""/>
                   </div>
