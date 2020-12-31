@@ -277,7 +277,8 @@ $(function() {
         messages: {
             category_id: "Please select a category",
             name: "Please provide a Name",
-            sale_price: "Please provide a Price"
+            sale_price: "Please provide Valid Price",
+            max_cart_qty: "Please provide Valid Qty"
         },
         submitHandler: function(form) {
             // do other things for a valid form
