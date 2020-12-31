@@ -46,8 +46,8 @@
     <div class="container">
         @if($data->status == 5)
         <div class="text-center mt-5">
-            <h2><b>Order is Cancled</b></h2>
-            <h5>Looks like you have Cancled this Order.</h5>
+            <h2><b>Order is Cancelled</b></h2>
+            <h5>Looks like you have Cancelled this Order.</h5>
         </div>
         <div class="text-center mt-3 mb-3">
             <a href="{{ url('/') }}" class="btn btn-sm btn-fill-out mb-3 mb-sm-0 btn-same-w">Home</a>

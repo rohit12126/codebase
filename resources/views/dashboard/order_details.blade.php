@@ -90,7 +90,7 @@
                                                     selected
                                                 @elseif($order->status == 2 || $order->status == 3 || $order->status == 4)
                                                     disabled
-                                                @endif >Cancled
+                                                @endif >Cancelled
                                             </option>
                                         </select>
                                     </td>

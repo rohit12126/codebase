@@ -80,7 +80,7 @@
                                                         </option>
                                                         <option value="4" @if(@$_GET['order_status']==4) selected @endif </option> Delivered
                                                         </option>
-                                                        <option value="5" @if(@$_GET['order_status']==5) selected @endif </option> Cancled
+                                                        <option value="5" @if(@$_GET['order_status']==5) selected @endif </option> Cancelled
                                                         </option>
                                                     </select>
                                                 </div>
