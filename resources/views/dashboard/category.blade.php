@@ -167,6 +167,16 @@
 <script>
     $('.addForm').hide();
     $("#myform").validate({
+        rules: {
+            name: {
+                min: 2,
+                max: 80,
+                required: true
+            }
+        },
+        messages: {
+            name: "Please provide Valid Name"
+        },
         submitHandler: function (form) {
             // do other things for a valid form
             form.submit();
