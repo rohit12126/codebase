@@ -340,7 +340,7 @@ footer-->
 
 </html>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="{{ asset('js/js-jquery.elevatezoom.js')}}"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.hotspot.js')}}"></script>
