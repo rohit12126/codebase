@@ -24,7 +24,7 @@
             <li class="c-header-nav-item dropdown">
                 <a class="c-header-nav-link has-dropdown-custom" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="c-avatar"><img class="c-avatar-img" src="{{ url('') }}/upload/3.png" alt="{{Auth::guard('admin')->user()->email}}"></div>
-                    <span>&nbsp;{{Auth::guard('admin')->user()->name}}</span>
+                    <span>&nbsp;{{ Str::limit(Auth::guard('admin')->user()->name, 20 )}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right pt-0">
                     {{-- <div class="dropdown-header bg-light py-2"><strong>Account</strong></div><a class="dropdown-item" href="#">
