@@ -25,6 +25,17 @@
     <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
     <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
     <style>
+    /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
         #sitePreloader{
             position: fixed;
             top: 0;

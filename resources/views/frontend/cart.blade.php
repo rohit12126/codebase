@@ -20,7 +20,7 @@
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
-                                         $ {{number_format($product->price,2)}}
+                                        $ {{number_format($product->price,2)}}
                                     </span>
                                 </p>
                             </div>
@@ -36,7 +36,7 @@
                                 <div class="cart-product-quantity">
                                     <div class="quantity">
                                         <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                                        <input type="number" min="0" step="1" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
                                         <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                     <div class="cart-product-quantity">
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                            <input type="number" min="0" step="1" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                         </div>
                     </div>
@@ -263,7 +263,7 @@
                     qty : qty
                 },
                 success: function(result) {
-
+                    
                     var icon = 'info';
 
                     if (result.status == true) {
