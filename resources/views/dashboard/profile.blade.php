@@ -86,7 +86,7 @@
                                     <div class="form-group col-6">
                                         <label>New Password</label>
                                         <span class="mandatory">*</span>
-                                        <input type="password" maxlength="150" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off" />
+                                        <input type="password" maxlength="150" placeholder="New Password" name="new_password" id="new_password" class="form-control" required autocomplete="off" />
                                         @error('new_password')
                                         <span class="text-danger" role="alert">
                                             {{ $message }}
@@ -149,6 +149,18 @@
         }
     });
     $("#passwordform").validate({
+        rules: {
+            new_password : {
+            minlength : 5,
+            },
+            confirm_password : {
+                minlength : 5,
+                equalTo : "#new_password"
+            }
+        },
+        messages: {
+            confirm_password: "password and confirm password must be same"
+        },
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();
