@@ -36,7 +36,7 @@ class HomeManager
         /* Active Counts */
         $data['blogCount'] = Blog::where('status', '=', 1)->count();
         $data['orderCount'] = Order::count();
-        $data['cancleOrderCount'] = Order::where('status', '=', 3)->count();
+        $data['cancleOrderCount'] = Order::where('status', '=', 5)->count();
         $data['productsCount'] = Product::where('is_accessory', '=', 0)->count();
         $data['accessoryCount'] = Product::where('is_accessory', '=', 1)->count();
         $data['userCount'] = Users::where('menuroles', '=', 'user')->count();

@@ -77,7 +77,7 @@
           
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
-              <div class="card text-white cursor-pointer dashboard-block fourth-block" title="Total Active Accessories" onclick="window.location='{{ route('admin.item.list') }}'">
+              <div class="card text-white cursor-pointer dashboard-block fourth-block" title="Total Active Accessories" onclick="window.location='{{ url('admin/item-list?type=1') }}'">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                             <div class="icons-block">
@@ -95,7 +95,7 @@
           </div>
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
-                <div class="card text-white cursor-pointer dashboard-block fifth-block" title="Total Cancelled Orders" onclick="window.location='{{ route('admin.order') }}'">
+                <div class="card text-white cursor-pointer dashboard-block fifth-block" title="Total Cancelled Orders" onclick="window.location='{{url('admin/order?order_status=5') }}'">
                     <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div class="icons-block">
@@ -115,7 +115,7 @@
             </div>
             <!-- /.col-->
             <div class="col-sm-6 col-lg-3">
-              <div class="card text-white cursor-pointer dashboard-block sixth-block" title="Total Active Blogs" onclick="window.location='{{ route('admin.blog.list') }}'">
+              <div class="card text-white cursor-pointer dashboard-block sixth-block" title="Total Active Blogs" onclick="window.location='{{ url('admin/blog-list?status=active') }}'">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div class="icons-block">
@@ -135,7 +135,7 @@
     </div>
 </div>
 <form method="GET" id="activeProductForm" action="{{ route('admin.item.list') }}" enctype="multipart/form-data">
-<input type="hidden" name="type" value="1">
+<input type="hidden" name="type" value="false">
 </form>
 <script>
 $(document).ready(function(){
