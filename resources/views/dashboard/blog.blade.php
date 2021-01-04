@@ -3,7 +3,11 @@
 @section('css')
     
 @endsection
-
+<style>
+.note-editor.note-frame.fullscreen{
+    background: white;
+}
+</style>
 @section('breadcrumb')
     <div class="c-subheader px-3">
         <ol class="breadcrumb breadcrumb-custom border-0 m-0">
@@ -55,7 +59,7 @@
                                     <div class="form-group"> 
                                         <label>Content</label>
                                         <span class="mandatory">*</span>
-                                        <textarea id="content" name="description" class="form-control summernote" required="true">{{ old('description', @$blog->description) }}</textarea>
+                                        <textarea style="z-index:100"id="content" name="description" class="form-control summernote" required="true">{{ old('description', @$blog->description) }}</textarea>
                                         @if($errors->has('description'))
                                             <div class="error ">{{ $errors->first('description') }}</div>
                                         @endif
