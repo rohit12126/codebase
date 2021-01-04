@@ -175,7 +175,7 @@ class ProductManager
 
     public function getProducts()
     {
-        $products = ProductModel::with('images', 'catergory')->paginate(10);
+        $products = ProductModel::with('images', 'catergory')->paginate(8);
         return $products;
     }
 

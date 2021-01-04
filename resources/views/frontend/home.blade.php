@@ -126,70 +126,24 @@
     <section class="home-products-section" id="stt">
         <h1 class="pt-5 mb-5 heading_s3 text-center">Our Products</h1>
         <div class="pd-block-wrap">
+        @if($products->isEmpty()) 
+            <div class="col-md-12 col-12 text-center">
+                <h3>No Product available.</h3>
+            </div>
+        @else
+        @foreach ($products as $key => $product)
             <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/1.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
+            <a href="{{ url('product/detail/').'/'.$product->slug }}">
+                <div class="pd-inner">
+                    <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  
+                    @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg 
+                    @endif " class="d-block w-100" alt="...">
+                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out">Configure</a>
+                </div>
                 </a>
             </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/2.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/3.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/4.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/5.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/6.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/7.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
-            <div class="pd-block">
-                <a href="">
-                    <div class="pd-inner">
-                        <img src="{{URL::asset('/images/home/8.png')}}" alt="...">
-                        <a href="#" class="btn btn-fill-out">Configure</a>
-                    </div>
-                </a>
-            </div>
+        @endforeach
+        @endif
         </div>
     </section>
     <section class="grid-tiems-section">
