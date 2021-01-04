@@ -169,13 +169,12 @@
     $("#myform").validate({
         rules: {
             name: {
-                min: 2,
-                max: 80,
-                required: true
+                required: true,
+                maxlength: 80,
             }
         },
         messages: {
-            name: "Please provide Valid Name"
+            name: "Category name must be below 80 characters"
         },
         submitHandler: function (form) {
             // do other things for a valid form
