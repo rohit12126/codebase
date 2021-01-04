@@ -42,7 +42,7 @@
                                     <div class="form-group">
                                         <label>Email</label>
                                         <span class="mandatory">*</span>
-                                        <input type="email" disabled maxlength="150" placeholder="Email" name="email" value="{{ old('email', $user->email) }}"  class="form-control" required autocomplete="off" />
+                                        <input type="email" readonly maxlength="150" placeholder="Email" name="email" value="{{ old('email', $user->email) }}"  class="form-control" required autocomplete="off" />
                                         @if($errors->has('email'))
                                             <div class="error ">{{ $errors->first('email') }}</div>
                                         @endif
