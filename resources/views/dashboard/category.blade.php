@@ -68,7 +68,7 @@
                                             Cancel
                                         </a>
                                         @else
-                                        <a onclick="$('.addForm').hide('slow');" title="Cancle" class="btn btn-danger text-white">
+                                        <a href="{{route('admin.category')}}" title="Cancle" class="btn btn-danger text-white">
                                             Cancel
                                         </a>
                                         @endif
