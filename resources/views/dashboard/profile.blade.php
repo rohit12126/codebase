@@ -20,7 +20,7 @@
 
         @include('partials.alert_msg')
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
                         <h4>Profile</h4>
@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" enctype="multipart/form-data" id="myform">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12">
                                     @csrf
                                     <div class="form-group">
                                         <label>Name</label>
@@ -42,7 +42,7 @@
                                     <div class="form-group">
                                         <label>Email</label>
                                         <span class="mandatory">*</span>
-                                        <input type="email" maxlength="150" placeholder="Email" name="email" value="{{ old('email', $user->email) }}"  class="form-control" required autocomplete="off" />
+                                        <input type="email" disabled maxlength="150" placeholder="Email" name="email" value="{{ old('email', $user->email) }}"  class="form-control" required autocomplete="off" />
                                         @if($errors->has('email'))
                                             <div class="error ">{{ $errors->first('email') }}</div>
                                         @endif
@@ -51,9 +51,66 @@
                                         <button type="submit" class="btn btn-primary mr-4 mt-0">
                                             Submit
                                         </button>
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                        <!-- <a onclick="history.go(-1)" class="btn btn-danger text-white">
                                             Back
-                                        </a>
+                                        </a> -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Change Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('admin.change.password') }}" enctype="multipart/form-data" id="passwordform">
+                            <div class="row">
+                                <div class="col-12">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label>Current Password</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="password" maxlength="150" placeholder="Current Password" name="current_password" class="form-control" required autocomplete="off" />
+                                        @error('current_password')
+                                        <span class="text-danger" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <div class="row">
+                                    <div class="form-group col-6">
+                                        <label>New Password</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="password" maxlength="150" placeholder="New Password" name="new_password" class="form-control" required autocomplete="off" />
+                                        @error('new_password')
+                                        <span class="text-danger" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label>Confirm Password</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="password" maxlength="150" placeholder="Confirm Password" name="confirm_password" class="form-control" required autocomplete="off" />
+                                        @error('confirm_password')
+                                        <span class="text-danger" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    </div>
+                                    <div class="d-flex pt-4">
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0">
+                                            Submit
+                                        </button>
+                                        <!-- <a onclick="history.go(-1)" class="btn btn-danger text-white">
+                                            Back
+                                        </a> -->
                                     </div>
                                 </div>
 
@@ -86,6 +143,12 @@
             name: "Please provide a name",
             email: "Please provide a email",
         },
+        submitHandler: function(form) {
+            // do other things for a valid form
+            form.submit();
+        }
+    });
+    $("#passwordform").validate({
         submitHandler: function(form) {
             // do other things for a valid form
             form.submit();

@@ -82,10 +82,10 @@
                     </p>
                     
                     <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">
-                        <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
-                            <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                        <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
+                            <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
                             <i class="linearicons-cart"></i> Buy Now
-                        </a>
+                        </a> -->
 
                         <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
