@@ -85,12 +85,12 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            {{-- <div class="col-sm-4">
                                                 <div class="form-group mb-sm-0">
                                                     <label>Product Name</label>
                                                     <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-sm-4 d-flex align-items-end">
                                                 <button type="submit" title="Search" class="btn custom-tooltip btn-primary mr-2 mt-0">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Search Order</span>
