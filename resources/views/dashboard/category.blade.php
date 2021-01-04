@@ -171,10 +171,11 @@
             name: {
                 required: true,
                 maxlength: 80,
+                minlength:3,
             }
         },
         messages: {
-            name: "Category name must be below 80 characters"
+            name: "Category name must be between 3 & 80 characters"
         },
         submitHandler: function (form) {
             // do other things for a valid form
