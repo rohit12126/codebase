@@ -47,7 +47,8 @@ class LoginController extends Controller
 
 
     public function redirectToProvider($provider)
-    {   
+    {
+        session()->put('url', url());
         return Socialite::driver($provider)->redirect();
     }
 
@@ -71,6 +72,8 @@ class LoginController extends Controller
 
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
+    //    if(url()->previous())
+       dd(sesssion());
        return redirect()->route('account');
    }
    public function findOrCreateUser($providerUser, $provider)
