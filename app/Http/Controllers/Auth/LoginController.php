@@ -48,7 +48,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($provider)
     {
-        session(['key' => 'value']);
+        session(['key' => url()->previous()]);
         return Socialite::driver($provider)->redirect();
     }
 
