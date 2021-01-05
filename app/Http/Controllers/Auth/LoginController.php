@@ -13,6 +13,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\UserRegistration;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+
 class LoginController extends Controller
 {
     /*
@@ -82,7 +84,7 @@ class LoginController extends Controller
      } else {
          $redirectUrl = route('account');
      }
-     return redirect()->$redirectUrl;
+     return Redirect::to($redirectUrl);
    }
    public function findOrCreateUser($providerUser, $provider)
    {
