@@ -16,7 +16,7 @@
 .rating>label {
     position: relative;
     width: 1em;
-    font-size: 6vw;
+    font-size: 3rem;
     color: #FFD600;
     cursor: pointer
 }
