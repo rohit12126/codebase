@@ -44,6 +44,8 @@
 
                     @php
                         $avgRate = round($productData['averageRating']);
+                        if($productData['reviewCount'] == 0)
+                        $avgRate = 0;
                     @endphp
                     <div class="rating-img-icon">
                         @for ($i = 0; $i < 5; $i++)

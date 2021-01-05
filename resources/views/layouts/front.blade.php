@@ -314,7 +314,7 @@ footer-->
                 <div class="row m-0">
                     <div class="col-sm-5 p-lg-0">
                         <!-- <img src="img/sitzfeldt-white.png" alt="" class="foot-logo"> -->
-                        <span class="footer-logo">Custom Closet</span>
+                        <a href={{ url('/')}}><span class="footer-logo">Custom Closet</span></a>
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">
