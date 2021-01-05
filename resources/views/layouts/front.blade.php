@@ -224,12 +224,12 @@
                             <div class="form-flexed-row">
                                <div class="form-group">
                                   <label for="Password">Password <span class="mandatory">*</span></label>
-                                  <input type="password" class="form-control" id="Password" name="password" placeholder="Password" autocomplete="new-password" value="">
+                                  <input type="password" class="form-control" id="Password" name="spassword" placeholder="Password" autocomplete="new-password" value="">
                                   <div class="password_error"> </div>
                                </div>
                                <div class="form-group">
                                   <label for="re-password">Confirm Password <span class="mandatory">*</span></label>
-                                  <input type="password" class="form-control" id="re-password" name="password_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="">
+                                  <input type="password" class="form-control" id="re-password" name="spassword_confirmation" placeholder="Confirm Password" autocomplete="conf-password" value="">
                                   <div class="password_confirmation_error"> </div>
                                </div>
                             </div>
@@ -473,10 +473,10 @@ footer-->
             lastName: {
                 required: "Last Name field is required.",
             },
-            password: {
+            spassword: {
                 required: "Password field is required.",
             },
-            password_confirmation: {
+            spassword_confirmation: {
                 equalTo : "Password and confirm password did not match."
             },
             email: "Please enter a valid email address",

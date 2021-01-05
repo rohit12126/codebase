@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label>Email Address <span class="mandatory">*</span></label>
-                    <input required="" class="form-control" name="email" type="email"  value="{{ $user->email}}" required>
+                    <input required="" class="form-control" name="email" type="email"  value="{{ $user->email}}" readonly required>
                     @if($errors->has('email'))
                         <div class="error">{{ $errors->first('email') }}</div>
                     @endif
