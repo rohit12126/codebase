@@ -75,9 +75,6 @@ class LoginController extends Controller
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
 
-    // if(session()->get('key'))
-    // return redirect()->session()->get('key');
-    //    return redirect()->route('account');
        $redirectUrl = session()->get('rUrl');
        if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
         // 
