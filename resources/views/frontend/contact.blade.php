@@ -89,11 +89,11 @@
                 </div>
                 <!-- <p class="leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p> -->
                 <div class="field_form">
-                    <form id="contactform">
-                   
+                    <form method="post" action="{{ route('contact.store') }}">
+                    @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <input placeholder="Enter Name *" id="cname" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" type="text">
+                                <input required="" placeholder="Enter Name *" id="first-name" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" type="text">
                                 @if ($errors->has('name'))
                                 <div class="error">
                                     {{ $errors->first('name') }}
@@ -101,7 +101,7 @@
                                 @endif
                              </div>
                             <div class="form-group col-md-6">
-                                <input placeholder="Enter Phone No. *" id="cphone" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone">
+                                <input required="" placeholder="Enter Phone No. *" id="phone" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone">
                                 @if ($errors->has('phone'))
                                 <div class="error">
                                     {{ $errors->first('phone') }}
@@ -109,7 +109,7 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-12">
-                                <input placeholder="Enter Email *" id="cemail" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" type="email">
+                                <input required="" placeholder="Enter Email *" id="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" type="email">
                                 @if ($errors->has('email'))
                                 <div class="error">
                                     {{ $errors->first('email') }}
@@ -133,7 +133,7 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea placeholder="Message *" id="cmessage" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
+                                <textarea required="" placeholder="Message *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
                                 @if ($errors->has('message'))
                                 <div class="error">
                                     {{ $errors->first('message') }}

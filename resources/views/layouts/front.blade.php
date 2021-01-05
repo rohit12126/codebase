@@ -395,75 +395,7 @@ footer-->
 </script>
 
 <script>
-jQuery(document).ready(function() {
-jQuery("#contactform").validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 5
-            },
-            phone: {
-                required: true,
-                minlength: 10,
-                maxlength: 15
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            message: {
-                required: true,
-                minlength: 5,
-                maxlength: 200
-            }
-        },
-        messages: {
-            name: {
-                required: "Please provide a name",
-                minlength: "Your name must be at least 5 characters long"
-            },
-            phone: {
-                required: "Please provide a phone",
-                minlength: "Your phone must be at least 10 digits long"
-                maxlength: "Your phone must not exxed 15 digits"
-            },
-            email: "Please enter a valid email address",
-            message: {
-                required: "Please provide a message",
-                minlength: "Your message must be at least 5 characters long"
-                maxlength: "Your message must not exxed 200 characters"
-            }
-        },
-        submitHandler: function(form) {
-            var name = $("#cname").val();
-            var phone = $("#cphone").val();
-            var email = $("#cemail").val();
-            var reason = $("#reason").val();
-            var message = $("#cmessage").val();
-            jQuery.ajax({
-                url: "{{ url('/store') }}",
-                dataType: 'json',
-                method: 'post',
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data: {
-                    email : email,
-                    phone : phone,
-                    email : email,
-                    reason : reason,
-                    messsage : message
-                },
-                success: function(result) {
-                    if (result.status == "success") {
-                        window.location.href = result.data.redirect;
-                    } else {
-                        $(".email_error").html('<lable class="error" role="alert"> '+result.message+'</lable>');
-                        return false;
-                    }
-                }
-            });   
-        }
-    });
-});
+
     /* Login validation functionality */
     jQuery("#loginform").validate({
         rules: {
@@ -681,7 +613,6 @@ jQuery("#contactform").validate({
         x -= document.querySelector('.wrapper').getBoundingClientRect().left;
         scrollIt(x); 
     });
-    
     });
  
 </script>
