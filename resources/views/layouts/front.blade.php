@@ -395,6 +395,7 @@ footer-->
 </script>
 
 <script>
+jQuery(document).ready(function() {
 jQuery("#contactform").validate({
         rules: {
             name: {
@@ -462,6 +463,7 @@ jQuery("#contactform").validate({
             });   
         }
     });
+});
     /* Login validation functionality */
     jQuery("#loginform").validate({
         rules: {
