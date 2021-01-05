@@ -44,7 +44,8 @@ class ProfileController extends Controller
             $request, 
             [
                 'email' => 'required|email|unique:users,email,'.$request->id.',id',
-                'mobile' => 'required|unique:users,mobile,'.$request->id.',id'
+                'name' => 'required|max:40',
+                'mobile' => 'required|required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15|unique:users,mobile,'.$request->id.',id'
             ]
         );
 
