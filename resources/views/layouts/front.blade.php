@@ -443,10 +443,14 @@ footer-->
     jQuery("#signupform").validate({
         rules: {
             name: {
-                required: true
+                required: true,
+                minlength: 2,
+                maxlength: 25
             },
             lastName: {
-                required: true
+                required: true,
+                minlength: 2,
+                maxlength: 25
             },
             email: {
                 required: true,
@@ -468,10 +472,14 @@ footer-->
         },
         messages: {
             name: {
-                required: "Name field is required.",
+                required: "First Name field is required.",
+                minlength: "First Name must be atleast 2 digit",
+                maxlength: "First Name must not exeed 20 digits"
             },
             lastName: {
                 required: "Last Name field is required.",
+                minlength: "Last Name must be atleast 2 digit",
+                maxlength: "Last Name must not exeed 20 digits"
             },
             spassword: {
                 required: "Password field is required.",
