@@ -48,7 +48,7 @@
                                                         <option value="">Select Status</option>
                                                         <option value="1" @if(@$_GET['product_status']==1) selected @endif </option>Active
                                                         </option>
-                                                        <option value="0" @if(@$_GET['product_status']==2) selected @endif </option>InActive
+                                                        <option value="0" @if(@$_GET['product_status']==2) selected @endif </option>Inactive
                                                         </option>
                                                     </select>
                                                 </div>

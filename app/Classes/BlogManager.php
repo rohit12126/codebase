@@ -125,7 +125,9 @@ class BlogManager
         if ( $req->title !== null ) {
             $order = BlogModel::where('title', 'like', '%' . $req->title . '%');
             return $order->orderBy('id', 'desc')->paginate(10);
-        } else {
+        } elseif($req->status == 'active' ){
+            return BlogModel::orderBy('id', 'desc')->where('status', 1)->paginate(10);
+        } {
             return BlogModel::orderBy('id', 'desc')->paginate(10);
         }
     }

@@ -20,7 +20,7 @@
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
-                                         $ {{number_format($product->price,2)}}
+                                        $ {{number_format($product->price,2)}}
                                     </span>
                                 </p>
                             </div>
@@ -35,8 +35,8 @@
                             <div>
                                 <div class="cart-product-quantity">
                                     <div class="quantity">
-                                        <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                                        <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+                                        <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
                                         <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                     <div class="cart-product-quantity">
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                            <input type="text" name="quantity" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                     var icon = 'success';
 
                     if (result.status == false) {
-                       icon = 'info';
+                        icon = 'info';
                     } 
 
                     Swal.fire({
@@ -175,7 +175,7 @@
                             popup: 'custom-success-popup',
                         }
                     });
-                 
+                
                     var  productTotal = result.data.productQty * result.data.productPrice;
                     $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('.qty'+productId).val(result.data.productQty);
@@ -183,7 +183,7 @@
                     if(result.data.productQty > 1) {
                         $('.sub'+productId).css("cursor", "pointer");
                     } else {
-                        $('.sub'+productId).css("cursor", "not-allowed");
+                        $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$ '+result.data.cartSubTotal);
                     $('.grand_total').html('$ '+result.data.cartSubTotal);
@@ -195,8 +195,10 @@
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $( this ).attr('productId');
             
-            if($('.qty'+productId).val() == 1)
+            if($('.qty'+productId).val() == 1){
+                $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
             return false;
+            }
 
             e.preventDefault();
             jQuery.ajax({
@@ -215,7 +217,7 @@
                     if(result.data.productQty > 1) {
                         $('#sub'+productId).css("cursor", "pointer");
                     } else {
-                        $('#sub'+productId).css("cursor", "not-allowed");
+                        $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$ '+result.data.cartSubTotal);
                     $('.grand_total').html('$ '+result.data.cartSubTotal);
@@ -263,7 +265,7 @@
                     qty : qty
                 },
                 success: function(result) {
-
+                    
                     var icon = 'info';
 
                     if (result.status == true) {
@@ -276,7 +278,7 @@
                         if(result.data.productQty > 1) {
                             $('#sub'+productId).css("cursor", "pointer");
                         } else {
-                            $('#sub'+productId).css("cursor", "not-allowed");
+                            $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                         }
                         $('#subQty').html('$ '+result.data.cartSubTotal);
                         $('.grand_total').html('$ '+result.data.cartSubTotal);

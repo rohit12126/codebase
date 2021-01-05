@@ -265,6 +265,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function updateCart(Request $req) {
+        $this->validate($req, [
+            'qty' => 'numeric|regex:/^[1-9]\d*$/'
+         ]);
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);

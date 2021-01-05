@@ -24,7 +24,7 @@
             <li class="c-header-nav-item dropdown">
                 <a class="c-header-nav-link has-dropdown-custom" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="c-avatar"><img class="c-avatar-img" src="{{ url('') }}/upload/3.png" alt="{{Auth::guard('admin')->user()->email}}"></div>
-                    <span>&nbsp;{{Auth::guard('admin')->user()->name}}</span>
+                    <span>&nbsp;{{ Str::limit(Auth::guard('admin')->user()->name, 20 )}}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right pt-0">
                     {{-- <div class="dropdown-header bg-light py-2"><strong>Account</strong></div><a class="dropdown-item" href="#">
@@ -53,22 +53,22 @@
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-file"></use>
                         </svg> Projects<span class="badge badge-primary ml-auto">42</span></a> --}}
+                        <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                        <svg class="c-icon mr-2">
+                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
+                        </svg> Profile
+                    </a>
                     <a class="dropdown-item" href="{{ url('/') }}" target= "_blank">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-laptop"></use>
                         </svg> Go to Website
                     </a>
                     {{-- <div class="dropdown-divider"></div> --}}
-                    <a class="dropdown-item" href="{{ route('admin.profile') }}">
-                        <svg class="c-icon mr-2">
-                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
-                        </svg> User
-                    </a>
-                    <a class="dropdown-item" href="{{ route('admin.change.password') }}">
-                        <svg class="c-icon mr-2">
-                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-lock-locked"></use>
-                        </svg> Change Password
-                    </a>
+                {{--<a class="dropdown-item" href="{{ route('admin.change.password') }}">
+                    <svg class="c-icon mr-2">
+                        <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-lock-locked"></use>
+                    </svg> Change Password
+                </a>--}}
                     
                     <a class="dropdown-item" href="#">
                         <svg class="c-icon mr-2">

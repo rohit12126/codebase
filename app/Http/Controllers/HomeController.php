@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Classes\FaqManager;
+use App\Classes\ProductManager;
 
 class HomeController extends Controller
 {
     public function __construct(
-        FaqManager $faqManager
+        FaqManager $faqManager,
+        ProductManager $productManager
     )
     {
         $this->faqManager = $faqManager;
+        $this->productManager = $productManager;
     }
 
     /**
@@ -22,7 +25,12 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('frontend.home');
+        $products = $this->productManager->getProducts();
+        return view('frontend.home', 
+            [
+                'products' => $products
+            ]
+        );
     }
 
 

@@ -13,6 +13,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\UserRegistration;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+
 class LoginController extends Controller
 {
     /*
@@ -47,7 +49,8 @@ class LoginController extends Controller
 
 
     public function redirectToProvider($provider)
-    {   
+    {
+        session(['rUrl' => url()->previous()]);
         return Socialite::driver($provider)->redirect();
     }
 
@@ -71,7 +74,17 @@ class LoginController extends Controller
 
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
-       return redirect()->route('account');
+
+    // if(session()->get('key'))
+    // return redirect()->session()->get('key');
+    //    return redirect()->route('account');
+       $redirectUrl = session()->get('rUrl');
+       if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+        // 
+     } else {
+         $redirectUrl = route('account');
+     }
+     return Redirect::to($redirectUrl);
    }
    public function findOrCreateUser($providerUser, $provider)
    {

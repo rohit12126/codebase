@@ -158,8 +158,8 @@ class ProductManager
             if($req->product_name){
                 $order->where('name', 'like', '%' . $req->product_name . '%');
             }
-            if($req->type == 1){
-                $order->where('is_accessory', 0);
+            if($req->type){
+                $order->where('is_accessory', $req->type);
             }
             
             return $order->orderBy('id', 'desc')->paginate(10);
@@ -175,7 +175,7 @@ class ProductManager
 
     public function getProducts()
     {
-        $products = ProductModel::with('images', 'catergory')->paginate(10);
+        $products = ProductModel::with('images', 'catergory')->paginate(8);
         return $products;
     }
 

@@ -53,7 +53,7 @@
                                         <span class="mandatory">*</span>
                                         <select name="status" id="status" class="form-control">
                                             <option @if(@$category->status == 1) selected @endif value="1">Active</option>
-                                            <option @if(@$category->status == 0) selected @endif value="0">InActive</option>
+                                            <option @if(@$category->status == 0) selected @endif value="0">Inactive</option>
                                         </select>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                             Cancel
                                         </a>
                                         @else
-                                        <a onclick="$('.addForm').hide('slow');" title="Cancle" class="btn btn-danger text-white">
+                                        <a href="{{route('admin.category')}}" title="Cancle" class="btn btn-danger text-white">
                                             Cancel
                                         </a>
                                         @endif
@@ -169,13 +169,13 @@
     $("#myform").validate({
         rules: {
             name: {
-                min: 2,
-                max: 80,
-                required: true
+                required: true,
+                maxlength: 80,
+                minlength:3,
             }
         },
         messages: {
-            name: "Please provide Valid Name"
+            name: "Category name must be between 3 & 80 characters"
         },
         submitHandler: function (form) {
             // do other things for a valid form
