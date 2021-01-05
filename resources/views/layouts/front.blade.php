@@ -462,7 +462,7 @@ footer-->
                 minlength: 10,
                 maxlength: 14
             },
-            password: {
+            spassword: {
                 required: true,
             },
             password_confirmation : {
