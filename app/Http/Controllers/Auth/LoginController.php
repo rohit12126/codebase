@@ -48,7 +48,7 @@ class LoginController extends Controller
 
     public function redirectToProvider($provider)
     {
-        session(['key' => url()->previous()]);
+        session(['rUrl' => url()->previous()]);
         return Socialite::driver($provider)->redirect();
     }
 
@@ -73,9 +73,16 @@ class LoginController extends Controller
        $authUser = $this->findOrCreateUser($user, $provider);
        Auth::login($authUser, true);
 
-    if(session()->get('key'))
-    return redirect()->session()->get('key');
-       return redirect()->route('account');
+    // if(session()->get('key'))
+    // return redirect()->session()->get('key');
+    //    return redirect()->route('account');
+       $redirectUrl = session()->get('rUrl');
+       if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+        // 
+     } else {
+         $redirectUrl = route('account');
+     }
+     return redirect()->$redirectUrl;
    }
    public function findOrCreateUser($providerUser, $provider)
    {
