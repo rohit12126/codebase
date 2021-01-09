@@ -44,7 +44,6 @@ class EnquiryController extends Controller
     }
     public function submit(Request $request)
     {
-        dd($request);
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',

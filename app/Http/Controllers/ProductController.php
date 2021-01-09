@@ -94,7 +94,6 @@ class ProductController extends Controller
      */
 
     public function rating(Request $req){
-        // dd($req);
         $validator = Validator::make($req->all(), [
             'review' => 'required|string',
             'title' => 'required|string',
