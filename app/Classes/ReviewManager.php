@@ -85,12 +85,12 @@ class ReviewManager
 
     public function aproovReview($id)
     {
-        return DB::table('reviews')->where('id',$id)->update(['approved' => true]);;
+        return DB::table('reviews')->where('id',$id)->update(['approved' => true]);
     }
 
     public function disapprovReview($id)
     {
-        return DB::table('reviews')->where('id',$id)->update(['approved' => false]);;
+        return DB::table('reviews')->where('id',$id)->update(['approved' => false]);
     }
     
     public static function getAllActiveReviewsByProductId($productId)

@@ -95,7 +95,7 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
 
-    <li class="c-sidebar-nav-item" title="Find All Orders Here">
+    <li class="c-sidebar-nav-item" title="Find All Blogs Here">
         <a class="c-sidebar-nav-link @if(
             request()->segment(2) == 'blog-list'
             || request()->segment(2) == 'blog'
@@ -107,6 +107,17 @@ if(!function_exists('renderDropdown')){
             Blogs
         </a>
     </li>
+
+    <li class="c-sidebar-nav-item" title="Find All Zones Here">
+        <a class="c-sidebar-nav-link @if(
+            request()->segment(2) == 'zone-list'
+            || request()->segment(2) == 'zone'
+        ) c-active @endif" href="{{ route('admin.zone.list') }}">
+        <i class="cil-sitemap c-sidebar-nav-icon"></i>
+            Zones
+        </a>
+    </li>
+
     {{-- Uncomment below code for CMS and Review Modules --}}
    {{--  <li class="c-sidebar-nav-item" title="Find All CMS Pages Here">
         <a class="c-sidebar-nav-link" href="{{ route('admin.page.list') }}">

@@ -145,6 +145,14 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('admin/enquiries', 'admin\EnquiryController@list')->name('admin.enquiries');
         Route::get('admin/update-enquiry/{id?}', 'admin\EnquiryController@contected');
 
+        Route::get('admin/zone', 'admin\ZoneController@index')->name('admin.zone');
+        Route::post('admin/zone', 'admin\ZoneController@addZone')->name('admin.zone');
+        Route::get('admin/zone_list', 'admin\ZoneController@zoneList')->name('admin.zone.list');
+        Route::get('admin/edit_zone/{id?}', 'admin\ZoneController@editZone');
+        Route::post('admin/edit_zone/{id?}', 'admin\ZoneController@editSubmitZone');
+        Route::get('admin/delete_zone/{id?}', 'admin\ZoneController@deleteZone');
+        
+
     });
     /* 
     * Admin Theme Default Routes

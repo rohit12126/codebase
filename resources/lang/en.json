@@ -84,6 +84,13 @@
     "faq_category_delete_failed" : "Something went wrong unable to delete FAQ Category!",
     
     "profile_update_success" : "Profile updated successfully!",
-    "profile_update_failed" : "Something went wrong unable to update Profile!"
+    "profile_update_failed" : "Something went wrong unable to update Profile!",
+
+    "zone_add_success" : "Zone added successfully!",
+    "zone_add_failed" : "Something went wrong unable to add Zone!",
+    "zone_update_success" : "Zone udated successfully!",
+    "zone_update_failed" : "Something went wrong unable to update Zone!",
+    "zone_delete_success" : "Zone deleted successfully!",
+    "zone_delete_failed" : "Something went wrong unable to delete Zone!"
 
 }
