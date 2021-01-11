@@ -1070,6 +1070,8 @@ $('#example39').multiselect();
             },
             title: {
                 required: true
+                minlength: 2,
+                maxlength: 40,
             },
             product_price: {
                 min: 1,
@@ -1082,7 +1084,11 @@ $('#example39').multiselect();
         },
         messages: {
             state_id: "Please select a state",
-            title: "Please provide a title",
+            title: {
+                required: "Title field is required.",
+                minlength: "Title must be atleast 2 digit",
+                maxlength: "Title must not exeed 40 digits"
+            },
             product_price: "Please provide Valid Product Price",
             shiping_price: "Please provide Valid Hardware Price"
         },

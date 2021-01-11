@@ -96,7 +96,7 @@
                                 @else
                                     <tfoot>
                                         <tr>
-                                            <th colspan="4" class="text-center">Blog list is empty</th>
+                                            <th colspan="4" class="text-center">Zone list is empty</th>
                                         </tr>
                                     </tfoot>
                                 @endif
