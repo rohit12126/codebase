@@ -94,7 +94,7 @@
                                 <div class="form-group">
                                         <label>Product Shipping Price In <b>$</b></label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Product Price" name="product_price" class="form-control" value="{{@$zone->product_price}}" >
+                                        <input type="number" min="0" placeholder="Product Price" name="product_price" class="form-control" value="{{@$zone->product_price}}" >
                                         @if($errors->has('product_price'))
                                             <div class="error">{{ $errors->first('product_price') }}</div>
                                         @endif
@@ -102,7 +102,7 @@
                                     <div class="form-group">
                                         <label>Hardware Shipping Price In <b>$</b></label>
                                         <span class="mandatory">*</span>
-                                        <input type="number" placeholder="Hardware Price" name="hardware_price" class="form-control" value="{{ @$zone->hardware_price}}" >
+                                        <input type="number"  min="0" placeholder="Hardware Price" name="hardware_price" class="form-control" value="{{ @$zone->hardware_price}}" >
                                         @if($errors->has('hardware_price'))
                                             <div class="error">{{ $errors->first('hardware_price') }}</div>
                                         @endif
@@ -1074,11 +1074,9 @@ $('#example39').multiselect();
                 maxlength: 40,
             },
             product_price: {
-                min: 1,
                 required: true
             },
             shiping_price: {
-                min: 1,
                 required: true
             }
         },
