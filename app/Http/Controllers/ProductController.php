@@ -99,9 +99,9 @@ class ProductController extends Controller
             'title' => 'required|string',
             'rating' => 'required|integer'
         ]);
-         
+        
         if ($validator->fails()) {
-             return response()->json(['error'=>$validator->messages()->first()],Response::HTTP_INTERNAL_SERVER_ERROR);
+            return response()->json(['error'=>$validator->messages()->first()],Response::HTTP_INTERNAL_SERVER_ERROR);
         }
         
         //$user = $this->userManager->getCurrentUser();

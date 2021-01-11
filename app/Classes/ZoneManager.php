@@ -14,6 +14,11 @@ class ZoneManager
     return DB::table('states')->get();
   }
 
+  // public function statesWithZone()
+  // {
+  //   return ZoneModel::with('state')->get();
+  // }
+
   public function addZone($req)
   {
     $data = [

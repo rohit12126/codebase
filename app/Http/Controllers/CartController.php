@@ -9,6 +9,7 @@ use App\Classes\CartManager;
 use App\Classes\GuestUserManager;
 use App\Classes\UserManager;
 use App\Classes\AddressManager;
+use App\Classes\ZoneManager;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +19,7 @@ class CartController extends Controller
     protected $cartManager;
     protected $guestUserManager;
     protected $addressManager;
+    protected $zoneManager;
     /**
      * Create a new controller instance.
      *
@@ -27,14 +29,15 @@ class CartController extends Controller
         ProductManager $productManager,
         CartManager $cartManager,
         GuestUserManager $guestUserManager,
-        AddressManager $addressManager
+        AddressManager $addressManager,
+        ZoneManager $zoneManager
     )
     {
         $this->productManager = $productManager;
         $this->cartManager = $cartManager;
         $this->guestUserManager = $guestUserManager;
         $this->addressManager = $addressManager;
-        
+        $this->zoneManager = $zoneManager;
     }
     
     /**
@@ -88,10 +91,11 @@ class CartController extends Controller
             $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
         }
+
+        $states = $this->zoneManager->stateslist();
         
         $cartSubTotal = str_replace(",","", $cartSubTotal);
         $cartSubTotal = (float) $cartSubTotal;
-        
         return view('frontend.address',
             [
                 'shippingAddresses' => $shippingAddresses,
@@ -100,7 +104,8 @@ class CartController extends Controller
                 'isTemp' => $isTemp,
                 'productList' => $productList,
                 'cartSubTotal' => (float) $cartSubTotal,
-                'userData' => $userData
+                'userData' => $userData,
+                'states' => $states
             ]
         );
     }
@@ -329,5 +334,11 @@ class CartController extends Controller
         ];
         
         echo json_encode($response);
+    }
+
+    public function shippingPrice()
+    {
+        dd('hi');
+        return 'hi';
     }
 }

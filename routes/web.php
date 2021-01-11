@@ -336,6 +336,7 @@ Route::get('/profile',                 'ProfileController@index')->name('profile
 Route::get('/',                 'ProfileController@account')->name('account');
 Route::post('/update',                 'ProfileController@update')->name('account.update');
 Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
+Route::get('/ordercancel/{id}' ,'ProfileController@calcelRequest')->name('ordercancel');
 });
 Route::get('stripe', 'StripePaymentController@stripe')->name('stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
@@ -376,6 +377,7 @@ Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateC
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
 /* Checkout Routes */
+Route::POST('shipping/price', 'CartController@shippingPrice')->name('shipping.price');
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
 Route::post('checkout','CartController@addAddress')->name('address.save');
 Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');

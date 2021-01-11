@@ -9,7 +9,7 @@ class State extends Model
     protected $table='states';
 
     protected $fillable = [
-        'zune_id'
+        'zone_id'
     ];
 
     public function zone()

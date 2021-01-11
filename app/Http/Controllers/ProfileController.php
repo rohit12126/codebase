@@ -62,13 +62,6 @@ class ProfileController extends Controller
         
         $session = session()->all();
         
-        // dump(Auth::id());
-        // dump(Auth::user());
-        // dump(auth()->user());
-
-        // dd($session);
-        // $user = Auth::user();
-        // dd($user);
         $user = $this->userManager
                 ->getCurrentUser();
         if (is_null($user)) {
@@ -156,5 +149,10 @@ class ProfileController extends Controller
             return redirect()->back()->withErrors($error);
           }
         }               
+    }
+
+    public function calcelRequest($id)
+    {
+        dd($id);
     }
 }

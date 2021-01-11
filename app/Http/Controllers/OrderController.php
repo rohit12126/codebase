@@ -49,7 +49,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+    
     public function addOrder(Request $req) {
         if($req->session()->has('userId')) {
             $isTempUser = $req->session()->get('isTemp');

@@ -122,7 +122,11 @@
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_state" name="bill_state" value="" placeholder="State / County *">
+                                        <select class="form-control ship" value="" id="bill_state" name="bill_state">
+                                                @foreach($states as $state)
+                                                <option value="{{$state->id}}">{{$state->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value=""  placeholder="Postcode / ZIP *">
@@ -192,7 +196,11 @@
                                             <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control ship" maxlength="150" required="" type="text" id="ship_state" name="ship_state" value="" placeholder="State / County *">
+                                            <select class="form-control ship" value="" id="ship_state" name="ship_state">
+                                                @foreach($states as $state)
+                                                <option value="{{$state->id}}">{{$state->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
@@ -231,10 +239,10 @@
                                         <th>Sub Total</th>
                                         <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
                                     </tr>
-                                    {{-- <tr>
+                                    <tr>
                                         <th>Shipping</th>
-                                        <td class="shipping_price">$ {{"10.00"}}</td>
-                                    </tr> --}}
+                                        <td class="shipping_price">$0.00</td>
+                                    </tr>
                                     <tr>
                                         <th>Total</th>
                                         <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
@@ -300,6 +308,13 @@
 
 <script>
 $(document).ready(function() {
+
+    $('#ship_state').on('change', function() {
+
+        console.log ( this.value );
+    });
+
+
     /* To Handle Browser Back From Payment page*/
     if(performance.navigation.type == 2){
         location.reload(true);
