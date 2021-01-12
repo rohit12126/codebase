@@ -87,5 +87,17 @@ class ZoneManager
     }
     return false;
   }
+
+  public function getPrice($zone)
+  {
+    if ($zone = ZoneModel::where('id', $zone)->first())
+    {
+      return $zone;
+    }
+    else
+    {
+      return FALSE;
+    }
+  }
   
 }

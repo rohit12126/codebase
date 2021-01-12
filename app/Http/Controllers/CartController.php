@@ -336,9 +336,5 @@ class CartController extends Controller
         echo json_encode($response);
     }
 
-    public function shippingPrice()
-    {
-        dd('hi');
-        return 'hi';
-    }
+    
 }

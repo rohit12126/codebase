@@ -377,7 +377,8 @@ Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateC
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
 /* Checkout Routes */
-Route::POST('shipping/price', 'CartController@shippingPrice')->name('shipping.price');
+Route::POST('shipping/price', 'OrderController@shippingPrice')->name('shipping.price');
+
 Route::get('checkout/address/','CartController@getAddresses')->name('address.get');
 Route::post('checkout','CartController@addAddress')->name('address.save');
 Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder');

@@ -196,12 +196,14 @@
                                             <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
                                         </div>
                                         <div class="form-group">
+                                        <form action="" method="post" id="shippingd">
                                             <select class="form-control ship" value="" id="ship_state" name="ship_state">
                                                 @foreach($states as $state)
-                                                <option value="{{$state->id}}">{{$state->name}}</option>
+                                                <option @if(empty($state->zone_id)) @endif value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <form>
                                         <div class="form-group">
                                             <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
                                         </div>
@@ -272,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-fill-out btn-block">Place Order</button>
+                        <button type="submit" id="place_order" class="btn btn-fill-out btn-block">Place Order</button>
                         <!-- <a href="#" class="btn btn-fill-out btn-block"></a> -->
                     </div>
                 </div>
@@ -308,6 +310,32 @@
 
 <script>
 $(document).ready(function() {
+
+        $('#place_order').attr('disabled',true);
+
+        $("#ship_state").on('change', function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var url = "{{route('shipping.price')}}";
+        $.ajax({
+        type: "POST",
+        url: url,
+        data: {zone_id : $("#ship_state").val()},
+        success: function(data) {
+            if(data == 0){
+                $('.shipping_price').html("Currently Shipping Not Available !")
+            }
+            else{
+            $('.shipping_price').html('$ '+data)
+            $('#place_order').attr('disabled', false);
+            }
+        }
+        });
+    });
+    
 
     $('#ship_state').on('change', function() {
 

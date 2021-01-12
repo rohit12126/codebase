@@ -98,7 +98,7 @@
                 </td>
             </tr>
             @php
-                $i++;    
+                $i++;
             @endphp
             @endforeach
             </tbody>
@@ -143,6 +143,7 @@
 @section('scripts')
 <script>
     jQuery(document).ready(function(){
+        
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
             var productId = $( this ).attr('productId');

@@ -286,4 +286,12 @@ class ProductManager
             ->count();
         return $count;
     }
+
+    public function checkHardware($id)
+    {
+        $assesory = ProductModel::where('id', $id)
+            ->where('is_accessory', 1)
+            ->first();
+        return $assesory;
+    }
 }

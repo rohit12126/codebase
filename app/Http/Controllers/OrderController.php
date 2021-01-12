@@ -9,6 +9,7 @@ use App\Classes\CartManager;
 use App\Classes\GuestUserManager;
 use App\Classes\AddressManager;
 use App\Classes\OrderManager;
+use App\Classes\ZoneManager;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderConfirm;
 use PDF;
@@ -22,6 +23,7 @@ class OrderController extends Controller
     protected $guestUserManager;
     protected $addressManager;
     protected $orderManager;
+    protected $zoneManager;
     
     /**
      * Create a new controller instance.
@@ -33,7 +35,8 @@ class OrderController extends Controller
         CartManager $cartManager,
         GuestUserManager $guestUserManager,
         AddressManager $addressManager,
-        OrderManager $orderManager
+        OrderManager $orderManager,
+        ZoneManager $zoneManager
     )
     {
         $this->productManager = $productManager;
@@ -41,7 +44,7 @@ class OrderController extends Controller
         $this->guestUserManager = $guestUserManager;
         $this->addressManager = $addressManager;
         $this->orderManager = $orderManager;
-        
+        $this->zoneManager = $zoneManager;
     }
     
     /**
@@ -146,6 +149,46 @@ class OrderController extends Controller
             return $pdf->download("customclosets-".$req->order_no.'.pdf');
         }
         return view('frontend.invoice');
+    }
+
+    public function shippingPrice(Request $req)
+    {
+        $shippingPrice = 0;
+        $hshippingPrice = 0;
+        $price = $this->zoneManager->getPrice($req->zone_id);
+        // dd($price);
+        if ( ! empty($price) )
+            {
+                // dd($price);
+                $contain = $this->cartManager->getCartContain();
+                
+                foreach($contain as $product)
+                {
+                    
+                    $hardware = $this->productManager->checkHardware($product->id);
+                    
+                    if($hardware)
+                    {
+                        
+                        $hshippingPrice+= $price->hardware_price * $product->qty;
+                        
+                    }
+                    else
+                    {
+                        $shippingPrice+= $price->product_price * $product->qty;
+                    }
+                }
+                if($shippingPrice != 0)
+                {
+                    $shippingPrice = $shippingPrice;
+                }
+                else
+                {
+                    $shippingPrice = $hshippingPrice;
+                }
+            }
+        
+        return $shippingPrice;
     }
     
 }
