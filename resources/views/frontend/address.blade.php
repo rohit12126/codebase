@@ -102,7 +102,6 @@
                                     </a>
                                 </div>
                                 @endif --}}
-    
                                 {{-- <div class="shipping-form collapse @if ($isTemp !=0) in show @endif" id="collapseExample2"> --}}
                                     <div class="pb-3">
                                         <div class="form-group">
@@ -122,11 +121,13 @@
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
                                         </div>
                                         <div class="form-group">
-                                        <select class="form-control ship" value="" id="bill_state" name="bill_state">
+                                        <form action="" method="post" id="shippingd">
+                                            <select class="form-control bill bill_state" value="" id="bill_state" name="bill_state">
                                                 @foreach($states as $state)
-                                                <option value="{{$state->id}}">{{$state->name}}</option>
+                                                <option value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
                                                 @endforeach
                                             </select>
+                                        <form>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value=""  placeholder="Postcode / ZIP *">
@@ -143,7 +144,7 @@
                                     </div>
                                 </div>
                                 <div class="collapse in show" id="collapseExample">
-                               {{--  @if ($isTemp !=1)
+                                {{--  @if ($isTemp !=1)
                                 <div class="address-billing-wrapper">
                                     <div class="custom-card-block mb-4">
                                         <div class="custom-card-body">
@@ -160,7 +161,7 @@
                                                         <h6 class="card-subtitle mb-2 text-muted">{{$address->mobile}}</h6>
                                                         <p class="card-text">{{$address->address}}</p>
                                                         <p class="card-text">{{$address->city.", ".$address->state.", ".$address->country }} ({{$address->zipcode}})</p> 
-                                                         <div class="d-flex justify-content-end align-items-center">
+                                                        <div class="d-flex justify-content-end align-items-center">
                                                             <a href="#" class="card-link"><i class="linearicons-pencil5"></i> Edit</a>
                                                             <a href="#" class="card-link"><i class="linearicons-trash2"></i> Delete</a>
                                                         </div>                         
@@ -197,16 +198,17 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <select class="form-control ship" value="" id="ship_state" name="ship_state">
+                                            <select class="form-control ship ship_state" value="" id="ship_state" name="ship_state">
                                                 @foreach($states as $state)
-                                                <option @if(empty($state->zone_id)) @endif value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
+                                                <option value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
                                                 @endforeach
                                             </select>
-                                        </div>
                                         <form>
+                                        </div>
                                         <div class="form-group">
                                             <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
                                         </div>
+                                        
                                     </div>
                                 {{-- </div> --}}
                                 </div>
@@ -313,7 +315,19 @@ $(document).ready(function() {
 
         $('#place_order').attr('disabled',true);
 
-        $("#ship_state").on('change', function() {
+
+        $("#filladdress").on("click", function(){
+            if (this.checked) {
+            $('.bill_state').prop('id', 'ship_state');
+            $('.ship_state').prop('id', 'bills')
+            }
+            else{
+                $('.bill_state').prop('id', 'bill_state');
+                $('.ship_state').prop('id', 'ship_state')
+            }
+        });
+
+        $('#ship_state').on('change', function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -323,7 +337,7 @@ $(document).ready(function() {
         $.ajax({
         type: "POST",
         url: url,
-        data: {zone_id : $("#ship_state").val()},
+        data: {zone_id :  $('#ship_state').val()},
         success: function(data) {
             if(data == 0){
                 $('.shipping_price').html("Currently Shipping Not Available !")
