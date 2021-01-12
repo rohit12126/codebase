@@ -327,6 +327,7 @@ $(document).ready(function() {
         success: function(data) {
             if(data == 0){
                 $('.shipping_price').html("Currently Shipping Not Available !")
+                $('#place_order').attr('disabled',true);
             }
             else{
             $('.shipping_price').html('$ '+data)
