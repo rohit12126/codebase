@@ -10,6 +10,11 @@ use App\Classes\UserManager;
 use App\Classes\AddressManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Session;
+
+
+
 
 
 class ProfileController extends Controller
@@ -74,7 +79,7 @@ class ProfileController extends Controller
         $billingAddress=$this->addressManager
                 ->getAddresses($user->id, 2, 0);
         $this->cartManager->synchCart($user->id);
-        
+
         return view('frontend.account',[
                 'user' => $user,
                 'orders' => $orders,
@@ -153,6 +158,20 @@ class ProfileController extends Controller
 
     public function calcelRequest($id)
     {
-        dd($id);
+        $order = $this->orderManager->getOrderByOrderNUmber($id);
+        if($order->created_at->addDays(7) > Carbon::today())
+        {
+            $req = new \stdClass();
+            $req->order_no = $order->order_no;
+            $req->order_status = '5';
+            if($this->orderManager->orderStatusChange($req))
+            {
+                return redirect()->back()->with('message', 'Your Order is Successfully Cancled');
+            }
+        }
+        else 
+        {
+            return redirect()->back()->withErrors('message', 'Unable to cancle this Order Please contact Support');
+        }
     }
 }

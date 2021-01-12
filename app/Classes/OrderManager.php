@@ -16,7 +16,7 @@ class OrderManager
     public static function orderStatusChange($req)
     {
         $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
-        
+        // dd($order);
         if ($order->fill(['status' => $req->order_status])->save()) {
 
             $data['order_no'] = $order->order_no;
@@ -31,6 +31,11 @@ class OrderManager
         } else {
             return false;
         }
+    }
+
+    public static function userOrderCancelRequest($id)
+    {
+        self::getOrderByOrderNUmber($id);
     }
 
     public static function getLatestPaginatedOrderList($req)

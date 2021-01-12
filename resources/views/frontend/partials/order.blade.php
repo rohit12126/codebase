@@ -52,9 +52,9 @@
                                 </td>
                                 <td>$ {{number_format($order->grand_total, 2)}}</td>
                                 @php
-                                $date = \Carbon\Carbon::today()->subDays(7);
+                                $date = $order->created_at->addDays(7);
                                 @endphp
-                                <td><a href="{{url('account/ordercancel/')}}/{{$order->order_no}}" class="btn btn-fill-out btn-sm @if(($order->status > 3) || ($order->created_at < date("Y-m-d"))) disabled @endif">Cancel</a>
+                                <td><a href="{{url('account/ordercancel/')}}/{{$order->order_no}}" class="btn btn-fill-out btn-sm @if(($order->status > 3) OR ($date < Carbon\Carbon::now())) disabled @endif">Cancel</a>
                                 <a href="{{url('account/orderdetails/')}}/{{$order->order_no}}" target="_blank" class="btn btn-fill-out btn-sm @if($order->status == 5) disabled @endif">Detail</a>
                                 </td>
                             </tr>
