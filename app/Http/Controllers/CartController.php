@@ -186,7 +186,8 @@ class CartController extends Controller
             'ship' => $ship,
             'bill' => $bill,
             'isTemp' => $isTemp,
-            'userId' => $userId
+            'userId' => $userId,
+            'shippingCharge' => $req->shipping
         ]);
 
         if ($req->payment_option == 'paypal') {

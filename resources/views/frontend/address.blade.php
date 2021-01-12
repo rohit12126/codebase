@@ -332,6 +332,12 @@ $(document).ready(function() {
             else{
             $('.shipping_price').html('$ '+data)
             $('#place_order').attr('disabled', false);
+            $('<input>', {
+                type: 'hidden',
+                id: 'shipping',
+                name: 'shipping',
+                value: data
+            }).appendTo('#checkoutForm');
             $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
             }
         }

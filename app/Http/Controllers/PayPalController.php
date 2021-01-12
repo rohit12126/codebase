@@ -62,17 +62,28 @@ class PaypalController extends Controller
                 $items[$i]->setName($product->name)
                 ->setCurrency($currency)
                 ->setQuantity($product->qty)
-                        ->setPrice($product->price); 
+                ->setPrice($product->price); 
                 $i++;
         } 
+        $shipCost = Session()->get('shippingCharge');
         
         $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
         
         $itemList = new ItemList();
         $itemList->setItems($items);
+
+        $details = new Details();
+            $details->setSubtotal($subTotal)
+            // ->setTax($tax)
+                ->setShipping($shipCost);
+            
+
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal($subTotal);
+            ->setTotal($subTotal + $shipCost)
+            ->setDetails($details);
+
+
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
