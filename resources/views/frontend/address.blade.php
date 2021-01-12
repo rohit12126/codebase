@@ -247,7 +247,7 @@
                                     </tr>
                                     <tr>
                                         <th>Total</th>
-                                        <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
+                                        <td class="product-subtotal" id="total">$ {{number_format($cartSubTotal, 2)}}</td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -332,6 +332,7 @@ $(document).ready(function() {
             else{
             $('.shipping_price').html('$ '+data)
             $('#place_order').attr('disabled', false);
+            $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
             }
         }
         });
