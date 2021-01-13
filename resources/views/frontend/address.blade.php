@@ -407,7 +407,7 @@ $(document).ready(function() {
             $("#ship_state").val($("#bill_state").val());  
             $("#ship_zipcode").val($("#bill_zipcode").val());
             $("#holder").val("bill_state");
-            $('#bill_state).on('change', function() {
+            $('.bill_state).on('change', function() {
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -417,7 +417,7 @@ $(document).ready(function() {
                 $.ajax({
                 type: "POST",
                 url: url,
-                data: {zone_id :  $('#bill_state).val()},
+                data: {zone_id :  $('.bill_state).val()},
                 success: function(data) {
                     if(data == 0){
                         $('.shipping_price').html("Currently Shipping Not Available !")
