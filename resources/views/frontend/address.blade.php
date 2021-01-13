@@ -316,18 +316,6 @@ $(document).ready(function() {
 
         $('#place_order').attr('disabled',true);
 
-
-        // $("#filladdress").on("click", function(){
-        //     if (this.checked) {
-        //     $('.bill_state').prop('id', 'ship_state');
-        //     $('.ship_state').prop('id', 'bills')
-        //     }
-        //     else{
-        //         $('.bill_state').prop('id', 'bill_state');
-        //         $('.ship_state').prop('id', 'ship_state')
-        //     }
-        // });
-
         $('#'+$("#holder").val()).on('change', function() {
         $.ajaxSetup({
             headers: {
@@ -407,36 +395,6 @@ $(document).ready(function() {
             $("#ship_state").val($("#bill_state").val());  
             $("#ship_zipcode").val($("#bill_zipcode").val());
             $("#holder").val("bill_state");
-            $('#bill_state).on('change', function() {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                var url = "{{route('shipping.price')}}";
-                $.ajax({
-                type: "POST",
-                url: url,
-                data: {zone_id :  $('#bill_state).val()},
-                success: function(data) {
-                    if(data == 0){
-                        $('.shipping_price').html("Currently Shipping Not Available !")
-                        $('#place_order').attr('disabled',true);
-                    }
-                    else{
-                    $('.shipping_price').html('$ '+data)
-                    $('#place_order').attr('disabled', false);
-                    $('<input>', {
-                        type: 'hidden',
-                        id: 'shipping',
-                        name: 'shipping',
-                        value: data
-                    }).appendTo('#checkoutForm');
-                    $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
-                    }
-                }
-                });
-            });
         } else {
             $("#ship_name").val('');
             $("#ship_phone").val('');
