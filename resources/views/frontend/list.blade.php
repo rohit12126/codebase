@@ -38,7 +38,6 @@
                     </div>
                 @else
                     @foreach ($products as $key => $product)
-                    {{$product}}
                         <div class="products-list-col">
                             <div class="products-list-product">
                                 <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
