@@ -50,7 +50,7 @@
                                     <i class="linearicons-hammer-wrench"></i> Configure
                                 </a>
                                 @else
-                                <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out">
+                                <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">
                                     <i class="linearicons-hammer-wrench"></i> Buy Now
                                 </a>
                                 @endif
