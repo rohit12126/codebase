@@ -61,6 +61,7 @@
                         </div> 
                     @endif
                     {{-- Address Form--}}
+                    <input type="hidden" id="holder" value="ship_state">
                     <div class="mt-4 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
                         <div class="row">
                             <div class="col-md-12">
@@ -316,18 +317,18 @@ $(document).ready(function() {
         $('#place_order').attr('disabled',true);
 
 
-        $("#filladdress").on("click", function(){
-            if (this.checked) {
-            $('.bill_state').prop('id', 'ship_state');
-            $('.ship_state').prop('id', 'bills')
-            }
-            else{
-                $('.bill_state').prop('id', 'bill_state');
-                $('.ship_state').prop('id', 'ship_state')
-            }
-        });
+        // $("#filladdress").on("click", function(){
+        //     if (this.checked) {
+        //     $('.bill_state').prop('id', 'ship_state');
+        //     $('.ship_state').prop('id', 'bills')
+        //     }
+        //     else{
+        //         $('.bill_state').prop('id', 'bill_state');
+        //         $('.ship_state').prop('id', 'ship_state')
+        //     }
+        // });
 
-        $('#ship_state').on('change', function() {
+        $('#'+$("#holder").val()).on('change', function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -337,7 +338,7 @@ $(document).ready(function() {
         $.ajax({
         type: "POST",
         url: url,
-        data: {zone_id :  $('#ship_state').val()},
+        data: {zone_id :  $('#'+$("#holder").val()).val()},
         success: function(data) {
             if(data == 0){
                 $('.shipping_price').html("Currently Shipping Not Available !")
@@ -358,12 +359,6 @@ $(document).ready(function() {
         });
     });
     
-
-    $('#ship_state').on('change', function() {
-
-        console.log ( this.value );
-    });
-
 
     /* To Handle Browser Back From Payment page*/
     if(performance.navigation.type == 2){
@@ -410,7 +405,8 @@ $(document).ready(function() {
             $("#ship_address").val($("#bill_address").val());
             $("#ship_city").val($("#bill_city").val());  
             $("#ship_state").val($("#bill_state").val());  
-            $("#ship_zipcode").val($("#bill_zipcode").val());                         
+            $("#ship_zipcode").val($("#bill_zipcode").val());
+            $("#holder").val("bill_state");
         } else {
             $("#ship_name").val('');
             $("#ship_phone").val('');
@@ -419,6 +415,7 @@ $(document).ready(function() {
             $("#ship_state").val('');
             $("#ship_zipcode").val('');
             $("#ship_email").val('');           
+            $("#holder").val("ship_state");
         }
     });
 
