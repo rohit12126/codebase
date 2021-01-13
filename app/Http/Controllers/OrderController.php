@@ -178,13 +178,13 @@ class OrderController extends Controller
                         $shippingPrice+= $price->product_price * $product->qty;
                     }
                 }
-                if($shippingPrice != 0)
+                if($shippingPrice == 0)
                 {
-                    $shipPrice = $shippingPrice;
+                    $shipPrice = $shippingPrice + $hshippingPrice;
                 }
                 else
                 {
-                    $shipPrice = $hshippingPrice + $shippingPrice;
+                    $shipPrice = $shippingPrice;
                 }
             }
         
