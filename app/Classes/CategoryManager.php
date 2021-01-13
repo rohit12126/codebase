@@ -130,6 +130,8 @@ class CategoryManager
     public static function getProductCategoryList()
     {
         return CategoryModel::with('image')
+            ->with('product')
+            ->has('product')
             ->where('status', 1)
             ->orderBy('id', 'desc')->paginate(10);
     }
