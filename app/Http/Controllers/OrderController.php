@@ -155,11 +155,11 @@ class OrderController extends Controller
     {
         $shippingPrice = 0;
         $hshippingPrice = 0;
+        $shipPrice= 0;
         $price = $this->zoneManager->getPrice($req->zone_id);
-        // dd($price);
+        
         if ( ! empty($price) )
             {
-                // dd($price);
                 $contain = $this->cartManager->getCartContain();
                 
                 foreach($contain as $product)
@@ -180,15 +180,15 @@ class OrderController extends Controller
                 }
                 if($shippingPrice != 0)
                 {
-                    $shippingPrice = $shippingPrice;
+                    $shipPrice = $shippingPrice;
                 }
                 else
                 {
-                    $shippingPrice = $hshippingPrice;
+                    $shipPrice = $hshippingPrice + $shippingPrice;
                 }
             }
         
-        return $shippingPrice;
+        return $shipPrice;
     }
     
 }

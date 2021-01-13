@@ -61,6 +61,7 @@ class ProductManager
             'name' => $req->name,
             'category_id' => $req->category_id,
             'sale_price' => $req->sale_price,
+            'max_cart_qty'=>$req->max_cart_qty,
             'description' => $req->description,
             'slug' => $slug,
             'status' => (int)$req->status,
