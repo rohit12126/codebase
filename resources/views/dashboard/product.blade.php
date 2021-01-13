@@ -113,24 +113,9 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <span class="mandatory">*</span>
-                                        <textarea placeholder="Description" id="content" name="description" class="form-control summernote"  title="Tell Custumers something about item" >{{  old('description', @$product->description) }}</textarea>
-                                        @if($errors->has('description'))
-                                            <div class="error">{{ $errors->first('description') }}</div>
-                                        @endif
-                                    </div>
+                                    
 
-                                    <div class="d-flex pt-4">
-                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
-                                            @if(@$product) Update @else Submit @endif
-                                        </button>
-                                                
-                                        <a onclick="history.go(-1)" class="btn btn-danger text-white"  title="Cancel">
-                                            Cancel
-                                        </a>
-                                    </div>
+                                   
                                 </div>
                                 <div class="col-md-6 mt-3 mt-md-0">
                                     <label for="">Image <span class="mandatory">*</span></label>
@@ -174,7 +159,25 @@
                                     <div class="text-success text-success font-weight-bold">Only image type jpg/png/jpeg and max size 4MB is allowed</div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                        <label>Description</label>
+                                        <span class="mandatory">*</span>
+                                        <textarea placeholder="Description" id="content" name="description" class="form-control summernote"  title="Tell Custumers something about item" >{{  old('description', @$product->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error">{{ $errors->first('description') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="d-flex">
+                                <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$product) Update @else Submit @endif" style="border-radius:0.25rem">
+                                    @if(@$product) Update @else Submit @endif
+                                </button>
+                                        
+                                <a onclick="history.go(-1)" class="btn btn-danger text-white"  title="Cancel">
+                                    Cancel
+                                </a>
                             </div>
+                            </div>
+                          
                         </form>
                     </div>
                 </div>

@@ -56,14 +56,6 @@
                                         <input type="hidden" name="blogId" id="blog-id" value="@if (isset($blog->id)) {{ $blog->id }} @else {{ '0' }} @endif">
                                         <input type="text" maxlength="200" placeholder="Title" name="title" id="title" class="form-control" value="{{ old('title', @$blog->title) }}">
                                     </div>
-                                    <div class="form-group"> 
-                                        <label>Content</label>
-                                        <span class="mandatory">*</span>
-                                        <textarea style="z-index:100"id="content" name="description" class="form-control summernote" required="true">{{ old('description', @$blog->description) }}</textarea>
-                                        @if($errors->has('description'))
-                                            <div class="error ">{{ $errors->first('description') }}</div>
-                                        @endif
-                                    </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
@@ -97,6 +89,14 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                <div class="form-group"> 
+                                        <label>Content</label>
+                                        <span class="mandatory">*</span>
+                                        <textarea style="z-index:100"id="content" name="description" class="form-control summernote" required="true">{{ old('description', @$blog->description) }}</textarea>
+                                        @if($errors->has('description'))
+                                            <div class="error ">{{ $errors->first('description') }}</div>
+                                        @endif
+                                    </div>
                                     <div class="d-flex mb-2">
                                         <button type="submit" class="btn btn-primary mr-4 mt-0">
                                             Submit
