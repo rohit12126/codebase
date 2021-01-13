@@ -122,6 +122,7 @@
                                 <tr>
                                     <th class="serial-number-th">S No.</th>
                                     <th>Category Name</th>
+                                    <th>Status</th>
                                     <th class="action-th">Action</th>
                                 </tr>
                             </thead>
@@ -130,6 +131,7 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value->name }}</td>
+                                    <td>@if($value->status == 0) {{ 'Inactive' }} @else {{'Active'}}@endif</td>
                                     <td>
                                         <button class="btn btn-sm btn-info custom-tooltip" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
                                             <span class="custom-tooltiptext custom-tooltip-top">Edit Category</span>
