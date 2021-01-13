@@ -31,7 +31,7 @@
                             <img src="img/icon/linkedin.svg" alt="">
                             Linkedin
                         </a> -->
-                        <a target="_blank" class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="" href="http://pinterest.com/pinthis?url=${{url()->current()}}" onclick="window.open('http://pinterest.com/pinthis?url=${{url()->current()}}', 
+                        <a target="_blank" class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="" href="http://pinterest.com/pin/create/link/?url=${{url()->current()}}&amp;description={{$blog->title}}" onclick="window.open('http://pinterest.com/pin/create/link/?url=${{url()->current()}}&amp;description={{$blog->title}}', 
                             'newwindow', 
                             'width=300,height=250'); 
                             return false;>
