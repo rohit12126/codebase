@@ -86,7 +86,8 @@
                                 <h5>Billing Address</h5>
                             </div>
                             <div class="card-body">
-                            {{ $data->getBillingAddress->address ?? '' }}            
+                            {{$data->getBillingAddress->address}}</br>{{$data->getBillingAddress->city.', '.$data->getBillingAddress->state}}
+                            </br>{{$data->getBillingAddress->zipcode}}
                             </div>
                         </div>
                     </div>
@@ -98,7 +99,9 @@
                                 <h5>Shipping Address</h5>
                             </div>
                             <div class="card-body">
-                            {{ $data->getShippingAddress->address ?? '' }}            
+                            {{$data->getShippingAddress->address}}</br>{{$data->getShippingAddress->city.', '.$data->getShippingAddress->state}}
+                            </br>{{$data->getShippingAddress->zipcode}}
+                            
                             </div>
                         </div>
                     </div>
@@ -128,7 +131,7 @@
                                             </span>
                                         </p>
                                     </div>
-                                    @if($data->status < 5)
+                                    @if($data->status == 4)
                                     <div>
                                         <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                         <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>                          
@@ -162,7 +165,7 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
-                            @if($data->status < 5)
+                            @if($data->status == 4)
                             <th>Give a Review</th>
                             @endif
                         </tr>
@@ -183,7 +186,7 @@
                             <td>$ {{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>
                             <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
-                            @if($data->status < 5)
+                            @if($data->status == 4)
                             <td>
                                 <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                 <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>

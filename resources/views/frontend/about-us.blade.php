@@ -13,8 +13,8 @@
             </div>
             <div class="section-text-wrapper">
                 <h2>Our Mantra</h2>
-                <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
-                <button class="btn btn-fill-out">see the sofas</button>
+                <p>fgheel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
+                <a href="{{url('/product')}}" class="btn btn-fill-out">see the sofas</a>
             </div>
         </div>
     </section>
@@ -30,7 +30,7 @@
             <div class="section-text-wrapper order-2 order-lg-1">
                 <h2>Our Mantra</h2>
                 <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
-                <button class="btn btn-fill-out">see the sofas</button>
+                <a href="{{url('/product')}}" class="btn btn-fill-out">see the sofas</a>
             </div>
         </div>
     </section>
@@ -46,7 +46,7 @@
             <div class="section-text-wrapper">
                 <h2>Our Mantra</h2>
                 <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
-                <button class="btn btn-fill-out">see the sofas</button>
+                <a href="{{url('/product')}}" class="btn btn-fill-out">see the sofas</a>
             </div>
         </div>
     </section>
@@ -67,7 +67,7 @@
             <div class="section-text-wrapper order-2 order-lg-1">
                 <h2>Our Mantra</h2>
                 <p>Like none other, the sofa is a symbol of home, comfort and cosiness. It’s the place where life happens, where people connect, unwind and recharge and simply feel at their best. The ultimate comfort zone.<br>We believe: Everyone deserves the sofa of their lives.&nbsp;<br>That’s why we founded Sitzfeldt.&nbsp;<br>Exactly 10 years ago.</p>
-                <button class="btn btn-fill-out">see the sofas</button>
+                <a href="{{url('/product')}}" class="btn btn-fill-out">see the sofas</a>
             </div>
         </div>
     </section>

@@ -94,9 +94,6 @@
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
                         
-                        <a href="{{ url('product/configure/').'/'.$productData['product']->slug }}" class="btn btn-fill-out configure-btn">
-                            <i class="linearicons-hammer-wrench"></i> Configure
-                        </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
                         <div class="pincode-deliveryContainer">

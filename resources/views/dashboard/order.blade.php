@@ -32,7 +32,7 @@
                             <div class="col-12">
                                 <form method="GET" action="{{ url()->current() }}">
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-2">
                                                 <div class="form-group">
                                                     <label>From Date</label>
                                                     <input type="text" placeholder="From Date" name="from_date" class="form-control" value="{{ @$_GET['from_date'] }}" id="from_date" autocomplete="off">
@@ -43,7 +43,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-2">
                                                 <div class="form-group">
                                                     <label>To Date</label>
                                                     <input type="text" placeholder="To Date" name="to_date" class="form-control" value="{{ @$_GET['to_date'] }}" id="to_date">
@@ -54,7 +54,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Order No.</label>
                                                     <input type="text" placeholder="Order No." name="order_no" class="form-control" value="{{ @$_GET['order_no'] }}" autocomplete="off">
@@ -66,7 +66,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-3">
                                                 <div class="form-group mb-0">
                                                     <label>Order Status</label>
                                                     <select name="order_status" id="" class="form-control">
@@ -91,7 +91,7 @@
                                                     <input type="text" placeholder="Product Name" name="product_name" class="form-control" value="{{ @$_GET['product_name'] }}">
                                                 </div>
                                             </div> --}}
-                                            <div class="col-sm-4 d-flex align-items-end">
+                                            <div class="col-2 d-flex align-items-end pl-0" style="padding-bottom: 16px;">
                                                 <button type="submit" title="Search" class="btn custom-tooltip btn-primary mr-2 mt-0">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Search Order</span>
                                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -145,7 +145,7 @@
                                                 <td>{{ $key+1 }}</td>
                                                 <td>{{ $value->order_no }}</td>
                                                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
-                                                <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif</td>
+                                                <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif @if($value->temp_user == 1) (Guest) @endif</td>
                                                 <td>{{ $value->order_status }}</td>
                                                 <td>&#36;{{ $value->grand_total }}</td>
                                                 <td>
