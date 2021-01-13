@@ -170,6 +170,7 @@ class OrderManager
             ->with('user')
             ->with('getShippingAddress')
             ->with('getBillingAddress')
+            ->with('getPaymentDetail')
             ->with('productList.product.images')
             ->where('order_no', $order)
             ->first();
@@ -233,4 +234,9 @@ class OrderManager
             ->latest()
             ->first();
     }
+
+    // public static function getPaymentDetail($order_no)
+    // {
+    //     r
+    // }
 }

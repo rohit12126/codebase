@@ -36,5 +36,10 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Address', 'billing_address', 'id');
     }
+
+    public function getPaymentDetail()
+    {
+        return $this->belongsTo('App\Models\Payment', 'order_no', 'order_no');
+    }
     /******* Relationships ********/
 }

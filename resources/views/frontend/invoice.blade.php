@@ -201,6 +201,14 @@
                                 <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
                             </tr>
                         @endforeach
+                        <tr style="font-weight: bold;">
+                            <td colspan="5" style="text-align: right;padding: 5px;border-bottom:1px solid #000;border-right:1px solid #000;">
+                                Shipping
+                            </td>
+                            <td style="padding: 10px;border-bottom:1px solid #000;">
+                                $ {{number_format($order->getPaymentDetail->shipping, 2)}}
+                            </td>
+                        </tr>
 
                         <tr style="font-weight: bold;">
                             <td colspan="5" style="text-align: right;padding: 5px;border-bottom:1px solid #000;border-right:1px solid #000;">

@@ -168,11 +168,11 @@ class PaypalController extends Controller
         $execution = new PaymentExecution();
         $execution->setPayerId($request->input("PayerID"));
         $result = $payment->execute($execution, $this->_api_context);
-        
         $data = [
             'payment_id'=>$result->id,
             'amount'=>$result->transactions[0]->amount->total,
             'currency'=>$result->transactions[0]->amount->currency,
+            'shipping'=>$result->transactions[0]->amount->details->shipping,
             'status'=>$result->state
         ];
         

@@ -125,7 +125,7 @@
                                         <form action="" method="post" id="shippingd">
                                             <select class="form-control bill bill_state" value="" id="bill_state" name="bill_state">
                                                 @foreach($states as $state)
-                                                <option value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
+                                                <option value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
                                             </select>
                                         <form>

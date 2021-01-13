@@ -57,6 +57,7 @@ class OrderController extends Controller
         if($req->session()->has('userId')) {
             $isTempUser = $req->session()->get('isTemp');
             $userId = $req->session()->get('userId');
+            $shippingCharge = $req->session()->get('shippingCharge');
 
             if(strpos(url()->previous(), 'order/add-order') == false) {
                 $orderNumber = $this->orderManager->generateOrderNumber();
@@ -69,9 +70,10 @@ class OrderController extends Controller
                 $orderData['billing_address'] = $req->session()->get('bill');
                 $orderData['shipping_address'] = $req->session()->get('ship');
                 $orderData['status'] = 1;
-                
+
+                $orderData['shipping_charge'] = 
                 $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
-                $orderData['grand_total'] = (float) $cartSubTotal;
+                $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
                 
                 $order = $this->orderManager->addOrder($orderData);
             
@@ -90,7 +92,6 @@ class OrderController extends Controller
                 
                 PaymentModel::where('id', $paymentId)
                     ->update(['order_no' => $orderNumber]);
-
                 $this->cartManager->destroy();
                 $this->cartManager->destroyCartDB($userId);
                 $product = $this->orderManager->getProductsByOrder($order->order_no);
