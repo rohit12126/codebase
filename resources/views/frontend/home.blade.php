@@ -59,67 +59,137 @@
 
     <section class="home-swip-section">
         <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
-        <div id="page">
-         <div class="wrapper">
-            <div class="before">
-                <div id="hotspotImg" class="responsive-hotspot-wrap">
-                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
-                    <div class="hot-spot" x="300" y="43" >
-                        <div class="circle" ></div>
-                        <div class="tooltip">
-                            <div class="img-row">
-                                <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
-                            </div>
-                            <div class="text-row">
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="row m-0">
+            <div class="col-md-6 p-4">
+                <div id="page" class="wrapper-upper">
+                    <div class="wrapper wrapperFirst">
+                        <div class="before">
+                            <div id="hotspotImg" class="responsive-hotspot-wrap">
+                                <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
+                                <div class="hot-spot" x="300" y="43" >
+                                    <div class="circle" ></div>
+                                    <div class="tooltip">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hot-spot" x="1171" y="224">
+                                    <div class="circle"></div>
+                                    <div class="tooltip">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="after">
+                            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
+                                <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
+                                <div class="hot-spot" x="300" y="43">
+                                    <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
+                                </div>
 
-                    <div class="hot-spot" x="1171" y="224">
-                        <div class="circle"></div>
-                        <div class="tooltip">
-                            <div class="img-row">
-                                <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                <div class="hot-spot" x="550" y="360">
+                                    <div class="circle"></div>
+                                    <div class="tooltip tip-upside">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-row">
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
+                        </div>
+                        <div class="scroller scrollerFirst">
+                            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
+                                <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
+                            </svg>
+                            <span class="position-relative d-block">
+                            <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="after">
-            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
-                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
-                    <div class="hot-spot" x="300" y="43">
-                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
-                    </div>
+            <div class="col-md-6 p-4">
+                <div id="page1" class="wrapper-upper">
+                    <div class="wrapper wrapperSecond">
+                        <div class="before">
+                            <div id="hotspotImg" class="responsive-hotspot-wrap">
+                                <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
+                                <div class="hot-spot" x="300" y="43" >
+                                    <div class="circle" ></div>
+                                    <div class="tooltip">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="hot-spot" x="550" y="360">
-                        <div class="circle"></div>
-                        <div class="tooltip tip-upside">
-                            <div class="img-row">
-                                <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
-                            </div>
-                            <div class="text-row">
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <div class="hot-spot" x="1171" y="224">
+                                    <div class="circle"></div>
+                                    <div class="tooltip">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="after">
+                            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
+                                <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
+                                <div class="hot-spot" x="300" y="43">
+                                    <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
+                                </div>
+
+                                <div class="hot-spot" x="550" y="360">
+                                    <div class="circle"></div>
+                                    <div class="tooltip tip-upside">
+                                        <div class="img-row">
+                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                        </div>
+                                        <div class="text-row">
+                                        <h4>Lorem Ipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scroller scrollerSecond">
+                            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
+                                <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
+                            </svg>
+                            <span class="position-relative d-block">
+                            <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
+                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
-            <div class="scroller">
-               <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
-               </svg>
-               <span class="position-relative d-block">
-               <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
-            </div>
-         </div>
         </div>
     </section>
 

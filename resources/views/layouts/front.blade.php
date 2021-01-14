@@ -558,78 +558,90 @@ footer-->
     }
     jQuery(document).ready(function() {
         if(!!window.performance && window.performance.navigation.type === 2)
-    {
-        console.log('Reloading');
-        window.location.reload();
-    }
-        $("#Password").keyup(function(){
-            var number = /([0-9])/;
-            var alphabets = /([a-zA-Z])/;
-            var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
-            if ($(this).val().length < 5 ) {
-                $(this).css("border", "5px solid #e82d2d");
-                $(".password_error").html('<span class="weak-password">Weak (should be atleast 5 characters.)</span>');
-            } else {
-                if ($(this).val().match(number) && $(this).val().match(alphabets) && $(this).val().match(special_characters)) {
-                    $(this).css("border", "5px solid #5dc17e");
-                    $(".password_error").html('<span class="strong-password">Strong password</span>');
+        {
+            console.log('Reloading');
+            window.location.reload();
+        }
+            $("#Password").keyup(function(){
+                var number = /([0-9])/;
+                var alphabets = /([a-zA-Z])/;
+                var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+                if ($(this).val().length < 5 ) {
+                    $(this).css("border", "5px solid #e82d2d");
+                    $(".password_error").html('<span class="weak-password">Weak (should be atleast 5 characters.)</span>');
                 } else {
-                    $(this).css("border", "5px solid #f08b10");
-                    $(".password_error").html('<span class="medium-password">Medium (should include alphabets, numbers and special characters.)</span>');
+                    if ($(this).val().match(number) && $(this).val().match(alphabets) && $(this).val().match(special_characters)) {
+                        $(this).css("border", "5px solid #5dc17e");
+                        $(".password_error").html('<span class="strong-password">Strong password</span>');
+                    } else {
+                        $(this).css("border", "5px solid #f08b10");
+                        $(".password_error").html('<span class="medium-password">Medium (should include alphabets, numbers and special characters.)</span>');
+                    }
                 }
+        });
+
+        function touchScroller(className,wrapper) {
+            console.log(className,"classNameclassName")
+            let active = false;
+            document.querySelector(className).addEventListener('mousedown',function(){
+                active = true;
+                document.querySelector(className).classList.add('scrolling');
+            });
+            document.body.addEventListener('mouseup',function(){
+                active = false;
+                document.querySelector(className).classList.remove('scrolling');
+            });
+            document.body.addEventListener('mouseleave',function(){
+                active = false;
+                document.querySelector(className).classList.remove('scrolling');
+            }); 
+            document.body.addEventListener('mousemove',function(e){
+                if (!active) return;
+                let x = e.pageX;
+                x -= document.querySelector(wrapper).getBoundingClientRect().left;
+                scrollIt(x);
+            });
+            function scrollIt(x){
+                let transform = Math.max(5,(Math.min(x,document.querySelector(wrapper).offsetWidth-20)));
+                document.querySelector(wrapper).querySelector('.after').style.width = transform+"px";
+                document.querySelector(className).style.left = transform+"px";
             }
-    });
+            if (window.matchMedia("(max-width: 1200px)").matches) {
+                scrollIt(screen.width/2);
+            } else {
+                scrollIt(600);
+            }
 
-    let active = false;
-
-    document.querySelector('.scroller').addEventListener('mousedown',function(){
-    active = true;
-    document.querySelector('.scroller').classList.add('scrolling');
-    });
-    document.body.addEventListener('mouseup',function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    });
-    document.body.addEventListener('mouseleave',function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    }); 
-    document.body.addEventListener('mousemove',function(e){
-    if (!active) return;
-    let x = e.pageX;
-    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-    scrollIt(x);
-    });
-    function scrollIt(x){
-    let transform = Math.max(5,(Math.min(x,document.querySelector('.wrapper').offsetWidth-20)));
-    document.querySelector('.after').style.width = transform+"px";
-    document.querySelector('.scroller').style.left = transform+"px";
-    }
-    if (window.matchMedia("(max-width: 1200px)").matches) {
-        scrollIt(screen.width/2);
-    } else {
-        scrollIt(600);
-    }
-
-    document.querySelector('.scroller').addEventListener('touchstart',function(){
-    active = true;
-    document.querySelector('.scroller').classList.add('scrolling');
-    });
-    document.body.addEventListener('touchend',function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    });
-    document.body.addEventListener('touchcancel',function(){
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-    });
-    
-    document.body.addEventListener('touchmove',function(e){ 
-        if (!active) return;
-        let x = e.touches[0].pageX;
-        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-        scrollIt(x); 
-    });
+            document.querySelector(className).addEventListener('touchstart',function(){
+                active = true;
+                document.querySelector(className).classList.add('scrolling');
+            });
+            document.body.addEventListener('touchend',function(){
+                active = false;
+                document.querySelector(className).classList.remove('scrolling');
+            });
+            document.body.addEventListener('touchcancel',function(){
+                active = false;
+                document.querySelector(className).classList.remove('scrolling');
+            });
+            document.body.addEventListener('touchmove',function(e){ 
+                if (!active) return;
+                let x = e.touches[0].pageX;
+                x -= document.querySelector(wrapper).getBoundingClientRect().left;
+                scrollIt(x); 
+            });
+        }
+        window.addEventListener('load', (event) => {
+            const classArray = [
+                {classname : '.scrollerFirst',wrap:'.wrapperFirst'},
+                {classname:'.scrollerSecond',wrap:'.wrapperSecond'}
+            ]
+            var i;
+            for (i = 0; i < classArray.length; i++) {
+                console.log(classArray[i].classname,"classArray")
+                touchScroller (classArray[i].classname,classArray[i].wrap);
+            }
+        });
     });
  
 </script>
