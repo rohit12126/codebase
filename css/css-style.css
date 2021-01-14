@@ -7890,6 +7890,7 @@ a:hover {
 .footer-wrapper {
 	background-color: #000;
 	color: #fff;
+	padding: 0 1rem;
 }
 .footer-wrapper a,.footer-wrapper h5{
 	color: #fff;
@@ -7919,6 +7920,9 @@ a:hover {
 	position: absolute;
 	left: 0px;
 	top: 23px;
+}
+.footer-col{
+	word-wrap: break-word;
 }
 .footer-email-wrapper {
 	margin-bottom: 60px;
@@ -8039,6 +8043,9 @@ h5 {
 	font-size: 28px;
 	font-weight: 700;
 	color: #fff;
+}
+.text-underline{
+	text-decoration: underline;
 }
 /*================Home page Css=================*/
 .home-slider-section h1,.home-slider-section h4{
@@ -8439,7 +8446,6 @@ opacity:1;
 }
 .resources-icon{
     box-shadow: 0 0 3px 0 #F94E57;
-    margin: 0 0 2rem;
     height: 80px;
     width: 80px;
     text-align: center;
@@ -8484,6 +8490,12 @@ opacity:1;
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+.resources-indicator{
+	color: #f94e57;
+	line-height: 1.2;
+	padding: 0.625rem 0;
+	font-weight: 600;
 }
 /*==================================================*/
 .blog-card

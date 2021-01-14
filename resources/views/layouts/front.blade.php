@@ -255,15 +255,15 @@ footer-->
     <footer class="footer-wrapper">
         <div class="footer-inner m-auto content-section">
             <div class="pre-footer">
-                <div class="row m-0 text-center text-sm-left">
-                    <div class="col-sm-6 col-lg-6 mb-5 mb-lg-0 footer-col">
+                <div class="row text-center text-sm-left justify-content-between">
+                    <div class="col-md-4 mb-5 mb-lg-0 footer-col">
                         <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
-                            <br><a href="{{ url('about-us/') }}">More about us &gt;&gt;</a>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
+                            <br><a href="{{ url('about-us/') }}" class="text-underline">More about us &gt;&gt;</a>
                         </p>
                     </div>
-                    <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
+                    <div class="col-sm-6 col-md-3 col-lg-2 mb-5 mb-lg-0 footer-col text-center text-sm-left">
                         <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
                         <ul class="footer-nav-ul">
                             <li><a href="{{ url('home/') }}">Home</a></li>
@@ -275,7 +275,7 @@ footer-->
                             <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6 col-lg-3 footer-col">
+                    <div class="col-sm-6 col-md-3 footer-col">
                         <h5 class="text-uppercase mb-3"><span>Help</span></h5>
                         <ul class="footer-nav-ul">
                             <li>
@@ -306,7 +306,7 @@ footer-->
                         <a href={{ url('/')}}><span class="footer-logo">Custom Closet</span></a>
                     </div>
                     <div class="col-sm-7 p-lg-0">
-                        <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100">
+                        <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100 pt-2 pt-sm-0">
                             <a href="{{ url('privacy-policy/') }}">Privacy Policy</a> &nbsp;|&nbsp; <a href="{{ url('returns/') }}">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
                         </div>
                     </div>

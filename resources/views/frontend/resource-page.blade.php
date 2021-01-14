@@ -11,6 +11,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">General info about CDM bifolds</span>
                         <span class="resources-desc">Both bifold and sliding doors offer great benefits over the traditional hinged or
                             full swinging door</span>
@@ -22,6 +23,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">General Info about CDM sliders</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -34,6 +36,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Bifold door installation instructions</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -46,6 +49,7 @@
                             <img src="{{URL::asset('/images/icon/video.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/video-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View Video</div>
                         <span class="resources-title">
                             Watch Bifold Installation video
                         </span>
@@ -60,6 +64,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Sliding door installation instructions</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -72,6 +77,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">How to install bifold aligners</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -84,6 +90,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Bifold components</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -96,6 +103,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Slider components</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -108,6 +116,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">What is difference between bevel and polished edge</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -120,6 +129,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Use and Care</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -132,6 +142,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Warranty</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -144,6 +155,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Floor and floor plate options</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -156,6 +168,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">How to install a jamb bracket</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -168,6 +181,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">How to paint CDM doors</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -180,6 +194,7 @@
                             <img src="{{URL::asset('/images/icon/pdf.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/pdf-white.svg')}}" class="white-svg">
                         </div>
+                        <div class="resources-indicator">View PDF</div>
                         <span class="resources-title">Fold bifolds flat to wall</span>
                         <span class="resources-desc">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
