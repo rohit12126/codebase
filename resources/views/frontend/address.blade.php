@@ -337,11 +337,15 @@ $(document).ready(function() {
             if({{ $zone[0] > 0 }}) {
             shippingajax({{$zone[0]}});
         }}
+        @else
+        function getShippingOnOldAddress(){
+        getShippingPrice();
+        }
         @endif
 
         function getShippingPrice() {
         $('#'+$("#holder").val()).on('change', function() {
-            var zoneid = $('#'+$("#holder").val()).find(':selected').attr('data-value');
+            var zoneid = $('#'+$("#holder").val()).find(':selected').attr('data-value')
             shippingajax(zoneid);
         });
         }
