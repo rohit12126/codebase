@@ -117,9 +117,9 @@
             </tr>
             <tr>
                 <td>
-                    <table style="width:100%">
+                    <table style="width:100%" cellspacing="0" cellpadding="0">
                         <tr>
-                            <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;">
+                            <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;border-right: 1px solid #000;">
                                 <span style="font-weight: bold;line-height: 22px;">Billing Address</span>
                             </th>
                             <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;">
@@ -127,7 +127,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <td style="padding: 10px;text-transform: capitalize;">
+                            <td style="padding: 10px;text-transform: capitalize;border-right: 1px solid #000;">
                                 Name : {{$order->getShippingAddress->name}} <br>
                                 Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
                                 Email : {{$order->getShippingAddress->email}} <br>
