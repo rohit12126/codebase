@@ -165,14 +165,10 @@ class OrderController extends Controller
                 
                 foreach($contain as $product)
                 {
-                    
                     $hardware = $this->productManager->checkHardware($product->id);
-                    
                     if($hardware)
                     {
-                        
                         $hshippingPrice+= $price->hardware_price * $product->qty;
-                        
                     }
                     else
                     {
