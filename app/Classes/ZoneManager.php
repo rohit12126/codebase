@@ -99,5 +99,12 @@ class ZoneManager
       return FALSE;
     }
   }
-  
+  public function getZoneByState($state)
+  {
+    if($zone = DB::table('states')->where('name' , $state)->pluck('zone_id')->toArray())
+    {
+      // dd($zone);
+      return $zone;
+    }
+  }
 }

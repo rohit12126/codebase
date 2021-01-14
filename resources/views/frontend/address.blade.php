@@ -302,7 +302,6 @@
         </form>  
     </div>
 </div>
-
   <!-- Modal -->
  <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -323,9 +322,9 @@
 @endsection
 @section('scripts')
 
-
 <script>
 $(document).ready(function() {
+    getShippingOnOldAddress();
 
         $('#place_order').attr('disabled',true);
 
@@ -333,40 +332,50 @@ $(document).ready(function() {
         getShippingPrice();
         });
 
-        
+        @if(isset($zone[0]))
+        function getShippingOnOldAddress(){
+            if({{ $zone[0] > 0 }}) {
+            shippingajax({{$zone[0]}});
+        }}
+        @endif
 
         function getShippingPrice() {
         $('#'+$("#holder").val()).on('change', function() {
-        $.ajaxSetup({
+            var zoneid = $('#'+$("#holder").val()).find(':selected').attr('data-value');
+            shippingajax(zoneid);
+        });
+        }
+
+        function shippingajax(zone) {
+            $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
-        var url = "{{route('shipping.price')}}";
-        $.ajax({
-        type: "POST",
-        url: url,
-        data: {zone_id :  $('#'+$("#holder").val()).find(':selected').attr('data-value')},
-        success: function(data) {
-            if(data == 0){
-                $('.shipping_price').html("Currently Shipping Not Available !")
-                $('#place_order').attr('disabled',true);
+            });
+            var url = "{{route('shipping.price')}}";
+            $.ajax({
+            type: "POST",
+            url: url,
+            data: {zone_id :  zone},
+            success: function(data) {
+                if(data == 0){
+                    $('.shipping_price').html("Currently Shipping Not Available !")
+                    $('#place_order').attr('disabled',true);
+                }
+                else{
+                $('.shipping_price').html('$ '+data)
+                $('#place_order').attr('disabled', false);
+                $('<input>', {
+                    type: 'hidden',
+                    id: 'shipping',
+                    name: 'shipping',
+                    value: data
+                }).appendTo('#checkoutForm');
+                $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
+                }
             }
-            else{
-            $('.shipping_price').html('$ '+data)
-            $('#place_order').attr('disabled', false);
-            $('<input>', {
-                type: 'hidden',
-                id: 'shipping',
-                name: 'shipping',
-                value: data
-            }).appendTo('#checkoutForm');
-            $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
-            }
+            });
         }
-        });
-    });
-    }
     
 
     /* To Handle Browser Back From Payment page*/
@@ -382,6 +391,7 @@ $(document).ready(function() {
             $("#addressCollapse").text('Close');
             $("#addressCollapse").attr('title', 'Continue with the current address.');
             $("#isNewAddress").val(1);
+            getShippingPrice();
         } else {
             //close case
             $(".ship").val(''); 
@@ -389,6 +399,7 @@ $(document).ready(function() {
             $(".error").hide('');
             $("#addressCollapse").text('+ Add New');
             $("#isNewAddress").val(0);
+            getShippingOnOldAddress();
         }
     });
 

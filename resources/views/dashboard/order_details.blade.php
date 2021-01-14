@@ -34,18 +34,20 @@
                             <tr>
                                 <th class="p-1">Buyer Name</th>
                                 @if ($order->temp_user == 1)
-                                    <td class="p-1">: @if(isset($order->getBillingAddress->name)) {{ ucwords($order->getBillingAddress->name) }} @endif</td>
+                                    <td class="p-1">: @if(isset($order->getBillingAddress->name)) {{ ucwords($order->getBillingAddress->name) }} (Guest)@endif</td>
                                 @else
                                     <td class="p-1">: {{ ucwords($order->user->name) }}</td>
                                 @endif
                             </tr>
-                            <tr> 
+                            <tr>
                                 <th class="p-1">Shipping Address</th>
-                                <td class="p-1">: {{ $order->getShippingAddress->address ?? '' }}</td>
+                                <td class="p-1">: {{ $order->getShippingAddress->name ??  $order->getBillingAddress->name }}, 
+                                {{ $order->getShippingAddress->mobile ??  $order->getBillingAddress->mobile }}, 
+                                {{ $order->getShippingAddress->address ??  $order->getBillingAddress->address }}, {{ $order->getShippingAddress->city ??  $order->getBillingAddress->city}}, {{ $order->getShippingAddress->state ??  $order->getBillingAddress->state}}, {{ $order->getShippingAddress->zipcode ?? $order->getBillingAddress->zipcode}}</td>
                             </tr>
                             <tr>
                                 <th class="p-1">Billing Address</th>
-                                <td class="p-1">: {{ $order->getBillingAddress->address ?? '' }}</td>
+                                <td class="p-1">: {{$order->getBillingAddress->name }}, {{ $order->getBillingAddress->mobile }}, {{ $order->getBillingAddress->address ?? '' }}, {{ $order->getBillingAddress->city}}, {{ $order->getBillingAddress->state}}, {{ $order->getBillingAddress->zipcode}}</td>
                             </tr>
                             <tr>
                                 <th class="p-1">Grand Total</th>
