@@ -63,7 +63,7 @@
                                 <span>&nbsp;Reviews</span>
                             </a>
                         @else
-                            <p class="product_tab_title text-danger font-italic mb-0"> Be the first person to rate this product.</p>
+                            <p class="product_tab_title text-muted font-italic mb-0"> Be the first person to rate this product.</p>
                         @endif
                     </div>
                     <hr>

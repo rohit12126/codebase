@@ -240,7 +240,8 @@
                     rowId : rowId
                 },
                 beforeSend:function(){
-                    confirm("Are you sure ?");
+                    if(!confirm("Are you sure ?"))
+                        return false;
                 },
                 success: function(result) {
                     if( result.data.cartCount == 0 ) {

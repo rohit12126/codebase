@@ -1,5 +1,16 @@
 @extends('layouts.front')
 @section('content')
+<style>
+.placeholder-select select:required:invalid {
+  color: gray;
+}
+.placeholder-select option[value=""][disabled] {
+  display: none;
+}
+.placeholder-select option {
+  color: black;
+}
+</style>
 <div class="main_content">
 
 <!-- START SECTION SHOP -->
@@ -123,8 +134,8 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <select class="form-control bill bill_state" value="" id="bill_state" name="bill_state">
-                                            <option style="color:#0000007a">Select state</option>
+                                            <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
+                                            <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
@@ -200,8 +211,8 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <select class="form-control ship ship_state" value="" id="ship_state" name="ship_state">
-                                            <option style="color:#0000007a">Select state</option>
+                                            <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
+                                            <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
