@@ -551,3 +551,8 @@
         padding: 8px 0;
     }
 }
+@media (min-width:992px) and (max-width:1199px){
+    .before .hotspot-image{
+        transform: translateX(-25%);
+    }
+}
