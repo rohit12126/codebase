@@ -254,61 +254,50 @@ footer-->
 
     <footer class="footer-wrapper">
         <div class="footer-inner m-auto content-section">
-        <div class="pre-footer">
-                    <div class="row m-0 text-center text-sm-left">
-                        <div class="col-sm-6 col-lg-3 mb-5 mb-lg-0 footer-col">
-                            <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
-                                <br><a href="{{ url('about-us/') }}">More about us &gt;&gt;</a>
-                            </p>
-                        </div>
-                        <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
-                            <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
-                            <ul class="footer-nav-ul">
-                                <li><a href="{{ url('home/') }}">Home</a></li>
-                                <li><a href="{{ url('about-us/') }}">About us</a></li>
-                                <li><a href="{{ url('product/') }}">Products</a></li>
-                                <li><a href="{{ url('projects/') }}">Projects</a></li>
-                                <li><a href="{{ url('blog/') }}">blog</a></li>
-                                <li><a href="{{ url('resource/') }}">Resource</a></li>
-                                <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
-                            <h5 class="text-uppercase mb-3"><span>Showrooms</span></h5>
-                            <ul class="footer-nav-ul">
-                                <li><a href="#">Berlin</a></li>
-                                <li><a href="#">Cologne</a></li>
-                                <li><a href="#">Frankfurt</a></li>
-                                <li><a href="#">Munich</a></li>
-                                <li><a href="#">Hamburg</a></li>
-                                <li><a href="#">Stuttgart</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-lg-3 footer-col">
-                            <h5 class="text-uppercase mb-3"><span>Help</span></h5>
-                            <ul class="footer-nav-ul">
-                                <li>
-                                    <a href="tel:+49 (0)30 60 988 588" class="font-weight-bold">+49 (0)30 60 988 588</a>
-                                </li>
-                                <li>
-                                    <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
-                                </li>
-                            </ul>
-                            <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
-                                <span class="footer-socialicon">
-                                    <a href="https://www.facebook.com/" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
-                                </span>
-                                <span class="footer-socialicon">
-                                    <a href="https://www.instagram.com/" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
-                                </span>
-                                <span class="footer-socialicon">
-                                    <a href="https://www.pinterest.com/" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
-                                </span>
-                            </div>
+            <div class="pre-footer">
+                <div class="row m-0 text-center text-sm-left">
+                    <div class="col-sm-6 col-lg-6 mb-5 mb-lg-0 footer-col">
+                        <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
+                            <br><a href="{{ url('about-us/') }}">More about us &gt;&gt;</a>
+                        </p>
+                    </div>
+                    <div class="col-6 col-lg-3 mb-5 mb-lg-0 footer-col text-left">
+                        <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
+                        <ul class="footer-nav-ul">
+                            <li><a href="{{ url('home/') }}">Home</a></li>
+                            <li><a href="{{ url('about-us/') }}">About us</a></li>
+                            <li><a href="{{ url('product/') }}">Products</a></li>
+                            <li><a href="{{ url('projects/') }}">Projects</a></li>
+                            <li><a href="{{ url('blog/') }}">blog</a></li>
+                            <li><a href="{{ url('resource/') }}">Resource</a></li>
+                            <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 footer-col">
+                        <h5 class="text-uppercase mb-3"><span>Help</span></h5>
+                        <ul class="footer-nav-ul">
+                            <li>
+                                <a href="tel:+49 (0)30 60 988 588" class="font-weight-bold">+49 (0)30 60 988 588</a>
+                            </li>
+                            <li>
+                                <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
+                            <span class="footer-socialicon">
+                                <a href="https://www.facebook.com/" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
+                            </span>
+                            <span class="footer-socialicon">
+                                <a href="https://www.instagram.com/" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
+                            </span>
+                            <span class="footer-socialicon">
+                                <a href="https://www.pinterest.com/" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
+                            </span>
                         </div>
                     </div>
+                </div>
             </div>
             <div class="post-footer text-center text-sm-left">
                 <div class="row m-0">
@@ -321,6 +310,11 @@ footer-->
                             <a href="{{ url('privacy-policy/') }}">Privacy Policy</a> &nbsp;|&nbsp; <a href="{{ url('returns/') }}">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
                         </div>
                     </div>
+                </div>
+                <div class="text-center">
+                    <p class="pt-3 mb-0">
+                        &#169; Copyright Custom Closets. All rights Reserved.
+                    </p>
                 </div>
             </div>
         </div> 

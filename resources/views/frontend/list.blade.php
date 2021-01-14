@@ -60,7 +60,7 @@
                                 </a>
                                 @else
                                 <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">
-                                    <i class="linearicons-hammer-wrench"></i> See Details
+                                    <i class="linearicons-eye"></i> View Details
                                 </a>
                                 @endif
                                 @if($product->is_accessory == 0)
