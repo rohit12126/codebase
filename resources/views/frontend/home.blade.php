@@ -60,7 +60,7 @@
     <section class="home-swip-section">
         <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
         <div class="row m-0">
-            <div class="col-md-6 p-4">
+            <div class="col-md-6 col-sm-12 p-4 home-swip-column">
                 <div id="page" class="wrapper-upper">
                     <div class="wrapper wrapperFirst">
                         <div class="before">
@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 p-4">
+            <div class="col-md-6 col-sm-12 p-4 home-swip-column">
                 <div id="page1" class="wrapper-upper">
                     <div class="wrapper wrapperSecond">
                         <div class="before">
