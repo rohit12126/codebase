@@ -25,6 +25,11 @@ class AddressManager
         ])
         ->orderBy('id', 'DESC')
         ->first();
-        //->get();
+    }
+
+    public function getAddressesbyId($id)
+    {
+        /* Change first to get to fetch multiople addresses */
+        return AddressModel::find($id);
     }
 }

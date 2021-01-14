@@ -23,6 +23,7 @@ use PayPal\Api\WebProfile;
 use PayPal\Api\InputFields;
 use App\Classes\CartManager;
 use App\Classes\ProductManager;
+use App\Classes\AddressManager;
 use App\Models\Payment as PaymentModel;
 
 class PaypalController extends Controller
@@ -34,7 +35,8 @@ class PaypalController extends Controller
      * @return void
      */
     public function __construct(
-        CartManager $cartManager
+        CartManager $cartManager,
+        AddressManager $addressManager
     )
     {
         $paypal_conf = \Config::get('paypal');
@@ -44,6 +46,7 @@ class PaypalController extends Controller
             );
         $this->_api_context->setConfig($paypal_conf['settings']);
         $this->cartManager = $cartManager;
+        $this->addressManager = $addressManager;
     }
     public function payWithpaypal(Request $request)
     {
@@ -65,12 +68,32 @@ class PaypalController extends Controller
                 ->setPrice($product->price); 
                 $i++;
         } 
+
+        $shippingAddress =  $this->addressManager
+        ->getAddressesById(Session()->get('ship'));
+
+        if(!is_null($shippingAddress->state && $shippingAddres->name)){
+        $shippingAddress =  $this->addressManager
+                ->getAddressesById(Session()->get('bill'));
+        }
+        
+        $shippingAddres = [
+            "recipient_name" => $shippingAddress->name,
+            "line1" => $shippingAddress->address,
+            "city" => $shippingAddress->city,
+            "country_code" => "US",
+            "postal_code" => $shippingAddress->zipcode,
+            "state" => $shippingAddress->state,
+            "phone" => $shippingAddress->mobile
+        ];
         $shipCost = Session()->get('shippingCharge');
         
         $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
         
         $itemList = new ItemList();
         $itemList->setItems($items);
+        $itemList->setShippingAddress($shippingAddres);
+
 
         $details = new Details();
             $details->setSubtotal($subTotal)
@@ -82,8 +105,6 @@ class PaypalController extends Controller
         $amount->setCurrency('USD')
             ->setTotal($subTotal + $shipCost)
             ->setDetails($details);
-
-
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
