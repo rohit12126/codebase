@@ -606,12 +606,12 @@ footer-->
                 document.querySelector(wrapper).querySelector('.after').style.width = transform+"px";
                 document.querySelector(className).style.left = transform+"px";
             }
-            if (window.matchMedia("(max-width: 1200px)").matches) {
+            /* if (window.matchMedia("(max-width: 1200px)").matches) {
                 scrollIt(screen.width/2);
             } else {
                 scrollIt(600);
-            }
-
+            } */
+            scrollIt(document.querySelector(wrapper).offsetWidth/2);
             document.querySelector(className).addEventListener('touchstart',function(){
                 active = true;
                 document.querySelector(className).classList.add('scrolling');

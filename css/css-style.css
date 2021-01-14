@@ -8095,7 +8095,7 @@ h5 {
 	border-radius: 0;
 }
 .home-swip-section{
-	min-height:840px;
+	min-height:722px;
 	position: relative;
 	padding-bottom: 100px;
 	background-image: url('../images/body-bg.gif') ;
@@ -8125,7 +8125,7 @@ h5 {
 	border: 4px solid #F94E57;
 	overflow: hidden; */
 	max-width: 800px;
-	height: 600px;
+	height: 434px;
 	position: absolute;
 	left: 50%;
 	top: 38%;
@@ -8156,7 +8156,11 @@ h5 {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
-	width: 100%;
+	height: 100%;
+	max-width: unset;
+}
+.before .hotspot-image{
+	transform: translateX(-10%);
 }
 /* Our image information */
 .before,
@@ -9966,6 +9970,7 @@ body { margin: 0; }
   background-size: cover;
   background-position: center center;
   position: relative;
+  height: 100%;
 }
 .responsive-hotspot-wrap::selection{
 	background: transparent !important;
@@ -10043,7 +10048,7 @@ body { margin: 0; }
 
 .hot-spot .tooltip p:last-child { margin-bottom: 0; }
 #secondhotspotImg{
-	width:1200px;
+	width:796px;
 	position: relative;
 }
 #secondhotspotImg img{
