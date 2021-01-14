@@ -95,7 +95,7 @@ class OrderController extends Controller
                 $this->cartManager->destroy();
                 $this->cartManager->destroyCartDB($userId);
                 $product = $this->orderManager->getProductsByOrder($order->order_no);
-                $req->session()->forget(['bill', 'ship', 'payment_id']);
+                $req->session()->forget(['bill', 'ship', 'payment_id','shippingCharge']);
             } else {
                     $order = $this->orderManager->getLastOrder($userId, $isTempUser);
                     $product = [];
