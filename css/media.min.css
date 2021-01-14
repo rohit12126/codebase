@@ -100,6 +100,10 @@
         opacity: 1;
         transform: scaleX(1);
     } 
+    .active.head-nav-link:before {
+        opacity: 1;
+        transform: scaleX(1);
+    } 
 }
 
 @media (max-width: 991px) {
