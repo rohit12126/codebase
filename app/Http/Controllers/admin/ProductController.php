@@ -31,7 +31,7 @@ class ProductController extends Controller
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
                 'description' => 'required',
                 'sale_price'=> 'required|numeric|min:0|not_in:0',
-                'sku'=> 'required|max:20|min:2|unique:product'
+                'sku'=> 'required|max:20|min:2|unique:products'
             ]
         ); 
         $response = ProductManager::add($req);
@@ -62,7 +62,8 @@ class ProductController extends Controller
             [
                 'image' => $imgRequired.'array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
-                'description' => 'required'
+                'description' => 'required',
+                'sku'=> 'required|max:20|min:2|unique:products'
             ]
         );
         $response = ProductManager::edit($req);
