@@ -10038,6 +10038,12 @@ body { margin: 0; }
 	bottom: calc(100% + 20px);
 	top: auto;
 }
+.tip-upside{
+	transform: scale(0.7);
+	bottom: -30px !important;
+	right: auto !important;
+	top: auto !important;
+}
 .hot-spot .tooltip .img-row {
   padding: 10px;
   text-align: center;
