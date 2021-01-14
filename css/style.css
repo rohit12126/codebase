@@ -1240,7 +1240,6 @@ html:not([dir="rtl"]) .dropleft .dropdown-toggle-split::before {
 .btn:focus,
 .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(50, 31, 219, 0.25);
 }
 
 .btn.disabled,
@@ -4760,7 +4759,7 @@ html:not([dir="rtl"]) .custom-file-label::after {
 }
 
 html:not([dir="rtl"]) .dropdown-toggle::after {
-  margin-left: 0.255em;
+  margin-top: 0.455em;
 }
 
 *[dir="rtl"] .dropdown-toggle::after {
@@ -4794,7 +4793,15 @@ html:not([dir="rtl"]) .dropdown-toggle:empty::after {
   background-color: #fff;
   border-color: #d8dbe0;
 }
-
+.multiselect-container{
+  width: calc(100% - 59px);
+}
+.multiselect-container .disabled a{
+  color: #757575;
+}
+.multiselect-container .disabled a:hover{
+  cursor: not-allowed;
+}
 html:not([dir="rtl"]) .dropdown-menu {
   left: 0;
 }

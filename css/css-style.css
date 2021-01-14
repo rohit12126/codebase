@@ -8159,9 +8159,6 @@ h5 {
 	height: 100%;
 	max-width: unset;
 }
-.before .hotspot-image{
-	transform: translateX(-10%);
-}
 /* Our image information */
 .before,
 .after {
@@ -8195,7 +8192,7 @@ h5 {
 	height: 60px;
 	position: absolute;
 	left: 100px;
-	top: 50%;
+	top: 45%;
 	transform: inherit;
 	background-color: #ec4f05;
 	opacity: 0.9;

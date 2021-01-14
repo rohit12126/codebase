@@ -114,7 +114,7 @@
         overflow-x: hidden;
         position: fixed;
         left: -100%;
-        top: 87px;
+        top: 71px;
         z-index: 99;
         width: 100%;
         background-color: #FFF;
@@ -549,6 +549,12 @@
     }
     .product-detail2 .btn{
         padding: 8px 0;
+    }
+}
+
+@media (max-width: 1600px){
+    .before .hotspot-image{
+        transform: translateX(-15%);
     }
 }
 @media (min-width:992px) and (max-width:1199px){

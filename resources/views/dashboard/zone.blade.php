@@ -281,7 +281,7 @@ Multiselect.prototype = {
         groupClass: 'multiselect-optgroup-item',
         clickableGroups: false,
         buttonWidth: 'auto',
-        buttonContainer: '<div class="btn-group" />',
+        buttonContainer: '<div class="form-control" />',
         // Maximum height of the dropdown menu.
         // If maximum height is exceeded a scrollbar will be displayed.
         maxHeight: false,
@@ -300,8 +300,8 @@ Multiselect.prototype = {
     },
 
     templates: {
-        button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"></button>',
-        ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+        button: '<button type="button" class="multiselect dropdown-toggle w-100 d-flex justify-content-between p-0" data-toggle="dropdown"></button>',
+        ul: '<ul class="multiselect-container dropdown-menu p-3"></ul>',
         filter: '<div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control multiselect-search" type="text"></div>',
         li: '<li><a href="javascript:void(0);"><label></label></a></li>',
         divider: '<li class="divider"></li>',
