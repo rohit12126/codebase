@@ -150,7 +150,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Mobile</th>
-                                            <th>Proxy Login</th>
+                                            <!-- <th>Proxy Login</th> -->
                                             <th class="action-th">Action</th>
 
                                         </tr>
@@ -162,11 +162,7 @@
                                             <td>{{ $value->name }}</td>
                                             <td>{{ $value->email }}</td>
                                             <td>{{ $value->mobile }}</td>
-                                            <td class="w-max-content">
-                                                <a class="btn btn-sm btn-block btn-outline-success min-w-max-content" href="{{ url('admin/user_login', $value->id) }}" target="_blank">
-                                                    Login as {{ ucwords($value->name) }}
-                                                </a>
-                                            </td>
+                                            
                                             <td>
                                                 <a class="btn btn-sm btn-info custom-tooltip" href="{{ url('admin/edit_user', $value->id) }}" title="Edit">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Edit User Account</span>
@@ -175,6 +171,10 @@
                                                 <a class="btn btn-sm btn-danger custom-tooltip" href="{{ url('admin/delete_user', $value->id) }}" onclick="return confirm('Are you sure you want to delete this user?');" title="Delete">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Delete User Account</span>
                                                     <i class="cil-trash"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-secondary custom-tooltip" href="{{ url('admin/user_login', $value->id) }}" target="_blank">
+                                                <span class="custom-tooltiptext custom-tooltip-top">Login as {{ ucwords($value->name) }}</span>
+                                                    <i class="cil-user"></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -459,7 +459,7 @@ footer-->
             mobile: {
                 required: true,
                 digits: true,
-                minlength: 10,
+                minlength: 8,
                 maxlength: 14
             },
             spassword: {

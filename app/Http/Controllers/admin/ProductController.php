@@ -31,7 +31,7 @@ class ProductController extends Controller
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
                 'description' => 'required',
                 'sale_price'=> 'required|numeric|min:0|not_in:0',
-                'max_cart_qty'=> 'required|numeric|min:0|not_in:0',
+                'sku'=> 'required|max:20|min:2'
             ]
         ); 
         $response = ProductManager::add($req);

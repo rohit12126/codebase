@@ -80,7 +80,7 @@
                         <span class="pdp-vatInfo">inclusive of all taxes</span>
                     </p>-->
                     <p class="sku-number">
-                        <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
+                        <strong>SKU No.</strong> <span>{{$productData['product']->sku}}</span>
                     </p>
                     
                     <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">

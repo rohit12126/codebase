@@ -86,14 +86,23 @@
                                             <div class="error">{{ $errors->first('sale_price') }}</div>
                                         @endif
                                     </div>
-                                    <div class="form-group">
+                                    {{--<div class="form-group">
                                         <label>Cart Limit</label>
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Cart limit" name="max_cart_qty" class="form-control" value="{{ old('max_cart_qty', @$product->max_cart_qty) }}" >
                                         @if($errors->has('max_cart_qty'))
                                             <div class="error">{{ $errors->first('max_cart_qty') }}</div>
                                         @endif
+                                    </div>--}}
+                                    <div class="form-group">
+                                    <label>SKU Number</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="text" placeholder="SKU Number" name="sku" class="form-control" value="{{ old('sku', @$product->sku) }}" >
+                                        @if($errors->has('sku'))
+                                            <div class="error">{{ $errors->first('sku') }}</div>
+                                        @endif
                                     </div>
+
                                     <div class="form-group">
                                         <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>
@@ -177,7 +186,7 @@
                                 </a>
                             </div>
                             </div>
-                          
+                        
                         </form>
                     </div>
                 </div>
@@ -272,16 +281,26 @@ $(function() {
                 min: 0,
                 required: true
             },
-            max_cart_qty: {
-                min: 0,
-                required: true
+            sku: {
+                required: true,
+                minlength: 2,
+                maxlength: 20
             }
+            // max_cart_qty: {
+            //     min: 0,
+            //     required: true
+            // }
         },
         messages: {
             category_id: "Please select a category",
             name: "Please provide a Name",
             sale_price: "Please provide Valid Price",
-            max_cart_qty: "Please provide Valid Qty"
+            sku: {
+                required: "SKU number is required.",
+                minlength: "SKU number must be atleast 2 digit",
+                maxlength: "SKU number must not exeed 20 digits"
+            }
+            // max_cart_qty: "Please provide Valid Qty"
         },
         submitHandler: function(form) {
             // do other things for a valid form

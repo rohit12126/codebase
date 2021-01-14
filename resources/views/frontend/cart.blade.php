@@ -239,6 +239,9 @@
                 data: {
                     rowId : rowId
                 },
+                beforeSend:function(){
+                    confirm("Are you sure ?");
+                },
                 success: function(result) {
                     if( result.data.cartCount == 0 ) {
                         location.reload(true);
