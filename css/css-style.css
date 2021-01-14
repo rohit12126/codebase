@@ -8107,144 +8107,141 @@ h5 {
 .home-swip-section .second-slide{
 	position: absolute;
 }
-    #page{
-    width:100%;
-    height:100%;
-    /* position:absolute; */
-    }
-    /* Our wrapper */
-    .wrapper{
-		/* max-width: 1200px;
-		height: 600px;
-		position: absolute;
-		left: 50%;
-		top: 38%;
-		transform: translate3d(-50%,-50%,0);
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		width: 100%;
-		border: 4px solid #F94E57;
-		overflow: hidden; */
-		max-width: 800px;
-		height: 600px;
-		position: absolute;
-		left: 50%;
-		top: 38%;
-		transform: translate3d(-50%,-35%,0);
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		width: 100%;
-		border: 4px solid #F94E57;
-		overflow: hidden;
-	}
-	.wrapper::after{
-		content: "";
-		display: block;
-		width: 92%;
-		height: 133px;
-		position: absolute;
-		bottom: -4px;
-		left: -3px;
-		background: #00000000;
-		border-radius: 50%;
-		opacity: 0.6;
-		box-shadow: 81px 47px 20px #00000054;
-		z-index: -1;
-	}
-	.wrapper > *::selection{
-		background: transparent !important;
-	}
-	.hotspot-image{
-		user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		width: 100%;
-	}
-    /* Our image information */
-    .before,
-    .after {
-		width:100%;
-		height:100%;
-		background-repeat:no-repeat;
-		background-color: white;
-		background-size: cover;
-		background-position: center;
-		position: absolute;
-		top:0;
-		left:0;
-		/* pointer-events:none; */
-		overflow: hidden;
-    }
-    .before::selection,
-    .after::selection {
-		background: transparent !important;
-	}
-    .content-image{
-		height:100%;
-		max-width:none;
-    }
+.wrapper-upper{
+	width:100%;
+	height:100%; 
+	position:relative;
+}
+/* Our wrapper */
+.wrapper{
+	/* max-width: 1200px;
+	height: 600px;
+	position: absolute;
+	left: 50%;
+	top: 38%;
+	transform: translate3d(-50%,-50%,0);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	width: 100%;
+	border: 4px solid #F94E57;
+	overflow: hidden; */
+	max-width: 800px;
+	height: 600px;
+	position: absolute;
+	left: 50%;
+	top: 38%;
+	transform: translate3d(-50%,0,0);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	width: 100%;
+	border: 4px solid #F94E57;
+	overflow: hidden;
+}
+.wrapper::after{
+	content: "";
+	display: block;
+	width: 92%;
+	height: 133px;
+	position: absolute;
+	bottom: -4px;
+	left: -3px;
+	background: #00000000;
+	border-radius: 50%;
+	opacity: 0.6;
+	box-shadow: 81px 47px 20px #00000054;
+	z-index: -1;
+}
+.wrapper > *::selection{
+	background: transparent !important;
+}
+.hotspot-image{
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	width: 100%;
+}
+/* Our image information */
+.before,
+.after {
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top:0;
+	left:0;
+	/* pointer-events:none; */
+	overflow: hidden;
+}
+.before::selection,
+.after::selection {
+	background: transparent !important;
+}
+.content-image{
+	height:100%;
+	max-width:none;
+}
 
-    .after{
-    	width:125px;
-    }
+.after{
+	width:125px;
+}
 
-    .scroller{
-		width: 60px;
-		height: 60px;
-		position: absolute;
-		left: 100px;
-		top: 50%;
-		transform: inherit;
-		background-color: #ec4f05;
-		opacity: 0.9;
-		pointer-events: auto;
-		cursor: pointer;
-    }
+.scroller{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 100px;
+	top: 50%;
+	transform: inherit;
+	background-color: #ec4f05;
+	opacity: 0.9;
+	pointer-events: auto;
+	cursor: pointer;
+}
 
-    .scroller:hover{
-    	opacity:1;
-    }
+.scroller:hover{
+	opacity:1;
+}
 
-    .scrolling{
-    /* pointer-events:none; */
-    opacity:1;
-    }
+.scrolling{
+/* pointer-events:none; */
+opacity:1;
+}
 
-    .scroller__thumb{
-		width:100%;
-		height:100%;
-		padding:5px;
-    }
+.scroller__thumb{
+	width:100%;
+	height:100%;
+	padding:5px;
+}
 
-    .scroller:before,
-    .scroller:after{
-		content: " ";
-		display: block;
-		width: 15px;
-		height: 100vh;
-		position: absolute;
-		left: 50%;
-		margin-left: -3.5px;
-		z-index: 30;
-		transition: 0.1s;
-    }
-    .scroller:before{
-    	top:105%;
-    }
-    .scroller:after{
-    	bottom:100%;
-    }
+.scroller:before,
+.scroller:after{
+	content: " ";
+	display: block;
+	width: 15px;
+	height: 100vh;
+	position: absolute;
+	left: 50%;
+	margin-left: -3.5px;
+	z-index: 30;
+	transition: 0.1s;
+}
+.scroller:before{
+	top:105%;
+}
+.scroller:after{
+	bottom:100%;
+}
 
-    /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
-    .scroller{
-    	border: 5px solid #fff;
-    }
-    .scroller:before,
-    .scroller:after{
-    	background: #fff;
-    }
+/* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+.scroller{
+	border: 5px solid #fff;
+}
+.scroller:before,
+.scroller:after{
+	background: #fff;
+}
 
-
-
-	
 /*==============================================================================================*/
 .section
 {
@@ -9890,6 +9887,7 @@ h5 {
 		.ic3 {
 			margin-top: -8rem;
 		}
+
 	}
 	@media(max-width: 767px){
 		.installation-col{
