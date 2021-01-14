@@ -117,10 +117,12 @@
             </tr>
             <tr>
                 <th style="background-color: #eee;border-bottom: 1px solid #000;text-align: center;">
-                    <span style="font-weight: bold;line-height: 22px;">Buyer Details - Shipping Address</span>
+                    <span style="font-weight: bold;line-height: 22px;">Buyer Details</span>
                 </th>
             </tr>
+
             <tr>
+            
                 <td style="padding: 10px;text-transform: capitalize;">
                     Name : {{$order->getShippingAddress->name}} <br>
                     Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
@@ -194,7 +196,7 @@
                                     {{$product->product->name}}
                                 </td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
-                                    WSMRCTND
+                                    {{$product->sku}}
                                 </td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">$ {{number_format($product->price, 2)}}</td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{number_format($product->product_quantity)}}</td>

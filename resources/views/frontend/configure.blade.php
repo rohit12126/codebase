@@ -20,7 +20,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <span class="product-sku-no">UGG-BB-PUR-072323</span>
+                    <span class="product-sku-no">{{$productData['product']->name}}</span>
                     <span class="product-sku">SKU (Stock Keeping Unit)</span>
                 </div>
                 <div class="col-md-6 text-md-right">

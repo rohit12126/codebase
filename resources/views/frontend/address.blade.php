@@ -1,5 +1,16 @@
 @extends('layouts.front')
 @section('content')
+<style>
+.placeholder-select select:required:invalid {
+  color: gray;
+}
+.placeholder-select option[value=""][disabled] {
+  display: none;
+}
+.placeholder-select option {
+  color: black;
+}
+</style>
 <div class="main_content">
 
 <!-- START SECTION SHOP -->
@@ -61,7 +72,7 @@
                         </div> 
                     @endif
                     {{-- Address Form--}}
-                    <input type="hidden" id="holder" value="ship_state">
+                    <input type="hidden" id="holder" value="bill_state">
                     <div class="mt-4 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
                         <div class="row">
                             <div class="col-md-12">
@@ -123,7 +134,8 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <select class="form-control bill bill_state" value="" id="bill_state" name="bill_state">
+                                            <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
+                                            <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
@@ -140,11 +152,11 @@
                                 <div class="heading_s1 p-relative">
                                     <h4>Shipping Details</h4>
                                     <div class="checkinputforsameinfo custome-checkbox">
-                                        <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="form-check-input"/>
+                                        <input type="checkbox" id="filladdress" name="filladdress" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="form-check-input" checked />
                                         <label class="form-check-label label_info" for="filladdress">Same As Billing Address</label>
                                     </div>
                                 </div>
-                                <div class="collapse in show" id="collapseExample">
+                                <div class="collapse in" id="collapseExample">
                                 {{--  @if ($isTemp !=1)
                                 <div class="address-billing-wrapper">
                                     <div class="custom-card-block mb-4">
@@ -199,9 +211,10 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <select class="form-control ship ship_state" value="" id="ship_state" name="ship_state">
+                                            <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
+                                            <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
-                                                <option value="{{$state->zone_id}}">{{$state->name}} @if(empty($state->zone_id)) "Shipping Not Available" @endif</option>
+                                                <option value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
                                             </select>
                                         <form>
@@ -438,7 +451,7 @@ $(document).ready(function() {
     }, "Please enter a valid mobile number");
 
     jQuery.validator.addMethod("postcode", function (value, element) {
-        if ( /^[0-9]{5,6}$/g.test(value)) {
+        if ( /^[a-zA-Z0-9]{5,6}$/g.test(value)) {
             return true;
         } else {
             return false;
@@ -461,7 +474,7 @@ $(document).ready(function() {
                 }, */
                 required: true,
                 digits: true,
-                minlength: 10,
+                minlength: 8,
                 maxlength: 14
                 //phonenu: true
             },
@@ -478,7 +491,7 @@ $(document).ready(function() {
                 }, */
                 required: true,
                 digits: true,
-                minlength: 10,
+                minlength: 8,
                 maxlength: 14
                 //phonenu: true
             },

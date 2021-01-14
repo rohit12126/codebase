@@ -239,6 +239,10 @@
                 data: {
                     rowId : rowId
                 },
+                beforeSend:function(){
+                    if(!confirm("Are you sure ?"))
+                        return false;
+                },
                 success: function(result) {
                     if( result.data.cartCount == 0 ) {
                         location.reload(true);

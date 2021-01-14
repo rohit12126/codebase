@@ -189,7 +189,7 @@ class OrderController extends Controller
                 }
             }
         
-        return $shipPrice;
+        return number_format((float) $shipPrice, 2, '.', '');
     }
     
 }

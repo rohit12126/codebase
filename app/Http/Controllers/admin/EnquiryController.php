@@ -47,7 +47,7 @@ class EnquiryController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:8|max:15',
             'reason' => 'required',
             'message' => 'required'
          ]);

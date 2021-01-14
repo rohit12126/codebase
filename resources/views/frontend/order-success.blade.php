@@ -19,10 +19,10 @@
                             <span>Order Number</span>
                             <span>{{$order->order_no}}</span>
                         </div>
-                        <div class="d-flex justify-content-between mb-2">
+                        <!-- <div class="d-flex justify-content-between mb-2">
                             <span>SKU Number</span>
                             <span>UGG-BB-PUR-07</span>
-                        </div>
+                        </div> -->
                         <div class="d-flex justify-content-between">
                             <span>Total Amount Paid</span>
                             <span>$ {{ $order->grand_total}}</span>

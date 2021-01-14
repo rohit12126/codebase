@@ -40,7 +40,16 @@
                     @foreach ($products as $key => $product)
                         <div class="products-list-col">
                             <div class="products-list-product">
-                                <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
+                                @if($product->is_accessory == 0)
+                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="">
+                                @else
+                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
+                                @endif
+                                @if($product->is_accessory == 0)
+                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="">
+                                @else
+                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
+                                @endif
                                     <div class="product-list-inner">
                                         <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
                                     </div>
@@ -51,10 +60,15 @@
                                 </a>
                                 @else
                                 <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">
-                                    <i class="linearicons-hammer-wrench"></i> Buy Now
+                                    <i class="linearicons-hammer-wrench"></i> See Details
                                 </a>
                                 @endif
-                                <div class="products-list-title"><h2>{{$product->name}}</h2></div>
+                                @if($product->is_accessory == 0)
+                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
+                                @else
+                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
+                                @endif
+                                
                                 <div class="products-list-price">$ {{$product->sale_price}}</div>
                             </div>
                         </div>

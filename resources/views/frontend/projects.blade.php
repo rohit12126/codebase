@@ -5,7 +5,7 @@
             <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Projects</h1>
             <div class="blog-row justify-content-center">
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one
@@ -18,7 +18,7 @@
                     </a>
                 </div>   
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum
@@ -31,7 +31,7 @@
                     </a>
                 </div>
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one
@@ -44,7 +44,7 @@
                     </a>
                 </div>   
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum
@@ -57,7 +57,7 @@
                     </a>
                 </div> 
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project one
@@ -70,7 +70,7 @@
                     </a>
                 </div>  
                 <div class="blog-col">
-                    <a href="{{ url('project/detail/') }}" target="_blank">
+                    <a href="{{ url('project/detail/') }}">
                         <article class="blog-list-card">
                             <div class="blog-list-title">
                                 Custom closet project two lorem ipsum

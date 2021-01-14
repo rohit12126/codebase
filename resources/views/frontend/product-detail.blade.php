@@ -63,7 +63,7 @@
                                 <span>&nbsp;Reviews</span>
                             </a>
                         @else
-                            <p class="product_tab_title text-danger font-italic mb-0"> Be the first person to rate this product.</p>
+                            <p class="product_tab_title text-muted font-italic mb-0"> Be the first person to rate this product.</p>
                         @endif
                     </div>
                     <hr>
@@ -80,7 +80,7 @@
                         <span class="pdp-vatInfo">inclusive of all taxes</span>
                     </p>-->
                     <p class="sku-number">
-                        <strong>SKU No.</strong> <span>UGG-BB-PUR-07</span>
+                        <strong>SKU No.</strong> <span>{{$productData['product']->sku}}</span>
                     </p>
                     
                     <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">
@@ -94,9 +94,6 @@
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
                         
-                        <a href="{{ url('product/configure/').'/'.$productData['product']->slug }}" class="btn btn-fill-out configure-btn">
-                            <i class="linearicons-hammer-wrench"></i> Configure
-                        </a>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
                         <div class="pincode-deliveryContainer">
