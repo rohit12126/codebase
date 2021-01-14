@@ -39,7 +39,7 @@
                                     <td class="p-1">: {{ ucwords($order->user->name) }}</td>
                                 @endif
                             </tr>
-                            <tr> 
+                            <tr>
                                 <th class="p-1">Shipping Address</th>
                                 <td class="p-1">: {{ $order->getShippingAddress->name ??  $order->getBillingAddress->name }}, 
                                 {{ $order->getShippingAddress->mobile ??  $order->getBillingAddress->mobile }}, 
