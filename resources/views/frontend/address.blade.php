@@ -137,7 +137,7 @@
                                             <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
                                             <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
-                                                <option value="{{$state->zone_id}}">{{$state->name}}</option>
+                                                <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
                                             </select>
                                         <form>
@@ -214,7 +214,7 @@
                                             <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
                                             <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
-                                                <option value="{{$state->zone_id}}">{{$state->name}}</option>
+                                                <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
                                             </select>
                                         <form>
@@ -329,6 +329,13 @@ $(document).ready(function() {
 
         $('#place_order').attr('disabled',true);
 
+        $('#'+$("#holder").val()).focus(function() {
+        getShippingPrice();
+        });
+
+        
+
+        function getShippingPrice() {
         $('#'+$("#holder").val()).on('change', function() {
         $.ajaxSetup({
             headers: {
@@ -339,7 +346,7 @@ $(document).ready(function() {
         $.ajax({
         type: "POST",
         url: url,
-        data: {zone_id :  $('#'+$("#holder").val()).val()},
+        data: {zone_id :  $('#'+$("#holder").val()).find(':selected').attr('data-value')},
         success: function(data) {
             if(data == 0){
                 $('.shipping_price').html("Currently Shipping Not Available !")
@@ -359,6 +366,7 @@ $(document).ready(function() {
         }
         });
     });
+    }
     
 
     /* To Handle Browser Back From Payment page*/
@@ -408,6 +416,8 @@ $(document).ready(function() {
             $("#ship_state").val($("#bill_state").val());  
             $("#ship_zipcode").val($("#bill_zipcode").val());
             $("#holder").val("bill_state");
+            $('.shipping_price').html('$ 0.00')
+            getShippingPrice();
         } else {
             $("#ship_name").val('');
             $("#ship_phone").val('');
@@ -417,6 +427,8 @@ $(document).ready(function() {
             $("#ship_zipcode").val('');
             $("#ship_email").val('');           
             $("#holder").val("ship_state");
+            $('.shipping_price').html('$ 0.00')
+            getShippingPrice(); 
         }
     });
 
