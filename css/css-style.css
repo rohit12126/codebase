@@ -5833,11 +5833,19 @@ footer .widget_title {
 }
 .comment_list {
 	margin-bottom: 20px;
+	max-height: 300px;
+    overflow-y: scroll;
 }
+.comment_list::-webkit-scrollbar{width:5px}
+.comment_list::-webkit-scrollbar-track{background:#eee}
+.comment_list::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
+.comment_list::-webkit-scrollbar-thumb:hover{background:#F94E57;}
+
 .comments li {
-	margin-bottom: 20px;
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 20px;
+	margin-bottom: 0.625rem;
+    border-bottom: 1px solid #ddd;
+	padding-bottom: 0.625rem;
+	margin-right: 0.312rem;
 }
 .comment_img {
 	float: left;
@@ -5849,11 +5857,16 @@ footer .widget_title {
 .comment_block {
 	padding-left: 120px;
 }
-.customer_meta {
-	margin-bottom: 5px;
-}
 .comment_block .rating_wrap {
 	float: right;
+	margin-top: -2%;
+	margin-right: 1%;
+}
+.customer_meta span{
+	line-height: 1;
+}
+.comment_block .description{
+	font-weight: 300;
 }
 .description p:last-child {
 	margin: 0;
@@ -9590,10 +9603,10 @@ opacity:1;
 	transform: translateY(-50%);
 }
 .comment_block {
-    padding-left: 70px;
+    padding-left: 50px;
 }
 .comment_img img {
-    max-width: 60px;
+    max-width: 40px;
 }
 .rating_wrap .rating{
 	font-family: "Ionicons" !important;
