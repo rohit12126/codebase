@@ -364,12 +364,6 @@
         transform: scale(0.7);
         top: -22px !important;
     }
-    .tip-upside{
-        transform: scale(0.7);
-        bottom: -30px !important;
-        right: auto !important;
-        top: auto !important;
-    }
     .dashboard_content{
         padding: 0;
     }
