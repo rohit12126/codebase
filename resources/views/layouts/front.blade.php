@@ -14,7 +14,7 @@
 
     <!-- SITE TITLE -->
     <title>Custom Closet</title><!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png')}}"><!-- Animation CSS -->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon/favicon.jpg')}}"><!-- Animation CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-animate.css')}}">Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-bootstrap.min.css')}}">
      <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap"
