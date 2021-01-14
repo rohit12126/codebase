@@ -139,7 +139,7 @@
                                             </div>
                                         </div>
                                         <div class="customer_meta">
-                                            <span class="review_author">{{$review->title}}</span>
+                                            <span class="review_author">{{ucwords($review->user_name)}}</span>
                                             <span class="comment-date">{{ date("M j, Y", strtotime($review->created_at)) }} {{-- {{ \Carbon\Carbon::parse($review->created_at)->format('d F Y')}} --}}</span>
                                         </div>
                                         <div class="description">
