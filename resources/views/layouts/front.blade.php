@@ -14,7 +14,7 @@
 
     <!-- SITE TITLE -->
     <title>Custom Closet</title><!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.png')}}"><!-- Animation CSS -->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon/favicon.jpg')}}"><!-- Animation CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-animate.css')}}">Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-bootstrap.min.css')}}">
      <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;display=swap"
@@ -115,25 +115,25 @@
                 <nav class="head-nav">
                     <ul class="head-nav-ul mt-lg-1 mr-lg-3">
                         <li class="head-nav-li">
-                            <a href="{{ url('installation/') }}" class="head-nav-link">Installation</a>
+                            <a href="{{ url('installation/') }}" class="head-nav-link {{ request()->is('installation') ? 'active' : ''}}">Installation</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('product/') }}" class="head-nav-link">Products</a>
+                            <a href="{{ url('product/') }}" class="head-nav-link {{ request()->is('product') ? 'active' : ''}} ">Products</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('projects/') }}" class="head-nav-link">Projects</a>
+                            <a href="{{ url('projects/') }}" class="head-nav-link {{ request()->is('projects') ? 'active' : ''}} ">Projects</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('about-us/') }}" class="head-nav-link">About Us</a>
+                            <a href="{{ url('about-us/') }}" class="head-nav-link {{ request()->is('about-us') ? 'active' : ''}}">About Us</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('blog/') }}" class="head-nav-link">Blog</a>
+                            <a href="{{ url('blog/') }}" class="head-nav-link {{ request()->is('blog') ? 'active' : ''}}">Blog</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('resource/') }}" class="head-nav-link">Resources</a>
+                            <a href="{{ url('resource/') }}" class="head-nav-link {{ request()->is('resource') ? 'active' : ''}}">Resources</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('contact-us/') }}" class="head-nav-link">contact us</a>
+                            <a href="{{ url('contact-us/') }}" class="head-nav-link {{ request()->is('contact-us') ? 'active' : ''}}">contact us</a>
                         </li>
                     </ul>
                 </nav>
