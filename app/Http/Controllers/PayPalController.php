@@ -69,30 +69,30 @@ class PaypalController extends Controller
                 $i++;
         } 
 
-        $shippingAddress =  $this->addressManager
-        ->getAddressesById(Session()->get('ship'));
+        // $shippingAddress =  $this->addressManager
+        // ->getAddressesById(Session()->get('ship'));
 
-        if(!is_null($shippingAddress->state && $shippingAddres->name)){
-        $shippingAddress =  $this->addressManager
-                ->getAddressesById(Session()->get('bill'));
-        }
-        
-        $shippingAddres = [
-            "recipient_name" => $shippingAddress->name,
-            "line1" => $shippingAddress->address,
-            "city" => $shippingAddress->city,
-            "country_code" => "US",
-            "postal_code" => $shippingAddress->zipcode,
-            "state" => $shippingAddress->state,
-            "phone" => $shippingAddress->mobile
-        ];
+        // if(!is_null($shippingAddress->state && $shippingAddress->name)){
+        // $shippingAddress =  $this->addressManager
+        //         ->getAddressesById(Session()->get('bill'));
+        // }
+        // $shippingAddres = [
+        //     "recipient_name" => $shippingAddress->name ?? '',
+        //     "line1" => $shippingAddress->address ?? '',
+        //     "city" => $shippingAddress->city ?? '',
+        //     "country_code" => "US",
+        //     "postal_code" => $shippingAddress->zipcode ?? '',
+        //     "state" => $shippingAddress->state ?? '',
+        //     "phone" => $shippingAddress->mobile ?? ''
+        // ];
+
         $shipCost = Session()->get('shippingCharge');
         
         $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
         
         $itemList = new ItemList();
         $itemList->setItems($items);
-        $itemList->setShippingAddress($shippingAddres);
+        // $itemList->setShippingAddress($shippingAddres);
 
 
         $details = new Details();
