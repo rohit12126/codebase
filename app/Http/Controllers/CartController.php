@@ -165,13 +165,13 @@ class CartController extends Controller
         //if (!isset($req->shipping_address)) {
         if (!isset($req->billing_address) || ($req->isNewAddress == 1)) {
             $shippingAddress=[
-                'name'=>$req->ship_name,
-                'mobile'=>$req->ship_phone,
-                'address'=>$req->ship_address,
-                'email'=>$req->ship_email,
-                'city'=>$req->ship_city,
-                'state'=>$req->ship_state,
-                'zipcode'=>$req->ship_zipcode,
+                'name'=>$req->ship_name ?? $req->bill_name,
+                'mobile'=>$req->ship_phone ?? $req->bill_phone,
+                'address'=>$req->ship_address ?? $req->bill_address,
+                'email'=>$req->ship_email ?? $req->bill_email,
+                'city'=>$req->ship_city ?? $req->bill_city,
+                'state'=>$req->ship_state ?? $req->bill_state,
+                'zipcode'=>$req->ship_zipcode ?? $req->bill_zipcode,
                 'user_id'=>$userId,
                 'type'=>1,
                 'temp_user'=>$isTemp,

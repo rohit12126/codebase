@@ -86,6 +86,9 @@
                                 <h5>Billing Address</h5>
                             </div>
                             <div class="card-body">
+                            {{$data->getBillingAddress->name}}</br>
+                            {{$data->getBillingAddress->email}}</br>
+                            {{$data->getBillingAddress->mobile}}</br>
                             {{$data->getBillingAddress->address}}</br>{{$data->getBillingAddress->city.', '.$data->getBillingAddress->state}}
                             </br>{{$data->getBillingAddress->zipcode}}
                             </div>
@@ -99,8 +102,11 @@
                                 <h5>Shipping Address</h5>
                             </div>
                             <div class="card-body">
-                            {{$data->getShippingAddress->address}}</br>{{$data->getShippingAddress->city.', '.$data->getShippingAddress->state}}
-                            </br>{{$data->getShippingAddress->zipcode}}
+                            {{$data->getShippingAddress->name ?? $data->getBillingAddress->name}}</br>
+                            {{$data->getShippingAddress->email ?? $data->getBillingAddress->email}}</br>
+                            {{$data->getShippingAddress->mobile ?? $data->getBillingAddress->mobile}}</br>
+                            {{$data->getShippingAddress->address ?? $data->getBillingAddress->address}}</br>{{$data->getShippingAddress->city ?? $data->getBillingAddress->city.', '.$data->getShippingAddress->state ?? $data->getBillingAddress->state}}
+                            </br>{{$data->getShippingAddress->zipcode ?? $data->getBillingAddress->zipcode}}
                             
                             </div>
                         </div>
@@ -223,16 +229,12 @@
               <div class="padding_eight_all bg-white">
                   <form id="review_form">
                   <div class="form-group">
-                  <label for="review">Review Tttle</label>
+                  <label for="review">Review</label>
                   <span class="mandatory">*</span>
                       <div class="input-group-prepend">
-                          <input type="text" name="title" class="form-control">
+                          <textarea name="review" id="reviewbox" class="form-control" rows="4" cols="50"></textarea>
                       </div>
-                  <label for="review">Review Body</label>
-                  <span class="mandatory">*</span>
-                      <div class="input-group-prepend">
-                          <textarea name="review" class="form-control" rows="4" cols="50"></textarea>
-                      </div>
+                      <span class="text-danger" id="errorbox"></span>
                   </div>
                   <div class="form-group">
                   <label for="rating">Rate us Out of 5 :)</label>
@@ -292,10 +294,11 @@
               }, 1000);
            }
         },
-        error: function (error) {
-           var data1 = error.responseText;
-           var jsoerrornResponse = JSON.parse(data1);
-           alert(jsoerrornResponse.error);
+        error: function (response) {
+            var error = response.responseText;
+            var obj = JSON.parse(error);
+            $("#reviewbox").addClass("is-invalid");
+            $("#errorbox").text(obj.error);
         }
      })
   });
