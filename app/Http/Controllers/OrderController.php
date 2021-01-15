@@ -168,11 +168,11 @@ class OrderController extends Controller
                     $hardware = $this->productManager->checkHardware($product->id);
                     if($hardware)
                     {
-                        $hshippingPrice+= $price->hardware_price * $product->qty;
+                        $shippingPrice+= $price->product_price * $product->qty;
                     }
                     else
                     {
-                        $shippingPrice+= $price->product_price * $product->qty;
+                        $hshippingPrice+= $price->hardware_price * $product->qty;
                     }
                 }
                 if($shippingPrice == 0)
@@ -184,7 +184,6 @@ class OrderController extends Controller
                     $shipPrice = $shippingPrice;
                 }
             }
-        
         return number_format((float) $shipPrice, 2, '.', '');
     }
     

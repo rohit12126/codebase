@@ -375,7 +375,8 @@ $(document).ready(function() {
                     name: 'shipping',
                     value: data
                 }).appendTo('#checkoutForm');
-                $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
+                var subtotal = +data + +{{$cartSubTotal}}
+                $('#total').html('$ '+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
                 }
             }
             });
@@ -555,10 +556,14 @@ $(document).ready(function() {
                 required: true
             },
             bill_address: {
-                required: true
+                required: true,
+                minlength: 10,
+                maxlength: 400
             },
             ship_address: {
-                required: true
+                required: true,
+                minlength: 10,
+                maxlength: 400
             }
         },
         messages: {
