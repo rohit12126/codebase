@@ -8221,6 +8221,7 @@ h5 {
 	opacity: 0.9;
 	pointer-events: auto;
 	cursor: pointer;
+	z-index: 9999;
 }
 
 .scroller:hover{

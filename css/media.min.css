@@ -372,7 +372,19 @@
     }
     .tooltip{
         transform: scale(0.7);
-        top: -22px !important;
+        top: 0 !important;
+        right: -90px !important;
+    }
+    .hot-spot .tip-upside{
+        bottom: calc(100% - 20px) !important;
+        top: auto !important;
+        right: -70px !important;
+    }
+    .tooltip:not(.tip-upside)::before{
+        left: 50%;
+    }
+    .tip-upside::before{
+        left: 64%;
     }
     .dashboard_content{
         padding: 0;
@@ -579,8 +591,8 @@
         width: 600px !important;
     }
 }
-@media(max-width:780px){
+@media(max-width:580px){
    .hotspot-image{
-        transform: translateX(-15%);
+        transform: translateX(-10%);
    }    
 }
