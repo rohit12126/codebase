@@ -57,7 +57,7 @@
     "order_status_change_success" : "Order status changed successfully!",
     "order_status_change_failed" : "Something went wrong unable to change status of Order!",
 
-    "order_cancelled_success" : "Order Cancled successfully!",
+    "order_cancelled_success" : "Order Cancelled successfully!",
     "order_cancelled_failed" : "Something went wrong unable to Cancel Order!",
     
     "user_add_success" : "User added successfully!",

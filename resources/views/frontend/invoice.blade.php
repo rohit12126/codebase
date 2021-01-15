@@ -127,19 +127,19 @@
                             </th>
                         </tr>
                         <tr>
-                            <td style="padding: 10px;text-transform: capitalize;border-right: 1px solid #000;">
-                                Name : {{$order->getShippingAddress->name}} <br>
-                                Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
-                                Email : {{$order->getShippingAddress->email}} <br>
-                                Address: {{$order->getShippingAddress->address.', '.$order->getShippingAddress->city.', '.$order->getShippingAddress->state.', '.$order->getShippingAddress->country}} <br>
-                                Pincode : {{$order->getShippingAddress->zipcode}} <br><br>
+                           <td style="padding: 10px;text-transform: capitalize;border-right: 1px solid #000;">
+                                Name : {{$order->getShippingAddress->name ?? $order->getBillingAddress->name}} <br>
+                                Contact Number(s) : {{$order->getShippingAddress->mobile ?? $order->getBillingAddress->mobile}} <br>
+                                Email : {{$order->getShippingAddress->email ?? $order->getBillingAddress->email}} <br>
+                                Address:  {{$order->getShippingAddress->address ?? $order->getBillingAddress->address.', '.$order->getShippingAddress->city ?? $order->getBillingAddress->city.', '.$order->getShippingAddress->state ?? $order->getBillingAddress->state.', '.$order->getShippingAddress->country ?? $order->getBillingAddress->country}} <br>
+                                Pincode : {{$order->getShippingAddress->zipcode ?? $order->getBillingAddress->zipcode}} <br><br>
                             </td>
                             <td style="padding: 10px;text-transform: capitalize;">
-                                Name : {{$order->getShippingAddress->name}} <br>
-                                Contact Number(s) : {{$order->getShippingAddress->mobile}} <br>
-                                Email : {{$order->getShippingAddress->email}} <br>
-                                Address: {{$order->getShippingAddress->address.', '.$order->getShippingAddress->city.', '.$order->getShippingAddress->state.', '.$order->getShippingAddress->country}} <br>
-                                Pincode : {{$order->getShippingAddress->zipcode}} <br><br>
+                                Name : {{$order->getShippingAddress->name ?? $order->getBillingAddress->name}} <br>
+                                Contact Number(s) : {{$order->getShippingAddress->mobile ?? $order->getBillingAddress->mobile}} <br>
+                                Email : {{$order->getShippingAddress->email ?? $order->getBillingAddress->email}} <br>
+                                Address: {{$order->getShippingAddress->address ?? $order->getBillingAddress->address.', '.$order->getShippingAddress->city ?? $order->getBillingAddress->city.', '.$order->getShippingAddress->state ?? $order->getBillingAddress->state.', '.$order->getShippingAddress->country ?? $order->getBillingAddress->country}} <br>
+                                Pincode : {{$order->getShippingAddress->zipcode ?? $order->getBillingAddress->zipcode}} <br><br>
                             </td>
                         </tr>
                     </table>

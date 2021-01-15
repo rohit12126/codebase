@@ -56,7 +56,7 @@ class OrderManager
                     WHEN 2 THEN "Confirmed"
                     WHEN 3 THEN "Shipped"
                     WHEN 4 THEN "Delivered"
-                    WHEN 5 THEN "Cancled"
+                    WHEN 5 THEN "Cancelled"
                     ELSE "" END) AS order_status')
                 )
                 ->with('user', 'getShippingAddress', 'getBillingAddress')
@@ -96,7 +96,7 @@ class OrderManager
                     WHEN 2 THEN "Confirmed"
                     WHEN 3 THEN "Shipped"
                     WHEN 4 THEN "Delivered"
-                    WHEN 5 THEN "Cancled"
+                    WHEN 5 THEN "Cancelled"
                     ELSE "" END) AS order_status')
             )->with('user', 'getShippingAddress', 'getBillingAddress')->latest()->paginate(10);
         }
@@ -123,7 +123,7 @@ class OrderManager
                     $status = 'Delivered';
                     break;
                 case 5:
-                    $status = 'Cancled';
+                    $status = 'Cancelled';
                     break;
             }
             
@@ -148,7 +148,7 @@ class OrderManager
             WHEN 2 THEN "Confirmed"
             WHEN 3 THEN "Shipped"
             WHEN 4 THEN "Delivered"
-            WHEN 5 THEN "Cancled"
+            WHEN 5 THEN "Cancelled"
             ELSE "" END) AS order_status')
         )
             ->with('user')
@@ -165,7 +165,7 @@ class OrderManager
             WHEN 2 THEN "Received"
             WHEN 3 THEN "Shipped"
             WHEN 4 THEN "Delivered"
-            WHEN 5 THEN "Cancled"
+            WHEN 5 THEN "Cancelled"
             ELSE "" END) AS order_status')
         )
             ->with('user')

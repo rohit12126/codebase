@@ -68,7 +68,7 @@
                                             <th class="serial-number-th">S No.</th>
                                             <th>Title</th>
                                             <th>Product Shipping Price</th>
-                                            <th>Harware Shipping Price</th>
+                                            <th>Hardware Shipping Price</th>
                                             <!-- <th>States</th> -->
                                             <th class="action-th">Action</th>
                                         </tr>
@@ -78,8 +78,8 @@
                                         <tr>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $value->title }}</td>
-                                            <td>{{ $value->product_price }}</td>
-                                            <td>{{ $value->hardware_price }}</td>
+                                            <td>${{ $value->product_price }}</td>
+                                            <td>${{ $value->hardware_price }}</td>
                                             <td>
                                                 <a class="btn btn-sm btn-info mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/edit_zone', $value->id) }}">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Edit this Zone</span>

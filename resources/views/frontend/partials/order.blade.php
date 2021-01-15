@@ -44,7 +44,7 @@
                                                 $status = 'Delivered';
                                                 break;
                                             case 5:
-                                                $status = 'Canclled';
+                                                $status = 'Cancelled';
                                                 break;
                                         }       
                                     @endphp
