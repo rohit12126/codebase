@@ -375,7 +375,8 @@ $(document).ready(function() {
                     name: 'shipping',
                     value: data
                 }).appendTo('#checkoutForm');
-                $('#total').html('$ '+(+data + +{{number_format($cartSubTotal, 2)}}))
+                var subtotal = +data + +{{$cartSubTotal}}
+                $('#total').html('$ '+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
                 }
             }
             });
