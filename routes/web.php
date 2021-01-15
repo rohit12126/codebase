@@ -331,12 +331,12 @@ Route::group(['middleware' => ['get.menu']], function () {
 
 
 /*user dashboard Routes*/
-Route::prefix('account')->group(function () {
-Route::get('/profile',                 'ProfileController@index')->name('profile');
-Route::get('/',                 'ProfileController@account')->name('account');
-Route::post('/update',                 'ProfileController@update')->name('account.update');
-Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
-Route::get('/ordercancel/{id}' ,'ProfileController@calcelRequest')->name('ordercancel');
+    Route::prefix('account')->group(function () {
+    Route::get('/profile',                 'ProfileController@index')->name('profile');
+    Route::get('/',                 'ProfileController@account')->name('account');
+    Route::post('/update',                 'ProfileController@update')->name('account.update');
+    Route::get('/orderdetails/{id}' ,'ProfileController@orderDetails')->name('orderdetails');
+    Route::post('/ordercancel' ,'ProfileController@calcelRequest')->name('ordercancel');
 });
 Route::get('stripe', 'StripePaymentController@stripe')->name('stripe');
 Route::Post('/user/credentials', 'ProfileController@postCredentials');
