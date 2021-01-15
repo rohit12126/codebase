@@ -156,7 +156,7 @@
                                                     @if($value->order_status == 'Received')
                                                     <a class="btn btn-sm btn-danger custom-tooltip" href="#" data-toggle="modal" data-ordernum="{{$value->order_no}}" onclick="clicked({{$value->order_no}});" id="cancel_order" data-target="#cancelmodal">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Cancel this Order</span>
-                                                    <i class="cil-trash"></i>
+                                                    <i class="cil-x-circle"></i>
                                                     </a>
                                                     @endif
                                                 </td>
