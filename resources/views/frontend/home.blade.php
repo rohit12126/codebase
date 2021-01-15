@@ -70,24 +70,24 @@
                                     <div class="circle" ></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="Jurong Lake Gardens #1" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="hot-spot" x="1171" y="224">
+                                <div class="hot-spot" x="440" y="224">
                                     <div class="circle"></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -100,15 +100,15 @@
                                     <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
                                 </div>
 
-                                <div class="hot-spot" x="550" y="360">
+                                <div class="hot-spot" x="440" y="360">
                                     <div class="circle"></div>
                                     <div class="tooltip tip-upside">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,24 +135,24 @@
                                     <div class="circle" ></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="Jurong Lake Gardens #1" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="hot-spot" x="1171" y="224">
+                                <div class="hot-spot" x="440" y="224">
                                     <div class="circle"></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -165,15 +165,15 @@
                                     <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
                                 </div>
 
-                                <div class="hot-spot" x="550" y="360">
+                                <div class="hot-spot" x="440" y="360">
                                     <div class="circle"></div>
                                     <div class="tooltip tip-upside">
                                         <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
+                                            <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -213,9 +213,9 @@
                     @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg 
                     @endif " class="d-block w-100" alt="...">
                     @if($product->is_accessory == 0)
-                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out">Configure</a>
+                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-hammer-wrench"></i> Configure</a>
                     @else
-                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">Details</a>
+                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-eye"></i> Details</a>
                     @endif
                 </div>
                 </a>

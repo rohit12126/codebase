@@ -352,7 +352,6 @@ footer-->
 <script src="{{ asset('js/fancybox.min.js')}}"></script>
 <script>
     $(window).bind("load", function() { 
-        console.log("check window load")
         if ($('#hotspotImg').length > 0) {
             $('#hotspotImg').hotSpot({
             bindselector: 'click'
@@ -547,13 +546,12 @@ footer-->
 
     if(!!window.performance && window.performance.navigation.type === 2)
     {
-        console.log('Reloading');
         window.location.reload();
     }
     jQuery(document).ready(function() {
         if(!!window.performance && window.performance.navigation.type === 2)
         {
-            console.log('Reloading');
+
             window.location.reload();
         }
             $("#Password").keyup(function(){
@@ -575,7 +573,6 @@ footer-->
         });
 
         function touchScroller(className,wrapper) {
-            console.log(className,"classNameclassName")
             let active = false;
             document.querySelector(className).addEventListener('mousedown',function(){
                 active = true;
@@ -632,7 +629,6 @@ footer-->
             ]
             var i;
             for (i = 0; i < classArray.length; i++) {
-                console.log(classArray[i].classname,"classArray")
                 touchScroller (classArray[i].classname,classArray[i].wrap);
             }
         });

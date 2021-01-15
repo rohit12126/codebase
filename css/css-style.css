@@ -345,6 +345,9 @@ button:focus {
 .btn-fill-out:hover {
 	color: #FF324D !important;
 }
+.btn-fill-out i{
+	vertical-align: -9%;
+}
 .btn-fill-line {
 	background-color: transparent;
 	border: 1px solid #333;
@@ -10030,7 +10033,7 @@ body { margin: 0; }
   animation: pulsate 3s ease-out infinite;
 }
 
-.hot-spot .tooltip {
+.hot-spot .tooltip{
   background-color: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -10043,34 +10046,48 @@ body { margin: 0; }
   padding: 15px 5px;
   position: absolute;
   text-align: left;
-  top: 30px;
-  width: 280px;
+  top: 40px;
+  width: 220px;
   z-index: 999;
+}
+.tooltip:not(.tip-upside):before{
+	content: "";
+	position: absolute;
+	border-style: solid;
+	top: -9px;
+	border-color: #fff transparent;
+	border-width: 0 10px 10px;
+	text-align: center;
+	margin: 0 auto;
+	left: 49%;
+}
+.tip-upside:before{
+	content: "";
+	position: absolute;
+	border-style: solid;
+	bottom: -9px;
+	border-color: #fff transparent;
+	border-width: 10px 10px 0;
+	text-align: center;
+	margin: 0 auto;
+	left: 49%;
 }
 .hot-spot .tip-upside{
 	bottom: calc(100% + 20px);
 	top: auto;
-}
-.tooltip {
-    transform: scale(0.7);
-    top: -22px !important;
-}
-.tip-upside{
-	transform: scale(0.7);
-	bottom: -30px !important;
-	right: auto !important;
-	top: auto !important;
 }
 .hot-spot .tooltip .img-row {
   padding: 10px;
   text-align: center;
 }
 
-.hot-spot .tooltip .text-row { padding: 15px; }
+.hot-spot .tooltip .text-row { padding: 0 15px 15px; }
 
 .hot-spot .tooltip h4 {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ffffff;
+	margin-bottom: 0.425rem;
+	border-bottom: 1px solid #ffffff;
+	font-weight: 600;
+	font-size: 1.2rem;
 }
 
 .hot-spot .tooltip p {
@@ -10081,9 +10098,8 @@ body { margin: 0; }
 
 .hot-spot .tooltip p:last-child { margin-bottom: 0; }
 #secondhotspotImg{
-	width: 1120px;
+	width: 800px;
     position: relative;
-    transform: translateX(-12%);
 }
 #secondhotspotImg img{
 	width:100%;
