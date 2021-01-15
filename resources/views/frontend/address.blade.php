@@ -555,10 +555,14 @@ $(document).ready(function() {
                 required: true
             },
             bill_address: {
-                required: true
+                required: true,
+                minlength: 10,
+                maxlength: 400
             },
             ship_address: {
-                required: true
+                required: true,
+                minlength: 10,
+                maxlength: 400
             }
         },
         messages: {
