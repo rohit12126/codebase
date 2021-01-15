@@ -566,10 +566,21 @@
         transform: translateX(-10%);
         width: 600px;
     }
-}
-@media (min-width:992px) and (max-width:1000px){
-{
-    .hotspot-image,#secondhotspotImg{
-        transform: translateX(-4%);
+    .home-swip-section {
+        min-height: 698px;
     }
+}
+@media(max-width:991px){
+    .wrapper{
+        max-width: 600px;
+    }
+    .hotspot-image
+    {
+        width: 600px !important;
+    }
+}
+@media(max-width:780px){
+   .hotspot-image{
+        transform: translateX(-15%);
+   }    
 }
