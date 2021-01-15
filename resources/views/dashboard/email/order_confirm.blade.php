@@ -158,12 +158,12 @@
                                                             Shipping Address
                                                         </p>
                                                         <div style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;font-size:16px;line-height:1.38;letter-spacing:0.29px;color:#7e818c;font-weight:normal;font-stretch:normal;font-style:normal">
-                                                            <span><strong style="font-weight:bold;color:#3e4152">{{$data->getShippingAddress->name}}</strong>,</span>
-                                                            <span>{{$data->getShippingAddress->address}}</span>,
-                                                            <span>{{$data->getShippingAddress->city}}</span>,
-                                                            <span>{{$data->getShippingAddress->state}}</span>,
-                                                            <span>{{$data->getShippingAddress->country}}</span>
-                                                            <span>{{$data->getShippingAddress->zipcode}}</span>
+                                                            <span><strong style="font-weight:bold;color:#3e4152">{{$data->getShippingAddress->name ?? $data->getBillingAddress->name}}</strong>,</span>
+                                                            <span>{{$data->getShippingAddress->address ?? $data->getBillingAddress->address}}</span>,
+                                                            <span>{{$data->getShippingAddress->city ?? $data->getBillingAddress->city}}</span>,
+                                                            <span>{{$data->getShippingAddress->state ?? $data->getBillingAddress->state}}</span>,
+                                                            <span>{{$data->getShippingAddress->country ?? $data->getBillingAddress->country}}</span>
+                                                            <span>{{$data->getShippingAddress->zipcode ?? $data->getBillingAddress->zipcode}}</span>
                                                         </div>
                                                         </div>
                                                     </div>
