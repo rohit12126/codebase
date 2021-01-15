@@ -134,14 +134,16 @@
                                         </div>
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
-                                            <div class="custom_select">
+                                        <div class="custom_select">
                                             <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
+                                            
                                             <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
-                                                </div>
+                                               
                                             </select>
+                                            </div>
                                         <form>
                                         </div>
                                         <div class="form-group">
