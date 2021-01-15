@@ -68,7 +68,7 @@
                                             <th class="serial-number-th">S No.</th>
                                             <th>Title</th>
                                             <th>Product Shipping Price</th>
-                                            <th>Harware Shipping Price</th>
+                                            <th>Hardware Shipping Price</th>
                                             <!-- <th>States</th> -->
                                             <th class="action-th">Action</th>
                                         </tr>
