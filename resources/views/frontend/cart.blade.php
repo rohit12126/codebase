@@ -240,7 +240,7 @@
                     rowId : rowId
                 },
                 beforeSend:function(){
-                    if(!confirm("Are you sure ?"))
+                    if(!confirm("Are you sure you want to remove this item from the cart ?"))
                         return false;
                 },
                 success: function(result) {
