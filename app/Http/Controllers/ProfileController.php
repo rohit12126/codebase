@@ -161,7 +161,7 @@ class ProfileController extends Controller
         $validator = $this->validate(
             $request, 
             [
-                'message' => 'required|min:2|max:200',
+                'message' => 'required|min:50|max:5000',
             ]
         );
         if ($this->orderManager->ordercancelreason($request))
