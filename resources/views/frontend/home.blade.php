@@ -70,11 +70,11 @@
                                     <div class="circle" ></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="Jurong Lake Gardens #1" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -83,11 +83,11 @@
                                     <div class="circle"></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -104,11 +104,11 @@
                                     <div class="circle"></div>
                                     <div class="tooltip tip-upside">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,11 +135,11 @@
                                     <div class="circle" ></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="Jurong Lake Gardens #1" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="Jurong Lake Gardens #1" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,11 +148,11 @@
                                     <div class="circle"></div>
                                     <div class="tooltip">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -169,11 +169,11 @@
                                     <div class="circle"></div>
                                     <div class="tooltip tip-upside">
                                         <div class="img-row">
-                                            <img src="https://picsum.photos/170/128/?random" alt="High Speed Rail" width="170" height="128">
+                                            <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" alt="High Speed Rail" width="100%">
                                         </div>
                                         <div class="text-row">
                                         <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                         </div>
                                     </div>
                                 </div>

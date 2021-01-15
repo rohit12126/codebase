@@ -548,7 +548,7 @@
 
 @media (max-width: 1600px){
     .before .hotspot-image{
-        transform: translateX(-15%);
+        transform: translateX(-18%);
     }
 }
 @media (min-width:992px) and (max-width:1199px){
