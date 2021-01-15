@@ -5834,10 +5834,10 @@ footer .widget_title {
 .tab-content.shop_info_tab {
 	margin-top: 40px;
 }
-.comment_list {
+.comment_list{
 	margin-bottom: 20px;
 	max-height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .comment_list::-webkit-scrollbar{width:5px}
 .comment_list::-webkit-scrollbar-track{background:#eee}
@@ -8110,6 +8110,7 @@ h5 {
 	font-weight: 600;
 	font-size: 16px;
 	padding: 10px 40px;
+	width: max-content;
 }
 .btn-outline-secondary
 {
@@ -10020,7 +10021,7 @@ body { margin: 0; }
 .hot-spot .circle {
   display: block;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 45%;
   width: 2em;
   height: 2em;
@@ -10321,4 +10322,7 @@ body { margin: 0; }
 {
 	font-size: 10rem;
     color: #f94e57;
+}
+.shipping_price{
+	width: 200px;
 }

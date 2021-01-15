@@ -20513,3 +20513,11 @@ a, a:hover {
   visibility: visible;
   opacity: 1;
 }
+.multiselect-container{
+	max-height: 300px;
+  overflow-y: auto;
+}
+.multiselect-container::-webkit-scrollbar{width:5px}
+.multiselect-container::-webkit-scrollbar-track{background:#eee}
+.multiselect-container::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
+.multiselect-container::-webkit-scrollbar-thumb:hover{background:#F94E57;}
