@@ -158,6 +158,12 @@ class ProfileController extends Controller
 
     public function calcelRequest(Request $request)
     {
+        $validator = $this->validate(
+            $request, 
+            [
+                'message' => 'required|min:2|max:200',
+            ]
+        );
         if ($this->orderManager->ordercancelreason($request))
         {
             $order = $this->orderManager->getOrderByOrderNUmber($request->order_id);

@@ -83,7 +83,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please Specify Why You are Canceling Order ?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Please Specify a reason below to cancel your order:</h5>
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -93,7 +94,8 @@
             <form id="cancel_order_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <textarea required="" placeholder="Reason for canceling *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
+                    <span class="text-danger"id="errorbox"></span>
+                        <textarea required="required" placeholder="Write here..." id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
                         @if ($errors->has('message'))
                         <div class="error">
                             {{ $errors->first('message') }}
@@ -102,7 +104,7 @@
                     </div>
                     <input type="hidden" name="order_id" value="">
                     <div class="col-md-12">
-                        <a href="#" class="btn btn-fill-out btn-block" id="cancelSubmitButton">Cancel Order !</a>
+                        <a href="#" class="btn btn-fill-out btn-block" id="cancelSubmitButton">Cancel Order</a>
                     </div>
                 </div>
             </form>
@@ -132,16 +134,22 @@
         contentType: false,
         success: function (response) {
             if (response.success == 1) { 
+                $("#description").addClass("is-valid");
                 setTimeout(function () {
                     location.reload();
-                }, 1000);
+                }, 100);
             }
         },
-        error: function (error) {
-            var data1 = error.responseText;
-            var jsoerrornResponse = JSON.parse(data1);
-            alert(jsoerrornResponse.error);
+        error: function (response) {
+            console.log(response.responseText);
+
+            var error = response.responseText;
+            console.log(error)
+            var obj = JSON.parse(error);
+            console.log(obj.errors.message)
+            $("#description").addClass("is-invalid");
+            $("#errorbox").text(obj.errors.message);
         }
-     })
-  });
+    })
+});
 </script>
