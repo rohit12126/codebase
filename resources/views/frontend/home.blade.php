@@ -215,7 +215,7 @@
                     @if($product->is_accessory == 0)
                     <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out">Configure</a>
                     @else
-                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">View Detail</a>
+                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out">Details</a>
                     @endif
                 </div>
                 </a>
