@@ -86,9 +86,10 @@ Route::group(['middleware' => ['get.menu']], function () {
 
         /* Order Module Routes */
         Route::get('admin/order', 'admin\OrderController@index')->name('admin.order');
-        Route::post('admin/order', 'admin\OrderController@index')->name('admin.order');
+        Route::post('admin/order', 'admin\OrderController@orderCancel')->name('admin.order');
         Route::get('admin/order_details/{order_no?}', 'admin\OrderController@orderDetails');
         Route::post('admin/order_details/{order_no?}', 'admin\OrderController@orderStatusChange');
+        Route::post('admin/cancelorder', 'admin\OrderController@orderCancel')->name('admin.order.cancel');
         
         Route::get('admin/order_email', 'admin\OrderController@email')->name('admin.test.email');
         /* Blog Category Module Routes */

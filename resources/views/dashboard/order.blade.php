@@ -1,5 +1,5 @@
 @extends('dashboard.base')
-
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 @section('css')
 <style>
     .pagination {
@@ -23,7 +23,7 @@
 
 <div class="container-fluid">
     <div class="fade-in">
-
+    @include('partials.alert_msg')
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -102,7 +102,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                       {{--  <div class="row">
+                                        {{--  <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
                                                 <label>Search via Name</label>
@@ -153,10 +153,12 @@
                                                         <span class="custom-tooltiptext custom-tooltip-top">Order Details</span>
                                                         <i class="cil-arrow-thick-to-right"></i>
                                                     </a>
-                                                    {{-- <a class="btn btn-sm btn-danger" href="{{ url('admin/delete_user', $value->id) }}"
-                                                    onclick="return confirm('Are you sure you want to delete this user?');">
+                                                    @if($value->order_status == 'Received')
+                                                    <a class="btn btn-sm btn-danger custom-tooltip" href="#" data-toggle="modal" data-ordernum="{{$value->order_no}}" onclick="clicked({{$value->order_no}});" id="cancel_order" data-target="#cancelmodal">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Cancel this Order</span>
                                                     <i class="cil-trash"></i>
-                                                    </a> --}}
+                                                    </a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -178,13 +180,65 @@
     </div>
 </div>
 </div>
-
+<div class="modal fade" id="cancelmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please Specify Why You are Canceling This Order ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div class="field_form">
+            <form method="post" action="{{ url()->current() }}" id="myform">
+            @csrf
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <textarea required="" placeholder="Reason for canceling *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
+                        @if ($errors->has('message'))
+                        <div class="error">
+                            {{ $errors->first('message') }}
+                        </div>
+                        @endif
+                    </div>
+                    <input type="hidden" id="orderNum" name="order_id" value="">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-danger custom-tooltip" id="cancelSubmitButton">Cancel Order !</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
 @endsection
 
 @section('javascript')
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script>
+function clicked(id) 
+{
+    $("#orderNum").val(id);
+}
+
+$("#myform").validate({
+        rules: {
+            message: {
+                required: true,
+                minlength:3,
+            }
+        },
+        messages: {
+            name: "Please Provide a Reason"
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+
     $(function() {
         $("#from_date").datepicker({
             changeMonth: true
