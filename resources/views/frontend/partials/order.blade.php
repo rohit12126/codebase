@@ -141,12 +141,8 @@
             }
         },
         error: function (response) {
-            console.log(response.responseText);
-
             var error = response.responseText;
-            console.log(error)
             var obj = JSON.parse(error);
-            console.log(obj.errors.message)
             $("#description").addClass("is-invalid");
             $("#errorbox").text(obj.errors.message);
         }
