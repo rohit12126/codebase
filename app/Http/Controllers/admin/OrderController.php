@@ -16,6 +16,26 @@ class OrderController extends Controller
         return view('dashboard.order', compact('order_list'));
     }
 
+    public function orderCancel(Request $request)
+    {
+        $response = OrderManager::ordercancelreason($request);
+        if($response)
+        {
+            $req = new \stdClass();
+            $req->order_no = $request->order_id;
+            $req->order_status = '5';
+            
+            if(orderManager::orderStatusChange($req) == true)
+            {
+                Common::setMessage(__('order_status_change_success'));
+            }else{
+                Common::setMessage(__('order_status_change_failed'), 'error');
+            }
+        }
+
+        return back();
+    }
+
     public function orderDetails($order)
     {
         $order = OrderManager::getOrderByOrderNUmberWithOrderAddress($order);
