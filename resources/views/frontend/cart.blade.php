@@ -165,7 +165,7 @@
                         icon = 'info';
                     } 
 
-                    Swal.fire({
+                    /* Swal.fire({
                         position: 'bottom-end',
                         icon: icon,
                         title: result.message,
@@ -175,7 +175,7 @@
                             container: 'custom-success-popup-container',
                             popup: 'custom-success-popup',
                         }
-                    });
+                    }); */
                 
                     var  productTotal = result.data.productQty * result.data.productPrice;
                     $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
