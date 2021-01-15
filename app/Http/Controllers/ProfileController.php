@@ -156,22 +156,25 @@ class ProfileController extends Controller
         }               
     }
 
-    public function calcelRequest($id)
+    public function calcelRequest(Request $request)
     {
-        $order = $this->orderManager->getOrderByOrderNUmber($id);
-        if($order->created_at->addDays(7) > Carbon::today())
+        if ($this->orderManager->ordercancelreason($request))
         {
-            $req = new \stdClass();
-            $req->order_no = $order->order_no;
-            $req->order_status = '5';
-            if($this->orderManager->orderStatusChange($req))
+            $order = $this->orderManager->getOrderByOrderNUmber($request->order_id);
+            if($order->created_at->addDays(7) > Carbon::today())
             {
-                return redirect()->back()->with('message', 'Your Order is Successfully Cancled');
+                $req = new \stdClass();
+                $req->order_no = $order->order_no;
+                $req->order_status = '5';
+                if($this->orderManager->orderStatusChange($req))
+                {
+                    return  response()->json(['success' => '1']);
+                }
             }
-        }
-        else 
-        {
-            return redirect()->back()->withErrors('message', 'Unable to cancle this Order Please contact Support');
+            else 
+            {
+                return response()->json(['error'=>'Unable to cancle this Order Please contact Support'],Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
         }
     }
 }

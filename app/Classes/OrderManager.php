@@ -4,6 +4,7 @@ namespace App\Classes;
 
 use App\Models\Order as OrderModel;
 use App\Models\OrderProduct;
+use App\Models\OrderCancelReason;
 use App\Classes\HelperManager as Common;
 use App\Models\Product as ProductModel;
 // use App\Models\ProductImage as ProductImageModel;
@@ -235,8 +236,17 @@ class OrderManager
             ->first();
     }
 
-    // public static function getPaymentDetail($order_no)
-    // {
-    //     r
-    // }
+    public static function ordercancelreason($req)
+    {
+        $data = [
+            'order_id' => $req->order_id,
+            'reason' => $req->message
+        ];
+
+        if(OrderCancelReason::create($data)){
+            return true;
+        }
+        return false;
+    }
+
 }
