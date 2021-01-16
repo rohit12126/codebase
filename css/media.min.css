@@ -540,7 +540,8 @@
 @media (max-width: 420px)
 {
     #hotspotImg .hotspot-image, #secondhotspotImg .hotspot-image {
-        transform: translateX(-25%);
+        transform: translateX(-17%);
+        max-width: 500px;
     }
 }
 @media (max-width: 340px){
@@ -551,7 +552,8 @@
         padding-left: .325rem;
     }
     #hotspotImg .hotspot-image, #secondhotspotImg .hotspot-image {
-        transform: translateX(-30%);
+        transform: translateX(-16%);
+        max-width: 400px;
     }
     .head-logo{
         max-width: 170px;
@@ -563,11 +565,12 @@
     .product-detail2 .btn{
         padding: 8px 0;
     }
+
 }
 
 @media (min-width:1200px) and (max-width: 1600px){
     #secondhotspotImg,#hotspotImg .hotspot-image{
-        transform: translateX(-10%);
+        transform: translateX(-6%);
     }
 }
 @media (min-width:992px) and (max-width:1199px){
@@ -575,7 +578,7 @@
         height: 416px;
     }
     .hotspot-image,#secondhotspotImg{
-        transform: translateX(-10%);
+        transform: translateX(-5%);
         width: 600px;
     }
     .home-swip-section {
@@ -593,6 +596,6 @@
 }
 @media(max-width:580px){
    .hotspot-image{
-        transform: translateX(-10%);
+        transform: translateX(-18%);
    }    
 }
