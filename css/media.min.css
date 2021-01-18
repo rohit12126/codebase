@@ -339,6 +339,9 @@
         max-width: 100%;
         min-height: 600px;
     }
+    .home-products-section .pd-block{
+        padding: 5px;
+    }
 }
 @media (max-width: 767px) {
     .page-title {
@@ -515,6 +518,10 @@
     .swal2-icon.swal2-info{
         font-size: 30px;
         line-height: 60px;
+    }
+    
+    .home-products-section .pd-block{
+        padding: 4px;
     }
 }
 

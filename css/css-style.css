@@ -346,7 +346,7 @@ button:focus {
 	color: #FF324D !important;
 }
 .btn-fill-out i{
-	vertical-align: -9%;
+	vertical-align: -10%;
 }
 .btn-fill-line {
 	background-color: transparent;
@@ -8090,27 +8090,21 @@ h5 {
 .home-products-section .pd-block {
 	flex: 0 0 25%;
 	max-width: 25%;
-	padding: 2px;
+	padding: 10px;
 	position: relative;
 }
 .home-products-section .pd-inner {
-	height: 330px;
-	padding: 15px;
-	background-color: #f2f2f2;
-	padding-bottom: 70px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background-color: #fff;
+	border: 5px solid #f2f2f2;
+    display: block;
 }
 .home-products-section .pd-block .btn {
-	position: absolute;
-	bottom: 30px;
-	left: 50%;
-	transform: translateX(-50%);
 	font-weight: 600;
-	font-size: 16px;
-	padding: 10px 40px;
-	width: max-content;
+    font-size: 12px;
+    padding: 4px 16px;
+    width: max-content;
+    display: block;
+    margin: 0.625rem auto;
 }
 .btn-outline-secondary
 {
