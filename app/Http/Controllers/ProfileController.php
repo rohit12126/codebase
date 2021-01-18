@@ -65,7 +65,7 @@ class ProfileController extends Controller
      */
     public function account() {
         
-        $session = session()->all();
+        // $session = session()->all();
         
         $user = $this->userManager
                 ->getCurrentUser();
