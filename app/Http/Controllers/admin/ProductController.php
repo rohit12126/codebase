@@ -39,7 +39,7 @@ class ProductController extends Controller
      */
     public function addProduct(Request $req)
     {
-       $this->validate(
+        $this->validate(
             $req, 
             [
                 'image' => 'required|array|max:5',
@@ -58,7 +58,7 @@ class ProductController extends Controller
         return redirect()->route('admin.item.list');
     }
 
-            /**
+    /**
      * Display Edit Product form
      *  @param $req
      * @return \Illuminate\Http\Response

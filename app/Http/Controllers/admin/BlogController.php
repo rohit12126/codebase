@@ -135,6 +135,11 @@ class BlogController extends Controller
         return back();
     }
 
+    /**
+     * Verifies if slug is alredy been used
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function checkExistSlug(Request $req)
     {
         $response = $this->blogManager->checkExistSlug($req);
