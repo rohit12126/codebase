@@ -78,6 +78,7 @@ class ProductController extends Controller
      */
     public function editSubmitProduct(Request $req)
     {
+        // dd($req->id);
         $imgRequired ='';
         if(is_null($req->storeimage)) {
             $imgRequired = 'required|';
@@ -88,7 +89,7 @@ class ProductController extends Controller
                 'image' => $imgRequired.'array|max:5',
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
                 'description' => 'required',
-                'sku'=> 'required|max:20|min:2|unique:products'
+                'sku'=> 'required|max:20|min:2|unique:products,sku,'.$req->id
             ]
         );
         $response = ProductManager::edit($req);
