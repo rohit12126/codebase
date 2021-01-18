@@ -10,7 +10,7 @@ use App\Classes\HelperManager as Common;
 class FaqCategoryController extends Controller
 {
 
-        /**
+    /**
      * Faq Category Form
      * 
      * @param $id
@@ -23,7 +23,7 @@ class FaqCategoryController extends Controller
     }
 
 
-        /**
+    /**
      * Stores new FAQ Category
      * 
      * @param $id
@@ -41,7 +41,7 @@ class FaqCategoryController extends Controller
     }
 
 
-        /**
+    /**
      * Load Edit FAQ Form.
      * @param $id
      * @param $req
@@ -55,7 +55,7 @@ class FaqCategoryController extends Controller
     }
 
 
-        /**
+    /**
      * Update FAQ Category
      * 
      * @param $req
@@ -74,7 +74,7 @@ class FaqCategoryController extends Controller
     }
 
 
-        /**
+    /**
      * Delete a FAQ category
      * 
      * @param $id

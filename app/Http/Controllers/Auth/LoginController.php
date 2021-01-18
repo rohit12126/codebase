@@ -62,55 +62,55 @@ class LoginController extends Controller
     public function handleProviderCallback($provider) {
         try {
             $user = Socialite::driver($provider)->user();
-            // dd($user);
-       } catch (Exception $e) {
-            // dd($e);
-           return redirect('/login');
-       }
+            
+        } catch (Exception $e) {
+            
+            return redirect('/login');
+        }
 
        if($user->getemail()== null){
         return redirect()->route('register');
     }
 
-       $authUser = $this->findOrCreateUser($user, $provider);
-       Auth::login($authUser, true);
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::login($authUser, true);
 
-       $redirectUrl = session()->get('rUrl');
-       if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
-        // 
-     } else {
-         $redirectUrl = route('account');
-     }
-     return Redirect::to($redirectUrl);
-   }
-   public function findOrCreateUser($providerUser, $provider)
-   {
-       $account = SocialIdentity::whereProviderName($provider)
-                  ->whereProviderId($providerUser->getId())
-                  ->first();
+        $redirectUrl = session()->get('rUrl');
+        if(strpos($redirectUrl, 'cart') || strpos($redirectUrl, 'checkout')) {
+        
+    } else {
+        $redirectUrl = route('account');
+    }
+    return Redirect::to($redirectUrl);
+    }
+    public function findOrCreateUser($providerUser, $provider)
+    {
+        $account = SocialIdentity::whereProviderName($provider)
+                ->whereProviderId($providerUser->getId())
+                ->first();
 
-       if ($account) {
-           return $account->user;
-       } else {
-           $user = User::whereEmail($providerUser->getEmail())->first();
+        if ($account) {
+            return $account->user;
+        } else {
+            $user = User::whereEmail($providerUser->getEmail())->first();
 
-           if (! $user) {
-               $user = User::create([
-                   'email' => $providerUser->getEmail(),
-                   'name'  => $providerUser->getName(),
-               ]);
+            if (! $user) {
+                $user = User::create([
+                    'email' => $providerUser->getEmail(),
+                    'name'  => $providerUser->getName(),
+                ]);
 
-               Mail::to($user->email)->send(new UserRegistration($user));
-           }
+                Mail::to($user->email)->send(new UserRegistration($user));
+            }
 
-           $user->identities()->create([
-               'provider_id'   => $providerUser->getId(),
-               'provider_name' => $provider,
-           ]);
+            $user->identities()->create([
+                'provider_id'   => $providerUser->getId(),
+                'provider_name' => $provider,
+            ]);
 
-           return $user;
-       }
-   }
+            return $user;
+        }
+    }
 
     protected function getCredentials(Request $request)
     {

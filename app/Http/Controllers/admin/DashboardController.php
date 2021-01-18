@@ -10,7 +10,7 @@ use App\Classes\HelperManager as Common;
 class DashboardController extends Controller
 {
 
-        /**
+    /**
      * Display stats on dashboard
      *
      * @return \Illuminate\Http\Response

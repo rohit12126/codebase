@@ -72,10 +72,10 @@ class EnquiryController extends Controller
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:8|max:15',
             'reason' => 'required',
             'message' => 'required'
-         ]);
-         if($this->enquiryManager->store($request)){
-         return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
-         }
+        ]);
+        if($this->enquiryManager->store($request)){
+        return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+        }
 
     }
 
