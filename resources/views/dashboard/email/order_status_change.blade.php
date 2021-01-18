@@ -41,6 +41,28 @@
                                                         <td valign="top" style="margin:0;padding:0">
                                                         <table style="border-collapse:collapse" width="100%">
                                                             <tbody>
+                                                        @if($data['order_status_num'] == 5)
+                                                            @if($data['cancelled_by'] == 1)
+                                                            <tr style="margin:0;padding:0">
+                                                                    <td style="padding:0% 3% 0% 0%" colspan="2">
+                                                                   <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
+                                                                    Your order {{$data['order_no']}} has been Cancelled due to the following reason: </br>{{$data['reason']}}.
+                                                                    </br>We are really sorry for your inconvenience, and would love to have your orders again.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                            @if($data['cancelled_by'] == 2)
+                                                            <tr style="margin:0;padding:0">
+                                                                    <td style="padding:0% 3% 0% 0%" colspan="2">
+                                                                   <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
+                                                                    Your  request to cancel the order no. {{$data['order_no']}} has been received and approved. </br>We’d love to have more orders from you.
+                                                                    </p>
+                                                                    <br>{{$data['reason']}}.
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                        
+                                                            @else
                                                                 <tr style="margin:0;padding:0">
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p class="m_8451886253471966023statusText" style="margin:0;font-family:'Lato',sans-serif;color:white;padding:0;float:left;width:100%;font-size:30px;line-height:normal">
@@ -98,6 +120,7 @@
                                                                         </p>
                                                                         </td>
                                                                     </tr>
+                                                                @endif
                                                                 @endif
                                                             </tbody>
                                                         </table>

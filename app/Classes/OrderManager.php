@@ -16,10 +16,11 @@ class OrderManager
 {
     public static function orderStatusChange($req)
     {
+    
         $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
         
         if ($order->fill(['status' => $req->order_status])->save()) {
-
+            
             $data['order_no'] = $order->order_no;
             $data['buyer_name'] = ucwords($order->user->name);
             $data['status'] = $order->order_status;
@@ -28,7 +29,12 @@ class OrderManager
             $email = $order->getBillingAddress->email;
             $data['ship'] =  $order->getShippingAddress;
             $data['bill'] =  $order->getBillingAddress;
-
+            if($req->order_status == 5)
+            {
+                $reason = self::getCancelReason($order->order_no);
+                $data['reason'] = $reason->reason;
+                $data['cancelled_by'] = $reason->cancelled_by;
+            }
             Mail::to($email)->send(new OrderStatusChange($data));
             return true;
         } else {
@@ -250,6 +256,11 @@ class OrderManager
             return true;
         }
         return false;
+    }
+
+    public static function getCancelReason($orderId)
+    {
+        return OrderCancelReason::where('order_id', $orderId)->first();
     }
 
 }
