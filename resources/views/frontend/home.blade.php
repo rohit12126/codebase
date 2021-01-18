@@ -203,22 +203,23 @@
         @else
         @foreach ($products as $key => $product)
             <div class="pd-block">
-            @if($product->is_accessory == 0)
-            <a href="{{ url('product/configure/').'/'.$product->slug }}">
-            @else
-            <a href="{{ url('product/detail/').'/'.$product->slug }}">
-            @endif
+
                 <div class="pd-inner">
+                @if($product->is_accessory == 0)
+                    <a href="{{ url('product/configure/').'/'.$product->slug }}">
+                    @else
+                    <a href="{{ url('product/detail/').'/'.$product->slug }}">
+                    @endif
                     <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  
                     @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg 
                     @endif " class="d-block w-100" alt="...">
+                    </a>
                     @if($product->is_accessory == 0)
                     <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-hammer-wrench"></i> Configure</a>
                     @else
                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-eye"></i> Details</a>
                     @endif
                 </div>
-                </a>
             </div>
         @endforeach
         @endif
