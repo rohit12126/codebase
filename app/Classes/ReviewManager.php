@@ -114,4 +114,12 @@ class ReviewManager
             ->paginate(5);
         return $review;
     }
+
+    public static function getReviewsByUserAndProduct($product_id, $user_id)
+    {
+        $review = DB::table('reviews')
+            ->where('reviewrateable_id', $product_id)
+            ->where('author_id', $user_id)
+            ->first();
+    }
 }
