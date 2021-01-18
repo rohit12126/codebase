@@ -85,13 +85,15 @@ class CartController extends Controller
             $userData = Auth::user();
             $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
-            $zone = ( $shippingAddresses) ? $this->zoneManager->getZoneByState($shippingAddresses->state ?? $billingAddresses->state) : '';
+            $zone = ( $shippingAddresses) ? $this->zoneManager
+                    ->getZoneByState($shippingAddresses->state ?? $billingAddresses->state) : '';
         } else {
             $isTemp = 1;
             $userId = $this->guestUserManager->getUserId();
             $shippingAddresses = $this->addressManager->getAddresses($userId, 1, $isTemp);
             $billingAddresses = $this->addressManager->getAddresses($userId, 2, $isTemp);
-            $zone = ( $shippingAddresses) ? $this->zoneManager->getZoneByState($shippingAddresses->state ?? $billingAddresses->state) : '';
+            $zone = ( $shippingAddresses) ? $this->zoneManager
+                    ->getZoneByState($shippingAddresses->state ?? $billingAddresses->state) : '';
         }
         
         $states = $this->zoneManager->stateslist();

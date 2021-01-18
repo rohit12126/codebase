@@ -27,11 +27,26 @@ class EnquiryController extends Controller
         return view('frontend.contact');
     }
 
+    
+    /**
+     * Display list of enquries
+     * 
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function list(Request $req)
     {
         $enquieies=$this->enquiryManager->getEnquiryListPaginated($req);
         return view('dashboard.enquiries',compact('enquieies'));
     }
+
+
+    /**
+     * Change status of Enquries.
+     * 
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function contected($id)
     {
         $response = $this->enquiryManager->contected($id);
@@ -42,6 +57,13 @@ class EnquiryController extends Controller
         }
         return back();
     }
+
+        /**
+     * Stores a Enqury 
+     * 
+     * @param $request
+     * @return \Illuminate\Http\Response
+     */
     public function submit(Request $request)
     {
         $this->validate($request, [

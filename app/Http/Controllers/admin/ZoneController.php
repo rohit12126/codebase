@@ -21,13 +21,22 @@ class ZoneController extends Controller
     {
         $this->zoneManager = $zoneManager;
     }
-    //
+    /**
+     * Create new zone form.
+     *  
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $state_list=$this->zoneManager->stateslist();
         return view('dashboard.zone',compact('state_list'));
     }
 
+    /**
+     * Stores a new Zone
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function addZone(Request $req)
     {
         $this->validate(
@@ -48,12 +57,22 @@ class ZoneController extends Controller
         return back();
     }
 
+        /**
+     *Display list of Zone
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function zoneList(Request $req)
     {
         $zone_list=$this->zoneManager->getZone($req);
         return view('dashboard.zone_list',compact('zone_list'));
     }
 
+        /**
+     * Edit Zone Form
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editZone(Request $req, $id)
     {
         $zone = $this->zoneManager->getZoneById($id);
@@ -61,6 +80,12 @@ class ZoneController extends Controller
         return view('dashboard.zone',compact('zone','state_list'));
     }
 
+        /**
+     * Update a Zone
+     *  @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitZone(Request $req, $id)
     {
         $this->validate(
@@ -82,6 +107,12 @@ class ZoneController extends Controller
         return back();
     }
 
+        /**
+     * Destroy a Zone
+     *  @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function deleteZone(Request $req, $id)
     {
         $response=$this->zoneManager->deleteZone($id);

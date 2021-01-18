@@ -10,12 +10,22 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+    /**
+     * Display list of orders
+     *  @param $req
+     * @return bool
+     */
     public function index(Request $req)
     {
         $order_list = OrderManager::getLatestPaginatedOrderList($req);
         return view('dashboard.order', compact('order_list'));
     }
 
+        /**
+     * Cancels a order,
+     *  @param $req
+     * @return bool
+     */
     public function orderCancel(Request $request)
     {
         $response = OrderManager::ordercancelreason($request);
@@ -36,6 +46,11 @@ class OrderController extends Controller
         return back();
     }
 
+        /**
+     * Display details of Order
+     *  @param $order Number
+     * @return bool
+     */
     public function orderDetails($order)
     {
         $order = OrderManager::getOrderByOrderNUmberWithOrderAddress($order);
@@ -53,6 +68,11 @@ class OrderController extends Controller
         return back();
     }
 
+    /**
+     * Order Confirmation Mail.
+     *  
+     * @return mail
+     */
     public function email()
     {
         return view('dashboard.email.order_confirm');

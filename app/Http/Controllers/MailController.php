@@ -114,11 +114,24 @@ class MailController extends Controller
         return redirect()->route('mail.index');
     }
 
+        /**
+     * Prepare to send mail.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function prepareSend($id){
         $template = EmailTemplate::find($id);
         return view('dashboard.email.send', [ 'template' => $template ]);
     }
 
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @param $request
+     * @return \Illuminate\Http\Response
+     */
     public function send($id, Request $request){
         $template = EmailTemplate::find($id);
         Mail::send([], [], function ($message) use ($request, $template)

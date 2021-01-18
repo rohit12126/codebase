@@ -10,18 +10,33 @@ use App\Classes\HelperManager as Common;
 
 class ProductController extends Controller
 {
+        /**
+     * Load ADD Product Form.
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $req)
     {
         $category_list = CategoryManager::getActiveCategoryList($req);
         return view('dashboard.product', compact('category_list'));
     }
 
+        /**
+     * Display list of Products
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function productList(Request $req)
     {
         $product_list = ProductManager::getProductListPaginated($req);
         return view('dashboard.product_list', compact('product_list'));
     }
 
+    /**
+     * Stores a new product
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function addProduct(Request $req)
     {
        $this->validate(
@@ -43,6 +58,11 @@ class ProductController extends Controller
         return redirect()->route('admin.item.list');
     }
 
+            /**
+     * Display Edit Product form
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editProduct(Request $req, $id)
     {
         $product = ProductManager::getProductById($id);
@@ -51,6 +71,11 @@ class ProductController extends Controller
         return view('dashboard.product', compact('product_list', 'category_list', 'product'));
     }
 
+    /**
+     * Update a Product
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitProduct(Request $req)
     {
         $imgRequired ='';
@@ -76,6 +101,11 @@ class ProductController extends Controller
         return redirect()->route('admin.item.list');
     }
 
+    /**
+     * Destroy a Product
+     *  @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function deleteProduct($id)
     {
         $response = ProductManager::delete($id);

@@ -15,6 +15,11 @@ class CategoryController extends Controller
         return view('dashboard.category', compact('category_list'));
     }
 
+        /**
+     * Create new Item/Product category
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function addCategory(Request $req)
     {
         $this->validate(
@@ -32,6 +37,12 @@ class CategoryController extends Controller
         return back();
     }
 
+        /**
+     * display detail of a Product category
+     * @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function editCategory(Request $req, $id)
     {
         $category = CategoryManager::getCategoryById($id);
@@ -39,6 +50,13 @@ class CategoryController extends Controller
         return view('dashboard.category', compact('category_list', 'category'));
     }
 
+
+    /**
+     * Update a Product category
+     * @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitCategory(Request $req)
     {
         $response = CategoryManager::edit($req);
@@ -51,6 +69,13 @@ class CategoryController extends Controller
         return back();
     }
 
+
+        /**
+     * Delete a Product category
+     * 
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function deleteCategory($id)
     {
         $response = CategoryManager::delete($id);

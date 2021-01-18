@@ -9,12 +9,26 @@ use App\Classes\HelperManager as Common;
 
 class FaqCategoryController extends Controller
 {
+
+        /**
+     * Faq Category Form
+     * 
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $req)
     {
         $category_list = FAQCategoryManager::getCategoryList($req);
         return view('dashboard.faq-category', compact('category_list'));
     }
 
+
+        /**
+     * Stores new FAQ Category
+     * 
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function addCategory(Request $req)
     {        
         $response = FAQCategoryManager::add($req);
@@ -26,6 +40,13 @@ class FaqCategoryController extends Controller
         return back();
     }
 
+
+        /**
+     * Load Edit FAQ Form.
+     * @param $id
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editCategory(Request $req, $id)
     {
         $category = FAQCategoryManager::getCategoryById($id);
@@ -33,6 +54,13 @@ class FaqCategoryController extends Controller
         return view('dashboard.faq-category', compact('category_list', 'category'));
     }
 
+
+        /**
+     * Update FAQ Category
+     * 
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitCategory(Request $req)
     {
         $response = FAQCategoryManager::edit($req);
@@ -45,6 +73,13 @@ class FaqCategoryController extends Controller
         return back();
     }
 
+
+        /**
+     * Delete a FAQ category
+     * 
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function deleteCategory($id)
     {
         $response = FAQCategoryManager::delete($id);

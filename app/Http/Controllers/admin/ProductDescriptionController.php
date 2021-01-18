@@ -10,6 +10,11 @@ use App\Classes\HelperManager as Common;
 
 class ProductDescriptionController extends Controller
 {
+        /**
+     * Creatre new  Product Description Form.
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $req)
     {
         $productDescriptionList = ProductDescriptionManager::getProductDescriptionList($req);
@@ -19,6 +24,11 @@ class ProductDescriptionController extends Controller
         return view('dashboard.product-description', compact('productDescriptionList', 'productId', 'product'));
     }
 
+        /**
+     * Stores a new  Product Description
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function addProductDescription(Request $req)
     {        
         $response = ProductDescriptionManager::add($req);
@@ -31,6 +41,12 @@ class ProductDescriptionController extends Controller
         return redirect()->route('admin.product.description', ['product_id' => $req->product_id]);
     }
 
+        /**
+     *  Edit Product Description Form
+     *  @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function editProductDescription(Request $req, $id)
     {
         $productDescription = ProductDescriptionManager::getProductDescriptionById($id);
@@ -45,6 +61,11 @@ class ProductDescriptionController extends Controller
         ));
     }
 
+        /**
+     *Updates a  Product Description
+     *  @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitProductDescription(Request $req)
     {
         $response = ProductDescriptionManager::edit($req);
@@ -58,6 +79,12 @@ class ProductDescriptionController extends Controller
         return redirect()->route('admin.product.description', ['product_id' => $req->product_id]);
     }
 
+        /**
+     * Destroy Product Description
+     *  @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function deleteProductDescription(Request $req, $id)
     {
         $response = ProductDescriptionManager::delete($id);

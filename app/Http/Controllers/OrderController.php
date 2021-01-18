@@ -50,6 +50,7 @@ class OrderController extends Controller
     /**
      * Add Order
      *
+     * @param Request 
      * @return \Illuminate\Http\Response
      */
     
@@ -116,6 +117,13 @@ class OrderController extends Controller
         }
     }
 
+    /**
+     * Order Success
+     *
+     * @param Request 
+     * @return view Order-Success
+     */
+
     public function orderSuccess(Request $req) {
         $this->validate( $req, [
             'order_no' => 'required'
@@ -131,6 +139,13 @@ class OrderController extends Controller
         ]);
     }
 
+    /**
+     * Generates Invoice
+     *
+     * @param Request 
+     * @return \Illuminate\Http\Response 
+     * 
+     */
     public function invoice(Request $req) {
         $this->validate( $req, [
             'order_no' => 'required'
@@ -152,6 +167,12 @@ class OrderController extends Controller
         return view('frontend.invoice');
     }
 
+    /**
+     * Calculate shipping Price based on zones
+     *
+     * @param Request 
+     * @return \Illuminate\Http\Response
+     */
     public function shippingPrice(Request $req)
     {
         $shippingPrice = 0;

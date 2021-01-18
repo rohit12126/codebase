@@ -156,6 +156,11 @@ class ProfileController extends Controller
         }               
     }
 
+    /**
+     * verifies and cancel the order; change order stsatus
+     * @param Request
+     * @return \Illuminate\Http\Response
+     */
     public function calcelRequest(Request $request)
     {
         $validator = $this->validate(

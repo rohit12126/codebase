@@ -26,18 +26,33 @@ class BlogController extends Controller
         $this->blogCategoryManager = $blogCategoryManager;
     }
 
+    /**
+     * Create new blog form
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $req)
     {
         $category_list = $this->blogCategoryManager->getCategoryList($req);
         return view('dashboard.blog', compact('category_list'));
     }
 
+        /**
+     * Display list of Blogs
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function blogList(Request $req)
     {
         $blog_list = $this->blogManager->getBlogListPaginated($req);
         return view('dashboard.blog_list', compact('blog_list'));
     }
 
+        /**
+     * Store a blog
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function addBlog(Request $req)
     {
         $this->validate(
@@ -59,6 +74,12 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.list');
     }
 
+        /**
+     * Edit blog form display details of blog
+     * @param $req
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
     public function editBlog(Request $req, $id)
     {
         
@@ -68,6 +89,11 @@ class BlogController extends Controller
         return view('dashboard.blog', compact('blog_list', 'category_list', 'blog'));
     }
 
+        /**
+     * Update a blog
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function editSubmitBlog(Request $req)
     {
         $imgRequired ='';
@@ -93,6 +119,11 @@ class BlogController extends Controller
         return redirect()->route('admin.blog.list');
     }
 
+    /**
+     * Destroy a blog
+     * @param $req
+     * @return \Illuminate\Http\Response
+     */
     public function deleteBlog($id)
     {
         $response = $this->blogManager->delete($id);
