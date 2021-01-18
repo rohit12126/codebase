@@ -65,6 +65,7 @@ class ZoneController extends Controller
     public function zoneList(Request $req)
     {
         $zone_list=$this->zoneManager->getZone($req);
+        
         return view('dashboard.zone_list',compact('zone_list'));
     }
 

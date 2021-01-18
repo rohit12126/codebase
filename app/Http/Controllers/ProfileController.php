@@ -124,7 +124,7 @@ class ProfileController extends Controller
 
         return $validator;
         }
-       /**
+    /**
      * Update Password of user
      * @param OrderId
      * @return \Illuminate\Http\Response
@@ -139,20 +139,20 @@ class ProfileController extends Controller
         }
         else
         {  
-          $current_password = Auth::User()->password;           
-          if(\Hash::check($request_data['currentPassword'], $current_password))
-          {           
+        $current_password = Auth::User()->password;           
+        if(\Hash::check($request_data['currentPassword'], $current_password))
+        {           
             $user_id = Auth::User()->id;                       
             $obj_user = User::find($user_id);
             $obj_user->password = \Hash::make($request_data['password']);
             $obj_user->save(); 
             return redirect()->route('account')->with('message', 'Profile Updated Sucessfully!');
-          }
-          else
-          {           
+        }
+        else
+        {           
             $error = array('currentPassword' => 'Please enter correct current password');
             return redirect()->back()->withErrors($error);
-          }
+        }
         }               
     }
 
