@@ -51,7 +51,7 @@
                             </tr>
                             <tr>
                                 <th class="p-1">Grand Total</th>
-                                <td class="p-1">: $ {{ $order->grand_total }}</td>
+                                <td class="p-1">: ${{ $order->grand_total }}</td>
                             </tr>
                             <tr>
                                 <th class="p-1">Order Date</th>

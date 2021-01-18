@@ -69,7 +69,7 @@
                                             <th>Title</th>
                                             <th>Product Shipping Price</th>
                                             <th>Hardware Shipping Price</th>
-                                            <th>States Code</th>
+                                            <th>State Codes</th>
                                             <th class="action-th">Action</th>
                                         </tr>
                                     </thead>
