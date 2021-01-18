@@ -132,19 +132,19 @@
                         <input type="radio" name="rating" value="1" id="1">
                         <label for="1">☆</label>
                     </div>
-                      <input type="hidden" name="productId" value=""/>
-                      <input type="hidden" name="orderNum" value=""/>
-                  </div>
-                      <div class="form-group">
-                          <a href="#" class="btn btn-fill-out btn-block" id="submit_review">We Love to Here :)
-                          </a>
-                      </div>
-                  </form>
+                    <input type="hidden" name="productId" value=""/>
+                    <input type="hidden" name="orderNum" value=""/>
+                </div>
+                    <div class="form-group">
+                        <a href="#" class="btn btn-fill-out btn-block" id="submit_review">We Love to Here :)
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
+</div>
 </div>
 <script>
 $('#exampleModal').on('show.bs.modal', function(e) {

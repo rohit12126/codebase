@@ -80,8 +80,8 @@ class BlogManager
         $isExist = self::checkExistSlug($slug, $blogId);
         
         if ($isExist) {
-          $slug = self::generateSlug($name, $blogId, true);
-          return $slug;
+        $slug = self::generateSlug($name, $blogId, true);
+        return $slug;
         } 
 
         return $slug;
