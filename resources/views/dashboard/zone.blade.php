@@ -72,11 +72,17 @@
                                                 value="{{$states->id}}">{{$states->name}}</option>
                                                 @endforeach
                                         </select>
+                                        @if($errors->has('states'))
+                                            <div class="error">{{ $errors->first('states') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Title</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" maxlength="200" placeholder="Zone Title" name="title" class="form-control" value="{{@$zone->title}}" >
+                                        @if($errors->has('title'))
+                                            <div class="error">{{ $errors->first('title') }}</div>
+                                        @endif
                                     </div>
                                     
 

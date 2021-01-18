@@ -14,11 +14,6 @@ class ZoneManager
     return DB::table('states')->get();
   }
 
-  // public function statesWithZone()
-  // {
-  //   return ZoneModel::with('state')->get();
-  // }
-
   public function addZone($req)
   {
     $data = [
@@ -42,6 +37,13 @@ class ZoneManager
 
   public function getZone($req)
   {
+    if ( $req->title !== null ) {
+      $zone_list = ZoneModel::with('state')
+              ->where('title', 'like', '%' . $req->title . '%')
+              ->orderBy('id', 'desc')
+              ->paginate(8);
+      return $zone_list;
+    }
     $zone_list = ZoneModel::with('state')->paginate(8);
     return $zone_list;
   }

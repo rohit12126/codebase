@@ -69,7 +69,7 @@
                                             <th>Title</th>
                                             <th>Product Shipping Price</th>
                                             <th>Hardware Shipping Price</th>
-                                            <!-- <th>States</th> -->
+                                            <th>States Code</th>
                                             <th class="action-th">Action</th>
                                         </tr>
                                     </thead>
@@ -80,6 +80,9 @@
                                             <td>{{ $value->title }}</td>
                                             <td>${{ $value->product_price }}</td>
                                             <td>${{ $value->hardware_price }}</td>
+                                            <td>@foreach ($value->state as $states)
+                                                    {{ $states->code }},
+                                                @endforeach</td>
                                             <td>
                                                 <a class="btn btn-sm btn-info mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/edit_zone', $value->id) }}">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Edit this Zone</span>
