@@ -6,6 +6,12 @@ use App\Models\Address as AddressModel;
 
 class AddressManager
 {
+    /**
+     * Add address 
+     * @param $req
+     * @return Bool
+     * 
+     */
     public static function add($req)
     {
         if ($response = AddressModel::create($req)) {
@@ -15,9 +21,16 @@ class AddressManager
         }
     }
 
+    /**
+     * Get Address
+     * @param $userId
+     * @param $type Address Type(Shipping/Billing)
+     * @param $isTemp (Check for temp user)
+     * @return Bool
+     * */
     public function getAddresses($userId, $type, $isTemp)
     {
-        /* Change first to get to fetch multiople addresses */
+        /* Change first to get to fetch multiple addresses */
         return AddressModel::where([
             'user_id'=> $userId,
             'type'=> $type,
@@ -27,9 +40,13 @@ class AddressManager
         ->first();
     }
 
+        /**
+     * Get Address By Address Id
+     * @param $id
+     * @return response
+     * */
     public function getAddressesbyId($id)
     {
-        /* Change first to get to fetch multiople addresses */
         return AddressModel::find($id);
     }
 }

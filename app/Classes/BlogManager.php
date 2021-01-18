@@ -2,10 +2,10 @@
 
 namespace App\Classes;
 
-use App\Models\Blog as BlogModel;
-use App\Models\BlogCategory;
-use App\Classes\HelperManager as Common;
 use DB;
+use App\Models\BlogCategory;
+use App\Models\Blog as BlogModel;
+use App\Classes\HelperManager as Common;
 class BlogManager
 {
     public static function add($req)

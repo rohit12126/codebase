@@ -41,7 +41,7 @@ class ProductDescriptionController extends Controller
         return redirect()->route('admin.product.description', ['product_id' => $req->product_id]);
     }
 
-        /**
+    /**
      *  Edit Product Description Form
      *  @param $req
      * @param $id
@@ -61,7 +61,7 @@ class ProductDescriptionController extends Controller
         ));
     }
 
-        /**
+    /**
      *Updates a  Product Description
      *  @param $req
      * @return \Illuminate\Http\Response
