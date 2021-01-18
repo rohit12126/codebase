@@ -202,6 +202,7 @@
                         </div>
                         @endif
                     </div>
+                    <input type="hidden" name="cancelled_by" value="1">
                     <input type="hidden" id="orderNum" name="order_id" value="">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-danger custom-tooltip" id="cancelSubmitButton">Cancel Order !</button>

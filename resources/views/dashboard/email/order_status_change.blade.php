@@ -62,8 +62,21 @@
                                                                         <tr style="margin:0;padding:0">
                                                                             <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                             <p style="line-height:1.38;padding:0;float:left;width:100%;font-size:16px;opacity:0.9;font-family:'Lato',sans-serif;margin-top:10px;color: #fff;">
-                                                                                Order delievered to destination, for more information, You can track your order below.
+                                                                                Order delievered to the following address:
+                                                                                <p style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;color:#282c3f;font-size:25px;margin-bottom:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal">
+                                                        </p>
+                                                        <div style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;font-size:16px;line-height:1.38;letter-spacing:0.29px;color:#7e818c;font-weight:normal;font-stretch:normal;font-style:normal">
+                                                            <span><strong style="font-weight:bold;color:#3e4152">{{$data['ship']->name ?? $data['bill']->name}}</strong>,</span>
+                                                            <span>{{$data['ship']->address ?? $data['bill']->address}}</span>,
+                                                            <span>{{$data['ship']->city ?? $data['bill']->city}}</span>,
+                                                            <span>{{$data['ship']->state ?? $data['bill']->state}}</span>,
+                                                            <span>{{$data['ship']->country ?? $data['bill']->country}}</span>
+                                                            <span>{{$data['ship']->zipcode ?? $data['bill']->zipcode}}</span>
+                                                        </div>
+                                                                                </br>Hope you have liked it. Please click on link below to get the installation instructions for your product:
+                                                                                <a href="{{url('/installation')}}" ?>Installation Instructions</a>
                                                                             </p>
+                                                                            <p>In case, you have not received this order yet or have any query while installing your product, then kindly reach us at enquire@customcloset.com.</p>
                                                                             </td>
                                                                         </tr>
                                                                     @endif

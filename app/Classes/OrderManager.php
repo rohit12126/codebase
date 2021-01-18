@@ -17,7 +17,7 @@ class OrderManager
     public static function orderStatusChange($req)
     {
         $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
-        // dd($order);
+        
         if ($order->fill(['status' => $req->order_status])->save()) {
 
             $data['order_no'] = $order->order_no;
@@ -26,7 +26,9 @@ class OrderManager
             $data['order_status_num'] = $req->order_status;
             
             $email = $order->getBillingAddress->email;
-            
+            $data['ship'] =  $order->getShippingAddress;
+            $data['bill'] =  $order->getBillingAddress;
+
             Mail::to($email)->send(new OrderStatusChange($data));
             return true;
         } else {
@@ -240,7 +242,8 @@ class OrderManager
     {
         $data = [
             'order_id' => $req->order_id,
-            'reason' => $req->message
+            'reason' => $req->message,
+            'cancelled_by' => ($req->cancelled_by == 1) ? 1 : '2'
         ];
 
         if(OrderCancelReason::create($data)){

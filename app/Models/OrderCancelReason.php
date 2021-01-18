@@ -11,7 +11,8 @@ class OrderCancelReason extends Model
 
     protected $fillable = [
       'order_id',
-      'reason'
+      'reason',
+      'cancelled_by'
     ];
   
 }
