@@ -98,6 +98,7 @@
           @yield('content') 
 
         </main>
+        
         @include('dashboard.shared.footer')
       </div>
     </div>
@@ -105,7 +106,14 @@
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('js/coreui-utils.js') }}"></script>
     <script src="{{ asset('js/tooltips.js') }}"></script>
+
     @yield('javascript')
+    <script>
+    $(document).ready(function(){
+        $("#successMessage").delay(2000).slideUp(300);
+        $("#errorMessage").delay(2000).slideUp(300);
+    });
+    </script>
     <script>
       $(".c-sidebar-close-btn").on("click", function () {
         $(this).parent().removeClass("c-sidebar-show");
