@@ -7,6 +7,11 @@ use App\Classes\HelperManager as Common;
 
 class BlogCategoryManager
 {
+        /**
+     * Add Blog Category
+     * @param $req
+     * @return Bool
+     * */
     public static function add($req)
     {
         $slug = self::generateSlug($req->name);
@@ -20,6 +25,11 @@ class BlogCategoryManager
         }
     }
 
+    /**
+     * Update Blog Category
+     * @param $req
+     * @return Bool
+     * */
     public static function edit($req)
     {
         $category = null;
@@ -40,7 +50,13 @@ class BlogCategoryManager
         }
     }
 
-
+    /**
+     * Generates Slug for Blog Category
+     * @param $name
+     * @param $catId (Category Id)
+     * @param $recall
+     * @return $slug
+     * */
     public static function generateSlug($name, $catId = 0, $recall = false) {
         $slug = Common::generateSlug($name);
         
@@ -58,6 +74,11 @@ class BlogCategoryManager
         return $slug;
     }
 
+    /**
+     * Checks for existing Blog Category slug
+     * @param $req
+     * @return Bool
+     * */
     public static function checkExistSlug($slug, $catId = 0)
     {
         if (!empty($catId)) {
@@ -76,6 +97,11 @@ class BlogCategoryManager
         }
     }
 
+    /**
+     * Delete Blog Category
+     * @param $id
+     * @return Bool
+     * */
     public static function delete($id)
     {
         if ($category = self::getCategoryById($id)) {
@@ -86,6 +112,11 @@ class BlogCategoryManager
         }
     }
 
+        /**
+     * Filters and Get Blog Category
+     * @param $req
+     * @return response
+     * */
     public static function getCategoryList($req)
     {
         if ( $req->name !== null ) {
@@ -96,11 +127,21 @@ class BlogCategoryManager
         }
     }
 
+        /**
+     * Blog Category list
+     * @param 
+     * @return Response
+     * */
     public static function getBlogCategoryList()
     {
         return BlogCategory::where('status',1)->orderBy('id', 'desc')->paginate(10);
     }
 
+        /**
+     * Get Blog Category by Id
+     * @param $id
+     * @return Response
+     * */
     public static function getCategoryById($id)
     {
         return BlogCategory::find($id);

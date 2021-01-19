@@ -65,8 +65,6 @@ class ProfileController extends Controller
      */
     public function account() {
         
-        // $session = session()->all();
-        
         $user = $this->userManager
                 ->getCurrentUser();
         if (is_null($user)) {
@@ -87,13 +85,14 @@ class ProfileController extends Controller
                 'billingAddress' => $billingAddress
             ]);
     }
-    
+
     /**
      * Get Order Details Of OrderId
      * @param OrderId
      * @return \Illuminate\Http\Response
      */
-    public function orderDetails($order){
+    public function orderDetails($order)
+    {
         
         $data = $this->orderManager->getProductsByOrderNUmber($order);
         
