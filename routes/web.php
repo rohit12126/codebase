@@ -377,6 +377,9 @@ Route::post('/cart/remove-from-cart','CartController@removeFromCart')->name('car
 Route::post('/cart/update-cart','CartController@updateCart')->name('cart.updateCart');
 Route::post('/cart/remove-product','CartController@removeProduct')->name('cart.removeProduct');
 
+/* Buy Now*/
+Route::post('/buy-now', 'OrderController@buyNow')->name('buy-now');
+
 /* Checkout Routes */
 Route::POST('shipping/price', 'OrderController@shippingPrice')->name('shipping.price');
 

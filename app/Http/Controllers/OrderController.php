@@ -117,6 +117,15 @@ class OrderController extends Controller
         }
     }
 
+    public function buyNow(Request $req)
+    {
+        
+        $product = $this->productManager->getProductById($req->productId);
+        // $req->request->add(['sale_price' => $product->sale_price]);
+        return redirect()->route('address.get',['sale_price' => $product->sale_price]);
+        // dd($req);
+    }
+
     /**
      * Order Success
      *
