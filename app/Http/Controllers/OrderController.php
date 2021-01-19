@@ -72,7 +72,7 @@ class OrderController extends Controller
                 $orderData['shipping_address'] = $req->session()->get('ship');
                 $orderData['status'] = 1;
 
-                $orderData['shipping_charge'] = 
+                // $orderData['shipping_charge'] = 
                 $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
                 $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
                 
@@ -158,7 +158,7 @@ class OrderController extends Controller
 
         if($req->has('download')){
         	// Set extra option
-        	PDF::setOptions(['dpi' => 50, 'defaultFont' => 'sans-serif']);
+            PDF::setOptions(['dpi' => 50, 'defaultFont' => 'sans-serif']);
         	// pass view file
             $pdf = PDF::loadView('frontend.invoice');
             // download pdf

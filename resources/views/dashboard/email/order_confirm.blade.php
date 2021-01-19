@@ -67,15 +67,11 @@
                                                                     </a>
                                                                     </td>
                                                                 </tr>
-                                                                 <tr style="margin:0;padding:0">
+                                                                 <!-- <tr style="margin:0;padding:0">
                                                                     <td valign="top" style="padding:0% 3% 0% 0%">
-                                                                    <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;float:left;margin-top:4px;margin-bottom:0px">
-                                                                        <span style="color: #000;">
-                                                                        <a href="{{ route('invoice', ['order_no'=> $data->order_no]) }}">View Invoice</a>
-                                                                        </span>
-                                                                    </p>
+                                                               
                                                                     </td>
-                                                                </tr>
+                                                                </tr> -->
                                                             </tbody>
                                                         </table>
                                                         </td>
@@ -117,6 +113,13 @@
                                                     <li style="color:#94969f;font-size:13px;letter-spacing:0.39px;font-family:'Lato',sans-serif;padding-bottom:7px">Total Payable</li>
                                                     <li style="color:#3e4152;font-size:22px;letter-spacing:0px;font-family:'Lato',sans-serif;padding-bottom:7px">
                                                         <strong>${{$data->grand_total}}</strong>
+                                                    </li>
+                                                    <li>
+                                                    <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;float:left;margin-top:4px;margin-bottom:0px">
+                                                        <span style="color: #000;">
+                                                        <a href="{{ route('invoice', ['order_no'=> $data->order_no]) }}">View Invoice</a>
+                                                        </span>
+                                                    </p>
                                                     </li>
                                                     <!-- <li style="color:#535766;font-size:16px;letter-spacing:0px;font-family:'Lato',sans-serif;padding-bottom:7px">
                                                         <span>You saved</span>
