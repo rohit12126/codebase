@@ -115,7 +115,7 @@
                                                         <strong>${{$data->grand_total}}</strong>
                                                     </li>
                                                     <li>
-                                                    <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;float:left;margin-top:4px;margin-bottom:0px">
+                                                    <p style="font-family:'Lato',sans-serif;font-size:16px;font-weight:bold;line-height:1.06;opacity:0.9;margin-top:4px;margin-bottom:0px">
                                                         <span style="color: #000;">
                                                         <a href="{{ route('invoice', ['order_no'=> $data->order_no]) }}">View Invoice</a>
                                                         </span>
