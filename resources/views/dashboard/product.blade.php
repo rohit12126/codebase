@@ -94,6 +94,7 @@
                                             <div class="error">{{ $errors->first('max_cart_qty') }}</div>
                                         @endif
                                     </div>--}}
+                                        
                                     <div class="form-group">
                                     <label>SKU Number</label>
                                         <span class="mandatory">*</span>
@@ -106,13 +107,20 @@
                                     <div class="form-group">
                                         <label for="">Is Hardware ?</label>
                                         <span class="mandatory">*</span>
-                                        <select name="is_accessory" id="" class="form-control" title="Is Hardware ?">
+                                        <select name="is_accessory" id="is_accessory" class="form-control" title="Is Hardware ?">
                                             <option @if(@$product->is_accessory == 1) selected @endif value="1">Hardware</option>
                                             <option @if(
                                                 @$product->is_accessory == 0) selected @endif value="0">Product</option>
                                         </select>
                                     </div>
-                                    
+                                    <div class="form-group" id="configure_id">
+                                        <label>Configure Id</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="text" placeholder="Roomlie Configure Id" name="configure_id" class="form-control" value="{{ old('configure_id', @$product->configure_id) }}" >
+                                        @if($errors->has('configure_id'))
+                                            <div class="error">{{ $errors->first('configure_id') }}</div>
+                                        @endif
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
@@ -121,10 +129,6 @@
                                             <option @if(@$product->status == 0)  selected @endif value="0">Inactive</option>
                                         </select>
                                     </div>
-
-                                    
-
-                                   
                                 </div>
                                 <div class="col-md-6 mt-3 mt-md-0">
                                     <label for="">Image <span class="mandatory">*</span></label>
@@ -203,6 +207,22 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
+<script>
+    function somejs(){
+    if ( $('#is_accessory').val() == 0 )
+        {
+        $('#configure_id').css('display','none');
+        }
+    else if ( $('#is_accessory').val() == 1)
+    {
+        $('#configure_id').css('display','block');
+    }
+    }
+    somejs();
+    $('select').on('change', function() {
+    somejs();
+    });
+</script>
 {{-- Editor js--}}
 
 <!-- include Bootstrap and summernote css/js -->
@@ -286,10 +306,6 @@ $(function() {
                 minlength: 2,
                 maxlength: 20
             }
-            // max_cart_qty: {
-            //     min: 0,
-            //     required: true
-            // }
         },
         messages: {
             category_id: "Please select a category",
