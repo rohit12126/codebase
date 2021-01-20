@@ -187,7 +187,7 @@ return [
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
 
         /*debugger*/
-        Barryvdh\Debugbar\ServiceProvider::class,
+        // Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -242,7 +242,7 @@ return [
         'Socialite'=> Laravel\Socialite\Facades\Socialite::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ]
 
 ];
