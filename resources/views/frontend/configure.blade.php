@@ -70,9 +70,9 @@
                     })();
             </script>
             <div class="pt-4 pb-4 d-flex justify-content-center">
-            <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
-                <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
-                <i class="linearicons-cart"></i> Buy Now
+            <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">-->
+                <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+                <!--<i class="linearicons-cart"></i> Buy Now
             </a> -->
             <!-- <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                 <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
@@ -245,16 +245,17 @@
                 if(result == 1)
                 {
                     $('#configureId').val(configurationId)
-                    $('.add-to-cart')[0].click();
+                    addToCart();
                 }
             }
         });
     }
     /* Add to cart functionality */
-    jQuery('.add-to-cart').click(function(e) {
+    function addToCart(){
+    // jQuery('.add-to-cart').click(function(e) {
         var productId = $(".product-id").val();
         var configureId = $('#configureId').val();
-        e.preventDefault();
+        // e.preventDefault();
         jQuery.ajax({
             url: "{{ url('/cart/add-cart') }}",
             method: 'post',
@@ -279,7 +280,8 @@
                 })
             }
         });
-    });
+    // });
+}
 
     /* Buy Now Functionality */
     jQuery('.buy-now').click(function(e) {
