@@ -209,11 +209,11 @@
 
 <script>
     function somejs(){
-    if ( $('#is_accessory').val() == 0 )
+    if ( $('#is_accessory').val() == 1 )
         {
         $('#configure_id').css('display','none');
         }
-    else if ( $('#is_accessory').val() == 1)
+    else if ( $('#is_accessory').val() == 0)
     {
         $('#configure_id').css('display','block');
     }
