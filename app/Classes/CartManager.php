@@ -14,7 +14,7 @@ class CartManager
      * Add product to cart (Increase product qty to cart)
      *
      */
-    public function addToCart($product)
+    public function addToCart($product, $configurePrice = 0)
     {
 
         $set = false;
@@ -36,15 +36,15 @@ class CartManager
             $data = ['qty'=> $qty];
             
             if ($product->max_cart_qty >= $qty) {
-               $this->updateProduct($rowId, $data, $product->id);
-               $response['qty'] = $qty;
+                $this->updateProduct($rowId, $data, $product->id);
+                $response['qty'] = $qty;
             } else {
                 $response['status'] = false;
                 $response['message'] = "Unable to update cart (your product cart limit exceeded.)";
                 $response['qty'] = $qty - 1;
             }
         } else {
-            $this->addProduct($product);
+            $this->addProduct($product,$qty = 1, $configurePrice);
         }
 
         return $response;
@@ -128,13 +128,13 @@ class CartManager
      * Add to cart
      *
      */
-    public function addProduct($product, $qty = 1)
+    public function addProduct($product, $qty = 1, $configurePrice = 0)
     {
         $productData = [
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> $product->sale_price,
+            'price'=> $product->sale_price + $configurePrice,
             'options' => ['image' => @$product->images[0]->image]
         ];
         Cart::add($productData);
@@ -304,7 +304,7 @@ class CartManager
             foreach ($cartData as $key => $item) {
                 foreach ($cartSessionData as $key1 => $itemSess) {
                     $desIndex = array_search($itemSess->id, $productIds);
-				    if ($desIndex !== false) { 
+                    if ($desIndex !== false) { 
                         if ($item->id == $itemSess->id) {
                             $cartData[$key]->qty = $itemSess->qty;
                         }

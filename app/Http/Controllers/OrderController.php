@@ -72,7 +72,6 @@ class OrderController extends Controller
                 $orderData['shipping_address'] = $req->session()->get('ship');
                 $orderData['status'] = 1;
 
-                // $orderData['shipping_charge'] = 
                 $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
                 $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
                 
@@ -81,12 +80,39 @@ class OrderController extends Controller
                 $cartProducts = $this->cartManager->getCartContain();
 
                 foreach ($cartProducts as $key => $product) {
+
+                    $configureDetail = NULL;
+
+                    if( $req->session()->has('configuredProductData'))
+                    {
+                        
+                        if($req->session()->get('configuredProductData')['productId'] == $product->id)
+                        {
+                        
+                            $Detail = $req->session()->get('configuredProductData')['partList'];
+                            
+                            foreach($Detail as $k => $a){
+                                $Detail = (json_encode($a));
+                            }
+                            
+                            $configureDetail = json_decode($Detail);
+                            
+                            array_push($configureDetail,
+                                $req->session()->get('configuredProductData')['partList']['articleNr'],
+                                $req->session()->get('configuredProductData')['configurationId']
+                            );
+                            
+                        }
+                    }
+
                     $orderProduct = [
                         'order_no' => $orderNumber,
                         'product_id' => $product->id,
                         'product_quantity' => $product->qty,
                         'price' => $product->price,
+                        'configure_detail' => json_encode($configureDetail)
                     ];
+                    // dd($orderProduct);
                     $this->orderManager->addOrderProduct($orderProduct);
                 }
                 $paymentId = session()->get('payment_id');
@@ -96,7 +122,7 @@ class OrderController extends Controller
                 $this->cartManager->destroy();
                 $this->cartManager->destroyCartDB($userId);
                 $product = $this->orderManager->getProductsByOrder($order->order_no);
-                $req->session()->forget(['bill', 'ship', 'payment_id','shippingCharge']);
+                $req->session()->forget(['bill', 'ship', 'payment_id','shippingCharge','configuredProductData']);
             } else {
                     $order = $this->orderManager->getLastOrder($userId, $isTempUser);
                     $product = [];

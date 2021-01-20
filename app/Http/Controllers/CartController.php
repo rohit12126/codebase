@@ -155,14 +155,14 @@ class CartController extends Controller
             $bill = $req->billing_address;
         }
         
-        if ($isTemp == 1) {
-            UserManager::updateTempUser(
-                $userId,
-                $req->bill_name
-                //$req->bill_email,
-                //$req->bill_phone
-            );
-        }
+        // if ($isTemp == 1) {
+        //     UserManager::updateTempUser(
+        //         $userId,
+        //         $req->bill_name
+        //         //$req->bill_email,
+        //         //$req->bill_phone
+        //     );
+        // }
         /* Shipping Address */
         //if (!isset($req->shipping_address)) {
         if (!isset($req->billing_address) || ($req->isNewAddress == 1)) {
@@ -199,6 +199,19 @@ class CartController extends Controller
             return redirect()->route('addmoney.paywithpaypal');
         }
     }
+
+    public function saveConfiguration(Request $req)
+    {
+        
+        $configuredProductData['configurationId'] = $req->configurationId;
+        $configuredProductData['partList'] = $req->partList;
+        $configuredProductData['productId'] = $req->productId;
+        
+        session([
+            'configuredProductData' => $configuredProductData,
+        ]);
+        return true;
+    }
     
     /**
      * Add to cart a product (Increase qty)
@@ -206,12 +219,19 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function addToCart(Request $req) {
+        
+        $configurePrice = 0;
         $productId = $req->input('productId');
+        
+        if( $req->input('configureId') == $req->session()->get('configuredProductData')['configurationId'])
+        {
+            $configurePrice = 705;
+        }
         $product = $this->productManager->getProduct($productId);
         $message = "Product successfully added to the cart.";
         
         $status = true;
-        $res =  $this->cartManager->addToCart($product);
+        $res =  $this->cartManager->addToCart($product,$configurePrice);
         
         if ($res['status'] == false) {
             $status = false;
@@ -227,7 +247,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price,
+            'productPrice' => $product->sale_price + $configurePrice,
             'cartSubTotal' => $cartSubTotal
         ];
 

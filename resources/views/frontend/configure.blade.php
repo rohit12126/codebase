@@ -1,6 +1,13 @@
 @extends('layouts.front')
 
 @section('content')
+<style>
+    #configurator-container {
+        width: 1200px;
+        height: 900px;
+    }
+</style>
+<script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <section class="product-detail-view">
         <div class="container">
             <span class="product-detail-back">
@@ -28,15 +35,49 @@
                     <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>
+            <div id="configurator-container"></div>
+            
+            <script type="module">
+                import RoomleConfiguratorApi from '{{asset('js/roomle/roomle-configurator-api.es.min.js')}}';
+                (async ()=> {
+                    const options = {
+                        id: '{{$productData['product']->configure_id ?? 'cdm:sr2_white' }}' //add dynamic here !
+                    };
+                    const configurator = await RoomleConfiguratorApi.create(
+                        'demoConfigurator',
+                        document.getElementById('configurator-container'),
+                        options,
+                    );
+                    configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
+                        saveConfigured(configurationId, image, partlist);
+                    };
+                    // const priceDataBase = {};
+                    
+                    //     configurator.ui.callbacks.onPartListUpdate = (partList) => {
+                    //         console.log('parts update; update price aswell');
+                    //         console.log(partList);
+                    //         const parts = partList.fullList;
+                    //         let priceSum = parts.reduce((sum, part) => {
+                    //             if (!priceDataBase[part.articleNr]) {
+                    //                 priceDataBase[part.articleNr] = Math.random() * 10;
+                    //             }
+                    //             return sum += priceDataBase[part.articleNr];
+                    //         }, 0);
+                    //         const shippingCosts = '{{--$productData['product']->sale_price--}}';
+                    //         // Tell the Roomle Configurator to show the current price
+                    //         configurator.ui.setPrice('$', priceSum + shippingCosts);
+                    //     };
+                    })();
+            </script>
             <div class="pt-4 pb-4 d-flex justify-content-center">
             <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
                 <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
                 <i class="linearicons-cart"></i> Buy Now
             </a> -->
-            <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
-                <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
+            <!-- <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
+                <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
                 <i class="linearicons-cart-plus"></i> Add to cart
-            </a>
+            </a> -->
             {{-- <a href="#" class="btn btn-fill-out">
                 Configure
             </a> --}}
@@ -117,6 +158,7 @@
         </div>
     </section>
 @endif
+<input type="hidden" id="configureId" val="">
 <section class="section">
     <div class="container">
         <div class="comments">
@@ -185,9 +227,33 @@
         lazyLoad: 'progressive'
     });
 
+    /*Saves Configuration*/
+    function saveConfigured(configurationId, image, partlist){
+        var productId = $(".product-id").val();
+        jQuery.ajax({
+            url: "{{ url('product-configuration') }}",
+            method: 'post',
+            dataType: "json",
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data: {
+                configurationId : configurationId,
+                partList : partlist.fullList[0],
+                image : image,
+                productId : productId,
+            },
+            success: function(result){
+                if(result == 1)
+                {
+                    $('#configureId').val(configurationId)
+                    $('.add-to-cart')[0].click();
+                }
+            }
+        });
+    }
     /* Add to cart functionality */
     jQuery('.add-to-cart').click(function(e) {
         var productId = $(".product-id").val();
+        var configureId = $('#configureId').val();
         e.preventDefault();
         jQuery.ajax({
             url: "{{ url('/cart/add-cart') }}",
@@ -195,7 +261,8 @@
             dataType: "json",
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             data: {
-                productId : productId
+                productId : productId,
+                configureId : configureId
             },
             success: function(result){
                 $('.cart-count').html(result.data.cartCount);

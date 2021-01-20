@@ -10,7 +10,8 @@ class OrderProduct extends Model
         'order_no', 
         'product_id', 
         'product_quantity', 
-        'price'
+        'price',
+        'configure_detail'
     ];
 
     public function product()
