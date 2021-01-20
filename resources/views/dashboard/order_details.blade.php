@@ -147,21 +147,29 @@
                 <div class="overflow-auto table-responsive">
                     <div class="table-swipe-indicator"></div>
                     <table class="table table-striped table-bordered table-hover datatable">
-                        <thead>
-                            <tr>
-                                <th>Article Id</th>
-                                <!-- <th>Price</th> 
-                                <th>Quantity</th> -->
-                                <th>Preview</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             @php
                             $detail = json_decode($value->configure_detail);
                             @endphp
                             <tr>
-                                <td>{{$detail[count($detail) - 2]}}</td>
-                                <td><img src="https://uploads.roomle.com/configurations/{{$detail[count($detail) - 1]}}/perspectiveImage.png?marker=1611125534" width="100"></td>
+                            
+                                <td>
+                                <table class="w-100">
+                            <tr>
+                                <th class="p-1">Article Number: </th>
+                                <td class="p-1">{{$detail[count($detail) - 2]}}</td>
+                            </tr>
+                            @foreach($detail as $key => $value)
+                            @if(isset($value->label))
+                            <tr>
+                                <th class="p-1">{{$value->label}}:</th>
+                                <td class="p-1">{{$value->value}}</td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </table>
+                        </td>
+                                <td><img src="https://uploads.roomle.com/configurations/{{$detail[count($detail) - 1]}}/perspectiveImage.png?marker=1611125534" width="200"></td>
                             </tr>
                         </tbody>
                     </table>
