@@ -1,6 +1,14 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
+<style>
+.short{
+    font-size: 12px;
+    color: #4e4e4e;
+    float:left;
+}
+#more {display: none;}
+</style>
 <section class="section">
     <div class="container">
         <div class="cart-for-mobile d-block d-lg-none">
@@ -17,6 +25,14 @@
                         <div class="d-flex justify-content-between">
                             <div class="text-left cart-product-description">
                                 <h5 class="mb-3">{{$product->name}}</h5>
+                                
+                                @if( ! @empty($product->options['configureDetails']))
+                                @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
+                                    @if(isset($config['label']))
+                                    <span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span></br>
+                                @endif
+                                @endforeach
+                                @endif
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
@@ -76,7 +92,19 @@
                         <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
                     </div>
                 </td>
-                <td class="text-center">{{$product->name}}</td>
+                <td class="text-center">{{$product->name}} 
+                
+                    @if( ! @empty($product->options['configureDetails']))
+                    </br><span id="dots"><a href="#"onclick="myFunction()" id="myBtn" >check configured detail</a></span><span id="more">
+                    @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
+                        @if(isset($config['label']))
+                        </br><span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span>
+                    @endif
+                    @endforeach
+                    <a href="#"onclick="myFunction()" id="myBtn" >hide details</a>
+                    @endif
+                    </span>
+                </td>
                 <td class="text-center">${{number_format($product->price,2)}}</td>
                 <td class="text-center">
                     <div class="cart-product-quantity">
@@ -357,5 +385,23 @@
             });
         });
     });
+    
+</script>
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    
+    moreText.style.display = "inline";
+  }
+}
 </script>
 @endsection
