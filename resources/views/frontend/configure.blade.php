@@ -3,8 +3,8 @@
 @section('content')
 <style>
     #configurator-container {
-        width: 1200px;
-        height: 900px;
+        width: 100%;
+        height: 800px;
     }
 </style>
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
@@ -42,6 +42,13 @@
                     );
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
                         addToCart(configurationId, image, partlist);
+                    };
+                    configurator.ui.callbacks.onResize = (isDesktop) => {
+                        if (!isDesktop) {
+                        button.style.display = 'block';
+                        } else {
+                        button.style.display = 'none';
+                        }
                     };
                     // const priceDataBase = {};
                     
