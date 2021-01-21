@@ -31,10 +31,10 @@ class CartComposer
         }
         return $view->with(
             [
-              'cartCount' => $cartCount,
-              'cartContains' => $cartContain,
-              'cartSubTotal' => $cartSubTotal,
-              'userData' => $userData
+                'cartCount' => $cartCount,
+                'cartContains' => $cartContain,
+                'cartSubTotal' => $cartSubTotal,
+                'userData' => $userData
             ]
         );
     }
