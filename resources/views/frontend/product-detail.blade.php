@@ -70,7 +70,7 @@
                     <p class="pdp-discount-container">
                         <span class="pdp-price 
                         cursor-none" tabindex="0">
-                            <strong>$ {{$productData['product']->sale_price}}</strong>
+                            <strong>${{$productData['product']->sale_price}}</strong>
                         </span> 
                     </p>
                         <!-- <span class="pdp-mrp"><s>&#36;4599</s></span>
@@ -164,7 +164,7 @@
                     <div class="blog-col">
                         <a href="{{ url('product/detail/').'/'.$Rproduct->slug }}"><img class="img-fluid" src="{{ asset('upload/product/'.$Rproduct->images[0]->image)}}" alt="" /></a>
                         <div class="products-list-title"><h2>{{$Rproduct->name}}</h2></div>
-                        <div class="products-list-price">$ {{$Rproduct->sale_price}}</div>
+                        <div class="products-list-price">${{$Rproduct->sale_price}}</div>
                     </div>
                 @endforeach
             </div> 

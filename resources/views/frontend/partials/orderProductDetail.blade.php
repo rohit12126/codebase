@@ -133,7 +133,7 @@
                                         <p>
                                             <span><strong>Unit Price :</strong></span>
                                             <span>
-                                                $ {{$product->price}}
+                                                ${{$product->price}}
                                             </span>
                                         </p>
                                     </div>
@@ -155,7 +155,7 @@
                                     </div>
                                     <p class="mb-0">
                                         <strong>Total :</strong>
-                                        <span> $ {{number_format($product->price * $product->product_quantity, 2)}}</span>
+                                        <span> ${{number_format($product->price * $product->product_quantity, 2)}}</span>
                                     </p>
                                 </div>
                             </div>
@@ -189,9 +189,9 @@
                                     @endif
                                 </div>
                             </td>
-                            <td>$ {{$product->price}}</td>
+                            <td>${{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>
-                            <td>$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                            <td>${{number_format($product->price * $product->product_quantity, 2)}}</td>
                             @if($data->status == 4)
                             <td>
                                 <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
@@ -205,7 +205,7 @@
                 <div class="grand-total">
                     <div class="cart-row">
                         <span>Order total :</span> 
-                        <span><label id="subQty" class="mb-0" >$ {{$data->grand_total}}</label></span>
+                        <span><label id="subQty" class="mb-0" >${{$data->grand_total}}</label></span>
                     </div>
                 </div>
             </div>

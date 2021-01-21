@@ -29,14 +29,14 @@
                             @foreach ($productList as $product)
                                 <tr>
                                     <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
-                                    <td>$ {{$product->price *$product->qty}}</td>
+                                    <td>${{$product->price *$product->qty}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>SubTotal</th>
-                                <td class="product-subtotal">$ {{$cartSubTotal}}</td>
+                                <td class="product-subtotal">${{$cartSubTotal}}</td>
                             </tr>
                             <tr>
                                 <th>Shipping</th>
@@ -44,7 +44,7 @@
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <td class="product-subtotal">$ {{$cartSubTotal}}</td>
+                                <td class="product-subtotal">${{$cartSubTotal}}</td>
                             </tr>
                         </tfoot>
                     </table>

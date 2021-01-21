@@ -23,7 +23,7 @@
                     <span class="product-sku">SKU (Stock Keeping Unit)</span>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <span class="product-price">$ {{$productData['product']->sale_price}}</span>
+                    <span class="product-price">${{$productData['product']->sale_price}}</span>
                     <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>

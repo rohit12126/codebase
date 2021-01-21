@@ -254,14 +254,14 @@
                                     @foreach ($productList as $product)
                                     <tr>
                                         <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
-                                        <td>$ {{number_format($product->price * $product->qty, 2)}}</td>
+                                        <td>${{number_format($product->price * $product->qty, 2)}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Sub Total</th>
-                                        <td class="product-subtotal">$ {{number_format($cartSubTotal, 2)}}</td>
+                                        <td class="product-subtotal">${{number_format($cartSubTotal, 2)}}</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping</th>
@@ -269,7 +269,7 @@
                                     </tr>
                                     <tr>
                                         <th>Total</th>
-                                        <td class="product-subtotal" id="total">$ {{number_format($cartSubTotal, 2)}}</td>
+                                        <td class="product-subtotal" id="total">${{number_format($cartSubTotal, 2)}}</td>
                                     </tr>
                                 </tfoot>
                             </table>

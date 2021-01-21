@@ -163,9 +163,9 @@
                                 {{ asset('upload/product/'.$value->product->images[0]->image)}}
                                 @endif
                                 " width="100px"></td>
-                                <td>$ {{ $value->price }}</td>
+                                <td>${{ $value->price }}</td>
                                 <td>{{ number_format($value->product_quantity) }}</td>
-                                <td>$ {{ number_format($value->price * $value->product_quantity, 2) }}</td>
+                                <td>${{ number_format($value->price * $value->product_quantity, 2) }}</td>
                             </tr>
                             @endforeach
                         </tbody>

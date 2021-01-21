@@ -69,7 +69,7 @@
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
                                 @endif
                                 
-                                <div class="products-list-price">$ {{$product->sale_price}}</div>
+                                <div class="products-list-price">${{$product->sale_price}}</div>
                             </div>
                         </div>
                     @endforeach

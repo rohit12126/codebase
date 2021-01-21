@@ -20,7 +20,7 @@
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
                                     <span class="total{{$product->id}}">
-                                        $ {{number_format($product->price,2)}}
+                                        ${{number_format($product->price,2)}}
                                     </span>
                                 </p>
                             </div>
@@ -43,7 +43,7 @@
                             </div>
                             <p class="mb-0">
                                 <strong>Total :</strong>
-                                <span class="total{{$product->id}}"> $ {{number_format($product->price * $product->qty, 2)}}</span>
+                                <span class="total{{$product->id}}"> ${{number_format($product->price * $product->qty, 2)}}</span>
                             </p>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                     </div>
                 </td>
                 <td class="text-center">{{$product->name}}</td>
-                <td class="text-center">$ {{number_format($product->price,2)}}</td>
+                <td class="text-center">${{number_format($product->price,2)}}</td>
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
@@ -88,7 +88,7 @@
                     </div>
                 </td>
                 <td class="text-center cart-total-w">
-                    <label class="total{{$product->id}}">$ {{number_format($product->price * $product->qty, 2)}}</label>
+                    <label class="total{{$product->id}}">${{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
                     <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
@@ -106,7 +106,7 @@
         <div class="grand-total">
             <div class="cart-row">
                 <span>Sub Total:</span> 
-                <span><label id="subQty" class="mb-0" >$ {{$cartSubTotal}}</label></span>
+                <span><label id="subQty" class="mb-0" >${{$cartSubTotal}}</label></span>
             </div>
             <!-- <div class="cart-row">
                 Apply Coupon Code Get 10% Discount :
@@ -127,7 +127,7 @@
                 <span>Grand Total :</span>
                 <span id="grandtotal" class="p-0">
                     <input type="hidden" name="grand_total" id="grand_total" value="{{$cartSubTotal}}">
-                    <span class="grand_total">$ {{$cartSubTotal}}</span> 
+                    <span class="grand_total">${{$cartSubTotal}}</span> 
                 </span>
             </div>
             <div class="pt-3">

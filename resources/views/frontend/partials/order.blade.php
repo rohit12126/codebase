@@ -50,7 +50,7 @@
                                     @endphp
                                     {{ $status }}
                                 </td>
-                                <td>$ {{number_format($order->grand_total, 2)}}</td>
+                                <td>${{number_format($order->grand_total, 2)}}</td>
                                 @php
                                 $date = $order->created_at->addDays(7);
                                 @endphp

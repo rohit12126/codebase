@@ -213,9 +213,9 @@
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
                                     {{$product->product->sku}}
                                 </td>
-                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">$ {{number_format($product->price, 2)}}</td>
+                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">${{number_format($product->price, 2)}}</td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{number_format($product->product_quantity)}}</td>
-                                <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">$ {{number_format($product->price * $product->product_quantity, 2)}}</td>
+                                <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">${{number_format($product->price * $product->product_quantity, 2)}}</td>
                             </tr>
                         @endforeach
                         <tr style="font-weight: bold;">
@@ -223,7 +223,7 @@
                                 Shipping
                             </td>
                             <td style="padding: 10px;border-bottom:1px solid #000;">
-                                $ {{number_format($order->getPaymentDetail->shipping, 2)}}
+                                ${{number_format($order->getPaymentDetail->shipping, 2)}}
                             </td>
                         </tr>
 
@@ -232,7 +232,7 @@
                                 Net Amount
                             </td>
                             <td style="padding: 10px;border-bottom:1px solid #000;">
-                                $ {{$order->grand_total}}
+                                ${{$order->grand_total}}
                             </td>
                         </tr>
                         <tr style="font-weight: bold;">
