@@ -21,7 +21,8 @@ class Product extends Model implements ReviewRateable
         'max_cart_qty',
         'stock_qty',
         'status',
-        'is_accessory'
+        'is_accessory',
+        'configure_id'
     ];
 
     /**

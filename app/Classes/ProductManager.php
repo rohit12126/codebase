@@ -27,6 +27,7 @@ class ProductManager
             'slug' => $slug,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
+            'configure_id' => $req->configure_id ?? NULL,
         ];
         if ($product = ProductModel::create($data)) {
             if ($req->image) {
@@ -46,6 +47,7 @@ class ProductManager
 
     public static function edit($req)
     {
+        // dd($req);
         
         $product = null;
         if ($exist = self::getProductById($req->id)) {
@@ -68,13 +70,16 @@ class ProductManager
             'slug' => $slug,
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
+            'configure_id' => $req->configure_id ?? NULL,
         ];
         if ($product->fill($data)->save()) {
             
             if (is_null($req->storeimage)) {
                 ProductImageModel::where('product_id', $req->id)->delete();
             } else {
-                ProductImageModel::whereNotIn("id", array_keys($req->storeimage))->where('product_id', $req->id)->delete();
+                ProductImageModel::whereNotIn("id", array_keys($req->storeimage))
+                                    ->where('product_id', $req->id)
+                                    ->delete();
             }
 
             if ($req->image) {

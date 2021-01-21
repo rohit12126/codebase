@@ -41,7 +41,7 @@
                 import RoomleConfiguratorApi from '{{asset('js/roomle/roomle-configurator-api.es.min.js')}}';
                 (async ()=> {
                     const options = {
-                        id: '{{$productData['product']->configure_id ?? 'cdm:sr2_white' }}' //add dynamic here !
+                        id: '{{$productData['product']->configure_id ?? 'cdm:sr2_white' }}'
                     };
                     const configurator = await RoomleConfiguratorApi.create(
                         'demoConfigurator',

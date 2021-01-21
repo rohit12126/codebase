@@ -39,6 +39,10 @@ class ProductController extends Controller
      */
     public function addProduct(Request $req)
     {
+        // $confIdRequired ='';
+        // if($req->is_accessory == 0) {
+        //     $confIdRequired = 'required|';
+        // }
         $this->validate(
             $req, 
             [
@@ -46,7 +50,8 @@ class ProductController extends Controller
                 'image.*' => 'mimes:jpeg,jpg,png|max:4000',
                 'description' => 'required',
                 'sale_price'=> 'required|numeric|min:0|not_in:0',
-                'sku'=> 'required|max:20|min:2|unique:products,sku'
+                'sku'=> 'required|max:20|min:2|unique:products,sku',
+                // 'configure_id' =>$confIdRequired.'max:200|min:5'
             ]
         ); 
         $response = ProductManager::add($req);
