@@ -132,21 +132,21 @@
                                 <td>
                             @if( ! @empty(json_decode($value->configure_detail)))
                             
-                            <table class="table table-striped table-bordered table-hover datatable">
+                            <table class="table table-striped">
                             <tbody>
                             @php
                             $detail = json_decode($value->configure_detail);
                             @endphp
                             
                             <tr>
-                                <th class="p-1">Article Number: </th>
-                                <td class="p-1">{{$detail[count($detail) - 2]}}</td>
+                                <th class="p-0">Article Number: </th>
+                                <td class="p-0">{{$detail[count($detail) - 2]}}</td>
                             </tr>
                             @foreach($detail as $key => $config)
                             @if(isset($config->label))
                             <tr>
-                                <th class="p-1">{{$config->label}}:</th>
-                                <td class="p-1">{{$config->value}}</td>
+                                <th class="p-0">{{$config->label}}:</th>
+                                <td class="p-0">{{$config->value}}</td>
                             </tr>
                             @endif
                             @endforeach
