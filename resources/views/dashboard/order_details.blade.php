@@ -118,6 +118,8 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
+                                <th>Configured</th>
+                                <th>Preview</th>
                                 <th>Price</th> 
                                 <th>Quantity</th>
                                 <th>Total</th>
@@ -127,6 +129,40 @@
                             @foreach($order->productList as $key => $value)
                             <tr>
                                 <td>{{ $value->product->name }}</td>
+                                <td>
+                            @if( ! @empty(json_decode($value->configure_detail)))
+                            
+                            <table class="table table-striped table-bordered table-hover datatable">
+                            <tbody>
+                            @php
+                            $detail = json_decode($value->configure_detail);
+                            @endphp
+                            
+                            <tr>
+                                <th class="p-1">Article Number: </th>
+                                <td class="p-1">{{$detail[count($detail) - 2]}}</td>
+                            </tr>
+                            @foreach($detail as $key => $config)
+                            @if(isset($config->label))
+                            <tr>
+                                <th class="p-1">{{$config->label}}:</th>
+                                <td class="p-1">{{$config->value}}</td>
+                            </tr>
+                            @endif
+                            @endforeach
+                            </tbody>
+                            </table>
+                            @else
+                            -------
+                            @endif
+                                </td>
+                                <td><img src="
+                                @if(isset($detail))
+                                https://uploads.roomle.com/configurations/{{$detail[count($detail) - 1]}}/perspectiveImage.png
+                                @else
+                                {{ asset('upload/product/'.$value->product->images[0]->image)}}
+                                @endif
+                                " width="100px"></td>
                                 <td>$ {{ $value->price }}</td>
                                 <td>{{ number_format($value->product_quantity) }}</td>
                                 <td>$ {{ number_format($value->price * $value->product_quantity, 2) }}</td>
@@ -137,48 +173,6 @@
                 </div>
             </div>
         </div>
-        @foreach($order->productList as $key => $value)
-        @if(!empty($value->configure_detail))
-        <div class="card">
-            <div class="card-header">
-                <h4>Configure Details</h4>
-            </div>
-            <div class="card-body">
-                <div class="overflow-auto table-responsive">
-                    <div class="table-swipe-indicator"></div>
-                    <table class="table table-striped table-bordered table-hover datatable">
-                        <tbody>
-                            @php
-                            $detail = json_decode($value->configure_detail);
-                            @endphp
-                            <tr>
-                            
-                                <td>
-                                <table class="w-100">
-                            <tr>
-                                <th class="p-1">Article Number: </th>
-                                <td class="p-1">{{$detail[count($detail) - 2]}}</td>
-                            </tr>
-                            @foreach($detail as $key => $value)
-                            @if(isset($value->label))
-                            <tr>
-                                <th class="p-1">{{$value->label}}:</th>
-                                <td class="p-1">{{$value->value}}</td>
-                            </tr>
-                            @endif
-                            @endforeach
-                        </table>
-                        </td>
-                                <td><img src="https://uploads.roomle.com/configurations/{{$detail[count($detail) - 1]}}/perspectiveImage.png?marker=1611125534" width="200"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endif
-    @endforeach
 </div>
 @endsection
 

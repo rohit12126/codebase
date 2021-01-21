@@ -14,9 +14,8 @@ class CartManager
      * Add product to cart (Increase product qty to cart)
      *
      */
-    public function addToCart($product, $configurePrice = 0)
+    public function addToCart($product, $configuredProductData = 0)
     {
-
         $set = false;
         $qty = 1;
         $rowId = '';
@@ -24,11 +23,26 @@ class CartManager
 
         $response = ['status' => true, 'message'=> "", 'qty'=> $qty];
         foreach ($contains as $key => $item) {
+
             if ($item->id == $product->id) {
-                $qty = $item->qty + $qty;
-                $rowId = $item->rowId;
-                $set = true;
-                break;
+
+                if(!empty($configuredProductData))
+                {
+                    if (
+                        $item->options['configureDetails']['configurationId'] == 
+                        $configuredProductData['configurationId']
+                        )
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    $qty = $item->qty + $qty;
+                    $rowId = $item->rowId;
+                    $set = true;
+                    break;
+                }
             }
         }
 
@@ -36,7 +50,9 @@ class CartManager
             $data = ['qty'=> $qty];
             
             if ($product->max_cart_qty >= $qty) {
+
                 $this->updateProduct($rowId, $data, $product->id);
+                
                 $response['qty'] = $qty;
             } else {
                 $response['status'] = false;
@@ -44,7 +60,7 @@ class CartManager
                 $response['qty'] = $qty - 1;
             }
         } else {
-            $this->addProduct($product,$qty = 1, $configurePrice);
+            $this->addProduct($product,$qty = 1, $configuredProductData);
         }
 
         return $response;
@@ -128,14 +144,18 @@ class CartManager
      * Add to cart
      *
      */
-    public function addProduct($product, $qty = 1, $configurePrice = 0)
+    public function addProduct($product, $qty = 1, $configuredProductData = 0)
     {
         $productData = [
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> $product->sale_price + $configurePrice,
-            'options' => ['image' => @$product->images[0]->image]
+            'price'=> $product->sale_price + (( !empty($configuredProductData)) ? 1254 : 0), //romlie price here
+            'options' => 
+            [
+                'image' => @$product->images[0]->image,
+                'configureDetails' => $configuredProductData
+            ]
         ];
         Cart::add($productData);
         

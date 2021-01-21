@@ -115,7 +115,7 @@
                                     </span>
                                 </div>
                                 <div style="font-size:11px;text-align:center;padding-bottom:5px;padding-top:15px;line-height:15px;font-family:'Lato',sans-serif;">
-                                    Copyright © 2020 Custom Closet, All rights reserved.
+                                    Copyright © {{date("Y")}} Custom Closet, All rights reserved.
                                 </div>
                                 </td>
                             </tr>

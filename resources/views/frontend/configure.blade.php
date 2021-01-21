@@ -16,15 +16,7 @@
             <div class="text-md-center mt-3 mt-md-0">
                 <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
             </div>
-            <div class="product-detail-slider">
-                @if($productData['product']->images[0]->image)
-                    <div data-thumb="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
-                        <a data-fancybox="gallery" href="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
-                            <img src="{{ asset('upload/product/'.$productData['product']->images[0]->image)}}">
-                        </a>
-                    </div>
-                @endif
-            </div>
+            <div id="configurator-container"></div>
             <div class="row">
                 <div class="col-md-6">
                     <span class="product-sku-no">{{$productData['product']->name}}</span>
@@ -35,7 +27,7 @@
                     <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>
-            <div id="configurator-container"></div>
+            
             
             <script type="module">
                 import RoomleConfiguratorApi from '{{asset('js/roomle/roomle-configurator-api.es.min.js')}}';
@@ -49,7 +41,7 @@
                         options,
                     );
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
-                        saveConfigured(configurationId, image, partlist);
+                        addToCart(configurationId, image, partlist);
                     };
                     // const priceDataBase = {};
                     
@@ -227,34 +219,10 @@
         lazyLoad: 'progressive'
     });
 
-    /*Saves Configuration*/
-    function saveConfigured(configurationId, image, partlist){
-        var productId = $(".product-id").val();
-        jQuery.ajax({
-            url: "{{ url('product-configuration') }}",
-            method: 'post',
-            dataType: "json",
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            data: {
-                configurationId : configurationId,
-                partList : partlist.fullList[0],
-                image : image,
-                productId : productId,
-            },
-            success: function(result){
-                if(result == 1)
-                {
-                    $('#configureId').val(configurationId)
-                    addToCart();
-                }
-            }
-        });
-    }
     /* Add to cart functionality */
-    function addToCart(){
+    function addToCart(configurationId, image, partlist){
     // jQuery('.add-to-cart').click(function(e) {
         var productId = $(".product-id").val();
-        var configureId = $('#configureId').val();
         // e.preventDefault();
         jQuery.ajax({
             url: "{{ url('/cart/add-cart') }}",
@@ -263,7 +231,8 @@
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             data: {
                 productId : productId,
-                configureId : configureId
+                configurationId : configurationId,
+                partList : partlist.fullList[0]
             },
             success: function(result){
                 $('.cart-count').html(result.data.cartCount);

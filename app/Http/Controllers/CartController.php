@@ -155,14 +155,14 @@ class CartController extends Controller
             $bill = $req->billing_address;
         }
         
-        // if ($isTemp == 1) {
-        //     UserManager::updateTempUser(
-        //         $userId,
-        //         $req->bill_name
-        //         //$req->bill_email,
-        //         //$req->bill_phone
-        //     );
-        // }
+        if ($isTemp == 1) {
+            UserManager::updateTempUser(
+                $userId,
+                $req->bill_name ?? $this->addressManager->getAddressesbyId($req->billing_address)->name
+                //$req->bill_email,
+                //$req->bill_phone
+            );
+        }
         /* Shipping Address */
         //if (!isset($req->shipping_address)) {
         if (!isset($req->billing_address) || ($req->isNewAddress == 1)) {
@@ -220,18 +220,20 @@ class CartController extends Controller
      */
     public function addToCart(Request $req) {
         
-        $configurePrice = 0;
+        $configuredProductData = [];
         $productId = $req->input('productId');
         
-        if( $req->input('configureId') == $req->session()->get('configuredProductData')['configurationId'])
+        if(!empty($req->configurationId))
         {
-            $configurePrice = 705;
+            $configuredProductData['configurationId'] = $req->configurationId;
+            $configuredProductData['partList'] = $req->partList;
+            $configuredProductData['productId'] = $req->productId;
         }
         $product = $this->productManager->getProduct($productId);
         $message = "Product successfully added to the cart.";
         
         $status = true;
-        $res =  $this->cartManager->addToCart($product,$configurePrice);
+        $res =  $this->cartManager->addToCart($product,$configuredProductData);
         
         if ($res['status'] == false) {
             $status = false;
@@ -247,7 +249,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price + $configurePrice,
+            'productPrice' => $product->sale_price + (( !empty($configuredProductData)) ? 1254 : 0), //romlie price here (response)
             'cartSubTotal' => $cartSubTotal
         ];
 

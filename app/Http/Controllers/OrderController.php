@@ -83,28 +83,21 @@ class OrderController extends Controller
 
                     $configureDetail = NULL;
 
-                    if( $req->session()->has('configuredProductData'))
-                    {
+                    if(isset($product->options['configureDetails']['partList'])){
+                        $Detail = $product->options['configureDetails']['partList'];
                         
-                        if($req->session()->get('configuredProductData')['productId'] == $product->id)
-                        {
-                        
-                            $Detail = $req->session()->get('configuredProductData')['partList'];
-                            
-                            foreach($Detail as $k => $a){
-                                $Detail = (json_encode($a));
-                            }
-                            
-                            $configureDetail = json_decode($Detail);
-                            
-                            array_push($configureDetail,
-                                $req->session()->get('configuredProductData')['partList']['articleNr'],
-                                $req->session()->get('configuredProductData')['configurationId']
-                            );
-                            
+                        foreach($Detail as $k => $a){
+                            $Detail = (json_encode($a));
                         }
+                        
+                        $configureDetail = json_decode($Detail);
+                        
+                        array_push($configureDetail,
+                            $product->options['configureDetails']['partList']['articleNr'],
+                            $product->options['configureDetails']['configurationId']
+                        );
                     }
-
+                    
                     $orderProduct = [
                         'order_no' => $orderNumber,
                         'product_id' => $product->id,
@@ -112,7 +105,7 @@ class OrderController extends Controller
                         'price' => $product->price,
                         'configure_detail' => json_encode($configureDetail)
                     ];
-                    // dd($orderProduct);
+                    
                     $this->orderManager->addOrderProduct($orderProduct);
                 }
                 $paymentId = session()->get('payment_id');
