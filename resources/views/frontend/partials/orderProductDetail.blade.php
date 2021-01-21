@@ -183,10 +183,15 @@
                             <td>{{$product->product->name}}</td>
                             <td>
                                 <div class="order-track-img">
-                                    @if (isset($product->product->images[0]->image))
+                                {{-- @if (isset($product->product->images[0]->image))
                                         <img class="img-thumbnail" style="max-height: 90px;"src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @else
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
+                                @endif --}}
+                                    @if (!@empty(json_decode($product->configure_detail)))
+                                    <img class="img-thumbnail" style="max-height: 90px;" src=" https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
+                                    @else
+                                    <img class="img-thumbnail" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @endif
                                 </div>
                             </td>
