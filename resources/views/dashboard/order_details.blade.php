@@ -157,7 +157,7 @@
                             @endif
                                 </td>
                                 <td><img src="
-                                @if(isset($detail))
+                                @if( ! @empty(json_decode($value->configure_detail)))
                                 https://uploads.roomle.com/configurations/{{$detail[count($detail) - 1]}}/perspectiveImage.png
                                 @else
                                 {{ asset('upload/product/'.$value->product->images[0]->image)}}
