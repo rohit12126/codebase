@@ -119,10 +119,11 @@
                 @foreach($data->productList as $product)
                     <div class="row m-0 mb-4 contact_style3 pl-0 pr-0">
                         <div class="col-md-5 col-lg-3 col-xl-3 cart-img-hr">
-                            @if (isset($product->product->images[0]->image))
-                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
+
+                            @if (!@empty(json_decode($product->configure_detail)))
+                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src=" https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
                             @else
-                                <img src="{{ asset('product_images/download.jpeg')}}" class="cart-for-mobile-img" alt="product_img1">
+                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                             @endif
                         </div>
                         <div class="col-md-7 col-lg-9 col-xl-9">
