@@ -81,7 +81,7 @@
                             <tr>
                                 <td align="center" style="text-align:center;padding-bottom:50px">
                                 <a href="{{url('/')}}" style="text-decoration:none" target="_blank">
-                                    <img alt="custom closet" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
+                                    <img alt="Custom Closet" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
                                 </a>
                                 </td>
                             </tr>
