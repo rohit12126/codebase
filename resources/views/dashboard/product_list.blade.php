@@ -98,7 +98,7 @@
                                             <td>&#36;{{ $value->sale_price }}</td>
                                             <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                             <td>
-                                            @if ($value->is_accessory == 1)
+                                            @if ($value->is_accessory == 0)
                                                 <a class="btn btn-sm btn-info custom-tooltip" href="{{ route('admin.product.description', ['product_id' => $value->id]) }}">
                                                     <span class="custom-tooltiptext custom-tooltip-top">Add Product Description</span>
                                                     <i class="cil-playlist-add"></i>
