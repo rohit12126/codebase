@@ -10,7 +10,7 @@
             @foreach ($products as $product)
             <div class="row m-0 mb-4 contact_style3 pl-0 pr-0 row{{$product->rowId}}" id="row{{$product->rowId}}">
                 <div class="col-md-5 col-lg-3 col-xl-3 cart-img-hr">
-                    <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="cart-for-mobile-img">
+                    <img src="@if( !  @empty($product->options['configureDetails']['configurationId']))https://uploads.roomle.com/configurations/{{$product->options['configureDetails']['configurationId']}}/perspectiveImage.png @else{{ url('') }}/upload/product/{{@$product->options->image}}@endif" alt="product1" class="cart-for-mobile-img">
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
                     <div>
@@ -19,11 +19,17 @@
                                 <h5 class="mb-3">{{$product->name}}</h5>
                                 
                                 @if( ! @empty($product->options['configureDetails']))
+                                </br><div id="card" data-configId="{{'m'.$product->id}}">
+                                <span id="dots"></span>
+                                <span id="more">
                                 @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
                                     @if(isset($config['label']))
                                     <span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span></br>
-                                @endif
+                                    @endif
                                 @endforeach
+                                </span>
+                                <a href="javascript:void(0)"onclick="myFunction('{{'m'.$product->id}}')" id="myBtn" >configured details</a>
+                                </div>
                                 @endif
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
