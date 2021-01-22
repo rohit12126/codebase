@@ -7572,7 +7572,7 @@ a:hover {
     background-color: #fff;
 }
 
-.main-header {
+.main-wrapper {
     position: relative;
     margin: 0 5%;
     padding: 1rem 0;
@@ -8894,7 +8894,7 @@ opacity:1;
 }
 #configurator-container {
 	width: 100%;
-	height: calc(100vh - 126px);
+	height: 100vh;
 	min-height: 480px;
 }
 .light-bg {
