@@ -83,7 +83,7 @@
 <body >
 <div id="sitePreloader"></div>
 <header class="head-bar">
-        <div class="main-header clearfix">
+        <div class="main-wrapper clearfix">
             <div class="head-info d-inline-block">
                 <a href="{{ url('/') }}" class="d-block  p-0 pr-xl-2 head-logo">
                     <img src="{{URL::asset('/images/cutom-inc-logo.png')}}" alt="" class="head-logo">

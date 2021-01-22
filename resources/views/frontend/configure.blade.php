@@ -3,7 +3,7 @@
 @section('content')
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <section class="product-detail-view">
-        <div class="main-header">
+        <div class="main-wrapper">
             <span class="product-detail-back">
                 <a href="{{route('product.list')}}" class="d-inline-block">&lt; Back to overview</a>
             </span>
