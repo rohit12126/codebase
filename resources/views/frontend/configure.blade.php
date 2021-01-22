@@ -9,7 +9,7 @@
 </style>
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <section class="product-detail-view">
-        <div class="container">
+        <div class="container-fluid p-0">
             <span class="product-detail-back">
                 <a href="{{route('product.list')}}" class="d-inline-block">&lt; Back to overview</a>
             </span>
@@ -27,8 +27,6 @@
                     <span class="product-price-tax">Incl. VAT</span>
                 </div>
             </div>
-            
-            
             <script type="module">
                 import RoomleConfiguratorApi from '{{asset('js/roomle/roomle-configurator-api.es.min.js')}}';
                 (async ()=> {
