@@ -1,15 +1,9 @@
 @extends('layouts.front')
 
 @section('content')
-<style>
-    #configurator-container {
-        width: 100%;
-        height: 800px;
-    }
-</style>
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <section class="product-detail-view">
-        <div class="container-fluid p-0">
+        <div class="main-header">
             <span class="product-detail-back">
                 <a href="{{route('product.list')}}" class="d-inline-block">&lt; Back to overview</a>
             </span>
@@ -19,12 +13,16 @@
             <div id="configurator-container"></div>
             <div class="row">
                 <div class="col-md-6">
-                    <span class="product-sku-no">{{$productData['product']->name}}</span>
-                    <span class="product-sku">SKU (Stock Keeping Unit)</span>
+                    <div class="pl-3 pb-3 pb-md-0">
+                        <span class="product-sku-no">{{$productData['product']->name}}</span>
+                        <span class="product-sku">SKU (Stock Keeping Unit)</span>
+                    </div>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <span class="product-price">${{$productData['product']->sale_price}}</span>
-                    <span class="product-price-tax">Incl. VAT</span>
+                    <div class="pl-3 pl-md-0 pr-3">
+                        <span class="product-price">${{$productData['product']->sale_price}}</span>
+                        <span class="product-price-tax">Incl. VAT</span>
+                    </div>
                 </div>
             </div>
             <script type="module">

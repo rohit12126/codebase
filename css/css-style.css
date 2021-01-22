@@ -8892,9 +8892,10 @@ opacity:1;
 .product-wallpaper-slider .slick-arrow:before{
 	visibility: hidden;
 }
-.configure-product-slider{
-	max-width: 1200px;
-	margin:0 auto;
+#configurator-container {
+	width: 100%;
+	height: calc(100vh - 126px);
+	min-height: 480px;
 }
 .light-bg {
 	background-color: #FFF4EB;

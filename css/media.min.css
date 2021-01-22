@@ -536,6 +536,13 @@
         font-size: 14px;
         padding: 8px 24px;
     }
+    .main-header{
+        margin: 0 auto;
+        max-width: 1170px;
+    }
+    #configurator-container{
+        max-height: 800px;
+    }
 }
 
 @media (min-width: 1500px) {
