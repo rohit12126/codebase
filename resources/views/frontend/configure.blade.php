@@ -46,10 +46,12 @@
                         button.style.display = 'none';
                         }
                     };
+
+                    /*for price*/
                     // const priceDataBase = {};
                     
                     //     configurator.ui.callbacks.onPartListUpdate = (partList) => {
-                    //         console.log('parts update; update price aswell');
+                    //         console.log('parts update; update price as well');
                     //         console.log(partList);
                     //         const parts = partList.fullList;
                     //         let priceSum = parts.reduce((sum, part) => {
@@ -224,35 +226,33 @@
 
     /* Add to cart functionality */
     function addToCart(configurationId, image, partlist){
-    // jQuery('.add-to-cart').click(function(e) {
-        var productId = $(".product-id").val();
-        // e.preventDefault();
-        jQuery.ajax({
-            url: "{{ url('/cart/add-cart') }}",
-            method: 'post',
-            dataType: "json",
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            data: {
-                productId : productId,
-                configurationId : configurationId,
-                partList : partlist.fullList[0]
-            },
-            success: function(result){
-                $('.cart-count').html(result.data.cartCount);
-                Swal.fire({
-                    position: 'bottom-end',
-                    icon: 'success',
-                    title: 'Product has been added to your cart successfully',
-                    showConfirmButton: false,
-                    timer: 1500,
-                    customClass: {
-                        container: 'custom-success-popup-container',
-                        popup: 'custom-success-popup',
-                    }
-                })
-            }
-        });
-    // });
+    var productId = $(".product-id").val();
+    
+    jQuery.ajax({
+        url: "{{ url('/cart/add-cart') }}",
+        method: 'post',
+        dataType: "json",
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        data: {
+            productId : productId,
+            configurationId : configurationId,
+            partList : partlist.fullList[0]
+        },
+        success: function(result){
+            $('.cart-count').html(result.data.cartCount);
+            Swal.fire({
+                position: 'bottom-end',
+                icon: 'success',
+                title: 'Product has been added to your cart successfully',
+                showConfirmButton: false,
+                timer: 1500,
+                customClass: {
+                    container: 'custom-success-popup-container',
+                    popup: 'custom-success-popup',
+                }
+            })
+        }
+    });
 }
 
     /* Buy Now Functionality */
