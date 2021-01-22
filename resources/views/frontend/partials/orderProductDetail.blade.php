@@ -180,7 +180,17 @@
                     <tbody>
                         @foreach($data->productList as $product)
                         <tr>
-                            <td>{{$product->product->name}}</td>
+                        
+                            <td>{{$product->product->name}}
+                            @if (!@empty(json_decode($product->configure_detail)))
+                            </br><span id="dots"><a href="javascript:void(0)"onclick="myFunction()" id="myBtn" >see configured detail</a></span><span id="more">
+                            @foreach(json_decode($product->configure_detail) as $key => $config)
+                                @if(isset($config->label))
+                                </br><span class="short"><strong>{{$config->label}}:</strong>:{{$config->value}}</span>
+                                @endif
+                            @endforeach
+                            <a href="javascript:void(0)" onclick="myFunction()" id="myBtn" >hide details</a>
+                            @endif</span></td>
                             <td>
                                 <div class="order-track-img">
                                 {{-- @if (isset($product->product->images[0]->image))
@@ -189,7 +199,7 @@
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                 @endif --}}
                                     @if (!@empty(json_decode($product->configure_detail)))
-                                    <img class="img-thumbnail" style="max-height: 90px;" src=" https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
+                                    <img class="img-thumbnail" style="max-height: 90px;" src="https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
                                     @else
                                     <img class="img-thumbnail" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @endif

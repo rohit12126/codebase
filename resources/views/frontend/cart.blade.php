@@ -1,14 +1,6 @@
 @extends('layouts.front')
 @section('content')
 <!-- START SECTION SHOP -->
-<style>
-.short{
-    font-size: 12px;
-    color: #4e4e4e;
-    float:left;
-}
-#more {display: none;}
-</style>
 <section class="section">
     <div class="container">
         <div class="cart-for-mobile d-block d-lg-none">
@@ -387,21 +379,5 @@
     });
     
 </script>
-<script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    
-    moreText.style.display = "inline";
-  }
-}
-</script>
 @endsection

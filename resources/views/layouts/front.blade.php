@@ -52,6 +52,12 @@
             height:100%;
             overflow: hidden;
         }
+        #more {display: none;}
+        .short{
+            font-size: 12px;
+            color: #4e4e4e;
+            float:left;
+        }
     </style>
     <link rel="stylesheet" href="{{ asset('css/css-all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css-ionicons.min.css')}}">
@@ -655,4 +661,21 @@ footer-->
     $(".table-responsive").on("touchstart", function () {
         $(".table-swipe-indicator").css("display","none");
     });
+</script>
+<script>
+function myFunction(id) {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    
+    moreText.style.display = "inline";
+  }
+}
 </script>
