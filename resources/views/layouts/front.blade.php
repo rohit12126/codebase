@@ -127,7 +127,7 @@
                             <a href="{{ url('product/') }}" class="head-nav-link {{ request()->is('product*') ? 'active' : ''}} ">Products</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('projects/') }}" class="head-nav-link {{ request()->is('projects') ? 'active' : ''}} ">Projects</a>
+                            <a href="{{ url('projects/') }}" class="head-nav-link {{ request()->is('projects*') ? 'active' : ''}} ">Projects</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link {{ request()->is('about-us') ? 'active' : ''}}">About Us</a>

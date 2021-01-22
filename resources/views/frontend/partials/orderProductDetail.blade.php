@@ -183,13 +183,13 @@
                         
                             <td>{{$product->product->name}}
                             @if (!@empty(json_decode($product->configure_detail)))
-                            </br><span id="dots"><a href="javascript:void(0)"onclick="myFunction()" id="myBtn" >see configured detail</a></span><span id="more">
+                            </br><span id="dots"><a href="javascript:void(0)"onclick="myFunction()" id="myBtn" >check configured detail</a></span><span id="more">
                             @foreach(json_decode($product->configure_detail) as $key => $config)
                                 @if(isset($config->label))
                                 </br><span class="short"><strong>{{$config->label}}:</strong>:{{$config->value}}</span>
                                 @endif
                             @endforeach
-                            <a href="javascript:void(0)" onclick="myFunction()" id="myBtn" >hide details</a>
+                            <a href="javascript:void(0)"onclick="myFunction()" id="myBtn" >hide details</a>
                             @endif</span></td>
                             <td>
                                 <div class="order-track-img">

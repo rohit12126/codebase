@@ -367,7 +367,7 @@ Route::get('privacy-policy/', 'HomeController@privacyPolicy')->name('privacyPoli
 Route::get('returns/', 'HomeController@returns')->name('returns');
 
 Route::get('projects/', 'HomeController@projects')->name('projects');
-Route::get('project/detail', 'HomeController@projectDetail')->name('projectDetail');
+Route::get('projects/detail', 'HomeController@projectDetail')->name('projectDetail');
 
 /* Cart Routes */
 Route::get('cart/','CartController@index')->name('cart'); 
