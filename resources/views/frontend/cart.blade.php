@@ -81,7 +81,7 @@
             <tr id="row{{$product->rowId}}" class="row{{$product->rowId}}">
                 <td class="text-center">
                     <div class="pa-cart-img">
-                        <img src="{{ url('') }}/upload/product/{{@$product->options->image}}" alt="product1" class="img-fluid">
+                    <img src="@if( !  @empty($product->options['configureDetails']['configurationId']))https://uploads.roomle.com/configurations/{{$product->options['configureDetails']['configurationId']}}/perspectiveImage.png @else{{ url('') }}/upload/product/{{@$product->options->image}}@endif" alt="product1" class="img-fluid">
                     </div>
                 </td>
                 <td class="text-center">{{$product->name}} 
