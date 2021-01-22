@@ -133,7 +133,7 @@
                             <a href="{{ url('about-us/') }}" class="head-nav-link {{ request()->is('about-us') ? 'active' : ''}}">About Us</a>
                         </li>
                         <li class="head-nav-li">
-                            <a href="{{ url('blog/') }}" class="head-nav-link {{ request()->is('blog') ? 'active' : ''}}">Blog</a>
+                            <a href="{{ url('blog/') }}" class="head-nav-link {{ request()->is('blog*') ? 'active' : ''}}">Blog</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('resource/') }}" class="head-nav-link {{ request()->is('resource') ? 'active' : ''}}">Resources</a>
