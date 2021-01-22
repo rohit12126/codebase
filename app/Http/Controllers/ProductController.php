@@ -45,7 +45,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $req, $catSlug ='')
-    {   
+    {
         $categories = $this->categoryManager->getProductCategoryList();
         
         $products = $this->productManager->getProductsByCategorySlug($catSlug);
