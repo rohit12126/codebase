@@ -85,17 +85,19 @@
                     </div>
                 </td>
                 <td class="text-center">{{$product->name}} 
-                
                     @if( ! @empty($product->options['configureDetails']))
-                    </br><span id="dots"><a href="#"onclick="myFunction()" id="myBtn" >check configured detail</a></span><span id="more">
+                    </br><div id="card" data-configId="{{$product->id}}">
+                    <span id="dots"></span>
+                    <span id="more">
                     @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
                         @if(isset($config['label']))
-                        </br><span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span>
-                    @endif
+                        <span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span></br>
+                        @endif
                     @endforeach
-                    <a href="#"onclick="myFunction()" id="myBtn" >hide details</a>
-                    @endif
                     </span>
+                    <a href="javascript:void(0)"onclick="myFunction('{{$product->id}}')" id="myBtn" >configured detail</a>
+                    </div>
+                    @endif
                 </td>
                 <td class="text-center">${{number_format($product->price,2)}}</td>
                 <td class="text-center">

@@ -662,20 +662,21 @@ footer-->
         $(".table-swipe-indicator").css("display","none");
     });
 </script>
+
 <script>
 function myFunction(id) {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+    var dots = document.querySelector(`#card[data-configId="${id}"] #dots`);
+    var moreText = document.querySelector(`#card[data-configId="${id}"] #more`);
+    var btnText = document.querySelector(`#card[data-configId="${id}"] #myBtn`);
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    
-    moreText.style.display = "inline";
-  }
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.textContent = "configured details";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.textContent = "hide details";
+        moreText.style.display = "inline";
+    }
 }
 </script>

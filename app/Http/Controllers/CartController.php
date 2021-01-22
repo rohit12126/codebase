@@ -199,19 +199,6 @@ class CartController extends Controller
             return redirect()->route('addmoney.paywithpaypal');
         }
     }
-
-    public function saveConfiguration(Request $req)
-    {
-        
-        $configuredProductData['configurationId'] = $req->configurationId;
-        $configuredProductData['partList'] = $req->partList;
-        $configuredProductData['productId'] = $req->productId;
-        
-        session([
-            'configuredProductData' => $configuredProductData,
-        ]);
-        return true;
-    }
     
     /**
      * Add to cart a product (Increase qty)
@@ -300,7 +287,7 @@ class CartController extends Controller
     public function updateCart(Request $req) {
         $this->validate($req, [
             'qty' => 'numeric|regex:/^[1-9]\d*$/'
-         ]);
+        ]);
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
@@ -310,7 +297,7 @@ class CartController extends Controller
         $status = true;
 
         $message = "Product successfully added to the cart.";
-         
+        
         if ($res['status'] == false) {
             $message = $res['message'];
             $status = false;
