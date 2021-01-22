@@ -19,7 +19,7 @@
                                 <h5 class="mb-3">{{$product->name}}</h5>
                                 
                                 @if( ! @empty($product->options['configureDetails']))
-                                </br><div id="card" data-configId="{{'m'.$product->id}}">
+                                </br><div id="card" data-configId="{{'m'.$product->options['configureDetails']['configurationId']}}">
                                 <span id="dots"></span>
                                 <span id="more">
                                 @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
@@ -28,7 +28,7 @@
                                     @endif
                                 @endforeach
                                 </span>
-                                <a href="javascript:void(0)"onclick="myFunction('{{'m'.$product->id}}')" id="myBtn" >configured details</a>
+                                <a href="javascript:void(0)"onclick="myFunction('{{'m'.$product->options['configureDetails']['configurationId']}}')" id="myBtn" >configured details</a>
                                 </div>
                                 @endif
                                 <p>
@@ -92,7 +92,7 @@
                 </td>
                 <td class="text-center">{{$product->name}} 
                     @if( ! @empty($product->options['configureDetails']))
-                    </br><div id="card" data-configId="{{$product->id}}">
+                    </br><div id="card" data-configId="{{$product->options['configureDetails']['configurationId']}}">
                     <span id="dots"></span>
                     <span id="more">
                     @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
@@ -101,7 +101,7 @@
                         @endif
                     @endforeach
                     </span>
-                    <a href="javascript:void(0)"onclick="myFunction('{{$product->id}}')" id="myBtn" >configured details</a>
+                    <a href="javascript:void(0)"onclick="myFunction('{{$product->options['configureDetails']['configurationId']}}')" id="myBtn" >configured details</a>
                     </div>
                     @endif
                 </td>
