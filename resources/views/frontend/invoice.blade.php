@@ -65,7 +65,7 @@
                     <img src="{{url('/images/email-img/logo.png')}}" width="200px">
             </td>
             <td style="text-align: right;">
-                customclosets Innovations Private Limited <br>
+                Custom Closets Innovations Private Limited <br>
             </td>
             </tr>
         </table>
@@ -80,7 +80,7 @@
                 <table style="width: 100%;border-bottom: 1px solid #000;" cellspacing="0">
                     <tr>
                         <td style="padding: 10px;width: 60%;border-right: 1px solid #000;">
-                                Manufactured and Sold by: customclosets Innovations Pvt Ltd <br><br>
+                                Manufactured and Sold by: Custom Closets Innovations Pvt Ltd <br><br>
                         
                                 Phone: +91 988 3333 123 <br>
                                 Email: support@customclosets.co
