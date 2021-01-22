@@ -192,7 +192,7 @@
                                 @endif
                             @endforeach
                             </span>
-                            <a href="javascript:void(0)"onclick="myFunction('{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}')" id="myBtn" >configured detail</a>
+                            <a href="javascript:void(0)"onclick="myFunction('{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}')" id="myBtn" >configured details</a>
                             </div>
                             @endif
                             </td>

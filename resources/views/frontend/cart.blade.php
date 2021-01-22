@@ -95,7 +95,7 @@
                         @endif
                     @endforeach
                     </span>
-                    <a href="javascript:void(0)"onclick="myFunction('{{$product->id}}')" id="myBtn" >configured detail</a>
+                    <a href="javascript:void(0)"onclick="myFunction('{{$product->id}}')" id="myBtn" >configured details</a>
                     </div>
                     @endif
                 </td>
