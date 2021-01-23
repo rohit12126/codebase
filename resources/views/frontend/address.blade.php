@@ -41,6 +41,7 @@
             	<div class="medium_divider"></div>
             </div>
         </div> -->
+
         <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
             <input type="hidden" name="isNewAddress" id="isNewAddress" @if(isset($billingAddresses)) value="0" @else value="1" @endif>
@@ -58,6 +59,11 @@
                                             <input type="hidden" value="{{$billingAddresses->id}}" name="billing_address">
                                             <h5 class="card-title">{{$billingAddresses->name}}</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">{{$billingAddresses->mobile}}</h6>
+                                            @if($errors)
+                                                @foreach ($errors->all() as $error)
+                                                    <p class="card-text text-danger">{{ $error }}</p>
+                                                @endforeach
+                                            @endif
                                             <p class="card-text">{{$billingAddresses->address}}</p>
                                             <p class="card-text">{{$billingAddresses->city.", ".$billingAddresses->state.", ".$billingAddresses->country }} ({{$billingAddresses->zipcode}})</p> 
                                         </div>

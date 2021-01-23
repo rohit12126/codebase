@@ -53,16 +53,13 @@ class PaypalController extends Controller
         if($request->session()->has('buynow')){
             $orders = $request->session()->get('buynow');
             $subTotal = $orders['item']->price;
-            
         }else{
             $orders = $this->cartManager->getCartContain();
             $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
-        
-        
-        if($orders->isEmpty()) {
-            return redirect('cart/');
+            if($orders->isEmpty()) {
+                return redirect('cart/');
+            }
         }
-    }
         $payer = new Payer(); 
         $payer->setPaymentMethod('paypal');
         $i=0;
@@ -77,30 +74,28 @@ class PaypalController extends Controller
                 $i++;
         } 
 
-        // $shippingAddress =  $this->addressManager
-        // ->getAddressesById(Session()->get('ship'));
+        $shippingAddress =  $this->addressManager
+        ->getAddressesById(Session()->get('ship'));
 
-        // if(!is_null($shippingAddress->state && $shippingAddress->name)){
-        // $shippingAddress =  $this->addressManager
-        //         ->getAddressesById(Session()->get('bill'));
-        // }
-        // $shippingAddres = [
-        //     "recipient_name" => $shippingAddress->name ?? '',
-        //     "line1" => $shippingAddress->address ?? '',
-        //     "city" => $shippingAddress->city ?? '',
-        //     "country_code" => "US",
-        //     "postal_code" => $shippingAddress->zipcode ?? '',
-        //     "state" => $shippingAddress->state ?? '',
-        //     "phone" => $shippingAddress->mobile ?? ''
-        // ];
-
+        if(!is_null($shippingAddress->state && $shippingAddress->name)){
+        $shippingAddress =  $this->addressManager
+                ->getAddressesById(Session()->get('bill'));
+        }
+        $shippingAddres = [
+            "recipient_name" => $shippingAddress->name ?? '',
+            "line1" => $shippingAddress->address ?? '',
+            "city" => $shippingAddress->city ?? '',
+            "country_code" => "US",
+            "postal_code" => $shippingAddress->zipcode ?? '',
+            "state" => $shippingAddress->state ?? '',
+            "phone" => $shippingAddress->mobile ?? ''
+        ];
+        
         $shipCost = Session()->get('shippingCharge');
-        
-        
-        
+
         $itemList = new ItemList();
         $itemList->setItems($items);
-        // $itemList->setShippingAddress($shippingAddres);
+        $itemList->setShippingAddress($shippingAddres); 
 
 
         $details = new Details();
@@ -156,10 +151,20 @@ class PaypalController extends Controller
             ->setTransactions(array($transaction));
         
         try {
-
             $payment->create($this->_api_context);
-
-        } catch (\PayPal\Exception\PPConnectionException $ex) {
+        } catch (\PayPal\Exception\PayPalConnectionException $ex) {
+            $errors = $ex->getData();
+            foreach(json_decode($errors)->details as $error)
+            {
+                $adderror[] = $error->field.':'.$msg = $error->issue;
+            }
+            if(session()->has('buynow'))
+            {
+                return redirect()->route('address.get',['buy-now'])->withErrors($adderror);
+            }
+            return redirect()->route('address.get')->withErrors($adderror);
+        }
+        catch (\PayPal\Exception\PPConnectionException $ex) {
             if (config('app.debug')) {
                 session()->put('error', 'Connection timeout');
                 return redirect()->route('paywithpaypal');
@@ -168,7 +173,6 @@ class PaypalController extends Controller
                 return redirect()->route('paywithpaypal');
             }
         }
-
         foreach ($payment->getLinks() as $link) {
             if ($link->getRel() == 'approval_url') {
                 $redirect_url = $link->getHref();
