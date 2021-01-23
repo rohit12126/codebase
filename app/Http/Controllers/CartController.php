@@ -59,27 +59,44 @@ class CartController extends Controller
             return view('frontend.empty-cart');
         }
     }
-
+    public function buyNow(Request $req)
+    {
+        $productList['item'] = $this->productManager->getProductById($req->productId); //update to select limited.
+        $productList['item']->qty = 1;
+        
+        session(['buynow' => $productList]);
+        
+        return redirect()->route('address.get',['buy-now']);
+        
+    }
     /**
      * Get Addresse List
      *
      * @return \Illuminate\Http\Response
      */
     public function getAddresses(Request $req) {
-
-        $productList = $this->cartManager->getCartContain();
         
-        if($productList->isEmpty()) {
-            return redirect('cart/');
+        if($req->session()->has('buynow') && isset($_GET['buy-now']))
+        {
+            $productList = $req->session()->get('buynow');
+            
+            $cartSubTotal = $productList['item']->price = $productList['item']->sale_price;
         }
-        
+        else
+        {
+            $productList = $this->cartManager->getCartContain();
+            if($productList->isEmpty()) {
+                return redirect('cart/');
+            }
+            $cartSubTotal = $this->cartManager->subTotal();
+        }
         $isTemp = 0;
         $userId = 0;
         
         $shippingAddresses = [];
         $billingAddresses = [];
-        $cartSubTotal = $this->cartManager->subTotal();
         $userData = [];
+
         if (Auth::check()) {
             $userId = Auth::user()->id;
             $userData = Auth::user();
@@ -121,6 +138,7 @@ class CartController extends Controller
      * @return view checkout
      */
     public function addAddress(Request $req) {
+        
         $isTemp = 0;
         $userId = 0;
         $bill = 0;
@@ -185,8 +203,8 @@ class CartController extends Controller
             $ship = $req->billing_address;
         }
 
-        $productList = $this->cartManager->getCartContain();
-        $cartSubTotal = $this->cartManager->subTotal();
+        // $productList = $this->cartManager->getCartContain();
+        // $cartSubTotal = $this->cartManager->subTotal();
         session([
             'ship' => $ship,
             'bill' => $bill,
@@ -194,6 +212,11 @@ class CartController extends Controller
             'userId' => $userId,
             'shippingCharge' => $req->shipping
         ]);
+
+        if(strpos(url()->previous(), '?cart') !== false) {
+            if($req->session()->has('buynow'))
+            $req->session()->forget('buynow');
+        }
 
         if ($req->payment_option == 'paypal') {
             return redirect()->route('addmoney.paywithpaypal');
@@ -351,5 +374,4 @@ class CartController extends Controller
         echo json_encode($response);
     }
 
-    
 }

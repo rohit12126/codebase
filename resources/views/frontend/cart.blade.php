@@ -160,7 +160,7 @@
             </div>
             <div class="pt-3">
                 <a href="{{url('/product')}}" class="btn btn-outline-secondary rounded cart-btn-secondary mb-1">Continue Shopping</a>
-                <a href="{{url('/checkout/address')}}" class="btn btn-fill-out proceed-btn position-relative cart-btn-checkout align-top">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
+                <a href="{{url('/checkout/address?cart')}}" class="btn btn-fill-out proceed-btn position-relative cart-btn-checkout align-top">Proceed to checkout <i class="linearicons-chevron-right"></i></a>            
             </div>
         </div>
     </div>

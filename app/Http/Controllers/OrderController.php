@@ -61,6 +61,7 @@ class OrderController extends Controller
             $shippingCharge = $req->session()->get('shippingCharge');
 
             if(strpos(url()->previous(), 'order/add-order') == false) {
+
                 $orderNumber = $this->orderManager->generateOrderNumber();
                 
                 $orderData['order_no'] = $orderNumber;
@@ -72,18 +73,26 @@ class OrderController extends Controller
                 $orderData['shipping_address'] = $req->session()->get('ship');
                 $orderData['status'] = 1;
 
-                $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
-                $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
                 
+                if($req->session()->has('buynow'))
+                {
+                    $cartProducts = $req->session()->get('buynow');
+                    $cartSubTotal = $cartProducts['item']->price;
+                }
+                else
+                {
+                    $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
+                    $cartProducts = $this->cartManager->getCartContain();
+                }
+                $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
                 $order = $this->orderManager->addOrder($orderData);
-            
-                $cartProducts = $this->cartManager->getCartContain();
 
                 foreach ($cartProducts as $key => $product) {
 
                     $configureDetail = NULL;
 
                     if(isset($product->options['configureDetails']['partList'])){
+
                         $Detail = $product->options['configureDetails']['partList'];
                         
                         foreach($Detail as $k => $a){
@@ -97,7 +106,6 @@ class OrderController extends Controller
                             $product->options['configureDetails']['configurationId']
                         );
                     }
-                    
                     $orderProduct = [
                         'order_no' => $orderNumber,
                         'product_id' => $product->id,
@@ -105,17 +113,32 @@ class OrderController extends Controller
                         'price' => $product->price,
                         'configure_detail' => json_encode($configureDetail)
                     ];
-                    
                     $this->orderManager->addOrderProduct($orderProduct);
                 }
                 $paymentId = session()->get('payment_id');
                 
                 PaymentModel::where('id', $paymentId)
                     ->update(['order_no' => $orderNumber]);
-                $this->cartManager->destroy();
-                $this->cartManager->destroyCartDB($userId);
+
+                if($req->session()->has('buynow'))
+                {
+                    $req->session()->forget('buynow');
+                }
+                else
+                {
+                    $this->cartManager->destroy();
+                    $this->cartManager->destroyCartDB($userId);
+                }
                 $product = $this->orderManager->getProductsByOrder($order->order_no);
-                $req->session()->forget(['bill', 'ship', 'payment_id','shippingCharge','configuredProductData']);
+
+                $req->session()->forget(
+                    ['bill',
+                    'ship',
+                    'payment_id',
+                    'shippingCharge',
+                    'configuredProductData'
+                    ]
+                );
             } else {
                     $order = $this->orderManager->getLastOrder($userId, $isTempUser);
                     $product = [];
@@ -138,11 +161,13 @@ class OrderController extends Controller
 
     public function buyNow(Request $req)
     {
+        $buyarray = [
+                'mode' => 'buynow',
+                'pid' => $req->productId
+            ];
+            
+        return redirect()->route('address.get');
         
-        $product = $this->productManager->getProductById($req->productId);
-        // $req->request->add(['sale_price' => $product->sale_price]);
-        return redirect()->route('address.get',['sale_price' => $product->sale_price]);
-        // dd($req);
     }
 
     /**
@@ -203,6 +228,7 @@ class OrderController extends Controller
      */
     public function shippingPrice(Request $req)
     {
+        
         $shippingPrice = 0;
         $hshippingPrice = 0;
         $shipPrice= 0;
@@ -210,18 +236,17 @@ class OrderController extends Controller
         
         if ( ! empty($price) )
             {
-                $contain = $this->cartManager->getCartContain();
-                
-                foreach($contain as $product)
+                foreach($req->pid as $productId=>$qty)
                 {
-                    $hardware = $this->productManager->checkHardware($product->id);
+                    $hardware = $this->productManager->checkHardware($productId);
+                    
                     if($hardware)
                     {
-                        $shippingPrice+= $price->product_price * $product->qty;
+                        $shippingPrice+= $price->product_price * $qty;
                     }
                     else
                     {
-                        $hshippingPrice+= $price->hardware_price * $product->qty;
+                        $hshippingPrice+= $price->hardware_price * $qty;
                     }
                 }
                 if($shippingPrice == 0)

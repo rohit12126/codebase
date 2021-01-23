@@ -141,7 +141,7 @@
                                                 @foreach($states as $state)
                                                 <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
-                                               
+                                            
                                             </select>
                                             </div>
                                         <form>
@@ -213,6 +213,7 @@
                                         <div class="form-group">
                                             <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
                                         </div>
+                                        
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
                                         <div class="custom_select">
@@ -255,6 +256,9 @@
                                     <tr>
                                         <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
                                         <td>${{number_format($product->price * $product->qty, 2)}}</td>
+                                        @php
+                                        $pid[$product->id] = $product->qty;
+                                        @endphp
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -366,7 +370,7 @@ $(document).ready(function() {
             $.ajax({
             type: "POST",
             url: url,
-            data: {zone_id :  zone},
+            data: {zone_id :  zone,pid : {{str_replace('"', '',json_encode($pid))}} },
             success: function(data) {
                 if(data == 0){
                     $('.shipping_price').html("Currently Shipping Not Available !")
@@ -388,7 +392,9 @@ $(document).ready(function() {
             });
         }
     
-
+        // $("#place_order").click(function() {
+        //     $('#sitePreloader').fadeOut();
+        // });
     /* To Handle Browser Back From Payment page*/
     if(performance.navigation.type == 2){
         location.reload(true);
@@ -494,6 +500,7 @@ $(document).ready(function() {
 
     
     jQuery("#checkoutForm").validate({
+        
         rules: {
             ship_email: {
                 /* required: function() { 

@@ -85,9 +85,14 @@
                     
                     <div class="pt-3 pb-3 d-flex details-action-btn-wrapper">
                         <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">
-                            <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
+                            <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart"></i> Buy Now
                         </a> -->
+                        <form method="post" action="{{url('/buy-now')}}">
+                        @csrf
+                        <input type="hidden" name="productId" value="{{$productData['product']->id}}">
+                        <button  class="btn btn-fill-out buy-now" >Buy Now</button>
+                        </form>
 
                         <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
@@ -256,22 +261,22 @@
             });
         });
         /* Buy Now Functionality */
-        jQuery('.buy-now').click(function(e) {
-            var productId = $(".product-id").val();
-            e.preventDefault();
-            jQuery.ajax({
-                url: "{{ url('/cart/add-cart') }}",
-                method: 'post',
-                dataType: "json",
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data: {
-                    productId : productId
-                },
-                success: function(result){
-                    window.location.href = "{{ route('address.get') }}";
-                }
-            });
-        });
+        // jQuery('.buy-now').click(function(e) {
+        //     var productId = $(".product-id").val();
+        //     e.preventDefault();
+        //     jQuery.ajax({
+        //         url: "{{ url('/buy-now') }}",
+        //         method: 'post',
+        //         dataType: "json",
+        //         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        //         data: {
+        //             productId : productId
+        //         },
+        //         success: function(result){
+        //             window.location.href = "{{ route('address.get') }}";
+        //         }
+        //     });
+        // });
     });
 </script>
 <script>

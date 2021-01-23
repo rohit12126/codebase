@@ -382,7 +382,7 @@ Route::post('product-configuration','CartController@saveConfiguration')->name('p
 
 
 /* Buy Now*/
-Route::post('/buy-now', 'OrderController@buyNow')->name('buy-now');
+Route::post('/buy-now', 'CartController@buyNow')->name('buy-now');
 
 /* Checkout Routes */
 Route::POST('shipping/price', 'OrderController@shippingPrice')->name('shipping.price');

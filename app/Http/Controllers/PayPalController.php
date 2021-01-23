@@ -50,11 +50,19 @@ class PaypalController extends Controller
     }
     public function payWithpaypal(Request $request)
     {
-        $orders = $this->cartManager->getCartContain();
+        if($request->session()->has('buynow')){
+            $orders = $request->session()->get('buynow');
+            $subTotal = $orders['item']->price;
+            
+        }else{
+            $orders = $this->cartManager->getCartContain();
+            $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
+        
+        
         if($orders->isEmpty()) {
             return redirect('cart/');
         }
-
+    }
         $payer = new Payer(); 
         $payer->setPaymentMethod('paypal');
         $i=0;
@@ -88,7 +96,7 @@ class PaypalController extends Controller
 
         $shipCost = Session()->get('shippingCharge');
         
-        $subTotal = str_replace( ',', '',$this->cartManager->subTotal());
+        
         
         $itemList = new ItemList();
         $itemList->setItems($items);
