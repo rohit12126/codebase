@@ -95,7 +95,8 @@ class ProfileController extends Controller
     {
         
         $data = $this->orderManager->getProductsByOrderNUmber($order);
-        
+        if(!$data)
+        return redirect('/');
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
