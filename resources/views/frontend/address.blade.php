@@ -136,9 +136,6 @@
                                             <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
-                                        </div>
-                                        <div class="form-group">
                                         <form action="" method="post" id="shippingd">
                                         <div class="custom_select">
                                             <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
@@ -149,9 +146,14 @@
                                                 @endforeach
                                             
                                             </select>
-                                            </div>
+                                        </div>
                                         <form>
                                         </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
+                                        </div>
+
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value=""  placeholder="Postcode / ZIP *">
                                         </div>
@@ -217,10 +219,6 @@
                                             <input type="text" class="form-control ship" name="ship_address" id="ship_address" required="" value="" placeholder="Address *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
-                                        </div>
-                                        
-                                        <div class="form-group">
                                         <form action="" method="post" id="shippingd">
                                         <div class="custom_select">
                                             <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
@@ -232,6 +230,11 @@
                                             </div>
                                         <form>
                                         </div>
+                                        <div class="form-group">
+                                            <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
+                                        </div>
+                                        
+                                        
                                         <div class="form-group">
                                             <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
                                         </div>
