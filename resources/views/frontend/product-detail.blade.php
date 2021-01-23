@@ -93,11 +93,11 @@
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
-                        
+
                         <form method="post" action="{{url('/buy-now')}}">
                         @csrf
                         <input type="hidden" name="productId" value="{{$productData['product']->id}}">
-                        <button class="btn btn-fill-out buy-now" style="margin-right:10px;"><i class="linearicons-cart"></i>Buy Now</button>
+                        <button class="btn btn-fill-out buy-now" style="margin-left:10px;"><i class="linearicons-cart"></i>Buy Now</button>
                         </form>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
