@@ -205,6 +205,8 @@ class OrderController extends Controller
         ]); 
 
         $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($req->order_no);
+        if(!$order)
+        return redirect('/');
         $order->total_text = ucwords(Terbilang::make($order->grand_total, ' dollars'));
         
         view()->share('order', $order);
