@@ -88,17 +88,17 @@
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart"></i> Buy Now
                         </a> -->
-                        <form method="post" action="{{url('/buy-now')}}">
-                        @csrf
-                        <input type="hidden" name="productId" value="{{$productData['product']->id}}">
-                        <button class="btn btn-fill-out buy-now" style="margin-right:10px;"><i class="linearicons-cart"></i>Buy Now</button>
-                        </form>
-
+                        
                         <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
                             <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                             <i class="linearicons-cart-plus"></i> Add to cart
                         </a>
                         
+                        <form method="post" action="{{url('/buy-now')}}">
+                        @csrf
+                        <input type="hidden" name="productId" value="{{$productData['product']->id}}">
+                        <button class="btn btn-fill-out buy-now" style="margin-right:10px;"><i class="linearicons-cart"></i>Buy Now</button>
+                        </form>
                     </div> 
                     <!-- <div class="pincode-checkServiceAbilityhalfCard">
                         <div class="pincode-deliveryContainer">
