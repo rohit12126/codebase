@@ -217,9 +217,9 @@
                     } else {
                         $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                     }
-                    $('#subQty').html('$ '+result.data.cartSubTotal);
-                    $('.grand_total').html('$ '+result.data.cartSubTotal);
-                    $('#grand_total').val('$ '+result.data.cartSubTotal);
+                    $('#subQty').html('$'+result.data.cartSubTotal);
+                    $('.grand_total').html('$'+result.data.cartSubTotal);
+                    $('#grand_total').val('$'+result.data.cartSubTotal);
                 }
             });
         });
@@ -251,7 +251,7 @@
                     } else {
                         $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                     }
-                    $('#subQty').html('$ '+result.data.cartSubTotal);
+                    $('#subQty').html('$'+result.data.cartSubTotal);
                     $('.grand_total').html('$'+result.data.cartSubTotal);
                     $('#grand_total').val('$'+result.data.cartSubTotal);
                 }
@@ -280,8 +280,8 @@
                     }
                     $('#subQty').html('$ '+result.data.cartSubTotal);
                     $(".row"+rowId).remove();
-                    $('.grand_total').html('$ '+result.data.cartSubTotal);
-                    $('#grand_total').val('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$'+result.data.cartSubTotal);
+                    $('#grand_total').val('$'+result.data.cartSubTotal);
                 }
             });
         });
