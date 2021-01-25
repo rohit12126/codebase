@@ -261,12 +261,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @php
+                                $i = 0;
+                                @endphp
                                     @foreach ($productList as $product)
                                     <tr>
+                                    
                                         <td>{{$product->name}} <span class="product-qty">x {{$product->qty}}</span></td>
                                         <td>${{number_format($product->price * $product->qty, 2)}}</td>
                                         @php
-                                        $pid[$product->id] = $product->qty;
+                                        $pid[$product->id.'.'.$i++] = $product->qty;
                                         @endphp
                                     </tr>
                                     @endforeach

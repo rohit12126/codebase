@@ -230,7 +230,6 @@ class OrderController extends Controller
      */
     public function shippingPrice(Request $req)
     {
-        
         $shippingPrice = 0;
         $hshippingPrice = 0;
         $shipPrice= 0;
@@ -240,7 +239,7 @@ class OrderController extends Controller
             {
                 foreach($req->pid as $productId=>$qty)
                 {
-                    $hardware = $this->productManager->checkHardware($productId);
+                    $hardware = $this->productManager->checkHardware(strstr($productId, '.',true));
                     
                     if($hardware)
                     {
