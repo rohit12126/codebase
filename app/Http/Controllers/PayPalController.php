@@ -156,7 +156,8 @@ class PaypalController extends Controller
             $errors = $ex->getData();
             foreach(json_decode($errors)->details as $error)
             {
-                $adderror[] = $error->field.':'.$msg = $error->issue;
+                $msg = 'please enter a valid '.$error->field.'.';
+                $adderror[$error->field] = $msg;
             }
             if(session()->has('buynow'))
             {

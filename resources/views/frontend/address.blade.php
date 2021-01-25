@@ -44,10 +44,10 @@
 
         <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
-            <input type="hidden" name="isNewAddress" id="isNewAddress" @if(isset($billingAddresses)) value="0" @else value="1" @endif>
+            <input type="hidden" name="isNewAddress" id="isNewAddress" value="1">
             <div class="row">
                 <div class="col-md-6">
-                    @if(isset($billingAddresses))
+                    {{--@if(isset($billingAddresses))
                         <div class="">
                             <div class="address-billing-wrapper">
                                 <div class="heading_s1">
@@ -59,11 +59,7 @@
                                             <input type="hidden" value="{{$billingAddresses->id}}" name="billing_address">
                                             <h5 class="card-title">{{$billingAddresses->name}}</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">{{$billingAddresses->mobile}}</h6>
-                                            @if($errors)
-                                                @foreach ($errors->all() as $error)
-                                                    <p class="card-text text-danger">{{ $error }}</p>
-                                                @endforeach
-                                            @endif
+                                            
                                             <p class="card-text">{{$billingAddresses->address}}</p>
                                             <p class="card-text">{{$billingAddresses->city.", ".$billingAddresses->state.", ".$billingAddresses->country }} ({{$billingAddresses->zipcode}})</p> 
                                         </div>
@@ -76,10 +72,10 @@
                                 + Update New
                             </a>
                         </div> 
-                    @endif
+                    @endif--}}
                     {{-- Address Form--}}
                     <input type="hidden" id="holder" value="bill_state">
-                    <div class="mt-4 address-form collapse @if(isset($billingAddresses)) in  @else show @endif" id="addressForm">
+                    <div class="mt-4 address-form collapse show" id="addressForm">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="heading_s1">
@@ -124,39 +120,49 @@
                                     <div class="pb-3">
                                         <div class="form-group">
                                             {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
-                                            <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(!isset($billingAddresses)) value="{{ $userData->name ?? '' }}" @endif placeholder="Name *">
+                                            <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(isset($billingAddresses)) value="{{ $billingAddresses->name ?? '' }}" @endif placeholder="Name *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" @if(!isset($billingAddresses)) value="{{ $userData->mobile ?? '' }}" @endif placeholder="Mobile *">
+                                            <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" @if(isset($billingAddresses)) value="{{ $billingAddresses->mobile ?? '' }}" @endif placeholder="Mobile *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" maxlength="150" required="" type="email" name="bill_email" id="bill_email" @if(!isset($billingAddresses)) value="{{ $userData->email ?? '' }}" @endif placeholder="Email *">
+                                            <input class="form-control bill" maxlength="150" required="" type="email" name="bill_email" id="bill_email" @if(isset($billingAddresses)) value="{{ $billingAddresses->email ?? '' }}" @endif placeholder="Email *">
                                         </div>
+                                        
                                         <div class="form-group">
-                                            <input type="text" class="form-control bill" name="bill_address" id="bill_address" required="" value="" placeholder="Address *">
+                                            <input type="text" class="form-control bill" name="bill_address" id="bill_address" required=""  @if(isset($billingAddresses)) value="{{ $billingAddresses->address}}" @endif  placeholder="Address *">
                                         </div>
+                                      
                                         <div class="form-group">
                                         <form action="" method="post" id="shippingd">
                                         <div class="custom_select">
-                                            <select class="form-control bill bill_state placeholder-select" value="" id="bill_state" name="bill_state">
+                                            <select class="form-control bill bill_state placeholder-select" id="bill_state" name="bill_state">
                                             
                                             <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
-                                                <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
+                                                <option  @if((isset($billingAddresses)) && ($billingAddresses->state == $state->name)) selected @endif value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
-                                            
                                             </select>
                                         </div>
                                         <form>
                                         </div>
 
                                         <div class="form-group">
-                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city" value="" placeholder="City / Town *">
+                                            <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city"  @if(isset($billingAddresses)) value="{{ $billingAddresses->city ?? '' }}" @endif placeholder="City / Town *">
                                         </div>
-
+                                        @if ($errors->has('city'))
+                                        <div class="error">
+                                            {{ $errors->first('city') }}
+                                        </div>
+                                        @endif
                                         <div class="form-group">
-                                            <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode" value=""  placeholder="Postcode / ZIP *">
+                                            <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
                                         </div>
+                                        @if ($errors->has('zip'))
+                                        <div class="error">
+                                            {{ $errors->first('zip') }}
+                                        </div>
+                                        @endif
                                     </div>
                                 {{-- </div> --}}
                             </div>
@@ -399,7 +405,7 @@ $(document).ready(function() {
                     value: data
                 }).appendTo('#checkoutForm');
                 var subtotal = +data + +{{$cartSubTotal}}
-                $('#total').html('$ '+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
+                $('#total').html('$'+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
                 }
             }
             });
@@ -457,7 +463,7 @@ $(document).ready(function() {
             $("#ship_state").val($("#bill_state").val());  
             $("#ship_zipcode").val($("#bill_zipcode").val());
             $("#holder").val("bill_state");
-            $('.shipping_price').html('$ 0.00')
+            $('.shipping_price').html('$0.00')
             getShippingPrice();
         } else {
             $("#ship_name").val('');
@@ -468,7 +474,7 @@ $(document).ready(function() {
             $("#ship_zipcode").val('');
             $("#ship_email").val('');           
             $("#holder").val("ship_state");
-            $('.shipping_price').html('$ 0.00')
+            $('.shipping_price').html('$0.00')
             getShippingPrice(); 
         }
     });
