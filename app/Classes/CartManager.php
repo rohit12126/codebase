@@ -33,6 +33,9 @@ class CartManager
                         $configuredProductData['configurationId']
                         )
                     {
+                        $qty = $item->qty + $qty;
+                        $rowId = $item->rowId;
+                        $set = true;
                         break;
                     }
                 }

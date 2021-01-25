@@ -62,7 +62,7 @@
         <table cellspacing="0" cellpadding="0" style="width: 95%;margin: 2% auto 0;font-family: arial;font-size: 14px;line-height: 18px;padding: 20px 0;">
             <tr>
             <td>
-                    <img src="{{url('/images/email-img/logo.png')}}" width="200px">
+            <img src="{{URL::asset('/images/cutom-inc-logo.png')}}" alt="" class="head-logo">
             </td>
             <td style="text-align: right;">
                 Custom Closets Innovations Private Limited <br>
@@ -127,18 +127,19 @@
                             </th>
                         </tr>
                         <tr>
-                           <td style="padding: 10px;text-transform: capitalize;border-right: 1px solid #000;">
+                           <td style="padding: 10px;border-right: 1px solid #000;">
                                 Name : {{$order->getBillingAddress->name}} <br>
                                 Contact Number(s) : {{$order->getBillingAddress->mobile}} <br>
                                 Email : {{$order->getBillingAddress->email}} <br>
                                 Address:  {{$order->getBillingAddress->address.', '.$order->getBillingAddress->city.', '.$order->getBillingAddress->state.', '.$order->getBillingAddress->country}} <br>
                                 Pincode : {{$order->getBillingAddress->zipcode}} <br><br>
                             </td>
-                            <td style="padding: 10px;text-transform: capitalize;">
+                            <td style="padding: 10px;">
+                            
                                 Name : {{$order->getShippingAddress->name ?? $order->getBillingAddress->name}} <br>
                                 Contact Number(s) : {{$order->getShippingAddress->mobile ?? $order->getBillingAddress->mobile}} <br>
                                 Email : {{$order->getShippingAddress->email ?? $order->getBillingAddress->email}} <br>
-                                Address: {{$order->getShippingAddress->address ?? $order->getBillingAddress->address.', '.$order->getShippingAddress->city ?? $order->getBillingAddress->city.', '.$order->getShippingAddress->state ?? $order->getBillingAddress->state.', '.$order->getShippingAddress->country ?? $order->getBillingAddress->country}} <br>
+                                Address:{{$order->getShippingAddress->address ?? $order->getBillingAddress->address}}, {{$order->getShippingAddress->city ?? $order->getBillingAddress->city}}, {{$order->getShippingAddress->state ?? $order->getBillingAddress->state}}, {{$order->getShippingAddress->country ?? $order->getBillingAddress->country}}<br>
                                 Pincode : {{$order->getShippingAddress->zipcode ?? $order->getBillingAddress->zipcode}} <br><br>
                             </td>
                         </tr>

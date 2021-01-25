@@ -158,7 +158,7 @@
     $("#myform").validate({
         
         submitHandler: function (form) {
-            // do other things for a valid form
+            
             form.submit();
         }
     });

@@ -18,7 +18,8 @@
                             <div class="text-left cart-product-description">
                                 <h5 class="mb-3">{{$product->name}}</h5>
                                 
-                                @if( ! @empty($product->options['configureDetails']))
+                                @if( ! @empty($product->options['configureDetails']['partList']))
+                                
                                 </br><div id="card" data-configId="{{'m'.$product->options['configureDetails']['configurationId']}}">
                                 <span id="dots"></span>
                                 <span id="more">
@@ -91,8 +92,9 @@
                     </div>
                 </td>
                 <td class="text-center">{{$product->name}} 
-                    @if( ! @empty($product->options['configureDetails']))
+                    @if( ! @empty($product->options['configureDetails']['partList']))
                     </br><div id="card" data-configId="{{$product->options['configureDetails']['configurationId']}}">
+                    <input type="hidden" id="conf{{$product->rowId}}" value="{{$product->options['configureDetails']['configurationId']}}">
                     <span id="dots"></span>
                     <span id="more">
                     @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
@@ -170,17 +172,21 @@
 
 @section('scripts')
 <script>
+        var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        });
     jQuery(document).ready(function(){
         
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
             var productId = $( this ).attr('productId');
             var rowId = $(this).attr('rowId');
-
+            
             @if( ! @empty($product->options['configureDetails']))
-            var configuredprice = 151;
+            var is_configured = $("#conf" + rowId).val();
             @else
-            var configuredprice = 0;
+            var is_configured = 0;
             @endif
             
             e.preventDefault();
@@ -191,7 +197,7 @@
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId,
-                    configuredprice : configuredprice
+                    is_configured : is_configured
                 },
                 success: function(result){
                     
@@ -201,22 +207,9 @@
                     if (result.status == false) {
                         icon = 'info';
                     } 
-
-                    /* Swal.fire({
-                        position: 'bottom-end',
-                        icon: icon,
-                        title: result.message,
-                        showConfirmButton: false,
-                        timer: 2500,
-                        customClass: {
-                            container: 'custom-success-popup-container',
-                            popup: 'custom-success-popup',
-                        }
-                    }); */
                 
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    console.log(productTotal);
-                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html(formatter.format(productTotal));
                     $('.qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
@@ -250,7 +243,7 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
+                    $('.total'+productId).html(formatter.format(productTotal));
                     $('.qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
@@ -259,8 +252,8 @@
                         $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$ '+result.data.cartSubTotal);
-                    $('.grand_total').html('$ '+result.data.cartSubTotal);
-                    $('#grand_total').val('$ '+result.data.cartSubTotal);
+                    $('.grand_total').html('$'+result.data.cartSubTotal);
+                    $('#grand_total').val('$'+result.data.cartSubTotal);
                 }
             });
         });
@@ -315,7 +308,7 @@
                         console
                         icon = 'success';
                         var  productTotal = result.data.productQty * result.data.productPrice;
-                        $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
+                        $('.total'+productId).html(formatter.format(productTotal));
                         $(this).val(result.data.productQty);
                         $('.cart-count').html(result.data.cartCount);
                         if(result.data.productQty > 1) {
@@ -323,9 +316,9 @@
                         } else {
                             $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
                         }
-                        $('#subQty').html('$ '+result.data.cartSubTotal);
-                        $('.grand_total').html('$ '+result.data.cartSubTotal);
-                        $('#grand_total').val('$ '+result.data.cartSubTotal);
+                        $('#subQty').html('$'+result.data.cartSubTotal);
+                        $('.grand_total').html('$'+result.data.cartSubTotal);
+                        $('#grand_total').val('$'+result.data.cartSubTotal);
                     } else {
                         $('.qty'+productId).val(result.data.productQty);
                     }
