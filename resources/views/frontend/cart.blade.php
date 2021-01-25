@@ -111,7 +111,7 @@
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
                             <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
-                            <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
+                            <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}">
                         </div>
                     </div>
                 </td>
@@ -175,6 +175,14 @@
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
             var productId = $( this ).attr('productId');
+            var rowId = $(this).attr('rowId');
+
+            @if( ! @empty($product->options['configureDetails']))
+            var configuredprice = 151;
+            @else
+            var configuredprice = 0;
+            @endif
+            
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/add-cart') }}",
@@ -182,7 +190,8 @@
                 dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
-                    productId : productId
+                    productId : productId,
+                    configuredprice : configuredprice
                 },
                 success: function(result){
                     
@@ -206,6 +215,7 @@
                     }); */
                 
                     var  productTotal = result.data.productQty * result.data.productPrice;
+                    console.log(productTotal);
                     $('.total'+productId).html('$ '+ Number(productTotal).toFixed(2));
                     $('.qty'+productId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);

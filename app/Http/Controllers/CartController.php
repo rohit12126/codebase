@@ -238,6 +238,10 @@ class CartController extends Controller
             $configuredProductData['partList'] = $req->partList;
             $configuredProductData['productId'] = $req->productId;
         }
+        else if($req->configuredprice !== 0)
+        {
+            $configuredProductData['configuredprice'] == 151;
+        }
         $product = $this->productManager->getProduct($productId);
         $message = "Product successfully added to the cart.";
         
