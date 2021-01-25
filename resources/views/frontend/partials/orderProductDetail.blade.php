@@ -223,7 +223,12 @@
                         @endforeach
                     </tbody>
                 </table>
+                
                 <div class="grand-total">
+                <div class="cart-row">
+                        <span>Shipping :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span><label id="subQty" class="mb-0" >${{number_format($data->getPaymentDetail->shipping, 2)}}</label></span>
+                    </div>
                     <div class="cart-row">
                         <span>Order total :</span> 
                         <span><label id="subQty" class="mb-0" >${{$data->grand_total}}</label></span>
