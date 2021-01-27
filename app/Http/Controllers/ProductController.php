@@ -187,5 +187,16 @@ class ProductController extends Controller
         } else {
             return redirect()->route('product.list');
         }
-    } 
+    }
+    
+    public function getPrice(Request $req)
+    {
+        
+        $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+        if(empty($price))
+        {
+            $price = '4040404';
+        }
+        echo $price;
+    }
 }

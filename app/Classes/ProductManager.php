@@ -303,4 +303,11 @@ class ProductManager
             ->first();
         return $assesory;
     }
+    public function getPriceByArticlenumber($articleNu)
+    {
+        $price = DB::table('pricing_matrix')->where('model', '=', $articleNu)->pluck('retail');
+        if(!$price->isEmpty())
+        return number_format($price[0],2);
+        return FALSE;
+    }
 }

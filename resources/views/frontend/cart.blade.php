@@ -34,7 +34,7 @@
                                 @endif
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
-                                    <span class="total{{$product->id}}">
+                                   <span class="total{{$product->id}}">
                                         ${{number_format($product->price,2)}}
                                     </span>
                                 </p>
@@ -95,6 +95,7 @@
                     @if( ! @empty($product->options['configureDetails']['partList']))
                     </br><div id="card" data-configId="{{$product->options['configureDetails']['configurationId']}}">
                     <input type="hidden" id="conf{{$product->rowId}}" value="{{$product->options['configureDetails']['configurationId']}}">
+                    <input type="hidden" id="art{{$product->rowId}}" value="{{$product->options['configureDetails']['partList']['articleNr']}}">
                     <span id="dots"></span>
                     <span id="more">
                     @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
@@ -111,14 +112,14 @@
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
-                            <input type="button" value="-" id ="sub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
+                            <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}">
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}">
                         </div>
                     </div>
                 </td>
                 <td class="text-center cart-total-w">
-                    <label class="total{{$product->id}}">${{number_format($product->price * $product->qty, 2)}}</label>
+                    <label class="total{{$product->rowId}}">${{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
                     <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
@@ -185,8 +186,10 @@
             
             @if( ! @empty($product->options['configureDetails']))
             var is_configured = $("#conf" + rowId).val();
+            var article_nu = $("#art" + rowId).val();;
             @else
             var is_configured = 0;
+            var article_nu = 0;
             @endif
             
             e.preventDefault();
@@ -197,7 +200,8 @@
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId,
-                    is_configured : is_configured
+                    is_configured : is_configured,
+                    article_nu : article_nu
                 },
                 success: function(result){
                     
@@ -209,13 +213,13 @@
                     } 
                 
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html(formatter.format(productTotal));
-                    $('.qty'+productId).val(result.data.productQty);
+                    $('.total'+rowId).html(formatter.format(productTotal));
+                    $('.qty'+rowId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
-                        $('.sub'+productId).css("cursor", "pointer");
+                        $('.sub'+rowId).css("cursor", "pointer");
                     } else {
-                        $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
+                        $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$'+result.data.cartSubTotal);
                     $('.grand_total').html('$'+result.data.cartSubTotal);
@@ -226,12 +230,20 @@
         /* Decrease product quantity functionality */
         jQuery('.remove-from-cart').click(function(e) {
             var productId = $( this ).attr('productId');
+            var rowId = $(this).attr('rowId');
+            
+            @if( ! @empty($product->options['configureDetails']))
+            var article_nu = $("#art" + rowId).val();
+            var is_configured = $("#conf" + rowId).val();
+            @else
+            var article_nu = 0;
+            var is_configured = 0;
+            @endif
             
             if($('.qty'+productId).val() == 1){
                 $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
             return false;
             }
-
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/remove-from-cart') }}",
@@ -239,17 +251,19 @@
                 dataType: "json",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
-                    productId : productId
+                    productId : productId,
+                    article_nu : article_nu,
+                    is_configured : is_configured
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+productId).html(formatter.format(productTotal));
-                    $('.qty'+productId).val(result.data.productQty);
+                    $('.total'+rowId).html(formatter.format(productTotal));
+                    $('.qty'+rowId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
-                        $('#sub'+productId).css("cursor", "pointer");
+                        $('#sub'+rowId).css("cursor", "pointer");
                     } else {
-                        $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
+                        $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$'+result.data.cartSubTotal);
                     $('.grand_total').html('$'+result.data.cartSubTotal);

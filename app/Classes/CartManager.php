@@ -5,10 +5,17 @@ namespace App\Classes;
 use App\Models\Cart as CartModel;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Classes\HelperManager as Common;
+use App\Classes\ProductManager;
 use Illuminate\Support\Facades\Auth;
 
 class CartManager
 {
+    public function __construct(
+        ProductManager $productManager
+    )
+    {
+        $this->productManager = $productManager;
+    }
 
     /**
      * Add product to cart (Increase product qty to cart)
@@ -54,9 +61,9 @@ class CartManager
             
             if ($product->max_cart_qty >= $qty) {
 
-                $this->updateProduct($rowId, $data, $product->id);
-                
-                $response['qty'] = $qty;
+            $this->updateProduct($rowId, $data, $product->id);
+            
+            $response['qty'] = $qty;
             } else {
                 $response['status'] = false;
                 $response['message'] = "Unable to update cart (your product cart limit exceeded.)";
@@ -114,14 +121,28 @@ class CartManager
      * Remove product From cart (Decrease product qty from cart)
      *
      */
-    public function removeFromCart($product)
+    public function removeFromCart($product, $configuredProductData=0)
     {
+        dd($configuredProductData);
         $set = false;
         $qty = 1;
         $rowId = '';
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
+                if(!empty($configuredProductData))
+                {
+                    if (
+                        $item->options['configureDetails']['configurationId'] == 
+                        $configuredProductData['configurationId']
+                        )
+                    {
+                        $qty = $item->qty - $qty;
+                        $rowId = $item->rowId;
+                        $set = true;
+                        break;
+                    }
+                }
                 $qty = $item->qty - $qty;
                 $rowId = $item->rowId;
                 $set = true;
@@ -133,7 +154,7 @@ class CartManager
                 $data = ['qty'=> $qty];
                 $this->updateProduct($rowId, $data, $product->id);
             } else {
-                $this->removeProduct($rowId, $product->id);
+                $this->removeProduct($rowId, $product->id,$configuredProductData);
             }
 
         return $qty;
@@ -149,11 +170,19 @@ class CartManager
      */
     public function addProduct($product, $qty = 1, $configuredProductData = 0)
     {
+        
+        if(!empty($configuredProductData))
+        {
+            $price = $this->productManager->getPriceByArticlenumber($configuredProductData['partList']['articleNr']);
+        }
+        else {
+            $price = $product->sale_price;
+        }
         $productData = [
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> $product->sale_price + (( !empty($configuredProductData)) ? 1254 : 0), //romlie price here
+            'price'=> $price,
             'options' => 
             [
                 'image' => @$product->images[0]->image,

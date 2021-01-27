@@ -20,8 +20,8 @@
                 </div>
                 <div class="col-md-6 text-md-right">
                     <div class="pl-3 pl-md-0 pr-3">
-                        <span class="product-price">${{$productData['product']->sale_price}}</span>
-                        <span class="product-price-tax">Incl. VAT</span>
+                        {{--<span class="product-price">${{$productData['product']->sale_price}}</span>
+                        <span class="product-price-tax">Incl. VAT</span>--}}
                     </div>
                 </div>
             </div>
@@ -39,31 +39,38 @@
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
                         addToCart(configurationId, image, partlist);
                     };
-                    configurator.ui.callbacks.onResize = (isDesktop) => {
-                        if (!isDesktop) {
-                        button.style.display = 'block';
-                        } else {
-                        button.style.display = 'none';
-                        }
-                    };
 
                     /*for price*/
-                    // const priceDataBase = {};
+                    const priceDataBase = {};
                     
-                    //     configurator.ui.callbacks.onPartListUpdate = (partList) => {
-                    //         console.log('parts update; update price as well');
-                    //         console.log(partList);
-                    //         const parts = partList.fullList;
-                    //         let priceSum = parts.reduce((sum, part) => {
-                    //             if (!priceDataBase[part.articleNr]) {
-                    //                 priceDataBase[part.articleNr] = Math.random() * 10;
-                    //             }
-                    //             return sum += priceDataBase[part.articleNr];
-                    //         }, 0);
-                    //         const shippingCosts = '{{--$productData['product']->sale_price--}}';
-                    //         // Tell the Roomle Configurator to show the current price
-                    //         configurator.ui.setPrice('$', priceSum + shippingCosts);
-                    //     };
+                        configurator.ui.callbacks.onPartListUpdate = (partList) => {
+                            
+                            const parts = partList.fullList;
+                            console.log(parts[0].articleNr);
+                            jQuery.ajax({
+                                url: "{{ url('/product/price') }}",
+                                method: 'post',
+                                dataType: "json",
+                                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                data: {
+                                    article_nu : parts[0].articleNr
+                                },
+                                success: function(result){
+                                    console.log('keep this console till some error');
+                                    console.log(result);
+                                    if(result == 4040404)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                    let priceSum = result;
+                                    configurator.ui.setPrice('$',priceSum);
+                                    }
+                                    
+                                }
+                            });
+                        };
                     })();
             </script>
             <div class="pt-4 pb-4 d-flex justify-content-center">
@@ -272,6 +279,20 @@
             }
         });
     });
+    // function getPrice(article_nu){
+    // jQuery.ajax({
+    //     url: "{{ url('/product/price') }}",
+    //     method: 'post',
+    //     dataType: "json",
+    //     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    //     data: {
+    //         article_nu : article_nu
+    //     },
+    //     success: function(result){
+    //         $('.cart-count').html(result.data.cartCount);
+    //     }
+    // });
+    // }
 </script>
 
 @endsection

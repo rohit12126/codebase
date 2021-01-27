@@ -228,22 +228,28 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function addToCart(Request $req) {
-        // dd($req);
+        // dump($req->is_configured);
         $configuredProductData = [];
         $productId = $req->input('productId');
+        $product = $this->productManager->getProduct($productId);
+        $price = $product->sale_price;
         
         if(!empty($req->configurationId))
         {
             $configuredProductData['configurationId'] = $req->configurationId;
             $configuredProductData['partList'] = $req->partList;
             $configuredProductData['productId'] = $req->productId;
+            $price = $this->productManager->getPriceByArticlenumber($configuredProductData['partList']['articleNr']);
         }
-        else if(isset($req->is_configured) && ($req->is_configured !== 0))
+        else if(isset($req->is_configured))
         {
-            $configuredProductData['configurationId'] = $req->is_configured;
             
+            if($req->is_configured != 0 OR $req->is_configured != "0")
+            {
+                $configuredProductData['configurationId'] = $req->is_configured;
+                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+            }
         }
-        $product = $this->productManager->getProduct($productId);
         $message = "Product successfully added to the cart.";
         
         $status = true;
@@ -263,9 +269,10 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price + (( !empty($configuredProductData)) ? 1254.00 : 0), //romlie price here (response)
+            'productPrice' => $price,
             'cartSubTotal' => $cartSubTotal
         ];
+        // dd($data);
         $response = [
             'status' => $status,
             'message' => $message,
@@ -281,9 +288,16 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $req) {
+        
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
-        $productQty = $this->cartManager->removeFromCart($product);
+        $price = $product->sale_price;
+        if(isset($req->is_configured) && ($req->is_configured != 0))
+        {
+            $configuredProductData['configurationId'] = $req->is_configured;
+            $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+        }
+        $productQty = $this->cartManager->removeFromCart($product , $configuredProductData=0);
         
         $cartCount = $this->cartManager->count();
 
@@ -292,7 +306,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price,
+            'productPrice' => $price,
             'cartSubTotal' => $cartSubTotal
         ];
 
