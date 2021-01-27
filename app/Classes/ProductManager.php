@@ -13,7 +13,7 @@ class ProductManager
 {
     public static function add($req)
     {
-	    $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
+        $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
 
         $slug = self::generateSlug($req->name);
 
