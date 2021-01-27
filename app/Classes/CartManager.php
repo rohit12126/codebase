@@ -123,7 +123,7 @@ class CartManager
      */
     public function removeFromCart($product, $configuredProductData=0)
     {
-        dd($configuredProductData);
+
         $set = false;
         $qty = 1;
         $rowId = '';
