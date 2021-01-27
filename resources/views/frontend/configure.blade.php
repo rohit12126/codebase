@@ -58,15 +58,15 @@
                                 success: function(result){
                                     console.log('keep this console till some error');
                                     console.log(result);
-                                    if(result == 4040404)
-                                    {
+                                    // if(result == 4040404)
+                                    // {
 
-                                    }
-                                    else
-                                    {
+                                    // }
+                                    // else
+                                    // {
                                     let priceSum = result;
                                     configurator.ui.setPrice('$',priceSum);
-                                    }
+                                    // }
                                     
                                 }
                             });

@@ -228,7 +228,7 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function addToCart(Request $req) {
-        // dump($req->is_configured);
+        
         $configuredProductData = [];
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
@@ -241,12 +241,11 @@ class CartController extends Controller
             $configuredProductData['productId'] = $req->productId;
             $price = $this->productManager->getPriceByArticlenumber($configuredProductData['partList']['articleNr']);
         }
-        else if(isset($req->is_configured))
+        else if(isset($req->conf_id))
         {
-            
-            if($req->is_configured != 0 OR $req->is_configured != "0")
+            if(!empty($req->conf_id))
             {
-                $configuredProductData['configurationId'] = $req->is_configured;
+                $configuredProductData['configurationId'] = $req->conf_id;
                 $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
             }
         }
@@ -272,7 +271,7 @@ class CartController extends Controller
             'productPrice' => $price,
             'cartSubTotal' => $cartSubTotal
         ];
-        // dd($data);
+        
         $response = [
             'status' => $status,
             'message' => $message,
