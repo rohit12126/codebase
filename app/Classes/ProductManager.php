@@ -183,7 +183,8 @@ class ProductManager
 
     public function getProducts()
     {
-        $products = ProductModel::with('images', 'catergory')->paginate(8);
+        $products = ProductModel::with('images', 'catergory')->where('status', 1)
+        ->orderBy('id', 'DESC')->paginate(8);
         return $products;
     }
 
