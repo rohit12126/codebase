@@ -287,16 +287,20 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $req) {
-        
+        $configuredProductData = [];
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
         $price = $product->sale_price;
-        if(isset($req->is_configured) && ($req->is_configured != 0))
+        if(isset($req->conf_id))
         {
-            $configuredProductData['configurationId'] = $req->is_configured;
-            $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+            if(!empty($req->conf_id))
+            {
+                $configuredProductData['configurationId'] = $req->conf_id;
+                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+            }
         }
-        $productQty = $this->cartManager->removeFromCart($product , $configuredProductData=0);
+
+        $productQty = $this->cartManager->removeFromCart($product , $configuredProductData);
         
         $cartCount = $this->cartManager->count();
 

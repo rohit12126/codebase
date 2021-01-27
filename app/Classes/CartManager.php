@@ -142,11 +142,12 @@ class CartManager
                         $set = true;
                         break;
                     }
-                }
+                }else{
                 $qty = $item->qty - $qty;
                 $rowId = $item->rowId;
                 $set = true;
                 break;
+                }
             }
         }
         if ($set == 1 || $set == true) {
@@ -154,7 +155,7 @@ class CartManager
                 $data = ['qty'=> $qty];
                 $this->updateProduct($rowId, $data, $product->id);
             } else {
-                $this->removeProduct($rowId, $product->id,$configuredProductData);
+                $this->removeProduct($rowId, $product->id);
             }
 
         return $qty;

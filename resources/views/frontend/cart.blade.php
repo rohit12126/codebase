@@ -112,6 +112,7 @@
                     <div class="cart-product-quantity">
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+
                             <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}">
 
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
@@ -177,6 +178,7 @@
         style: 'currency',
         currency: 'USD',
         });
+        
     jQuery(document).ready(function(){
         
         /* Add to cart functionality */
