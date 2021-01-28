@@ -151,7 +151,7 @@ if(!function_exists('renderDropdown')){
         </a>
     </li>
     <li class="c-sidebar-nav-item"title="Check All Enquries Here">
-        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'matrix_list'||request()->segment(2) == 'edit_matrix' || request()->segment(2) == 'matrix') c-active @endif" href="{{ route('admin.matrix') }}">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'matrix_list'||request()->segment(2) == 'edit_matrix' || request()->segment(2) == 'matrix') c-active @endif" href="{{ route('admin.matrix.list') }}">
             <i class="cil-list c-sidebar-nav-icon"></i>
             Matrix
         </a>
