@@ -253,11 +253,11 @@ class CartController extends Controller
         {
             $response = [
                 'status' => FALSE,
-                'message' => 'Configured product not available, Please choose different or Connect Support.'
+                'message' => 'Configured product not available, choose different or connect support.'
             ];
             return json_encode($response);
         }
-        $message = "Product has been added to your cart successfully";
+        $message = "Product has been added to your cart successfully.";
         
         $status = true;
         $res =  $this->cartManager->addToCart($product,$configuredProductData);
