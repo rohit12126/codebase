@@ -254,7 +254,7 @@ class CartController extends Controller
             $response = [
                 'status' => FALSE,
                 'message' => 'Configured product not available, choose different or connect support.',
-                'data' => ''
+                'data' => $req->partList['articleNr']
             ];
             return json_encode($response);
         }

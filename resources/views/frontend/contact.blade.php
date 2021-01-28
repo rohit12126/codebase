@@ -133,7 +133,7 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea required="" placeholder="Message *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
+                                <textarea required="" placeholder="Message *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}"name="message" rows="4">@if(!empty($_GET['artrnr'])) I want to purchase Article nr : {{$_GET['artrnr']}} product, let me know when it will available! @endif</textarea>
                                 @if ($errors->has('message'))
                                 <div class="error">
                                     {{ $errors->first('message') }}
