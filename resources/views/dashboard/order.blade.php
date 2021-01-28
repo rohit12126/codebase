@@ -147,7 +147,43 @@
                                                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                                 <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif @if($value->temp_user == 1) (Guest) @endif</td>
                                                 
-                                                <td>{{ $value->order_status }}</td>
+                                                <td><form action="{{ url('admin/order_details/'.$value->order_no) }}" method="post" id="changeStatusForm{{$value->order_no}}">
+                                                @csrf
+                                                <select name="order_status" required>
+                                                    <option value="1" @if($value->order_status == 'Received') selected @else disabled @endif > Received
+                                                    </option>
+                                                    <option value="2" @if($value->order_status == 'Confirmed')
+                                                            selected
+                                                        @elseif($value->order_status == 'Shipped' || $value->order_status == 'Delivered' || $value->order_status == 'Cancelled')
+                                                            disabled
+                                                        @endif > Confirmed
+                                                    </option>
+                                                    <option value="3" @if($value->order_status == 'Shipped')
+                                                            selected
+                                                        @elseif($value->order_status == 'Received' || $value->order_status == 'Delivered' || $value->order_status == 'Cancelled')
+                                                            disabled
+                                                        @endif >Shipped
+                                                    </option>
+                                                    <option value="4" @if($value->order_status == 'Delivered')
+                                                            selected
+                                                        @elseif($value->order_status == 'Confirmed' || $value->order_status == 'Received' || $value->order_status == 'Cancelled')
+                                                            disabled
+                                                        @endif >Delivered
+                                                    </option>
+                                                    <option value="5" @if($value->order_status == 'Cancelled')
+                                                            selected
+                                                        @elseif($value->order_status == 'Confirmed' || $value->order_status == 'Shipped' || $value->order_status == 'Delivered')
+                                                            disabled
+                                                        @endif >Cancelled
+                                                    </option>
+                                                </select>
+                                                <!-- <input type="submit" value="submit" /> -->
+                                                <a class="btn btn-sm btn-success custom-tooltip" onclick="$(this).closest('form').submit();" href="javascript:void(0)">
+                                                        <span class="custom-tooltiptext custom-tooltip-top">Change Order Status</span>
+                                                        <i class="cil-check"></i>
+                                                </a>
+                                        </form>
+                                        </td>
                                                 <td>&#36;{{ $value->grand_total }}</td>
                                                 <td>
                                                     <a class="btn btn-sm btn-info custom-tooltip" href="{{ url('admin/order_details', $value->order_no) }}">
@@ -222,6 +258,10 @@
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script>
+function changeStatus(ordernu)
+{
+    $('#update'+ordernu).html('');
+}
 function clicked(id) 
 {
     $("#orderNum").val(id);
