@@ -94,6 +94,12 @@
     "zone_update_success" : "Zone udated successfully!",
     "zone_update_failed" : "Something went wrong unable to update Zone!",
     "zone_delete_success" : "Zone deleted successfully!",
-    "zone_delete_failed" : "Something went wrong unable to delete Zone!"
+    "zone_delete_failed" : "Something went wrong unable to delete Zone!",
 
+    "matrix_add_success" : "Pricing Matrix added successfully!",
+    "matrix_add_failed" : "Something went wrong unable to add Pricing Matrix!",
+    "matrix_update_success" : "Pricing Matrix udated successfully!",
+    "matrix_update_failed" : "Something went wrong unable to update Pricing Matrix!",
+    "matrix_delete_success" : "Pricing Matrix deleted successfully!",
+    "matrix_delete_failed" : "Something went wrong unable to delete Pricing Matrix!"
 }

@@ -39,10 +39,6 @@ class ProductController extends Controller
      */
     public function addProduct(Request $req)
     {
-        // $confIdRequired ='';
-        // if($req->is_accessory == 0) {
-        //     $confIdRequired = 'required|';
-        // }
         $this->validate(
             $req, 
             [

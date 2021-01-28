@@ -150,6 +150,12 @@ if(!function_exists('renderDropdown')){
             Enquiries
         </a>
     </li>
+    <li class="c-sidebar-nav-item"title="Check All Enquries Here">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'matrix_list'||request()->segment(2) == 'edit_matrix' || request()->segment(2) == 'matrix') c-active @endif" href="{{ route('admin.matrix') }}">
+            <i class="cil-list c-sidebar-nav-icon"></i>
+            Matrix
+        </a>
+    </li>
     {{-- <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'change-password') c-active @endif" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>

@@ -46,7 +46,7 @@
                         configurator.ui.callbacks.onPartListUpdate = (partList) => {
                             
                             const parts = partList.fullList;
-                            console.log(parts[0].articleNr);
+                            
                             jQuery.ajax({
                                 url: "{{ url('/product/price') }}",
                                 method: 'post',
@@ -56,18 +56,8 @@
                                     article_nu : parts[0].articleNr
                                 },
                                 success: function(result){
-                                    console.log('keep this console till some error');
-                                    console.log(result);
-                                    // if(result == 4040404)
-                                    // {
-
-                                    // }
-                                    // else
-                                    // {
                                     let priceSum = result;
                                     configurator.ui.setPrice('$',priceSum);
-                                    // }
-                                    
                                 }
                             });
                         };
