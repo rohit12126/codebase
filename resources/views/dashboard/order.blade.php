@@ -147,9 +147,11 @@
                                                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                                 <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif @if($value->temp_user == 1) (Guest) @endif</td>
                                                 
-                                                <td><form action="{{ url('admin/order_details/'.$value->order_no) }}" method="post" id="changeStatusForm{{$value->order_no}}">
+                                                <td>
+                                                
+                                                <form action="{{ url('admin/order_details/'.$value->order_no) }}" method="post" id="changeStatusForm{{$value->order_no}}">
                                                 @csrf
-                                                <select name="order_status" required>
+                                                <select name="order_status" class="form-control custom-small-form" required>
                                                     <option value="1" @if($value->order_status == 'Received') selected @else disabled @endif > Received
                                                     </option>
                                                     <option value="2" @if($value->order_status == 'Confirmed')
@@ -177,12 +179,12 @@
                                                         @endif >Cancelled
                                                     </option>
                                                 </select>
-                                                <!-- <input type="submit" value="submit" /> -->
                                                 <a class="btn btn-sm btn-success custom-tooltip" onclick="$(this).closest('form').submit();" href="javascript:void(0)">
                                                         <span class="custom-tooltiptext custom-tooltip-top">Change Order Status</span>
                                                         <i class="cil-check"></i>
                                                 </a>
                                         </form>
+                                        
                                         </td>
                                                 <td>&#36;{{ $value->grand_total }}</td>
                                                 <td>

@@ -20521,3 +20521,5 @@ a, a:hover {
 .multiselect-container::-webkit-scrollbar-track{background:#eee}
 .multiselect-container::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
 .multiselect-container::-webkit-scrollbar-thumb:hover{background:#F94E57;}
+.custom-small-form{display: inline-block;
+  width: calc(100% - 36px);}
