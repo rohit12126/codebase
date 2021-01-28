@@ -253,7 +253,8 @@ class CartController extends Controller
         {
             $response = [
                 'status' => FALSE,
-                'message' => 'Configured product not available, choose different or connect support.'
+                'message' => 'Configured product not available, choose different or connect support.',
+                'data' => ''
             ];
             return json_encode($response);
         }

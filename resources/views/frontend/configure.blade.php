@@ -241,15 +241,16 @@
             if(result.status == false)
             {
                 Swal.fire({
-                position: 'bottom-end',
-                icon: 'warning',
-                title: result.message,
-                showConfirmButton: false,
-                timer: 6000,
-                customClass: {
-                    container: 'custom-success-popup-container',
-                    popup: 'custom-success-popup',
-                }
+            title: '<strong style="margin-left: 25%;">Not <u>Available</u></strong>',
+            icon: 'info',
+            html:
+                'Requested product is not available, <br> choose different configuration or ' +
+                '<a href="{{url('contact-us')}}">connect support.</a> ',
+            showCloseButton: true,
+            
+            focusConfirm: false,
+            confirmButtonText:
+                '<p style="color:000;">Okay!</p>'
             })
             }
             else
