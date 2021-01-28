@@ -151,7 +151,7 @@
                                                 
                                                 <form action="{{ url('admin/order_details/'.$value->order_no) }}" method="post" id="changeStatusForm{{$value->order_no}}">
                                                 @csrf
-                                                <select name="order_status" class="form-control custom-small-form" required>
+                                                <select name="order_status" id="selectStatus{{$value->order_no}}"class="form-control custom-small-form" required>
                                                     <option value="1" @if($value->order_status == 'Received') selected @else disabled @endif > Received
                                                     </option>
                                                     <option value="2" @if($value->order_status == 'Confirmed')
@@ -179,7 +179,7 @@
                                                         @endif >Cancelled
                                                     </option>
                                                 </select>
-                                                <a class="btn btn-sm btn-success custom-tooltip" onclick="$(this).closest('form').submit();" href="javascript:void(0)">
+                                                <a class="btn btn-sm btn-success custom-tooltip" onclick="submitSForm({{$value->order_no}})" href="javascript:void(0)" id="button{{$value->order_no}}">
                                                         <span class="custom-tooltiptext custom-tooltip-top">Change Order Status</span>
                                                         <i class="cil-check"></i>
                                                 </a>
@@ -260,9 +260,10 @@
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script>
-function changeStatus(ordernu)
-{
-    $('#update'+ordernu).html('');
+function submitSForm(ordernu){
+$('#selectStatus'+ordernu).on('change', function(e){
+$(this).closest('form').submit();
+});
 }
 function clicked(id) 
 {
