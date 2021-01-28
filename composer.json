@@ -15,6 +15,7 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "hardevine/shoppingcart": "^2.9",
+        "intervention/image": "^2.5",
         "laravel/framework": "7.4",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.3.0",

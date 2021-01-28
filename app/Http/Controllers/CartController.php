@@ -249,7 +249,15 @@ class CartController extends Controller
                 $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
             }
         }
-        $message = "Product successfully added to the cart.";
+        if($price == FALSE)
+        {
+            $response = [
+                'status' => FALSE,
+                'message' => 'Configured product not available, Please choose different or Connect Support.'
+            ];
+            return json_encode($response);
+        }
+        $message = "Product has been added to your cart successfully";
         
         $status = true;
         $res =  $this->cartManager->addToCart($product,$configuredProductData);

@@ -247,10 +247,26 @@
         },
         success: function(result){
             $('.cart-count').html(result.data.cartCount);
+            
+            if(result.status == false)
+            {
+                Swal.fire({
+                position: 'bottom-end',
+                icon: 'warning',
+                title: result.message,
+                showConfirmButton: false,
+                timer: 6000,
+                customClass: {
+                    container: 'custom-success-popup-container',
+                    popup: 'custom-success-popup',
+                }
+            })
+            }
+            else
             Swal.fire({
                 position: 'bottom-end',
                 icon: 'success',
-                title: 'Product has been added to your cart successfully',
+                title: result.message,
                 showConfirmButton: false,
                 timer: 1500,
                 customClass: {
