@@ -15,7 +15,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer([
-            'layouts.front'
+            'layouts.front',
+            'frontend.contact'
         ],CartComposer::class);
     }
 

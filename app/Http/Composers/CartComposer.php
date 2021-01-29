@@ -1,6 +1,7 @@
 <?php namespace App\Http\Composers;
 
 use App\Classes\CartManager;
+use App\Classes\SettingManager;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 class CartComposer
@@ -8,10 +9,12 @@ class CartComposer
     protected $cartManager;
 
     public function __construct(
-        CartManager $cartManager
+        CartManager $cartManager,
+        SettingManager $settingManager
     ) {
     
         $this->cartManager = $cartManager;
+        $this->settingManager = $settingManager;
     }
 
     /**
@@ -29,12 +32,14 @@ class CartComposer
         if (Auth::check()) {
             $userData = Auth::user();
         }
+        $setting = $this->settingManager->getSettings();
         return $view->with(
             [
                 'cartCount' => $cartCount,
                 'cartContains' => $cartContain,
                 'cartSubTotal' => $cartSubTotal,
-                'userData' => $userData
+                'userData' => $userData,
+                'setting' => $setting
             ]
         );
     }

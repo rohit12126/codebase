@@ -43,7 +43,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Reach us at</span>
-                        <p>123 Street, Old Trafford, London, UK</p>
+                        <p>{{$setting->address ?? '123 Street, Old Trafford, London, UK'}}</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Drop a mail</span>
-                        <a href="mailto:info@sitename.com">info@yourmail.com </a>
+                        <a href="mailto:{{$setting->email ?? 'help@customcloset.com'}}">{{$setting->email ?? 'help@customcloset.com'}} </a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Call Us</span>
-                        <p>+ 457 789 789 65</p>
+                        <p>{{$setting->contact ?? '123 456 789'}}</p>
                     </div>
                 </div>
             </div>

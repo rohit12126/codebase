@@ -283,25 +283,7 @@ footer-->
                     </div>
                     <div class="col-sm-6 col-md-3 footer-col">
                         <h5 class="text-uppercase mb-3"><span>Help</span></h5>
-                        <ul class="footer-nav-ul">
-                            <li>
-                                <a href="tel:+49 (0)30 60 988 588" class="font-weight-bold">+49 (0)30 60 988 588</a>
-                            </li>
-                            <li>
-                                <a href="mailto:service@customcloset.com" class="text-underline">service@customcloset.com</a>
-                            </li>
-                        </ul>
-                        <div class="d-flex w-100 align-items-center mt-4 footer-socialicon-wrapper">
-                            <span class="footer-socialicon">
-                                <a href="https://www.facebook.com/" title="Connect on Facebook"><img src="{{URL::asset('/images/icon/facebook.png')}}" alt=""></a>
-                            </span>
-                            <span class="footer-socialicon">
-                                <a href="https://www.instagram.com/" title="Follow us on Instagram"><img src="{{URL::asset('/images/icon/instagram.png')}}" alt=""></a>
-                            </span>
-                            <span class="footer-socialicon">
-                                <a href="https://www.pinterest.com/" title="Connect on Pinterest"><img src="{{URL::asset('/images/icon/pintrest.png')}}" alt=""></a>
-                            </span>
-                        </div>
+                        @include('frontend.partials.footer')
                     </div>
                 </div>
             </div>
