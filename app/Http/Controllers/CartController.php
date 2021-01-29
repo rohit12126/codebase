@@ -340,10 +340,20 @@ class CartController extends Controller
         $this->validate($req, [
             'qty' => 'numeric|regex:/^[1-9]\d*$/'
         ]);
+        $configuredProductData = [];
         $productId = $req->input('productId');
         $qty = $req->input('qty');
         $product = $this->productManager->getProduct($productId);
-        
+
+        $price = $product->sale_price;
+        if(isset($req->conf_id))
+        {
+            if(!empty($req->conf_id))
+            {
+                $configuredProductData['configurationId'] = $req->conf_id;
+                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+            }
+        }
         $res = $this->cartManager->updateCart($product, $qty);
         
         $status = true;
@@ -364,7 +374,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $product->sale_price,
+            'productPrice' => $price,
             'cartSubTotal' => $cartSubTotal
         ];
 

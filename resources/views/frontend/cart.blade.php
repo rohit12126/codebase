@@ -113,7 +113,7 @@
                         <div class="quantity">
                             <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
 
-                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}">
+                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}"  rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" >
 
                             <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
                         </div>
@@ -293,6 +293,9 @@
         /* Update cart functionality */
         $(".qty").blur(function(e) {
             var productId = $( this ).attr('productId');
+            var rowId = $(this).attr('rowId');
+            var conf_id = $( this ).attr('conf_id');
+            var article_nu = $(this).attr('article_nu');
             var qty = $(this).val();
             e.preventDefault();
             jQuery.ajax({
@@ -302,7 +305,9 @@
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 data: {
                     productId : productId,
-                    qty : qty
+                    qty : qty,
+                    conf_id : conf_id,
+                    article_nu : article_nu
                 },
                 success: function(result) {
                     
@@ -312,19 +317,19 @@
                         console
                         icon = 'success';
                         var  productTotal = result.data.productQty * result.data.productPrice;
-                        $('.total'+productId).html(formatter.format(productTotal));
+                        $('.total'+rowId).html(formatter.format(productTotal));
                         $(this).val(result.data.productQty);
                         $('.cart-count').html(result.data.cartCount);
                         if(result.data.productQty > 1) {
-                            $('#sub'+productId).css("cursor", "pointer");
+                            $('#sub'+rowId).css("cursor", "pointer");
                         } else {
-                            $('#sub'+productId).css("cssText", "cursor: not-allowed  !important;");
+                            $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                         }
                         $('#subQty').html('$'+result.data.cartSubTotal);
                         $('.grand_total').html('$'+result.data.cartSubTotal);
                         $('#grand_total').val('$'+result.data.cartSubTotal);
                     } else {
-                        $('.qty'+productId).val(result.data.productQty);
+                        $('.qty'+rowId).val(result.data.productQty);
                     }
 
                     Swal.fire({
