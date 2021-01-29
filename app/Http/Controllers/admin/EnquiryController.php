@@ -74,7 +74,7 @@ class EnquiryController extends Controller
             'message' => 'required'
         ]);
         if($this->enquiryManager->store($request)){
-        return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+        return redirect()->route('contact.us')->with('success', 'We have received your message and would like to thank you for writing to us.');
         }
 
     }
