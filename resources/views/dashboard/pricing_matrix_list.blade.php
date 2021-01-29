@@ -101,7 +101,7 @@
                                 @else
                                     <tfoot>
                                         <tr>
-                                            <th colspan="4" class="text-center">Pricing Matrix list is empty</th>
+                                        <th colspan="6" class="text-center"><img src="{{ url('') }}/upload/product/empty-list.jpg" alt="Pricing Matrix list is empty"></th>
                                         </tr>
                                     </tfoot>
                                 @endif

@@ -124,7 +124,7 @@
                         @else
                             <tfoot>
                                 <tr>
-                                    <th colspan="3" class="text-center">FAQ Category list is empty</th>
+                                <th colspan="6" class="text-center"><img src="{{ url('') }}/upload/product/empty-list.jpg" alt="FAQ Category list is empty"></th>
                                 </tr>
                             </tfoot>
                         @endif

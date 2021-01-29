@@ -205,7 +205,7 @@
                                 @else
                                     <tfoot>
                                         <tr>
-                                            <th colspan="7" class="text-center">Order list is empty</th>
+                                        <th colspan="6" class="text-center"><img src="{{ url('') }}/upload/product/empty-list.jpg" alt="Order list is empty"></th>
                                         </tr>
                                     </tfoot>
                                 @endif
