@@ -230,33 +230,39 @@ class OrderController extends Controller
      */
     public function shippingPrice(Request $req)
     {
+        
         $shippingPrice = 0;
         $hshippingPrice = 0;
         $shipPrice= 0;
         $price = $this->zoneManager->getPrice($req->zone_id);
-        
         if ( ! empty($price) )
             {
                 foreach($req->pid as $productId=>$qty)
                 {
-                    $hardware = $this->productManager->checkHardware(strstr($productId, '.',true));
+                    if (strpos($productId, '.') !== false) {
+                        $productId = strstr($productId, '.',true);
+                    }
+                    
+                    $hardware = $this->productManager->checkHardware($productId);
                     
                     if($hardware)
                     {
-                        $shippingPrice+= $price->product_price * $qty;
+                        $hshippingPrice += $price->hardware_price * $qty;
                     }
                     else
                     {
-                        $hshippingPrice+= $price->hardware_price * $qty;
+                        $shippingPrice += $price->product_price * $qty;
                     }
                 }
-                if($hardware)
+                
+                if($shippingPrice !== 0)
+                {
+                    
+                    $shipPrice = $shippingPrice;
+                }
+                else if($shippingPrice == 0)
                 {
                     $shipPrice = $hshippingPrice;
-                }
-                else
-                {
-                    $shipPrice = $shippingPrice;
                 }
             }
         return number_format((float) $shipPrice, 2, '.', '');
