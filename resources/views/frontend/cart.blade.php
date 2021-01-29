@@ -232,7 +232,8 @@
             
             if($('.qty'+rowId).val() == 1){
                 $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
-            return false;
+                $('#sub'+rowId).prop('disabled', true);
+                return false;
             }
             e.preventDefault();
             jQuery.ajax({
