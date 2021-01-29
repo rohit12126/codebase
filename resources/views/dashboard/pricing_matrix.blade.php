@@ -45,13 +45,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>@if(isset($pricingMatrix)) Edit @else Add @endif Pricing Matrix</h4>
-                        @if ($errors->any())
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ url()->current() }}" id="myform">
@@ -62,11 +55,17 @@
                                         <label>Product Family</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" maxlength="200" placeholder="Product Family" name="product_family" class="form-control" value="{{ old('product_family', @$pricingMatrix->product_family) }}" >
+                                        @if($errors->has('product_family'))
+                                            <div class="error">{{ $errors->first('product_family') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Height</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Height" id="content" name="height" class="form-control" value="{{  old('height', @$pricingMatrix->height) }}">
+                                        @if($errors->has('height'))
+                                            <div class="error">{{ $errors->first('height') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Model</label>
@@ -90,6 +89,9 @@
                                         <label for="">Type</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Type" name="type" class="form-control" value="{{ old('type', @$pricingMatrix->type) }}" >
+                                        @if($errors->has('type'))
+                                            <div class="error">{{ $errors->first('type') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Color Finish</label>
@@ -103,26 +105,41 @@
                                         <label for="">Mirror</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Mirror" name="mirror" class="form-control" value="{{ old('mirror', @$pricingMatrix->mirror) }}" >
+                                        @if($errors->has('mirror'))
+                                            <div class="error">{{ $errors->first('mirror') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Unpackaged Weight</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Unpackaged Weight" name="unpackaged_weight" class="form-control" value="{{ old('unpackaged_weight', @$pricingMatrix->unpackaged_weight) }}" >
+                                        @if($errors->has('unpackaged_weight'))
+                                            <div class="error">{{ $errors->first('unpackaged_weight') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Optional Nu Of Panels</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Optional Nu Of Panels" name="optional_nu_of_panels" class="form-control" value="{{ old('optional_nu_of_panels', @$pricingMatrix->optional_nu_of_panels) }}" >
+                                        @if($errors->has('optional_nu_of_panels'))
+                                            <div class="error">{{ $errors->first('optional_nu_of_panels') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">MU</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="MU" name="mu" class="form-control" value="{{ old('mu', @$pricingMatrix->mu) }}" >
+                                        @if($errors->has('mu'))
+                                            <div class="error">{{ $errors->first('mu') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Number Of Pannel</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Number Of Pannel" name="bt_of_panels" class="form-control" value="{{ old('bt_of_panels', @$pricingMatrix->bt_of_panels) }}" >
+                                        @if($errors->has('bt_of_panels'))
+                                            <div class="error">{{ $errors->first('bt_of_panels') }}</div>
+                                        @endif
                                     </div>
                                     
                                 </div>
@@ -131,6 +148,9 @@
                                         <label>Cost <b>$</b></label>
                                         <span class="mandatory">*</span>
                                         <input type="number" placeholder="Cost" name="cost" class="form-control" value="{{ old('cost', @$pricingMatrix->cost) }}" >
+                                        @if($errors->has('cost'))
+                                            <div class="error">{{ $errors->first('cost') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>Retail <b>$</b></label>
@@ -187,6 +207,9 @@
                                         <label for="">Thickness</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Thickness" name="thickness" class="form-control" value="{{ old('thickness', @$pricingMatrix->thickness) }}" >
+                                        @if($errors->has('thickness'))
+                                            <div class="error">{{ $errors->first('thickness') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label># Of Panels</label>
@@ -200,11 +223,17 @@
                                         <label for="">Width</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Width" name="width" class="form-control" value="{{ old('width', @$pricingMatrix->width) }}" >
+                                        @if($errors->has('width'))
+                                            <div class="error">{{ $errors->first('width') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Trim</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Trim" name="trim" class="form-control" value="{{ old('trim', @$pricingMatrix->trim) }}" >
+                                        @if($errors->has('trim'))
+                                            <div class="error">{{ $errors->first('trim') }}</div>
+                                        @endif
                                     </div>
                                     </div>
                                 </div>
@@ -213,14 +242,16 @@
                                         <label>Description</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="Description" name="description" class="form-control" value="{{ old('description', @$pricingMatrix->description) }}" >
-                                      
+                                        @if($errors->has('description'))
+                                            <div class="error">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
                                     <div class="d-flex">
                                 <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$pricingMatrix) Update @else Submit @endif" style="border-radius:0.25rem">
                                     @if(@$pricingMatrix) Update @else Submit @endif
                                 </button>
                                         
-                                <a onclick="history.go(-1)" class="btn btn-danger text-white"  title="Cancel">
+                                <a href="{{route('admin.matrix.list')}}" class="btn btn-danger text-white"  title="Cancel">
                                     Cancel
                                 </a>
                             </div>

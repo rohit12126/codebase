@@ -41,13 +41,45 @@ class PricingMatrixController extends Controller
 
     public function save(Request $req)
     {
-        return view('dashboard.pricing_matrix');
+        foreach ($req->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+            $matrix[$data] = $value;
+        }
+        
+        $req->validate($valids);
+        
+        $response = $this->pricingMatrixManager->add($matrix);
+        if($response == true){
+            Common::setMessage(__('matrix_add_success'));
+        }else{
+            Common::setMessage(__('matrix_add_failed'), 'error');
+        }
+        return redirect()->route('admin.matrix.list');
     }
 
     public function edit($id)
     {
         $pricingMatrix = $this->pricingMatrixManager->getPricingMatrixById($id);
         return view('dashboard.pricing_matrix',compact('pricingMatrix'));
+    }
+
+    public function update(Request $req , $id)
+    {
+        
+        foreach ($req->except('_token') as $data => $value) {
+            $valids[$data] = "required";
+            $matrix[$data] = $value;
+        }
+        
+        $req->validate($valids);
+        
+        $response = $this->pricingMatrixManager->update($matrix , $id);
+        if($response == true){
+            Common::setMessage(__('matrix_update_success'));
+        }else{
+            Common::setMessage(__('matrix_update_failed'), 'error');
+        }
+        return redirect()->route('admin.matrix.list');
     }
 
     public function delete($id)

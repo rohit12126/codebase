@@ -19,9 +19,26 @@ class PricingMatrixManager
               ->paginate(15);
   }
 
-  public function add($req)
+  public function add($data)
   {
+    
+    if (PricingModel::create($data)) {
+      return true;
+    } else {
+        return false;
+    }
+  }
 
+  public function update($data, $id)
+  {
+    if (!$matrix = $this->getPricingMatrixById($id))
+        return false;
+
+    if ($matrix->fill($data)->save()) {
+        return true;
+    } else {
+        return false;
+    }
   }
 
   public function getPricingMatrixById($id)
