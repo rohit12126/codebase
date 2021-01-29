@@ -108,8 +108,8 @@
                     <a href="{{ route('cart') }}" title="Shopping Cart">
                         <img src="{{URL::asset('/images/icon/carticon.png')}}" alt="">
                         <label>Cart</label>
-                    </a>
                     <span class="cart-count cart_count"> {{$cartCount}} </span>
+                    </a>
                 </span>
                 <span class="head-shop-icon main-toggler d-lg-none">
                     <span class="header-burger">
