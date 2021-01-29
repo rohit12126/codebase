@@ -290,7 +290,9 @@
                 }
             });
         });
-
+        function isInt(n) {
+            return n % 1 === 0;
+        }
         /* Update cart functionality */
         $(".qty").blur(function(e) {
             var productId = $( this ).attr('productId');
@@ -298,6 +300,35 @@
             var conf_id = $( this ).attr('conf_id');
             var article_nu = $(this).attr('article_nu');
             var qty = $(this).val();
+            if(qty == 0)
+            {
+            Swal.fire({
+                    position: 'bottom-end',
+                    icon: 'info',
+                    title: 'Quantity can not be zero, you may remove item from cart.',
+                    showConfirmButton: false,
+                    timer: 2500,
+                    customClass: {
+                        container: 'custom-success-popup-container',
+                        popup: 'custom-success-popup',
+                    }
+                });
+            }
+            else if(!isInt(qty))
+            {
+                Swal.fire({
+                    position: 'bottom-end',
+                    icon: 'info',
+                    title: 'Enter a valid Quantity.',
+                    showConfirmButton: false,
+                    timer: 2500,
+                    customClass: {
+                        container: 'custom-success-popup-container',
+                        popup: 'custom-success-popup',
+                    }
+                });
+            }
+            else{
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/update-cart') }}", 
@@ -346,6 +377,7 @@
                     });
                 }
             });
+        }
         });
 
         /* Add address functionality */

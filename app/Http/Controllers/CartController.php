@@ -358,7 +358,7 @@ class CartController extends Controller
         
         $status = true;
 
-        $message = "Product successfully added to the cart.";
+        $message = "Product quantity has been updated successfully.";
         
         if ($res['status'] == false) {
             $message = $res['message'];
