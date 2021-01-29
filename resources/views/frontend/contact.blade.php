@@ -120,7 +120,7 @@
                                 <div class="custom_select">
                                     <select name="reason" id="reason" class="form-control {{ $errors->has('reason') ? 'error' : '' }}">
                                         <option value="Basic Enquiry">Basic Enquiry</option>
-                                        <option value="Order Related">Order Related</option>
+                                        <option value="Order Related" @if(!empty($_GET['artrnr'])) selected @endif>Order Related</option>
                                         <option value="Issue Not Resolved">Issue Not Resolved</option>
                                         <option value="Feedback">Feedback</option>
                                     </select>
