@@ -161,6 +161,10 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_matrix/{id?}', 'admin\PricingMatrixController@update');
         Route::get('admin/delete_matrix/{id?}', 'admin\PricingMatrixController@delete');
 
+        /*Setting Route*/
+        Route::get('admin/settings', 'admin\SettingController@index')->name('admin.setting');
+        Route::post('admin/settings', 'admin\SettingController@update')->name('admin.setting');
+
     });
     /* 
     * Admin Theme Default Routes

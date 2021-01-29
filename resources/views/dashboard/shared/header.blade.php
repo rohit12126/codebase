@@ -58,6 +58,11 @@
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-user"></use>
                         </svg> Profile
                     </a>
+                    <a class="dropdown-item" href="{{ route('admin.setting') }}">
+                        <svg class="c-icon mr-2">
+                            <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-settings"></use>
+                        </svg> Settings
+                    </a>
                     <a class="dropdown-item" href="{{ url('/') }}" target= "_blank">
                         <svg class="c-icon mr-2">
                             <use xlink:href="{{ url('') }}/icons/sprites/free.svg#cil-laptop"></use>

@@ -101,5 +101,8 @@
     "matrix_update_success" : "Pricing Matrix udated successfully!",
     "matrix_update_failed" : "Something went wrong unable to update Pricing Matrix!",
     "matrix_delete_success" : "Pricing Matrix deleted successfully!",
-    "matrix_delete_failed" : "Something went wrong unable to delete Pricing Matrix!"
+    "matrix_delete_failed" : "Something went wrong unable to delete Pricing Matrix!",
+
+    "settings_save_success" : "Settings Saved Successfully",
+    "settings_save_failed" : "Something went wrong unable to update Settings"
 }
