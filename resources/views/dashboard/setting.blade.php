@@ -123,9 +123,8 @@ $.validator.addMethod(
         rules: {
             contact: {
                 required: true,
-                digits: true,
                 minlength: 8,
-                maxlength: 14
+                maxlength: 18
             },
             email: {
                 required: true,
