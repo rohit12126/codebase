@@ -265,6 +265,18 @@
 
         /* Remove product from cart functionality */
         jQuery('.item_remove').click(function(e) {
+            swal.fire({
+            title: 'Are you sure you want to remove this item from the cart ?',
+            showCancelButton: true,
+            confirmButtonText: `Remove`,
+            customClass: {
+                        container: 'custom-success-popup-container',
+                        popup: 'custom-success-popup',
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger',
+                    }
+            }).then((result) => {
+            if (result.isConfirmed) {
             var rowId = $( this ).children('.rowId').val(); 
             e.preventDefault();
             jQuery.ajax({
@@ -275,10 +287,6 @@
                 data: {
                     rowId : rowId
                 },
-                beforeSend:function(){
-                    if(!confirm("Are you sure you want to remove this item from the cart ?"))
-                        return false;
-                },
                 success: function(result) {
                     if( result.data.cartCount == 0 ) {
                         location.reload(true);
@@ -287,8 +295,14 @@
                     $(".row"+rowId).remove();
                     $('.grand_total').html('$'+result.data.cartSubTotal);
                     $('#grand_total').val('$'+result.data.cartSubTotal);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    swal("Error deleting!", "Please try again", "error");
                 }
+                
             });
+            }
+        })
         });
         function isInt(n) {
             return n % 1 === 0;
