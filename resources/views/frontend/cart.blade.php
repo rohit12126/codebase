@@ -308,7 +308,7 @@
         })
         });
         function isInt(n) {
-            return n % 1 === 0;
+            return n > 1 && n % 1 === 0;
         }
         /* Update cart functionality */
         $(".qty").blur(function(e) {
@@ -319,6 +319,7 @@
             var qty = $(this).val();
             if(qty == 0)
             {
+            $(this).val(1);
             Swal.fire({
                     position: 'bottom-end',
                     icon: 'info',
@@ -333,6 +334,7 @@
             }
             else if(!isInt(qty))
             {
+                $(this).val(Math.floor(qty))
                 Swal.fire({
                     position: 'bottom-end',
                     icon: 'info',
