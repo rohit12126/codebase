@@ -213,8 +213,10 @@
                     $('.qty'+rowId).val(result.data.productQty);
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
+                        $('#sub'+rowId).prop('disabled', false); 
                         $('.sub'+rowId).css("cursor", "pointer");
                     } else {
+                        $('#sub'+rowId).prop('disabled', true); 
                         $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$'+result.data.cartSubTotal);
@@ -232,7 +234,6 @@
             
             if($('.qty'+rowId).val() == 1){
                 $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
-                $('#sub'+rowId).prop('disabled', true);
                 return false;
             }
             e.preventDefault();
@@ -253,7 +254,9 @@
                     $('.cart-count').html(result.data.cartCount);
                     if(result.data.productQty > 1) {
                         $('#sub'+rowId).css("cursor", "pointer");
+                        $('#sub'+rowId).prop('disabled', false); 
                     } else {
+                        $('#sub'+rowId).prop('disabled', true);
                         $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                     }
                     $('#subQty').html('$'+result.data.cartSubTotal);
