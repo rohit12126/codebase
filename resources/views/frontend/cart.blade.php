@@ -308,7 +308,7 @@
         })
         });
         function isInt(n) {
-            return n > 1 && n % 1 === 0;
+            return n > 0 && n % 1 === 0;
         }
         /* Update cart functionality */
         $(".qty").blur(function(e) {
