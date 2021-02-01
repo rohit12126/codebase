@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="keyword" content="">
     <title>Custom Closets</title>
-    <link rel="manifest" href="assets/favicon/manifest.json">
+    <link rel="icon" href="assets/favicon/favicon.jpg">
     
     <!-- Icons-->
     <link href="{{ asset('css/free.min.css') }}" rel="stylesheet"> <!-- icons -->
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     @yield('css')
 
-    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -31,7 +31,7 @@
       gtag('config', 'UA-118965717-3');
       // Bootstrap ID
       gtag('config', 'UA-118965717-5');
-    </script>
+    </script> -->
 
     <link href="{{ asset('css/coreui-chartjs.css') }}" rel="stylesheet">
     <style>
