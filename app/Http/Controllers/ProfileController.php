@@ -97,6 +97,7 @@ class ProfileController extends Controller
         $data = $this->orderManager->getProductsByOrderNUmber($order);
         if(!$data)
         return redirect('/');
+        $reviewData = [];
         foreach($data->productList as $product)
         {
         $reviewData[] = DB::table('reviews')
