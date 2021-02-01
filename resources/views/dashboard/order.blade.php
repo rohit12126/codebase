@@ -72,9 +72,9 @@
                                                     <select name="order_status" id="" class="form-control">
                                                         <option value="" hidden>Select Order Status</option>
                                                         <option value="1" @if(@$_GET['order_status']==1) selected @endif </option>
-                                                            New
+                                                        Received
                                                         </option>
-                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option> Received
+                                                        <option value="2" @if(@$_GET['order_status']==2) selected @endif </option> Confirmed
                                                         </option>
                                                         <option value="3" @if(@$_GET['order_status']==3) selected @endif </option> Shipped
                                                         </option>
