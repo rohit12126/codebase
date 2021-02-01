@@ -50,9 +50,14 @@
                                 {{ $order->getShippingAddress->address ??  $order->getBillingAddress->address }}, {{ $order->getShippingAddress->city ??  $order->getBillingAddress->city}}, {{ $order->getShippingAddress->state ??  $order->getBillingAddress->state}}, {{ $order->getShippingAddress->zipcode ?? $order->getBillingAddress->zipcode}}</td>
                             </tr>
                             <tr>
+                                <th class="p-1">Shipping</th>
+                                <td class="p-1">: ${{number_format(($order->getPaymentDetail->shipping ?? 0) , 2)}}</td>
+                            </tr>
+                            <tr>
                                 <th class="p-1">Grand Total</th>
                                 <td class="p-1">: ${{ $order->grand_total }}</td>
                             </tr>
+
                             <tr>
                                 <th class="p-1">Order Date</th>
                                 <td class="p-1">: {{ date("M j, Y", strtotime($order->created_at)) }}</td>
