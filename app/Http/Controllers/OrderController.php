@@ -247,11 +247,11 @@ class OrderController extends Controller
                     
                     if($hardware)
                     {
-                        $hshippingPrice += $price->hardware_price * $qty;
+                        $hshippingPrice = $price->hardware_price;
                     }
                     else
                     {
-                        $shippingPrice += $price->product_price * $qty;
+                        $shippingPrice = $price->product_price;
                     }
                 }
                 
