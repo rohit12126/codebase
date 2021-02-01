@@ -105,7 +105,7 @@
                             {{$data->getShippingAddress->name ?? $data->getBillingAddress->name}}</br>
                             {{$data->getShippingAddress->email ?? $data->getBillingAddress->email}}</br>
                             {{$data->getShippingAddress->mobile ?? $data->getBillingAddress->mobile}}</br>
-                            {{$data->getShippingAddress->address ?? $data->getBillingAddress->address}}</br>{{$data->getShippingAddress->city ?? $data->getBillingAddress->city.', '.$data->getShippingAddress->state ?? $data->getBillingAddress->state}}
+                            {{$data->getShippingAddress->address ?? $data->getBillingAddress->address}}</br>{{$data->getShippingAddress->city ?? $data->getBillingAddress->city}}, {{$data->getShippingAddress->state ?? $data->getBillingAddress->state}}
                             </br>{{$data->getShippingAddress->zipcode ?? $data->getBillingAddress->zipcode}}
                             
                             </div>

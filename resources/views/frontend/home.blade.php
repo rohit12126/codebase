@@ -239,7 +239,7 @@
            </div>
            <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-nachhaltig_0.jpg')}});">
               <span class="text-wrapper hasstars">
-                 <p><strong>Excellent service.</strong><br>Actual people, no bots, ready to help via email, chat or phone, Mon-Fri. from 9am - 6pm.<br><a href="tel:&#8203;+493060988588">&#8203;+49 30 60 988 588</a></p>
+                 <p><strong>Excellent service.</strong><br>Actual people, no bots, ready to help via email, chat or phone, Mon-Fri. from 9am - 6pm.<br><a href="tel:{{$setting->contact ?? '+49 (0)30 60 988 588'}}">&#8203;{{$setting->contact ?? '+49 (0)30 60 988 588'}}</a></p>
               </span>
            </div>
            <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-faire-preise_0.jpg')}});">

@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                     <div class="pl-3 pb-3 pb-md-0">
                         <span class="product-sku-no">{{$productData['product']->name}}</span>
-                        <span class="product-sku">SKU (Stock Keeping Unit)</span>
+                        <!-- <span class="product-sku">SKU (Stock Keeping Unit)</span> -->
                     </div>
                 </div>
                 <div class="col-md-6 text-md-right">
