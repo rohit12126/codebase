@@ -139,6 +139,7 @@
                                         </p>
                                     </div>
                                     @if($data->status == 4)
+                                    
                                     <div>
                                         <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                         <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>                          
@@ -178,6 +179,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @php $c = 0; @endphp
                         @foreach($data->productList as $product)
                         <tr>
                         
@@ -212,14 +214,20 @@
                             </td>
                             <td>${{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>
-                            <td>${{number_format($product->price * $product->product_quantity, 2)}}</td>
+                            <td>${{number_format($product->price * $product->product_quantity, 2)}}  {{print_r($product['append'])}}</td>
                             @if($data->status == 4)
+                            
                             <td>
+                            @empty($reviewData[$c])
                                 <a href="#"data-toggle="modal" data-ordernum="{{$data->order_no}}" data-id="{{$product->product_id}}" data-target="#reviewModal">
                                 <i class="linearicons-pencil4"></i> &nbsp;Give a Review</a>
+                                @else
+                                <span>Review Submitted</span>
+                            @endempty
                             </td>
                             @endif
                         </tr>
+                        @php $c++ @endphp
                         @endforeach
                     </tbody>
                 </table>

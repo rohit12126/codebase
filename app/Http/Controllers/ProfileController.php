@@ -10,6 +10,7 @@ use App\Classes\UserManager;
 use App\Classes\AddressManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Session;
 
@@ -93,13 +94,21 @@ class ProfileController extends Controller
      */
     public function orderDetails($order)
     {
-        
         $data = $this->orderManager->getProductsByOrderNUmber($order);
         if(!$data)
         return redirect('/');
+        foreach($data->productList as $product)
+        {
+        $reviewData[] = DB::table('reviews')
+        ->select('body')
+        ->where('reviewrateable_id', $product->product_id)
+        ->where('author_id', $data->user_id)
+        ->first();
+        }
         return view(
             'frontend.partials.orderProductDetail',[
                 'data' => $data,
+                'reviewData'=>$reviewData
             ]);
     }
 
