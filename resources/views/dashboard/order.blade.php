@@ -174,9 +174,7 @@
                                                     </option>
                                                     <option value="5" @if($value->order_status == 'Cancelled')
                                                             selected
-                                                        @elseif($value->order_status == 'Confirmed' || $value->order_status == 'Shipped' || $value->order_status == 'Delivered')
-                                                            disabled
-                                                        @endif >Cancelled
+                                                        @endif disabled>Cancelled
                                                     </option>
                                                 </select>
                                                 <a class="btn btn-sm btn-success custom-tooltip" onclick="submitSForm({{$value->order_no}})" href="javascript:void(0)" id="button{{$value->order_no}}">
