@@ -353,6 +353,9 @@
 
 <script>
 $(document).ready(function() {
+    $('#bill_zipcode','#bill_city').change(function(){
+    $(".error").hide();
+    });
     getShippingOnOldAddress();
 
         $('#place_order').attr('disabled',true);
