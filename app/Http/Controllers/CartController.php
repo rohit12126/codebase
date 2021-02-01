@@ -296,6 +296,11 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $req) {
+        if($req->qty == 1)
+        {
+            
+            return 'false';
+        }
         $configuredProductData = [];
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);

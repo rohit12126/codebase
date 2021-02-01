@@ -231,7 +231,7 @@
             var rowId = $(this).attr('rowId');
             var conf_id = $( this ).attr('conf_id');
             var article_nu = $(this).attr('article_nu');
-            
+            var qty = $('.qty'+rowId).val();
             if($('.qty'+rowId).val() == 1){
                 $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                 return false;
@@ -245,7 +245,8 @@
                 data: {
                     productId : productId,
                     article_nu : article_nu,
-                    conf_id : conf_id
+                    conf_id : conf_id,
+                    qty : qty
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
