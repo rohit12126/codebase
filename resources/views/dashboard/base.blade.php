@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="keyword" content="">
     <title>Custom Closets</title>
-    <link rel="icon" href="assets/favicon/favicon.jpg">
+    <link rel="icon" href="{{url('/')}}/assets/favicon/favicon.jpg">
     
     <!-- Icons-->
     <link href="{{ asset('css/free.min.css') }}" rel="stylesheet"> <!-- icons -->
