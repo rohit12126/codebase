@@ -132,6 +132,9 @@ class CartManager
             if ($item->id == $product->id) {
                 if($item->qty == 1)
                 {
+                    $qty = $item->qty;
+                    $rowId = $item->rowId;
+                    $set = true;
                     break;
                 }
                 if(!empty($configuredProductData))
