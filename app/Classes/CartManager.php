@@ -190,6 +190,7 @@ class CartManager
                 'configureDetails' => $configuredProductData
             ]
         ];
+        dd($productData);
         Cart::add($productData);
         
         if (Auth::check()) {
