@@ -132,11 +132,15 @@ class CartManager
             if ($item->id == $product->id) {
                 if($item->qty == 1)
                 {
+                    $qty = $item->qty;
+                        $rowId = $item->rowId;
+                        $set = true;
+                        break;
                     dump('hi');
                 }
                 if(!empty($configuredProductData))
                 {
-                    dump('hello');
+                    
                     if (
                         $item->options['configureDetails']['configurationId'] == 
                         $configuredProductData['configurationId']
