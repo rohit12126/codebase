@@ -520,6 +520,14 @@ $(document).ready(function() {
         };
     }, "Please enter a valid postcode");
 
+    jQuery.validator.addMethod("custum_email", function (value, element) {
+        if ( /"[a-zA-Z0-9]([^\\"]|\\")*/g.test(value)) {
+            return false;
+        } else {
+            return true;
+        };
+    }, "Please enter a valid email address");
+
     
     jQuery("#checkoutForm").validate({
         
@@ -529,7 +537,8 @@ $(document).ready(function() {
                   return !$('input:radio[name="shipping_address"]').is(':checked'); 
                 }, */
                 required: true,
-                email: true
+                email: true,
+                custum_email : true
             },
             ship_phone: {
                 /* required: function() { 
@@ -546,7 +555,8 @@ $(document).ready(function() {
                   return !$('input:radio[name="billing_address"]').is(':checked'); 
                 }, */
                 required: true,
-                email: true
+                email: true,
+                custum_email : true
             },
             bill_phone: {
                 /* required: function() { 
