@@ -183,14 +183,14 @@ class CartManager
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> trim($price , ','),
+            'price'=> str_replace(",", "",$price),
             'options' => 
             [
                 'image' => @$product->images[0]->image,
                 'configureDetails' => $configuredProductData
             ]
         ];
-        dd($productData);
+        
         Cart::add($productData);
         
         if (Auth::check()) {
