@@ -183,7 +183,7 @@ class CartManager
             'id'=> $product->id,
             'name'=> $product->name,
             'qty'=> $qty,
-            'price'=> $price,
+            'price'=> trim($price , ','),
             'options' => 
             [
                 'image' => @$product->images[0]->image,
