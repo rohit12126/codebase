@@ -296,9 +296,6 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $req) {
-        
-        if($req->qty >= 1)
-        {
         $configuredProductData = [];
         $productId = $req->input('productId');
         $product = $this->productManager->getProduct($productId);
@@ -330,16 +327,9 @@ class CartController extends Controller
             'message'=>"Product successfully removed from the cart.",
             'data' => $data
         ];
-    }
-    else{
-        $response = [
-            'status'=>true,
-            'message'=>"Product can'nt remove from the cart.",
-            'data' => $data
-        ];
-    }
+        
         echo json_encode($response);
-
+        
     }
 
     /**

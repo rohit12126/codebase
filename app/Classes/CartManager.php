@@ -130,6 +130,10 @@ class CartManager
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
+                if($item->qty == 1)
+                {
+                    break;
+                }
                 if(!empty($configuredProductData))
                 {
                     if (
