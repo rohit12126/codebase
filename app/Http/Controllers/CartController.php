@@ -296,7 +296,7 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $req) {
-        dd($req);
+        
         if($req->qty >= 1)
         {
         $configuredProductData = [];
