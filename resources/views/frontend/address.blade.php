@@ -228,7 +228,7 @@
                                         <form action="" method="post" id="shippingd">
                                         <div class="custom_select">
                                             <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
-                                            <option disabled selected >Select state</option>
+                                            <option disabled selected value="" >Select state</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
                                                 @endforeach
