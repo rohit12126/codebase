@@ -18,8 +18,10 @@ class OrderManager
     {
     
         $order = self::getOrderByOrderNUmberWithOrderAddress($req->order_no);
-        
-        if ($order->fill(['status' => $req->order_status])->save()) {
+        if($order->status == $req->order_status){
+            return false;
+        }
+        else if ($order->fill(['status' => $req->order_status])->save()) {
             
             $data['order_no'] = $order->order_no;
             $data['buyer_name'] = ucwords($order->user->name);

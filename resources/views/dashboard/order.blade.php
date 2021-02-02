@@ -259,9 +259,8 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script>
 function submitSForm(ordernu){
-$('#selectStatus'+ordernu).on('change', function(e){
-$(this).closest('form').submit();
-});
+    
+        $('#changeStatusForm'+ordernu).submit();
 }
 function clicked(id) 
 {
