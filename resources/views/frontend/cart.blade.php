@@ -336,6 +336,10 @@
             else if(!isInt(qty))
             {
                 $(this).val(Math.floor(qty))
+                if(qty < 0)
+                {
+                    $(this).val(Math.abs(qty))
+                }
                 Swal.fire({
                     position: 'bottom-end',
                     icon: 'info',
