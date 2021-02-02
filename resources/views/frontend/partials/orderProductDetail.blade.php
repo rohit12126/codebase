@@ -190,7 +190,7 @@
                             <span id="more">
                             @foreach(json_decode($product->configure_detail) as $key => $config)
                                 @if(isset($config->label))
-                                <span class="short"><strong>{{$config->label}}:</strong>:{{$config->value}}</span></br>
+                                <span class="short"><strong>{{$config->label}} : </strong>{{ucfirst(trim($config->value , 'cdm:'))}}</span></br>
                                 @endif
                             @endforeach
                             </span>

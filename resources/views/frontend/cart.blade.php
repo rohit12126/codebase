@@ -25,7 +25,7 @@
                                 <span id="more">
                                 @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
                                     @if(isset($config['label']))
-                                    <span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span></br>
+                                    <span class="short"><strong>{{$config['label']}}</strong> : {{ucfirst(trim($config['value'] , 'cdm:'))}}</span></br>
                                     @endif
                                 @endforeach
                                 </span>
@@ -34,7 +34,7 @@
                                 @endif
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
-                                   <span class="total{{$product->id}}">
+                                    <span class="total{{$product->id}}">
                                         ${{number_format($product->price,2)}}
                                     </span>
                                 </p>
@@ -99,7 +99,7 @@
                     <span id="more">
                     @foreach($product->options['configureDetails']['partList']['parameters'] as $config)
                         @if(isset($config['label']))
-                        <span class="short"><strong>{{$config['label']}}</strong>:{{$config['value']}}</span></br>
+                        <span class="short"><strong>{{$config['label']}}</strong> : {{ucfirst(trim($config['value'] , 'cdm:'))}}</span></br>
                         @endif
                     @endforeach
                     </span>
