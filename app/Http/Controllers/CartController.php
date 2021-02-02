@@ -323,7 +323,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $price,
+            'productPrice' => str_replace(",", "",$price),
             'cartSubTotal' => $cartSubTotal
         ];
 
@@ -379,7 +379,7 @@ class CartController extends Controller
         $data = [
             'cartCount' => $cartCount,
             'productQty' => $productQty,
-            'productPrice' => $price,
+            'productPrice' => str_replace(",", "",$price),
             'cartSubTotal' => $cartSubTotal
         ];
 
