@@ -374,6 +374,8 @@
                         $('.cart-count').html(result.data.cartCount);
                         if(result.data.productQty > 1) {
                             $('#sub'+rowId).css("cursor", "pointer");
+                            $('#sub'+rowId).prop('disabled', false); 
+                            
                         } else {
                             $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                         }

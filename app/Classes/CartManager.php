@@ -136,7 +136,6 @@ class CartManager
                         $rowId = $item->rowId;
                         $set = true;
                         break;
-                    dump('hi');
                 }
                 if(!empty($configuredProductData))
                 {
