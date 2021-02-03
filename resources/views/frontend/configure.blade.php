@@ -241,7 +241,7 @@
             if(result.status == false)
             {
                 Swal.fire({
-            title: 'Unable to Request Your Product <a href="{{url('contact-us')}}?artrnr='+result.data+'"> Get support.</a>',
+            title: 'Unable to Request Your Process for more details kindly &nbsp<a href="{{url('contact-us')}}?artrnr='+result.data+'" target=”_blank”>Contact us.</a>',
             icon: 'info',
             
             showCloseButton: true,

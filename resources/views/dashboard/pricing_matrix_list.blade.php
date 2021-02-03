@@ -39,7 +39,7 @@
                                         <div class="col-sm-6 col-8">
                                             <div class="form-group mb-0">
                                             <label>Search via Product Family | SKU | UPC</label>
-                                            <input type="text" placeholder="Title" name="title"
+                                            <input type="text" placeholder="Product Family OR SKU OR UPC" name="title"
                                                 class="form-control" value="{{ @$_GET['title'] }}">
                                             </div>
                                         </div>

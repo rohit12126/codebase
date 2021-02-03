@@ -39,6 +39,9 @@
 .rating:hover>input:checked~label:before {
     opacity: 0.4
 }
+.address-card{
+    border-color: #F94E57;
+}
 
 </style>
 <!-- START SECTION SHOP -->
@@ -81,7 +84,7 @@
             <div class="d-flex w-100 pt-3 pb-3">
                 @isset($data->getBillingAddress->address)
                     <div class="col-lg-6">
-                        <div class="card mb-3 mb-lg-0">
+                        <div class="card mb-3 mb-lg-0 address-card">
                             <div class="card-header">
                                 <h5>Billing Address</h5>
                             </div>
@@ -97,7 +100,7 @@
                 @endisset
                 @isset($data->getShippingAddress->address)
                     <div class="col-lg-6">
-                        <div class="card mb-3 mb-lg-0">
+                        <div class="card mb-3 mb-lg-0 address-card">
                             <div class="card-header">
                                 <h5>Shipping Address</h5>
                             </div>
