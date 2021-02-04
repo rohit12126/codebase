@@ -29,7 +29,6 @@ class PricingMatrix extends Model
       'width',
       'height',
       'track',
-      'new_track',
       'assembled_height',
       'opening_width',
       'unpackaged_weight',

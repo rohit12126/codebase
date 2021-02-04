@@ -194,14 +194,7 @@
                                             <div class="error">{{ $errors->first('track') }}</div>
                                         @endif
                                     </div>
-                                    <div class="form-group">
-                                    <label>New Track</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="text" placeholder="New Track" name="new_track" class="form-control" value="{{ old('new_track', @$pricingMatrix->new_track) }}" >
-                                        @if($errors->has('new_track'))
-                                            <div class="error">{{ $errors->first('new_track') }}</div>
-                                        @endif
-                                    </div>
+                                                
                                     <div class="form-group">
                                     <label>Assembled Height</label>
                                         <span class="mandatory">*</span>
