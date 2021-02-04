@@ -10,7 +10,7 @@ class PricingMatrix extends Model
 {
   use SoftDeletes;
 
-    protected $table='pricing_matrix';
+    protected $table='price_matrix';
 
     protected $fillable = [
       'product_family',
@@ -34,8 +34,7 @@ class PricingMatrix extends Model
       'opening_width',
       'unpackaged_weight',
       'optional_nu_of_panels',
-      'mu',
-      'bt_of_panels',
+      'num_of_Panels',
       'trim',
     ];
 

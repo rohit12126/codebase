@@ -125,20 +125,28 @@
                                             <div class="error">{{ $errors->first('optional_nu_of_panels') }}</div>
                                         @endif
                                     </div>
-                                    <div class="form-group">
+                                   {{-- <div class="form-group">
                                         <label for="">MU</label>
                                         <span class="mandatory">*</span>
                                         <input type="text" placeholder="MU" name="mu" class="form-control" value="{{ old('mu', @$pricingMatrix->mu) }}" >
                                         @if($errors->has('mu'))
                                             <div class="error">{{ $errors->first('mu') }}</div>
                                         @endif
+                                    </div>--}}
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="text" placeholder="Description" name="description" class="form-control" value="{{ old('description', @$pricingMatrix->description) }}" >
+                                        @if($errors->has('description'))
+                                            <div class="error">{{ $errors->first('description') }}</div>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="">Number Of Pannel</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Number Of Pannel" name="bt_of_panels" class="form-control" value="{{ old('bt_of_panels', @$pricingMatrix->bt_of_panels) }}" >
-                                        @if($errors->has('bt_of_panels'))
-                                            <div class="error">{{ $errors->first('bt_of_panels') }}</div>
+                                        <input type="text" placeholder="Number Of Pannel" name="num_of_Panels" class="form-control" value="{{ old('num_of_Panels', @$pricingMatrix->num_of_Panels) }}" >
+                                        @if($errors->has('num_of_Panels'))
+                                            <div class="error">{{ $errors->first('num_of_Panels') }}</div>
                                         @endif
                                     </div>
                                     
@@ -238,14 +246,7 @@
                                     </div>
                                 </div>
                               
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Description" name="description" class="form-control" value="{{ old('description', @$pricingMatrix->description) }}" >
-                                        @if($errors->has('description'))
-                                            <div class="error">{{ $errors->first('description') }}</div>
-                                        @endif
-                                    </div>
+                                    
                                     <div class="d-flex">
                                 <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$pricingMatrix) Update @else Submit @endif" style="border-radius:0.25rem">
                                     @if(@$pricingMatrix) Update @else Submit @endif
