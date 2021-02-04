@@ -191,7 +191,6 @@ class ProductController extends Controller
     
     public function getPrice(Request $req)
     {
-        
         $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
         if(empty($price))
         {

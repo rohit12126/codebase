@@ -56,7 +56,7 @@
                                     article_nu : parts[0].articleNr
                                 },
                                 success: function(result){
-                                    let priceSum = result;
+                                    let priceSum = parseInt(result);
                                     configurator.ui.setPrice('$',priceSum);
                                 }
                             });
