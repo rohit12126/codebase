@@ -399,7 +399,7 @@ $(document).ready(function() {
                     $('#place_order').attr('disabled',true);
                 }
                 else{
-                $('.shipping_price').html('$ '+data)
+                $('.shipping_price').html('$'+data)
                 $('#place_order').attr('disabled', false);
                 $('<input>', {
                     type: 'hidden',

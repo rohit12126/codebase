@@ -654,10 +654,12 @@ function myFunction(id) {
     if (dots.style.display === "none") {
         dots.style.display = "inline";
         btnText.textContent = "configured details";
+        document.getElementById("c-arrow").className = "linearicons-arrow-down";
         moreText.style.display = "none";
     } else {
         dots.style.display = "none";
         btnText.textContent = "hide details";
+        document.getElementById("c-arrow").className = "linearicons-arrow-up";
         moreText.style.display = "inline";
     }
 }
