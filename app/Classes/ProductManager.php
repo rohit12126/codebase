@@ -4,6 +4,7 @@ namespace App\Classes;
 
 use App\Models\Product as ProductModel;
 use App\Models\ProductImage as ProductImageModel;
+use App\Models\PricingMatrix as PricingMatrixModel;
 use App\Classes\HelperManager as Common;
 use App\Classes\ReviewManager;
 use App\Models\Category;
@@ -306,7 +307,7 @@ class ProductManager
     }
     public function getPriceByArticlenumber($articleNu)
     {
-        $price = DB::table('pricing_matrix')->where('model', '=', $articleNu)->pluck('retail');
+        $price = PricingMatrixModel::where('model', '=', $articleNu)->pluck('retail');
         if(!$price->isEmpty())
         return number_format($price[0],2);
         return FALSE;
