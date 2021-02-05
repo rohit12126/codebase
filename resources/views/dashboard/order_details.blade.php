@@ -151,7 +151,7 @@
                             @if(isset($config->label))
                             <tr>
                                 <th class="p-0">{{$config->label}}:</th>
-                                <td class="p-0">{{ucfirst(trim($config->value , 'cdm:'))}}</td>
+                                <td class="p-0">{{ucfirst(str_replace("cdm:","",$config['value']))}}</td>
                             </tr>
                             @endif
                             @endforeach

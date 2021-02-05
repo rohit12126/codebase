@@ -44,7 +44,7 @@
                     const priceDataBase = {};
                     
                         configurator.ui.callbacks.onPartListUpdate = (partList) => {
-                            
+                            console.log(partList);
                             const parts = partList.fullList;
                             
                             jQuery.ajax({
