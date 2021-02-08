@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Mail\UserRegistration;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
-use SweetAlert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -70,13 +70,13 @@ class LoginController extends Controller
         }
         
         if($user->getemail() == null){
-        SweetAlert::message('Your' .$provider. 'Account Does not Provide Any Information, Kindly SignUp !');
-        return redirect()->route('register');
+        Alert::warning('Unable to login.', 'Your' .$provider. ' account Does not Provide Any Information, Kindly SignUp !');
+        return redirect()->route('home');
     }
 
         $authUser = $this->findOrCreateUser($user, $provider);
     if(!$authUser){
-        SweetAlert::message('Can not find mail Id you used, in system. kindly SignUp.');
+        Alert::warning('Unable to login.', 'Can not find mail Id you used, in system. kindly SignUp.');
         return redirect()->route('home');
     }
         Auth::login($authUser, true);
