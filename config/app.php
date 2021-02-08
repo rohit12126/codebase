@@ -186,6 +186,9 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
 
+        /*Sweet Alert*/
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+
         /*debugger*/
         // Barryvdh\Debugbar\ServiceProvider::class,
     ],
@@ -243,6 +246,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
         // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ]
 
 ];

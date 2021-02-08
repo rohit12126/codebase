@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.3.0",
         "laravel/ui": "^2.0.1",
         "paypal/rest-api-sdk-php": "^1.14",
+        "realrashid/sweet-alert": "^3.2",
         "riskihajar/terbilang": "^1.2",
         "spatie/laravel-medialibrary": "^7.19.0",
         "spatie/laravel-permission": "^3.8",
