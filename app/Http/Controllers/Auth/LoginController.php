@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Mail\UserRegistration;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
-use RealRashid\SweetAlert\Facades\Alert;
+// use RealRashid\SweetAlert\Facades\Alert;
+use Alert;
 
 class LoginController extends Controller
 {
