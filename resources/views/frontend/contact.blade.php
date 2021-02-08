@@ -89,7 +89,7 @@
                 </div>
                 <!-- <p class="leads">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p> -->
                 <div class="field_form">
-                    <form method="post" action="{{ route('contact.store') }}">
+                    <form method="post" id="contactForm" action="{{ route('contact.store') }}">
                     @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -158,4 +158,39 @@
 </div>
 <!-- END SECTION CONTACT -->
 </div>
+<script>
+
+
+
+$(document).ready(function () {
+$('#contactForm').validate({
+    rules: {
+        name: {
+            required: true,
+            minlength: 3,
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        phone: {
+            required: true,
+            digits: true,
+            minlength: 8,
+            maxlength: 15
+        },
+        message: {
+            required: true,
+            minlength: 15,
+            maxlength: 400
+        },
+        reason: {
+            required: true
+        }
+    }
+});
+});
+
+</script>
+
 @endsection
