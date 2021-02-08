@@ -78,7 +78,7 @@
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/media.min.css')}}">
-    @include('sweetalert::alert')
+    
 </head>
 
 <body >
@@ -339,6 +339,7 @@ footer-->
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.hotspot.js')}}"></script>
 <script src="{{ asset('js/fancybox.min.js')}}"></script>
+@include('sweetalert::alert')
 <script>
     $(window).bind("load", function() { 
         if ($('#hotspotImg').length > 0) {
