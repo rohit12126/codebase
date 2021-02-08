@@ -71,14 +71,14 @@ class LoginController extends Controller
         
         if($user->getemail() == null){
         Alert::warning('Unable to login.', 'Your' .$provider. ' account Does not Provide Any Information, Kindly SignUp !');
-        dd(Session());
+        
         return redirect()->route('home');
     }
 
         $authUser = $this->findOrCreateUser($user, $provider);
     if(!$authUser){
         Alert::warning('Unable to login.', 'Can not find mail Id you used, in system. kindly SignUp.');
-        dd(Session());
+        
         return redirect()->route('home');
     }
         Auth::login($authUser, true);
