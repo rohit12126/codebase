@@ -78,6 +78,7 @@
     <link rel="stylesheet" href="{{ asset('css/css-responsive.css')}}">    
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/media.min.css')}}">
+    @include('sweetalert::alert')
 </head>
 
 <body >
