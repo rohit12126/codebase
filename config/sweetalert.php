@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'timer' => env('SWEET_ALERT_TIMER', 5000),
+    'timer' => env('SWEET_ALERT_TIMER', 6000),
 
     /*
     |--------------------------------------------------------------------------
@@ -183,8 +183,8 @@ return [
 
     'customClass' => [
 
-        'container' => env('SWEET_ALERT_CONTAINER_CLASS'),
-        'popup' => env('SWEET_ALERT_POPUP_CLASS'),
+        'container'=> 'custom-success-popup-container',
+        'popup' => 'custom-success-popup',
         'header' => env('SWEET_ALERT_HEADER_CLASS'),
         'title' => env('SWEET_ALERT_TITLE_CLASS'),
         'closeButton' => env('SWEET_ALERT_CLOSE_BUTTON_CLASS'),
