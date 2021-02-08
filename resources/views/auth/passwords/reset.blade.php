@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input  type="password" required=""placeholder="comfirm password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input  type="password" required=""placeholder="confirm password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-fill-out btn-block">Send Password Reset Link </button>
