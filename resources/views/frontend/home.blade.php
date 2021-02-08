@@ -3,7 +3,7 @@
 
 
 <!-- START SECTION SHOP -->
-    <section class="home-slider-section">
+    <!-- <section class="home-slider-section">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -55,8 +55,10 @@
                 <span class="linearicons-chevron-right" aria-hidden="true"></span>
             </a>
         </div>
-    </section>
-
+    </section> -->
+    <div class="main-page-video">
+        <iframe src="https://player.vimeo.com/video/358365319?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <section class="home-swip-section">
         <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
         <div class="row m-0">
