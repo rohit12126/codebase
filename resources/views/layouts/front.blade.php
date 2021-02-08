@@ -421,7 +421,20 @@ footer-->
             });   
         }
     });
-
+    jQuery.validator.addMethod("custum_email", function (value, element) {
+        if ( /"[a-zA-Z0-9]([^\\"]|\\")*/g.test(value)) {
+            return false;
+        } else {
+            return true;
+        };
+    }, "Please enter a valid email address");
+    jQuery.validator.addMethod("custum_password", function (value, element) {
+        if (!(/^\S{3,}$/.test(value))) {
+            return false;
+        } else {
+            return true;
+        };
+    }, "Password cannot contain whitespace");
     /* Sign Up validation functionality */
     jQuery("#signupform").validate({
         rules: {
@@ -437,7 +450,8 @@ footer-->
             },
             email: {
                 required: true,
-                email: true
+                email: true,
+                custom_email: true
             },
             mobile: {
                 required: true,
@@ -447,9 +461,11 @@ footer-->
             },
             spassword: {
                 required: true,
+                custum_password: true,
             },
             password_confirmation : {
                 minlength : 5,
+                custum_password: true,
                 equalTo : "#Password"
             }
         },
