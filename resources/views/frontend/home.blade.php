@@ -58,9 +58,29 @@
     </section> -->
     <div class="main-page-video">
         <iframe src="https://player.vimeo.com/video/358365319?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-banner-content">
+            <div>
+                <h1>Closet door shopping made easy</h1>
+                <h2>Create custom closet doors that fits your style</h2>
+            </div>
+        </div>
+        <div class="video-banner-btns">
+            <a href="https://ecom.c247.website/product" class="btn btn-fill-out">Learn more</a>
+            <a href="https://ecom.c247.website/product" class="btn btn-fill-out">shop now</a>
+        </div>
     </div>
+    <section class="home-steps">
+            <h2>
+                Finding the perfect closet doors to meet your needs is only a few steps away.
+            </h2>
+    </section>
     <section class="home-swip-section">
-        <h1 class="pt-5 mb-5 heading_s3 text-center">A Closet For Life</h1>
+        <h2 class="home-step-heading">
+            Bifold Or Sliding Doors?
+        </h2>
+        <p class="home-step-para">
+          Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
+        </p>
         <div class="row m-0">
             <div class="col-md-6 col-sm-12 p-4 home-swip-column">
                 <div id="page" class="wrapper-upper">
@@ -194,8 +214,71 @@
             </div>
         </div>
     </section>
-
-    <section class="home-products-section" id="stt">
+    <section class="home-swipe-detail">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                        </div>
+                        <div class="col-8">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">                        
+                        <div class="col-8">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
+                        </div>
+                        <div class="col-4">
+                            <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="home-step-2 bg-light">
+        <div class="container">
+            <h2 class="home-step-heading">
+                Options
+            </h2>
+            <p class="home-step-para">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum eos provident cupiditate exercitationem dolr
+            </p>
+            <div class="row mt-5">
+                <div class="col-lg-6 pr-4">
+                    <img src="{{URL::asset('/images/Hero_Sliding_image_01.jpg')}}" alt="">
+                </div>
+                <div class="col-lg-6 pl-4">
+                    <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="home-swipe-detail">
+        <div class="container">
+            <h2 class="home-step-heading">
+                Measure
+            </h2>
+            <p class="home-step-para">
+              Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
+            </p>
+            <div class="row mt-5">
+                <div class="col-md-6 pr-5">
+                    <img src="{{URL::asset('/images/measure.jpg')}}" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-md-6 text-left">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nihil facilis corrupti commodi architecto. Doloremque eveniet ut, molestias fugiat adipisci voluptatibus nobis sapiente est incidunt provident quae optio! Labore, odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam, veritatis sequi facere recusandae itaque cum suscipit beatae nobis nesciunt dolore, iure, aspernatur doloribus quo enim illum fugiat. Aspernatur, inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rem tenetur eaque nisi necessitatibus voluptatum maiores, ab sit minus ipsam aperiam fugit ut adipisci quo impedit nobis deserunt. Esse, nam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima consectetur hic beatae quisquam mollitia quam, quis, qui doloremque, quae molestias eligendi odio vel nihil laborum eaque in dicta nulla laudantium?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="home-products-section" id="stt">
         <h1 class="pt-5 mb-5 heading_s3 text-center">Our Products</h1>
         <div class="pd-block-wrap">
         @if($products->isEmpty()) 
@@ -226,6 +309,11 @@
         @endforeach
         @endif
         </div>
+    </section> -->
+    <section class="the-cdm">
+        <h2>
+            The CDM Difference
+        </h2>
     </section>
     <section class="grid-tiems-section">
         <div class="grid-2020">

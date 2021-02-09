@@ -8051,6 +8051,69 @@ h5 {
 	text-decoration: underline;
 }
 /*================Home page Css=================*/
+.video-banner-content{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	display: flex;
+	justify-content: center;
+	padding-top: 15%;
+	text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+.video-banner-content h1{
+	color: #fff;
+	text-transform: capitalize;
+	margin-bottom: 0.5rem;
+	font-weight: 800;
+	font-size: 3rem;
+}
+.video-banner-content h2{
+	color: #fff;
+	font-size: 1.6rem;
+	line-height: 1;
+}
+.video-banner-btns{
+	position: absolute;
+	bottom: 80px;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+}
+.video-banner-btns .btn{
+	text-transform: uppercase;
+}
+.video-banner-btns .btn:hover{
+	background-color: #fff;
+}
+.home-steps{
+	padding: 2.5rem 1rem;
+	text-align: center;
+}
+.home-step-span{
+	color: #FF324D;
+}
+.home-step-heading{
+	padding: 2rem 0 0;
+	text-align:center;
+}
+.home-step-para{
+	color: #292b2c;
+    font-size: 1.2rem;
+	text-align:center;
+}
+.the-cdm{
+	background-color: #000;
+	padding: 2.5rem;
+	text-align: center;
+}
+.the-cdm h2{
+	color: #fff;
+	font-weight: bold;
+	font-size: 2.5rem;
+}
 .home-slider-section h1,.home-slider-section h4{
 	color:#fff;
 }
@@ -8127,10 +8190,19 @@ h5 {
 	padding: 10px 40px;
 	border-radius: 0;
 }
+.img-thumbnail{
+	background-color: #f94e57;
+}
+.home-step-2{
+	padding: 1.25rem 0;
+}
+.home-swipe-detail{
+	background-image: url('../images/body-bg.gif') ;
+	padding: 1.25rem 1rem;
+}
 .home-swip-section{
-	min-height:892px;
+	min-height:792px;
 	position: relative;
-	padding-bottom: 100px;
 	background-image: url('../images/body-bg.gif') ;
 }
 .home-swip-section .first-slide{
