@@ -44,19 +44,18 @@
                     const priceDataBase = {};
                     
                         configurator.ui.callbacks.onPartListUpdate = (partList) => {
-                            console.log(partList);
                             const parts = partList.fullList;
-                            
                             jQuery.ajax({
                                 url: "{{ url('/product/price') }}",
                                 method: 'post',
                                 dataType: "json",
                                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                 data: {
-                                    article_nu : parts[0].articleNr
+                                    article_nu : parts[0].articleNr,
+                                    parts : parts[0].parameters
                                 },
                                 success: function(result){
-                                    let priceSum = parseInt(result);
+                                    let priceSum = parseInt(result['price']);
                                     configurator.ui.setPrice('$',priceSum);
                                 }
                             });
