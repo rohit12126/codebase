@@ -656,4 +656,7 @@
         margin: 0 auto;
         max-width: 1470px;
     }
+    .home-option-step .container-fluid{
+        max-width: 1400px;
+    }
 }

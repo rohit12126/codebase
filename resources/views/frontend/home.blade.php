@@ -73,10 +73,11 @@
         <div class="home-step-shape"></div>
         <div class="container">
             <div class="row">
-              <div class="col-md-6">
-              </div>
-              <div class="col-md-6">
+              <div class="col-md-7 pr-5">
                 <h3>Finding the perfect closet doors to meet <br>your needs is only a few steps away.</h3>
+              </div>
+              <div class="col-md-5">
+                
               </div>
             </div>
         </div>
@@ -228,10 +229,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row home-steps-card">
-                        <div class="col-4">
+                        <div class="col-6 pl-0">
                             <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                         </div>
-                        <div class="col-8">
+                        <div class="col-6">
                             <div class="d-flex h-100 align-items-center">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
                             </div>
@@ -240,12 +241,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row home-steps-card">                        
-                        <div class="col-8">
+                        <div class="col-6">
                             <div class="d-flex h-100 align-items-center">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6 pr-0">
                             <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                         </div>
                     </div>
@@ -256,7 +257,7 @@
     <section class="home-option-step">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 pl-0 pr-5">
+                <div class="col-xl-6 pl-0 pr-5">
                     <img src="{{URL::asset('/images/Hero_Sliding_image_01.jpg')}}" alt="">
                     <div class="option-step-content">
                         <h3>Let's custom your own <br> slide closet</h3>
@@ -265,7 +266,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6 text-right pr-0">
+                <div class="col-xl-6 text-right pr-0">
                     <img src="{{URL::asset('/images/bifolddoors.jpg')}}" alt="">
                     <div class="option-step-content d-flex justify-content-center align-items-center">
                         <div class="text-left">
@@ -278,39 +279,42 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="container">
-            <h2 class="home-step-heading">
-                Options
-            </h2>
-            <p class="home-step-para">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum eos provident cupiditate exercitationem dolr
-            </p>
-            <div class="row mt-5">
-                <div class="col-lg-6 pr-4">
-                    <img src="{{URL::asset('/images/Hero_Sliding_image_01-min.jpg')}}" alt="">
-                </div>
-                <div class="col-lg-6 pl-4">
-                    <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
-                </div>
-            </div>
-        </div> -->
     </section>
     <section class="home-measure-step pb-5">
         <div class="container">
-            <h2 class="home-step-heading">
-                Measure
-            </h2>
-            <p class="home-step-para">
-              Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
-            </p>
+            <div class="measure-heading d-flex">
+                <img src="{{URL::asset('/images/measure-tape.png')}}" alt="" class="measure-tape-img">
+                <div class="">
+                    <h2 class="home-step-heading text-left">
+                        Measure 
+                    </h2>
+                    <p class="home-step-para text-left">
+                        Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
+                    </p>
+                </div>
+            </div>
             <div class="row mt-5">
                 <div class="col-md-6 pr-5">
-                    <img src="{{URL::asset('/images/measure.jpg')}}" alt="" class="img-thumbnail">
+                    <div class="home-measure-container">
+                        <div class="home-meausre-top">
+                            <div class="border-top-bottom-half"><span></span></div> 
+                            <div class="unit-area set-width-top-rectangle">20.00 in.</div> 
+                            <div class="border-top-bottom-half"><span class="left-auto-right-zero"></span></div>
+                        </div>
+                        <div class="home-meausre-left">
+                            <div class="border-left-right-half"><span></span></div> 
+                            <div class="unit-area set-length-left-rectangle">50.00 in.</div> 
+                            <div class="border-left-right-half"><span class="top-auto-bottom-zero"></span></div>
+                        </div>
+                        <img src="{{URL::asset('/images/measure.jpg')}}" alt="" class="">
+                    </div>
                 </div>
                 <div class="col-md-6 text-left">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nihil facilis corrupti commodi architecto. Doloremque eveniet ut, molestias fugiat adipisci voluptatibus nobis sapiente est incidunt provident quae optio! Labore, odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam, veritatis sequi facere recusandae itaque cum suscipit beatae nobis nesciunt dolore, iure, aspernatur doloribus quo enim illum fugiat. Aspernatur, inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rem tenetur eaque nisi necessitatibus voluptatum maiores, ab sit minus ipsam aperiam fugit ut adipisci quo impedit nobis deserunt. Esse, nam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima consectetur hic beatae quisquam mollitia quam, quis, qui doloremque, quae molestias eligendi odio vel nihil laborum eaque in dicta nulla laudantium?
-                    </p>
+                    <div class="d-flex align-items-center h-100">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nihil facilis corrupti commodi architecto. Doloremque eveniet ut, molestias fugiat adipisci voluptatibus nobis sapiente est incidunt provident quae optio! Labore, odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam, veritatis sequi facere recusandae itaque cum suscipit beatae nobis nesciunt dolore, iure, aspernatur doloribus quo enim illum fugiat. Aspernatur, inventore?
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
