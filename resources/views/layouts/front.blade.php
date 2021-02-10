@@ -421,7 +421,7 @@ footer-->
             });   
         }
     });
-    jQuery.validator.addMethod("custum_email", function (value, element) {
+    jQuery.validator.addMethod("custom_email", function (value, element) {
         if ( /"[a-zA-Z0-9]([^\\"]|\\")*/g.test(value)) {
             return false;
         } else {
