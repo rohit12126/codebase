@@ -70,167 +70,180 @@
         </div>
     </div>
     <section class="home-steps">
-            <h2>
-                Finding the perfect closet doors to meet your needs is only a few steps away.
-            </h2>
+        <div class="home-step-shape"></div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+              </div>
+              <div class="col-md-6">
+                <h3>Finding the perfect closet doors to meet <br>your needs is only a few steps away.</h3>
+              </div>
+            </div>
+        </div>
     </section>
     <section class="home-swip-section">
-        <h2 class="home-step-heading">
-            Bifold Or Sliding Doors?
-        </h2>
-        <p class="home-step-para">
-          Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
-        </p>
-        <div class="row m-0">
-            <div class="col-md-6 col-sm-12 p-4 home-swip-column">
-                <div id="page" class="wrapper-upper">
-                    <div class="wrapper wrapperFirst">
-                        <div class="before">
-                            <div id="hotspotImg" class="responsive-hotspot-wrap">
-                                <img src="{{URL::asset('/images/home/door-closets-close.jpg')}}" class="hotspot-image"  alt="" >
-                                <div class="hot-spot" x="300" y="43" >
-                                    <div class="circle" ></div>
-                                    <div class="tooltip">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+        <div class="container">
+            <h2 class="home-step-heading">
+                Bifold Or Sliding Doors?
+            </h2>
+            <p class="home-step-para mb-5">
+            Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
+            </p>
+            <div class="row mt-4">
+                <div class="col-md-6 col-sm-12 home-swip-column pr-5">
+                    <div id="page" class="wrapper-upper">
+                        <div class="wrapper wrapperFirst">
+                            <div class="before">
+                                <div id="hotspotImg" class="responsive-hotspot-wrap">
+                                    <img src="{{URL::asset('/images/home/door-closets-close.jpg')}}" class="hotspot-image"  alt="" >
+                                    <div class="hot-spot" x="300" y="43" >
+                                        <div class="circle" ></div>
+                                        <div class="tooltip">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="hot-spot" x="440" y="224">
-                                    <div class="circle"></div>
-                                    <div class="tooltip">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    <div class="hot-spot" x="440" y="224">
+                                        <div class="circle"></div>
+                                        <div class="tooltip">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="after">
-                            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
-                                <img src="{{URL::asset('/images/home/door-closets-open.jpg')}}" class="hotspot-image" alt="">
-                                <div class="hot-spot" x="300" y="43">
-                                    <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
-                                </div>
+                            <div class="after">
+                                <div id="secondhotspotImg" class="responsive-hotspot-wrap">
+                                    <img src="{{URL::asset('/images/home/door-closets-open.jpg')}}" class="hotspot-image" alt="">
+                                    <div class="hot-spot" x="300" y="43">
+                                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
+                                    </div>
 
-                                <div class="hot-spot" x="440" y="360">
-                                    <div class="circle"></div>
-                                    <div class="tooltip tip-upside">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    <div class="hot-spot" x="440" y="360">
+                                        <div class="circle"></div>
+                                        <div class="tooltip tip-upside">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="scroller scrollerFirst">
-                            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-                                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
-                                <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
-                            </svg>
-                            <span class="position-relative d-block">
-                            <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
+                            <div class="scroller scrollerFirst">
+                                <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                                    <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
+                                    <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
+                                </svg>
+                                <span class="position-relative d-block">
+                                <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-12 p-4 home-swip-column">
-                <div id="page1" class="wrapper-upper">
-                    <div class="wrapper wrapperSecond">
-                        <div class="before">
-                            <div id="hotspotImg" class="responsive-hotspot-wrap">
-                                <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
-                                <div class="hot-spot" x="300" y="43" >
-                                    <div class="circle" ></div>
-                                    <div class="tooltip">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                <div class="col-md-6 col-sm-12 home-swip-column pl-5">
+                    <div id="page1" class="wrapper-upper">
+                        <div class="wrapper wrapperSecond">
+                            <div class="before">
+                                <div id="hotspotImg" class="responsive-hotspot-wrap">
+                                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
+                                    <div class="hot-spot" x="300" y="43" >
+                                        <div class="circle" ></div>
+                                        <div class="tooltip">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="hot-spot" x="440" y="224">
-                                    <div class="circle"></div>
-                                    <div class="tooltip">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    <div class="hot-spot" x="440" y="224">
+                                        <div class="circle"></div>
+                                        <div class="tooltip">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="after">
-                            <div id="secondhotspotImg" class="responsive-hotspot-wrap">
-                                <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
-                                <div class="hot-spot" x="300" y="43">
-                                    <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
-                                </div>
+                            <div class="after">
+                                <div id="secondhotspotImg" class="responsive-hotspot-wrap">
+                                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
+                                    <div class="hot-spot" x="300" y="43">
+                                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
+                                    </div>
 
-                                <div class="hot-spot" x="440" y="360">
-                                    <div class="circle"></div>
-                                    <div class="tooltip tip-upside">
-                                        <div class="img-row">
-                                            <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
-                                        </div>
-                                        <div class="text-row">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                    <div class="hot-spot" x="440" y="360">
+                                        <div class="circle"></div>
+                                        <div class="tooltip tip-upside">
+                                            <div class="img-row">
+                                                <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
+                                            </div>
+                                            <div class="text-row">
+                                            <h4>Lorem Ipsum</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="scroller scrollerSecond">
+                                <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                                    <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
+                                    <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
+                                </svg>
+                                <span class="position-relative d-block">
+                                <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
+                            </div>
                         </div>
-                        <div class="scroller scrollerSecond">
-                            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-                                <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/>
-                                <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/>
-                            </svg>
-                            <span class="position-relative d-block">
-                            <img src="{{URL::asset('/images/drag-anim.gif')}}" class="drag-indicator"></span>
-                        </div>
-                    </div>
-                </div>                
+                    </div>                
+                </div>
             </div>
         </div>
     </section>
     <section class="home-swipe-detail">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="row">
+                    <div class="row home-steps-card">
                         <div class="col-4">
                             <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                         </div>
                         <div class="col-8">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
+                            <div class="d-flex h-100 align-items-center">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="row">                        
+                    <div class="row home-steps-card">                        
                         <div class="col-8">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
+                            <div class="d-flex h-100 align-items-center">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
+                            </div>
                         </div>
                         <div class="col-4">
                             <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
@@ -240,8 +253,32 @@
             </div>
         </div>
     </section>
-    <section class="home-step-2 bg-light">
-        <div class="container">
+    <section class="home-option-step">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 pl-0 pr-5">
+                    <img src="{{URL::asset('/images/Hero_Sliding_image_01.jpg')}}" alt="">
+                    <div class="option-step-content">
+                        <h3>Let's custom your own <br> slide closet</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex id quos expedita neque non, sit nesciunt! At exercitationem alia, rem ipsam impedit?
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right pr-0">
+                    <img src="{{URL::asset('/images/bifolddoors.jpg')}}" alt="">
+                    <div class="option-step-content d-flex justify-content-center align-items-center">
+                        <div class="text-left">
+                            <h3>Let's custom your door closet</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex id quos expedita neque non, sit nesciunt! At exercitationem alia, rem ipsam impedit?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container">
             <h2 class="home-step-heading">
                 Options
             </h2>
@@ -256,9 +293,9 @@
                     <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
-    <section class="home-swipe-detail">
+    <section class="home-measure-step pb-5">
         <div class="container">
             <h2 class="home-step-heading">
                 Measure

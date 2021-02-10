@@ -7576,6 +7576,7 @@ a:hover {
     position: relative;
     margin: 0 5%;
     padding: 1rem 0;
+	transition: all .4s;
 }
 
 .head-logo {
@@ -7583,9 +7584,11 @@ a:hover {
     font-size: 22px;
     font-weight: 700;
     color: #000;
+	transition: all .4s;
 }
 .head-shopbar,.head-navbar{
 	padding-top: 0.625rem;
+	transition: all 0.4s;
 }
 .head-nav-ul {
     padding: 0;
@@ -7679,6 +7682,7 @@ a:hover {
 	font-size: 0.875rem;
 	padding: 0.625rem;
 	z-index: 999;
+	transition: all .4s;
 }
 
 .head-alert-bar a {
@@ -8051,6 +8055,19 @@ h5 {
 	text-decoration: underline;
 }
 /*================Home page Css=================*/
+.is-sticky .main-wrapper{
+	padding: 0.5rem 0;
+}
+.is-sticky .head-shopbar, .is-sticky .head-navbar {
+    padding-top: 0.4rem;
+}
+.is-sticky .head-logo{
+	max-width: 160px;
+}
+.is-sticky .head-alert-bar{
+	padding: 0.4rem 0;
+	font-size: 0.75rem;
+}
 .video-banner-content{
 	position: absolute;
 	top: 0;
@@ -8090,7 +8107,18 @@ h5 {
 }
 .home-steps{
 	padding: 2.5rem 1rem;
-	text-align: center;
+	position: relative;
+	overflow: hidden;
+	background: #eeede9;
+}
+.home-step-shape{
+	position: absolute;
+	top: 100%;
+	left: 0%;
+	width: 100%;
+	height: 100vw;
+	transform: skewY(60deg);
+	background-color: #F84D56;
 }
 .home-step-span{
 	color: #FF324D;
@@ -8113,6 +8141,7 @@ h5 {
 	color: #fff;
 	font-weight: bold;
 	font-size: 2.5rem;
+	margin-bottom: 0;
 }
 .home-slider-section h1,.home-slider-section h4{
 	color:#fff;
@@ -8196,14 +8225,10 @@ h5 {
 .home-step-2{
 	padding: 1.25rem 0;
 }
-.home-swipe-detail{
-	background-image: url('../images/body-bg.gif') ;
-	padding: 1.25rem 1rem;
-}
 .home-swip-section{
-	min-height:792px;
+	min-height:650px;
+	padding-top: 1rem;
 	position: relative;
-	background-image: url('../images/body-bg.gif') ;
 }
 .home-swip-section .first-slide{
 	position: absolute;
@@ -8219,18 +8244,8 @@ h5 {
 }
 /* Our wrapper */
 .wrapper{
-	/* max-width: 1200px;
-	height: 600px;
-	position: absolute;
-	left: 50%;
-	top: 38%;
-	transform: translate3d(-50%,-50%,0);
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	width: 100%;
-	border: 4px solid #F94E57;
-	overflow: hidden; */
-	max-width: 800px;
-	height: 600px;
+	max-width: 600px;
+	height: 420px;
 	position: absolute;
 	left: 50%;
 	top: 38%;
@@ -8329,7 +8344,7 @@ opacity:1;
 	height: 100vh;
 	position: absolute;
 	left: 50%;
-	margin-left: -3.5px;
+	transform: translateX(-50%);
 	z-index: 30;
 	transition: 0.1s;
 }
@@ -10183,7 +10198,7 @@ body { margin: 0; }
 
 .hot-spot .tooltip p:last-child { margin-bottom: 0; }
 #secondhotspotImg{
-	width: 800px;
+	width: 590px;
     position: relative;
 }
 #secondhotspotImg img{
@@ -10408,4 +10423,49 @@ body { margin: 0; }
 }
 .shipping_price{
 	width: 200px;
+}
+
+.home-swipe-detail{
+	background-color: #f2f3f7;
+	/* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+	padding: 3rem 0;
+}
+.home-steps-card{
+	background-color: #fff;
+	margin: 0;
+}
+.home-steps-card .col-4{
+	padding: 0;
+}
+.home-option-step{
+	background-color: #f2f2f2;
+	padding: 6rem 0;
+	position: relative;
+}
+.home-option-step:before{
+	content: "";
+	position: absolute;
+	top: 3rem;
+	left: 0;
+	height: calc(100% - 3rem);
+	width: calc((100% / 3) * 2);
+	background-color: rgb(238, 237, 233);
+}
+.home-option-step h3{
+	text-transform: uppercase;
+	font-size: 1.5625rem;
+	margin-bottom: 1.5625rem;
+}
+.home-option-step p{
+	max-width: 434px;
+}
+.home-option-step img{
+	max-width: 620px;
+}
+.option-step-content{
+	padding: 3.75rem 4.375rem;
+}
+.option-step-content div{
+	max-width: 260px;
+	margin-left: 4rem;
 }
