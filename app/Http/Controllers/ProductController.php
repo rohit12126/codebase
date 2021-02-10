@@ -191,11 +191,16 @@ class ProductController extends Controller
     
     public function getPrice(Request $req)
     {
-        $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
-        if(empty($price))
+        $result['price'] = $this->productManager->getPriceByArticlenumber($req->article_nu);
+        foreach($req->parts as $parts)
         {
-            $price = '4040404';
+            $result['values'][] = $parts['value'];
         }
-        echo $price;
+        if(empty($result['price']))
+        {
+            $result['price'] = '4040404';
+        }
+        $result['article_nu'] = $req->article_nu;
+        return $result;
     }
 }

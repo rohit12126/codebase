@@ -21,7 +21,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&amp;display=swap"
         rel="stylesheet"> -->
-    <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer=""></script>
+    <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer></script>
     <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
     <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
     <style>
@@ -421,7 +421,7 @@ footer-->
             });   
         }
     });
-    jQuery.validator.addMethod("custum_email", function (value, element) {
+    jQuery.validator.addMethod("custom_email", function (value, element) {
         if ( /"[a-zA-Z0-9]([^\\"]|\\")*/g.test(value)) {
             return false;
         } else {

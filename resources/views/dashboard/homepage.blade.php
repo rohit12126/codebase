@@ -102,7 +102,7 @@
                                 <i class="cil-clone"></i>
                         </div>
                         <div>
-                            <small>USERS</small>
+                            <small>ORDERS CANCELLED</small>
                             <div class="text-value-count">{{ $data['cancleOrderCount'] }}</div>
                             <div>Total Cancelled Orders</div>
                         </div>

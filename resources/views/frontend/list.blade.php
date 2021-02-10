@@ -14,6 +14,9 @@
                         <a class="btn btn-outline-secondary @if($category->slug == $catSlug) active  @endif" href="{{ url('product/').'/'.$category->slug }}"> {{ $category->name }}</a>
                     </li>
                 @endforeach
+                <li>
+                <a class="btn btn-outline-secondary @if('hardware' == $catSlug) active  @endif" href="{{ url('product/').'/hardware' }}"> {{ 'HARDWARE' }}</a>
+                </li>
             </ul>
             <div class="product-category-collapse d-block d-md-none">
                 <button class="btn btn-secondary" data-toggle="collapse" data-target="#categoryCollapse">Categories &nbsp; <i class="ion-android-menu"></i></button>
