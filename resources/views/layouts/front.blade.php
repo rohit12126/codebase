@@ -22,8 +22,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&amp;display=swap"
         rel="stylesheet"> -->
     <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer></script>
-    <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}" defer></script>
-    <!-- <script src="{{-- asset('select-pure/dist/bundle.min.js')--}}"></script> -->
+    <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
+    <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
     <style>
     /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
