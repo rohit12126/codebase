@@ -133,6 +133,7 @@
                                     <td>{{ $value->name }}</td>
                                     <td>@if($value->status == 0) {{ 'Inactive' }} @else {{'Active'}}@endif</td>
                                     <td>
+                                        @if($value->slug !== 'hardware')
                                         <button class="btn btn-sm btn-info custom-tooltip" onclick="window.location='{{ url('admin/edit_category', $value->id) }}'">
                                             <span class="custom-tooltiptext custom-tooltip-top">Edit Category</span>
                                             <i class="cil-pencil"></i>
@@ -141,6 +142,9 @@
                                             <span class="custom-tooltiptext custom-tooltip-top">Delete Category</span>
                                             <i class="cil-trash"></i>
                                         </a>
+                                        @else
+                                        not editable
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
