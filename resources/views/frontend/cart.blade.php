@@ -34,7 +34,7 @@
                                 @endif
                                 <p>
                                     <span><strong>Unit Price :</strong></span>
-                                    <span class="total{{$product->id}}">
+                                    <span>
                                         ${{number_format($product->price,2)}}
                                     </span>
                                 </p>
@@ -50,15 +50,17 @@
                             <div>
                                 <div class="cart-product-quantity">
                                     <div class="quantity">
-                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
-                                        <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->id}}" id ="" size="4" productId="{{$product->id}}">
-                                        <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}">
+                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif >
+
+                                        <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty mqty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
+
+                                        <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
                                     </div>
                                 </div>
                             </div>
                             <p class="mb-0">
-                                <strong>Total :</strong>
-                                <span class="total{{$product->id}}"> ${{number_format($product->price * $product->qty, 2)}}</span>
+                                <strong>Total : </strong>
+                                <span class="mtotal{{$product->rowId}}">${{number_format($product->price * $product->qty, 2)}}</span>
                             </p>
                         </div>
                     </div>
@@ -180,6 +182,25 @@
         });
         
     jQuery(document).ready(function(){
+
+        function updateHtml(rowId,productTotal,qty,count,cartSubTotal)
+        {
+            $('.total'+rowId).html(formatter.format(productTotal));
+            $('.mtotal'+rowId).html(formatter.format(productTotal));
+            $('.qty'+rowId).val(qty);
+            $('.mqty'+rowId).val(qty);
+            $('.cart-count').html(count);
+            if(qty > 1) {
+                $('#sub'+rowId).prop('disabled', false); 
+                $('.sub'+rowId).css("cursor", "pointer");
+            } else {
+                $('#sub'+rowId).prop('disabled', true); 
+                $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
+            }
+            $('#subQty').html('$'+cartSubTotal);
+            $('.grand_total').html('$'+cartSubTotal);
+            $('#grand_total').val('$'+cartSubTotal);
+        }
         
         /* Add to cart functionality */
         jQuery('.add-to-cart').click(function(e) {
@@ -187,7 +208,6 @@
             var rowId = $(this).attr('rowId');
             var conf_id = $( this ).attr('conf_id');
             var article_nu = $(this).attr('article_nu');
-            
             e.preventDefault();
             jQuery.ajax({
                 url: "{{ url('/cart/add-cart') }}",
@@ -201,27 +221,14 @@
                 },
                 success: function(result){
                     
-                    $('.cart-count').html(result.data.cartCount);
                     var icon = 'success';
 
                     if (result.status == false) {
                         icon = 'info';
                     } 
-                
+                    
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+rowId).html(formatter.format(productTotal));
-                    $('.qty'+rowId).val(result.data.productQty);
-                    $('.cart-count').html(result.data.cartCount);
-                    if(result.data.productQty > 1) {
-                        $('#sub'+rowId).prop('disabled', false); 
-                        $('.sub'+rowId).css("cursor", "pointer");
-                    } else {
-                        $('#sub'+rowId).prop('disabled', true); 
-                        $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
-                    }
-                    $('#subQty').html('$'+result.data.cartSubTotal);
-                    $('.grand_total').html('$'+result.data.cartSubTotal);
-                    $('#grand_total').val('$'+result.data.cartSubTotal);
+                    updateHtml(rowId,productTotal,result.data.productQty,result.data.cartCount,result.data.cartSubTotal);
                 }
             });
         });
@@ -250,19 +257,7 @@
                 },
                 success: function(result){
                     var  productTotal = result.data.productQty * result.data.productPrice;
-                    $('.total'+rowId).html(formatter.format(productTotal));
-                    $('.qty'+rowId).val(result.data.productQty);
-                    $('.cart-count').html(result.data.cartCount);
-                    if(result.data.productQty > 1) {
-                        $('#sub'+rowId).css("cursor", "pointer");
-                        $('#sub'+rowId).prop('disabled', false); 
-                    } else {
-                        $('#sub'+rowId).prop('disabled', true);
-                        $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
-                    }
-                    $('#subQty').html('$'+result.data.cartSubTotal);
-                    $('.grand_total').html('$'+result.data.cartSubTotal);
-                    $('#grand_total').val('$'+result.data.cartSubTotal);
+                    updateHtml(rowId,productTotal,result.data.productQty,result.data.cartCount,result.data.cartSubTotal);
                 }
             });
         });
@@ -370,10 +365,11 @@
                     var icon = 'info';
 
                     if (result.status == true) {
-                        console
+                        
                         icon = 'success';
                         var  productTotal = result.data.productQty * result.data.productPrice;
                         $('.total'+rowId).html(formatter.format(productTotal));
+                        $('.mtotal'+rowId).html(formatter.format(productTotal));
                         $(this).val(result.data.productQty);
                         $('.cart-count').html(result.data.cartCount);
                         if(result.data.productQty > 1) {
