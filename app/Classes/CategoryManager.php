@@ -129,11 +129,13 @@ class CategoryManager
 
     public static function getProductCategoryList()
     {
-        return CategoryModel::with('image')
-            ->with('product')
-            ->has('product')
+        return CategoryModel::whereHas('product', function($q){
+            $q->where('status', 1);
+        })
             ->where('status', 1)
-            ->orderBy('id', 'desc')->paginate(10);
+            ->where('slug', '<>', 'hardware')
+            ->orderBy('id', 'desc')
+            ->paginate(9);
     }
     
     public static function getCategoryById($id)
