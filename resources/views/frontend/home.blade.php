@@ -220,7 +220,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-4">
-                            <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                            <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                         </div>
                         <div class="col-8">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
@@ -233,7 +233,7 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad!
                         </div>
                         <div class="col-4">
-                            <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                            <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -250,10 +250,10 @@
             </p>
             <div class="row mt-5">
                 <div class="col-lg-6 pr-4">
-                    <img src="{{URL::asset('/images/Hero_Sliding_image_01.jpg')}}" alt="">
+                    <img src="{{URL::asset('/images/Hero_Sliding_image_01-min.jpg')}}" alt="">
                 </div>
                 <div class="col-lg-6 pl-4">
-                    <img src="{{URL::asset('/images/Hero_Sliding_image_02.jpg')}}" alt="">
+                    <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
                 </div>
             </div>
         </div>
