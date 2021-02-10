@@ -55,7 +55,7 @@
                                     parts : parts[0].parameters
                                 },
                                 success: function(result){
-                                    let priceSum = parseInt(result['price']);
+                                    let priceSum = Number(result['price'].replace(/[^0-9.-]+/g,""));
                                     configurator.ui.setPrice('$',priceSum);
                                 }
                             });
