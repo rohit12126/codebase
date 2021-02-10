@@ -368,20 +368,8 @@
                         
                         icon = 'success';
                         var  productTotal = result.data.productQty * result.data.productPrice;
-                        $('.total'+rowId).html(formatter.format(productTotal));
-                        $('.mtotal'+rowId).html(formatter.format(productTotal));
-                        $(this).val(result.data.productQty);
-                        $('.cart-count').html(result.data.cartCount);
-                        if(result.data.productQty > 1) {
-                            $('#sub'+rowId).css("cursor", "pointer");
-                            $('#sub'+rowId).prop('disabled', false); 
-                            
-                        } else {
-                            $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
-                        }
-                        $('#subQty').html('$'+result.data.cartSubTotal);
-                        $('.grand_total').html('$'+result.data.cartSubTotal);
-                        $('#grand_total').val('$'+result.data.cartSubTotal);
+                        updateHtml(rowId,productTotal,result.data.productQty,result.data.cartCount,result.data.cartSubTotal);
+                        
                     } else {
                         $('.qty'+rowId).val(result.data.productQty);
                     }
