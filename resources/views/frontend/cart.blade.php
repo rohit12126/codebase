@@ -365,15 +365,12 @@
                     var icon = 'info';
 
                     if (result.status == true) {
-                        
                         icon = 'success';
                         var  productTotal = result.data.productQty * result.data.productPrice;
                         updateHtml(rowId,productTotal,result.data.productQty,result.data.cartCount,result.data.cartSubTotal);
-                        
                     } else {
                         $('.qty'+rowId).val(result.data.productQty);
                     }
-
                     Swal.fire({
                         position: 'bottom-end',
                         icon: icon,

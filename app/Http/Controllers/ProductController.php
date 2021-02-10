@@ -194,7 +194,7 @@ class ProductController extends Controller
         $result['price'] = $this->productManager->getPriceByArticlenumber($req->article_nu);
         foreach($req->parts as $parts)
         {
-            $result['values'][] = $parts['value'];
+            $result['parts'][] = $parts['key'].' = '.$parts['value'];
         }
         if(empty($result['price']))
         {
