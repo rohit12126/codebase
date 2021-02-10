@@ -682,3 +682,13 @@ function myFunction(id) {
     }
 }
 </script>
+<script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        $(".head-bar").addClass('is-sticky');
+    } else {
+        $(".head-bar").removeClass('is-sticky');
+    }
+    }
+</script>
