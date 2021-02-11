@@ -21,7 +21,7 @@ class UserController extends Controller
         $req->validate([
             'name'    => 'required|string',
             'email'    => 'required|email:rfc|unique:users,email',
-            'mobile'    => 'required|string|max:15',
+            'mobile'    => 'required|string|max:15|unique:users,mobile',
             'password'    => 'required'
         ]);
         $response = UserManager::add($req);
@@ -45,7 +45,7 @@ class UserController extends Controller
         $req->validate([
             'name'    => 'required|string',
             'email'    => 'bail|required|email:rfc|unique:users,email,' . $req->id,
-            'mobile'    => 'required|string|max:15',
+            'mobile'    => 'required|string|max:15|unique:users,mobile,' . $req->id,
             'password'    => ''
         ]);
         $response = UserManager::edit($req);
