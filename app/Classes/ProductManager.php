@@ -201,7 +201,7 @@ class ProductManager
             $products = $products->where('category_id', $categoryId);
         }
         $products = $products->where('status', 1)
-            ->orderBy('category_id','ASC')
+            ->orderBy('category_id','DESC')
             ->orderBy('id', 'DESC')
             ->get();
         return $products;
