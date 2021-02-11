@@ -48,7 +48,6 @@ class ProductManager
 
     public static function edit($req)
     {
-        // dd($req);
         
         $product = null;
         if ($exist = self::getProductById($req->id)) {
@@ -305,11 +304,46 @@ class ProductManager
             ->first();
         return $assesory;
     }
-    public function getPriceByArticlenumber($articleNu)
+    public function getPriceByArticlenumber($articleNu , $parts)
     {
         $price = PricingMatrixModel::where('model', '=', $articleNu)->pluck('retail');
+
         if(!$price->isEmpty())
-        return number_format($price[0],2);
+        {
+        
+        $addonPrice = 0;
+        foreach($parts as $parts)
+        {
+            if($parts['key'] == 'widthChoice' && $parts['value'] =='custom')
+            {
+                $addonPrice += 100;
+            }
+            else if($parts['key'] == 'heightChoice' && $parts['value'] =='custom')
+            {
+                $addonPrice += 100;
+            }
+            else if($parts['key'] == 'saddleFinish' && $parts['value'] == 'finished')
+            {
+                $addonPrice += 50;
+            }
+            else if($parts['key'] == 'hasElongatePanel' && $parts['value'] =='true')
+            {
+                $addonPrice += 50;
+            }
+            else if($parts['key'] == 'hasJambBracket' && $parts['value'] =='true')
+            {
+                $addonPrice += 10;
+            }
+            else if($parts['key'] == 'handle' && $parts['value'] =='premium')
+            {
+                $addonPrice += 5;
+            }
+        }
+
+        $price = str_replace( ',', '', $price[0]) + $addonPrice;
+
+        return number_format($price,2);
+    }
         return FALSE;
     }
 }

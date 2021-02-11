@@ -54,8 +54,9 @@
                                     article_nu : parts[0].articleNr,
                                     parts : parts[0].parameters
                                 },
+                                
                                 success: function(result){
-                                    let priceSum = Number(result['price'].replace(/[^0-9.-]+/g,""));
+                                    let priceSum = result;
                                     configurator.ui.setPrice('$',priceSum);
                                 }
                             });
@@ -222,6 +223,7 @@
 
     /* Add to cart functionality */
     function addToCart(configurationId, image, partlist){
+        
     var productId = $(".product-id").val();
     
     jQuery.ajax({
