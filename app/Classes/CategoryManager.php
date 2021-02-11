@@ -133,7 +133,6 @@ class CategoryManager
             $q->where('status', 1);
         })
             ->where('status', 1)
-            ->where('slug', '<>', 'hardware')
             ->orderBy('id', 'desc')
             ->paginate(9);
     }
