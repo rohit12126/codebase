@@ -311,8 +311,10 @@ class ProductManager
 
         if(!$price->isEmpty())
         {
-        
-        $addonPrice = 0;
+        // define $saddlePrice = $saddleFinishPrice 
+        //because getting shaddelfinish response from roomlie on every condition.
+        $addonPrice = $saddlePrice = $saddleFinishPrice = 0;
+
         foreach($parts as $parts)
         {
             if($parts['key'] == 'widthChoice' && $parts['value'] =='custom')
@@ -323,9 +325,13 @@ class ProductManager
             {
                 $addonPrice += 100;
             }
+            else if($parts['key'] == 'hasSaddle' && $parts['value'] == '1')
+            {
+                $saddlePrice = 1;
+            }
             else if($parts['key'] == 'saddleFinish' && $parts['value'] == 'finished')
             {
-                $addonPrice += 50;
+                $saddleFinishPrice = 50;
             }
             else if($parts['key'] == 'hasElongatePanel' && $parts['value'] =='true')
             {
@@ -341,7 +347,7 @@ class ProductManager
             }
         }
 
-        $price = str_replace( ',', '', $price[0]) + $addonPrice;
+        $price = str_replace( ',', '', $price[0]) + $addonPrice + ($saddleFinishPrice * $saddlePrice);
 
         return number_format($price,2);
     }
