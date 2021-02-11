@@ -319,31 +319,31 @@ class ProductManager
         {
             if($parts['key'] == 'widthChoice' && $parts['value'] =='custom')
             {
-                $addonPrice += 100;
+                $addonPrice += 100; // add 100 USD on current
             }
             else if($parts['key'] == 'heightChoice' && $parts['value'] =='custom')
             {
-                $addonPrice += 100;
+                $addonPrice += 100;  // add 100 USD on current
             }
             else if($parts['key'] == 'hasSaddle' && $parts['value'] == '1')
-            {
-                $saddlePrice = 1;
+            { 
+                $saddlePrice = 1;  // check weather to add shadel price or not
             }
             else if($parts['key'] == 'saddleFinish' && $parts['value'] == 'finished')
             {
-                $saddleFinishPrice = 50;
+                $saddleFinishPrice = 50;  // add 50 USD on current
             }
             else if($parts['key'] == 'hasElongatePanel' && $parts['value'] =='true')
             {
-                $addonPrice += 50;
+                $addonPrice += 50;  // add 50 USD on current
             }
             else if($parts['key'] == 'hasJambBracket' && $parts['value'] =='true')
             {
-                $addonPrice += 10;
+                $addonPrice += 10;  // add 10 USD on current
             }
             else if($parts['key'] == 'handle' && $parts['value'] =='premium')
             {
-                $addonPrice += 5;
+                $addonPrice += 5;  // add 5 USD on current
             }
         }
 
