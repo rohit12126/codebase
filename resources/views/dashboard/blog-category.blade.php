@@ -115,7 +115,7 @@
                             <tbody>
                                 @foreach($category_list as $key => $value)
                                 <tr @if($value->status == 1) class="table-success" @endif>                                
-                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>
                                         <button class="btn btn-info" type="button" data-toggle="tooltip"

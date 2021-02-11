@@ -105,7 +105,7 @@
                                     <tbody>
                                     @foreach($enquieies as $key=>$value)
                                         <tr @if($value->connected == 0) class="table-success"@endif>
-                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                             <td>{{$value->name}}</td>
                                             <td>{{$value->email}}</td>
                                             <td>{{$value->phone_nu}}</td>
