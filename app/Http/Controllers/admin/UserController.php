@@ -45,7 +45,7 @@ class UserController extends Controller
         $req->validate([
             'name'    => 'required|string',
             'email'    => 'bail|required|email:rfc|unique:users,email,' . $req->id,
-            'mobile'    => 'string',
+            'mobile'    => 'required|string|max:15',
             'password'    => ''
         ]);
         $response = UserManager::edit($req);
