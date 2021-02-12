@@ -48,7 +48,6 @@ class ProductManager
 
     public static function edit($req)
     {
-        // dd($req);
         
         $product = null;
         if ($exist = self::getProductById($req->id)) {
@@ -202,6 +201,7 @@ class ProductManager
             $products = $products->where('category_id', $categoryId);
         }
         $products = $products->where('status', 1)
+            ->orderBy('category_id','DESC')
             ->orderBy('id', 'DESC')
             ->get();
         return $products;
@@ -305,11 +305,52 @@ class ProductManager
             ->first();
         return $assesory;
     }
-    public function getPriceByArticlenumber($articleNu)
+    public function getPriceByArticlenumber($articleNu , $parts)
     {
         $price = PricingMatrixModel::where('model', '=', $articleNu)->pluck('retail');
+
         if(!$price->isEmpty())
-        return number_format($price[0],2);
+        {
+        // define $saddlePrice = $saddleFinishPrice 
+        //because getting shaddelfinish response from roomlie on every condition.
+        $addonPrice = $saddlePrice = $saddleFinishPrice = 0;
+
+        foreach($parts as $parts)
+        {
+            if($parts['key'] == 'widthChoice' && $parts['value'] =='custom')
+            {
+                $addonPrice += 100; // add 100 USD on current
+            }
+            else if($parts['key'] == 'heightChoice' && $parts['value'] =='custom')
+            {
+                $addonPrice += 100;  // add 100 USD on current
+            }
+            else if($parts['key'] == 'hasSaddle' && $parts['value'] == '1')
+            { 
+                $saddlePrice = 1;  // check weather to add shadel price or not
+            }
+            else if($parts['key'] == 'saddleFinish' && $parts['value'] == 'finished')
+            {
+                $saddleFinishPrice = 50;  // add 50 USD on current
+            }
+            else if($parts['key'] == 'hasElongatePanel' && $parts['value'] =='true')
+            {
+                $addonPrice += 50;  // add 50 USD on current
+            }
+            else if($parts['key'] == 'hasJambBracket' && $parts['value'] =='true')
+            {
+                $addonPrice += 10;  // add 10 USD on current
+            }
+            else if($parts['key'] == 'handle' && $parts['value'] =='premium')
+            {
+                $addonPrice += 5;  // add 5 USD on current
+            }
+        }
+
+        $price = str_replace( ',', '', $price[0]) + $addonPrice + ($saddleFinishPrice * $saddlePrice);
+
+        return number_format($price,2);
+    }
         return FALSE;
     }
 }

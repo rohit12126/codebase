@@ -50,11 +50,11 @@
                             <div>
                                 <div class="cart-product-quantity">
                                     <div class="quantity">
-                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif >
+                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif >
 
-                                        <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty mqty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
+                                        <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty mqty{{$product->rowId}}" id="mqty{{$product->rowId}}" size="4" productId="{{$product->id}}" datavalue="" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
 
-                                        <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
+                                        <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
                                     </div>
                                 </div>
                             </div>
@@ -113,11 +113,11 @@
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
-                            <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+                            <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
 
-                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty qty{{$product->rowId}}" id ="" size="4" productId="{{$product->id}}"  rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" >
+                            <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" datavalue="" class="qty qty{{$product->rowId}}" id ="qty{{$product->rowId}}" size="4" productId="{{$product->id}}"  rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
 
-                            <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}">
+                            <input type="button" value="+" id ="add{{$product->id}}" class="plus add-to-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
                         </div>
                     </div>
                 </td>
@@ -187,8 +187,9 @@
         {
             $('.total'+rowId).html(formatter.format(productTotal));
             $('.mtotal'+rowId).html(formatter.format(productTotal));
-            $('.qty'+rowId).val(qty);
-            $('.mqty'+rowId).val(qty);
+            $('#qty'+rowId).val(qty);
+            $('#qty'+rowId).attr('datavalue', qty);
+            $('#mqty'+rowId).val(qty);
             $('.cart-count').html(count);
             if(qty > 1) {
                 $('#sub'+rowId).prop('disabled', false); 
@@ -207,6 +208,7 @@
             var productId = $( this ).attr('productId');
             var rowId = $(this).attr('rowId');
             var conf_id = $( this ).attr('conf_id');
+            var price = $(this).attr('price')
             var article_nu = $(this).attr('article_nu');
             e.preventDefault();
             jQuery.ajax({
@@ -217,12 +219,12 @@
                 data: {
                     productId : productId,
                     conf_id : conf_id,
+                    price: price,
                     article_nu : article_nu
                 },
                 success: function(result){
                     
                     var icon = 'success';
-
                     if (result.status == false) {
                         icon = 'info';
                     } 
@@ -237,8 +239,9 @@
             var productId = $( this ).attr('productId');
             var rowId = $(this).attr('rowId');
             var conf_id = $( this ).attr('conf_id');
+            var price = $(this).attr('price');
             var article_nu = $(this).attr('article_nu');
-            var qty = $('.qty'+rowId).val();
+            var qty = $('#datavalue').val();
             if($('.qty'+rowId).val() == 1){
                 $('#sub'+rowId).css("cssText", "cursor: not-allowed  !important;");
                 return false;
@@ -253,6 +256,7 @@
                     productId : productId,
                     article_nu : article_nu,
                     conf_id : conf_id,
+                    price: price,
                     qty : qty
                 },
                 success: function(result){
@@ -311,8 +315,9 @@
             var productId = $( this ).attr('productId');
             var rowId = $(this).attr('rowId');
             var conf_id = $( this ).attr('conf_id');
+            var price = $(this).attr('price')
             var article_nu = $(this).attr('article_nu');
-            var qty = $(this).val();
+            var qty =  $('.qty'+rowId).val();
             if(qty == 0)
             {
             $(this).val(1);
@@ -358,6 +363,7 @@
                     productId : productId,
                     qty : qty,
                     conf_id : conf_id,
+                    price: price,
                     article_nu : article_nu
                 },
                 success: function(result) {

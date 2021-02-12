@@ -239,14 +239,17 @@ class CartController extends Controller
             $configuredProductData['configurationId'] = $req->configurationId;
             $configuredProductData['partList'] = $req->partList;
             $configuredProductData['productId'] = $req->productId;
-            $price = $this->productManager->getPriceByArticlenumber($configuredProductData['partList']['articleNr']);
+            $price = $this->productManager->getPriceByArticlenumber(
+                    $configuredProductData['partList']['articleNr'] , 
+                    $configuredProductData['partList']['parameters']
+                );
         }
         else if(isset($req->conf_id))
         {
             if(!empty($req->conf_id))
             {
                 $configuredProductData['configurationId'] = $req->conf_id;
-                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+                $price = $req->price;
             }
         }
         if($price == FALSE)
@@ -305,7 +308,7 @@ class CartController extends Controller
             if(!empty($req->conf_id))
             {
                 $configuredProductData['configurationId'] = $req->conf_id;
-                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+                $price = $req->price;
             }
         }
 
@@ -352,7 +355,7 @@ class CartController extends Controller
             if(!empty($req->conf_id))
             {
                 $configuredProductData['configurationId'] = $req->conf_id;
-                $price = $this->productManager->getPriceByArticlenumber($req->article_nu);
+                $price = $req->price;
             }
         }
         $res = $this->cartManager->updateCart($product, $qty);

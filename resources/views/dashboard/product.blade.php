@@ -116,7 +116,7 @@
                                     <div class="form-group" id="configure_id">
                                         <label>Configure Id</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" placeholder="Roomlie Configure Id" name="configure_id" class="form-control" value="{{ old('configure_id', @$product->configure_id) }}" >
+                                        <input type="text" required placeholder="Roomlie Configure Id" name="configure_id" class="form-control" value="{{ old('configure_id', @$product->configure_id) }}" >
                                         @if($errors->has('configure_id'))
                                             <div class="error">{{ $errors->first('configure_id') }}</div>
                                         @endif

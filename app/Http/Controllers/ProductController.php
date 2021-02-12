@@ -188,19 +188,24 @@ class ProductController extends Controller
             return redirect()->route('product.list');
         }
     }
-    
+    /**
+     * Calculate the price on basis of current selection
+     * 
+     * @param $req
+     * @return \Illuminate\Http\Response price
+     */
     public function getPrice(Request $req)
     {
-        $result['price'] = $this->productManager->getPriceByArticlenumber($req->article_nu);
-        foreach($req->parts as $parts)
+        $price = $this->productManager->getPriceByArticlenumber($req->article_nu, $req->parts);
+        
+        if(!empty($price))
         {
-            $result['parts'][] = $parts['key'].' = '.$parts['value'];
+            $price = str_replace( ',','', $price);
         }
-        if(empty($result['price']))
+        else
         {
-            $result['price'] = '4040404';
+            $price = '4040404';
         }
-        $result['article_nu'] = $req->article_nu;
-        return $result;
+        return $price;
     }
 }

@@ -74,7 +74,7 @@
                                     @foreach($faq_list as $key => $value)
                                     
                                     <tr>
-                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                         <td>{{ $value->title }}</td>
                                         <td>{{ $value->body }}</td>
                                         @if($value->categori==null)

@@ -28,6 +28,7 @@ class UserManager
     public static function edit($req)
     {
         $user = self::getUserById($req->id);
+        
         $data = [
             'email' => $req->email,
             'name' => $req->name,

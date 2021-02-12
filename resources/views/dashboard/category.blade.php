@@ -129,7 +129,7 @@
                             <tbody>
                                 @foreach($category_list as $key => $value)
                                 <tr>
-                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>@if($value->status == 0) {{ 'Inactive' }} @else {{'Active'}}@endif</td>
                                     <td>

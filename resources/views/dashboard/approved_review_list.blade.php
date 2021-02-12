@@ -93,7 +93,7 @@
                                     <tbody>
                                     @foreach($approved as $key => $value)
                                         <tr>
-                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                             <td>{{ $value->rating }}</td>
                                             <td>{{ $value->body }}</td>
                                             <td>{{ $value->product_name }}</td>

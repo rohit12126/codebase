@@ -182,7 +182,10 @@ class CartManager
         
         if(!empty($configuredProductData))
         {
-            $price = $this->productManager->getPriceByArticlenumber($configuredProductData['partList']['articleNr']);
+            $price = $this->productManager->getPriceByArticlenumber(
+                $configuredProductData['partList']['articleNr'],
+                $configuredProductData['partList']['parameters']
+            );
         }
         else {
             $price = $product->sale_price;

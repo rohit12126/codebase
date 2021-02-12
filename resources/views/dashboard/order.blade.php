@@ -142,7 +142,7 @@
                                     <tbody>
                                         @foreach($order_list as $key => $value)
                                             <tr>
-                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $key+1 + ( (($_GET['page'] ?? 1) - 1 ) * 10 ) }}</td>
                                                 <td>{{ $value->order_no }}</td>
                                                 <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                                 <td>@if(!is_null($value->user)) {{ ucwords($value->user->name) }}@else {{ ucwords($value->getBillingAddress->name) }} @endif @if($value->temp_user == 1) (Guest) @endif</td>
