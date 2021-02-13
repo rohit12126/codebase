@@ -64,7 +64,7 @@
                                 </a>
                                 @endif
                                 @if($product->is_accessory == 0)
-                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
+                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{ucfirst(strtolower($product->catergory->name)).' '.$product->name}}</h2></div></a>
                                 @else
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
                                 @endif
