@@ -7,9 +7,9 @@
             <span class="product-detail-back">
                 <a href="{{route('product.list')}}" class="d-inline-block">&lt; Back to overview</a>
             </span>
-            <div class="text-md-center mt-3 mt-md-0">
+            {{-- <div class="text-md-center mt-3 mt-md-0">
                 <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
-            </div>
+            </div> --}}
             <div id="configurator-container"></div>
             <div class="row">
                 <div class="col-md-6">
