@@ -69,7 +69,7 @@
             <a href="https://ecom.c247.website/product" class="btn btn-fill-out">shop now</a>
         </div>
     </div>
-    <section class="home-steps">
+    <section class="home-steps home-page-section">
         <div class="home-step-shape"></div>
         <div class="container">
             <div class="row">
@@ -82,13 +82,14 @@
             </div>
         </div>
     </section>
-    <section class="home-swip-section">
+    <section class="home-swip-section home-page-section">
         <div class="container">
             <h2 class="home-step-heading">
-                Bifold Or Sliding Doors?
+                <span class="step-serial">Step 1:</span> Bifold Or Sliding Doors?
             </h2>
-            <p class="home-step-para mb-5">
-            Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
+            <p class="home-step-para">
+            Both bifold and sliding doors offer great benefits over the traditional hinged or full swinging door. They are handy whenever space is limited but also when a style update is needed.
+            Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for. 
             </p>
             <div class="row mt-4">
                 <div class="col-md-6 col-sm-12 home-swip-column pr-5">
@@ -97,28 +98,20 @@
                             <div class="before">
                                 <div id="hotspotImg" class="responsive-hotspot-wrap">
                                     <img src="{{URL::asset('/images/home/door-closets-close.jpg')}}" class="hotspot-image"  alt="" >
-                                    <div class="hot-spot" x="300" y="43" >
+                                    <div class="hot-spot" x="162" y="180" >
                                         <div class="circle" ></div>
                                         <div class="tooltip">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
-                                            </div>
                                             <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            <p>Because they are hinged, bifold doors take up very little floor space when opened, making them practical in small areas. These doors open outward toward the edge of the closet or opening, allowing access to as much as 90 percent of the closet's width when opened fully 
+                                            </p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="hot-spot" x="440" y="224">
+                                    <div class="hot-spot" x="502" y="205">
                                         <div class="circle"></div>
-                                        <div class="tooltip">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
-                                            </div>
+                                        <div class="tooltip tooltip-custom-left">
                                             <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            <p>Keep in mind when the bifolds are fully open they take up about 5'/2" off the wall. So if you have a 4 panel opening you will use up 11</p>
                                             </div>
                                         </div>
                                     </div>
@@ -127,22 +120,6 @@
                             <div class="after">
                                 <div id="secondhotspotImg" class="responsive-hotspot-wrap">
                                     <img src="{{URL::asset('/images/home/door-closets-open.jpg')}}" class="hotspot-image" alt="">
-                                    <div class="hot-spot" x="300" y="43">
-                                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
-                                    </div>
-
-                                    <div class="hot-spot" x="440" y="360">
-                                        <div class="circle"></div>
-                                        <div class="tooltip tip-upside">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
-                                            </div>
-                                            <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="scroller scrollerFirst">
@@ -161,29 +138,23 @@
                         <div class="wrapper wrapperSecond">
                             <div class="before">
                                 <div id="hotspotImg" class="responsive-hotspot-wrap">
-                                    <img src="{{URL::asset('/images/home/bifolddoors.jpg')}}" class="hotspot-image"  alt="" >
-                                    <div class="hot-spot" x="300" y="43" >
+                                    <img src="{{URL::asset('/images/home/Hero_1.jpg')}}" class="hotspot-image"  alt="" >
+                                    <div class="hot-spot" x="162" y="250" >
                                         <div class="circle" ></div>
                                         <div class="tooltip">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img.png')}}" alt="Jurong Lake Gardens #1" width="100%">
-                                            </div>
                                             <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            <p>Sliding doors provide a very clean look and very easy to install.</p>
+                                            <p>
+                                                This type of closet door works best in closets with wide openings, such as across one whole wall of a bedroom.
+                                            </p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="hot-spot" x="440" y="224">
+                                    <div class="hot-spot" x="502" y="205">
                                         <div class="circle"></div>
-                                        <div class="tooltip">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img-second.png')}}" alt="High Speed Rail" width="100%">
-                                            </div>
+                                        <div class="tooltip tooltip-custom-left">
                                             <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                                            <p>The heavier weight of our doors ensures the slide smoothly and easily past each other allowing access to half of the closet opening.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -191,23 +162,7 @@
                             </div>
                             <div class="after">
                                 <div id="secondhotspotImg" class="responsive-hotspot-wrap">
-                                    <img src="{{URL::asset('/images/home/slidingdoors.jpg')}}" class="hotspot-image" alt="">
-                                    <div class="hot-spot" x="300" y="43">
-                                        <div class="circle" data-toggle="modal" data-target="#hotSpotModal"></div>
-                                    </div>
-
-                                    <div class="hot-spot" x="440" y="360">
-                                        <div class="circle"></div>
-                                        <div class="tooltip tip-upside">
-                                            <div class="img-row">
-                                                <img src="{{URL::asset('/images/home/hotspot-img-third.png')}}" alt="High Speed Rail" width="100%">
-                                            </div>
-                                            <div class="text-row">
-                                            <h4>Lorem Ipsum</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <img src="{{URL::asset('/images/home/Hero_2.jpg')}}" class="hotspot-image" alt="">                                    
                                 </div>
                             </div>
                             <div class="scroller scrollerSecond">
@@ -224,7 +179,7 @@
             </div>
         </div>
     </section>
-    <section class="home-swipe-detail">
+    <section class="home-page-section home-swipe-detail">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -254,7 +209,7 @@
             </div>
         </div>
     </section>
-    <section class="home-option-step">
+    <section class="home-page-section home-option-step">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-6 pl-0 pr-5">
@@ -280,7 +235,7 @@
             </div>
         </div>
     </section>
-    <section class="home-measure-step pb-5">
+    <section class="home-page-section home-measure-step pb-5">
         <div class="container">
             <div class="measure-heading d-flex">
                 <img src="{{URL::asset('/images/measure-tape.png')}}" alt="" class="measure-tape-img">
@@ -351,7 +306,7 @@
         @endif
         </div>
     </section> -->
-    <section class="the-cdm">
+    <section class="home-page-section the-cdm">
         <h2>
             The CDM Difference
         </h2>
