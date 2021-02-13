@@ -333,15 +333,15 @@
         top:0px;
         height: 550px;
     }
-    .home-swip-column.col-md-6{
-        width: 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
+    .home-swip-section .home-swip-column{
         min-height: 600px;
     }
     .home-products-section .pd-block{
         padding: 5px;
     }
+}
+@media (min-width: 768px){
+    
 }
 @media (max-width: 767px) {
     .video-banner-btns{
@@ -368,7 +368,7 @@
     .wrapper{
         height: 400px;
     }
-    .home-swip-column.col-md-6{
+    .home-swip-section .home-swip-column{
         min-height: 450px;
     }
     .home-swip-section{

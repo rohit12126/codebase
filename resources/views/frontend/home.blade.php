@@ -65,8 +65,8 @@
             </div>
         </div>
         <div class="video-banner-btns">
-            <a href="https://ecom.c247.website/product" class="btn btn-fill-out">Learn more</a>
-            <a href="https://ecom.c247.website/product" class="btn btn-fill-out">shop now</a>
+            <a href="{{ url('product/') }}" class="btn btn-fill-out">Learn more</a>
+            <a href="{{ url('product/') }}" class="btn btn-fill-out">shop now</a>
         </div>
     </div>
     <section class="home-steps home-page-section">
@@ -92,13 +92,13 @@
             Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for. 
             </p>
             <div class="row mt-4">
-                <div class="col-md-6 col-sm-12 home-swip-column pr-5">
+                <div class="col-lg-6 col-sm-12 home-swip-column pr-lg-5">
                     <div id="page" class="wrapper-upper">
                         <div class="wrapper wrapperFirst">
                             <div class="before">
                                 <div id="hotspotImg" class="responsive-hotspot-wrap">
                                     <img src="{{URL::asset('/images/home/door-closets-close.jpg')}}" class="hotspot-image"  alt="" >
-                                    <div class="hot-spot" x="162" y="180" >
+                                    <div class="hot-spot" x="236" y="200" >
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
@@ -107,13 +107,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="hot-spot" x="502" y="205">
+                                    <div class="hot-spot" x="434" y="265">
+                                        <a data-fancybox="gallery" href="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" data-caption="Keep in mind when the bifolds are fully open they take up about 5 x 1/2' off the wall. So if you have a 4 panel opening you will use up 11">
                                         <div class="circle"></div>
-                                        <div class="tooltip tooltip-custom-left">
+                                        </a>
+                                        <!-- <div class="tooltip tooltip-custom-left">
                                             <div class="text-row">
                                             <p>Keep in mind when the bifolds are fully open they take up about 5'/2" off the wall. So if you have a 4 panel opening you will use up 11</p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 home-swip-column pl-5">
+                <div class="col-lg-6 col-sm-12 home-swip-column pl-lg-5">
                     <div id="page1" class="wrapper-upper">
                         <div class="wrapper wrapperSecond">
                             <div class="before">
@@ -182,94 +184,113 @@
     <section class="home-page-section home-swipe-detail">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row home-steps-card">
-                        <div class="col-6 pl-0">
-                            <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="row home-steps-card mr-lg-3">
+                        <div class="col-sm-8 pl-0">
+                            <img class="six-panel-img" src="{{URL::asset('/images/home/6 Panel Bifold Open.jpg')}}" alt="">
                         </div>
-                        <div class="col-6">
-                            <div class="d-flex h-100 align-items-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
+                        <div class="col-sm-4">
+                            <div class="d-flex h-100 align-items-center pb-3 pt-3">
+                                <p class="mb-0">
+                                    <strong>Our bifold range from 2 to 8 panels.</strong>
+                                    When choosing the option of 6 to 8 panels note that the middle door(s) will open in the center of the closet.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="row home-steps-card">                        
-                        <div class="col-6">
-                            <div class="d-flex h-100 align-items-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ea officiis dolorum enim ad! Optio fuga earum placeat mollitia deleniti itaque deserunt corrupti neque odit, quas, nihil adipisci distinctio delectus! 
+                <div class="col-lg-6">
+                    <div class="ml-lg-3">
+                        <div class="row home-steps-card pt-3 pb-3">                        
+                            <div class="col-12">
+                                <p class="mb-3">
+                                    <strong>Our bifold range from 2 to 4 panels.</strong>
+                                        When choosing the option of 2 to 4 you can select a "triple track" to allow for a larger opening into your closet.
+                                </p>
                             </div>
-                        </div>
-                        <div class="col-6 pr-0">
-                            <img src="{{URL::asset('/images/Hero_Sliding_image_02-min.jpg')}}" alt="">
+                            <div class="col-6 text-center">
+                                <img class="" src="{{URL::asset('/images/home/Hero_2-2nd.jpg')}}" alt="">
+                                <p class="mb-0 mt-1">
+                                    3 Panel Slider "Double Track"
+                                </p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <img class="" src="{{URL::asset('/images/home/2 Track Mirror Slider Open.jpg')}}" alt="">
+                                <p class="mb-0 mt-1">
+                                    3 Panel Slider "Triple Track"
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="home-page-section home-option-step">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 pl-0 pr-5">
-                    <img src="{{URL::asset('/images/Hero_Sliding_image_01.jpg')}}" alt="">
-                    <div class="option-step-content">
-                        <h3>Let's custom your own <br> slide closet</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex id quos expedita neque non, sit nesciunt! At exercitationem alia, rem ipsam impedit?
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-6 text-right pr-0">
-                    <img src="{{URL::asset('/images/bifolddoors.jpg')}}" alt="">
-                    <div class="option-step-content d-flex justify-content-center align-items-center">
-                        <div class="text-left">
-                            <h3>Let's custom your door closet</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex id quos expedita neque non, sit nesciunt! At exercitationem alia, rem ipsam impedit?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="home-page-section home-measure-step pb-5">
+    <section class="home-page-section home-step-2">
         <div class="container">
-            <div class="measure-heading d-flex">
-                <img src="{{URL::asset('/images/measure-tape.png')}}" alt="" class="measure-tape-img">
-                <div class="">
-                    <h2 class="home-step-heading text-left">
-                        Measure 
-                    </h2>
-                    <p class="home-step-para text-left">
-                        Officia voluptates unde mollitia repellendus, similique reiciendis corrupti ab eius a deleniti deserunt.
-                    </p>
+            <h2 class="home-step-heading">
+                <span class="step-serial">Step 2:</span> Choose Your Style and Options 
+            </h2>
+            <p class="home-step-para">
+                From style and color to width, height, panel count and more Custom Door and Mirror allows you to customize your closet doors to fit your style. Click on the "Hotspots" &#128308; below to discover some of the many option available.   
+            </p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product slider-routed">
+                        <img src="{{URL::asset('/images/products/Slider-Routed.png')}}" alt="">
+                        <h5 class="style-option-product-title">Slider Routed</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#slider-routed-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="slider-routed-modal" tabindex="-1" aria-labelledby="slider-routed-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          Routed doors are available in 11 different patterns 
+                                      </h6>
+                                    <img src="{{URL::asset('/images/home/Panel styles.png')}}" alt="">
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-md-6 pr-5">
-                    <div class="home-measure-container">
-                        <div class="home-meausre-top">
-                            <div class="border-top-bottom-half"><span></span></div> 
-                            <div class="unit-area set-width-top-rectangle">20.00 in.</div> 
-                            <div class="border-top-bottom-half"><span class="left-auto-right-zero"></span></div>
-                        </div>
-                        <div class="home-meausre-left">
-                            <div class="border-left-right-half"><span></span></div> 
-                            <div class="unit-area set-length-left-rectangle">50.00 in.</div> 
-                            <div class="border-left-right-half"><span class="top-auto-bottom-zero"></span></div>
-                        </div>
-                        <img src="{{URL::asset('/images/measure.jpg')}}" alt="" class="">
+        </div>
+    </section>
+    <section class="home-page-section home-measure-step">
+        <div class="container">
+            <h2 class="home-step-heading">
+                <span class="step-serial">Step 3:</span> Measure and fit 
+            </h2>
+            <p class="home-step-para">
+                All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit. Whether you want your doors to go wall to wall or floor to ceiling, just measure the opening you want to fit and select those exact measurements in our configurator.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="mr-lg-2">
+                        <h4 class="mb-3">Measure your opening</h4>
+                        <img class="img-thumbnail" src="{{URL::asset('/images/home/measure.jpg')}}" alt="">
                     </div>
                 </div>
-                <div class="col-md-6 text-left">
-                    <div class="d-flex align-items-center h-100">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nihil facilis corrupti commodi architecto. Doloremque eveniet ut, molestias fugiat adipisci voluptatibus nobis sapiente est incidunt provident quae optio! Labore, odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam, veritatis sequi facere recusandae itaque cum suscipit beatae nobis nesciunt dolore, iure, aspernatur doloribus quo enim illum fugiat. Aspernatur, inventore?
-                        </p>
+                <div class="col-md-8">
+                    <h4 class="mb-3">Select your custom width and height* (to the 1/4 inch)</h4>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="img-thumbnail" src="{{URL::asset('/images/home/Width Choice.png')}}" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-thumbnail" src="{{URL::asset('/images/home/Height Choice.png')}}" alt="">
+                        </div>
                     </div>
+                    <h5 class="mt-4">*additional charge for cutting doors to non standard widths and heights*</h5>
+                </div>                
+                <div class="col-12">
+                    <a href="{{ url('product/') }}" class="btn btn-fill-out">Build My Door</a>
                 </div>
             </div>
         </div>
@@ -345,21 +366,4 @@
            </div>
         </div>
     </section>
-
-    <div class="modal fade" id="hotSpotModal" tabindex="-1" aria-labelledby="hotSpotModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header position-realtive">
-                <h4 class="text-center">Watch Bifold Installation video</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe width="100%" height="415" src="https://www.youtube.com/embed/VelzyKeK6V8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-      </div>
-    </div>
-
 @endsection
