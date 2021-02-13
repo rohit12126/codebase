@@ -201,9 +201,11 @@ class ProductManager
             $products = $products->where('category_id', $categoryId);
         }
         $products = $products->where('status', 1)
-            ->orderBy('category_id','DESC')
             ->orderBy('id', 'DESC')
-            ->get();
+            ->get()
+            ->partition(function ($item) {
+                return $item->category_id != 1;
+            })->flatten();
         return $products;
     }
 
