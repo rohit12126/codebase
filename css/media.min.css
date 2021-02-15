@@ -1,7 +1,7 @@
 @media (min-width: 1300px) {
     .grid-column-image-wrapper span.text-wrapper strong, .grid-column-image-wrapper span.text-wrapper {
-        font-size: 20px;
-        line-height: 29px;
+        font-size: 1.6rem;
+        line-height: 1.2;
     }
 }
 @media (min-width:1200px){

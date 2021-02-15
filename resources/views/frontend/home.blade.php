@@ -560,16 +560,15 @@
     </section>
     <section class="grid-tiems-section">
         <div class="grid-2020">
-           <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/sitzfeldt-kostenlose-lieferung_0.jpg')}});">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/K23rTF9Jfa0?autoplay=1&loop=1" frameborder="0" loop style="position: absolute;width: 100%;"></iframe>
+            <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/custom-closet.gif')}});">
               <span class="text-wrapper">
                  <p>Solid backing makes our door the strongest and most impact resistant door on the market</p>
               </span>
            </div>
-           <div class="grid-column-image-wrapper grid-size-second color-red">
+           <div class="grid-column-image-wrapper grid-size-second color-grid">
                 <img src="{{URL::asset('/images/home/Back Mirror Slider.png')}}" alt="">
            </div>
-           <div class="grid-column-image-wrapper grid-size-third color-red">
+           <div class="grid-column-image-wrapper grid-size-third color-grid">
               <span class="text-wrapper hasstars">
                  <p>Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)</p>
               </span>
@@ -582,7 +581,10 @@
                  <p>CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening</p>
               </span>
            </div>
-           <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/sitzfeldt-service_0.jpg')}});">
+           <div class="grid-column-image-wrapper has-before">
+                <video controls autoplay loop>
+                    <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
+                  </video>
               <span class="text-wrapper">
                  <p>Our Trueclose, patented hinges help the door close and stay closed. With our liftime warranty, enjoy years of flawless and ultra-smooth use.</p>
               </span>

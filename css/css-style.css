@@ -3219,8 +3219,8 @@ input.text {
 .grid-column-image-wrapper {
 	height: calc(33vw * 1.25);
 	background-color: #fff;
-	background-size: cover;
-	background-position: center center;
+	background-size: 102%;
+    background-position: top center;
 	position: relative;
 	background-repeat: no-repeat;
 	float: left;
@@ -3232,8 +3232,8 @@ input.text {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.grid-column-image-wrapper.color-red{
-	background-color: #F94E57;
+.grid-column-image-wrapper.color-grid{
+	background-color: #cecece;
 }
 .grid-column-image-wrapper.grid-size-second{
 	width: 42.66666%;
@@ -3245,42 +3245,17 @@ input.text {
 	display: flex;
 	align-items: center;
 }
-.grid-column-image-wrapper.grid-size-third:not(.color-red) p{
+.grid-column-image-wrapper.grid-size-third:not(.color-grid) p{
 	color: #292b2c;
-}
-.grid-column-image-wrapper.has-before::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: inherit;
-	transition: inherit;
-}
-.grid-column-image-wrapper.has-before::before {
-	transform: scale(1.01);
 }
 .grid-column-image-wrapper:hover {
 	cursor: pointer;
 }
 .grid-column-image-wrapper span.text-wrapper {
-	font-size: 16px;
-	line-height: 25px;
-	min-height: 30%;
-}
-.grid-column-image-wrapper span.text-wrapper, .grid-column-image-wrapper span.button-wrapper {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	top: 50%;
-	min-width: 70%;
-	margin-top: -20px;
+	max-width: 340px;
 }
 .grid-column-image-wrapper span.text-wrapper {
-	top: auto;
 	color: #FFF;
-	bottom: 20px;
 	padding: 0 30px;
 	box-sizing: border-box;
 }
@@ -3296,17 +3271,19 @@ input.text {
 	padding-left: 0;
 	min-height: auto;
 }
-@media only screen and (min-width: 81.25em){
-	.grid-column-image-wrapper span.text-wrapper strong, .grid-column-image-wrapper span.text-wrapper {
-			font-size: 20px;
-			line-height: 29px;
-	}
+.grid-column-image-wrapper.has-before{
+	background-color: #292b2c;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
-@media only screen and (min-width: 93.75em){
-	.grid-column-image-wrapper span.text-wrapper, .grid-column-image-wrapper span.text-wrapper strong {
-			font-size: 24px;
-			line-height: 34px;
-	}
+.grid-column-image-wrapper.has-before .text-wrapper
+{
+	position: absolute;
+    bottom: 16%;
+}
+.grid-column-image-wrapper.has-before video{
+	width: 100%;
 }
 /*===================================*
   05.START CATEGORIES STYLE
@@ -8390,11 +8367,9 @@ h5 {
 
 	/*==================== Home bottom section ====================*/
 	.the-cdm{
-		background-color: #000;
 		text-align: center;
 	}
 	.the-cdm h2{
-		color: #fff;
 		font-weight: bold;
 		font-size: 2.5rem;
 		margin-bottom: 0;
