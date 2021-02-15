@@ -221,7 +221,7 @@
                             </td>
                             <td>${{$product->price}}</td>
                             <td>{{ number_format($product->product_quantity)}}</td>
-                            <td>${{number_format($product->price * $product->product_quantity, 2)}}  {{print_r($product['append'])}}</td>
+                            <td>${{number_format($product->price * $product->product_quantity, 2)}}</td>
                             @if($data->status == 4)
                             
                             <td>
