@@ -560,34 +560,31 @@
     </section>
     <section class="grid-tiems-section">
         <div class="grid-2020">
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-kostenlose-lieferung_0.jpg')}});">
+           <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/sitzfeldt-kostenlose-lieferung_0.jpg')}});">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K23rTF9Jfa0?autoplay=1&loop=1" frameborder="0" loop style="position: absolute;width: 100%;"></iframe>
               <span class="text-wrapper">
-                 <p><strong>Free Delivery.</strong><br>Free and fast premium two-man delivery, all the way to your living room. Even the returns are free!</p>
+                 <p>Solid backing makes our door the strongest and most impact resistant door on the market</p>
               </span>
            </div>
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-100-tage_0.jpg')}});">
-              <span class="text-wrapper">
-                 <p><strong>100 day trial.</strong><br>100 days of risk-free sitting. If it’s not a perfect fit, we’ll pick it up for free and refund your money.</p>
-              </span>
+           <div class="grid-column-image-wrapper grid-size-second color-red">
+                <img src="{{URL::asset('/images/home/Back Mirror Slider.png')}}" alt="">
            </div>
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-nachhaltig_0.jpg')}});">
+           <div class="grid-column-image-wrapper grid-size-third color-red">
               <span class="text-wrapper hasstars">
-                 <p><strong>Excellent service.</strong><br>Actual people, no bots, ready to help via email, chat or phone, Mon-Fri. from 9am - 6pm.<br><a href="tel:{{$setting->contact ?? '+49 (0)30 60 988 588'}}">&#8203;{{$setting->contact ?? '+49 (0)30 60 988 588'}}</a></p>
+                 <p>Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)</p>
               </span>
            </div>
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-faire-preise_0.jpg')}});">
+           <div class="grid-column-image-wrapper grid-size-second">
+                <img src="{{URL::asset('/images/home/Back of 6 Panel Bifold.png')}}" alt="">
+           </div>
+           <div class="grid-column-image-wrapper grid-size-third">
               <span class="text-wrapper">
-                 <p><strong>Sustainability.&nbsp;</strong><br>Our Promise: Made in Europe, wood sustainably forested and leather certified with the environmental label Blauer Engel.</p>
+                 <p>CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening</p>
               </span>
            </div>
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-ausgezeichnetes_design_0.jpg')}});">
+           <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/sitzfeldt-service_0.jpg')}});">
               <span class="text-wrapper">
-                 <p><strong>Awarded Design.</strong><br>Our sofas do not only excite customers but also experts and design juries.</p>
-              </span>
-           </div>
-           <div class="grid-column-image-wrapper b-lazy b-loaded" style="background-image: url({{URL::asset('/images/home/sitzfeldt-service_0.jpg')}});">
-              <span class="text-wrapper">
-                 <p><strong>Fair Prices.</strong><br>Cutting out the middleman means a unique value-for-money deal for our customers.</p>
+                 <p>Our Trueclose, patented hinges help the door close and stay closed. With our liftime warranty, enjoy years of flawless and ultra-smooth use.</p>
               </span>
            </div>
         </div>
