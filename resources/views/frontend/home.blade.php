@@ -259,6 +259,232 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product bifold-mirror">
+                        <img src="{{URL::asset('/images/products/Bifold-Mirror.png')}}" alt="">
+                        <h5 class="style-option-product-title">Bifold Mirror</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#bifold-mirror-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="bifold-mirror-modal" tabindex="-1" aria-labelledby="bifold-mirror-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h6>
+                                        Mirror doors are available with Polished or Beveled edges 
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Polished edge.png')}}" alt="">
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Beveled edge.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product slider-mir">
+                        <img src="{{URL::asset('/images/products/Slider-Mir-Mel.png')}}" alt="">
+                        <h5 class="style-option-product-title">Slider Mir-Mel</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#slider-mir-mel"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="slider-mir-mel" tabindex="-1" aria-labelledby="slider-mir-mel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          For Mir-Mel doors choose between the following colors 
+                                      </h6>
+                                    <img src="{{URL::asset('/images/home/Door colors.png')}}" alt="">
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product bifold-flush">
+                        <img src="{{URL::asset('/images/products/Bifold-Flush.png')}}" alt="">
+                        <h5 class="style-option-product-title">Bifold Flush</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#bifold-flush-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="bifold-flush-modal" tabindex="-1" aria-labelledby="bifold-flush-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          For Flush doors choose between the following colors 
+                                      </h6>
+                                    <img src="{{URL::asset('/images/home/Door colors.png')}}" alt="">
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product slider-framed">
+                        <img src="{{URL::asset('/images/products/Slider-Framed.png')}}" alt="">
+                        <h5 class="style-option-product-title">Slider Framed</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#slider-framed-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="slider-framed-modal" tabindex="-1" aria-labelledby="slider-framed-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          Choose from 2 to 4 panels on Sliders with optional "Triple Track" on 3 and 4 panel sliders 
+                                      </h6>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Side-Angle-Double-Track.png')}}" alt="">
+                                            <h6>Double Track</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Side-Angle-Triple-Track.png')}}" alt="">
+                                            <h6>Triple Track</h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product bifold-routed">
+                        <img src="{{URL::asset('/images/products/Bifold-Routed.png')}}" alt="">
+                        <h5 class="style-option-product-title">Bifold Routed</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#bifold-routed-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="bifold-routed-modal" tabindex="-1" aria-labelledby="bifold-routed-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          Bifol doors are available with or without saddle. Choose to extend the length of the door if you want to close the gap between the door and the floor or add a jamb bracket
+                                      </h6>
+                                    <div class="row mt-3">
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/no-saddle.jpg')}}" alt="">
+                                            <h6>No Saddle</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/with-saddle.jpg')}}" alt="">
+                                            <h6>With Saddle</h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product slider-mirror">
+                        <img src="{{URL::asset('/images/products/Slider-Mirror.png')}}" alt="">
+                        <h5 class="style-option-product-title">Slider Mirror</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#slider-mirror-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="slider-mirror-modal" tabindex="-1" aria-labelledby="slider-mirror-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          Our frameless style mirror adds a touch of high-end luxury and modern appeal (frame is behind the solid backed mirror panel)
+                                      </h6>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product bifold-mir">
+                        <img src="{{URL::asset('/images/products/Bifold-Mir-Mel.png')}}" alt="">
+                        <h5 class="style-option-product-title">bifold Mir-Mel</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#bifold-mir-mel"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="bifold-mir-mel" tabindex="-1" aria-labelledby="bifold-mir-mel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h6>
+                                          Choose your Bifold Handle style 
+                                      </h6>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Standard handle.png')}}" alt="">
+                                            <h6>Standard </h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{URL::asset('/images/home/Premium handle.png')}}" alt="">
+                                            <h6>Premium </h6>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="style-option-product slider-flush">
+                        <img src="{{URL::asset('/images/products/Slider-Flush.png')}}" alt="">
+                        <h5 class="style-option-product-title">Slider Flush</h5>
+                        <div class="hot-spot">
+                            <a href="#" type="button" data-toggle="modal" data-target="#slider-flush-modal"><div class="circle" ></div></a>
+                        </div>
+                        <div class="modal fade" id="slider-flush-modal" tabindex="-1" aria-labelledby="slider-flush-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                      <h4>
+                                          Choose your track trim colour 
+                                      </h4>
+                                      <h5>(some options depend on door Choice)</h5>
+                                    <img src="{{URL::asset('/images/home/Door colors.png')}}" alt="">
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
