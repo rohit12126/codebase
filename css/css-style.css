@@ -8364,7 +8364,6 @@ h5 {
 		margin-bottom: 1rem;
 	}
 	/*=================Home page Step 3 end====================*/
-
 	/*==================== Home bottom section ====================*/
 	.the-cdm{
 		text-align: center;
@@ -8374,99 +8373,9 @@ h5 {
 		font-size: 2.5rem;
 		margin-bottom: 0;
 	}
-	/*=================Home bottom section end====================*/
+	/*=================Home bottom section end====================*/	
+/*=================Home Page End====================*/	
 
-	/* .home-slider-section h1,.home-slider-section h4{
-		color:#fff;
-	}
-	.home-slider-section .carousel-caption-up {
-		position: absolute;
-		right: 15%;
-		top: 20px;
-		left: 15%;
-		z-index: 10;
-		padding-top: 20px;
-		padding-top: 20px;
-		color: #fff;
-		text-align: center;
-	}
-	.home-slider-section .carousel-caption-down {
-		position: absolute;
-		right: 15%;
-		bottom: 80px;
-		left: 15%;
-		z-index: 10;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		color: #fff;
-		text-align: center;
-	}
-	.carousel-caption-down .btn{
-		padding: 15px 70px;
-		font-size: 16px;
-		font-weight: 600;
-	} */
-	/* .home-products-section .pd-block-wrap{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	.home-products-section .pd-block {
-		flex: 0 0 25%;
-		max-width: 25%;
-		padding: 10px;
-		position: relative;
-	}
-	.home-products-section .pd-inner {
-		background-color: #fff;
-		border: 5px solid #f2f2f2;
-		display: block;
-	}
-	.home-products-section .pd-block .btn {
-		font-weight: 600;
-		font-size: 12px;
-		padding: 4px 16px;
-		width: max-content;
-		display: block;
-		margin: 0.625rem auto;
-	}
-	.btn-outline-secondary
-	{
-		padding: 10px 40px;
-		border-radius: 0;
-	} */
-	.home-step-swrap-wrap .home-step-shape{
-		position: absolute;
-		top: 0;
-		left: 51%;
-		transform: translateX(-51%) skewY(65deg);
-		height: 60rem;
-		width: 60rem;
-	}
-	.home-step-swrap-wrap .home-steps h3{
-		color: #000;
-		font-size: 26px;
-		text-align: right;
-	}
-	.home-step-swrap-wrap .home-swip-section{
-		border-bottom: 5px solid #f84d56;
-	}
-	.home-step-swrap-wrap{
-		position: relative;
-		overflow: hidden;
-	}
-	.home-step-swrap-wrap:before {
-		content: "";
-		left: 0px;
-		background: #f84d56;
-		top: 0px;
-		position: absolute;
-		width: 50%;
-		bottom: 0px;
-	}
-	
-	
 /*==============================================================================================*/
 .section
 {
@@ -9096,6 +9005,18 @@ h5 {
 }
 .product-wallpaper-slider .slick-arrow:before{
 	visibility: hidden;
+}
+.product-slideshow{
+	max-height:440px;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	border: 1px solid #cfcfcf;
+	border-radius: 4px;
+	background-color: #f2f2f2;
+}
+.product-slideshow img{
+	object-fit: cover;
+	margin: 0 auto;
 }
 #configurator-container {
 	width: 100%;
@@ -10253,6 +10174,15 @@ pulsate {  0% {
 }
 .hot-spot .tooltip.tooltip-custom-left{
 	left: 20px;
+}
+.hot-spot .tooltip.tooltip-custom-left.tape-img{
+	display: flex;
+    width: 310px;
+	left: 28px;
+}
+.hot-spot .tape-img img{
+	height: 100px;
+    margin: 0 0.4rem;
 }
 .tooltip:not(.tip-upside):before{
 	content: "";

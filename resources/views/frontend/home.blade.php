@@ -108,14 +108,14 @@
                                         </div>
                                     </div>
                                     <div class="hot-spot" x="434" y="265">
-                                        <a data-fancybox="gallery" href="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" data-caption="Keep in mind when the bifolds are fully open they take up about 5 x 1/2' off the wall. So if you have a 4 panel opening you will use up 11">
+                                        <!-- <a data-fancybox="gallery" href="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" data-caption="Keep in mind when the bifolds are fully open they take up about 5 x 1/2' off the wall. So if you have a 4 panel opening you will use up 11"> -->
                                         <div class="circle"></div>
-                                        </a>
-                                        <!-- <div class="tooltip tooltip-custom-left">
+                                        <div class="tooltip tooltip-custom-left tape-img">
+                                            <img src="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" alt="">
                                             <div class="text-row">
                                             <p>Keep in mind when the bifolds are fully open they take up about 5'/2" off the wall. So if you have a 4 panel opening you will use up 11</p>
                                             </div>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -582,7 +582,7 @@
               </span>
            </div>
            <div class="grid-column-image-wrapper has-before">
-                <video controls autoplay loop>
+                <video autoplay loop>
                     <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
                   </video>
               <span class="text-wrapper">
