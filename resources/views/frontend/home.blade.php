@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="video-banner-btns">
-            <a href="{{ url('product/') }}" class="btn btn-fill-out">Learn more</a>
+            <a href="{{ url('product/') }}" class="btn btn-fill-out mr-3">Learn more</a>
             <a href="{{ url('product/') }}" class="btn btn-fill-out">shop now</a>
         </div>
     </div>
@@ -227,7 +227,7 @@
         </div>
     </section>
     <section class="home-page-section home-step-2">
-        <div class="container">
+        <div class="container home-products">
             <h2 class="home-step-heading">
                 <span class="step-serial">Step 2:</span> Choose Your Style and Options 
             </h2>
