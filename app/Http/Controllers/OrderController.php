@@ -153,8 +153,7 @@ class OrderController extends Controller
             
             if (!empty($email)) {
                 Mail::to($email)->send(new OrderConfirm($order));
-            } else if ( $email != $order->getShippingAddress->email ) {
-                
+            } if ( $email != $order->getShippingAddress->email ) {
                 Mail::to($order->getShippingAddress->email)->send(new OrderConfirm($order));
             }
 
