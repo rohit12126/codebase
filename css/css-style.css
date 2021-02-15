@@ -8309,6 +8309,41 @@ h5 {
 			top: 34%;
 			left: 28%;
 		}
+		.bifold-mirror .hot-spot{
+			top: 54%;
+			left: 72.5%;
+		}
+		.slider-mir .hot-spot{
+			top: 34%;
+			left: 66%;
+		}
+		.bifold-flush .hot-spot{
+			top: 32%;
+			left: 38%;
+		}
+		.slider-framed .hot-spot{
+			top: 20%;
+    		left: 36%;
+		}
+		.bifold-routed .hot-spot{
+			top: auto;
+			left: auto;
+			bottom: 11%;
+			right: 10%;
+		}
+		.slider-mirror .hot-spot
+		{
+			top: 48%;
+			left: 20%;
+		}
+		.bifold-mir .hot-spot{
+			top: 52%;
+			left: 62%;
+		}
+		.slider-flush .hot-spot{
+			top: 4%;
+			left: 78%;
+		}
 		.home-measure-container{
 			position: relative;
 		}
