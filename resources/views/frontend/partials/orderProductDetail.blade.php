@@ -89,11 +89,13 @@
                                 <h5>Billing Address</h5>
                             </div>
                             <div class="card-body">
-                            {{$data->getBillingAddress->name}}</br>
-                            {{$data->getBillingAddress->email}}</br>
-                            {{$data->getBillingAddress->mobile}}</br>
-                            {{$data->getBillingAddress->address}}</br>{{$data->getBillingAddress->city.', '.$data->getBillingAddress->state}}
-                            </br>{{$data->getBillingAddress->zipcode}}
+                            {{ucfirst($data->getBillingAddress->name)}}</br>
+                            {{ucfirst($data->getBillingAddress->email)}}</br>
+                            {{ucfirst($data->getBillingAddress->mobile)}}</br>
+                            {{ucfirst($data->getBillingAddress->address)}}</br>
+                            {{ucfirst($data->getBillingAddress->city)}}, 
+                            {{ucfirst($data->getBillingAddress->state)}}</br>
+                            {{ucfirst($data->getBillingAddress->zipcode)}}
                             </div>
                         </div>
                     </div>
@@ -105,11 +107,11 @@
                                 <h5>Shipping Address</h5>
                             </div>
                             <div class="card-body">
-                            {{$data->getShippingAddress->name ?? $data->getBillingAddress->name}}</br>
-                            {{$data->getShippingAddress->email ?? $data->getBillingAddress->email}}</br>
-                            {{$data->getShippingAddress->mobile ?? $data->getBillingAddress->mobile}}</br>
-                            {{$data->getShippingAddress->address ?? $data->getBillingAddress->address}}</br>{{$data->getShippingAddress->city ?? $data->getBillingAddress->city}}, {{$data->getShippingAddress->state ?? $data->getBillingAddress->state}}
-                            </br>{{$data->getShippingAddress->zipcode ?? $data->getBillingAddress->zipcode}}
+                            {{ucfirst($data->getShippingAddress->name ?? $data->getBillingAddress->name)}}</br>
+                            {{ucfirst($data->getShippingAddress->email ?? $data->getBillingAddress->email)}}</br>
+                            {{ucfirst($data->getShippingAddress->mobile ?? $data->getBillingAddress->mobile)}}</br>
+                            {{ucfirst($data->getShippingAddress->address ?? $data->getBillingAddress->address)}}</br>{{ucfirst($data->getShippingAddress->city ?? $data->getBillingAddress->city)}}, {{ucfirst($data->getShippingAddress->state ?? $data->getBillingAddress->state)}}
+                            </br>{{ucfirst($data->getShippingAddress->zipcode ?? $data->getBillingAddress->zipcode)}}
                             
                             </div>
                         </div>
