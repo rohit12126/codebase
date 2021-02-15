@@ -153,6 +153,8 @@ class OrderController extends Controller
             
             if (!empty($email)) {
                 Mail::to($email)->send(new OrderConfirm($order));
+            } if ( $email != !empty($order->getShippingAddress->email) ) {
+                Mail::to($order->getShippingAddress->email)->send(new OrderConfirm($order));
             }
 
             return redirect()->route('order.success', ['order_no' => $order->order_no]);
