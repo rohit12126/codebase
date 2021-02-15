@@ -8301,9 +8301,14 @@ h5 {
 	/*================Home page Sliders End=================*/
 	
 	/*================Home page Step 2 section=================*/
+		.container.home-products{
+			max-width: 1470px;
+		}
 		.style-option-product{
 			position: relative;
 			text-align: center;
+			border: 1px solid #f2f2f2;
+    		margin-bottom: 1rem;
 		}
 		.slider-routed .hot-spot{
 			top: 34%;
@@ -8353,7 +8358,7 @@ h5 {
 	.home-measure-step{
 		background-color: #f3f5f7;
 	}
-	.home-measure-step .btn{
+	.home-measure-step .btn,.video-banner-btns .btn{
 		font-size: 1.4rem;
 		margin: 3rem auto;
 		margin-bottom: 1rem;
