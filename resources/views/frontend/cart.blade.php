@@ -105,7 +105,7 @@
                         @endif
                     @endforeach
                     </span>
-                    <a href="javascript:void(0)"onclick="myFunction('{{$product->options['configureDetails']['configurationId']}}')" id="myBtn" >configured details </a><i id="c-arrow" class="linearicons-arrow-down"></i>
+                    <a href="javascript:void(0)"onclick="myFunction('{{$product->options['configureDetails']['configurationId']}}')" id="myBtn" >configured details </a><i id="c-arrow{{$product->options['configureDetails']['configurationId']}}" class="linearicons-arrow-down"></i>
                     </div>
                     @endif
                 </td>
