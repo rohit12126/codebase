@@ -190,7 +190,9 @@
                         
                             <td>{{$product->product->name}}
                             @if (!@empty(json_decode($product->configure_detail)))
-                            </br><div id="card" data-configId="{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}">
+                            @php $cid = json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]
+                            @endphp
+                            </br><div id="card" data-configId="{{$cid}}">
                             <span id="dots"></span>
                             <span id="more">
                             @foreach(json_decode($product->configure_detail) as $key => $config)
@@ -199,7 +201,7 @@
                                 @endif
                             @endforeach
                             </span>
-                            <a href="javascript:void(0)"onclick="myFunction('{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}')" id="myBtn" >configured details </a><i id="c-arrow" class="linearicons-arrow-down"></i>
+                            <a href="javascript:void(0)"onclick="myFunction('{{$cid}}')" id="myBtn" >configured details </a><i id="c-arrow{{$cid}}" class="linearicons-arrow-down"></i>
                             </div>
                             @endif
                             </td>
@@ -211,7 +213,7 @@
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                 @endif --}}
                                     @if (!@empty(json_decode($product->configure_detail)))
-                                    <img class="img-thumbnail" style="max-height: 90px;" src="https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
+                                    <img class="img-thumbnail" style="max-height: 90px;" src="https://uploads.roomle.com/configurations/{{$cid}}/perspectiveImage.png" alt="product_img1">
                                     @else
                                     <img class="img-thumbnail" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @endif
