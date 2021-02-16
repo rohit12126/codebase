@@ -51,7 +51,7 @@
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
                                 @endif
                                     <div class="product-list-inner">
-                                        <div class="product-slideshow"><img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="..."></div>
+                                        <div class="product-list-container"><img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="..."></div>
                                     </div>
                                 </a>
                                 @if($product->is_accessory == 0)

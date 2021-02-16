@@ -3262,6 +3262,7 @@ input.text {
 .grid-column-image-wrapper p,.grid-column-image-wrapper a{
 	color: #fff;
 	margin: 0;
+	line-height: 1.2;
 }
 .grid-column-image-wrapper:hover::before {
 	transform: scale(1.1);
@@ -3280,7 +3281,7 @@ input.text {
 .grid-column-image-wrapper.has-before .text-wrapper
 {
 	position: absolute;
-    bottom: 16%;
+    bottom: 10%;
 }
 .grid-column-image-wrapper.has-before video{
 	width: 100%;
@@ -8301,7 +8302,7 @@ h5 {
 	/*================Home page Sliders End=================*/
 	
 	/*================Home page Step 2 section=================*/
-		.container.home-products{
+		.container.home-products, .products-category .container{
 			max-width: 1470px;
 		}
 		.style-option-product{
