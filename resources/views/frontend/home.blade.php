@@ -65,21 +65,14 @@
             </div>
         </div>
         <div class="video-banner-btns">
-            <a href="{{ url('product/') }}" class="btn btn-fill-out mr-3">Learn more</a>
+            <a href="{{ url('product/') }}" class="btn btn-fill-out mr-1 mr-lg-3">Learn more</a>
             <a href="{{ url('product/') }}" class="btn btn-fill-out">shop now</a>
         </div>
     </div>
     <section class="home-steps home-page-section">
-        <div class="home-step-shape"></div>
+        <!-- <div class="home-step-shape"></div> -->
         <div class="container">
-            <div class="row">
-              <div class="col-md-7 pr-5">
-                <h3>Finding the perfect closet doors to meet <br>your needs is only a few steps away.</h3>
-              </div>
-              <div class="col-md-5">
-                
-              </div>
-            </div>
+            <h3>Finding the perfect closet doors to meet <br>your needs is only a few steps away.</h3>
         </div>
     </section>
     <section class="home-swip-section home-page-section">
@@ -98,7 +91,7 @@
                             <div class="before">
                                 <div id="hotspotImg" class="responsive-hotspot-wrap">
                                     <img src="{{URL::asset('/images/home/door-closets-close.jpg')}}" class="hotspot-image"  alt="" >
-                                    <div class="hot-spot" x="236" y="200" >
+                                    <div class="hot-spot left-sides-first">
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
@@ -107,7 +100,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="hot-spot" x="434" y="265">
+                                    <div class="hot-spot left-sides-second">
                                         <!-- <a data-fancybox="gallery" href="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" data-caption="Keep in mind when the bifolds are fully open they take up about 5 x 1/2' off the wall. So if you have a 4 panel opening you will use up 11"> -->
                                         <div class="circle"></div>
                                         <div class="tooltip tooltip-custom-left tape-img">
@@ -138,12 +131,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 home-swip-column pl-lg-5">
-                    <div id="page1" class="wrapper-upper">
+                    <div id="page1" class="wrapper-upper mt-3 mt-lg-0">
                         <div class="wrapper wrapperSecond">
                             <div class="before">
                                 <div id="hotspotImg" class="responsive-hotspot-wrap">
                                     <img src="{{URL::asset('/images/home/Hero_1.jpg')}}" class="hotspot-image"  alt="" >
-                                    <div class="hot-spot" x="162" y="250" >
+                                    <div class="hot-spot right-sides-first">
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
@@ -154,7 +147,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="hot-spot" x="502" y="205">
+                                    <div class="hot-spot right-sides-second">
                                         <div class="circle"></div>
                                         <div class="tooltip tooltip-custom-left">
                                             <div class="text-row">
