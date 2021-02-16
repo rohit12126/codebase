@@ -77,24 +77,6 @@
             </div>
         </div>
     </section>
-    <section class="section">
-        <div class="container-fluid">
-            <div class="product-wallpaper-slider">
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
-            </div>
-        </div>
-    </section>
 @endsection
 @section('scripts')
 <script>
@@ -117,7 +99,16 @@
         infinite: true,
         slidesToShow: 1, 
         slidesToScroll: 1,
+        asNavFor: '.product-wallpaper-thumb',
         lazyLoad: 'progressive'
+    });
+    $('.product-wallpaper-thumb').slick({
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    asNavFor: '.product-wallpaper-slider',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
     });
 </script>
 @endsection

@@ -263,14 +263,17 @@ footer-->
         <div class="footer-inner m-auto content-section">
             <div class="pre-footer">
                 <div class="row text-center text-sm-left justify-content-between">
-                    <div class="col-md-4 mb-5 mb-lg-0 footer-col">
-                        <h5 class="text-uppercase mb-3"><span>About Us</span></h5>
+                    <div class="col-md-6 mb-5 mb-lg-0 footer-col">
+                        <h5 class="text-uppercase mb-3"><span>Celebrating Excellence for 60 years</span></h5>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim, reprehenderit quia omnis fugiat qui ea pariatur voluptatem, incidunt inventore cumque quam facere vel veniam unde magni fugit.
-                            <br><a href="{{ url('about-us/') }}" class="text-underline">More about us &gt;&gt;</a>
+                            As a New York Metropolitan based manufacturer, Custom Door and Mirror  is a natural choice as a partner for companies all over the country. In 1957,  The Paniflex Door Corporation started out as a small family run business.  
+                            Our skill was crafted through the experience of 36 years of learning how  to make the industry’s best bifold and sliding doors. Today the Paniflex  Corporation is known as Custom Door & Mirror and manufactures the  highest quality doors in the widest range of sizes. 
+                        </p>
+                        <p class="mb-2">
+                            The Paniflex Door System was engineered to fill a costly void in the  construction industry. It was extremely expensive to have doors made to  custom sizes so most developers had to make the openings to standard  sizes. Our closet doors were able to be made to the 1/4" making it much  easier on our customers.
                         </p>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-2 mb-5 mb-lg-0 footer-col text-center text-sm-left">
+                    <div class="col-sm-6 col-md-2 col-lg-2 mb-5 mb-lg-0 footer-col text-center text-sm-left">
                         <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>
                         <ul class="footer-nav-ul">
                             <li><a href="{{ url('home/') }}">Home</a></li>
