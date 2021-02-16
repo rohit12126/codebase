@@ -127,15 +127,15 @@
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link {{ request()->is('product*') ? 'active' : ''}} ">Products</a>
                         </li>
-                        <li class="head-nav-li">
+                        <!-- <li class="head-nav-li">
                             <a href="{{ url('projects/') }}" class="head-nav-link {{ request()->is('projects*') ? 'active' : ''}} ">Projects</a>
-                        </li>
+                        </li> -->
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link {{ request()->is('about-us') ? 'active' : ''}}">About Us</a>
                         </li>
-                        <li class="head-nav-li">
+                        <!-- <li class="head-nav-li">
                             <a href="{{ url('blog/') }}" class="head-nav-link {{ request()->is('blog*') ? 'active' : ''}}">Blog</a>
-                        </li>
+                        </li> -->
                         <li class="head-nav-li">
                             <a href="{{ url('resource/') }}" class="head-nav-link {{ request()->is('resource') ? 'active' : ''}}">Resources</a>
                         </li>
@@ -279,8 +279,8 @@ footer-->
                             <li><a href="{{ url('home/') }}">Home</a></li>
                             <li><a href="{{ url('about-us/') }}">About us</a></li>
                             <li><a href="{{ url('product/') }}">Products</a></li>
-                            <li><a href="{{ url('projects/') }}">Projects</a></li>
-                            <li><a href="{{ url('blog/') }}">blog</a></li>
+                            <!-- <li><a href="{{ url('projects/') }}">Projects</a></li> -->
+                            <!-- <li><a href="{{ url('blog/') }}">blog</a></li> -->
                             <li><a href="{{ url('resource/') }}">Resource</a></li>
                             <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
                         </ul>

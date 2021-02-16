@@ -5836,7 +5836,6 @@ footer .widget_title {
 	margin-top: 40px;
 }
 .comment_list{
-	margin-bottom: 20px;
 	max-height: 300px;
     overflow-y: auto;
 }
@@ -5863,7 +5862,7 @@ footer .widget_title {
 }
 .comment_block .rating_wrap {
 	float: right;
-	margin-top: -2%;
+	margin-top: 0%;
 	margin-right: 1%;
 }
 .customer_meta span{
@@ -10199,7 +10198,6 @@ pulsate {  0% {
 	left: 20px;
 }
 .hot-spot .tooltip.tooltip-custom-left.tape-img{
-	display: flex;
     width: 310px;
 	left: 28px;
 }

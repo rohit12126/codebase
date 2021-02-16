@@ -111,9 +111,11 @@
                                         <!-- <a data-fancybox="gallery" href="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" data-caption="Keep in mind when the bifolds are fully open they take up about 5 x 1/2' off the wall. So if you have a 4 panel opening you will use up 11"> -->
                                         <div class="circle"></div>
                                         <div class="tooltip tooltip-custom-left tape-img">
-                                            <img src="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" alt="">
-                                            <div class="text-row">
-                                            <p>Keep in mind when the bifolds are fully open they take up about 5'/2" off the wall. So if you have a 4 panel opening you will use up 11</p>
+                                            <div class="d-flex">
+                                                <img src="{{URL::asset('/images/home/Bifold Insert Image1.jpg')}}" alt="">
+                                                <div class="text-row">
+                                                <p>Keep in mind when the bifolds are fully open they take up about 5'/2" off the wall. So if you have a 4 panel opening you will use up 11</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

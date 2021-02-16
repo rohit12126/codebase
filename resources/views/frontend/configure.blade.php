@@ -77,40 +77,6 @@
             </a> --}}
         </div>
     </section>
-
-    <section class="product-detail-features">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="pd-feature-box">
-                    <img src="{{URL::asset('/images/fav-property.png')}}" alt="">
-                    <span class="d-block">
-                        At CDM every product reviews the care and attention of hand craftmanship.
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="pd-feature-box">
-                    <img src="{{URL::asset('/images/fav-stars.png')}}" alt="" class="pt-2">
-                    <span class="d-block">
-                        <strong>Excellent service.</strong>
-                    </span>
-                    <span>
-                        We are also there for you after the purchase.
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="pd-feature-box">
-                    <img src="{{URL::asset('/images/fav-delivery.png')}}" alt="">
-                    <span class="d-block">
-                        Flat rate shipping anywhere in <br>the continental U.S.
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 @if(!$productData['product']->productDescription->isEmpty())
     <section class="section light-bg">
         <div class="container">
@@ -178,60 +144,93 @@
         </div> -->
     </section>
 @endif
-<input type="hidden" id="configureId" val="">
-<section class="section">
-    <div class="container">
-        <div class="comments">
-            @if ($productData['reviewCount'] > 0)
-                <div class="text-center mb-3">
-                    <h3>Reviews &amp; Rating</h3>
-                </div>
-                <div class="rating-counter">
-                    <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
+    <input type="hidden" id="configureId" val="">
+    <section class="section">
+        <div class="container">
+            <div class="comments">
+                @if ($productData['reviewCount'] > 0)
+                    <div class="text-center mb-3">
+                        <h3>Reviews &amp; Rating</h3>
                     </div>
-                    <span class="rating-count-no">
-                            <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
-                            <span class="rating-amp">&amp;</span>
-                            <span>&nbsp;Reviews</span>
-                    </span>
-                </div>
-            @else
-                <div class="text-center mb-3">
-                    <h5>Be the first to rate this product.</h5>
-                </div>
-            @endif
+                    <div class="rating-counter">
+                        <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
+                        </div>
+                        <span class="rating-count-no">
+                                <span>{{$productData['reviewCount']}} Ratings&nbsp;</span>
+                                <span class="rating-amp">&amp;</span>
+                                <span>&nbsp;Reviews</span>
+                        </span>
+                    </div>
+                @else
+                    <div class="text-center mb-3">
+                        <h5>Be the first to rate this product.</h5>
+                    </div>
+                @endif
 
-            @if(!$productData['productReview']->isEmpty())
-                <ul class="list_none comment_list mt-4">
-                    @foreach ($productData['productReview'] as $review)
-                        <li>
-                            <div class="comment_img">
-                                <img src="{{URL::asset('/images/review-user.png')}}" alt="user1">
-                            </div>
-                            <div class="comment_block">
-                                <div class="rating_wrap">
-                                    <div class="rating">
-                                        <div class="product_rate" style="width:{{ $review->rating * 20}}%"></div>
+                @if(!$productData['productReview']->isEmpty())
+                    <ul class="list_none comment_list mt-4">
+                        @foreach ($productData['productReview'] as $review)
+                            <li>
+                                <div class="comment_img">
+                                    <img src="{{URL::asset('/images/review-user.png')}}" alt="user1">
+                                </div>
+                                <div class="comment_block">
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width:{{ $review->rating * 20}}%"></div>
+                                        </div>
+                                    </div>
+                                    <p class="customer_meta">
+                                        <span class="review_author">{{ucfirst( $review->user_name)}}</span>
+                                        <span class="comment-date">{{ date("M j, Y", strtotime($review->created_at)) }} {{-- {{ \Carbon\Carbon::parse($review->created_at)->format('F d, Y')}} --}} </span>
+                                    </p>
+                                    <div class="description">
+                                        <p>{{ $review->body}}</p>
                                     </div>
                                 </div>
-                                <p class="customer_meta">
-                                    <span class="review_author">{{ucfirst( $review->user_name)}}</span>
-                                    <span class="comment-date">{{ date("M j, Y", strtotime($review->created_at)) }} {{-- {{ \Carbon\Carbon::parse($review->created_at)->format('F d, Y')}} --}} </span>
-                                </p>
-                                <div class="description">
-                                    <p>{{ $review->body}}</p>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
-            @endif
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="product-detail-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-property.png')}}" alt="">
+                        <span class="d-block">
+                            At CDM every product reviews the care and attention of hand craftmanship.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-stars.png')}}" alt="" class="pt-2">
+                        <span class="d-block">
+                            <strong>Excellent service.</strong>
+                        </span>
+                        <span>
+                            We are also there for you after the purchase.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pd-feature-box">
+                        <img src="{{URL::asset('/images/fav-delivery.png')}}" alt="">
+                        <span class="d-block">
+                            Flat rate shipping anywhere in <br>the continental U.S.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
-
+                
 @section('scripts')
 <script>
     $('.configure-slider').slick({
@@ -347,7 +346,7 @@
     slidesToShow: 7,
     slidesToScroll: 1,
     asNavFor: '.product-wallpaper-slider',
-    dots: true,
+    dots: false,
     centerMode: true,
     focusOnSelect: true
     });

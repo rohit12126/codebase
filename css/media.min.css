@@ -119,12 +119,12 @@
 @media (max-width: 991px) {
     .head-navbar,.head-nav-ul.head-sub-menu
     {
-        height: calc(100vh - 72px);
+        height: calc(100vh - 86px);        
+        top: 86px;
         overflow-y: scroll;
         overflow-x: hidden;
         position: fixed;
         left: -100%;
-        top: 71px;
         z-index: 99;
         width: 100%;
         background-color: #FFF;
@@ -135,6 +135,10 @@
         -moz-box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, .3);
         box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, .3);
         visibility: hidden;
+    }
+    .is-sticky .head-navbar,.head-nav-ul.head-sub-menu {
+        height: calc(100vh - 62px);        
+        top: 62px;
     }
     .head-navbar.nav-open
     {
