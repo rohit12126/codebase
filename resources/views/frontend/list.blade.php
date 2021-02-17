@@ -2,7 +2,7 @@
 @section('content')
 <!-- START SECTION SHOP -->
     <section class="products-category section">
-        <div class="container">
+        <div class="container products-listing-container">
             <ul class="nav justify-content-center products-tab-ul mb-4 d-none d-md-flex">
                 <li class="">
                     <a href="{{ route('product.list') }}" class="btn btn-outline-secondary @if(empty($catSlug)) active  @endif">All</a>
@@ -30,27 +30,22 @@
                     </ul>
                 </div>
             </div>
-            <div class="products-list-row">
+            <div class="row">
                 @if($products->isEmpty()) 
                     <div class="col-md-12 col-12 text-center">
                         <h3>No Product available.</h3>
                     </div>
                 @else
                     @foreach ($products as $key => $product)
-                        <div class="products-list-col">
-                            <div class="products-list-product">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product-listing">
                                 @if($product->is_accessory == 0)
                                     <a href="{{ url('product/configure/').'/'.$product->slug }}" class="">
                                 @else
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
                                 @endif
-                                @if($product->is_accessory == 0)
-                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="">
-                                @else
-                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="">
-                                @endif
-                                    <div class="product-list-inner">
-                                        <div class="product-list-container"><img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="..."></div>
+                                    <div class="product-listing-inner">
+                                        <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg @endif " class="d-block w-100" alt="...">
                                     </div>
                                 </a>
                                 @if($product->is_accessory == 0)
@@ -63,12 +58,16 @@
                                 </a>
                                 @endif
                                 @if($product->is_accessory == 0)
-                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{ucfirst(strtolower($product->catergory->name)).' '.$product->name}}</h2></div></a>
+                                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="product-listing-desc">
+                                        <div class="products-list-title"><h2>{{ucfirst(strtolower($product->catergory->name)).' '.$product->name}}</h2></div>
+                                        <div class="products-list-price">${{$product->sale_price}}</div>
+                                    </a>
                                 @else
-                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class=""><div class="products-list-title"><h2>{{$product->name}}</h2></div></a>
+                                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="product-listing-desc">
+                                        <div class="products-list-title"><h2>{{$product->name}}</h2></div>
+                                        <div class="products-list-price">${{$product->sale_price}}</div>
+                                    </a>
                                 @endif
-                                
-                                <div class="products-list-price">${{$product->sale_price}}</div>
                             </div>
                         </div>
                     @endforeach

@@ -222,7 +222,7 @@
         </div>
     </section>
     <section class="home-page-section home-step-2">
-        <div class="container home-products">
+        <div class="container products-listing-container">
             <h2 class="home-step-heading">
                 <span class="step-serial">Step 2:</span> Choose Your Style and Options 
             </h2>
@@ -231,7 +231,7 @@
             </p>
             <div class="row">
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product slider-routed">
+                    <div class="product-listing slider-routed">
                         <img src="{{URL::asset('/images/products/Slider-Routed.png')}}" alt="">
                         <h5 class="style-option-product-title">Slider Routed</h5>
                         <div class="hot-spot">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product bifold-mirror">
+                    <div class="product-listing bifold-mirror">
                         <img src="{{URL::asset('/images/products/Bifold-Mirror.png')}}" alt="">
                         <h5 class="style-option-product-title">Bifold Mirror</h5>
                         <div class="hot-spot">
@@ -286,7 +286,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product slider-mir">
+                    <div class="product-listing slider-mir">
                         <img src="{{URL::asset('/images/products/Slider-Mir-Mel.png')}}" alt="">
                         <h5 class="style-option-product-title">Slider Mir-Mel</h5>
                         <div class="hot-spot">
@@ -310,7 +310,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product bifold-flush">
+                    <div class="product-listing bifold-flush">
                         <img src="{{URL::asset('/images/products/Bifold-Flush.png')}}" alt="">
                         <h5 class="style-option-product-title">Bifold Flush</h5>
                         <div class="hot-spot">
@@ -334,7 +334,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product slider-framed">
+                    <div class="product-listing slider-framed">
                         <img src="{{URL::asset('/images/products/Slider-Framed.png')}}" alt="">
                         <h5 class="style-option-product-title">Slider Framed</h5>
                         <div class="hot-spot">
@@ -367,7 +367,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product bifold-routed">
+                    <div class="product-listing bifold-routed">
                         <img src="{{URL::asset('/images/products/Bifold-Routed.png')}}" alt="">
                         <h5 class="style-option-product-title">Bifold Routed</h5>
                         <div class="hot-spot">
@@ -400,7 +400,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product slider-mirror">
+                    <div class="product-listing slider-mirror">
                         <img src="{{URL::asset('/images/products/Slider-Mirror.png')}}" alt="">
                         <h5 class="style-option-product-title">Slider Mirror</h5>
                         <div class="hot-spot">
@@ -423,7 +423,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product bifold-mir">
+                    <div class="product-listing bifold-mir">
                         <img src="{{URL::asset('/images/products/Bifold-Mir-Mel.png')}}" alt="">
                         <h5 class="style-option-product-title">bifold Mir-Mel</h5>
                         <div class="hot-spot">
@@ -456,7 +456,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="style-option-product slider-flush">
+                    <div class="product-listing slider-flush">
                         <img src="{{URL::asset('/images/products/Slider-Flush.png')}}" alt="">
                         <h5 class="style-option-product-title">Slider Flush</h5>
                         <div class="hot-spot">
