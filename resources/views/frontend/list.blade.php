@@ -9,7 +9,6 @@
                 </li>
                 @foreach ($categories as $category)
                     <li class="">
-
                         {{-- route('product.list',['category_id' => $category->id]) --}}
                         <a class="btn btn-outline-secondary @if($category->slug == $catSlug) active  @endif" href="{{ url('product/').'/'.$category->slug }}"> {{ $category->name }}</a>
                     </li>

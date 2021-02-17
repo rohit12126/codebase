@@ -72,7 +72,7 @@
     <section class="home-steps home-page-section">
         <!-- <div class="home-step-shape"></div> -->
         <div class="container">
-            <h3>Finding the perfect closet doors to meet <br>your needs is only a few steps away.</h3>
+            <h3>Finding the perfect closet doors to meet your needs is only a few steps away.</h3>
         </div>
     </section>
     <section class="home-swip-section home-page-section">
@@ -492,7 +492,7 @@
                 All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit. Whether you want your doors to go wall to wall or floor to ceiling, just measure the opening you want to fit and select those exact measurements in our configurator.
             </p>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <div class="mr-lg-2">
                         <h4 class="mb-3">Measure your opening</h4>
                         <img class="img-thumbnail" src="{{URL::asset('/images/home/measure.jpg')}}" alt="">

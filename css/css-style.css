@@ -8321,7 +8321,7 @@ h5 {
 	/*================Home page Sliders End=================*/
 	
 	/*================Home page Step 2 section=================*/
-		.container.home-products, .products-category .container{
+		.container.home-products{
 			max-width: 1470px;
 		}
 		.style-option-product{
@@ -8356,8 +8356,7 @@ h5 {
 			bottom: 11%;
 			right: 10%;
 		}
-		.slider-mirror .hot-spot
-		{
+		.slider-mirror .hot-spot{
 			top: 48%;
 			left: 20%;
 		}
@@ -8368,9 +8367,6 @@ h5 {
 		.slider-flush .hot-spot{
 			top: 4%;
 			left: 78%;
-		}
-		.home-measure-container{
-			position: relative;
 		}
 	/*=================Home page Step 2 end====================*/
 
