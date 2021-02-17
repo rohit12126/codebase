@@ -8844,6 +8844,7 @@ h5 {
     padding: 10px 40px;
 	transition: 0.3s all;
 	width: max-content;
+	background-color: #fff;
 }
 .product-listing:hover .btn
 {
@@ -8862,7 +8863,7 @@ h5 {
 {
     text-align: right;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 600;
 }
 .products-list-title h2
 {
@@ -8985,7 +8986,7 @@ h5 {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	border: 1px solid #cfcfcf;
-	border-radius: 4px;
+	border-radius: 0;
 	background-color: #f2f2f2;
 }
 .product-slideshow img{
@@ -8998,7 +8999,7 @@ h5 {
 .slideshow-thumb{
 	margin: 0.5rem;
 	height: 104px;
-	border-radius: 2px;
+	border-radius: 0;
 	padding: 4px;
 	border: 1px solid #cfcfcf;
 	background-color: #f2f2f2;
