@@ -71,7 +71,7 @@
                         };
                     })();
             </script>
-            <div class="pt-4 pb-4 d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
             <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">-->
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                 <!--<i class="linearicons-cart"></i> Buy Now
@@ -111,7 +111,7 @@
 @if(!$productData['product']->images->isEmpty())
     <section class="configure-product-slider pl-0 pr-0 pt-5">
         <div class="container">
-            <h1 class="pt-5 mb-5 heading_s3 text-center">Product Gallery</h1>
+            <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>

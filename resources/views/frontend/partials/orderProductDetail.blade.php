@@ -3,17 +3,17 @@
 @section('content')
 <div class="main_content">
 <style>
-    .rating {
+    .rating-input {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center
 }
 
-.rating>input {
+.rating-input>input {
     display: none
 }
 
-.rating>label {
+.rating-input>label {
     position: relative;
     width: 1em;
     font-size: 3rem;
@@ -21,27 +21,24 @@
     cursor: pointer
 }
 
-.rating>label::before {
+.rating-input>label::before {
     content: "\2605";
     position: absolute;
     opacity: 0
 }
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
+.rating-input>label:hover:before,
+.rating-input>label:hover~label:before {
     opacity: 1 !important
 }
 
-.rating>input:checked~label:before {
+.rating-input>input:checked~label:before {
     opacity: 1
 }
 
-.rating:hover>input:checked~label:before {
+.rating-input:hover>input:checked~label:before {
     opacity: 0.4
-}
-.address-card{
-    border-color: #F94E57;
-}
+}    
 
 </style>
 <!-- START SECTION SHOP -->
@@ -280,7 +277,7 @@
                   <div class="form-group">
                   <label for="rating">Rate us Out of 5 :)</label>
                   <span class="mandatory">*</span>
-                    <div class="rating"> 
+                    <div class="rating-input"> 
                         <input type="radio" name="rating" value="5" id="5">
                         <label for="5">☆</label> 
                         <input type="radio" name="rating" value="4" id="4">
