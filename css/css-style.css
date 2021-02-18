@@ -10090,6 +10090,20 @@ h5 {
 		  margin-top: 0;
 		}
 	}
+	.call-us-action{
+		min-height: 550px;
+		position: relative;
+		background-image: url(../images/installation/schedule-call.jpg);
+		background-color: #fff;
+		background-position: center;
+		background-size: cover;
+	}
+	.call-us-action-inner{
+		min-height: calc(100vh - 92px - 6rem);
+		display: flex;
+		align-items: center;
+		z-index: 9;
+	}
   /* =============================================================================== */
 .projects-wrap .blog-col{
 	width: 50%;
