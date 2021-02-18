@@ -4,6 +4,14 @@
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <section class="product-detail-view">
         <div class="main-wrapper">
+            <h2 class="home-step-heading">
+                Custom build your closet doors
+            </h2>
+            <p class="home-step-para mb-3">
+                Design and configure the door that fits your style.
+                Prices adjust in real time as you add options to create your perfect closet door.
+            </p>
+            <p></p>
             <span class="product-detail-back">
                 <a href="{{route('product.list')}}" class="d-inline-block">&lt; Back to overview</a>
             </span>
@@ -102,7 +110,7 @@
 @endif
 @if(!$productData['product']->images->isEmpty())
     <section class="configure-product-slider pl-0 pr-0 pt-5">
-        <div class="container-fluid">
+        <div class="container">
             <h1 class="pt-5 mb-5 heading_s3 text-center">Product Gallery</h1>
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
@@ -196,7 +204,7 @@
             </div>
         </div>
     </section>
-    <section class="product-detail-features">
+    <section class="product-detail-features section">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -329,13 +337,11 @@
 </script>
 <script>
     $('.product-wallpaper-slider').slick({
-        autoplay: true,
+        autoplay: false,
         arrows: true,
         speed: 1000,
-        autoplaySpeed: 5000,
         centerMode: true,
         dots: false,
-        centerPadding: '15%',
         infinite: true,
         slidesToShow: 1, 
         slidesToScroll: 1,

@@ -76,7 +76,7 @@
         </div>
     </section>
     <section class="section"> 
-    <div class="container-fluid">
+    <div class="container">
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
@@ -121,13 +121,11 @@
 </script>
 <script>
     $('.product-wallpaper-slider').slick({
-        autoplay: true,
+        autoplay: false,
         arrows: true,
         speed: 1000,
-        autoplaySpeed: 5000,
         centerMode: true,
         dots: false,
-        centerPadding: '15%',
         infinite: true,
         slidesToShow: 1, 
         slidesToScroll: 1,

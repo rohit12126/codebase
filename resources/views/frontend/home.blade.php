@@ -577,7 +577,7 @@
               </span>
            </div>
            <div class="grid-column-image-wrapper has-before">
-                <video autoplay loop>
+                <video autoplay loop muted>
                     <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
                   </video>
               <span class="text-wrapper">

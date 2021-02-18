@@ -269,9 +269,6 @@ footer-->
                             As a New York Metropolitan based manufacturer, Custom Door and Mirror  is a natural choice as a partner for companies all over the country. In 1957,  The Paniflex Door Corporation started out as a small family run business.  
                             Our skill was crafted through the experience of 36 years of learning how  to make the industry’s best bifold and sliding doors. Today the Paniflex  Corporation is known as Custom Door & Mirror and manufactures the  highest quality doors in the widest range of sizes. 
                         </p>
-                        <p class="mb-2">
-                            The Paniflex Door System was engineered to fill a costly void in the  construction industry. It was extremely expensive to have doors made to  custom sizes so most developers had to make the openings to standard  sizes. Our closet doors were able to be made to the 1/4" making it much  easier on our customers.
-                        </p>
                     </div>
                     <div class="col-sm-6 col-md-2 col-lg-2 mb-5 mb-lg-0 footer-col text-center text-sm-left">
                         <h5 class="text-uppercase mb-3"><span>Quick Links</span></h5>

@@ -8967,27 +8967,59 @@ h5 {
 	align-items: center;
     display: flex;
 }
-.product-wallpaper-slider .slick-slide:not(.slick-active)
-{
-	opacity:0.5;
-}
 .product-wallpaper-slider .slick-arrow
 {
 	display: block;
 	height: 100%;
 	width: 15%;
-	z-index: 999;
+	z-index: 9;
 }
-.product-wallpaper-slider .slick-arrow:before{
-	visibility: hidden;
+.product-wallpaper-slider .slick-next{
+	right: 0;
+	opacity: .75;
+}
+.product-wallpaper-slider .slick-prev{
+	left: 0;
+	opacity: .75;
+}
+.product-wallpaper-slider .slick-prev, .product-wallpaper-slider .slick-next{
+	font-size: 2rem;
+	background-color: transparent;
+	box-shadow: none;
+}
+.product-wallpaper-slider .slick-next::before{
+	content: "\e649";
+	font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+	font-size: 3rem;
+	color:#111;
+}
+.product-wallpaper-slider .slick-prev::before{
+	content: "\e64a";
+	font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+	font-size: 3rem;
+	color:#111;
+}
+.product-wallpaper-slider .slick-prev:hover:before, .product-wallpaper-slider .slick-next:hover:before{
+	color: #000;
 }
 .product-slideshow{
 	max-height:440px;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
-	border: 1px solid #cfcfcf;
-	border-radius: 0;
-	background-color: #f2f2f2;
 }
 .product-slideshow img{
 	object-fit: cover;
