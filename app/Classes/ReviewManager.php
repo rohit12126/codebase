@@ -96,7 +96,7 @@ class ReviewManager
     public static function getAllActiveReviewsByProductId($productId)
     {
         $review = DB::table('reviews')
-            ->join('products', 'products.id', '=', 'reviews.reviewrateable_id')
+            // ->join('products', 'products.id', '=', 'reviews.reviewrateable_id')
             ->join('users', 'users.id', '=', 'reviews.author_id')
             ->select(
                 'reviews.id',
@@ -105,7 +105,7 @@ class ReviewManager
                 'reviews.body',
                 'reviews.approved',
                 'reviews.created_at',
-                'products.name as product_name',
+                // 'products.name as product_name',
                 'users.name as user_name',
             )
             // ->where('reviews.reviewrateable_id', $productId)
