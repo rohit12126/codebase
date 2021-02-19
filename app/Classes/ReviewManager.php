@@ -108,10 +108,10 @@ class ReviewManager
                 'products.name as product_name',
                 'users.name as user_name',
             )
-            ->where('reviews.reviewrateable_id', $productId)
+            // ->where('reviews.reviewrateable_id', $productId)
             ->where('reviews.approved', 1)
             ->orderBy('id', 'desc')
-            ->paginate(5);
+            ->get();
         return $review;
     }
 

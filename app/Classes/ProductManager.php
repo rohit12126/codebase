@@ -230,36 +230,6 @@ class ProductManager
         return $product;
     }
 
-    public function getProductWithReview($productId)
-    {   
-        $product = ProductModel::with('images', 'catergory', 'productDescription')->find($productId);
-
-        if (is_null($product)){
-            return false;
-        }
-
-        $productData = [
-            'product' => $product,
-            'productReview' => "",
-            'reviewCount'=>'',
-            'averageRating'=>''
-        ];
-        
-        if (!is_null($product)) {
-            
-            $productData['productReview'] = ReviewManager::getAllActiveReviewsByProductId($product->id); 
-            //$product->getRecentRatings($product->id, 5, 'desc');
-            
-            $productData['reviewCount'] = $this->reviewCount($product->id);
-
-            $productData['averageRating'] =  DB::table('reviews')
-                //->where('reviewrateable_type', 'App/Models/Product') /* In case of product only open it. */
-                ->where('reviewrateable_id', $product->id)
-                ->avg('rating');
-        }
-        return $productData;
-    }
-
     public function getProductWithReviewBySlug($slug)
     {   
         $product = ProductModel::with('images', 'catergory', 'productDescription')
@@ -287,14 +257,15 @@ class ProductManager
 
             $productData['averageRating'] =  DB::table('reviews')
                 //->where('reviewrateable_type', 'App/Models/Product') /* In case of product only open it. */
-                ->where('reviewrateable_id', $product->id)
+                // ->where('reviewrateable_id', $product->id)
+                ->where('approved', '=' , 1)
                 ->avg('rating');
         }
         return $productData;
     }
 
     public function reviewCount($id){
-        $count = DB::table('reviews')->where('reviewrateable_id', '=', $id)
+        $count = DB::table('reviews')
             ->where('approved', '=' , 1)
             ->count();
         return $count;
