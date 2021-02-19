@@ -7563,9 +7563,6 @@ a:hover {
 	color: #F94E57;
 	text-decoration: none;
 }
-.img-thumbnail{
-	background-color: #f94e57;
-}
 .head-bar {
     position: fixed;
     top: 0;
@@ -10501,3 +10498,39 @@ pulsate {  0% {
 .shipping_price{
 	width: 200px;
 }
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating-input>input {
+    display: none
+}
+
+.rating-input>label {
+    position: relative;
+    width: 1em;
+    font-size: 3rem;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating-input>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating-input>label:hover:before,
+.rating-input>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating-input>input:checked~label:before {
+    opacity: 1
+}
+
+.rating-input:not(.uncheck-effect)>input:checked~label:before {
+    opacity: 0.4
+}    

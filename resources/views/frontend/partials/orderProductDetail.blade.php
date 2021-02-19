@@ -3,42 +3,6 @@
 @section('content')
 <div class="main_content">
 <style>
-    .rating-input {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center
-}
-
-.rating-input>input {
-    display: none
-}
-
-.rating-input>label {
-    position: relative;
-    width: 1em;
-    font-size: 3rem;
-    color: #FFD600;
-    cursor: pointer
-}
-
-.rating-input>label::before {
-    content: "\2605";
-    position: absolute;
-    opacity: 0
-}
-
-.rating-input>label:hover:before,
-.rating-input>label:hover~label:before {
-    opacity: 1 !important
-}
-
-.rating-input>input:checked~label:before {
-    opacity: 1
-}
-
-.rating-input:hover>input:checked~label:before {
-    opacity: 0.4
-}    
 
 </style>
 <!-- START SECTION SHOP -->

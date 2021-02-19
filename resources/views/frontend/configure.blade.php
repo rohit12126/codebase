@@ -156,10 +156,10 @@
     <section class="section">
         <div class="container">
             <div class="comments">
-                @if ($productData['reviewCount'] > 0)
-                    <div class="text-center mb-3">
+                <div class="text-center mb-3">
                         <h3>Reviews &amp; Rating</h3>
                     </div>
+                @if ($productData['reviewCount'] > 0)
                     <div class="rating-counter">
                         <div class="rating-points">{{ number_format($productData['averageRating'],1)}}
                             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="rating-star">
@@ -172,7 +172,19 @@
                     </div>
                 @else
                     <div class="text-center mb-3">
-                        <h5>Be the first to rate this product.</h5>
+                        <div class="rating-input uncheck-effect mb-2"> 
+                            <input type="radio" name="rating" checked>
+                            <label for="5">☆</label> 
+                            <input type="radio" name="rating">
+                            <label for="4">☆</label> 
+                            <input type="radio" name="rating">
+                            <label for="3">☆</label> 
+                            <input type="radio" name="rating">
+                            <label for="2">☆</label> 
+                            <input type="radio" name="rating">
+                            <label for="1">☆</label>
+                        </div>
+                        <a href="#" class="btn btn-fill-out btn-sm">Be the first to rate this product.</a>
                     </div>
                 @endif
 
