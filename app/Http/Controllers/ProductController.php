@@ -129,7 +129,7 @@ class ProductController extends Controller
                 'title' => 'simple title',
                 'body' => $req->review,
                 'rating' => $req->rating,
-                'approved' => true // This is optional and defaults to false
+                'approved' => false // This is optional and defaults to false
             ]);
 
             return response()->json(['success' => '1']);
@@ -140,7 +140,7 @@ class ProductController extends Controller
             'title' => 'simple title',
             'body' => $req->review,
             'rating' => $req->rating,
-            'approved' => true
+            'approved' => false
         ], $user);
         return response()->json(['success' => '1']);
     }
