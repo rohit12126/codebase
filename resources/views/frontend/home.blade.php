@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="video-banner-btns">
-            <a href="{{ url('product/') }}" class="btn btn-fill-out mr-1 mr-lg-3">Learn more</a>
+            <a href="#stepsStart" class="btn btn-fill-out mr-1 mr-lg-3">Learn more</a>
             <a href="{{ url('product/') }}" class="btn btn-fill-out">shop now</a>
         </div>
     </div>
@@ -75,7 +75,7 @@
             <h3>Finding the perfect closet doors to meet your needs is only a few steps away.</h3>
         </div>
     </section>
-    <section class="home-swip-section home-page-section">
+    <section class="home-swip-section home-page-section" id="stepsStart">
         <div class="container">
             <h2 class="home-step-heading">
                 <span class="step-serial">Step 1:</span> Bifold Or Sliding Doors?
@@ -187,7 +187,7 @@
                         <div class="col-sm-4">
                             <div class="d-flex h-100 align-items-center pb-3 pt-3">
                                 <p class="mb-0">
-                                    <strong>Our bifold range from 2 to 8 panels.</strong>
+                                    <strong>Our bifolds range from 2 to 8 panels.</strong>
                                     When choosing the option of 6 to 8 panels note that the middle door(s) will open in the center of the closet.
                                 </p>
                             </div>
@@ -199,8 +199,8 @@
                         <div class="row home-steps-card pt-3 pb-3">                        
                             <div class="col-12">
                                 <p class="mb-3">
-                                    <strong>Our bifold range from 2 to 4 panels.</strong>
-                                        When choosing the option of 2 to 4 you can select a "triple track" to allow for a larger opening into your closet.
+                                    <strong>Our sliders range from 3 to 6 panels.</strong>
+                                    When choosing the option of 3 or 4 panels you can select a "triple    track" to allow for a larger opening into you closet.
                                 </p>
                             </div>
                             <div class="col-6 text-center">

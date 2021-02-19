@@ -5,11 +5,6 @@
     <section class="section p-0">
         <div class="section-inner">
             <div class="section-img-wrapper about-bg1">
-                <div class="section-img-content">
-                    Your Sitzfeldt Sofa. <br>
-                    Your ultimate <br>
-                    comfort zone. <br>
-                </div>
             </div>
             <div class="section-text-wrapper">
                 <h2>On time, all the time</h2>
@@ -28,13 +23,7 @@
     </section>
     <section class="section p-0">
         <div class="section-inner">
-            <div class="section-img-wrapper about-bg3 order-1 order-lg-2">
-                <div class="section-img-content">
-                    Your Sitzfeldt Sofa. <br>
-                    Your ultimate <br>
-                    comfort zone. <br>
-                </div>
-            </div>
+            <div class="section-img-wrapper about-bg3 order-1 order-lg-2"></div>
             <div class="section-text-wrapper order-2 order-lg-1">
                 <h2>Our Mantra</h2>
                 <p>

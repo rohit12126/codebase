@@ -154,10 +154,10 @@
         <div class="container">
             <div class="call-us-action-inner">
                 <div>
-                    <h2 class="mb-4">
-                        Schedule a free consultation <br> with an installation expert
+                    <h2 class="mb-5">
+                        Schedule a free consultation with an installation expert
                     </h2>
-                    <a href="javascript:void(0);" class="btn btn-fill-out btn-sm">
+                    <a href="javascript:void(0);" class="btn btn-fill-out">
                         Schedule a call
                     </a>
                 </div>
