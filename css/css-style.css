@@ -8067,7 +8067,7 @@ h5 {
 /*================Home page Css=================*/
 	/*================Home page Banner=================*/
 	.main-page-video{
-		padding:62.5% 0 0 0;
+		padding:41.89% 0 0 0;
 		position:relative;
 	}
 	.main-page-video:after{
@@ -8089,7 +8089,7 @@ h5 {
 		z-index: 9;
 		display: flex;
 		justify-content: center;
-		padding-top: 15%;
+		padding-top: 8%;
 		text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 		text-align: center;
 	}
