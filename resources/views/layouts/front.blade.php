@@ -276,8 +276,8 @@ footer-->
                             <li><a href="{{ url('home/') }}">Home</a></li>
                             <li><a href="{{ url('about-us/') }}">About us</a></li>
                             <li><a href="{{ url('product/') }}">Products</a></li>
-                            <!-- <li><a href="{{ url('projects/') }}">Projects</a></li> -->
-                            <!-- <li><a href="{{ url('blog/') }}">blog</a></li> -->
+                            <li><a href="{{ url('projects/') }}">Projects</a></li>
+                            <li><a href="{{ url('blog/') }}">blog</a></li>
                             <li><a href="{{ url('resource/') }}">Resource</a></li>
                             <li><a href="{{ url('contact-us/') }}">Contact Us</a></li>
                         </ul>
