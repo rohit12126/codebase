@@ -57,7 +57,7 @@
         </div>
     </section> -->
     <div class="main-page-video">
-        <iframe src="https://player.vimeo.com/video/324206414?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/513525765?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         <div class="video-banner-content">
             <div>
                 <h1>Closet door shopping made easy</h1>
@@ -554,7 +554,7 @@
         </h2>
     </section>
     <section class="grid-tiems-section">
-        <div class="grid-2020">
+        <div class="grid-2020 grid-container">
             <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/custom-closet.gif')}});">
               <span class="text-wrapper">
                  <p>Solid backing makes our door the strongest and most impact resistant door on the market</p>
