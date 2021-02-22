@@ -127,15 +127,15 @@
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link {{ request()->is('product*') ? 'active' : ''}} ">Products</a>
                         </li>
-                        <!-- <li class="head-nav-li">
+                        <li class="head-nav-li">
                             <a href="{{ url('projects/') }}" class="head-nav-link {{ request()->is('projects*') ? 'active' : ''}} ">Projects</a>
-                        </li> -->
+                        </li>
                         <li class="head-nav-li">
                             <a href="{{ url('about-us/') }}" class="head-nav-link {{ request()->is('about-us') ? 'active' : ''}}">About Us</a>
                         </li>
-                        <!-- <li class="head-nav-li">
+                        <li class="head-nav-li">
                             <a href="{{ url('blog/') }}" class="head-nav-link {{ request()->is('blog*') ? 'active' : ''}}">Blog</a>
-                        </li> -->
+                        </li>
                         <li class="head-nav-li">
                             <a href="{{ url('resource/') }}" class="head-nav-link {{ request()->is('resource') ? 'active' : ''}}">Resources</a>
                         </li>
