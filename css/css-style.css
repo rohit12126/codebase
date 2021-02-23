@@ -3209,84 +3209,6 @@ input.text {
 	width: 100%;
 }
 /*===================================*
-  04.END SHOP BANNER STYLE
-*===================================*/
-.grid-tiems-section{
-	display: block;
-	position: relative;
-	overflow: hidden;
-}
-.grid-column-image-wrapper {
-	height: calc(33vw * 1.25);
-	background-color: #fff;
-	background-size: 102%;
-    background-position: top center;
-	position: relative;
-	background-repeat: no-repeat;
-	float: left;
-	overflow: hidden;
-	width: 33.33333%;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-.grid-column-image-wrapper.color-grid{
-	background-color: #cecece;
-}
-.grid-column-image-wrapper.grid-size-second{
-	width: 42.66666%;
-	display: flex;
-	align-items: center;
-}
-.grid-column-image-wrapper.grid-size-third{
-	width: 24%;
-	display: flex;
-	align-items: center;
-}
-.grid-column-image-wrapper.grid-size-third:not(.color-grid) p{
-	color: #292b2c;
-}
-.grid-column-image-wrapper:hover {
-	cursor: pointer;
-}
-.grid-column-image-wrapper span.text-wrapper {
-	max-width: 340px;
-}
-.grid-column-image-wrapper span.text-wrapper {
-	color: #FFF;
-	padding: 0 30px;
-	box-sizing: border-box;
-}
-.grid-column-image-wrapper p,.grid-column-image-wrapper a{
-	color: #fff;
-	margin: 0;
-	line-height: 1.2;
-}
-.grid-column-image-wrapper:hover::before {
-	transform: scale(1.1);
-}
-.grid-column-image-wrapper.grid-size-third span.text-wrapper, .grid-column-image-wrapper.grid-size-third span.button-wrapper{
-	position: unset;
-	padding-left: 0;
-	min-height: auto;
-}
-.grid-column-image-wrapper.has-before{
-	background-color: #292b2c;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-}
-.grid-column-image-wrapper.has-before .text-wrapper
-{
-	position: absolute;
-    bottom: 10%;
-}
-.grid-column-image-wrapper.has-before video{
-	width: 100%;
-}
-/*===================================*
   05.START CATEGORIES STYLE
 *===================================*/
 .categories_box {
@@ -8373,13 +8295,65 @@ h5 {
 	}
 	/*=================Home page Step 3 end====================*/
 	/*==================== Home bottom section ====================*/
-	.the-cdm{
+	.cdm-difference{
 		text-align: center;
 	}
-	.the-cdm h2{
+	.cdm-difference h2{
 		font-weight: bold;
 		font-size: 2.5rem;
 		margin-bottom: 0;
+	}
+	.cdm-container{
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.cdm-grid{
+		display: flex;
+		height: 100vh;
+		max-height: 710px;
+	}
+	.tile-first{
+		width: 33.33333%;
+		background-color: #292b2c;
+		overflow: hidden;
+	}
+	.cdm-grid-upper{
+		min-height: 50%;
+	}
+	.cdm-grid-gif{
+		width: 101%;
+		max-width: 101%;
+	}
+	.cdm-grid-content, .cdm-grid-content a{
+		margin: 0;
+		line-height: 1.2;
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+	.cdm-grid-content{
+		width: 100%;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		padding: 15px;
+	}
+	.cdm-grid-content.color-grey{
+		color: #292b2c;
+	}
+	.tile-second{
+		width: 42.66666%;
+		align-items: center;
+	}
+	.tile-second:not(.bg-white),.tile-third:not(.bg-white){
+		background-color: #cecece;
+	}
+	.tile-third{
+		justify-content: center;
+		width: 24%;
 	}
 	/*=================Home bottom section end====================*/	
 /*=================Home Page End====================*/	

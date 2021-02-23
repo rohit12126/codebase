@@ -1,61 +1,5 @@
 @extends('layouts.front')
 @section('content')
-
-
-<!-- START SECTION SHOP -->
-    <!-- <section class="home-slider-section">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption-up d-none d-md-block">
-                    <h1>First slide label</h1>
-                    <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
-                </div>
-                <div class="slider-inner-block">
-                    <img src="{{URL::asset('/images/first-slide.jpg')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-caption-down d-none d-md-block">
-                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption-up d-none d-md-block">
-                    <h1>First slide label</h1>
-                    <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
-                </div>
-                <div class="slider-inner-block">
-                    <img src="{{URL::asset('/images/second-slide.jpg')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-caption-down d-none d-md-block">
-                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption-up d-none d-md-block">
-                    <h1>First slide label</h1>
-                    <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
-                </div>
-                <div class="slider-inner-block">
-                    <img src="{{URL::asset('/images/third-slide.jpg')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-caption-down d-none d-md-block">
-                    <a href="{{ url('product/') }}" class="btn btn-fill-out">see the sofas</a>
-                </div>
-            </div>
-          </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="linearicons-chevron-left" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="linearicons-chevron-right" aria-hidden="true"></span>
-            </a>
-        </div>
-    </section> -->
     <div class="main-page-video">
         <iframe src="https://player.vimeo.com/video/513525765?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         <div class="video-banner-content">
@@ -70,7 +14,6 @@
         </div>
     </div>
     <section class="home-steps home-page-section">
-        <!-- <div class="home-step-shape"></div> -->
         <div class="container">
             <h3>Finding the perfect closet doors to meet your needs is only a few steps away.</h3>
         </div>
@@ -548,42 +491,51 @@
         @endif
         </div>
     </section> -->
-    <section class="home-page-section the-cdm">
-        <h2>
-            The CDM Difference
-        </h2>
-    </section>
-    <section class="grid-tiems-section">
-        <div class="grid-2020 grid-container">
-            <div class="grid-column-image-wrapper has-before" style="background-image: url({{URL::asset('/images/home/custom-closet.gif')}});">
-              <span class="text-wrapper">
-                 <p>Solid backing makes our door the strongest and most impact resistant door on the market</p>
-              </span>
-           </div>
-           <div class="grid-column-image-wrapper grid-size-second color-grid">
+    <section class="cdm-grid-section">
+        <div class="home-page-section cdm-difference">
+            <h2>
+                The CDM Difference
+            </h2>
+        </div>
+        <div class="cdm-container">
+            <div class="cdm-grid tile-first">
+                <div class="w-100">
+                    <div class="cdm-grid-upper">
+                        <img src="{{URL::asset('/images/home/custom-closet.gif')}}" class="cdm-grid-gif">
+                    </div>
+                    <div class="cdm-grid-content">
+                        Solid backing makes our door the strongest and most impact resistant door on the market
+                    </div>
+                </div>
+            </div>
+            <div class="cdm-grid tile-second">
                 <img src="{{URL::asset('/images/home/Back Mirror Slider.png')}}" alt="">
-           </div>
-           <div class="grid-column-image-wrapper grid-size-third color-grid">
-              <span class="text-wrapper hasstars">
-                 <p>Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)</p>
-              </span>
-           </div>
-           <div class="grid-column-image-wrapper grid-size-second">
+            </div>
+            <div class="cdm-grid tile-third">
+                <div class="cdm-grid-content">
+                    Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)
+                </div>
+            </div>
+            <div class="cdm-grid tile-second bg-white">
                 <img src="{{URL::asset('/images/home/Back of 6 Panel Bifold.png')}}" alt="">
-           </div>
-           <div class="grid-column-image-wrapper grid-size-third">
-              <span class="text-wrapper">
-                 <p>CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening</p>
-              </span>
-           </div>
-           <div class="grid-column-image-wrapper has-before">
-                <video autoplay loop muted>
-                    <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
-                  </video>
-              <span class="text-wrapper">
-                 <p>Our Trueclose, patented hinges help the door close and stay closed. With our liftime warranty, enjoy years of flawless and ultra-smooth use.</p>
-              </span>
-           </div>
+            </div>
+            <div class="cdm-grid tile-third bg-white">
+                <div class="cdm-grid-content color-grey">
+                    CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening
+                </div>
+            </div>
+            <div class="cdm-grid tile-first">
+                <div class="w-100">
+                    <div class="cdm-grid-upper">
+                        <video autoplay loop muted>
+                            <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="cdm-grid-content">
+                        Our Trueclose, patented hinges help the door close and stay closed. With our liftime warranty, enjoy years of flawless and ultra-smooth use.
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
