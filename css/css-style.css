@@ -8342,15 +8342,16 @@ h5 {
 		color: #292b2c;
 	}
 	.tile-second{
-		width: 42.66666%;
+		width: 46.66666%;
 		align-items: center;
+		padding-top: 0.925rem;
 	}
 	.tile-second:not(.bg-white),.tile-third:not(.bg-white){
 		background-color: #cecece;
 	}
 	.tile-third{
 		justify-content: center;
-		width: 24%;
+		width: 20%;
 	}
 	/*=================Home bottom section end====================*/	
 /*=================Home Page End====================*/	

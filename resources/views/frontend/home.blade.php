@@ -509,18 +509,18 @@
                 </div>
             </div>
             <div class="cdm-grid tile-second">
-                <img src="{{URL::asset('/images/home/Back Mirror Slider.png')}}" alt="">
+                <img src="{{URL::asset('/images/home/Back-Mirror-Slider.png')}}" alt="">
             </div>
             <div class="cdm-grid tile-third">
-                <div class="cdm-grid-content">
+                <div class="cdm-grid-content manged-grid-content">
                     Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)
                 </div>
             </div>
             <div class="cdm-grid tile-second bg-white">
-                <img src="{{URL::asset('/images/home/Back of 6 Panel Bifold.png')}}" alt="">
+                <img src="{{URL::asset('/images/home/Back-of-6-Panel-Bifold.png')}}" alt="">
             </div>
             <div class="cdm-grid tile-third bg-white">
-                <div class="cdm-grid-content color-grey">
+                <div class="cdm-grid-content manged-grid-content color-grey">
                     CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening
                 </div>
             </div>
