@@ -86,6 +86,9 @@
     .cdm-grid-content, .cdm-grid-content a{
         font-size: 1.2rem;
     }
+    .content-width-fix{
+        width: 240px !important;
+    }
 }
 
 @media(max-width:1186px){
@@ -382,6 +385,10 @@
 }
 @media (min-width: 768px){
     
+    .content-width-fix {
+        width: 310px;
+        right: 12% !important;
+    }
 }
 @media (max-width: 767px) {
     .video-banner-btns{
@@ -707,6 +714,10 @@
     }
     .pre-footer .footer-col span{
         white-space: nowrap;
+    }
+    .content-width-fix{
+        width: 238px !important;
+        right: -8% !important;
     }
 }
 @media(max-width:580px){

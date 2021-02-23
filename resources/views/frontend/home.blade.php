@@ -520,7 +520,7 @@
                 <img src="{{URL::asset('/images/home/Back-of-6-Panel-Bifold.png')}}" alt="">
             </div>
             <div class="cdm-grid tile-third bg-white">
-                <div class="cdm-grid-content manged-grid-content color-grey">
+                <div class="cdm-grid-content manged-grid-content color-grey content-width-fix">
                     CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening
                 </div>
             </div>
