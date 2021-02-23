@@ -4,7 +4,10 @@
 @media (min-width:1200px){
     #secondhotspotImg,#hotspotImg .hotspot-image{
         transform: translateX(-5%);
-    }
+    }    
+	.cdm-grid-upper{
+		min-height: 50%;
+	}
 }
 @media (max-width: 1199px) {
     body{
@@ -76,6 +79,9 @@
         bottom: -30px !important;
         right: auto !important;
         top: auto !important;
+    }
+    .cdm-grid{
+        height: auto;
     }
 }
 
@@ -451,9 +457,6 @@
     .dashboard_content{
         padding: 0;
     }
-    .cdm-grid{
-        max-height: 540px;
-    }
     .tile-first{
         width: 100%;
     }
@@ -613,7 +616,7 @@
         max-width: 100%;
         flex: 0 0 100%;
     }
-    .second-tile,.third-tile{
+    .tile-second,.tile-third{
         width: 100%;
     }
 }
