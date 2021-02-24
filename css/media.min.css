@@ -135,7 +135,7 @@
     }
     .cdm-grid-content{
         max-width: 340px;
-        min-height: 50%;;
+        /* min-height: 50%;; */
     }
 }
 
@@ -476,19 +476,22 @@
     .cdm-grid.tile-first{
         height: auto;
     }
+    .cdm-padding{
+		padding-top: 15px;
+	}
 }
 @media (min-width: 576px){
     
     .tile-third{
         position: relative;
     }
-    .cdm-grid-content.manged-grid-content
+    /* .cdm-grid-content.manged-grid-content
     {
         position: absolute;
         right: 26%;
         top: 50%;
         transform: translateY(-50%);
-    }
+    } */
 }
 @media (max-width: 575px) {
     .video-banner-content{
