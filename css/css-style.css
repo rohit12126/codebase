@@ -7203,6 +7203,7 @@ blockquote p:last-child {
 .dashboard_content .card-header {
 	background-color: transparent;
 	border-color: #f0f0f0;
+	border-bottom: 0;
 }
 .dashboard_content .card-header * {
 	margin: 0;
@@ -7238,7 +7239,6 @@ blockquote p:last-child {
 }
 .dashboard-section .container{
 	background: #fff;
-	padding: 25px;
 	min-height: 450px;
 }
 .dashboard-section .user-icon{
@@ -7258,7 +7258,8 @@ blockquote p:last-child {
 	padding-right: 0;
 }
 .user-account-name{
-	border-bottom: 1px solid #ddd;
+	/* border-bottom: 1px solid #ddd; */
+	box-shadow: 0 10px 10px -6px rgb(0 0 0 / 20%);
 }
 /*===================================*
   24.END ELEMENT DESIGN
@@ -9163,6 +9164,14 @@ h5 {
 		right: 15px;
 		top: 3px;
 }
+.section.blog-view{
+	overflow: unset;
+}
+.blog-sticky{
+	position: -webkit-sticky;
+    position: sticky;
+    top: 120px;
+}
 .blog-list-view,.blog-view, .projects-wrap{
 	background-color: #f4f4f4;
 	padding: 3rem 1rem;
@@ -10528,4 +10537,34 @@ pulsate {  0% {
 
 .rating-input:not(.uncheck-effect)>input:checked~label:before {
     opacity: 0.4
-}    
+}
+/* ==================User account form ================ */
+.user-account-form .form-group{
+	display: flex;
+}
+.user-account-form .form-group label{
+	min-width: 164px;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+}
+.user-account-form .form-group label .mandatory{
+	margin-left: 2px;
+}
+.form-test-design{
+	max-width: 460px;
+}
+.form-test-design-2{
+	padding: 0 6rem;
+}
+.form-test-design-2 .card-header{
+	margin-left: 164px;
+    text-align: center;
+}
+.form-test-design .form-control, .form-test-design-2 .form-control{
+	height: 38px;
+	margin-bottom: 1.2rem;
+}
+.form-test-design h3, .form-test-design-2 h3 {
+    font-size: 1.2rem;
+}

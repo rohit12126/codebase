@@ -101,7 +101,7 @@
                     @auth
                         <a href="{{url('/account')}}" title="{{ $userData->name ?? ''}}">
                             <img src="{{URL::asset('/images/icon/user.png')}}" alt="">
-                            <label class="mb-0">Hi {{ ucwords($userData->name ?? '')}}</label>
+                            <label class="mb-0">{{ ucwords($userData->name ?? '')}}</label>
                         </a>
                     @endauth
                 </span>

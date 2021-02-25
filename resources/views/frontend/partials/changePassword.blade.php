@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card form-test-design-2">
     <div class="card-header">
         <h3>Update Your Password Details</h3>
     </div>
     <div class="card-body">
-        <form method="POST" id="form-change-password" role="form" method="POST" action="{{ url('/user/credentials') }}" >
+        <form method="POST" id="form-change-password" role="form" method="POST" action="{{ url('/user/credentials') }}" class="user-account-form">
              @csrf
                 @if(session()->has('message'))
                     <div class="alert alert-success">

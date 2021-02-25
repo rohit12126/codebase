@@ -69,7 +69,7 @@
                 </div> -->
             </div>
             <div class="blog-sidebar col-lg-3 col-md-6 col-sm-8 col-11">
-                <div class="blog-sidebar-item">
+                <div class="blog-sidebar-item blog-sticky">
                     <h3 class="blog-sidebar-title">Recent Blogs</h3>
                     @foreach($recent as $blog)
                     <div class="blog-col">

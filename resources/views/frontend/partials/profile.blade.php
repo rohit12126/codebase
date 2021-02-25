@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card form-test-design">
     <div class="card-header">
         <h3>Update Your Account Details</h3>
     </div>
     <div class="card-body">
-             <form method="POST" action="{{ route('account.update') }}" id='account'>
+             <form method="POST" action="{{ route('account.update') }}" id='account' class="user-account-form">
              @csrf
                 @if(session()->has('message'))
                     <div class="alert alert-success">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label>Email Address <span class="mandatory">*</span></label>
-                    <input required="" class="form-control" name="email" type="email"  value="{{ $user->email}}" readonly required>
+                    <input required="" class="form-control" name="email" type="email" data-tooltip="I’m the tooltip text." value="{{ $user->email}}" readonly required>
                     @if($errors->has('email'))
                         <div class="error">{{ $errors->first('email') }}</div>
                     @endif
