@@ -9359,7 +9359,7 @@ h5 {
 .blog-back-btn:hover{
 	color: #fff;
 }
-.blog-back-btn span{
+.blog-back-btn span, .blog-back-btn img{
 	margin-right: 0.4rem;
 }
 .blog-share-btn{

@@ -34,7 +34,7 @@
                         <a target="_blank" class="blog-back-btn d-block pinterest-icon" role="button" data-sharer="pinterest" data-url="" href="http://pinterest.com/pin/create/link/?url=${{url()->current()}}&amp;description={{$blog->title}}" onclick="window.open('http://pinterest.com/pin/create/link/?url=${{url()->current()}}&amp;description={{$blog->title}}', 
                             'newwindow', 
                             'width=600,height=550'); 
-                            return false;>
+                            return false;">
                             <img src="{{URL::asset('/images/pinterest.svg')}}" alt="">
                             pinterest
                         </a>
