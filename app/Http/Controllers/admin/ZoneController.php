@@ -39,15 +39,19 @@ class ZoneController extends Controller
      */
     public function addZone(Request $req)
     {
+        // dd($req);
         $this->validate(
             $req, 
             [
                 'title' => 'required',
                 'product_price'=> 'required|numeric|min:0|not_in:0',
-                'hardware_price'=> 'required|numeric|min:0|not_in:0',
-                'states'=>'required'
+                'states'=>'required',
+                'hardware.*.min_weight' => 'required|integer',
+                'hardware.*.max_weight' => 'required|integer',
+                'hardware.*.price'    => 'required|not_in:0',
             ]
         ); 
+        // dd('pass');
         $response=$this->zoneManager->addZone($req);
         if($response == true){
             Common::setMessage(__('zone_add_success'));

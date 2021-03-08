@@ -22,7 +22,8 @@ class Product extends Model implements ReviewRateable
         'stock_qty',
         'status',
         'is_accessory',
-        'configure_id'
+        'configure_id',
+        'weight'
     ];
 
     /**

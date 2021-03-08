@@ -79,7 +79,7 @@
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $value->title }}</td>
                                             <td>${{ $value->product_price }}</td>
-                                            <td>${{ $value->hardware_price }}</td>
+                                            <td>@foreach(json_decode($value->hardware_price) as $hardwarePrice) @if($loop->first) {{'$'.$hardwarePrice->price}} @elseif ($loop->last) {{'-$'.$hardwarePrice->price}} @endif @endforeach</td>
                                             <td>@foreach ($value->state as $states)
                                                     {{ $states->code }},
                                                 @endforeach</td>

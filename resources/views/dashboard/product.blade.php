@@ -121,6 +121,14 @@
                                             <div class="error">{{ $errors->first('configure_id') }}</div>
                                         @endif
                                     </div>
+                                    <div class="form-group" id="weight">
+                                        <label>Weight in LB</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="number" required placeholder="Product Weight in LB" name="weight" class="form-control" value="{{ old('weight', @$product->weight) }}" >
+                                        @if($errors->has('weight'))
+                                            <div class="error">{{ $errors->first('weight') }}</div>
+                                        @endif
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
                                         <span class="mandatory">*</span>
@@ -212,10 +220,12 @@
     if ( $('#is_accessory').val() == 1 )
         {
         $('#configure_id').css('display','none');
+        $('#weight').css('display','block');
         }
     else if ( $('#is_accessory').val() == 0)
     {
         $('#configure_id').css('display','block');
+        $('#weight').css('display','none');
     }
     }
     somejs();

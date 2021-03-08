@@ -19,7 +19,7 @@ class ZoneManager
     $data = [
       'title' => $req->title,
       'product_price' => $req->product_price,
-      'hardware_price' => $req->hardware_price,
+      'hardware_price' => json_encode($req->hardware),
       ];
       if ($zone = ZoneModel::create($data)) 
       {
