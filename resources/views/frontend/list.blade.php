@@ -37,7 +37,7 @@
                     </div>
                 @else
                     @foreach ($products as $key => $product)
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-3 col-sm-6">
                             <div class="product-listing">
                                 @if($product->is_accessory == 0)
                                     <a href="{{ url('product/configure/').'/'.$product->slug }}" class="">
