@@ -249,12 +249,14 @@ class OrderController extends Controller
                     
                     if($hardware)
                     {
-                        // dd(json_decode($price->hardware_price));
                         foreach(json_decode($price->hardware_price) as $hp)
                         {
                             if(($hardware->weight >= $hp->min_weight) && ($hp->max_weight >= $hardware->weight))
                             {
                                 $hshippingPrice = $hp->price;
+                            }
+                            else{
+                                $shippingPrice = $hp->price;
                             }
                         }
                     }
@@ -264,15 +266,7 @@ class OrderController extends Controller
                     }
                 }
                 
-                if($shippingPrice !== 0)
-                {
-                    
-                    $shipPrice = $shippingPrice;
-                }
-                else if($shippingPrice == 0)
-                {
-                    $shipPrice = $hshippingPrice;
-                }
+                $shipPrice = $shippingPrice;
             }
         return number_format((float) $shipPrice, 2, '.', '');
     }
