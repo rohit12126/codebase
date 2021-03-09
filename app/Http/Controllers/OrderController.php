@@ -232,7 +232,7 @@ class OrderController extends Controller
      */
     public function shippingPrice(Request $req)
     {
-        
+        // dd($req);
         $shippingPrice = 0;
         $hshippingPrice = 0;
         $shipPrice= 0;
@@ -249,7 +249,14 @@ class OrderController extends Controller
                     
                     if($hardware)
                     {
-                        $hshippingPrice = $price->hardware_price;
+                        // dd(json_decode($price->hardware_price));
+                        foreach(json_decode($price->hardware_price) as $hp)
+                        {
+                            if(($hardware->weight >= $hp->min_weight) && ($hp->max_weight >= $hardware->weight))
+                            {
+                                $hshippingPrice = $hp->price;
+                            }
+                        }
                     }
                     else
                     {
