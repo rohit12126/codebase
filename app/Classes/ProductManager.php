@@ -29,6 +29,7 @@ class ProductManager
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
             'configure_id' => $req->configure_id ?? NULL,
+            'weight' => $req->weight ?? NULL
         ];
         if ($product = ProductModel::create($data)) {
             if ($req->image) {
@@ -71,6 +72,7 @@ class ProductManager
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
             'configure_id' => $req->configure_id ?? NULL,
+            'weight' => $req->weight ?? NULL
         ];
         if ($product->fill($data)->save()) {
             
