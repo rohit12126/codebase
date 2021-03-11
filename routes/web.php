@@ -361,6 +361,8 @@ Route::get('product/{catSlug?}', 'ProductController@index')->name('product.list'
 Route::get('product/detail/{slug}','ProductController@detail')->name('product.detail');
 Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
 Route::get('product/configure/{slug}', 'ProductController@configure')->name('product.configure');
+//temp only
+Route::get('product/configure-new/{slug}', 'ProductController@configurenew')->name('product.configure');
 Route::post('/product/price','ProductController@getPrice');
 
 /* Blog Routes */

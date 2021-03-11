@@ -188,6 +188,25 @@ class ProductController extends Controller
             return redirect()->route('product.list');
         }
     }
+    public function configurenew(Request $req, $slug) {
+        $cart = [];
+        $productData = $this->productManager->getProductWithReviewBySlug($slug);
+        
+        if($productData === false) {
+            return  redirect()->route('notFound');
+        }
+        
+        if ($productData) {
+            $productId = $productData['product']->id;
+            $cart = $this->cartManager->getProduct($productId);
+            
+            return view('frontend.new-configure',
+                ['productData' => $productData, 'cart'=>$cart]
+            );
+        } else {
+            return redirect()->route('product.list');
+        }
+    }
     /**
      * Calculate the price on basis of current selection
      * 
