@@ -33,7 +33,8 @@
             top: 0;
             bottom: 0;
             right: -100%;
-            width: 75%;
+            width: 100%;
+            max-width: 800px;
             height: 100vh;
             transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
             -moz-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
@@ -70,7 +71,7 @@
         }
         .specs-mega-menu li{
             width: 100%;
-            min-width: 280px;
+            min-width: 240px;
             border-top: 1px solid #ddd;
         }
         .specs-mega-menu li:last-child{
@@ -105,11 +106,19 @@
             top: 50%;
             transform: translateY(-50%);
         }
+        .specs-open a{
+            color: #fff;
+            background-color: #F94E57;
+        }
+        .specs-sidebar .specs-open a:before{
+            color: #F94E57;
+            background-color: #fff;
+        }
         .specs-mega-sub{
             position: absolute;
             left: 0;
             top: 0;
-            width: calc(100% - 280px);
+            width: calc(100% - 240px);
             height: 100%;
             padding: 1rem;
             overflow-y: auto;
