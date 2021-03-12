@@ -42,7 +42,7 @@
                     const configurator = await RoomleConfiguratorApi.create(
                         'demoConfigurator',
                         document.getElementById('configurator-container'),
-                        {...options, buttons: {requestproduct: false}},
+                        {...options, buttons: {savedraft: false}},
                     );
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
                         addToCart(configurationId, image, partlist);
