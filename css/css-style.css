@@ -8332,7 +8332,7 @@ h5 {
 			left: 70%;
 		}
 	/*================Home page Step 2 section=================*/
-		.home-step-2{
+		.home-step-2,.how-to-wrap{
 			background-color: #f2eeeb;
 		}
 		.container.products-listing-container{

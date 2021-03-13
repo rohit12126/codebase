@@ -16,9 +16,16 @@
             <h3>Finding the perfect closet doors to meet your needs is only a few steps away.</h3>
         </div>
     </section>
-    <section class="home-page-section ">
+    <section class="home-page-section how-to-wrap">
         <div class="container">
+            <h2 class="home-step-heading">
+               How to get started
+            </h2>
+            <div class="row">
+                <div class="col-lg-4 col-">
 
+                </div>
+            </div>
         </div>
     </section>
     <section class="home-swip-section home-page-section" id="stepsStart">
