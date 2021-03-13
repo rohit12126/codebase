@@ -138,7 +138,27 @@
     asNavFor: '.product-wallpaper-slider',
     dots: false,
     centerMode: true,
-    focusOnSelect: true
+    focusOnSelect: true,
+        responsive: [
+            {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+            }
+        ]
     });
+    var widthGet = $(".slideshow-thumb").width();
+    $(".slideshow-thumb").height(widthGet);
 </script>
 @endsection

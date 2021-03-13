@@ -4,10 +4,7 @@
 @media (min-width:1200px){
     #secondhotspotImg,#hotspotImg .hotspot-image{
         transform: translateX(-5%);
-    }    
-	.cdm-grid-upper{
-		min-height: 50%;
-	}
+    } 
 }
 @media (max-width: 1199px) {
     body{
@@ -80,12 +77,6 @@
         right: auto !important;
         top: auto !important;
     }
-    .cdm-grid{
-        height: auto;
-    }
-    .cdm-grid-content, .cdm-grid-content a{
-        font-size: 1.2rem;
-    }
     .content-width-fix{
         width: 240px !important;
     }
@@ -132,10 +123,6 @@
     .active.head-nav-link:before {
         opacity: 1;
         transform: scaleX(1);
-    }
-    .cdm-grid-content{
-        max-width: 340px;
-        /* min-height: 50%;; */
     }
 }
 
@@ -391,15 +378,6 @@
     }
 }
 @media (max-width: 767px) {
-    .video-banner-btns{
-        bottom: 40px;
-    }
-    .video-banner-content h1{
-        font-size: 2rem;
-    }
-    .video-banner-content h2{
-        font-size: 1.25rem;
-    }
     .hot-spot.left-sides-first {
         top: 34%;
         left: 32%;
@@ -464,55 +442,11 @@
     .dashboard_content{
         padding: 0;
     }
-    .tile-first{
-        width: 100%;
-    }
-    .tile-second{
-        width: 60%;
-    }
-    .tile-third{
-        width: 40%;
-    }
-    .cdm-grid.tile-first{
-        height: auto;
-    }
-    .cdm-padding{
-		padding-top: 15px;
-	}
 }
 @media (min-width: 576px){
     
-    .tile-third{
-        position: relative;
-    }
-    /* .cdm-grid-content.manged-grid-content
-    {
-        position: absolute;
-        right: 26%;
-        top: 50%;
-        transform: translateY(-50%);
-    } */
 }
 @media (max-width: 575px) {
-    .video-banner-content{
-        padding-top: 10%;
-    }
-    .video-banner-content h1{
-        font-size: 1.8rem;
-    }
-    .video-banner-content h2{
-        font-size: 1rem;
-        width: 80%;
-        margin: 0 auto;
-    }
-    .video-banner-btns{
-        bottom: 20px;
-    }
-    .video-banner-btns .btn{
-        padding: 6px 12px;
-        font-size: 0.875rem;
-        margin-bottom: 0;
-    }
     .post-footer a{
         display: block;
     }
@@ -636,17 +570,11 @@
         max-width: 100%;
         flex: 0 0 100%;
     }
-    .tile-second,.tile-third{
-        width: 100%;
-    }
 }
 @media (max-width: 455px){
     body{
         padding-top: 130px;
     }
-    .video-banner-btns{
-        bottom: 10px;
-    } 
 }
 @media (min-width: 1400px)
 {
@@ -665,10 +593,7 @@
 }
 
 @media (min-width: 1500px) {
-    .cdm-grid {
-        font-size: 24px;
-        line-height: 34px;
-    }
+
 }
 @media (max-width: 340px){
     .post-footer a:not(:last-child){

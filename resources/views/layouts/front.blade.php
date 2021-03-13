@@ -147,7 +147,13 @@
             </div>
         </div>
         <div class="head-alert-bar">
-            60 YEARS OF EXCELLENCE &nbsp;|&nbsp; SEE OUR NEWEST ADDITIONS &nbsp;|&nbsp; UNLIMITED DESIGN POSSIBILITIES 
+            <div class="container">
+                <div class="head-info-slider">
+                    <div>60 YEARS OF EXCELLENCE </div> 
+                    <div>SEE OUR NEWEST ADDITIONS </div>
+                    <div>UNLIMITED DESIGN POSSIBILITIES </div>
+                </div>
+            </div>
         </div>
     </header>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -691,4 +697,8 @@ function myFunction(id) {
         $(".head-bar").removeClass('is-sticky');
     }
     }
+    $('.head-info-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+    });
 </script>

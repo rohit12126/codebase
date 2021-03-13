@@ -1,21 +1,24 @@
 @extends('layouts.front')
 @section('content')
+    <div class="main-tagline-wrap">
+        <h1 class="home-step-heading">
+            Closet door shopping made easy
+        </h1>
+        <h4>
+            Create custom closet doors that fit your style
+        </h4>
+    </div>
     <div class="main-page-video">
         <iframe src="https://player.vimeo.com/video/513525765?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        <div class="video-banner-content">
-            <div>
-                <h1>Closet door shopping made easy</h1>
-                <h2>Create custom closet doors that fits your style</h2>
-            </div>
-        </div>
-        <div class="video-banner-btns">
-            <a href="#stepsStart" class="btn btn-fill-out mr-1 mr-lg-3">Learn more</a>
-            <a href="{{ url('product/') }}" class="btn btn-fill-out">shop now</a>
-        </div>
     </div>
     <section class="home-steps home-page-section">
         <div class="container">
             <h3>Finding the perfect closet doors to meet your needs is only a few steps away.</h3>
+        </div>
+    </section>
+    <section class="home-page-section ">
+        <div class="container">
+
         </div>
     </section>
     <section class="home-swip-section home-page-section" id="stepsStart">
@@ -24,7 +27,6 @@
                 <span class="step-serial">Step 1:</span> Bifold Or Sliding Doors?
             </h2>
             <p class="home-step-para">
-            Both bifold and sliding doors offer great benefits over the traditional hinged or full swinging door. They are handy whenever space is limited but also when a style update is needed.
             Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for. 
             </p>
             <div class="row mt-4">
@@ -119,87 +121,42 @@
             </div>
         </div>
     </section>
-    <section class="home-page-section home-swipe-detail">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="row home-steps-card mr-lg-3">
-                        <div class="col-sm-8 pl-0">
-                            <img class="six-panel-img" src="{{URL::asset('/images/home/6 Panel Bifold Open.jpg')}}" alt="">
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="d-flex h-100 align-items-center pb-3 pt-3">
-                                <p class="mb-0">
-                                    <strong>Our bifolds range from 2 to 8 panels.</strong>
-                                    When choosing the option of 6 to 8 panels note that the middle door(s) will open in the center of the closet.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ml-lg-3">
-                        <div class="row home-steps-card pt-3 pb-3">                        
-                            <div class="col-12">
-                                <p class="mb-3">
-                                    <strong>Our sliders range from 3 to 6 panels.</strong>
-                                    When choosing the option of 3 or 4 panels you can select a "triple    track" to allow for a larger opening into you closet.
-                                </p>
-                            </div>
-                            <div class="col-6 text-center">
-                                <img class="" src="{{URL::asset('/images/home/Hero_2-2nd.jpg')}}" alt="">
-                                <p class="mb-0 mt-1">
-                                    3 Panel Slider "Double Track"
-                                </p>
-                            </div>
-                            <div class="col-6 text-center">
-                                <img class="" src="{{URL::asset('/images/home/2 Track Mirror Slider Open.jpg')}}" alt="">
-                                <p class="mb-0 mt-1">
-                                    3 Panel Slider "Triple Track"
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="home-page-section home-step-2">
         <div class="container products-listing-container">
             <h2 class="home-step-heading">
                 <span class="step-serial">Step 2:</span> Choose Your Style and Options 
             </h2>
             <p class="home-step-para">
-                From style and color to width, height, panel count and more Custom Door and Mirror allows you to customize your closet doors to fit your style. Click on the "Hotspots" &#128308; below to discover some of the many option available.   
+                From style and color to width, height, panel count and more Custom Door and Mirror allows you to customize your closet doors to fit your style. 
             </p>
             <div class="product-wallpaper-slider pt-3">
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/></div>
+                <div class="product-slideshow"><img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/></div>
             </div>
             <div class="content-section">
                 <div class="product-wallpaper-thumb">
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/></div>
                 </div>
             </div>
         </div>
@@ -210,109 +167,13 @@
                 <span class="step-serial">Step 3:</span> Measure and fit 
             </h2>
             <p class="home-step-para">
-                All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit. Whether you want your doors to go wall to wall or floor to ceiling, just measure the opening you want to fit and select those exact measurements in our configurator.
+                All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit.
             </p>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="mr-lg-2">
-                        <h4 class="mb-3">Measure your opening</h4>
-                        <img class="img-thumbnail" src="{{URL::asset('/images/home/measure.jpg')}}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h4 class="mb-3">Select your custom width and height* (to the 1/4 inch)</h4>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="img-thumbnail" src="{{URL::asset('/images/home/Width Choice.png')}}" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-thumbnail" src="{{URL::asset('/images/home/Height Choice.png')}}" alt="">
-                        </div>
-                    </div>
-                    <h5 class="mt-4">*additional charge for cutting doors to non standard widths and heights*</h5>
-                </div>                
-                <div class="col-12">
-                    <a href="{{ url('product/') }}" class="btn btn-fill-out">Build My Door</a>
-                </div>
+            <div class="measure-step-video">
+                <img class="img-thumbnail" src="{{URL::asset('/images/home/measure.jpg')}}" alt="">
             </div>
-        </div>
-    </section>
-    <!-- <section class="home-products-section" id="stt">
-        <h1 class="pt-5 mb-5 heading_s3 text-center">Our Products</h1>
-        <div class="pd-block-wrap">
-        @if($products->isEmpty()) 
-            <div class="col-md-12 col-12 text-center">
-                <h3>No Product available.</h3>
-            </div>
-        @else
-        @foreach ($products as $key => $product)
-            <div class="pd-block">
-
-                <div class="pd-inner">
-                @if($product->is_accessory == 0)
-                    <a href="{{ url('product/configure/').'/'.$product->slug }}">
-                    @else
-                    <a href="{{ url('product/detail/').'/'.$product->slug }}">
-                    @endif
-                    <img src="@if(!empty($product->images[0]->image)) {{ url('upload/product/'. $product->images[0]->image)}}  
-                    @else https://www.sitzfeldt.com/sites/default/files/styles/menu_453px/public/2-sitzer-sitzfeldt-tom_1.jpg 
-                    @endif " class="d-block w-100" alt="...">
-                    </a>
-                    @if($product->is_accessory == 0)
-                    <a href="{{ url('product/configure/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-hammer-wrench"></i> Configure</a>
-                    @else
-                    <a href="{{ url('product/detail/').'/'.$product->slug }}" class="btn btn-fill-out"><i class="linearicons-eye"></i> Details</a>
-                    @endif
-                </div>
-            </div>
-        @endforeach
-        @endif
-        </div>
-    </section> -->
-    <section class="cdm-grid-section">
-        <div class="home-page-section cdm-difference">
-            <h2>
-                The CDM Difference
-            </h2>
-        </div>
-        <div class="cdm-container">
-            <div class="cdm-grid tile-first">
-                <div class="w-100">
-                    <div class="cdm-grid-upper">
-                        <img src="{{URL::asset('/images/home/custom-closet.gif')}}" class="cdm-grid-gif">
-                    </div>
-                    <div class="cdm-grid-content cdm-padding">
-                        Solid backing makes our door the strongest and most impact resistant door on the market
-                    </div>
-                </div>
-            </div>
-            <div class="cdm-grid tile-second bg-red">
-                <img src="{{URL::asset('/images/home/Back-Mirror-Slider.png')}}" alt="">
-            </div>
-            <div class="cdm-grid tile-third bg-white">
-                <div class="cdm-grid-content manged-grid-content color-grey">
-                    Our sliding mirror closet doors are &#51;/&#52;&#34; PlyCorr (a densely corrugated cardboard that performs like wood without the added weight)
-                </div>
-            </div>
-            <div class="cdm-grid tile-second bg-white">
-                <img src="{{URL::asset('/images/home/Back-of-6-Panel-Bifold.png')}}" alt="">
-            </div>
-            <div class="cdm-grid tile-third bg-black">
-                <div class="cdm-grid-content manged-grid-content color-white content-width-fix">
-                    CDM hardware allows for both vertical and horizontal adjustments to obtain a proper fit in the opening
-                </div>
-            </div>
-            <div class="cdm-grid tile-first">
-                <div class="w-100">
-                    <div class="cdm-grid-upper">
-                        <video autoplay loop muted>
-                            <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cdm-grid-content">
-                        Our Trueclose, patented hinges help the door close and stay closed. With our liftime warranty, enjoy years of flawless and ultra-smooth use.
-                    </div>
-                </div>
+            <div class="text-center mt-5">
+                <a href="{{ url('product/') }}" class="btn btn-fill-out">Build My Door</a>
             </div>
         </div>
     </section>
@@ -320,6 +181,7 @@
 @section('scripts')
 <script>
     $('.product-wallpaper-slider').slick({
+        lazyLoad: 'ondemand',
         autoplay: false,
         arrows: true,
         speed: 1000,
@@ -332,12 +194,33 @@
         lazyLoad: 'progressive'
     });
     $('.product-wallpaper-thumb').slick({
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    asNavFor: '.product-wallpaper-slider',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true
+        lazyLoad: 'ondemand',
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.product-wallpaper-slider',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+            }
+        ]
     });
+    var widthGet = $(".slideshow-thumb").width();
+    $(".slideshow-thumb").height(widthGet);
 </script>
 @endsection
