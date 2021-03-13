@@ -1161,25 +1161,26 @@ $(document).ready(function(){
     @endif
     $("#addButton").click(function () {
         if(counter>=1){
-            console.log($("#maxW"+(counter-1)).val() +' ><'+ $("#minW"+(counter-1)).val());
-            if(!$("#maxW"+(counter-1)).val())
+            var maxW = parseInt($("#maxW"+(counter-1)).val());
+            var minW = parseInt($("#minW"+(counter-1)).val());
+            if(!maxW)
             {
                 $('.maxW'+(counter-1)+'-error').html('');
                 $('.maxW'+(counter-1)+'-error').show();
                 $('.maxW'+(counter-1)+'-error').html('Enter Max Weight.');
                 return false;
             }
-            else if($("#maxW"+(counter-1)).val() < $("#minW"+(counter-1)).val()){
+            else if( maxW  < minW) 
+            {
                 $('.maxW'+(counter-1)+'-error').html('');
                 $('.maxW'+(counter-1)+'-error').show();
-                
                 $('.maxW'+(counter-1)+'-error').html('Max Weight must be Greater than Min Weight.');
                 return false;
             }
-            else if($("#maxW"+(counter-1)).val() > 1){
+            else if(maxW > 1){
                 $('.maxW'+(counter-1)+'-error').html('');
                 $('.maxW'+(counter-1)+'-error').hide();
-                var minval = $("#maxW"+(counter-1)).val();
+                var minval = maxW;
             }
             else{
                 return false;

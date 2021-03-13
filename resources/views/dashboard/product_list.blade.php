@@ -94,7 +94,7 @@
                                                     <img src="{{ url('/download.jpeg') }}" width="50" />
                                                 @endif
                                             </td>
-                                            <td>{{ $value->name }}</td>
+                                            <td>@if ($value->is_accessory != 1) {{ ucfirst(strtolower($value->catergory->name ))}} @endif{{ $value->name }}</td>
                                             <td>&#36;{{ $value->sale_price }}</td>
                                             <td>@if ($value->is_accessory == 1) {{ "Hardware" }} @else {{ "Product" }} @endif </td>
                                             <td>
