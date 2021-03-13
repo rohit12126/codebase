@@ -183,6 +183,7 @@ class OrderManager
             ->with('getBillingAddress')
             ->with('getPaymentDetail')
             ->with('productList.product.images')
+            ->with('productList.product.catergory')
             ->where('order_no', $order)
             ->first();
     }

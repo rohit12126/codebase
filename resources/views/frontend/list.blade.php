@@ -60,7 +60,7 @@
                                 @if($product->is_accessory == 0)
                                     <a href="{{ url('product/configure/').'/'.$product->slug }}" class="product-listing-desc">
                                         <div class="products-list-title"><h2>{{ucfirst(strtolower($product->catergory->name)).' '.$product->name}}</h2></div>
-                                        <div class="products-list-price">${{$product->sale_price}}</div>
+                                        <div class="products-list-price"><span class="starts-at">Starts at </span>${{$product->sale_price}}</div>
                                     </a>
                                 @else
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class="product-listing-desc">

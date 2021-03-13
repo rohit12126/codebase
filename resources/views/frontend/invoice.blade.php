@@ -205,11 +205,10 @@
                             $i=1;    
                         @endphp
                         @foreach ($order->productList as $product)
-                        
                             <tr>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{$i}}.</td>
                                 <td style="padding: 10px;border-right:1px solid #000;border-bottom:1px solid #000;">
-                                    {{$product->product->name}}
+                                @if($product->product->is_accessory != 1) {{ucfirst(strtolower($product->product->catergory->name))}} @endif{{$product->product->name}}
                                 </td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
                                 @php $array = array() @endphp
