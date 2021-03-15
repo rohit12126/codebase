@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    <section class="section"> 
+    <section class="section configure-product-slider"> 
     <div class="container">
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
@@ -108,6 +108,34 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="product-grid-detail">
+        <div class="product-grid-container">
+            <div class="product-grid-tile-first">
+                <img src="{{URL::asset('/images/home/custom-closet.gif')}}" class="product-grid-video">
+            </div>
+            <div class="product-grid-tile-last">
+                <div class="product-grid-tile-inner">
+                    <h2 class="mb-3">Build with high quality material</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque unde eius quis enim deserunt rerum! Rerum, incidunt
+                    </p>
+                </div>
+            </div>   
+            <div class="product-grid-tile-last">
+                <div class="product-grid-tile-inner">
+                    <h2 class="mb-3">Build with high quality material</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque unde eius quis enim deserunt rerum! Rerum, incidunt
+                    </p>
+                </div>
+            </div>   
+            <div class="product-grid-tile-first">
+                <video autoplay loop muted class="product-grid-video">
+                    <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
+                </video>
+            </div>                         
+        </div>                                  
     </section>
 @endsection
 @section('scripts')

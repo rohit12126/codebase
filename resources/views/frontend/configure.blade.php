@@ -89,7 +89,7 @@
 @if(!$productData['product']->productDescription->isEmpty())
     <section class="section light-bg">
         <div class="container">
-            <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
+            <h2 class="pt-3 mb-5 heading_s3 text-center">Product Details</h2>
             <div id="accordion">
                 @foreach ($productData['product']->productDescription as $item)
                     <div class="faq-card">
@@ -112,7 +112,7 @@
 @if(!$productData['product']->images->isEmpty())
     <section class="configure-product-slider section">
         <div class="container">
-            <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
+            <h2 class="pt-3 mb-5 heading_s3 text-center">Products Gallery</h2>
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
