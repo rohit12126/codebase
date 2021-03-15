@@ -110,7 +110,7 @@
     </section>
 @endif
 @if(!$productData['product']->images->isEmpty())
-    <section class="configure-product-slider pl-0 pr-0 pt-5">
+    <section class="configure-product-slider section">
         <div class="container">
             <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
             <div class="product-wallpaper-slider">

@@ -21,9 +21,11 @@
             <h2 class="home-step-heading">
                How to get started
             </h2>
-            <div class="row">
-                <div class="col-lg-4 col-">
-
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6">
+                    <article>
+                        
+                    </article>
                 </div>
             </div>
         </div>
