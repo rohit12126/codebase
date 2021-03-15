@@ -8347,6 +8347,36 @@ h5 {
 		.product-listing h2{
 			text-transform: capitalize;
 		}
+		.start-steps-card{
+			text-align: center;
+			padding: 1rem;
+		}
+		.start-steps-number{
+			font-size: 2rem;
+			position: relative;
+			color: #292b2c;
+		}
+		.start-steps-number b{
+			z-index: 1;
+    		position: relative;
+		}
+		.start-steps-number:before{
+			content: "";
+			width: 20px;
+			height: 20px;
+			background-color: #f1dfd1;
+			border-radius: 20px;
+			position: absolute;
+			bottom: 4%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.start-steps-card h4{
+		}
+		.start-steps-card .home-step-para{
+			text-align: justify;
+			margin-bottom: 0;
+		}
 	/*=================Home page Step 2 end====================*/
 
 	/*================Home page Step 3 section=================*/

@@ -18,13 +18,38 @@
     </section>
     <section class="home-page-section how-to-wrap">
         <div class="container">
-            <h2 class="home-step-heading">
+            <h2 class="home-step-heading mb-4">
                How to get started
             </h2>
             <div class="row justify-content-center">
                 <div class="col-md-4 col-sm-6">
-                    <article>
-                        
+                    <article class="start-steps-card">
+                        <img src="{{URL::asset('/images/home/step-one.jpg')}}" alt="">
+                        <div><span class="start-steps-number"><b title="Step first">1</b></span></div>
+                        <h4 class="home-step-heading mb-4">Choose your door type</h4>
+                        <p class="home-step-para">
+                        Custom Door & Mirror has a variety of designs making it easy to find exactly what you are looking for.
+                        </p>
+                    </article>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <article class="start-steps-card">
+                        <img src="{{URL::asset('/images/home/step-two.jpg')}}" alt="">
+                        <div><span class="start-steps-number"><b title="Step first">2</b></span></div>
+                        <h4 class="home-step-heading mb-4">Choose style and options</h4>
+                        <p class="home-step-para">
+                        From style and color to width, height, panel count and more Custom Door and Mirror allows you to customize your closet doors to fit your style.
+                        </p>
+                    </article>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <article class="start-steps-card">
+                        <img src="{{URL::asset('/images/home/step-three.jpg')}}" alt="">
+                        <div><span class="start-steps-number"><b title="Step first">3</b></span></div>
+                        <h4 class="home-step-heading mb-4">Measure your door and fit</h4>
+                        <p class="home-step-para">
+                        All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit.
+                        </p>
                     </article>
                 </div>
             </div>
