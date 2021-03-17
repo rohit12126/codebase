@@ -2,6 +2,224 @@
 
 @section('content')
 <script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        .configure-specs{
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-100%);
+            background-color: #F94E57;
+            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
+            -moz-border-radius: 22px 0 0 22px;
+            -webkit-border-radius: 2px 0 0 22px;
+            border-radius: 22px 0 0 22px;
+            padding: 7px 7px 7px 10px;
+            height: 44px;
+            line-height: 44px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .configure-specs b{
+            font-size: 25px;
+            color: #fff;
+        }
+        .configure-specs-wrap{
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 800px;
+            height: 100vh;
+            transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
+            -moz-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
+            -webkit-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
+            z-index: 99;
+            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
+        }
+        .specs-wrap-active{
+            right: 0;
+        }
+        .configure-specs-close{
+            font-weight: bold;
+            padding: 6px;
+            background-color: #F94E57;
+            color: #fff;
+            cursor: pointer;
+        }
+        .specs-sidebar{
+            border-left: 1px solid #ddd;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            padding: 0;
+        }
+        .specs-mega-menu{
+            list-style: none;
+            height: 100%;
+            overflow-y: auto;            
+            border-left: 1px solid #ddd;
+        }
+        .specs-mega-menu li{
+            width: 100%;
+            min-width: 240px;
+            border-top: 1px solid #ddd;
+        }
+        .specs-mega-menu li:last-child{
+            border-bottom: 1px solid #ddd;
+        }
+        .specs-sidebar a{
+            height: 44px;
+            padding: 10px;
+            padding-left: 36px;
+            display: block;
+            box-sizing: border-box;
+            position: relative;
+            color: #212529;
+        }
+        .specs-sidebar a:before{
+            content: "\e61a";
+            font-family: 'themify';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 4px;
+            font-size: 0.625rem;
+            background-color: #000;
+            color: #fff;
+            position: absolute;
+            left: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .specs-open a{
+            color: #fff;
+            background-color: #F94E57;
+        }
+        .specs-sidebar .specs-open a:before{
+            color: #F94E57;
+            background-color: #fff;
+        }
+        .specs-mega-sub{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: calc(100% - 240px);
+            height: 100%;
+            padding: 1rem;
+            overflow-y: auto;
+            display: none;
+        }
+        .specs-mega-menu::-webkit-scrollbar{width:0;}
+        .specs-mega-sub::-webkit-scrollbar{width:2px;}
+        .specs-mega-sub::-webkit-scrollbar-track{background:#eee}
+        .specs-mega-sub::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
+        .specs-mega-sub::-webkit-scrollbar-thumb:hover{background:#F94E57;}
+
+        .specs-mega-menu li.specs-open .specs-mega-sub{
+            display: block;
+        }
+    </style>
+    <div class="configure-specs">
+        <b class="ti-info-alt"></b>
+    </div>
+    <div class="configure-specs-wrap">
+        <div class="specs-wrap-inner d-flex justify-content-end h-100">
+            <div class="specs-sidebar">
+                <ul class="specs-mega-menu">
+                    <div class="text-right m-3">
+                        <span class="ti-close configure-specs-close"></span>
+                    </div>
+                    <li class="specs-open">
+                        <a href="#">Insert Type</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Frame Type</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Track and channel</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Product Details</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Insert Type</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Frame Type</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Track and channel</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Product Details</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <section class="product-detail-view">
         <div class="main-wrapper">
             <h2 class="home-step-heading">
@@ -21,9 +239,8 @@
             <div id="configurator-container"></div>
             <div class="row">
                 <div class="col-md-6">
-                
                     <div class="pl-3 pb-3 pb-md-0">
-                        <span class="product-sku-no">{{ucfirst(strtolower($productData['product']->catergory->name)).' '.$productData['product']->name}}</span>
+                        <span class="product-sku-no">{{$productData['product']->name}}</span>
                         <!-- <span class="product-sku">SKU (Stock Keeping Unit)</span> -->
                     </div>
                 </div>
@@ -89,7 +306,7 @@
 @if(!$productData['product']->productDescription->isEmpty())
     <section class="section light-bg">
         <div class="container">
-            <h2 class="pt-3 mb-5 heading_s3 text-center">Product Details</h2>
+            <h2 class="heading2 mt-3 mb-5 text-center">Product Details</h2>
             <div id="accordion">
                 @foreach ($productData['product']->productDescription as $item)
                     <div class="faq-card">
@@ -110,9 +327,9 @@
     </section>
 @endif
 @if(!$productData['product']->images->isEmpty())
-    <section class="configure-product-slider section">
+    <section class="configure-product-slider pl-0 pr-0 pt-5">
         <div class="container">
-            <h2 class="pt-3 mb-5 heading_s3 text-center">Products Gallery</h2>
+            <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
             <div class="product-wallpaper-slider">
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
                 <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
@@ -367,27 +584,33 @@
     asNavFor: '.product-wallpaper-slider',
     dots: false,
     centerMode: true,
-    focusOnSelect: true,
-        responsive: [
-            {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-            },
-            {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1
-            }
-            }
-        ]
+    focusOnSelect: true
     });
-    var widthGet = $(".slideshow-thumb").width();
-    $(".slideshow-thumb").height(widthGet);
+</script>
+
+<script>
+    $('.configure-specs').on("click", function(){
+        $('.configure-specs-wrap').toggleClass('specs-wrap-active')
+    });
+    $('.configure-specs-close').on("click", function(){
+        $('.configure-specs-wrap').toggleClass('specs-wrap-active')
+    });
+</script>
+<script>
+$(document).ready(function(){
+    $(".specs-mega-menu a").click(function(e){
+        e.preventDefault();
+    });
+    $(".specs-mega-menu li").hover(            
+        function(){ 
+            $('.specs-mega-menu li').removeClass('specs-open');
+            $(this).addClass('specs-open');
+        },
+        function(){ 
+            $(this).removeClass('specs-open');
+            $('.specs-mega-menu li:nth-child(2)').addClass('specs-open');
+        }
+    );
+});
 </script>
 @endsection
