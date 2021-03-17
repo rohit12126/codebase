@@ -302,7 +302,7 @@ footer-->
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100 pt-2 pt-sm-0">
-                            <a href="{{ url('privacy-policy/') }}">Privacy Policy</a> &nbsp;|&nbsp; <a href="{{ url('returns/') }}">Returns</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
+                            <a href="{{ url('privacy-policy/') }}">Privacy Policy</a> &nbsp;|&nbsp; <a href="{{ url('returns/') }}">Return &amp; Exchange</a> &nbsp;|&nbsp; <a href="{{ url('terms-and-conditions/') }}">Terms of Service</a>
                         </div>
                     </div>
                 </div>

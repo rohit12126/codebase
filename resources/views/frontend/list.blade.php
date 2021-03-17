@@ -121,7 +121,9 @@
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque unde eius quis enim deserunt rerum! Rerum, incidunt
                     </p>
                 </div>
-            </div>   
+            </div>
+        </div>
+        <div class="product-grid-container">   
             <div class="product-grid-tile-last">
                 <div class="product-grid-tile-inner">
                     <h2 class="mb-3">Build with high quality material</h2>

@@ -2,7 +2,7 @@
 @section('content')
     <section class="section">
         <div class="container">
-            <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Returns</h1>
+            <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Returns &amp; Exchanges</h1>
             <div class="terms-conditon-content">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magni expedita adipisci laudantium delectus nam minus quia? Fugiat voluptatibus impedit unde aspernatur perferendis, aliquid nam debitis quas vel, consectetur aliquam.
@@ -35,6 +35,9 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magni expedita adipisci laudantium delectus nam minus quia? Fugiat voluptatibus impedit unde aspernatur perferendis, aliquid nam debitis quas vel, consectetur aliquam.
                 </p>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ url('contact/') }}" class="btn btn-fill-out">Contact Us</a>
             </div>
         </div>
     </section>
