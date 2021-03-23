@@ -2,8 +2,8 @@
 @section('content')
 <section class="section projects-wrap">
         <div class="container">
-            <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Projects</h1>
-            <div class="blog-row justify-content-center">
+            <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Clients</h1>
+            <!-- <div class="blog-row justify-content-center">
                 <div class="blog-col">
                     <a href="{{ url('projects/detail/') }}">
                         <article class="blog-list-card">
@@ -82,6 +82,78 @@
                         </article>
                     </a>
                 </div>      
+            </div> -->
+            <div class="row">
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="client-list-tile">
+                        <div class="client-title">
+                            The Royale
+                        </div>
+                        <div class="client-name">
+                            Tishman Construction Corp.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
