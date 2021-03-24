@@ -10179,6 +10179,7 @@ h5 {
 	position: relative;
 	overflow: hidden;
     margin-bottom: 1.25rem;
+	height: calc(100% - 1.25rem);
 }
 .client-list-tile:before{
 	content: "\f448";
