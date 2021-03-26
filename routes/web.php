@@ -362,7 +362,6 @@ Route::get('product/detail/{slug}','ProductController@detail')->name('product.de
 Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
 Route::get('product/configure/{slug}', 'ProductController@configure')->name('product.configure');
 //temp only
-Route::get('product/configure-new/{slug}', 'ProductController@configurenew')->name('product.configure');
 Route::post('/product/price','ProductController@getPrice');
 
 /* Blog Routes */
@@ -381,6 +380,7 @@ Route::get('privacy-policy/', 'HomeController@privacyPolicy')->name('privacyPoli
 Route::get('returns/', 'HomeController@returns')->name('returns');
 
 Route::get('projects/', 'HomeController@projects')->name('projects');
+Route::get('clients/', 'HomeController@projects')->name('projects');
 Route::get('projects/detail', 'HomeController@projectDetail')->name('projectDetail');
 
 /* Cart Routes */
