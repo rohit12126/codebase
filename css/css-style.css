@@ -10184,8 +10184,8 @@ h5 {
 .client-list-tile:before{
 	content: "\f448";
     position: absolute;
-    bottom: -6%;	
-    right: -3%;
+    bottom: -12px;	
+    right: -2%;
     font-size: 84px;
     color: #eaeaea;
     display: inline-block;
