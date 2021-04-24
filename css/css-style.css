@@ -166,7 +166,8 @@ html, body {
 }
 body {
 	background: #ffffff none repeat scroll 0 0;
-    color: #687188;
+    /* color: #687188; */
+	color: #292b2c;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
 }
@@ -184,7 +185,8 @@ h1,h2,h3,h4,h5,h6 {
 	color: #292b2c;
 }
 p {
-	color:#687188;
+	/* color:#687188; */
+	color: #292b2c;
 	line-height: 24px;
 	margin-bottom: 25px;
 }
@@ -10374,10 +10376,26 @@ h5 {
 }
 .terms-conditon-content ul, .terms-conditon-content ol{
 	padding-left: 40px;
+	margin-bottom: 1rem;
 }
 .terms-conditon-content p{
 	margin-bottom: 1rem;
 }
+.content-heading{
+	position: relative;
+	margin-bottom: 1rem;
+}
+.content-heading:after{
+	content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f94e57;
+    bottom: -15%;
+    right: 0;
+}
+
 .login-card{
 	max-width: 540px;
 	margin: 0 auto;
