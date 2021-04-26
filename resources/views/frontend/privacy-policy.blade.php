@@ -328,7 +328,143 @@
                 <p>
                     Please note that the categories and examples provided in the list below are those defined in the CCPA. This does not mean that all examples of that category of personal information were in fact collected by Us, but reflects our good faith belief to the best of our knowledge that some of that information from the applicable category may be and may have been collected. For example, certain categories of personal information would only be collected if You provided such personal information directly to Us.
                 </p>
-
+                <p class="pl-sm-5">
+                    <strong>Category A: Identifiers.</strong><br>
+                    Examples: A real name, alias, postal address, unique personal identifier, online identifier, Internet Protocol address, email address, account name, driver's license number, passport number, or other similar identifiers. <br>
+                    Collected: Yes. <br>
+                    <strong>Category B: Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)).</strong> <br>
+                    Examples: A name, signature, Social Security number, physical characteristics or description, address, telephone number, passport number, driver's license or state identification card number, insurance policy number, education, employment, employment history, bank account number, credit card number, debit card number, or any other financial information, medical information, or health insurance information. Some personal information included in this category may overlap with other categories. <br>
+                    Collected: Yes. <br>
+                    <strong>Category C: Protected classification characteristics under California or federal law.</strong>
+                    Examples: Age (40 years or older), race, color, ancestry, national origin, citizenship, religion or creed, marital status, medical condition, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), sexual orientation, veteran or military status, genetic information (including familial genetic information). <br>
+                    Collected: No. <br>
+                    <strong>Category D: Commercial information.</strong> <br>
+                    Examples: Records and history of products or services purchased or considered. <br>
+                    Collected: Yes. <br>
+                    <strong>Category E: Biometric information.</strong><br>
+                    Examples: Genetic, physiological, behavioral, and biological characteristics, or activity patterns used to extract a template or other identifier or identifying information, such as, fingerprints, faceprints, and voiceprints, iris or retina scans, keystroke, gait, or other physical patterns, and sleep, health, or exercise data. <br>
+                    Collected: No. <br>
+                    <strong>Category F: Internet or other similar network activity.</strong> <br>
+                    Examples: Interaction with our Service or advertisement. <br>
+                    Collected: Yes. <br>
+                    <strong>Category G: Geolocation data.</strong> <br>
+                    Examples: Approximate physical location. <br>
+                    Collected: No. <br>
+                    <strong>Category H: Sensory data.</strong> <br>
+                    Examples: Audio, electronic, visual, thermal, olfactory, or similar information.
+                    Collected: No. <br>
+                    <strong>Category I: Professional or employment-related information.</strong> <br>
+                    Examples: Current or past job history or performance evaluations. <br>
+                    Collected: No. <br>
+                    <strong>Category J: Non-public education information (per the Family Educational Rights and Privacy Act (20 U.S.C. Section 1232g, 34 C.F.R. Part 99)).</strong> <br>
+                    Examples: Education records directly related to a student maintained by an educational institution or party acting on its behalf, such as grades, transcripts, class lists, student schedules, student identification codes, student financial information, or student disciplinary records. <br>
+                    Collected: No. <br>
+                    <strong>Category K: Inferences drawn from other personal information.</strong> <br>
+                    Examples: Profile reflecting a person's preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes. <br>
+                    Collected: No. <br>
+                </p>
+                <p>Under CCPA, personal information does not include:</p>
+                <ul>
+                    <li>Publicly available information from government records</li>
+                    <li>Deidentified or aggregated consumer information</li>
+                    <li>Information excluded from the CCPA's scope, such as:</li>
+                </ul>
+                <ul>
+                    <li>Health or medical information covered by the Health Insurance Portability and Accountability Act of 1996 (HIPAA) and the California Confidentiality of Medical Information Act (CMIA) or clinical trial data</li>
+                    <li>Personal Information covered by certain sector-specific privacy laws, including the Fair Credit Reporting Act (FRCA), the Gramm-Leach-Bliley Act (GLBA) or California Financial Information Privacy Act (FIPA), and the Driver's Privacy Protection Act of 1994</li>
+                </ul>
+                <h4>Sources of Personal Information</h4>
+                <p>
+                    We obtain the categories of personal information listed above from the following categories of sources:
+                </p>
+                <ul>
+                    <li><strong>Directly from You</strong>. For example, from the forms You complete on our Service, preferences You express or provide through our Service, or from Your purchases on our Service.</li>
+                    <li><strong>Indirectly from You</strong>. For example, from observing Your activity on our Service.</li>
+                    <li><strong>Automatically from You</strong>. For example, through cookies We or our Service Providers set on Your Device as You navigate through our Service.</li>
+                    <li><strong>From Service Providers</strong>. For example, third-party vendors to monitor and analyze the use of our Service, third-party vendors to deliver targeted advertising to You, third-party vendors for payment processing, or other third-party vendors that We use to provide the Service to You.</li>
+                </ul>
+                <h4>Use of Personal Information for Business Purposes or Commercial Purposes</h4>
+                <p>
+                    We may use or disclose personal information We collect for "business purposes" or "commercial purposes" (as defined under the CCPA), which may include the following examples:
+                </p>
+                <ul>
+                    <li>To operate our Service and provide You with our Service.</li>
+                    <li>To provide You with support and to respond to Your inquiries, including to investigate and address Your concerns and monitor and improve our Service.</li>
+                    <li>To fulfill or meet the reason You provided the information. For example, if You share Your contact information to ask a question about our Service, We will use that personal information to respond to Your inquiry. If You provide Your personal information to purchase a product or service, We will use that information to process Your payment and facilitate delivery.</li>
+                    <li>To respond to law enforcement requests and as required by applicable law, court order, or governmental regulations.</li>
+                    <li>As described to You when collecting Your personal information or as otherwise set forth in the CCPA.</li>
+                    <li>For internal administrative and auditing purposes.</li>
+                    <li>To detect security incidents and protect against malicious, deceptive, fraudulent or illegal activity, including, when necessary, to prosecute those responsible for such activities.</li>
+                </ul>
+                <p>Please note that the examples provided above are illustrative and not intended to be exhaustive. For more details on how we use this information, please refer to the "Use of Your Personal Data" section.</p>
+                <p>
+                    If We decide to collect additional categories of personal information or use the personal information We collected for materially different, unrelated, or incompatible purposes We will update this Privacy Policy.
+                </p>
+                <h4>Disclosure of Personal Information for Business Purposes or Commercial Purposes</h4>
+                <p>We may use or disclose and may have used or disclosed in the last twelve (12) months the following categories of personal information for business or commercial purposes:</p>
+                <ul>
+                    <li>Category A: Identifiers</li>
+                    <li>Category B: Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)) </li>
+                    <li>Category D: Commercial information</li>
+                    <li>Category F: Internet or other similar network activity</li>
+                </ul>
+                <p>
+                    Please note that the categories listed above are those defined in the CCPA. This does not mean that all examples of that category of personal information were in fact disclosed, but reflects our good faith belief to the best of our knowledge that some of that information from the applicable category may be and may have been disclosed.
+                </p>
+                <p>
+                    When We disclose personal information for a business purpose or a commercial purpose, We enter a contract that describes the purpose and requires the recipient to both keep that personal information confidential and not use it for any purpose except performing the contract.
+                </p>
+                <h4>Sale of Personal Information</h4>
+                <p>
+                    As defined in the CCPA, "sell" and "sale" mean selling, renting, releasing, disclosing, disseminating, making available, transferring, or otherwise communicating orally, in writing, or by electronic or other means, a consumer's personal information by the business to a third party for valuable consideration. This means that We may have received some kind of benefit in return for sharing personal information, but not necessarily a monetary benefit.
+                </p>
+                <p>
+                    Please note that the categories listed below are those defined in the CCPA. This does not mean that all examples of that category of personal information were in fact sold, but reflects our good faith belief to the best of our knowledge that some of that information from the applicable category may be and may have been shared for value in return.
+                </p>
+                <p>
+                    We may sell and may have sold in the last twelve (12) months the following categories of personal information:
+                </p>
+                <ul>
+                    <li>Category A: Identifiers</li>
+                    <li>Category B: Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e))</li>
+                    <li>Category D: Commercial information</li>
+                    <li>Category F: Internet or other similar network activity</li>
+                </ul>
+                <h4>Share of Personal Information</h4>
+                <p>We may share Your personal information identified in the above categories with the following categories of third parties:</p>
+                <ul>
+                    <li>Service Providers</li>
+                    <li>Payment processors</li>
+                    <li>Our affiliates</li>
+                    <li>Our business partners</li>
+                    <li>Third party vendors to whom You or Your agents authorize Us to disclose Your personal information in connection with products or services We provide to You</li>
+                </ul>
+                <h4>Sale of Personal Information of Minors Under 16 Years of Age</h4>
+                <p>
+                    We do not knowingly collect personal information from minors under the age of 16 through our Service, although certain third party websites that we link to may do so. These third-party websites have their own terms of use and privacy policies and we encourage parents and legal guardians to monitor their children's Internet usage and instruct their children to never provide information on other websites without their permission.
+                </p>
+                <p>
+                    We do not sell the personal information of Consumers We actually know are less than 16 years of age, unless We receive affirmative authorization (the "right to opt-in") from either the Consumer who is between 13 and 16 years of age, or the parent or guardian of a Consumer less than 13 years of age. Consumers who opt-in to the sale of personal information may opt-out of future sales at any time. To exercise the right to opt-out, You (or Your authorized representative) may submit a request to Us by contacting Us.
+                </p>
+                <p>
+                    If You have reason to believe that a child under the age of 13 (or 16) has provided Us with personal information, please contact Us with sufficient detail to enable Us to delete that information.
+                </p>
+                <h4>Your Rights under the CCPA</h4>
+                <p>The CCPA provides California residents with specific rights regarding their personal information. If You are a resident of California, You have the following rights:</p>
+                <ul>
+                    <li>The right to notice. You have the right to be notified which categories of Personal Data are being collected and the purposes for which the Personal Data is being used.</li>
+                    <li>
+                        The right to request. Under CCPA, You have the right to request that We disclose information to You about Our collection, use, sale, disclosure for business purposes and share of personal information. Once We receive and confirm Your request, We will disclose to You: 
+                        <ul>
+                            <li>The categories of personal information We collected about You</li>
+                            <li>The categories of sources for the personal information We collected about You</li>
+                            <li>Our business or commercial purpose for collecting or selling that personal information</li>
+                            <li>The categories of third parties with whom We share that personal information</li>
+                            <li>The specific pieces of personal information We collected about You</li>
+                            <li>If we sold Your personal information or disclosed Your personal information for a business purpose, We will disclose to You:</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
