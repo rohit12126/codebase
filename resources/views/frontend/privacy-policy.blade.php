@@ -461,7 +461,10 @@
                             <li>Our business or commercial purpose for collecting or selling that personal information</li>
                             <li>The categories of third parties with whom We share that personal information</li>
                             <li>The specific pieces of personal information We collected about You</li>
-                            <li>If we sold Your personal information or disclosed Your personal information for a business purpose, We will disclose to You:</li>
+                            <li>
+                                If we sold Your personal information or disclosed Your personal information for a business purpose, We will disclose to You:
+                                
+                            </li>
                         </ul>
                     </li>
                 </ul>
