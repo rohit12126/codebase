@@ -452,9 +452,9 @@
                 <h4>Your Rights under the CCPA</h4>
                 <p>The CCPA provides California residents with specific rights regarding their personal information. If You are a resident of California, You have the following rights:</p>
                 <ul>
-                    <li>The right to notice. You have the right to be notified which categories of Personal Data are being collected and the purposes for which the Personal Data is being used.</li>
+                    <li><strong>The right to notice</strong>. You have the right to be notified which categories of Personal Data are being collected and the purposes for which the Personal Data is being used.</li>
                     <li>
-                        The right to request. Under CCPA, You have the right to request that We disclose information to You about Our collection, use, sale, disclosure for business purposes and share of personal information. Once We receive and confirm Your request, We will disclose to You: 
+                        <strong>The right to request</strong>. Under CCPA, You have the right to request that We disclose information to You about Our collection, use, sale, disclosure for business purposes and share of personal information. Once We receive and confirm Your request, We will disclose to You: 
                         <ul>
                             <li>The categories of personal information We collected about You</li>
                             <li>The categories of sources for the personal information We collected about You</li>
@@ -463,10 +463,54 @@
                             <li>The specific pieces of personal information We collected about You</li>
                             <li>
                                 If we sold Your personal information or disclosed Your personal information for a business purpose, We will disclose to You:
-                                
+                                <ul>
+                                    <li>The categories of personal information categories sold</li>
+                                    <li>The categories of personal information categories disclosed</li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
+                    <li><strong>The right to say no to the sale of Personal Data (opt-out)</strong>. You have the right to direct Us to not sell Your personal information. To submit an opt-out request please contact Us.</li>
+                    <li>
+                        <strong>The right to delete Personal Data</strong>. You have the right to request the deletion of Your Personal Data, subject to certain exceptions. Once We receive and confirm Your request, We will delete (and direct Our Service Providers to delete) Your personal information from our records, unless an exception applies. We may deny Your deletion request if retaining the information is necessary for Us or Our Service Providers to: 
+                        <ul>
+                            <li>Complete the transaction for which We collected the personal information, provide a good or service that You requested, take actions reasonably anticipated within the context of our ongoing business relationship with You, or otherwise perform our contract with You.</li>
+                            <li>Detect security incidents, protect against malicious, deceptive, fraudulent, or illegal activity, or prosecute those responsible for such activities.</li>
+                            <li>Debug products to identify and repair errors that impair existing intended functionality.</li>
+                            <li>Exercise free speech, ensure the right of another consumer to exercise their free speech rights, or exercise another right provided for by law.
+                            <li>Comply with the California Electronic Communications Privacy Act (Cal. Penal Code § 1546 et. seq.).</li>
+                            <li>Engage in public or peer-reviewed scientific, historical, or statistical research in the public interest that adheres to all other applicable ethics and privacy laws, when the information's deletion may likely render impossible or seriously impair the research's achievement, if You previously provided informed consent.</li>
+                            <li>Enable solely internal uses that are reasonably aligned with consumer expectations based on Your relationship with Us.</li>
+                            <li>Comply with a legal obligation.</li>
+                            <li>Make other internal and lawful uses of that information that are compatible with the context in which You provided it.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>The right not to be discriminated against</strong>. You have the right not to be discriminated against for exercising any of Your consumer's rights, including by:
+                        <ul>
+                            <li>Denying goods or services to You</li>
+                            <li>Charging different prices or rates for goods or services, including the use of discounts or other benefits or imposing penalties</li>
+                            <li>Providing a different level or quality of goods or services to You</li>
+                            <li>Suggesting that You will receive a different price or rate for goods or services or a different level or quality of goods or services</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>
+                    Exercising Your CCPA Data Protection Rights
+                </h4>
+                <p>
+                    In order to exercise any of Your rights under the CCPA, and if You are a California resident, You can contact Us:
+                </p>
+                <ul>
+                    <li>By email: sales@paniflex.com</li>
+                </ul>
+                <p>
+                    Only You, or a person registered with the California Secretary of State that You authorize to act on Your behalf, may make a verifiable request related to Your personal information.
+                </p>
+                <p>Your request to Us must:</p>
+                <ul>
+                    •	Provide sufficient information that allows Us to reasonably verify You are the person about whom We collected personal information or an authorized representative
+                    •	Describe Your request with sufficient detail that allows Us to properly understand, evaluate, and respond to it
                 </ul>
             </div>
         </div>
