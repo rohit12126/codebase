@@ -94,7 +94,7 @@
                     <li><strong>Cookies or Browser Cookies</strong>. A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
 
                     <li>
-                        <strong>Flash Cookies</strong>. Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read "Where can I change the settings for disabling, or deleting local shared objects?" available at <a href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_">https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_</a>
+                        <strong>Flash Cookies</strong>. Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read "Where can I change the settings for disabling, or deleting local shared objects?" available at <a href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_" target="_blank">https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_</a>
                     </li>
                         <li><strong>Web Beacons</strong>. Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
                 </ul>
@@ -200,7 +200,7 @@
                     <stromg>Google Analytics</stromg>
                     Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network. <br>
                     You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity. <br>
-                    For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+                    For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
                 </p>
                 <h4>Payments</h4>
                 <p>
@@ -211,9 +211,9 @@
                 </p>
                 <p class="pl-sm-5">
                     <strong>Stripe</strong><br>
-                    Their Privacy Policy can be viewed at <a href="https://stripe.com/us/privacy">https://stripe.com/us/privacy</a> <br>
+                    Their Privacy Policy can be viewed at <a href="https://stripe.com/us/privacy" target="_blank">https://stripe.com/us/privacy</a> <br>
                     <strong>PayPal</strong><br>
-                    Their Privacy Policy can be viewed at <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full">https://www.paypal.com/webapps/mpp/ua/privacy-full</a> <br>
+                    Their Privacy Policy can be viewed at <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full" target="_blank">https://www.paypal.com/webapps/mpp/ua/privacy-full</a> <br>
                 </p>
                 <h4>Behavioral Remarketing</h4>
                 <p>
@@ -231,9 +231,9 @@
                     Some of these third-party vendors may use non-cookie technologies that may not be impacted by browser settings that block cookies. Your browser may not permit You to block such technologies. You can use the following third-party tools to decline the collection and use of information for the purpose of serving You interest-based advertising:
                 </p>
                 <ul>
-                    <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/">http://www.networkadvertising.org/choices/</a></li>
-                    <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/">http://www.youronlinechoices.com/</a></li>
-                    <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&lang=EN">http://optout.aboutads.info/?c=2&lang=EN</a></li>
+                    <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/" target="_blank">http://www.networkadvertising.org/choices/</a></li>
+                    <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/" target="_blank">http://www.youronlinechoices.com/</a></li>
+                    <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&lang=EN" target="_blank">http://optout.aboutads.info/?c=2&lang=EN</a></li>
                 </ul>
                 <p>
                     You may opt-out of all personalized advertising by enabling privacy features on Your mobile device such as Limit Ad Tracking (iOS) and Opt Out of Ads Personalization (Android). See Your mobile device Help system for more information.
@@ -247,9 +247,9 @@
                 <p>
                     <strong>Google Ads (AdWords)</strong><br>
                     Google Ads (AdWords) remarketing service is provided by Google Inc. <br>
-                    You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="http://www.google.com/settings/ads">http://www.google.com/settings/ads</a> <br>
-                    Google also recommends installing the Google Analytics Opt-out Browser Add-on - <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a> - for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics. <br>
-                    For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="">https://policies.google.com/privacy</a>
+                    You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="http://www.google.com/settings/ads" target="_blank">http://www.google.com/settings/ads</a> <br>
+                    Google also recommends installing the Google Analytics Opt-out Browser Add-on - <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a> - for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics. <br>
+                    For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy"  target="_blank">https://policies.google.com/privacy</a>
                 </p>
                 <h2 class="content-heading">GDPR Privacy</h2>
                 <h4>
@@ -296,13 +296,13 @@
                 <h2 class="content-heading">Facebook Fan Page</h2>
                 <h4>Data Controller for the Facebook Fan Page</h4>
                 <p>
-                    The Company is the Data Controller of Your Personal Data collected while using the Service. As operator of the Facebook Fan Page <a href="https://www.facebook.com/CustomDoorAndMirror">https://www.facebook.com/CustomDoorAndMirror</a>, the Company and the operator of the social network Facebook are Joint Controllers.
+                    The Company is the Data Controller of Your Personal Data collected while using the Service. As operator of the Facebook Fan Page <a href="https://www.facebook.com/CustomDoorAndMirror" target="_blank">https://www.facebook.com/CustomDoorAndMirror</a>, the Company and the operator of the social network Facebook are Joint Controllers.
                 </p>
                 <p>
-                    The Company has entered into agreements with Facebook that define the terms for use of the Facebook Fan Page, among other things. These terms are mostly based on the Facebook Terms of Service: <a href="https://www.facebook.com/terms.php">https://www.facebook.com/terms.php</a>
+                    The Company has entered into agreements with Facebook that define the terms for use of the Facebook Fan Page, among other things. These terms are mostly based on the Facebook Terms of Service: <a href="https://www.facebook.com/terms.php" target="_blank">https://www.facebook.com/terms.php</a>
                 </p>
                 <p>
-                    Visit the Facebook Privacy Policy <a href="https://www.facebook.com/policy.php">https://www.facebook.com/policy.php</a> for more information about how Facebook manages Personal data or contact Facebook online, or by mail: Facebook, Inc. ATTN, Privacy Operations, 1601 Willow Road, Menlo Park, CA 94025, United States.
+                    Visit the Facebook Privacy Policy <a href="https://www.facebook.com/policy.php" target="_blank">https://www.facebook.com/policy.php</a> for more information about how Facebook manages Personal data or contact Facebook online, or by mail: Facebook, Inc. ATTN, Privacy Operations, 1601 Willow Road, Menlo Park, CA 94025, United States.
                 </p>
                 <h4>Facebook Insights</h4>
                 <p>
@@ -315,7 +315,7 @@
                     Facebook receives, records and processes the information stored in the Cookie, especially when the user visits the Facebook services, services that are provided by other members of the Facebook Fan Page and services by other companies that use Facebook services.
                 </p>
                 <p>
-                    For more information on the privacy practices of Facebook, please visit Facebook Privacy Policy here: <a href="https://www.facebook.com/full_data_use_policy">https://www.facebook.com/full_data_use_policy</a>
+                    For more information on the privacy practices of Facebook, please visit Facebook Privacy Policy here: <a href="https://www.facebook.com/full_data_use_policy" target="_blank">https://www.facebook.com/full_data_use_policy</a>
                 </p>
                 <h2 class="content-heading">CCPA Privacy</h2>
                 <p>
@@ -396,7 +396,9 @@
                     <li>For internal administrative and auditing purposes.</li>
                     <li>To detect security incidents and protect against malicious, deceptive, fraudulent or illegal activity, including, when necessary, to prosecute those responsible for such activities.</li>
                 </ul>
-                <p>Please note that the examples provided above are illustrative and not intended to be exhaustive. For more details on how we use this information, please refer to the "Use of Your Personal Data" section.</p>
+                <p>
+                    Please note that the examples provided above are illustrative and not intended to be exhaustive. For more details on how we use this information, please refer to the "Use of Your Personal Data" section.
+                </p>
                 <p>
                     If We decide to collect additional categories of personal information or use the personal information We collected for materially different, unrelated, or incompatible purposes We will update this Privacy Policy.
                 </p>
@@ -509,8 +511,114 @@
                 </p>
                 <p>Your request to Us must:</p>
                 <ul>
-                    •	Provide sufficient information that allows Us to reasonably verify You are the person about whom We collected personal information or an authorized representative
-                    •	Describe Your request with sufficient detail that allows Us to properly understand, evaluate, and respond to it
+                    <li>Provide sufficient information that allows Us to reasonably verify You are the person about whom We collected personal information or an authorized representative</li>
+                    <li>Describe Your request with sufficient detail that allows Us to properly understand, evaluate, and respond to it</li>
+                </ul>
+                <p>
+                    We cannot respond to Your request or provide You with the required information if We cannot:
+                </p>
+                <ul>
+                    <li>Verify Your identity or authority to make the request</li>
+                    <li>And confirm that the personal information relates to You</li>
+                </ul>
+                <p>
+                    We will disclose and deliver the required information free of charge within 45 days of receiving Your verifiable request. The time period to provide the required information may be extended once by an additional 45 days when reasonable necessary and with prior notice.
+                </p>
+                <p>
+                    Any disclosures We provide will only cover the 12-month period preceding the verifiable request's receipt.
+                </p>
+                <p>
+                    For data portability requests, We will select a format to provide Your personal information that is readily useable and should allow You to transmit the information from one entity to another entity without hindrance.
+                </p>
+                <h4>Do Not Sell My Personal Information</h4>
+                <p>
+                    You have the right to opt-out of the sale of Your personal information. Once We receive and confirm a verifiable consumer request from You, we will stop selling Your personal information. To exercise Your right to opt-out, please contact Us.
+                </p>
+                <p>
+                    The Service Providers we partner with (for example, our analytics or advertising partners) may use technology on the Service that sells personal information as defined by the CCPA law. If you wish to opt out of the use of Your personal information for interest-based advertising purposes and these potential sales as defined under CCPA law, you may do so by following the instructions below.
+                </p>
+                <p>
+                    Please note that any opt out is specific to the browser You use. You may need to opt out on every browser that You use.
+                </p>
+                <p><strong>Website</strong></p>
+                <p>
+                    You can opt out of receiving ads that are personalized as served by our Service Providers by following our instructions presented on the Service:
+                </p>
+                <ul>
+                    <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/" target="_blank">http://www.networkadvertising.org/choices/</a></li>
+                    <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/" target="_blank">http://www.youronlinechoices.com/</a></li>
+                    <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&lang=EN" target="_blank">http://optout.aboutads.info/?c=2&lang=EN</a></li>
+                </ul>
+                <p>
+                    The opt out will place a cookie on Your computer that is unique to the browser You use to opt out. If you change browsers or delete the cookies saved by your browser, You will need to opt out again.
+                </p>
+                <p><strong>Mobile Devices</strong></p>
+                <p>
+                    Your mobile device may give You the ability to opt out of the use of information about the apps You use in order to serve You ads that are targeted to Your interests:
+                </p>
+                <ul>
+                    <li>"Opt out of Interest-Based Ads" or "Opt out of Ads Personalization" on Android devices</li>
+                    <li>"Limit Ad Tracking" on iOS devices</li>
+                </ul>
+                <p>
+                    You can also stop the collection of location information from Your mobile device by changing the preferences on Your mobile device.
+                </p>
+                <h2 class="content-heading">"Do Not Track" Policy as Required by California Online Privacy Protection Act (CalOPPA)</h2>
+                <p>
+                    Our Service does not respond to Do Not Track signals.
+                </p>
+                <p>
+                    However, some third party websites do keep track of Your browsing activities. If You are visiting such websites, You can set Your preferences in Your web browser to inform websites that You do not want to be tracked. You can enable or disable DNT by visiting the preferences or settings page of Your web browser.
+                </p>
+                <h2 class="content-heading">Children's Privacy</h2>
+                <p>
+                    Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
+                </p>
+                <p>
+                    If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+                </p>
+                <h2 class="content-heading">Your California Privacy Rights (California's Shine the Light law)</h2>
+                <p>
+                    Under California Civil Code Section 1798 (California's Shine the Light law), California residents with an established business relationship with us can request information once a year about sharing their Personal Data with third parties for the third parties' direct marketing purposes.
+                </p>
+                <p>
+                    If you'd like to request more information under the California Shine the Light law, and if You are a California resident, You can contact Us using the contact information provided below.
+                </p>
+                <h2 class="content-heading">California Privacy Rights for Minor Users (California Business and Professions Code Section 22581)</h2>
+                <p>
+                    California Business and Professions Code section 22581 allow California residents under the age of 18 who are registered users of online sites, services or applications to request and obtain removal of content or information they have publicly posted.
+                </p>
+                <p>
+                    To request removal of such data, and if You are a California resident, You can contact Us using the contact information provided below, and include the email address associated with Your account.
+                </p>
+                <p>
+                    Be aware that Your request does not guarantee complete or comprehensive removal of content or information posted online and that the law may not permit or require removal in certain circumstances.
+                </p>
+                <h2 class="content-heading">Links to Other Websites</h2>
+                <p>
+                    Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
+                </p>
+                <p>
+                    We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+                </p>
+                <h2 class="content-heading">Changes to this Privacy Policy</h2>
+                <p>
+                    We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+                </p>
+                <p>
+                    We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
+                </p>
+                <p>
+                    You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+                </p>
+                <h2 class="content-heading">Contact Us</h2>
+                <p>
+                    If you have any questions about this Privacy Policy, You can contact us:
+                </p>
+                <ul>
+                    <li>
+                        By email: <a href="mailto:sales@paniflex.com">sales@paniflex.com</a>
+                    </li>
                 </ul>
             </div>
         </div>
