@@ -129,7 +129,6 @@
         .specs-mega-sub::-webkit-scrollbar-track{background:#eee}
         .specs-mega-sub::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
         .specs-mega-sub::-webkit-scrollbar-thumb:hover{background:#F94E57;}
-
         .specs-mega-menu li.specs-open .specs-mega-sub{
             display: block;
         }
@@ -260,12 +259,15 @@
                     const configurator = await RoomleConfiguratorApi.create(
                         'demoConfigurator',
                         document.getElementById('configurator-container'),
-                        {...options, buttons: {savedraft: false}},
+                        {...options, buttons: {savedraft: false,requestproduct:false}},
                     );
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
                         addToCart(configurationId, image, partlist);
                     };
-
+                    document.getElementById('trigger-request').addEventListener('click', async () => {
+                    await configurator.ui.triggerRequestProduct();
+                    });
+                   
                     /*for price*/
                     const priceDataBase = {};
                     
@@ -294,10 +296,9 @@
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                 <!--<i class="linearicons-cart"></i> Buy Now
             </a> -->
-            <!-- <a href="javascript:void(0)" class="btn btn-fill-out add-to-cart">
-                <input type="hidden" class="product-id" value="{{--$productData['product']->id--}}">
+            <a href="javascript:void(0)" id="trigger-request" class="btn btn-fill-out">
                 <i class="linearicons-cart-plus"></i> Add to cart
-            </a> -->
+            </a>
             {{-- <a href="#" class="btn btn-fill-out">
                 Configure
             </a> --}}
@@ -468,7 +469,7 @@
         </div>
     </section>
 @endsection
-                
+
 @section('scripts')
 <script>
     $('.configure-slider').slick({
@@ -483,7 +484,6 @@
         slidesToScroll: 1,
         lazyLoad: 'progressive'
     });
-
     /* Add to cart functionality */
     function addToCart(configurationId, image, partlist){
         
@@ -532,7 +532,6 @@
         }
     });
 }
-
     /* Buy Now Functionality */
     jQuery('.buy-now').click(function(e) {
         var productId = $(".product-id").val();
