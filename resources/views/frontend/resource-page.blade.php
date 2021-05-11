@@ -36,14 +36,14 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-md-6">
-                    <a href="javascript:void(0);" data-toggle="modal" data-target="#resourceeModal" class="resources-card" >
+                    <a href="{{ url('installation/') }}" class="resources-card" >
                         <div class="resources-icon">
                             <img src="{{URL::asset('/images/icon/video.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/video-white.svg')}}" class="white-svg">
                         </div>
                         <div class="resources-indicator">View Video</div>
                         <span class="resources-title">
-                            Watch Bifold Installation video
+                            Watch Installation Videos
                         </span>
                     </a>
                 </div>
@@ -160,22 +160,6 @@
             </div>
         </div>
     </section>
-
-    <div class="modal fade" id="resourceeModal" tabindex="-1" aria-labelledby="resourceeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header position-realtive">
-                <h4 class="text-center">Watch Bifold Installation video</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe width="100%" height="415" src="https://www.youtube.com/embed/VelzyKeK6V8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-      </div>
-    </div>
 @endsection
 
 @section('scripts')
