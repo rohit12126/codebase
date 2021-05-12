@@ -318,7 +318,7 @@ button:focus {
 }
 .btn-fill-out {
 	background-color: transparent;
-	border: 1px solid #FF324D;
+	border: 1px solid #00436b;
 	color: #fff;
 	position: relative;
 	overflow: hidden;
@@ -331,7 +331,7 @@ button:focus {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #FF324D;
+	background-color: #00436b;
 	z-index: -1;
 	transition: all 0.3s ease-in-out;
 	width: 51%;
@@ -345,7 +345,7 @@ button:focus {
 	width: 0;
 }
 .btn-fill-out:hover {
-	color: #FF324D !important;
+	color: #00436b !important;
 }
 .btn-fill-out i{
 	vertical-align: -10%;
@@ -382,8 +382,8 @@ button:focus {
 	color: #333 !important;
 }
 .btn-border-fill {
-	border: 1px solid #FF324D;
-	color: #FF324D;
+	border: 1px solid #00436b;
+	color: #00436b;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
@@ -395,7 +395,7 @@ button:focus {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #FF324D;
+	background-color: #00436b;
 	z-index: -1;
 	transition: all 0.3s ease-in-out;
 	width: 0;
@@ -1632,7 +1632,7 @@ button:focus {
 	top: -4px;
 	left: 28px;
 	font-size: 11px;
-	background-color: #FF324D;
+	background-color: #00436b;
 	border-radius: 50px;
 	height: 16px;
 	line-height: 16px;
@@ -7597,7 +7597,7 @@ a:hover {
     pointer-events: auto;
 }
 .head-alert-bar {
-	background-color: #F94E57;
+	background-color: #00436b;
 	color: #FFF;
 	text-align: center;
 	-webkit-box-shadow: inset 5px 15px 15px -15px rgba(0, 0, 0, 0.2);
@@ -7858,7 +7858,7 @@ a:hover {
 	display: block;
 	width: 100%;
 	height: 2px;
-	background: #f64e56;
+	background: #00436b;
 	position: absolute;
 	left: 0px;
 	top: 23px;
@@ -8009,7 +8009,7 @@ h5 {
 	.home-steps{
 		position: relative;
 		overflow: hidden;
-		background: linear-gradient( to right, #223258 0%, #F84D56 50%, #F84D56 50%, #223258 100% );
+		background: linear-gradient( to right, #223258 0%, #00436b 50%, #00436b 50%, #223258 100% );
 		padding: 1.4rem;
 		text-align: center;
 	}
@@ -8026,7 +8026,7 @@ h5 {
 		text-align:center;
 	}
 	.home-step-heading .step-serial{
-		color: #F94E57;
+		color: #00436b;
 	}
 	.home-step-para{
 		color: #292b2c;
@@ -8062,7 +8062,7 @@ h5 {
 		transform: translate3d(-50%,0,0);
 		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		width: 100%;
-		border: 4px solid #F94E57;
+		border: 4px solid #00436b;
 		overflow: hidden;
 	}
 	.wrapper::after{
@@ -8120,7 +8120,7 @@ h5 {
 		left: 100px;
 		top: 45%;
 		transform: inherit;
-		background-color: #ec4f05;
+		background-color: #00436b;
 		opacity: 0.9;
 		pointer-events: auto;
 		cursor: pointer;
@@ -8335,7 +8335,7 @@ h5 {
 		}
 	/*================Home page Step 2 section=================*/
 		.home-step-2,.how-to-wrap,.configure-product-slider{
-			background-color: #f2eeeb;
+			background-color: #f7f7f7;
 		}
 		.container.products-listing-container{
 			max-width: 1470px;
@@ -8356,7 +8356,7 @@ h5 {
 		.start-steps-number{
 			font-size: 2rem;
 			position: relative;
-			color: #292b2c;
+			color: #00436b;
 		}
 		.start-steps-number b{
 			z-index: 1;
@@ -8366,7 +8366,7 @@ h5 {
 			content: "";
 			width: 20px;
 			height: 20px;
-			background-color: #f1dfd1;
+			background-color: rgb(0 67 107 / 20%); /* #f1dfd1 */
 			border-radius: 20px;
 			position: absolute;
 			bottom: 4%;
@@ -8387,7 +8387,7 @@ h5 {
 	}
 	.measure-step-video{
 		width: 100%;
-		max-width: 640px;
+		max-width: 870px;
 		margin: 0 auto;
 	}
 	/*=================Home page Step 3 end====================*/
@@ -8991,7 +8991,7 @@ h5 {
 }
 .product-wallpaper-slider .slick-prev, .product-wallpaper-slider .slick-next{
 	font-size: 2rem;
-	background-color: #f2eeeb;
+	background-color: #f7f7f7; /* #f2eeeb */
 	opacity: 1;
 	box-shadow: none;
 }
@@ -9019,7 +9019,7 @@ h5 {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
 	font-size: 3rem;
-	color:#111;
+	color:#00436b;
 }
 .product-wallpaper-slider .slick-prev:hover:before, .product-wallpaper-slider .slick-next:hover:before{
 	color: #000;
@@ -9048,7 +9048,7 @@ h5 {
 	align-items: center;
 }
 .slick-current.slideshow-thumb{
-	border-color: #F94E57;
+	border-color: #00436b;
 }
 .slideshow-thumb img{
 	object-fit: cover;
