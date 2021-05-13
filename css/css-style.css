@@ -8314,7 +8314,7 @@ h5 {
 			.hot-spot.left-sides-second .tooltip{
 				margin-left: -150px !important;
 			}
-			.hot-spot.left-sides-second .tooltip:after{
+			.hot-spot.left-sides-second .tooltip:before{
 				left: 50%;
 			}
 		.hot-spot.left-sides-third{
