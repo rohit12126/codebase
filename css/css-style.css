@@ -8249,17 +8249,6 @@ h5 {
 		z-index: 999;
 		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		}
-		.hot-spot .tooltip.tooltip-custom-left{
-			left: 20px;
-		}
-		.hot-spot .tooltip.tooltip-custom-left.tape-img{
-			width: 310px;
-			left: 28px;
-		}
-		.hot-spot .tape-img img{
-			height: 100px;
-			margin: 0 0.4rem;
-		}
 		.tooltip:not(.tip-upside):before{
 			content: "";
 			position: absolute;
@@ -8271,9 +8260,6 @@ h5 {
 			margin: 0 auto;
 			left: 30%;
 		}
-		.hot-spot .tooltip.tooltip-custom-left:before{
-			left: 40%;
-		}
 		.tip-upside:before{
 			content: "";
 			position: absolute;
@@ -8283,7 +8269,7 @@ h5 {
 			border-width: 10px 10px 0;
 			text-align: center;
 			margin: 0 auto;
-			left: 49%;
+			left: 29.5%;
 		}
 		.hot-spot .tip-upside{
 			bottom: calc(100% + 20px);
@@ -8322,16 +8308,52 @@ h5 {
 			left: 34%;
 		}
 		.hot-spot.left-sides-second{
-			top: 44%;
-			left: 61.4%;
+			top: 50%;
+			left: 75%;
+		}
+			.hot-spot.left-sides-second .tooltip{
+				margin-left: -150px !important;
+			}
+			.hot-spot.left-sides-second .tooltip:after{
+				left: 50%;
+			}
+		.hot-spot.left-sides-third{
+			top: 10%;
+			left: 54%;
+		}
+		.hot-spot.left-sides-fourth{
+			top: 78%;
+			left: 20%;
+		}
+		.hot-spot.left-sides-fifth{
+			top: 75%;
+			left: 48%;
 		}
 		.hot-spot.right-sides-first{
 			top: 42%;
-			left: 22%;
+			left: 60%;
 		}
 		.hot-spot.right-sides-second{
-			top: 34%;
-			left: 70%;
+			top: 10%;
+			left: 30%;
+		}
+		.hot-spot.right-sides-third{
+			top: 56%;
+    		left: 12%;
+		}
+			.hot-spot.right-sides-third .tooltip{
+				margin-left: -50px !important
+			}
+			.hot-spot.right-sides-third .tooltip:before{
+				left: 4.5%;
+			}
+		.hot-spot.right-sides-fourth{
+			top: 38%;
+    		left: 22%;
+		}
+		.hot-spot.right-sides-fifth{
+			top: 78%;
+			left: 60%;
 		}
 	/*================Home page Step 2 section=================*/
 		.home-step-2,.how-to-wrap,.configure-product-slider{
@@ -9028,6 +9050,22 @@ h5 {
 	max-height:440px;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
+	position: relative;
+}
+.product-slideshow-title-wrap{
+	position: absolute;
+    text-transform: capitalize;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 24px;
+    background-color: #00436b;
+}
+.product-slideshow-title-wrap>*
+{
+    color: #fff;
+	margin:0;
+	font-size: 1.25rem;
 }
 .product-slideshow img{
 	object-fit: cover;
@@ -9046,6 +9084,7 @@ h5 {
 	background-color: #f2f2f2;
 	display: flex !important;
 	align-items: center;
+	cursor: pointer;
 }
 .slick-current.slideshow-thumb{
 	border-color: #00436b;
