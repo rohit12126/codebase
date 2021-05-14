@@ -104,5 +104,13 @@
     "matrix_delete_failed" : "Something went wrong unable to delete Pricing Matrix!",
 
     "settings_save_success" : "Settings Saved Successfully",
-    "settings_save_failed" : "Something went wrong unable to update Settings"
+    "settings_save_failed" : "Something went wrong unable to update Settings",
+
+    "tax_add_success" : "Tax added successfully!",
+    "tax_add_failed" : "Something went wrong unable to add Tax!",
+    "tax_update_success" : "Tax udated successfully!",
+    "tax_update_failed" : "Something went wrong unable to update Tax!",
+    "tax_delete_success" : "Tax deleted successfully!",
+    "tax_delete_failed" : "Something went wrong unable to delete Tax!"
+
 }
