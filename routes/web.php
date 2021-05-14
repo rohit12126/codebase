@@ -153,6 +153,14 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::post('admin/edit_zone/{id?}', 'admin\ZoneController@editSubmitZone');
         Route::get('admin/delete_zone/{id?}', 'admin\ZoneController@deleteZone');
 
+
+        Route::get('admin/tax', 'admin\TaxController@index')->name('admin.tax');
+        Route::post('admin/tax', 'admin\TaxController@addTax')->name('admin.tax');
+        Route::get('admin/tax_list', 'admin\TaxController@taxList')->name('admin.tax.list');
+        Route::get('admin/edit_tax/{id?}', 'admin\TaxController@editTax');
+        Route::post('admin/edit_tax/{id?}', 'admin\TaxController@editSubmitTax');
+        Route::get('admin/delete_tax/{id?}', 'admin\TaxController@deleteTax');
+
         /* PricingMatrix Module Routes */
         Route::get('admin/matrix', 'admin\PricingMatrixController@add')->name('admin.matrix');
         Route::post('admin/matrix', 'admin\PricingMatrixController@save')->name('admin.matrix');

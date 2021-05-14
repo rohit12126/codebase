@@ -140,7 +140,7 @@
                                             
                                             <option disabled selected >Select state</option>
                                                 @foreach($states as $state)
-                                                <option  @if((isset($billingAddresses)) && ($billingAddresses->state == $state->name)) selected @endif value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
+                                                <option  @if((isset($billingAddresses)) && ($billingAddresses->state == $state->name)) selected @endif value="{{$state->name}}" data-value="{{$state->zone_id}}" data-state="{{$state->id}}">{{$state->name}} </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -230,7 +230,7 @@
                                             <select class="form-control ship ship_state placeholder-select" value="" id="ship_state" name="ship_state">
                                             <option disabled selected value="" >Select state</option>
                                                 @foreach($states as $state)
-                                                <option value="{{$state->name}}" data-value="{{$state->zone_id}}">{{$state->name}}</option>
+                                                <option value="{{$state->name}}" data-value="{{$state->zone_id}}" data-state="{{$state->id}}">{{$state->name}}</option>
                                                 @endforeach
                                             </select>
                                             </div>
@@ -277,6 +277,7 @@
                                         <td>${{number_format($product->price * $product->qty, 2)}}</td>
                                         @php
                                         $pid[$product->id.'.'.$i++] = $product->qty;
+                                        
                                         @endphp
                                     </tr>
                                     @endforeach
@@ -289,6 +290,10 @@
                                     <tr>
                                         <th>Shipping</th>
                                         <td class="shipping_price">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Taxes</th>
+                                        <td class="tax_price">$0.00</td>
                                     </tr>
                                     <tr>
                                         <th>Total</th>
@@ -389,25 +394,47 @@ $(document).ready(function() {
             }
             });
             var url = "{{route('shipping.price')}}";
+            var state = ($('#filladdress').is(":checked")) ? $("#bill_state option:selected").data("state") : $("#ship_state option:selected").data("state")
             $.ajax({
             type: "POST",
             url: url,
-            data: {zone_id :  zone,pid : {{str_replace('"', '',json_encode($pid))}} },
+            data: {zone_id :  zone,pid : {{str_replace('"', '',json_encode($pid))}} ,state:state},
             success: function(data) {
-                if(data == 0){
+                if(data['shipping'] == 0){
                     $('.shipping_price').html("Currently Shipping Not Available !")
                     $('#place_order').attr('disabled',true);
                 }
                 else{
-                $('.shipping_price').html('$'+data)
+                    var tax = 0;
+                    if(!$.isEmptyObject(data['tax']))
+                    {
+                        if(data['tax']['type'] == 'percent')
+                        {
+                            tax = {{$cartSubTotal}} * data['tax']['rate'] / 100; 
+                        $('.tax_price').html('$'+tax);
+                        }
+                        else
+                        $('.tax_price').html('$'+data['tax']['rate']);
+
+                    }
+                    else{
+                        $('.tax_price').html('$0.00')
+                    }
+                $('.shipping_price').html('$'+data['shipping'])
                 $('#place_order').attr('disabled', false);
                 $('<input>', {
                     type: 'hidden',
                     id: 'shipping',
                     name: 'shipping',
-                    value: data
+                    value: data['shipping']
                 }).appendTo('#checkoutForm');
-                var subtotal = +data + +{{$cartSubTotal}}
+                $('<input>', {
+                    type: 'hidden',
+                    id: 'tax',
+                    name: 'tax',
+                    value: tax
+                }).appendTo('#checkoutForm');
+                var subtotal = +data['shipping'] + +tax + +{{$cartSubTotal}}
                 $('#total').html('$'+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
                 }
             }
@@ -467,6 +494,7 @@ $(document).ready(function() {
             $("#ship_zipcode").val($("#bill_zipcode").val());
             $("#holder").val("bill_state");
             $('.shipping_price').html('$0.00')
+            $('.tax_price').html('$0.00')
             getShippingPrice();
         } else {
             $("#ship_name").val('');
@@ -478,6 +506,7 @@ $(document).ready(function() {
             $("#ship_email").val('');           
             $("#holder").val("ship_state");
             $('.shipping_price').html('$0.00')
+            $('.tax_price').html('$0.00')
             getShippingPrice(); 
         }
     });

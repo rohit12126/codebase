@@ -5,42 +5,42 @@ namespace App\Http\Controllers\admin;
 // use Illuminate\Http\Requests\Request;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Classes\ZoneManager;
+use App\Classes\TaxManager;
 use App\Classes\HelperManager as Common;
 
-class ZoneController extends Controller
+class TaxController extends Controller
 {
-    protected $zoneManager;
+    protected $taxManager;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct(
-        ZoneManager $zoneManager
+        TaxManager $taxManager
     )
     {
-        $this->zoneManager = $zoneManager;
+        $this->taxManager = $taxManager;
     }
     /**
-     * Create new zone form.
+     * Create new tax form.
      *  
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $state_list=$this->zoneManager->stateslist();
-        return view('dashboard.zone',compact('state_list'));
+        $state_list=$this->taxManager->stateslist();
+        // dd($state_list);
+        return view('dashboard.tax',compact('state_list'));
     }
 
     /**
-     * Stores a new Zone
+     * Stores a new tax
      *  @param $req
      * @return \Illuminate\Http\Response
      */
-    public function addZone(Request $req)
+    public function addTax(Request $req)
     {
-        // dd($req);
         $this->validate(
             $req, 
             [
@@ -52,47 +52,46 @@ class ZoneController extends Controller
                 'hardware.*.price'    => 'required|not_in:0',
             ]
         ); 
-        // dd('pass');
-        $response=$this->zoneManager->addZone($req);
+        $response=$this->taxManager->addTax($req);
         if($response == true){
-            Common::setMessage(__('zone_add_success'));
+            Common::setMessage(__('tax_add_success'));
         }else{
-            Common::setMessage(__('zone_add_failed'), 'error');
+            Common::setMessage(__('tax_add_failed'), 'error');
         }
         return back();
     }
 
         /**
-     *Display list of Zone
+     *Display list of Tax
      *  @param $req
      * @return \Illuminate\Http\Response
      */
-    public function zoneList(Request $req)
+    public function taxList(Request $req)
     {
-        $zone_list=$this->zoneManager->getZone($req);
-        
-        return view('dashboard.zone_list',compact('zone_list'));
+        $tax_list=$this->taxManager->getTax($req);
+        // dd($tax_list);
+        return view('dashboard.tax_list',compact('tax_list'));
     }
 
         /**
-     * Edit Zone Form
+     * Edit Tax Form
      *  @param $req
      * @return \Illuminate\Http\Response
      */
-    public function editZone(Request $req, $id)
+    public function editTax(Request $req, $id)
     {
-        $zone = $this->zoneManager->getZoneById($id);
-        $state_list=$this->zoneManager->stateslist();
-        return view('dashboard.zone',compact('zone','state_list'));
+        $tax = $this->taxManager->getTaxById($id);
+        $state_list=$this->taxManager->stateslist();
+        return view('dashboard.tax',compact('tax','state_list'));
     }
 
         /**
-     * Update a Zone
+     * Update a Tax
      *  @param $req
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function editSubmitZone(Request $req, $id)
+    public function editSubmitTax(Request $req, $id)
     {
         // dd($req);
         $this->validate(
@@ -106,30 +105,30 @@ class ZoneController extends Controller
                 'states'=>'required'
             ]
         );
-        $response = $this->zoneManager->updateZone($req, $id);
+        $response = $this->taxManager->updateTax($req, $id);
         if($response == true){
-            Common::setMessage(__('zone_add_success'));
+            Common::setMessage(__('tax_add_success'));
         }else{
-            Common::setMessage(__('zone_add_failed'), 'error');
+            Common::setMessage(__('tax_add_failed'), 'error');
         }
         
         return back();
     }
 
         /**
-     * Destroy a Zone
+     * Destroy a Tax
      *  @param $req
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteZone(Request $req, $id)
+    public function deleteTax(Request $req, $id)
     {
-        $response=$this->zoneManager->deleteZone($id);
+        $response=$this->taxManager->deleteTax($id);
 
         if($response == true){
-            Common::setMessage(__('zone_delete_success'));
+            Common::setMessage(__('tax_delete_success'));
         }else{
-            Common::setMessage(__('zone_delete_failed'), 'error');
+            Common::setMessage(__('tax_delete_failed'), 'error');
         }
         return back();
     }

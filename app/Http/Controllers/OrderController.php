@@ -10,6 +10,7 @@ use App\Classes\GuestUserManager;
 use App\Classes\AddressManager;
 use App\Classes\OrderManager;
 use App\Classes\ZoneManager;
+use App\Classes\TaxManager;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderConfirm;
 use PDF;
@@ -24,6 +25,7 @@ class OrderController extends Controller
     protected $addressManager;
     protected $orderManager;
     protected $zoneManager;
+    protected $taxManager;
     
     /**
      * Create a new controller instance.
@@ -36,7 +38,8 @@ class OrderController extends Controller
         GuestUserManager $guestUserManager,
         AddressManager $addressManager,
         OrderManager $orderManager,
-        ZoneManager $zoneManager
+        ZoneManager $zoneManager,
+        TaxManager $taxManager
     )
     {
         $this->productManager = $productManager;
@@ -45,6 +48,7 @@ class OrderController extends Controller
         $this->addressManager = $addressManager;
         $this->orderManager = $orderManager;
         $this->zoneManager = $zoneManager;
+        $this->taxManager = $taxManager;
     }
     
     /**
@@ -59,6 +63,7 @@ class OrderController extends Controller
             $isTempUser = $req->session()->get('isTemp');
             $userId = $req->session()->get('userId');
             $shippingCharge = $req->session()->get('shippingCharge');
+            $taxCharge = $req->session()->get('taxCharge') ?? 0;
 
             if(strpos(url()->previous(), 'order/add-order') == false) {
 
@@ -84,7 +89,7 @@ class OrderController extends Controller
                     $cartSubTotal = str_replace(",","", $this->cartManager->subTotal());
                     $cartProducts = $this->cartManager->getCartContain();
                 }
-                $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge;
+                $orderData['grand_total'] = (float) $cartSubTotal + $shippingCharge + $taxCharge;
                 $order = $this->orderManager->addOrder($orderData);
 
                 foreach ($cartProducts as $key => $product) {
@@ -136,6 +141,7 @@ class OrderController extends Controller
                     'ship',
                     'payment_id',
                     'shippingCharge',
+                    'taxCharge',
                     'configuredProductData'
                     ]
                 );
@@ -232,10 +238,10 @@ class OrderController extends Controller
      */
     public function shippingPrice(Request $req)
     {
-        // dd($req);
         $shippingPrice = 0;
         $hshippingPrice = 0;
         $shipPrice= 0;
+        $tax = [];
         $price = $this->zoneManager->getPrice($req->zone_id);
         if ( ! empty($price) )
             {
@@ -267,8 +273,15 @@ class OrderController extends Controller
                 }
                 
                 $shipPrice = $shippingPrice;
+                if($taxes = $this->taxManager->getTaxByStateId($req->state))
+                {
+                    $tax['type'] = $taxes->tax->rate_type;
+                    $tax['rate'] = $taxes->tax->rate;
+                }
             }
-        return number_format((float) $shipPrice, 2, '.', '');
+         $resp['shipping'] = number_format((float) $shipPrice, 2, '.', '');
+         $resp['tax'] = $tax;
+         return $resp;
     }
     
 }

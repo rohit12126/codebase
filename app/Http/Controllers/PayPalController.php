@@ -92,6 +92,7 @@ class PaypalController extends Controller
         ];
         
         $shipCost = Session()->get('shippingCharge');
+        $tax = Session()->get('taxCharge');
 
         $itemList = new ItemList();
         $itemList->setItems($items);
@@ -100,13 +101,13 @@ class PaypalController extends Controller
 
         $details = new Details();
             $details->setSubtotal($subTotal)
-            // ->setTax($tax)
+                ->setTax($tax)
                 ->setShipping($shipCost);
             
 
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal($subTotal + $shipCost)
+            ->setTotal($subTotal + $shipCost + $tax)
             ->setDetails($details);
 
         $transaction = new Transaction();
@@ -207,7 +208,8 @@ class PaypalController extends Controller
             'amount'=>$result->transactions[0]->amount->total,
             'currency'=>$result->transactions[0]->amount->currency,
             'shipping'=>$result->transactions[0]->amount->details->shipping,
-            'status'=>$result->state
+            'status'=>$result->state,
+            'tax' => $result->transactions[0]->amount->details->tax,
         ];
         
         $paymentData = PaymentModel::create($data);
@@ -216,10 +218,8 @@ class PaypalController extends Controller
             ['payment_id' => $paymentData->id]
         );
         if ($result->getState() == 'approved') {
-        //session()->put('success', 'Payment success');
             return redirect()->route('order.addOrder');
         }
-        //session()->put('error', 'Payment Failed');
         return redirect()->back();
     }
 }
