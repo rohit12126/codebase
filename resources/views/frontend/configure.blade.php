@@ -136,12 +136,65 @@
                         <a href="#">Door Style</a>
                         <div class="specs-mega-sub">
                             <h3 class="pt-2 heading_s3 text-center">Door Style</h3>
-                            <ul class="normal-ul">
+                            <h5>Flush</h5>
+                            <ul class="normal-ul mb-3">
                                 <li>3/4” MDF</li>
                                 <li>Prefinished in White, Espresso, or Cherry</li>
                                 <li>Maintenance free, easy to clean</li>
                                 <li>Unfinished in Primed, Real Maple veneer</li>
                                 <li>Finish to match your decor</li>
+                            </ul>
+                            <h5>Mirror</h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Solid-backed
+                                    - Impact
+                                    resistant
+                                    mirror</li>
+                                    <li>Beveled or
+                                    Polished</li>
+                                    <li>Gasketed &
+                                    Safety
+                                    backed
+                                    mirror(Slider
+                                    only)</li>
+                                    <li>Frame and
+                                    gasket – edge
+                                    is covered</li>
+                            </ul>
+                            <h5>Mir-Mel </h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Framed Look</li>
+                                <li>Prefinished in</li>
+                                White,
+                                Espresso, or
+                                Cherry
+                                <li>Maintenance</li>
+                                free, easy to
+                                clean
+                                <li>Unfinished in</li>
+                                Primed, Real
+                                Maple veneer
+                                <li>Finish to match</li>
+                                your décor
+                                <li>Beveled Mirror</li>
+                                Mounted to ¾
+                                MDF
+                                <li>(exposed edge)</li>
+                            </ul> 
+                            <h5>Routed</h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Match
+                                existing
+                                panel
+                                styles in
+                                your home</li>
+                                <li>or just add
+                                a little flair</li>
+                                <li>Primed
+                                and ready
+                                to paint to
+                                match
+                                decor</li>
                             </ul>
                         </div>
                     </li>
