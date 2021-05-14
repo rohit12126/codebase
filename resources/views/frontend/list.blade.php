@@ -171,7 +171,7 @@
                 <div class="product-grid-tile-inner">
                     <h2 class="mb-3">Build with high quality material</h2>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque unde eius quis enim deserunt rerum! Rerum, incidunt
+                    Solid backing makes our door the strongest and most impact resistant door on the market
                     </p>
                 </div>
             </div>
