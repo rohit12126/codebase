@@ -45,11 +45,11 @@
                                         </div>
                                         <div class="col-4 d-flex align-items-end pl-0">
                                             <button type="submit" title="Search" class="btn btn-primary mr-1 mr-sm-2 mt-0 custom-tooltip">
-                                                <span class="custom-tooltiptext custom-tooltip-top">Search Zone</span>
+                                                <span class="custom-tooltiptext custom-tooltip-top">Search Taxes</span>
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
-                                            <a href="{{route('admin.zone.list')}}" class="btn btn-danger text-white custom-tooltip">
-                                                <span class="custom-tooltiptext custom-tooltip-top">Reset Zone Search</span>
+                                            <a href="{{route('admin.tax.list')}}" class="btn btn-danger text-white custom-tooltip">
+                                                <span class="custom-tooltiptext custom-tooltip-top">Reset Taxes Search</span>
                                                 <i class="cil-reload"></i>
                                             </a>
                                         </div>
@@ -88,12 +88,12 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                <a class="btn btn-sm btn-info mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/edit_zone', $value->id) }}">
-                                                    <span class="custom-tooltiptext custom-tooltip-top">Edit this Zone</span>
+                                                <a class="btn btn-sm btn-info mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/edit_tax', $value->id) }}">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Edit this Tax</span>
                                                     <i class="cil-pencil"></i>
                                                 </a>
-                                                <a class="btn btn-sm btn-danger mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/delete_zone', $value->id) }}" onclick="return confirm('Are you sure you want to delete this zone?');">
-                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete this Zone</span>
+                                                <a class="btn btn-sm btn-danger mb-2 mb-sm-0 custom-tooltip" href="{{ url('admin/delete_tax', $value->id) }}" onclick="return confirm('Are you sure you want to delete this tax?');">
+                                                    <span class="custom-tooltiptext custom-tooltip-top">Delete this Tax</span>
                                                     <i class="cil-trash"></i>
                                                 </a>
                                             </td>
@@ -103,7 +103,7 @@
                                 @else
                                     <tfoot>
                                         <tr>
-                                        <th colspan="6" class="text-center"><img src="{{ url('') }}/upload/product/empty-list.jpg" alt="Zone list is empty"></th>
+                                        <th colspan="6" class="text-center"><img src="{{ url('') }}/upload/product/empty-list.jpg" alt="Taxes list is empty"></th>
                                         </tr>
                                     </tfoot>
                                 @endif

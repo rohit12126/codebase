@@ -45,11 +45,9 @@ class TaxController extends Controller
             $req, 
             [
                 'title' => 'required',
-                'product_price'=> 'required|numeric|min:0|not_in:0',
+                'rate'=> 'required|numeric|min:0|not_in:0',
                 'states'=>'required',
-                'hardware.*.min_weight' => 'required|integer',
-                'hardware.*.max_weight' => 'required|integer',
-                'hardware.*.price'    => 'required|not_in:0',
+                'rate_type' => 'required',
             ]
         ); 
         $response=$this->taxManager->addTax($req);
@@ -69,7 +67,6 @@ class TaxController extends Controller
     public function taxList(Request $req)
     {
         $tax_list=$this->taxManager->getTax($req);
-        // dd($tax_list);
         return view('dashboard.tax_list',compact('tax_list'));
     }
 
@@ -93,16 +90,13 @@ class TaxController extends Controller
      */
     public function editSubmitTax(Request $req, $id)
     {
-        // dd($req);
         $this->validate(
             $req, 
             [
                 'title' => 'required',
-                'product_price'=> 'required|numeric|min:0|not_in:0',
-                'hardware.*.min_weight' => 'required|integer',
-                'hardware.*.max_weight' => 'integer',
-                'hardware.*.price'    => 'required|not_in:0',
-                'states'=>'required'
+                'rate'=> 'required|numeric|min:0|not_in:0',
+                'states'=>'required',
+                'rate_type' => 'required',
             ]
         );
         $response = $this->taxManager->updateTax($req, $id);

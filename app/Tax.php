@@ -9,6 +9,7 @@ class Tax extends Model
     protected $fillable = [
         'rate',
         'state_id',
+        'title',
     ];
 
     public function stateTax()

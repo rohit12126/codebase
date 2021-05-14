@@ -15,25 +15,32 @@ class TaxManager
     return StateModel::with('tax')->get();
   }
 
-  public function addZone($req)
+  public function addTax($req)
   {
     $data = [
       'title' => $req->title,
-      'product_price' => $req->product_price,
-      'hardware_price' => json_encode($req->hardware),
+      'rate' => $req->rate,
+      'rate_type' => $req->rate_type,
       ];
       if ($zone = TaxModel::create($data)) 
       {
         foreach($req->states as $state)
         {
-          DB::table('states')->where('id', $state)->update(['zone_id' => $zone->id]);
+          $stateData['tax_id'] = $zone->id;
+          $stateData['state_id'] = $state;
         }
+        StateTaxModel::create($stateData);
         return true;
       }
       else 
       {
           return false;
       }
+  }
+
+  public function getTaxById($id)
+  {
+    return TaxModel::findOrFail($id);
   }
 
   public function getTax($req)
@@ -55,26 +62,28 @@ class TaxManager
     return $tax;
   }
 
-  public function updateZone($req, $id)
+  public function updateTax($req, $id)
   {
-    $zone = null;
-    if ($exist = $this->getzoneById($req->id)) {
-        $zone = $exist;
+    $tax = null;
+    if ($exist = $this->getTaxById($req->id)) {
+        $tax = $exist;
     } else {
         return false;
     }
     $data = [
       'title' => $req->title,
-      'product_price' => $req->product_price,
-      'hardware_price' =>  json_encode($req->hardware),
+      'rate' => $req->rate,
+      'rate_type' => $req->rate_type,
       ];
-    if($zone->fill($data)->save())
+    if($tax->fill($data)->save())
     {
-      DB::table('states')->where('zone_id', $req->id)->update(['zone_id' => NULL]);
+      $tax->tax()->delete();
       foreach($req->states as $state)
-      {
-        DB::table('states')->where('id', $state)->update(['zone_id' => $zone->id]);
-      }
+        {
+          $stateData[] = ['tax_id' => $id,
+                    'state_id' => $state];
+        }
+        $tax->tax()->createMany($stateData);
       return true;
     }
     
