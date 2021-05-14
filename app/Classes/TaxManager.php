@@ -89,33 +89,15 @@ class TaxManager
     
   }
 
-  public function deleteZone($id)
+  public function deleteTax($id)
   {
-    if($zone = $this->getzoneById($id))
+    if($tax = $this->getTaxById($id))
     {
-      $zone->delete();
-      DB::table('states')->where('zone_id', $id)->update(['zone_id' => NULL]);
+      $tax->tax()->delete();
+      $tax->delete();
       return true;
     }
     return false;
   }
 
-  public function getPrice($zone)
-  {
-    if ($zone = TaxModel::where('id', $zone)->first())
-    {
-      return $zone;
-    }
-    else
-    {
-      return FALSE;
-    }
-  }
-  public function getZoneByState($state)
-  {
-    if($zone = DB::table('states')->where('name' , $state)->pluck('zone_id')->toArray())
-    {
-      return $zone;
-    }
-  }
 }
