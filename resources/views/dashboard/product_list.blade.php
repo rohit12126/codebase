@@ -137,7 +137,7 @@
 @endsection
 
 @section('javascript')
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
 <script src="{{ asset('js/tooltips.js') }}"></script>
 
 @endsection

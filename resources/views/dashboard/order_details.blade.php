@@ -54,6 +54,10 @@
                                 <td class="p-1">: ${{number_format(($order->getPaymentDetail->shipping ?? 0) , 2)}}</td>
                             </tr>
                             <tr>
+                                <th class="p-1">Taxes</th>
+                                <td class="p-1">: ${{number_format(($order->getPaymentDetail->tax ?? 0) , 2)}}</td>
+                            </tr>
+                            <tr>
                                 <th class="p-1">Grand Total</th>
                                 <td class="p-1">: ${{ $order->grand_total }}</td>
                             </tr>
@@ -182,5 +186,5 @@
 @endsection
 
 @section('javascript')
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
 @endsection

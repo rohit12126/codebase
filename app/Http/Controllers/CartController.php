@@ -209,7 +209,8 @@ class CartController extends Controller
             'bill' => $bill,
             'isTemp' => $isTemp,
             'userId' => $userId,
-            'shippingCharge' => $req->shipping
+            'shippingCharge' => $req->shipping,
+            'taxCharge' => $req->tax ?? 0,  
         ]);
 
         if(strpos(url()->previous(), '?cart') !== false) {

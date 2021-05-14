@@ -16,6 +16,11 @@ class State extends Model
     {
         return $this->belongsTo('App\Models\Zone');
     }
+
+    public function tax()
+    {
+        return $this->hasone('App\StateTax');
+    }
 }
 
 

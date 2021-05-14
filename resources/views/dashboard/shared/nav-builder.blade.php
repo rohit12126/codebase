@@ -156,6 +156,12 @@ if(!function_exists('renderDropdown')){
             Matrix
         </a>
     </li>
+    <li class="c-sidebar-nav-item"title="Check All Enquries Here">
+        <a class="c-sidebar-nav-link @if(request()->segment(2) == 'tax_list'||request()->segment(2) == 'edit_tax' || request()->segment(2) == 'tax') c-active @endif" href="{{ route('admin.tax.list') }}">
+            <i class="cil-list c-sidebar-nav-icon"></i>
+            Taxes
+        </a>
+    </li>
     {{-- <li class="c-sidebar-nav-item"title="Secure Account Today, Change Password">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'change-password') c-active @endif" href="{{ route('admin.change.password') }}">
             <i class="cil-lock-unlocked c-sidebar-nav-icon"></i>

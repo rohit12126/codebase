@@ -69,10 +69,10 @@
     </div>
 </div>
 </div>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
 @endsection
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>s
+<script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+<script src="{{asset('js/jquery.validate.min.js')}}"></script>s
 
 @section('javascript')
 <script>

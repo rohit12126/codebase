@@ -339,7 +339,7 @@ footer-->
 </body>
 
 </html>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
 <script src="{{ asset('js/jquery.validate.min.js')}}"></script>
 <script src="{{ asset('js/js-slick.min.js')}}"></script>
 <script src="{{ asset('js/sweetalert2.min.js')}}"></script>

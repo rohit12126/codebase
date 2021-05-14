@@ -31,8 +31,8 @@
     <div class="c-subheader px-3">
         <ol class="breadcrumb breadcrumb-custom border-0 m-0">
         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.zone') }}">Zone</a></li>
-        <li class="breadcrumb-item active">@if(isset($zone)) Edit @else Add @endif Zone</li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.tax') }}">Tax</a></li>
+        <li class="breadcrumb-item active">@if(isset($tax)) Edit @else Add @endif Taxes</li>
         </ol>
     </div>
     
@@ -45,7 +45,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>@if(isset($zone)) Edit @else Add @endif Zone</h4>
+                        <h4>@if(isset($tax)) Edit @else Add @endif Taxes</h4>
                     {{--@if ($errors->any())
                             <ul>
                                 @foreach ($errors->all() as $error)
@@ -60,14 +60,21 @@
                                 <div class="col-md-5">
                                     @csrf
                                     <div class="form-group">
+                                        <label>Title</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="text" maxlength="200" placeholder="Tax Title" name="title" class="form-control" value="{{@$tax->title}}" >
+                                        @if($errors->has('title'))
+                                            <div class="error">{{ $errors->first('title') }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="form-group">
                                         <label for="select3">Select States<span class="mandatory">*</span></label></br>
-                                        
                                         <select id="example39" multiple="multiple" style="display: none;" name="states[]" class="form-control" value="" >
-                                                @foreach($state_list as $states)
 
+                                                @foreach($state_list as $states)
                                                 <option 
-                                                @if (isset($zone) && @$states->zone_id === @$zone->id ) {{"selected"}}
-                                                @elseif(@$states->zone_id) {{"disabled"}}
+                                                @if (isset($states->tax->tax_id) && isset($tax) && $states->tax->tax_id === @$tax->id ) {{"selected"}}
+                                                @elseif(@$states->tax) {{"disabled"}}
                                                 @endif
                                                 value="{{$states->id}}">{{$states->name}}</option>
                                                 @endforeach
@@ -76,26 +83,12 @@
                                             <div class="error">{{ $errors->first('states') }}</div>
                                         @endif
                                     </div>
-                                    <div class="form-group">
-                                        <label>Title</label>
-                                        <span class="mandatory">*</span>
-                                        <input type="text" maxlength="200" placeholder="Zone Title" name="title" class="form-control" value="{{@$zone->title}}" >
-                                        @if($errors->has('title'))
-                                            <div class="error">{{ $errors->first('title') }}</div>
-                                        @endif
-                                    </div>
                                     
-                                    <div class="form-group">
-                                        <label>Product Shipping Price In <b>$</b></label>
-                                        <span class="mandatory">*</span>
-                                        <input type="number" min="0" step=".01" placeholder="Product Price" name="product_price" class="form-control" value="{{@$zone->product_price}}" >
-                                        @if($errors->has('product_price'))
-                                            <div class="error">{{ $errors->first('product_price') }}</div>
-                                        @endif
-                                    </div>
+                                    
+                                    
                                     <div class="d-flex pt-4">
-                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$zone) Update @else Submit @endif" style="border-radius:0.25rem">
-                                            @if(@$zone) Update @else Submit @endif
+                                        <button type="submit" class="btn btn-primary mr-4 mt-0" title="@if(@$tax) Update @else Submit @endif" style="border-radius:0.25rem">
+                                            @if(@$tax) Update @else Submit @endif
                                         </button>
                                                 
                                         <a onclick="history.go(-1)" class="btn btn-danger text-white"  title="Cancel">
@@ -103,70 +96,23 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-md-7 mt-3 mt-md-0">
-
-                                    <label>Hardware Shipping Weight Range in <b>Lb</b> & Price In <b>$</b></label>
-                                    <span class="mandatory">*</span>
-                                    <a href="javascript:void(0)" id="addButton"><i class="fa fa-plus category-add" title="Add a New Range"></i></a>
-                                    <a href="javascript:void(0)" id="removeButton"><i class="fa fa-minus-circle category-add" title="Add a New Range"></i></a>
-                                    <div id='TextBoxesGroup'>
-                                    @if(isset($zone))
-                                    @foreach(json_decode($zone->hardware_price) as $key=>$hardwarePrice) 
-                                    <div id="TextBoxDiv{{$key}}" class="row">
-                                        <div class="col-md-4">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                            <span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div>
-                                            <input required id="minW{{$key}}" type="number"  min="0" step="1" placeholder="Min Weight" name="hardware[{{$key}}][min_weight]" class="form-control" readonly value="{{$hardwarePrice->min_weight}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                <span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div>
-                                                <input required id="maxW{{$key}}" type="number"  min="0" step="1" placeholder="Max Weight" name="hardware[{{$key}}][max_weight]" value="{{$hardwarePrice->max_weight}}" class="form-control maxW{{$key}}">
-                                                <label for="maxW{{$key}}" class="maxW{{$key}}-error error"></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                <span class="input-group-text" id="btnGroupAddon"> <b>$</b></span></div>
-                                                <input required type="number" value="{{$hardwarePrice->price}}" min="0" step="1" placeholder="Price" name="hardware[{{$key}}][price]" class="form-control">
-                                            </div>
-                                        </div>
+                                <div class="col-md-6 mt-3 mt-md-0">
+                                <div class="form-group">
+                                        <label>Tax Rate</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="number" min="0" step=".01" placeholder="Tax Rate" name="rate" class="form-control" value="{{@$tax->rate}}" >
+                                        @if($errors->has('rate'))
+                                            <div class="error">{{ $errors->first('rate') }}</div>
+                                        @endif
                                     </div>
-                                    @endforeach
-                                    @else
-                                        <div id="TextBoxDiv0" class="row">
-                                        <div class="col-md-4">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                            <span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div>
-                                            <input required id="minW0" type="number"  min="0" step="1" placeholder="Min Weight" name="hardware[0][min_weight]" class="form-control" readonly value="0">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                <span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div>
-                                                <input required id="maxW0" type="number"  min="0" step="1" placeholder="Max Weight" name="hardware[0][max_weight]" class="form-control maxW0">
-                                                <label for="maxW0" class="maxW0-error error"></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                <span class="input-group-text" id="btnGroupAddon"> <b>$</b></span></div>
-                                                <input required type="number"  min="0" step="1" placeholder="Price" name="hardware[0][price]" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                @endif
-                                </div>
-                            @if($errors->has('hardware_price'))
-                                <div class="error">{{ $errors->first('hardware_price') }}</div>
-                            @endif
+                                    <div class="form-group">
+                                        <label>Tax Rate Type</label>
+                                        <span class="mandatory">*</span>
+                                        <select class="form-control" name="rate_type">
+                                        <option class="form-control"value="percent">Percentage</option>
+                                        <option class="form-control" value="flat">Flat</option>
+                                        </select>
+                                    </div>
                             </div>
                         </form>
                     </div>
@@ -1152,55 +1098,5 @@ $('#example39').multiselect();
     });
     
 </script>
-<script type="text/javascript">
-$(document).ready(function(){
-    @if(isset($zone))
-    var counter = {{count(json_decode($zone->hardware_price))}};
-    @else
-    var counter = 1;
-    @endif
-    $("#addButton").click(function () {
-        if(counter>=1){
-            var maxW = parseInt($("#maxW"+(counter-1)).val());
-            var minW = parseInt($("#minW"+(counter-1)).val());
-            if(!maxW)
-            {
-                $('.maxW'+(counter-1)+'-error').html('');
-                $('.maxW'+(counter-1)+'-error').show();
-                $('.maxW'+(counter-1)+'-error').html('Enter Max Weight.');
-                return false;
-            }
-            else if( maxW  < minW) 
-            {
-                $('.maxW'+(counter-1)+'-error').html('');
-                $('.maxW'+(counter-1)+'-error').show();
-                $('.maxW'+(counter-1)+'-error').html('Max Weight must be Greater than Min Weight.');
-                return false;
-            }
-            else if(maxW > 1){
-                $('.maxW'+(counter-1)+'-error').html('');
-                $('.maxW'+(counter-1)+'-error').hide();
-                var minval = maxW;
-            }
-            else{
-                return false;
-            }
-        }
-    var newTextBoxDiv = $(document.createElement('div'))
-    .attr("id", 'TextBoxDiv' + counter)
-    .attr("class", 'row');
-    newTextBoxDiv.after().html('<div class="col-md-4"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div><input type="number" id="minW'+counter+'" min="0" step="1" placeholder="Min Weight" name="hardware[' + counter + '][min_weight]" class="form-control" readonly value="'+minval+'"></div></div><div class="col-md-4"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="btnGroupAddon"><b>Lb</b></span></div><input type="number" min="'+maxW+'"id="maxW'+counter+'" min="0" step="1" placeholder="And Above" name="hardware[' + counter +'][max_weight]" class="form-control maxW'+counter+'" value=""><label for="maxW'+counter+'" class="maxW'+counter+'-error error"></label></div></div><div class="col-md-4"><div class="input-group"><div class="input-group-prepend"><span class="input-group-text" id="btnGroupAddon"><b>$</b></span></div><input type="number"  min="0" step="1" placeholder="Price" name="hardware[' + counter +'][price]" class="form-control" value=""></div></div>');
-    newTextBoxDiv.appendTo("#TextBoxesGroup");
-    counter++;
-    });
-        $("#removeButton").click(function () {
-            if(counter==1){
-                alert("No more weight range price to remove");
-                return false;
-                }   
-            counter--;
-            $("#TextBoxDiv" + counter).remove();
-        });
-    });
-</script>
+
 @endsection
