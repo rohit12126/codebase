@@ -6,132 +6,6 @@
         body{
             overflow-x: hidden;
         }
-        .configure-specs{
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-100%);
-            background-color: #F94E57;
-            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
-            -moz-border-radius: 22px 0 0 22px;
-            -webkit-border-radius: 2px 0 0 22px;
-            border-radius: 22px 0 0 22px;
-            padding: 7px 7px 7px 10px;
-            height: 44px;
-            line-height: 44px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .configure-specs b{
-            font-size: 25px;
-            color: #fff;
-        }
-        .configure-specs-wrap{
-            background-color: #fff;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 800px;
-            height: 100vh;
-            transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            -moz-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            -webkit-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            z-index: 99;
-            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
-        }
-        .specs-wrap-active{
-            right: 0;
-        }
-        .configure-specs-close{
-            font-weight: bold;
-            padding: 6px;
-            background-color: #F94E57;
-            color: #fff;
-            cursor: pointer;
-        }
-        .specs-sidebar{
-            border-left: 1px solid #ddd;
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            padding: 0;
-        }
-        .specs-mega-menu{
-            list-style: none;
-            height: 100%;
-            overflow-y: auto;            
-            border-left: 1px solid #ddd;
-        }
-        .specs-mega-menu li{
-            width: 100%;
-            min-width: 240px;
-            border-top: 1px solid #ddd;
-        }
-        .specs-mega-menu li:last-child{
-            border-bottom: 1px solid #ddd;
-        }
-        .specs-sidebar a{
-            height: 44px;
-            padding: 10px;
-            padding-left: 36px;
-            display: block;
-            box-sizing: border-box;
-            position: relative;
-            color: #212529;
-        }
-        .specs-sidebar a:before{
-            content: "\e61a";
-            font-family: 'themify';
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 4px;
-            font-size: 0.625rem;
-            background-color: #000;
-            color: #fff;
-            position: absolute;
-            left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .specs-open a{
-            color: #fff;
-            background-color: #F94E57;
-        }
-        .specs-sidebar .specs-open a:before{
-            color: #F94E57;
-            background-color: #fff;
-        }
-        .specs-mega-sub{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: calc(100% - 240px);
-            height: 100%;
-            padding: 1rem;
-            overflow-y: auto;
-            display: none;
-        }
-        .specs-mega-menu::-webkit-scrollbar{width:0;}
-        .specs-mega-sub::-webkit-scrollbar{width:2px;}
-        .specs-mega-sub::-webkit-scrollbar-track{background:#eee}
-        .specs-mega-sub::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
-        .specs-mega-sub::-webkit-scrollbar-thumb:hover{background:#F94E57;}
-        .specs-mega-menu li.specs-open .specs-mega-sub{
-            display: block;
-        }
     </style>
     <div class="configure-specs">
         <b class="ti-info-alt"></b>
@@ -139,21 +13,38 @@
     <div class="configure-specs-wrap">
         <div class="specs-wrap-inner d-flex justify-content-end h-100">
             <div class="specs-sidebar">
-                <ul class="specs-mega-menu">
+                <ul class="specs-mega-menu text-justify">
                     <div class="text-right m-3">
                         <span class="ti-close configure-specs-close"></span>
                     </div>
                     <li class="specs-open">
-                        <a href="#">Insert Type</a>
+                        <a href="#">Measure and Fit</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Measure and Fit</h3>
+                            <p>
+                            All of our custom closet doors are "<strong>True to Fit</strong>" which means we do all the calculations for you so that you get the proper fit.
+                            </p>
+                            <div class="specs-iframe-wrap mb-4">
+                                <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>
+                                Adjustability – Our bifold and sliders have
+                                adjustability built in. In most cases we can
+                                accommodate slightly larger or smaller openings but
+                                the real key to our adjustability is that we can
+                                accommodate out-of-square, not perfect openings
+                                by adjusting. 
+                            </p>   
+                            <p>
+                                Openings change over time due to settling,
+                                modifications, etc and in my experience 8 out of 10
+                                openings out there, especially in any house older
+                                than 50 yrs.
+                            </p>                    
                         </div>
                     </li>
                     <li>
-                        <a href="#">Frame Type</a>
+                        <a href="#">Bifold vs. Slider</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -162,7 +53,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Track and channel</a>
+                        <a href="#">Door Style</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -171,7 +62,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Product Details</a>
+                        <a href="#">Mirror Types</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -180,7 +71,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Insert Type</a>
+                        <a href="#">Trim/Track</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -189,7 +80,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Frame Type</a>
+                        <a href="#">Colors</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -198,7 +89,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Track and channel</a>
+                        <a href="#">Custom Sizes</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -207,7 +98,61 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Product Details</a>
+                        <a href="#">Panel Count</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Saddle & Flooring</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Jamb Bracket</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Triple Track Slider</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Handles</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Hardware</a>
+                        <div class="specs-mega-sub">
+                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
+                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Installation</a>
                         <div class="specs-mega-sub">
                             <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
                             <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
@@ -328,37 +273,90 @@
     </section>
 @endif
 @if(!$productData['product']->images->isEmpty())
-    <section class="configure-product-slider pl-0 pr-0 pt-5">
+    <section class="configure-product-slider py-5">
         <div class="container">
             <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
-            <div class="product-wallpaper-slider">
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+            <div class="product-wallpaper-slider my-1">
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Bifold Flush in Cherry</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/6_Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v3.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>8 Panel Bifold Flush in Espresso</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/7_Bifold-Flush-White-2_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Bifold Flush in White</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/10_Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_v3.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Slider Flush in Maple</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Bifold Mir-Mel</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>6 Panel Bifold Routed</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>3 Panel Slider Flush in Espresso</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Slider Mirror, Beveled</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>6 Panel Bifold Mirror</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Slider Mir-Mel</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Slider Routed</h3>
+                    </div>
+                </div>
             </div>
             <div class="content-section">
                 <div class="product-wallpaper-thumb">
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+                    <div class="slideshow-thumb" title="4 Panel Bifold Flush in Cherry"><img data-lazy="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/6_Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v3.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/7_Bifold-Flush-White-2_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/10_Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_v3.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/></div>
                 </div>
             </div>
         </div>
