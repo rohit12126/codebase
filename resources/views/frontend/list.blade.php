@@ -169,20 +169,14 @@
             </div>
             <div class="product-grid-tile-last">
                 <div class="product-grid-tile-inner">
-                    <h2 class="mb-3">Build with high quality material</h2>
-                    <p>
-                    Solid backing makes our door the strongest and most impact resistant door on the market
-                    </p>
+                    <h2>Solid backing makes our door the strongest and most impact resistant door on the market</h2>
                 </div>
             </div>
         </div>
         <div class="product-grid-container">   
             <div class="product-grid-tile-last">
                 <div class="product-grid-tile-inner">
-                    <h2 class="mb-3">Build with high quality material</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque unde eius quis enim deserunt rerum! Rerum, incidunt
-                    </p>
+                    <h2>Our patented TruClose™ hinges ensure that your doors close securely and stay closed</h2>
                 </div>
             </div>   
             <div class="product-grid-tile-first">
