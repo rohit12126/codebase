@@ -615,6 +615,18 @@
         width: 238px !important;
         right: -8% !important;
     }
+    .section-img-content, .section-text-wrapper h2, h2{
+        font-size: 24px;
+        line-height: 35px;
+    }
+    .product-slideshow-title-wrap{
+        text-align: center;
+        width: max-content;
+        padding: 6px 12px;
+    }
+    .product-slideshow-title-wrap>*{
+        font-size: 1rem;
+    }
 }
 @media(max-width:580px){
     #secondhotspotImg{
