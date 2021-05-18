@@ -203,7 +203,7 @@ class ProductManager
             $products = $products->where('category_id', $categoryId);
         }
         $products = $products->where('status', 1)
-            ->orderBy('id', 'DESC')
+            ->orderBy('sale_price')
             ->get()
             ->partition(function ($item) {
                 return $item->category_id != 1;
