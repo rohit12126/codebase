@@ -6,132 +6,6 @@
         body{
             overflow-x: hidden;
         }
-        .configure-specs{
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-100%);
-            background-color: #F94E57;
-            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
-            -moz-border-radius: 22px 0 0 22px;
-            -webkit-border-radius: 2px 0 0 22px;
-            border-radius: 22px 0 0 22px;
-            padding: 7px 7px 7px 10px;
-            height: 44px;
-            line-height: 44px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .configure-specs b{
-            font-size: 25px;
-            color: #fff;
-        }
-        .configure-specs-wrap{
-            background-color: #fff;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 800px;
-            height: 100vh;
-            transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            -moz-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            -webkit-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
-            z-index: 99;
-            box-shadow: 0 0 5px rgb(0 0 0 / 11%);
-        }
-        .specs-wrap-active{
-            right: 0;
-        }
-        .configure-specs-close{
-            font-weight: bold;
-            padding: 6px;
-            background-color: #F94E57;
-            color: #fff;
-            cursor: pointer;
-        }
-        .specs-sidebar{
-            border-left: 1px solid #ddd;
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            padding: 0;
-        }
-        .specs-mega-menu{
-            list-style: none;
-            height: 100%;
-            overflow-y: auto;            
-            border-left: 1px solid #ddd;
-        }
-        .specs-mega-menu li{
-            width: 100%;
-            min-width: 240px;
-            border-top: 1px solid #ddd;
-        }
-        .specs-mega-menu li:last-child{
-            border-bottom: 1px solid #ddd;
-        }
-        .specs-sidebar a{
-            height: 44px;
-            padding: 10px;
-            padding-left: 36px;
-            display: block;
-            box-sizing: border-box;
-            position: relative;
-            color: #212529;
-        }
-        .specs-sidebar a:before{
-            content: "\e61a";
-            font-family: 'themify';
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: 4px;
-            font-size: 0.625rem;
-            background-color: #000;
-            color: #fff;
-            position: absolute;
-            left: 0.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .specs-open a{
-            color: #fff;
-            background-color: #F94E57;
-        }
-        .specs-sidebar .specs-open a:before{
-            color: #F94E57;
-            background-color: #fff;
-        }
-        .specs-mega-sub{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: calc(100% - 240px);
-            height: 100%;
-            padding: 1rem;
-            overflow-y: auto;
-            display: none;
-        }
-        .specs-mega-menu::-webkit-scrollbar{width:0;}
-        .specs-mega-sub::-webkit-scrollbar{width:2px;}
-        .specs-mega-sub::-webkit-scrollbar-track{background:#eee}
-        .specs-mega-sub::-webkit-scrollbar-thumb{background:#F94E57;border-radius:30px}
-        .specs-mega-sub::-webkit-scrollbar-thumb:hover{background:#F94E57;}
-        .specs-mega-menu li.specs-open .specs-mega-sub{
-            display: block;
-        }
     </style>
     <div class="configure-specs">
         <b class="ti-info-alt"></b>
@@ -139,80 +13,388 @@
     <div class="configure-specs-wrap">
         <div class="specs-wrap-inner d-flex justify-content-end h-100">
             <div class="specs-sidebar">
-                <ul class="specs-mega-menu">
+                <ul class="specs-mega-menu text-justify">
                     <div class="text-right m-3">
                         <span class="ti-close configure-specs-close"></span>
                     </div>
                     <li class="specs-open">
-                        <a href="#">Insert Type</a>
+                        <a href="#">Measure and Fit</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Measure and Fit</h3>
+                            <p>
+                            All of our custom closet doors are "<strong>True to Fit</strong>" which means we do all the calculations for you so that you get the proper fit.
+                            </p>
+                            <div class="specs-iframe-wrap mb-4">
+                                <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>
+                                Adjustability – Our bifold and sliders have
+                                adjustability built in. In most cases we can
+                                accommodate slightly larger or smaller openings but
+                                the real key to our adjustability is that we can
+                                accommodate out-of-square, not perfect openings
+                                by adjusting. 
+                            </p>   
+                            <p>
+                                Openings change over time due to settling,
+                                modifications, etc and in my experience 8 out of 10
+                                openings out there, especially in any house older
+                                than 50 yrs.
+                            </p>                    
                         </div>
                     </li>
                     <li>
-                        <a href="#">Frame Type</a>
+                        <a href="#">Bifold vs. Slider</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Bifold vs. Slider</h3>
+                            <p>
+                                Why Bifold versus Slider – typically Sliders are
+                                used in hallways or tight spaces where there
+                                can be no swing of a door into the room.
+                            </p>
+                            <p>
+                                Bifolds have an advantage over regular doors
+                                as they are also designed to take up less space
+                                than a conventional door when it is swung into
+                                a room. 
+                            </p>
+                            <p>
+                                Bifolds also allow you more access to theclosets than Sliders.
+                            </p>
+                            <div class="row"> 
+                                <div class="col-6">
+                                    <h4>Features Bifold</h4>
+                                    <ul class="normal-ul text-left">
+                                        <li>Aluminum Tracks (not steel)</li>
+                                        <li>Lifetime Warranty Hardware</li>
+                                        <li>Heavy Feel Smooth Operation</li>
+                                        <li>Less swing than traditional doors</li>
+                                        <li>Reversible/many Configurations available to fit ALL openings.</li>
+                                        <li>Perfect for tighter spaces</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <h4>Features Slider</h4>
+                                    <ul class="normal-ul text-left">
+                                        <li>Aluminum Components</li>
+                                        <li>Lifetime Warranty Hardware</li>
+                                        <li>Heavy Feel, smooth Operation</li>
+                                        <li>BV and POL premium solid-backed</li>
+                                        <li>Framed –Moisture friendly door</li>
+                                        <li>Zero swing like in traditional doors</li>
+                                        <li>Perfect for tightest spaces.</li>
+                                        <li>Reversible/many Configurations available to fit ALL openings.</li>
+                                        <li>Triple track option available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table cellpadding="6" class="mt-4 text-left">
+                                <tr>
+                                    <td class="w-50">
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Image compression is under process</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sometimes a 6 panel unit is
+                                            required to fill an opening. It is
+                                            important to understand that this
+                                            unit will not completely open up
+                                            like an accordion. There will be
+                                            one set of doors that open away
+                                            from each other to form a large
+                                            opening and there will be one
+                                            single door that operates
+                                            independently.
+                                    </td>
+                                    <td valign="top">
+                                        For 3 panel sliders you can add a “triple track” to allow for a 2/3 size closet opening.
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Track and channel</a>
+                        <a href="#">Door Style</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Door Style</h3>
+                            <h5>Flush</h5>
+                            <ul class="normal-ul mb-3">
+                                <li>3/4” MDF</li>
+                                <li>Prefinished in White, Espresso, or Cherry</li>
+                                <li>Maintenance free, easy to clean</li>
+                                <li>Unfinished in Primed, Real Maple veneer</li>
+                                <li>Finish to match your decor</li>
+                            </ul>
+                            <h5>Mirror</h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Solid-backed
+                                    - Impact
+                                    resistant
+                                    mirror</li>
+                                    <li>Beveled or
+                                    Polished</li>
+                                    <li>Gasketed &
+                                    Safety
+                                    backed
+                                    mirror(Slider
+                                    only)</li>
+                                    <li>Frame and
+                                    gasket – edge
+                                    is covered</li>
+                            </ul>
+                            <h5>Mir-Mel </h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Framed Look</li>
+                                <li>Prefinished in</li>
+                                White,
+                                Espresso, or
+                                Cherry
+                                <li>Maintenance</li>
+                                free, easy to
+                                clean
+                                <li>Unfinished in</li>
+                                Primed, Real
+                                Maple veneer
+                                <li>Finish to match</li>
+                                your décor
+                                <li>Beveled Mirror</li>
+                                Mounted to ¾
+                                MDF
+                                <li>(exposed edge)</li>
+                            </ul> 
+                            <h5>Routed</h5>
+                            <ul class="normal-ul mb-3">
+                                <li>Match
+                                existing
+                                panel
+                                styles in
+                                your home</li>
+                                <li>or just add
+                                a little flair</li>
+                                <li>Primed
+                                and ready
+                                to paint to
+                                match
+                                decor</li>
+                            </ul>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Product Details</a>
+                        <a href="#">Mirror Types</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Mirror Types</h3>
+                            <p>
+                                Frameless style adds a touch of high-end luxury and modern appeal. Frame is behind the solidbacked mirror panel.
+                            </p>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Insert Type</a>
+                        <a href="#">Trim/Track</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Trim/Track</h3>
+                            <ul class="normal-ul mb-3">
+                                <li>
+                                    Extruded Aluminum allows for finer detail than steel
+                                </li>
+                                <li>
+                                    Corrosion Resistant
+                                </li>
+                            </ul>
+                            <p>
+                                <strong>
+                                    Competitor’s Bottom Track vs. Our Bottom Track
+                                </strong>
+                            </p>
+                            <p>
+                                <strong>
+                                    Competitor’s Top Track vs. Our Top Track
+                                </strong>
+                            </p>
+                            <p>
+                                <strong>Match your track and trim color to your existing décor</strong>
+                                <ul class="normal-ul mb-3">
+                                    <li>
+                                        Mirrors Panels available with Chrome or White
+                                    </li>
+                                    <li>
+                                        Color Panels available with Chrome or Matching
+                                    </li>
+                                </ul>
+                            </p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Frame Type</a>
+                        <a href="#">Colors</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Colors</h3>
+                            <p>
+                                For Flush and Mir-Mel frames, choose from the following colors:
+                            </p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Track and channel</a>
+                        <a href="#">Custom Sizes</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Custom Sizes</h3>
+                            <p>
+                                In the millwork industry, like many others, standards were developed many years ago that helped the industry mass produce products in order to keep the price low for builders and ultimately consumers. Good examples in other industries is the development of 12 oz cans for soda or 8-1/2” x 11” for paper. Other sizes are certainly available, but it usually will cost you more.
+                            </p>
+                            <p>
+                                The same applies for doors. If you can use a standard size, then you are going to save some money because we buy our materials in these standard sizes. If you can’t or don’t want to use a standard size, custom sizes are certainly available but it is going to cost a little more because we will need to make it special. There is extra materials and labor involved in making special sizes. The beauty of the CDM is door is that it CAN be made to any size to maximize your opening, however, if you (or your contractor) are building your opening from scratch, it will always be a less expensive option if it can be built to a standard size.
+                            </p>
+                            <p>
+                                See our standard sizes below.
+                            </p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Product Details</a>
+                        <a href="#">Panel Count</a>
                         <div class="specs-mega-sub">
-                            <img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt="">
-                            <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus veniam accusantium eligendi quibusdam, architecto expedita quia optio amet nulla neque vel reprehenderit sunt esse, porro blanditiis impedit provident! Repellat.</p>
+                            <h3 class="pt-2 heading_s3 text-center">Panel Count</h3>
+                            <p>
+                                <strong>Sliders:</strong> Typically, standard size doors are made with standard panel configurations. For example, a 48” x 80” will always be made in a 2- panel configuration. We do this to keep costs down and provide a consistent product across the industry. Sometimes larger doors or in-between standard sizes are available in different panel count options and are usually only limited by their weight.
+                            </p>
+                            <p>
+                                For example, a 96” wide slider can be made in either a 4-panel configuration or a 3-panel configuration. 
+                            </p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
+                            <p>
+                                This is a personal and/or design choice and you will want to consider the contents of your closet and the access you will need to have. For example, if it’s a his and hers type closet for a bedroom, where you would like equal access on both sides, then the 4-panel option might be a better option. Also remember that certain options will provide more access to your closet. A 2 or 4 panel sliding door will provide access to ½ of the closet when open whereas a 3 panel option will only give you access to 1/3 of the open closet at any time. The most access will be available if you choose a 3-panel slider with our optional triple track, you will have the MOST access possible with 2/3rds of the closet available at any time when fully open.
+                            </p>
+                            <p>
+                                <strong>Bifolds:</strong> The same applies to bifolds but just remember that these are not “accordian” type doors and the doors need to pivot from a fixed point. With 2 or 4 panel bifolds, you will get access to the entire closet. (the open door folded up takes up about 5-1/2” of space when folded and open) With 6 and 8 panel bifolds, you will have spots where the door will be open but still partially blocks full access.
+                            </p>
+                            <p>See our illustrations on how this looks and if it will work for you.</p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
+                            <p>If a CDM door is available in multiple configurations, you will notice the “panel count” option in the configurator will become populated with multiple choices. Just choose the panel count, or experiment with different panel counts, to make the unit that’s fits your style and needs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Saddle & Flooring</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Saddle & Flooring</h3>
+                            <p>
+                                For CDM bifold doors, they are available with or without our standard oak saddle. The saddle provides a finished look and can be stained or painted to match existing floor materials.
+                            </p>
+                            <p>
+                                The saddle provides a few benefits. These include an easier installation and it helps keep dust and other debris from going into the closet and also help keep your belongings inside the closet.
+                            </p>
+                            <p>If you have a carpet, or some type of flooring, like tile or laminate that runs into the closet and you don’t want to cover up with the saddle, then all CDM bifolds can be installed directly onto the floor. You will also want to consider that without the saddle, there will be an additional 5/8” gap between the floor and the bottom edge of the doors.</p>
+                            <p>For an additional charge we can elongate the panel to take up this difference of you choose to go without the saddle but this is a personal choice. Take a look at the doors around the rest of your house and you will notice the gaps at the bottoms and decide what would be best for your CDM closet door.</p>
+                            <p>See our “Flooring Materials Installation Chart” for different flooring options and which will work best for you.</p>
+                            <img class="mb-4" src="{{URL::asset('/images/configure/floor-chart.jpg')}}" alt="" style="max-height: auto;">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Jamb Bracket</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Jamb Bracket</h3>
+                            <p>
+                                If you have a flooring material that you can or don’t want to drill down into, like concrete, and you don’t want to use the saddle we have an alternative installation method using a jamb bracket.
+                            </p>
+                            <p>
+                                The jamb bracket is designed to mount into your wall or jamb rather than the floor.
+                            </p>
+                            <p>
+                                For an additional charge we can elongate the panel to take up this difference of you choose to go with the jamb bracket installation method but this is a personal choice. Take a look at the doors around the rest of your house and you will notice the gaps at the bottoms and decide what would be best for your CDM closet door. 
+                            </p>
+                            <p>
+                                See our “Flooring Materials Installation Chart” for different flooring options and which will work best for you.
+                            </p>
+                            <img class="mb-4" src="{{URL::asset('/images/configure/floor-chart.jpg')}}" alt="" style="max-height: auto;">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Triple Track Slider</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Triple Track Slider</h3>
+                            <p>
+                                Triple track is ideal for 3- panel applications because it allows more access to the closet.
+                            </p>
+                            <p>A typical 2 door or 4 door slider unit, when completely open, allows access to 50% (1/2)of your opening.</p>
+                            <p>When the triple track is employed with a 3 panel unit, it allows for access to a full 67% (2/3) of your opening</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Handles</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Handles</h3>
+                            <p>Our included low-profile handle is made of sturdy extruded aluminum and comes in either chrome or whjte depending on your track/trim choice</p>
+                            <p>Our premium handle (upcharge applies) is also extruded aluminum and is just a little bigger and beefier in case you have larger hands</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Hardware</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Hardware</h3>
+                            <ol class="my-3">
+                                <li>Our patented cam action hinges for smooth operation and a lifetime warranty</li>
+                                <li>Aligners for the double units keep the panels flush</li>
+                                <li>Patented bottom pivot is adjustable for outof-square applications</li>
+                                <li>Heavy-duty extruded aluminum components</li>
+                                <li>Heavy duty top pivots and rollers for smooth operation.</li>
+                                <li>Optional oak saddle makes installation a snap.</li>
+                            </ol>
+                            <ol class="my-3">
+                                <li>Heavy Duty extruded aluminum frame. Creates a strong and durable door.</li>
+                                <li>Ball-bearing rollers have a lifetime warranty. Enjoy years of flawless and ultra-smooth use. Adjustable so that the doors can be customized to fit any variations in your opening.</li>
+                                <li>Solid backing makes our door the strongest and most impact resistant door on the market</li>
+                            </ol>
+                            <p>
+                                Adjustability – Our bifold and sliders have adjustability built in. In most cases we can accommodate slightly larger or smaller openings but the real key to our adjustability is that we can accommodate out-of-square, not perfect openings by adjusting.
+                            </p>
+                            <p>
+                                Openings change over time due to settling, modifications, etc and in my experience 8 out of 10 openings out there, especially in any house older than 50 yrs.
+                            </p>
+                            <p>One of the benefits of our solid-backed mirrors (beveled or polished) is that they are impact resistant and can handle the punishment of heavy use. The video below actually shows us hitting them with hammers, and they can take the punishment.</p>
+                            <div class="text-center py-5">
+                                <strong>Image compression is under process</strong>
+                            </div>
+                            <p>Our framed slider is a little different construction and used a category 3 safety-backed mirror and although is safe, will not take the hammer or baseball punishment that our solid-backed (beveled or polished) door can take. Or framed sliders also have a rubber gasket that holds the glass nice and tight in the frame and will not rattle when operated like some of our cheaper competitors do.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Installation</a>
+                        <div class="specs-mega-sub">
+                            <h3 class="pt-2 heading_s3 text-center">Installation</h3>
+                            <p>
+                                Installation of CDM closet doors is pretty easy and your level of experience, tools, and door configuration will help dictate whether you will want to do this yourself or hire an installer. Watch our installation videos here for the door type you are interested in and you can decide for yourself if you want to tackle it yourself or hire someone to do it for you.
+                            </p>
+                            <div class="specs-iframe-wrap mb-4">
+                                <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -328,37 +510,90 @@
     </section>
 @endif
 @if(!$productData['product']->images->isEmpty())
-    <section class="configure-product-slider pl-0 pr-0 pt-5">
+    <section class="configure-product-slider py-5">
         <div class="container">
             <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
-            <div class="product-wallpaper-slider">
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                <div class="product-slideshow"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+            <div class="product-wallpaper-slider my-1">
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Bifold Flush in Cherry</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/6_Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v3.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>8 Panel Bifold Flush in Espresso</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/7_Bifold-Flush-White-2_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Bifold Flush in White</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/10_Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_v3.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Slider Flush in Maple</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Bifold Mir-Mel</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>6 Panel Bifold Routed</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>3 Panel Slider Flush in Espresso</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Slider Mirror, Beveled</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>6 Panel Bifold Mirror</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>4 Panel Slider Mir-Mel</h3>
+                    </div>
+                </div>
+                <div class="product-slideshow pb-3">
+                    <img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/>
+                    <div class="product-slideshow-title-wrap">
+                        <h3>2 Panel Slider Routed</h3>
+                    </div>
+                </div>
             </div>
             <div class="content-section">
                 <div class="product-wallpaper-thumb">
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-cherry-4-panel,-cherry-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Flush-White-2-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_V2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Framed,-3-panel,-2-track,-chrome-trim_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""></div>
-                    <div class="slideshow-thumb"><img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""></div>
+                    <div class="slideshow-thumb" title="4 Panel Bifold Flush in Cherry"><img data-lazy="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/6_Bifold-Flush-Espresso-8-panel,-chrome-trim,-saddle_v3.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/7_Bifold-Flush-White-2_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/10_Slider-Flush,-Maple,-4-panel,-3-track,-chrome-trim_v3.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-Mirmel,-Maple-4-panel,-maple-trim,-saddle_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Bifold-routed,-6-panel,-white-trim,-saddle.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Flush,-espresso-3-panel,-2-track,-espresso-trim.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_bifold_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/></div>
+                    <div class="slideshow-thumb"><img data-lazy="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/></div>
                 </div>
             </div>
         </div>
@@ -600,14 +835,14 @@ $(document).ready(function(){
     $(".specs-mega-menu a").click(function(e){
         e.preventDefault();
     });
-    $(".specs-mega-menu li").hover(            
+    $(".specs-mega-menu>li").hover(            
         function(){ 
-            $('.specs-mega-menu li').removeClass('specs-open');
+            $('.specs-mega-menu>li').removeClass('specs-open');
             $(this).addClass('specs-open');
         },
         function(){ 
             $(this).removeClass('specs-open');
-            $('.specs-mega-menu li:nth-child(2)').addClass('specs-open');
+            $('.specs-mega-menu>li:nth-child(2)').addClass('specs-open');
         }
     );
 });
