@@ -8481,6 +8481,7 @@ h5 {
 		height: 100%;
 		overflow-y: auto;            
 		border-left: 1px solid #ddd;
+        padding-top: 44px;
 	}
 	.specs-mega-menu>li{
 		width: 100%;
@@ -8573,6 +8574,22 @@ h5 {
 	.normal-ul{
 		list-style: disc;
 		padding-left:1.25rem;
+	}
+	.info-close-wrap{
+		justify-content: flex-end;
+		background: #fff;
+		width: 100%;
+        z-index: 999;
+		border-bottom: 1px solid #ddd;
+		max-width: 240px;
+	}
+    .info-close-wrap.icw{
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+	.specs-mega-back{
+		color: #00436b;
 	}
 	@media(min-width:1200px){
 		.configure-specs{

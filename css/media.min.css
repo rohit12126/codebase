@@ -410,6 +410,54 @@
     .dashboard_content{
         padding: 0;
     }
+    /* =================== Configure Infotabs ======================= */
+    .specs-sidebar{
+        max-width: 100vw;
+        overflow-x: hidden;
+        border-left: 0;
+    }
+    .info-close-wrap{
+        max-width: 100%;
+    }
+    .specs-mega-menu{
+        width: 100%;
+        border-left: 0;
+        padding-top: 44px;
+    }
+    .specs-mega-menu>li{
+        width: 100%;
+    }
+    .specs-mega-sub{
+        position: absolute;
+        width: 100%;
+        z-index: 99;
+        background-color: #fff;
+        right: -100%;
+        left: auto;
+        padding-top: 50px;
+        transition: all 0.4s;
+        display: block;
+    }
+    .specs-open .specs-mega-sub{
+        right: 0%;
+    }
+    .specs-sidebar a{
+        padding-left: 16px;
+    }
+    .specs-sidebar a:before,.specs-open a:before{
+        content: "\e649";
+    }
+    .specs-sidebar a:before{
+        background-color: transparent;
+        color: #000;
+        right: 1.05rem;
+        left: auto;
+        font-size: 1.2rem;
+    }
+    .specs-sidebar .specs-open a:before{
+        color: #fff;
+        background-color: transparent;
+    }
 }
 @media (min-width: 576px){
     

@@ -14,7 +14,8 @@
         <div class="specs-wrap-inner d-flex justify-content-end h-100">
             <div class="specs-sidebar">
                 <ul class="specs-mega-menu text-justify">
-                    <div class="text-right m-3">
+                    <div class="d-flex info-close-wrap py-2 px-3">
+                        <span class="d-md-none mr-auto invisible specs-mega-back">&lt;&nbsp; Back to overview</span>
                         <span class="ti-close configure-specs-close"></span>
                     </div>
                     <li class="specs-open">
@@ -183,18 +184,9 @@
                             </ul> 
                             <h5>Routed</h5>
                             <ul class="normal-ul mb-3">
-                                <li>Match
-                                existing
-                                panel
-                                styles in
-                                your home</li>
-                                <li>or just add
-                                a little flair</li>
-                                <li>Primed
-                                and ready
-                                to paint to
-                                match
-                                decor</li>
+                                <li>Match existing panel styles in your home</li>
+                                <li>or just add a little flair</li>
+                                <li>Primed and ready to paint to match decor</li>
                             </ul>
                         </div>
                     </li>
@@ -824,10 +816,12 @@
 
 <script>
     $('.configure-specs').on("click", function(){
-        $('.configure-specs-wrap').toggleClass('specs-wrap-active')
+        $('.configure-specs-wrap').toggleClass('specs-wrap-active');
+        $('.configure-specs-close').parent().addClass('icw');
     });
     $('.configure-specs-close').on("click", function(){
-        $('.configure-specs-wrap').toggleClass('specs-wrap-active')
+        $('.configure-specs-wrap').toggleClass('specs-wrap-active');
+        $(this).parent().removeClass('icw');
     });
 </script>
 <script>
@@ -845,6 +839,19 @@ $(document).ready(function(){
             $('.specs-mega-menu>li:nth-child(2)').addClass('specs-open');
         }
     );
+    var docWidth = $(document).width();
+    $(window).on('resize', function(){
+        var docWidth = $(document).width();
+    });
+    if(docWidth < 767){
+        $('.specs-mega-menu>li').removeClass('specs-open');
+        $('.specs-mega-menu>li').hasClass('specs-open'){
+            $('.specs-mega-back').removeClass('invisible');
+        }
+        /*$('.specs-mega-back').on('click', function(){
+            $('.specs-mega-menu>li').removeClass('specs-open');
+        }); */
+    }
 });
 </script>
 @endsection
