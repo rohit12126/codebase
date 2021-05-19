@@ -198,6 +198,7 @@
 </script>
 <script>
     $('.product-wallpaper-slider').slick({
+        lazyLoad: 'ondemand',
         autoplay: false,
         arrows: true,
         speed: 1000,
@@ -210,12 +211,13 @@
         lazyLoad: 'progressive'
     });
     $('.product-wallpaper-thumb').slick({
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    asNavFor: '.product-wallpaper-slider',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true,
+        lazyLoad: 'ondemand',
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.product-wallpaper-slider',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
         responsive: [
             {
             breakpoint: 991,

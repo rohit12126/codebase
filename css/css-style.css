@@ -8556,6 +8556,9 @@ h5 {
 	.specs-mega-sub .heading_s3::before{
 		height: 2px;
 	}
+	.specs-mega-sub ol{
+		padding-left: 24px;
+	}
 	.specs-iframe-wrap{
 		position: relative;
 		max-width: 100%;

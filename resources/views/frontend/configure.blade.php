@@ -63,9 +63,9 @@
                                 Bifolds also allow you more access to theclosets than Sliders.
                             </p>
                             <div class="row"> 
-                                <div class="col-6">
+                                <div class="col-sm-6 order-sm-0">
                                     <h4>Features Bifold</h4>
-                                    <ul class="normal-ul text-left">
+                                    <ul class="normal-ul text-left mb-2">
                                         <li>Aluminum Tracks (not steel)</li>
                                         <li>Lifetime Warranty Hardware</li>
                                         <li>Heavy Feel Smooth Operation</li>
@@ -74,9 +74,27 @@
                                         <li>Perfect for tighter spaces</li>
                                     </ul>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-sm-6 order-sm-2">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/bifold.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-4">
+                                    <p class="mb-2">
+                                        Bifolds provide nearly full access to whole closet
+                                    </p>
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/bifold-open-single.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-6">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/bifold-open.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-8">
+                                    <p class="mb-2">
+                                        Sometimes a 6 panel unit is required to fill an opening. It is important to understand that this unit will not completely open up like an accordion. There will be one set of doors that open away from each other to form a large opening and there will be one single door that operates independently.
+                                    </p>
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/bifold-6.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-1">
                                     <h4>Features Slider</h4>
-                                    <ul class="normal-ul text-left">
+                                    <ul class="normal-ul text-left mb-2">
                                         <li>Aluminum Components</li>
                                         <li>Lifetime Warranty Hardware</li>
                                         <li>Heavy Feel, smooth Operation</li>
@@ -88,106 +106,90 @@
                                         <li>Triple track option available</li>
                                     </ul>
                                 </div>
-                            </div>
-                            <table cellpadding="6" class="mt-4 text-left">
-                                <tr>
-                                    <td class="w-50">
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                    <td>
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                    <td>
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                    <td>
-                                        <strong>Image compression is under process</strong>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sometimes a 6 panel unit is
-                                            required to fill an opening. It is
-                                            important to understand that this
-                                            unit will not completely open up
-                                            like an accordion. There will be
-                                            one set of doors that open away
-                                            from each other to form a large
-                                            opening and there will be one
-                                            single door that operates
-                                            independently.
-                                    </td>
-                                    <td valign="top">
+                                <div class="col-sm-6 order-sm-3">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/2-track-mirror-slider-closed.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-5">
+                                    <p class="mb-2">
+                                        Bifolds provide nearly full access to whole closet
+                                    </p>
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-left.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-7">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-right.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6 order-sm-9">
+                                    <p class="mb-2">
                                         For 3 panel sliders you can add a “triple track” to allow for a 2/3 size closet opening.
-                                    </td>
-                                </tr>
-                            </table>
+                                    </p>
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/slider-3.jpg')}}" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <a href="#">Door Style</a>
                         <div class="specs-mega-sub">
                             <h3 class="pt-2 heading_s3 text-center">Door Style</h3>
-                            <h5>Flush</h5>
-                            <ul class="normal-ul mb-3">
-                                <li>3/4” MDF</li>
-                                <li>Prefinished in White, Espresso, or Cherry</li>
-                                <li>Maintenance free, easy to clean</li>
-                                <li>Unfinished in Primed, Real Maple veneer</li>
-                                <li>Finish to match your decor</li>
-                            </ul>
-                            <h5>Mirror</h5>
-                            <ul class="normal-ul mb-3">
-                                <li>Solid-backed
-                                    - Impact
-                                    resistant
-                                    mirror</li>
-                                    <li>Beveled or
-                                    Polished</li>
-                                    <li>Gasketed &
-                                    Safety
-                                    backed
-                                    mirror(Slider
-                                    only)</li>
-                                    <li>Frame and
-                                    gasket – edge
-                                    is covered</li>
-                            </ul>
-                            <h5>Mir-Mel </h5>
-                            <ul class="normal-ul mb-3">
-                                <li>Framed Look</li>
-                                <li>Prefinished in</li>
-                                White,
-                                Espresso, or
-                                Cherry
-                                <li>Maintenance</li>
-                                free, easy to
-                                clean
-                                <li>Unfinished in</li>
-                                Primed, Real
-                                Maple veneer
-                                <li>Finish to match</li>
-                                your décor
-                                <li>Beveled Mirror</li>
-                                Mounted to ¾
-                                MDF
-                                <li>(exposed edge)</li>
-                            </ul> 
-                            <h5>Routed</h5>
-                            <ul class="normal-ul mb-3">
-                                <li>Match existing panel styles in your home</li>
-                                <li>or just add a little flair</li>
-                                <li>Primed and ready to paint to match decor</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <h5>Flush</h5>
+                                    <ul class="normal-ul mb-3">
+                                        <li>3/4” MDF</li>
+                                        <li>Prefinished in White, Espresso, or Cherry</li>
+                                        <li>Maintenance free, easy to clean</li>
+                                        <li>Unfinished in Primed, Real Maple veneer</li>
+                                        <li>Finish to match your decor</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <h5>Mirror</h5>
+                                    <ul class="normal-ul mb-3">
+                                        <li>Solid-backed - Impact resistant mirror</li>
+                                        <li>Beveled or Polished</li>
+                                        <li>Gasketed & Safety backed mirror(Slider only)</li>
+                                        <li>Frame and gasket – edge is covered</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <h5>Mir-Mel </h5>
+                                    <ul class="normal-ul mb-3">
+                                        <li>Framed Look</li>
+                                        <li>Prefinished in White, Espresso, or Cherry</li>
+                                        <li>Maintenance free, easy to clean</li>
+                                        <li>Unfinished in Primed, Real Maple veneer</li>
+                                        <li>Finish to match your décor</li>
+                                        <li>Beveled Mirror Mounted to ¾ MDF</li>
+                                        <li>(exposed edge)</li>
+                                    </ul> 
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <h5>Routed</h5>
+                                    <ul class="normal-ul mb-3">
+                                        <li>Match existing panel styles in your home</li>
+                                        <li>or just add a little flair</li>
+                                        <li>Primed and ready to paint to match decor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row m-0">
+                                <div class="col-3 p-0">
+                                    <img src="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/>
+                                </div>
+                            </div> 
                         </div>
                     </li>
                     <li>
@@ -306,7 +308,7 @@
                             <p>If you have a carpet, or some type of flooring, like tile or laminate that runs into the closet and you don’t want to cover up with the saddle, then all CDM bifolds can be installed directly onto the floor. You will also want to consider that without the saddle, there will be an additional 5/8” gap between the floor and the bottom edge of the doors.</p>
                             <p>For an additional charge we can elongate the panel to take up this difference of you choose to go without the saddle but this is a personal choice. Take a look at the doors around the rest of your house and you will notice the gaps at the bottoms and decide what would be best for your CDM closet door.</p>
                             <p>See our “Flooring Materials Installation Chart” for different flooring options and which will work best for you.</p>
-                            <img class="mb-4" src="{{URL::asset('/images/configure/floor-chart.jpg')}}" alt="" style="max-height: auto;">
+                            <img class="mb-4" src="{{URL::asset('/images/configure/floor-chart.jpg')}}" alt="">
                         </div>
                     </li>
                     <li>
@@ -793,6 +795,7 @@
 </script>
 <script>
     $('.product-wallpaper-slider').slick({
+        lazyLoad: 'ondemand',
         autoplay: false,
         arrows: true,
         speed: 1000,
@@ -805,13 +808,34 @@
         lazyLoad: 'progressive'
     });
     $('.product-wallpaper-thumb').slick({
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    asNavFor: '.product-wallpaper-slider',
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true
+        lazyLoad: 'ondemand',
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.product-wallpaper-slider',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+            }
+        ]
     });
+    var widthGet = $(".slideshow-thumb").width();
+    $(".slideshow-thumb").height(widthGet);
 </script>
 
 <script>
@@ -842,6 +866,24 @@ $(document).ready(function(){
     var docWidth = $(document).width();
     $(window).on('resize', function(){
         var docWidth = $(document).width();
+        if(docWidth < 767){
+            $('.specs-mega-menu>li').removeClass('specs-open');
+            $(".specs-mega-menu>li").on("click", function(){
+                $('.specs-mega-back').removeClass('invisible');
+            });
+            $(".specs-mega-back").on("click", function(){
+                $('.specs-mega-menu>li').removeClass('specs-open');
+                $(this).addClass('invisible');
+            });
+            $('.configure-specs').on("click", function(){
+                $('body').addClass('overflow-hidden');
+            });
+            $('.configure-specs-close').on("click", function(){
+                $('.specs-mega-menu>li').removeClass('specs-open');
+                $('.specs-mega-back').addClass('invisible');
+                $('body').removeClass('overflow-hidden');
+            });
+        }
     });
     if(docWidth < 767){
         $('.specs-mega-menu>li').removeClass('specs-open');
@@ -851,6 +893,14 @@ $(document).ready(function(){
         $(".specs-mega-back").on("click", function(){
             $('.specs-mega-menu>li').removeClass('specs-open');
             $(this).addClass('invisible');
+        });
+        $('.configure-specs').on("click", function(){
+            $('body').addClass('overflow-hidden');
+        });
+        $('.configure-specs-close').on("click", function(){
+            $('.specs-mega-menu>li').removeClass('specs-open');
+            $('.specs-mega-back').addClass('invisible');
+            $('body').removeClass('overflow-hidden');
         });
     }
 });
