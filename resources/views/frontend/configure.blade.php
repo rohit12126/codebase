@@ -845,12 +845,13 @@ $(document).ready(function(){
     });
     if(docWidth < 767){
         $('.specs-mega-menu>li').removeClass('specs-open');
-        $('.specs-mega-menu>li').hasClass('specs-open'){
+        $(".specs-mega-menu>li").on("click", function(){
             $('.specs-mega-back').removeClass('invisible');
-        }
-        /*$('.specs-mega-back').on('click', function(){
+        });
+        $(".specs-mega-back").on("click", function(){
             $('.specs-mega-menu>li').removeClass('specs-open');
-        }); */
+            $(this).addClass('invisible');
+        });
     }
 });
 </script>
