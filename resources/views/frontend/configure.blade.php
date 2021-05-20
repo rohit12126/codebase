@@ -136,7 +136,7 @@
                             <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Door Style</h3></div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3">
-                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/flush-style-door.jpg')}}">
+                                    <a data-fancybox="infotab" href="{{URL::asset('/images/configure/flush-style-door.jpg')}}">
                                         <img class="mb-3 d-block" src="{{URL::asset('/images/configure/flush-style-door.jpg')}}" alt="">
                                     </a>
                                     <h5>Flush</h5>
@@ -149,7 +149,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/mirror-style-door.jpg')}}">
+                                    <a data-fancybox="infotab" href="{{URL::asset('/images/configure/mirror-style-door.jpg')}}">
                                         <img class="mb-3 d-block" src="{{URL::asset('/images/configure/mirror-style-door.jpg')}}" alt="">
                                     </a>
                                     <h5>Mirror</h5>
@@ -161,7 +161,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/mirmel-style-door.jpg')}}">
+                                    <a data-fancybox="infotab" href="{{URL::asset('/images/configure/mirmel-style-door.jpg')}}">
                                         <img class="mb-3 d-block" src="{{URL::asset('/images/configure/mirmel-style-door.jpg')}}" alt="">
                                     </a>
                                     <h5>Mir-Mel </h5>
@@ -176,7 +176,7 @@
                                     </ul> 
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/routed-style-door.jpg')}}">
+                                    <a data-fancybox="infotab" href="{{URL::asset('/images/configure/routed-style-door.jpg')}}">
                                         <img class="mb-3 d-block" src="{{URL::asset('/images/configure/routed-style-door.jpg')}}" alt="">
                                     </a>
                                     <h5>Routed</h5>
@@ -187,19 +187,19 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row m-0">
-                                <div class="col-3 p-0">
+                            <div class="door-style-wrap">
+                                <a href="javascript:void(0)" class="door-style-grid">
                                     <img src="{{URL::asset('/images/slides/5_Bifold-Flush-cherry-4-panel,-cherry-trim_v2.jpg')}}" alt=""/>
-                                </div>
-                                <div class="col-3 p-0">
+                                </a>
+                                <a href="javascript:void(0)" class="door-style-grid">
                                     <img src="{{URL::asset('/images/slides/Slider-Mirror-beveled_v2.jpg')}}" alt=""/>
-                                </div>
-                                <div class="col-3 p-0">
+                                </a>
+                                <a href="javascript:void(0)" class="door-style-grid">
                                     <img src="{{URL::asset('/images/slides/closed3_slider_v2.jpg')}}" alt=""/>
-                                </div>
-                                <div class="col-3 p-0">
+                                </a>
+                                <a href="javascript:void(0)" class="door-style-grid">
                                     <img src="{{URL::asset('/images/slides/Slider-routed,-2-panel,-white-trim.jpg')}}" alt=""/>
-                                </div>
+                                </a>
                             </div> 
                         </div>
                     </li>
@@ -210,6 +210,26 @@
                             <p>
                                 Frameless style adds a touch of high-end luxury and modern appeal. Frame is behind the solidbacked mirror panel.
                             </p>
+                            <div class="row my-3 justify-content-center">
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-2 d-block" src="{{URL::asset('/images/configure/beveled.jpg')}}" alt="">
+                                    <p>
+                                        Beveled edge provides that elegant look
+                                    </p>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-2 d-block" src="{{URL::asset('/images/configure/polished.jpg')}}" alt="">
+                                    <p>
+                                        Polished edge provides a more contemporary look
+                                    </p>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <img class="mb-2 d-block" src="{{URL::asset('/images/configure/framed.jpg')}}" alt="">
+                                    <p>
+                                        Framed edge provides a border for the mirror
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -867,6 +887,7 @@ $(document).ready(function(){
     $(".specs-mega-menu>li").on("click", function(){          
         $(".specs-mega-menu>li").removeClass('specs-open');
         $(this).addClass('specs-open');
+        $('[data-fancybox="infotab"]').fancybox();
     });
     var docWidth = $(document).width();
     $(window).on('resize', function(){
