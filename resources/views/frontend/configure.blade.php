@@ -9,6 +9,9 @@
     </style>
     <div class="configure-specs">
         <b class="ti-info-alt"></b>
+        <div class="specs-btn-text">
+            Click here to <br> learn more.
+        </div>
     </div>
     <div class="configure-specs-wrap">
         <div class="specs-wrap-inner d-flex justify-content-end h-100">
@@ -19,9 +22,9 @@
                         <span class="ti-close configure-specs-close"></span>
                     </div>
                     <li class="specs-open">
-                        <a href="#">Measure and Fit</a>
+                        <a href="#" class="specs-link">Measure and Fit</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Measure and Fit</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Measure and Fit</h3></div>
                             <p>
                             All of our custom closet doors are "<strong>True to Fit</strong>" which means we do all the calculations for you so that you get the proper fit.
                             </p>
@@ -45,9 +48,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Bifold vs. Slider</a>
+                        <a href="#" class="specs-link">Bifold vs. Slider</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Bifold vs. Slider</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Bifold vs. Slider</h3></div>
                             <p>
                                 Why Bifold versus Slider – typically Sliders are
                                 used in hallways or tight spaces where there
@@ -128,12 +131,14 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Door Style</a>
+                        <a href="#" class="specs-link">Door Style</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Door Style</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Door Style</h3></div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3">
-                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/flush-style-door.jpg')}}">
+                                        <img class="mb-3 d-block" src="{{URL::asset('/images/configure/flush-style-door.jpg')}}" alt="">
+                                    </a>
                                     <h5>Flush</h5>
                                     <ul class="normal-ul mb-3">
                                         <li>3/4” MDF</li>
@@ -144,7 +149,9 @@
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/mirror-style-door.jpg')}}">
+                                        <img class="mb-3 d-block" src="{{URL::asset('/images/configure/mirror-style-door.jpg')}}" alt="">
+                                    </a>
                                     <h5>Mirror</h5>
                                     <ul class="normal-ul mb-3">
                                         <li>Solid-backed - Impact resistant mirror</li>
@@ -154,7 +161,9 @@
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/mirmel-style-door.jpg')}}">
+                                        <img class="mb-3 d-block" src="{{URL::asset('/images/configure/mirmel-style-door.jpg')}}" alt="">
+                                    </a>
                                     <h5>Mir-Mel </h5>
                                     <ul class="normal-ul mb-3">
                                         <li>Framed Look</li>
@@ -167,7 +176,9 @@
                                     </ul> 
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <img class="mb-3 d-block" src="{{URL::asset('/images/configure/jpg')}}" alt="">
+                                    <a data-fancybox="gallery" href="{{URL::asset('/images/configure/routed-style-door.jpg')}}">
+                                        <img class="mb-3 d-block" src="{{URL::asset('/images/configure/routed-style-door.jpg')}}" alt="">
+                                    </a>
                                     <h5>Routed</h5>
                                     <ul class="normal-ul mb-3">
                                         <li>Match existing panel styles in your home</li>
@@ -193,18 +204,18 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Mirror Types</a>
+                        <a href="#" class="specs-link">Mirror Types</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Mirror Types</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Mirror Types</h3></div>
                             <p>
                                 Frameless style adds a touch of high-end luxury and modern appeal. Frame is behind the solidbacked mirror panel.
                             </p>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Trim/Track</a>
+                        <a href="#" class="specs-link">Trim/Track</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Trim/Track</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Trim/Track</h3></div>
                             <ul class="normal-ul mb-3">
                                 <li>
                                     Extruded Aluminum allows for finer detail than steel
@@ -234,27 +245,27 @@
                                     </li>
                                 </ul>
                             </p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
+                            <div class="text-center py-3">
+                                <img src="{{URL::asset('/images/configure/color-chart.jpg')}}" alt=""/>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Colors</a>
+                        <a href="#" class="specs-link">Colors</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Colors</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Colors</h3></div>
                             <p>
                                 For Flush and Mir-Mel frames, choose from the following colors:
                             </p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
+                            <div class="text-center py-3">
+                            <img src="{{URL::asset('/images/configure/color-chart.jpg')}}" alt=""/>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Custom Sizes</a>
+                        <a href="#" class="specs-link">Custom Sizes</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Custom Sizes</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Custom Sizes</h3></div>
                             <p>
                                 In the millwork industry, like many others, standards were developed many years ago that helped the industry mass produce products in order to keep the price low for builders and ultimately consumers. Good examples in other industries is the development of 12 oz cans for soda or 8-1/2” x 11” for paper. Other sizes are certainly available, but it usually will cost you more.
                             </p>
@@ -270,9 +281,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Panel Count</a>
+                        <a href="#" class="specs-link">Panel Count</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Panel Count</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Panel Count</h3></div>
                             <p>
                                 <strong>Sliders:</strong> Typically, standard size doors are made with standard panel configurations. For example, a 48” x 80” will always be made in a 2- panel configuration. We do this to keep costs down and provide a consistent product across the industry. Sometimes larger doors or in-between standard sizes are available in different panel count options and are usually only limited by their weight.
                             </p>
@@ -296,9 +307,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Saddle & Flooring</a>
+                        <a href="#" class="specs-link">Saddle & Flooring</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Saddle & Flooring</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Saddle & Flooring</h3></div>
                             <p>
                                 For CDM bifold doors, they are available with or without our standard oak saddle. The saddle provides a finished look and can be stained or painted to match existing floor materials.
                             </p>
@@ -312,9 +323,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Jamb Bracket</a>
+                        <a href="#" class="specs-link">Jamb Bracket</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Jamb Bracket</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Jamb Bracket</h3></div>
                             <p>
                                 If you have a flooring material that you can or don’t want to drill down into, like concrete, and you don’t want to use the saddle we have an alternative installation method using a jamb bracket.
                             </p>
@@ -331,9 +342,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Triple Track Slider</a>
+                        <a href="#" class="specs-link">Triple Track Slider</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Triple Track Slider</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Triple Track Slider</h3></div>
                             <p>
                                 Triple track is ideal for 3- panel applications because it allows more access to the closet.
                             </p>
@@ -342,17 +353,17 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Handles</a>
+                        <a href="#" class="specs-link">Handles</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Handles</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Handles</h3></div>
                             <p>Our included low-profile handle is made of sturdy extruded aluminum and comes in either chrome or whjte depending on your track/trim choice</p>
                             <p>Our premium handle (upcharge applies) is also extruded aluminum and is just a little bigger and beefier in case you have larger hands</p>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Hardware</a>
+                        <a href="#" class="specs-link">Hardware</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Hardware</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Hardware</h3></div>
                             <ol class="my-3">
                                 <li>Our patented cam action hinges for smooth operation and a lifetime warranty</li>
                                 <li>Aligners for the double units keep the panels flush</li>
@@ -380,9 +391,9 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Installation</a>
+                        <a href="#" class="specs-link">Installation</a>
                         <div class="specs-mega-sub">
-                            <h3 class="pt-2 heading_s3 text-center">Installation</h3>
+                            <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Installation</h3></div>
                             <p>
                                 Installation of CDM closet doors is pretty easy and your level of experience, tools, and door configuration will help dictate whether you will want to do this yourself or hire an installer. Watch our installation videos here for the door type you are interested in and you can decide for yourself if you want to tackle it yourself or hire someone to do it for you.
                             </p>
@@ -853,16 +864,10 @@ $(document).ready(function(){
     $(".specs-mega-menu a").click(function(e){
         e.preventDefault();
     });
-    $(".specs-mega-menu>li").hover(            
-        function(){ 
-            $('.specs-mega-menu>li').removeClass('specs-open');
-            $(this).addClass('specs-open');
-        },
-        function(){ 
-            $(this).removeClass('specs-open');
-            $('.specs-mega-menu>li:nth-child(2)').addClass('specs-open');
-        }
-    );
+    $(".specs-mega-menu>li").on("click", function(){          
+        $(".specs-mega-menu>li").removeClass('specs-open');
+        $(this).addClass('specs-open');
+    });
     var docWidth = $(document).width();
     $(window).on('resize', function(){
         var docWidth = $(document).width();

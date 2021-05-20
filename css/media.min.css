@@ -434,29 +434,32 @@
         background-color: #fff;
         right: -100%;
         left: auto;
-        padding-top: 50px;
+        padding-top: 45px;
         transition: all 0.4s;
         display: block;
     }
     .specs-open .specs-mega-sub{
         right: 0%;
     }
-    .specs-sidebar a{
+    .specs-sidebar .specs-link{
         padding-left: 16px;
     }
-    .specs-sidebar a:before,.specs-open a:before{
+    .specs-sidebar .specs-link:before,.specs-open .specs-link:before{
         content: "\e649";
     }
-    .specs-sidebar a:before{
+    .specs-sidebar .specs-link:before{
         background-color: transparent;
         color: #000;
         right: 1.05rem;
         left: auto;
         font-size: 1.2rem;
     }
-    .specs-sidebar .specs-open a:before{
+    .specs-sidebar .specs-open .specs-link:before{
         color: #fff;
         background-color: transparent;
+    }
+    .specs-heading-wrap{
+        margin-top: 0;
     }
 }
 @media (min-width: 576px){

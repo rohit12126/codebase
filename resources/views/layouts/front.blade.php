@@ -605,7 +605,7 @@ footer-->
                 scrollIt(x);
             });
             function scrollIt(x){
-                let transform = Math.max(5,(Math.min(x,document.querySelector(wrapper).offsetWidth-20)));
+                let transform = Math.max(8,(Math.min(x,document.querySelector(wrapper).offsetWidth-20)));
                 document.querySelector(wrapper).querySelector('.after').style.width = transform+"px";
                 document.querySelector(className).style.left = transform+"px";
             }

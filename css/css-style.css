@@ -8142,7 +8142,7 @@ h5 {
 		content: " ";
 		display: block;
 		width: 15px;
-		height: 100vh;
+		height: 200px;
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
@@ -8423,15 +8423,15 @@ h5 {
 		top: 50%;
 		transform: translateY(-100%);
 		background-color: #00436b;
-		box-shadow: 0 0 5px rgb(0 0 0 / 11%);
-		-moz-border-radius: 22px 0 0 22px;
-		-webkit-border-radius: 22px 0 0 22px;
-		border-radius: 22px 0 0 22px;
-		padding: 7px 7px 7px 10px;
-		height: 44px;
-		line-height: 44px;
+		box-shadow: 0 3px 6px rgb(0 67 107 / 16%), 0 3px 6px rgb(0 67 107 / 23%);
+		-moz-border-radius: 6px 0 0 6px;
+		-webkit-border-radius: 6px 0 0 6px;
+		border-radius: 6px 0 0 6px;
+		padding: 7px;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		cursor: pointer;
 		z-index: 99;
 	}
@@ -8439,6 +8439,16 @@ h5 {
 		font-size: 25px;
 		color: #fff;
 		animation: heartbeat 0.6s ease-in infinite;
+	}
+	.specs-btn-text{
+		color: #fff;
+		font-size: 10px;
+		text-transform: uppercase;
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top:4px;
+		line-height: 1.2;
 	}
 	.configure-specs-wrap{
 		background-color: #fff;
@@ -8491,7 +8501,7 @@ h5 {
 	.specs-mega-menu>li:last-child{
 		border-bottom: 1px solid #ddd;
 	}
-	.specs-sidebar a{
+	.specs-sidebar .specs-link{
 		height: 44px;
 		padding: 10px;
 		padding-left: 36px;
@@ -8500,7 +8510,7 @@ h5 {
 		position: relative;
 		color: #212529;
 	}
-	.specs-sidebar a:before{
+	.specs-sidebar .specs-link:before{
 		content: "\e61a";
 		font-family: 'themify';
 		speak: none;
@@ -8520,14 +8530,14 @@ h5 {
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	.specs-open a:before{
+	.specs-open .specs-link:before{
 		content: "\e622";
 	}
-	.specs-open a{
+	.specs-open .specs-link{
 		color: #fff;
 		background-color: #00436b;
 	}
-	.specs-sidebar .specs-open a:before{
+	.specs-sidebar .specs-open .specs-link:before{
 		color: #00436b;
 		background-color: #fff;
 	}
@@ -8549,12 +8559,20 @@ h5 {
 	.specs-mega-menu li.specs-open .specs-mega-sub{
 		display: block;
 	}
+	.specs-heading-wrap{
+		margin: -1rem -1rem 1rem;
+		background: #00436b;
+		color: #fff;
+		padding: 12px 0;
+	}
 	.specs-mega-sub .heading_s3{
-		margin-bottom: 20px;
+		margin-bottom: 0;
 		padding-bottom: 10px;
+		color: #fff;
 	}
 	.specs-mega-sub .heading_s3::before{
 		height: 2px;
+		background-color: #fff;
 	}
 	.specs-mega-sub ol{
 		padding-left: 24px;
@@ -8594,7 +8612,7 @@ h5 {
 	.specs-mega-back{
 		color: #00436b;
 	}
-	@media(min-width:1200px){
+	/* @media(min-width:1200px){
 		.configure-specs{
 			-moz-border-radius: 32px 0 0 32px;
 			-webkit-border-radius: 32px 0 0 32px;
@@ -8610,7 +8628,7 @@ h5 {
 	@keyframes heartbeat{
 		25%  {transform: scale(0.9);}
 		75%  {transform: scale(1.05);}
-	  }
+	} */
 /*=================configurator Page End====================*/
 
 
