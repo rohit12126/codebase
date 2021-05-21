@@ -47,7 +47,7 @@
                 </p>
             </div>
             <div class="text-center mt-5">
-                <a href="{{ url('contact/') }}" class="btn btn-fill-out">Contact Us</a>
+                <a href="{{ url('contact-us/') }}" class="btn btn-fill-out">Contact Us</a>
             </div>
         </div>
     </section>
