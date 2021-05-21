@@ -8513,7 +8513,7 @@ h5 {
 		color: #212529;
 	}
 	.specs-sidebar .specs-link:before{
-		content: "\e61a";
+		content: "\e64b";
 		font-family: 'themify';
 		speak: none;
 		font-style: normal;
@@ -8524,24 +8524,22 @@ h5 {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		padding: 4px;
-		font-size: 0.625rem;
-		background-color: #000;
-		color: #fff;
+		font-size: 1rem;
+		color: #000;
 		position: absolute;
 		left: 0.5rem;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 	.specs-open .specs-link:before{
-		content: "\e622";
+		content: "\e64a";
 	}
 	.specs-open .specs-link{
 		color: #fff;
 		background-color: #00436b;
 	}
 	.specs-sidebar .specs-open .specs-link:before{
-		color: #00436b;
-		background-color: #fff;
+		color: #fff;
 	}
 	.specs-mega-sub{
 		position: absolute;
@@ -9347,16 +9345,22 @@ h5 {
 }
 .product-grid-tile-first{
 	width: 50%;
+	overflow:hidden;
 }
 .product-grid-tile-last{
 	width: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: #00436b;
+}
+.product-grid-tile-last h2{
+	color:#fff;
 }
 .product-grid-video{
 	width: 100%;
 	display: block;
+	margin-bottom: -1px
 }
 .product-grid-tile-inner{
 	width: 100%;

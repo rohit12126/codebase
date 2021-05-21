@@ -475,7 +475,8 @@
                         <a href="#" class="specs-link">Hardware</a>
                         <div class="specs-mega-sub">
                             <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Hardware</h3></div>
-                            <ol class="my-3">
+                            <img class="mb-3 d-block mx-auto" src="{{URL::asset('/images/configure/back-of-bifold.jpg')}}" alt="">
+                            <ol class="mb-4">
                                 <li>Our patented cam action hinges for smooth operation and a lifetime warranty</li>
                                 <li>Aligners for the double units keep the panels flush</li>
                                 <li>Patented bottom pivot is adjustable for outof-square applications</li>
@@ -483,21 +484,44 @@
                                 <li>Heavy duty top pivots and rollers for smooth operation.</li>
                                 <li>Optional oak saddle makes installation a snap.</li>
                             </ol>
-                            <ol class="my-3">
+                            <img class="mb-3 d-block mx-auto" src="{{URL::asset('/images/configure/slider-back.jpg')}}" alt="">
+                            <ol class="mb-4">
                                 <li>Heavy Duty extruded aluminum frame. Creates a strong and durable door.</li>
                                 <li>Ball-bearing rollers have a lifetime warranty. Enjoy years of flawless and ultra-smooth use. Adjustable so that the doors can be customized to fit any variations in your opening.</li>
                                 <li>Solid backing makes our door the strongest and most impact resistant door on the market</li>
                             </ol>
+                            <video autoplay loop muted class="product-grid-video mb-5">
+                                <source src="{{URL::asset('/images/home/roller.mp4')}}" type="video/mp4">
+                            </video>
+                            <div class="specs-heading-wrap mt-0"><h3 class="pt-2 heading_s3 text-center">TruClose Hinge</h3></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/hinge.jpg')}}" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <video autoplay loop muted class="product-grid-video mb-4">
+                                        <source src="{{URL::asset('/images/home/smooth-hinge.mp4')}}" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
                             <p>
                                 Adjustability – Our bifold and sliders have adjustability built in. In most cases we can accommodate slightly larger or smaller openings but the real key to our adjustability is that we can accommodate out-of-square, not perfect openings by adjusting.
                             </p>
                             <p>
                                 Openings change over time due to settling, modifications, etc and in my experience 8 out of 10 openings out there, especially in any house older than 50 yrs.
                             </p>
-                            <p>One of the benefits of our solid-backed mirrors (beveled or polished) is that they are impact resistant and can handle the punishment of heavy use. The video below actually shows us hitting them with hammers, and they can take the punishment.</p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img class="mb-3 d-block mx-auto" src="{{URL::asset('/images/configure/Hinges2.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-3 d-block mx-auto" src="{{URL::asset('/images/configure/Hinges3.jpg')}}" alt="">
+                                </div>
                             </div>
+                            <p>One of the benefits of our solid-backed mirrors (beveled or polished) is that they are impact resistant and can handle the punishment of heavy use. The video below actually shows us hitting them with hammers, and they can take the punishment.</p>
+                            <video autoplay loop muted class="product-grid-video my-4">
+                                <source src="{{URL::asset('/images/home/hammer-video.mp4')}}" type="video/mp4">
+                            </video>
                             <p>Our framed slider is a little different construction and used a category 3 safety-backed mirror and although is safe, will not take the hammer or baseball punishment that our solid-backed (beveled or polished) door can take. Or framed sliders also have a rubber gasket that holds the glass nice and tight in the frame and will not rattle when operated like some of our cheaper competitors do.</p>
                         </div>
                     </li>
