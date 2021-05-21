@@ -120,13 +120,21 @@
                                     <div class="pb-3">
                                         <div class="form-group">
                                             {{-- <input type="hidden" value="{{ $billingAddresses->id}}" name="billing_address" > --}}
-                                            <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(isset($billingAddresses)) value="{{ $billingAddresses->name ?? '' }}" @endif placeholder="Name *">
+                                            <input type="text" maxlength="150" required="" class="form-control bill" name="bill_name" id="bill_name" @if(isset($billingAddresses)) value="{{ $billingAddresses->name ?? $userData->name }}" 
+                                            @else value="{{$userData->name ?? ''}}"
+                                            @endif
+                                            placeholder="Name *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" @if(isset($billingAddresses)) value="{{ $billingAddresses->mobile ?? '' }}" @endif placeholder="Mobile *">
+                                            <input class="form-control bill" required="" type="text" name="bill_phone" id="bill_phone" @if(isset($billingAddresses)) value="{{ $billingAddresses->mobile ?? '' }}" 
+                                            @else value="{{$userData->mobile ?? ''}}"
+                                            @endif placeholder="Mobile *">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control bill" maxlength="150" required="" type="email" name="bill_email" id="bill_email" @if(isset($billingAddresses)) value="{{ $billingAddresses->email ?? '' }}" @endif placeholder="Email *">
+                                            <input class="form-control bill" maxlength="150" required="" type="email" name="bill_email" id="bill_email" @if(isset($billingAddresses)) value="{{ $billingAddresses->email ?? $userData->email }}"
+                                            @else value="{{$userData->email ?? ''}}"
+                                            @endif
+                                            placeholder="Email *">
                                         </div>
                                         
                                         <div class="form-group">
@@ -435,7 +443,7 @@ $(document).ready(function() {
                     value: tax
                 }).appendTo('#checkoutForm');
                 var subtotal = +data['shipping'] + +tax + +{{$cartSubTotal}}
-                $('#total').html('$'+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
+                $('#total').html('$'+(parseInt(subtotal).toFixed(2)))
                 }
             }
             });

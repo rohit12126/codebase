@@ -250,19 +250,18 @@ class OrderController extends Controller
                     if (strpos($productId, '.') !== false) {
                         $productId = strstr($productId, '.',true);
                     }
-                    
                     $hardware = $this->productManager->checkHardware($productId);
-                    
                     if($hardware)
                     {
                         foreach(json_decode($price->hardware_price) as $hp)
-                        {
-                            if(($hardware->weight >= $hp->min_weight) && ($hp->max_weight >= $hardware->weight))
+                        {                         
+                            if(($hardware->weight /* * $qty*/ >= $hp->min_weight) && ($hp->max_weight >= $hardware->weight /* * $qty*/))
                             {
                                 $hshippingPrice = $hp->price;
                             }
-                            else{
-                                $shippingPrice = $hp->price;
+                            elseif(($hardware->weight /* * $qty*/ >= $hp->min_weight) && $hp->max_weight <= $hardware->weight /* * $qty*/)
+                            {
+                                $hshippingPrice = $hp->price;
                             }
                         }
                     }
@@ -270,16 +269,16 @@ class OrderController extends Controller
                     {
                         $shippingPrice = $price->product_price;
                     }
+
                 }
                 
-                $shipPrice = $shippingPrice;
                 if($taxes = $this->taxManager->getTaxByStateId($req->state))
                 {
                     $tax['type'] = $taxes->tax->rate_type;
                     $tax['rate'] = $taxes->tax->rate;
                 }
             }
-         $resp['shipping'] = number_format((float) $shipPrice, 2, '.', '');
+         $resp['shipping'] = number_format((float) ($shippingPrice ?? $hshippingPrice), 2, '.', '');
          $resp['tax'] = $tax;
          return $resp;
     }
