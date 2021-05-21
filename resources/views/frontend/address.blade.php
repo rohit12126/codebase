@@ -435,7 +435,7 @@ $(document).ready(function() {
                     value: tax
                 }).appendTo('#checkoutForm');
                 var subtotal = +data['shipping'] + +tax + +{{$cartSubTotal}}
-                $('#total').html('$'+(subtotal.toLocaleString('en-US', {maximumFractionDigits:2})))
+                $('#total').html('$'+(parseInt(subtotal).toFixed(2)))
                 }
             }
             });

@@ -250,13 +250,11 @@ class OrderController extends Controller
                     if (strpos($productId, '.') !== false) {
                         $productId = strstr($productId, '.',true);
                     }
-                    
                     $hardware = $this->productManager->checkHardware($productId);
-                    
                     if($hardware)
                     {
                         foreach(json_decode($price->hardware_price) as $hp)
-                        {                            
+                        {                         
                             if(($hardware->weight /* * $qty*/ >= $hp->min_weight) && ($hp->max_weight >= $hardware->weight /* * $qty*/))
                             {
                                 $hshippingPrice = $hp->price;
@@ -269,17 +267,18 @@ class OrderController extends Controller
                     }
                     else
                     {
-                        $hshippingPrice = $price->product_price;
+                        $shippingPrice = $price->product_price;
                     }
 
                 }
+                
                 if($taxes = $this->taxManager->getTaxByStateId($req->state))
                 {
                     $tax['type'] = $taxes->tax->rate_type;
                     $tax['rate'] = $taxes->tax->rate;
                 }
             }
-         $resp['shipping'] = number_format((float) $hshippingPrice, 2, '.', '');
+         $resp['shipping'] = number_format((float) ($shippingPrice ?? $hshippingPrice), 2, '.', '');
          $resp['tax'] = $tax;
          return $resp;
     }
