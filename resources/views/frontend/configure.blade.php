@@ -10,7 +10,7 @@
     <div class="configure-specs">
         <b class="ti-info-alt"></b>
         <div class="specs-btn-text">
-            Click here to <br> learn more.
+            learn <br> more
         </div>
     </div>
     <div class="configure-specs-wrap">
@@ -244,18 +244,21 @@
                                     Corrosion Resistant
                                 </li>
                             </ul>
-                            <p>
+                            <img class="mb-2 d-block" src="{{URL::asset('/images/configure/bottom-track.jpg')}}" alt="">
+                            <p class="text-center mb-4">
                                 <strong>
                                     Competitor’s Bottom Track vs. Our Bottom Track
                                 </strong>
                             </p>
-                            <p>
+                            <img class="mb-2 d-block" src="{{URL::asset('/images/configure/top-track.jpg')}}" alt="">
+                            <p class="text-center">
                                 <strong>
                                     Competitor’s Top Track vs. Our Top Track
                                 </strong>
                             </p>
-                            <p>
-                                <strong>Match your track and trim color to your existing décor</strong>
+                            <p class="mb-2">
+                                Match your track and trim color to your existing décor
+                            </p>
                                 <ul class="normal-ul mb-3">
                                     <li>
                                         Mirrors Panels available with Chrome or White
@@ -264,7 +267,6 @@
                                         Color Panels available with Chrome or Matching
                                     </li>
                                 </ul>
-                            </p>
                             <div class="text-center py-3">
                                 <img src="{{URL::asset('/images/configure/color-chart.jpg')}}" alt=""/>
                             </div>
@@ -295,9 +297,24 @@
                             <p>
                                 See our standard sizes below.
                             </p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
-                            </div>
+                            <p class="text-center">
+                                <strong class="mb-2">
+                                    CDM Standard widths For Bifold are:
+                                </strong><br>
+                                24, 30, 36, 48, 60, 72, 96, 120, 144
+                            </p>
+                            <p class="text-center">
+                                <strong class="mb-2">
+                                    CDM Standard widths For Sliders are:
+                                </strong><br>
+                                48, 60, 72, 96, 120, 144
+                            </p>
+                            <p class="text-center">
+                                <strong class="mb-2">
+                                    CDM Standard Heights for both Bifolds and Sliders are:
+                                </strong><br>
+                                80, 84, 96
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -310,9 +327,7 @@
                             <p>
                                 For example, a 96” wide slider can be made in either a 4-panel configuration or a 3-panel configuration. 
                             </p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
-                            </div>
+                            <img src="{{URL::asset('/images/configure/panel-slider-3-4.jpg')}}" class="mb-4"/>
                             <p>
                                 This is a personal and/or design choice and you will want to consider the contents of your closet and the access you will need to have. For example, if it’s a his and hers type closet for a bedroom, where you would like equal access on both sides, then the 4-panel option might be a better option. Also remember that certain options will provide more access to your closet. A 2 or 4 panel sliding door will provide access to ½ of the closet when open whereas a 3 panel option will only give you access to 1/3 of the open closet at any time. The most access will be available if you choose a 3-panel slider with our optional triple track, you will have the MOST access possible with 2/3rds of the closet available at any time when fully open.
                             </p>
@@ -320,10 +335,35 @@
                                 <strong>Bifolds:</strong> The same applies to bifolds but just remember that these are not “accordian” type doors and the doors need to pivot from a fixed point. With 2 or 4 panel bifolds, you will get access to the entire closet. (the open door folded up takes up about 5-1/2” of space when folded and open) With 6 and 8 panel bifolds, you will have spots where the door will be open but still partially blocks full access.
                             </p>
                             <p>See our illustrations on how this looks and if it will work for you.</p>
-                            <div class="text-center py-5">
-                                <strong>Image compression is under process</strong>
+                            <div class="row text-center">
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-left.jpg')}}" alt="">
+                                    <p>
+                                        Standard Double Track
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-right.jpg')}}" alt="">
+                                    <p>
+                                        Optional Triple Track
+                                    </p>
+                                </div>
                             </div>
                             <p>If a CDM door is available in multiple configurations, you will notice the “panel count” option in the configurator will become populated with multiple choices. Just choose the panel count, or experiment with different panel counts, to make the unit that’s fits your style and needs.</p>
+                            <div class="row mb-4 text-center">
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/bifold-open-single.jpg')}}" alt="">
+                                    <p>
+                                        2 and 4 door style opening
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/bifold-6.jpg')}}" alt="">
+                                    <p>
+                                        6 and 8 door style opening
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -333,10 +373,26 @@
                             <p>
                                 For CDM bifold doors, they are available with or without our standard oak saddle. The saddle provides a finished look and can be stained or painted to match existing floor materials.
                             </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/unfinished-saddle.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/finished-saddle.jpg')}}" alt="">
+                                </div>
+                            </div>
                             <p>
                                 The saddle provides a few benefits. These include an easier installation and it helps keep dust and other debris from going into the closet and also help keep your belongings inside the closet.
                             </p>
                             <p>If you have a carpet, or some type of flooring, like tile or laminate that runs into the closet and you don’t want to cover up with the saddle, then all CDM bifolds can be installed directly onto the floor. You will also want to consider that without the saddle, there will be an additional 5/8” gap between the floor and the bottom edge of the doors.</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/standard-saddle.jpg')}}" alt="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-3" src="{{URL::asset('/images/configure/floor-plate.jpg')}}" alt="">
+                                </div>
+                            </div>
                             <p>For an additional charge we can elongate the panel to take up this difference of you choose to go without the saddle but this is a personal choice. Take a look at the doors around the rest of your house and you will notice the gaps at the bottoms and decide what would be best for your CDM closet door.</p>
                             <p>See our “Flooring Materials Installation Chart” for different flooring options and which will work best for you.</p>
                             <img class="mb-4" src="{{URL::asset('/images/configure/floor-chart.jpg')}}" alt="">
@@ -352,6 +408,11 @@
                             <p>
                                 The jamb bracket is designed to mount into your wall or jamb rather than the floor.
                             </p>
+                            <div class="d-flex flex-wrap">
+                                <img class="mb-3" src="{{URL::asset('/images/configure/standard-saddle.jpg')}}" alt="">
+                                <img class="mb-3" src="{{URL::asset('/images/configure/jamb-bracket.jpg')}}" alt="">
+                                <img class="mb-3" src="{{URL::asset('/images/configure/floor-plate.jpg')}}" alt="">
+                            </div>
                             <p>
                                 For an additional charge we can elongate the panel to take up this difference of you choose to go with the jamb bracket installation method but this is a personal choice. Take a look at the doors around the rest of your house and you will notice the gaps at the bottoms and decide what would be best for your CDM closet door. 
                             </p>
@@ -365,11 +426,39 @@
                         <a href="#" class="specs-link">Triple Track Slider</a>
                         <div class="specs-mega-sub">
                             <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Triple Track Slider</h3></div>
+                            <div class="row">
+                                <div class="col-sm-6 order-sm-1">
+                                    <div class="d-flex h-100 align-items-center">
+                                        <div>
+                                            <p>
+                                                Triple track is ideal for 3- panel applications because it allows more access to the closet.
+                                            </p>
+                                            <p>A typical 2 door or 4 door slider unit, when completely open, allows access to 50% (1/2)of your opening.</p>
+                                            <p>When the triple track is employed with a 3 panel unit, it allows for access to a full 67% (2/3) of your opening</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 order-sm-0">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/side-angle-triple-track.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-left.jpg')}}" alt="">
+                                    <p>
+                                        Standard Double Track
+                                    </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-right.jpg')}}" alt="">
+                                    <p>
+                                        Optional Triple Track
+                                    </p>
+                                </div>
+                            </div>
                             <p>
-                                Triple track is ideal for 3- panel applications because it allows more access to the closet.
+                                NOTE: The top triple track comes in 2 pieces. It includes the original double track and a third rail that is designed to be mounted upward into the header. It is suggested that the depth required for a triple track unit is 5-1/5 inches, especially on the top.
                             </p>
-                            <p>A typical 2 door or 4 door slider unit, when completely open, allows access to 50% (1/2)of your opening.</p>
-                            <p>When the triple track is employed with a 3 panel unit, it allows for access to a full 67% (2/3) of your opening</p>
                         </div>
                     </li>
                     <li>
@@ -377,7 +466,9 @@
                         <div class="specs-mega-sub">
                             <div class="specs-heading-wrap"><h3 class="pt-2 heading_s3 text-center">Handles</h3></div>
                             <p>Our included low-profile handle is made of sturdy extruded aluminum and comes in either chrome or whjte depending on your track/trim choice</p>
+                            <img class="mb-3" src="{{URL::asset('/images/configure/standard-handles.jpg')}}" alt="">
                             <p>Our premium handle (upcharge applies) is also extruded aluminum and is just a little bigger and beefier in case you have larger hands</p>
+                            <img class="mb-3" src="{{URL::asset('/images/configure/premium-handles.jpg')}}" alt="">
                         </div>
                     </li>
                     <li>
