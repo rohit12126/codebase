@@ -158,7 +158,7 @@
                                         <div class="form-group">
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city"  @if(isset($billingAddresses)) value="{{ $billingAddresses->city ?? '' }}" @endif placeholder="City / Town *">
                                             @if ($errors->has('city'))
-                                        <span class="error server">
+                                        <span class="error server-city">
                                             {{ $errors->first('city') }}
                                         </span>
                                         @endif
@@ -168,7 +168,7 @@
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
                                                 @if ($errors->has('zip'))
-                                                <span class="error server">
+                                                <span class="error server-zip">
                                                     {{ $errors->first('zip') }}
                                                 </span>
                                                 @endif
@@ -367,8 +367,15 @@
 
 <script>
 $(document).ready(function() {
-    $('#bill_zipcode','#bill_city').focus(function(){
-    $(".server").hide();
+    $('#bill_zipcode').focusin(function(){
+    $('.server-zip').animate({
+        display:"none"
+    });
+    });
+    $('#bill_city').focusin(function(){
+    $('.server-city').animate({
+        display:"none"
+    });
     });
     getShippingOnOldAddress();
 
