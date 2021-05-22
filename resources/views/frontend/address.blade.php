@@ -157,22 +157,23 @@
 
                                         <div class="form-group">
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city"  @if(isset($billingAddresses)) value="{{ $billingAddresses->city ?? '' }}" @endif placeholder="City / Town *">
-                                        
-                                        @if ($errors->has('city'))
-                                        <span class="error server">
+                                            @if ($errors->has('city'))
+                                        <span class="error server-city">
                                             {{ $errors->first('city') }}
                                         </span>
-                                        </div>
                                         @endif
+                                        </div>
+                                        
+                                        
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
-                                        
-                                        @if ($errors->has('zip'))
-                                        <span class="error server">
-                                            {{ $errors->first('zip') }}
-                                        </span>
+                                                @if ($errors->has('zip'))
+                                                <span class="error server-zip">
+                                                    {{ $errors->first('zip') }}
+                                                </span>
+                                                @endif
                                         </div>
-                                        @endif
+                                        
                                     </div>
                                 {{-- </div> --}}
                             </div>
@@ -366,12 +367,11 @@
 
 <script>
 $(document).ready(function() {
-    $('form input[type=text]').focus(function(){
-    // get selected input error container
-    $(this).siblings(".server").hide();
+    $('#bill_zipcode').focus(function(){
+    $('.server-zip').hide();
     });
-    $('#bill_zipcode','#bill_city').focus(function(){
-    $(".server").hide();
+    $('#bill_city').focus(function(){
+    $('.server-city').hide();
     });
     getShippingOnOldAddress();
 
