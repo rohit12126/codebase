@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input  type="password" placeholder="password" required="" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="new-password">
+                        <input  type="password" placeholder="new password" required="" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="new-password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input  type="password" required=""placeholder="confirm password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input  type="password" required=""placeholder="confirm new password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-fill-out btn-block">Send Password Reset Link </button>
