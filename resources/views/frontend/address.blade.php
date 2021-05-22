@@ -367,15 +367,11 @@
 
 <script>
 $(document).ready(function() {
-    $('#bill_zipcode').focusin(function(){
-    $('.server-zip').animate({
-        display:"none"
+    $('#bill_zipcode').focus(function(){
+    $('.server-zip').hide();
     });
-    });
-    $('#bill_city').focusin(function(){
-    $('.server-city').animate({
-        display:"none"
-    });
+    $('#bill_city').focus(function(){
+    $('.server-city').hide();
     });
     getShippingOnOldAddress();
 
