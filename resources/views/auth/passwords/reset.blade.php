@@ -17,7 +17,7 @@
                 @csrf
                 <input type="hidden" name="token" value="{{ $token }}">
                     <div class="form-group">
-                        <input type="email" required="" placeholder="confirm your email"class="form-control @error('email') is-invalid @enderror"  name="email" value="{{ $email ?? old('email') }}" autocomplete="email" autofocus>
+                        <input type="email" required="" placeholder="Confirm your email"class="form-control @error('email') is-invalid @enderror"  name="email" value="{{ $email ?? old('email') }}" autocomplete="email" autofocus>
                         @error('email')
                             <div class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input  type="password" placeholder="new password" required="" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="new-password">
+                        <input  type="password" placeholder="New password" required="" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="new-password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input  type="password" required=""placeholder="confirm new password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input  type="password" required=""placeholder="Confirm new password"  class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-fill-out btn-block">Send Password Reset Link </button>

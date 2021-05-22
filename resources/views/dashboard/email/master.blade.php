@@ -75,7 +75,7 @@
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="660" style="font-family: 'Lato',sans-serif;">
             <tbody>
                 <tr>
-                    <td style="border-top:3px solid #FF324D;background-color:#fff;font-family: 'Lato',sans-serif;padding:30px;font-size:15px">
+                    <td style="border-top:3px solid #00436b;background-color:#fff;font-family: 'Lato',sans-serif;padding:30px;font-size:15px">
                     <table width="660" border="0" cellpadding="0" cellspacing="0" style="width:660px;margin:0 auto;background-color:#fff">
                         <tbody>
                             <tr>
