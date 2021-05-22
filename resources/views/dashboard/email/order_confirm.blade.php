@@ -46,7 +46,7 @@
                                                                     <td style="padding:0% 3% 0% 0%" colspan="2">
                                                                     <p class="m_8451886253471966023statusText" style="margin:0;font-family:'Lato',sans-serif;color:white;padding:0;float:left;width:100%;font-size:30px;line-height:normal">
                                                                         We have <strong style="font-family:'Lato',sans-serif!important;letter-spacing:0.5px;font-weight:bold">Placed</strong> your order
-                                                                        <span style="font-weight:bold;font-family:'Lato',sans-serif;padding-left:5px;opacity:0.6;font-size:12px"> on 
+                                                                        <span style="font-weight:bold;font-family:'Lato',sans-serif;opacity:0.6;font-size:12px;display:block;"> on 
                                                                         {{ date("M j, Y", strtotime($data->created_at)) }}    
                                                                     </p>
                                                                     </td>
