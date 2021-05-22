@@ -151,12 +151,12 @@
                                                             </li>
                                                         </ul>
                                                         @if($detail = json_decode($product->configure_detail))
-                            <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 66.66%;color: #535766;display: flex;padding-left: 5%;flex-wrap: wrap;">
+                            <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 66.66%;color: #535766;display: flex;flex-wrap:wrap;padding-left: 5%;flex-wrap: wrap;">
                             @foreach($detail as $key => $config)
                             @if(isset($config->label))
                             
-                            <li style="float:left;width:50%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} 
-                            <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px"> 
+                            <li style="float:left;width:50%;border:none;margin:0;padding:0;margin-top:12px;height:15px;font-size:12px;font-weight:bold;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} 
+                            <span style="font-family:'Lato',sans-serif;font-weight:normal;color:#666;font-size:12px"> 
                             {{ucfirst(str_replace("cdm:","",$config->value))}}</span>
                             
                             @endif
