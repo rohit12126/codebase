@@ -223,7 +223,7 @@
                                         </ul>       
                                     @endif
                                 </td>
-                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
+                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;word-wrap: break-word;">
                                 @php $array = array() @endphp
                                 @if(json_decode($product->configure_detail))
                                 @php $array = json_decode($product->configure_detail) @endphp
