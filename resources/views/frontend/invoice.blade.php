@@ -209,6 +209,17 @@
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{$i}}.</td>
                                 <td style="padding: 10px;border-right:1px solid #000;border-bottom:1px solid #000;">
                                 @if($product->product->is_accessory != 1) {{ucfirst(strtolower($product->product->catergory->name))}} @endif{{$product->product->name}}
+                                    @if($detail = json_decode($product->configure_detail))
+                                        <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 74%;color: #535766;display: block;padding-left: 5%;">
+                                            @foreach($detail as $key => $config)
+                                                @if(isset($config->label))
+                                                    <li style="float:left;width:50%;border:none;margin:0;padding:0;margin-top:12px;height:15px;font-size:12px;font-weight:bold;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} :
+                                                    <span style="font-family:'Lato',sans-serif;font-weight:normal;color:#666;font-size:12px"> 
+                                                    {{ucfirst(str_replace("cdm:","",$config->value))}}</span>
+                                                @endif
+                                            @endforeach
+                                        </ul>       
+                                    @endif
                                 </td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">
                                 @php $array = array() @endphp
@@ -221,6 +232,9 @@
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{number_format($product->product_quantity)}}</td>
                                 <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">${{number_format($product->price * $product->product_quantity, 2)}}</td>
                             </tr>
+                            @php
+                            $i++;    
+                            @endphp
                         @endforeach
                         <tr style="font-weight: bold;">
                             <td colspan="5" style="text-align: right;padding: 5px;border-bottom:1px solid #000;border-right:1px solid #000;">
