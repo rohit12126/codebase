@@ -87,7 +87,8 @@
                         <div class="col-md-5 col-lg-3 col-xl-3 cart-img-hr">
 
                             @if (!@empty(json_decode($product->configure_detail)))
-                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src=" https://uploads.roomle.com/configurations/{{json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1]}}/perspectiveImage.png" alt="product_img1">
+                            <!-- here image -->
+                                <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src=" {{ asset('upload/orders/'.json_decode($product->configure_detail)[count(json_decode($product->configure_detail)) - 1])}}" alt="product_img1">
                             @else
                                 <img class="img-thumbnail cart-for-mobile-img" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                             @endif
@@ -174,7 +175,7 @@
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                 @endif --}}
                                     @if (!@empty(json_decode($product->configure_detail)))
-                                    <img class="img-thumbnail" style="max-height: 90px;" src="https://uploads.roomle.com/configurations/{{$cid}}/perspectiveImage.png" alt="product_img1">
+                                    <img class="img-thumbnail" style="max-height: 90px;" src="{{asset('upload/orders/'.$cid)}}" alt="product_img1">
                                     @else
                                     <img class="img-thumbnail" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @endif
