@@ -48,7 +48,7 @@
                         <div><span class="start-steps-number"><b title="Step first">3</b></span></div>
                         <h4 class="home-step-heading mb-4">Measure your door and fit</h4>
                         <p class="home-step-para">
-                        All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit.
+                        All of our custom closet doors are <br> "True to Fit" which means we do all the calculations for you so that you get the proper fit.
                         </p>
                     </article>
                 </div>

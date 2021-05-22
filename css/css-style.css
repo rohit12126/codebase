@@ -340,16 +340,29 @@ button:focus {
 	right: 0;
 	left: auto;
 }
-.btn-fill-out:hover:before,
-.btn-fill-out:hover:after {
-	width: 0;
+.btn-fill-out:hover{
+	color: #fff;
 }
-.btn-fill-out:hover {
-	color: #00436b !important;
+@media(min-width:1200px){
+	.btn-fill-out:hover:before,
+	.btn-fill-out:hover:after {
+		width: 0;
+	}
+	.btn-fill-out:hover {
+		color: #00436b !important;
+	}
 }
 .btn-fill-out i{
 	vertical-align: -10%;
 }
+/* .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle,.btn-outline-secondary:hover{
+	background-color: #de9f10;
+    border-color: #de9f10;
+}
+.btn-outline-secondary{
+	color: #de9f10;
+    border-color: #de9f10;
+} */
 .btn-fill-line {
 	background-color: transparent;
 	border: 1px solid #333;
@@ -8035,7 +8048,10 @@ h5 {
 		text-align:center;
 		max-width: 764px;
 		margin: 0 auto;
-		margin-bottom: 3rem;
+		margin-bottom: 3rem;.
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
 	.home-swip-section{
 		scroll-margin: 94px;
@@ -8208,7 +8224,7 @@ h5 {
 		top: 5px;
 		left: 5px;
 		text-align: center;
-		background-color: #00436b;
+		background-color: #F94E57;
 		color: #fff;
 		border-radius: 100%;
 		cursor: pointer;
@@ -8226,7 +8242,7 @@ h5 {
 		-webkit-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
 		border-radius: 50%;
-		border: 1px solid #00436b;
+		border: 1px solid #F94E57;
 		opacity: 0;
 		-webkit-animation: pulsate 3s ease-out infinite;
 		animation: pulsate 3s ease-out infinite;
@@ -8399,7 +8415,7 @@ h5 {
 		.start-steps-card h4{
 		}
 		.start-steps-card .home-step-para{
-			text-align: justify;
+			text-align: center;
 			margin-bottom: 0;
 		}
 	/*=================Home page Step 2 end====================*/
