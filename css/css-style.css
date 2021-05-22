@@ -9610,13 +9610,15 @@ h5 {
 	padding: 0 1rem;
 	color: #fff;
 }
-.blog-list-card:hover .blog-view-button {
-	opacity: 1;
-	visibility: visible;
-	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	transform: translateX(0);
-	transition: transform .3s .1s , opacity .2s .1s , visibility 0s 0s;
+@media(min-width:1200px){
+	.blog-list-card:hover .blog-view-button {
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+		transition: transform .3s .1s , opacity .2s .1s , visibility 0s 0s;
+	}
 }
 .blog-read-time{
 	display: inline-block;
