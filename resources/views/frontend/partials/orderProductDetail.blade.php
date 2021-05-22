@@ -175,7 +175,7 @@
                                         <img src="{{ asset('product_images/download.jpeg')}}" alt="product_img1">
                                 @endif --}}
                                     @if (!@empty(json_decode($product->configure_detail)))
-                                    <img class="img-thumbnail" style="max-height: 90px;" src="{{asset('upload/orders/.$cid)}}" alt="product_img1">
+                                    <img class="img-thumbnail" style="max-height: 90px;" src="{{asset('upload/orders/'.$cid)}}" alt="product_img1">
                                     @else
                                     <img class="img-thumbnail" style="max-height: 90px;" src="{{ asset('upload/product/'.$product->product->images[0]->image)}}" alt="product_img1">
                                     @endif
