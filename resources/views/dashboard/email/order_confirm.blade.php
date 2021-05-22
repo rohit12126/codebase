@@ -135,8 +135,8 @@
                                             <td style="margin:0;padding:20px 30px 24px 30px;background-color:white;border-radius:8px;font-size:17px;line-height:23px;color:#7e818c;border:solid 0.5px rgba(190,147,71,0.11);padding-top:24px;border-top-left-radius:0;border-top-right-radius:0;margin-top:0">
                                             <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;width:100%;list-style:none;line-height:normal">
                                                 @foreach ($data->productList as $product)
-                                                    <li style="margin:0;padding:0;display:block;float:left;width:100%;padding-bottom:20px">
-                                                    <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
+                                                    <li style="margin:0;padding:0;display:flex;float:left;width:100%;padding-bottom:20px">
+                                                    <ul style="margin: 0;font-family: 'Lato',sans-serif;padding: 0;list-style: none;width: 33.33%;color: #535766;margin-left: 0;">
                                                             <li style="margin:0;padding:0;float:left;width:100%;font-size:16px">
                                                                 <a href="#" style="max-width:95%;display:inline-block;white-space:nowrap;overflow:hidden!important;text-overflow:ellipsis;width:200px;height:22px;font-stretch:normal;font-style:normal;line-height:normal;color:#282c3f;font-family:'Lato',sans-serif;font-weight:bold;letter-spacing:0.29px;font-size:16px;margin-top:3px;margin-bottom:2px;cursor: pointer;text-decoration: none;">{{$product->product->name}}</a>
                                                             </li>
@@ -151,11 +151,11 @@
                                                             </li>
                                                         </ul>
                                                         @if($detail = json_decode($product->configure_detail))
-                            <ul style="margin:0;font-family:'Lato',sans-serif;padding:0;float:left;list-style:none;width:59%;color:#535766;margin-left:5%">
+                            <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 66.66%;color: #535766;display: flex;padding-left: 5%;flex-wrap: wrap;">
                             @foreach($detail as $key => $config)
                             @if(isset($config->label))
                             
-                            <li style="float:left;width:100%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} 
+                            <li style="float:left;width:50%;border:none;margin:0;padding:0;margin-top:12px;height:19px;font-size:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} 
                             <span style="font-family:'Lato',sans-serif;font-weight:500;color:#666;font-size:12px"> 
                             {{ucfirst(str_replace("cdm:","",$config->value))}}</span>
                             
