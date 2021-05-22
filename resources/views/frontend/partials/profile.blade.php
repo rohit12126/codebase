@@ -1,6 +1,6 @@
 <div class="card form-test-design">
     <div class="card-header">
-        <h3>Update Your Account Details</h3>
+        <h3>Update your account details</h3>
     </div>
     <div class="card-body">
              <form method="POST" action="{{ route('account.update') }}" id='account' class="user-account-form">

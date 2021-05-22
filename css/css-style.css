@@ -9486,7 +9486,7 @@ h5 {
 }
 .error {
 	color:red !important;
-	/* text-transform: capitalize !important; */
+	margin-top: 8px;
 }
 
 .server-side-error {
@@ -9529,11 +9529,7 @@ h5 {
 }
 .blog-list-view,.blog-view, .projects-wrap{
 	background-color: #f4f4f4;
-	padding: 3rem 1rem;
-}
-.blog-list-view{
-	margin: 0 5%;
-	padding: 1.25rem 0;
+	padding: 3rem 0;
 }
 .blog-view-inner{
 	max-width: 1600px;
@@ -10152,24 +10148,6 @@ h5 {
 	content: "\ec3c";
 	color:#fff;
 }
-/* =============================================================================== */
-.projects-wrap .blog-col{
-	width: 50%;
-}
-.projects-wrap .blog-list-title{
-	font-weight: 300;
-	text-align: center;
-	font-size: 1.25rem;
-	margin-bottom: 0.8rem;
-}
-.projects-wrap .blog-view-button {
-	position: unset;
-	opacity: 1;
-	visibility: visible;
-	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	transform: translateX(0);
-}
 /* =============================== Client CSS ===================================*/
 .client-list-tile{
 	padding: 15px;
@@ -10504,13 +10482,13 @@ h5 {
 	padding: 0 6rem;
 }
 .form-test-design-2 .card-header{
-	margin-left: 164px;
-    text-align: center;
+	margin-left: 0;
+    text-align: left;
 }
 .form-test-design .form-control, .form-test-design-2 .form-control{
 	height: 38px;
-	margin-bottom: 1.2rem;
+	margin-bottom: 0;
 }
 .form-test-design h3, .form-test-design-2 h3 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }

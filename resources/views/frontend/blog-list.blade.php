@@ -31,9 +31,9 @@
                 </div>
             </div>
         </div>
-        <div class="section blog-list-view">
+        <div class="main-wrapper">
             <div class="">
-                <div class="blog-row justify-content-center">
+                <div class="row justify-content-center">
                     @if($blogs->isEmpty()) 
                         <div class="col-md-12 col-12 text-center">
                             <h3>No Blog available.</h3>

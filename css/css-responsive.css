@@ -1236,7 +1236,7 @@ p {
 	padding-bottom: 15px;
 }
 .section,.newsletter_small {
-	padding: 30px 1rem;
+	padding: 30px 0;
 }
 .section.small_pt, .footer_top.small_pt {
 	padding-top: 15px;

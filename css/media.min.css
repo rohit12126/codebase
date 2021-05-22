@@ -477,8 +477,7 @@
     {
         width: 100%;
     }
-    .blog-col,
-    .projects-wrap .blog-col{
+    .blog-col{
         width: 100%;
     }
     .footer-socialicon-wrapper{
@@ -592,7 +591,7 @@
 }
 @media (max-width: 455px){
     body{
-        padding-top: 130px;
+        padding-top: 116px;
     }
 }
 @media (min-width: 1400px)
