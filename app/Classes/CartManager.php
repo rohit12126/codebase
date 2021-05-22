@@ -192,7 +192,7 @@ class CartManager
         }
         $productData = [
             'id'=> $product->id,
-            'name'=> $product->name,
+            'name'=> ($product->is_accessory == 0) ? ucfirst(strtolower($product->catergory->name)).' '.$product->name : $product->name,
             'qty'=> $qty,
             'price'=> str_replace(",", "",$price),
             'options' => 

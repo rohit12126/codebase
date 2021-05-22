@@ -40,8 +40,8 @@
                                 </p>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-outline-secondary cart-btn item_remove ml-0">
-                                    <input type="hidden" class="rowId" value="{{$product->rowId}}">
+                                <button type="button" data-name="{{$product->name}}" class="btn btn-outline-secondary cart-btn item_remove ml-0">
+                                    <input type="hidden" class="rowId" data-name="{{$product->name}}" value="{{$product->rowId}}">
                                     <i class="linearicons-trash2 m-auto"></i>
                                 </button>                                
                             </div>
@@ -125,8 +125,8 @@
                     <label class="total{{$product->rowId}}">${{number_format($product->price * $product->qty, 2)}}</label>
                 </td>
                 <td class="text-center action-btn-wrap"> 
-                    <button type="button" class="btn btn-outline-secondary cart-btn item_remove" >
-                        <input type="hidden" class="rowId" value="{{$product->rowId}}">
+                    <button type="button" data-name="{{$product->name}}" class="btn btn-outline-secondary cart-btn item_remove" >
+                        <input type="hidden" class="rowId"  value="{{$product->rowId}}">
                         <i class="linearicons-trash2"></i>
                     </button>
                 </td>
@@ -268,8 +268,10 @@
 
         /* Remove product from cart functionality */
         jQuery('.item_remove').click(function(e) {
+            var name = $( this ).data('name');
+            console.log(name);
             swal.fire({
-            title: 'Are you sure you want to remove this item from the cart ?',
+            title: 'Are you sure you want to remove '+ name +' from the cart ?',
             showCancelButton: true,
             confirmButtonText: `Remove`,
             customClass: {
