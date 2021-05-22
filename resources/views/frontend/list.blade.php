@@ -165,7 +165,9 @@
     <section class="product-grid-detail">
         <div class="product-grid-container">
             <div class="product-grid-tile-first">
-                <img src="{{URL::asset('/images/home/custom-closet.gif')}}" class="product-grid-video">
+                <video autoplay loop muted class="product-grid-video">
+                    <source src="{{URL::asset('/images/home/hammer-video.mp4')}}" type="video/mp4">
+                </video>
             </div>
             <div class="product-grid-tile-last">
                 <div class="product-grid-tile-inner">
@@ -173,17 +175,17 @@
                 </div>
             </div>
         </div>
-        <div class="product-grid-container">   
-            <div class="product-grid-tile-last">
+        <div class="product-grid-container">    
+            <div class="product-grid-tile-first order-md-1">
+                <video autoplay loop muted class="product-grid-video">
+                    <source src="{{URL::asset('/images/home/smooth-hinge.mp4')}}" type="video/mp4">
+                </video>
+            </div>   
+            <div class="product-grid-tile-last order-md-0">
                 <div class="product-grid-tile-inner">
                     <h2>Our patented TruClose™ hinges ensure that your doors close securely and stay closed</h2>
                 </div>
-            </div>   
-            <div class="product-grid-tile-first">
-                <video autoplay loop muted class="product-grid-video">
-                    <source src="{{URL::asset('/images/home/Solid Backed Mirror Slider Door.mp4')}}" type="video/mp4">
-                </video>
-            </div>                         
+            </div>                       
         </div>                                  
     </section>
 @endsection
