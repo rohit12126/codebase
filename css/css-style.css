@@ -8481,7 +8481,7 @@ h5 {
 		-moz-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
 		-webkit-transition: all .7s cubic-bezier(.165,.84,.44,1),bottom 0s linear 0s;
 		z-index: 99;
-		box-shadow: 0 0 5px rgb(0 0 0 / 11%);
+		box-shadow: -5px 0 10px rgb(0 0 0 / 11%);
 	}
 	.specs-wrap-active{
 		right: 0;
@@ -8563,20 +8563,19 @@ h5 {
 		top: 0;
 		width: calc(100% - 240px);
 		height: 100%;
-		padding: 1rem;
-		overflow-y: auto;
+		overflow: hidden;
 		display: none;
 	}
 	.specs-mega-menu::-webkit-scrollbar{width:0;}
-	.specs-mega-sub::-webkit-scrollbar{width:2px;}
-	.specs-mega-sub::-webkit-scrollbar-track{background:#eee}
-	.specs-mega-sub::-webkit-scrollbar-thumb{background:#00436b;border-radius:30px}
-	.specs-mega-sub::-webkit-scrollbar-thumb:hover{background:#00436b;}
+	.specs-content-wrap::-webkit-scrollbar{width:2px;}
+	.specs-content-wrap::-webkit-scrollbar-track{background:#eee}
+	.specs-content-wrap::-webkit-scrollbar-thumb{background:#00436b;border-radius:30px}
+	.specs-content-wrap::-webkit-scrollbar-thumb:hover{background:#00436b;}
 	.specs-mega-menu li.specs-open .specs-mega-sub{
 		display: block;
 	}
 	.specs-heading-wrap{
-		margin: -1rem -1rem 1rem;
+		margin: 0;
 		background: #00436b;
 		color: #fff;
 		padding: 12px 0;
@@ -8589,6 +8588,11 @@ h5 {
 	.specs-mega-sub .heading_s3::before{
 		height: 2px;
 		background-color: #fff;
+	}
+	.specs-content-wrap{
+		padding: 1rem;
+		overflow-y: auto;
+		height: calc(100% - 75px);
 	}
 	.specs-mega-sub ol{
 		padding-left: 24px;
