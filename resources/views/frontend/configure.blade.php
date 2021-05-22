@@ -986,13 +986,26 @@
 
 <script>
     $('.configure-specs').on("click", function(){
-        $('.configure-specs-wrap').toggleClass('specs-wrap-active');
-        $('.configure-specs-close').parent().addClass('icw');
+        $('.configure-specs-wrap').addClass('specs-wrap-active');
+        $('.configure-specs-close').parent().addClass('icw').delay(2000);
+        $('body').addClass('overflow-hidden');
     });
     $('.configure-specs-close').on("click", function(){
-        $('.configure-specs-wrap').toggleClass('specs-wrap-active');
+        $('.configure-specs-wrap').removeClass('specs-wrap-active');
         $(this).parent().removeClass('icw');
+        $('body').removeClass('overflow-hidden');
     });
+    jQuery(document).mouseup(function(e) 
+   {
+      var container = jQuery(".configure-specs-wrap");
+	  var specsClose = jQuery(".configure-specs-close");
+      if (!container.is(e.target) && container.has(e.target).length === 0 && !specsClose.is(e.target) && specsClose.has(e.target).length === 0) 
+      {
+         container.removeClass('specs-wrap-active');
+		 specsClose.parent().removeClass('icw');
+         $('body').removeClass('overflow-hidden');
+      }
+   });
 </script>
 <script>
 $(document).ready(function(){
