@@ -340,12 +340,17 @@ button:focus {
 	right: 0;
 	left: auto;
 }
-.btn-fill-out:hover:before,
-.btn-fill-out:hover:after {
-	width: 0;
+.btn-fill-out:hover{
+	color: #fff;
 }
-.btn-fill-out:hover {
-	color: #00436b !important;
+@media(min-width:1200px){
+	.btn-fill-out:hover:before,
+	.btn-fill-out:hover:after {
+		width: 0;
+	}
+	.btn-fill-out:hover {
+		color: #00436b !important;
+	}
 }
 .btn-fill-out i{
 	vertical-align: -10%;
@@ -8410,7 +8415,7 @@ h5 {
 		.start-steps-card h4{
 		}
 		.start-steps-card .home-step-para{
-			text-align: justify;
+			text-align: center;
 			margin-bottom: 0;
 		}
 	/*=================Home page Step 2 end====================*/
