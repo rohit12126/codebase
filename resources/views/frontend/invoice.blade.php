@@ -208,7 +208,9 @@
                             <tr>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{$i}}.</td>
                                 <td style="padding: 10px;border-right:1px solid #000;border-bottom:1px solid #000;">
-                                @if($product->product->is_accessory != 1) {{ucfirst(strtolower($product->product->catergory->name))}} @endif{{$product->product->name}}
+                                <p style="text-align: center;">@if($product->product->is_accessory != 1) 
+                                {{ucfirst(strtolower($product->product->catergory->name))}} 
+                                @endif{{$product->product->name}}</p>
                                     @if($detail = json_decode($product->configure_detail))
                                         <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 74%;color: #535766;display: block;padding-left: 5%;">
                                             @foreach($detail as $key => $config)
