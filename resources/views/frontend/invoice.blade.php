@@ -194,7 +194,7 @@
                 <td>
                     <table style="width: 100%;border-top:1px solid #000;" cellspacing="0">
                         <tr>
-                            <th style="border-bottom:1px solid #000;border-right:1px solid #000;">S. No.</th>
+                            <th style="border-bottom:1px solid #000;border-right:1px solid #000;width:50px;">S. No.</th>
                             <th style="border-bottom:1px solid #000;border-right:1px solid #000;">Description of Product</th>
                             <th style="border-bottom:1px solid #000;border-right:1px solid #000;">SKU No.</th>
                             <th style="border-bottom:1px solid #000;border-right:1px solid #000;">Rate / Unit</th>
@@ -208,11 +208,11 @@
                             <tr>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{$i}}.</td>
                                 <td style="padding: 10px;border-right:1px solid #000;border-bottom:1px solid #000;">
-                                <p style="text-align: center;">@if($product->product->is_accessory != 1) 
+                                <p style="text-align: left;font-weight:bold;margin-bottom:0.6em">@if($product->product->is_accessory != 1) 
                                 {{ucfirst(strtolower($product->product->catergory->name))}} 
                                 @endif{{$product->product->name}}</p>
                                     @if($detail = json_decode($product->configure_detail))
-                                        <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 74%;color: #535766;display: block;padding-left: 5%;">
+                                        <ul style="font-family: 'Lato',sans-serif; padding: 0; float: left; list-style: none; width: 364px; color: #535766; margin: 0; display: block; padding-left: 0%;">
                                             @foreach($detail as $key => $config)
                                                 @if(isset($config->label))
                                                     <li style="float:left;width:50%;border:none;margin:0;padding:0;margin-top:12px;height:15px;font-size:12px;font-weight:bold;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:0.29px;color:#282c3f">{{$config->label}} :
