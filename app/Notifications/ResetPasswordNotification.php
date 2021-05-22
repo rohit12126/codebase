@@ -21,7 +21,7 @@ class ResetPasswordNotification extends ResetPassword
 
         return (new MailMessage)
             ->view(
-                'dashboard.email.reset_password', ['token' => $this->token]
+                'dashboard.email.reset_password', ['token' => $this->token , 'name'=>$notifiable->name]
             );
     }
 }

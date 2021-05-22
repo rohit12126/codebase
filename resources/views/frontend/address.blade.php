@@ -159,7 +159,7 @@
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city"  @if(isset($billingAddresses)) value="{{ $billingAddresses->city ?? '' }}" @endif placeholder="City / Town *">
                                         </div>
                                         @if ($errors->has('city'))
-                                        <div class="error">
+                                        <div class="error server">
                                             {{ $errors->first('city') }}
                                         </div>
                                         @endif
@@ -167,7 +167,7 @@
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
                                         </div>
                                         @if ($errors->has('zip'))
-                                        <div class="error">
+                                        <div class="error server">
                                             {{ $errors->first('zip') }}
                                         </div>
                                         @endif
@@ -247,8 +247,6 @@
                                         <div class="form-group">
                                             <input class="form-control ship" maxlength="150" required="" type="text" id="ship_city" name="ship_city" value="" placeholder="City / Town *">
                                         </div>
-                                        
-                                        
                                         <div class="form-group">
                                             <input class="form-control ship" required="" type="text" id="ship_zipcode" name="ship_zipcode" value="" placeholder="Postcode / ZIP *">
                                         </div>
@@ -366,8 +364,8 @@
 
 <script>
 $(document).ready(function() {
-    $('#bill_zipcode','#bill_city').change(function(){
-    $(".error").hide();
+    $('#bill_zipcode','#bill_city').focus(function(){
+    $(".server").hide();
     });
     getShippingOnOldAddress();
 

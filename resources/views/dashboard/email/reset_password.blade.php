@@ -3,7 +3,7 @@
 
  <tr>
  <td style="font-family: 'Lato',sans-serif;">
-    <strong>Hi, <strong></strong>!</strong>
+    <strong>Hi {{$name ?? ''}}, <strong></strong>!</strong>
     <br><br><br>
     We have got a request to Reset your password.
     <br><br>If you didn't make this request, please ignore this email. Otherwise, please click the button below to Reset your password.
