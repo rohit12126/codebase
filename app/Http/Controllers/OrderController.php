@@ -17,6 +17,8 @@ use PDF;
 use Terbilang;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Payment as PaymentModel;
+use Image;
+
 class OrderController extends Controller
 {
     protected $productManager;
@@ -65,7 +67,7 @@ class OrderController extends Controller
             $shippingCharge = $req->session()->get('shippingCharge');
             $taxCharge = $req->session()->get('taxCharge') ?? 0;
 
-            if(strpos(url()->previous(), 'order/add-order') == false) {
+             if(strpos(url()->previous(), 'order/add-order') == false) {
 
                 $orderNumber = $this->orderManager->generateOrderNumber();
                 
@@ -93,13 +95,14 @@ class OrderController extends Controller
                 $order = $this->orderManager->addOrder($orderData);
 
                 foreach ($cartProducts as $key => $product) {
-
                     $configureDetail = NULL;
 
                     if(isset($product->options['configureDetails']['partList'])){
 
+                        $path = "https://uploads.roomle.com/configurations/".$product->options['configureDetails']['configurationId']."/perspectiveImage.png";
+                        $filename = $orderNumber.'_'.$product->id.'_perspectiveImage.png';
+                        Image::make($path)->save(('upload/orders/' . $filename));
                         $Detail = $product->options['configureDetails']['partList'];
-                        
                         foreach($Detail as $k => $a){
                             $Detail = (json_encode($a));
                         }
@@ -108,7 +111,7 @@ class OrderController extends Controller
                         
                         array_push($configureDetail,
                             $product->options['configureDetails']['partList']['articleNr'],
-                            $product->options['configureDetails']['configurationId']
+                            $filename,
                         );
                     }
                     $orderProduct = [
@@ -278,7 +281,7 @@ class OrderController extends Controller
                     $tax['rate'] = $taxes->tax->rate;
                 }
             }
-         $resp['shipping'] = number_format((float) ($shippingPrice ?? $hshippingPrice), 2, '.', '');
+         $resp['shipping'] = number_format((float) (($shippingPrice == 0 ) ?  $hshippingPrice : $shippingPrice), 2, '.', '');
          $resp['tax'] = $tax;
          return $resp;
     }
