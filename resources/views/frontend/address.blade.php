@@ -157,20 +157,18 @@
 
                                         <div class="form-group">
                                             <input class="form-control bill" maxlength="150" required="" type="text" id="bill_city" name="bill_city"  @if(isset($billingAddresses)) value="{{ $billingAddresses->city ?? '' }}" @endif placeholder="City / Town *">
-                                        
+                                        </div>
                                         @if ($errors->has('city'))
-                                        <span class="error server">
+                                        <div class="error server">
                                             {{ $errors->first('city') }}
-                                        </span>
                                         </div>
                                         @endif
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
-                                        
+                                        </div>
                                         @if ($errors->has('zip'))
-                                        <span class="error server">
+                                        <div class="error server">
                                             {{ $errors->first('zip') }}
-                                        </span>
                                         </div>
                                         @endif
                                     </div>
@@ -366,10 +364,6 @@
 
 <script>
 $(document).ready(function() {
-    $('form input[type=text]').focus(function(){
-    // get selected input error container
-    $(this).siblings(".server").hide();
-    });
     $('#bill_zipcode','#bill_city').focus(function(){
     $(".server").hide();
     });
