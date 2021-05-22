@@ -151,7 +151,7 @@
                                                             </li>
                                                         </ul>
                                                         @if($detail = json_decode($product->configure_detail))
-                            <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 74%;color: #535766;display: flex;padding-left: 5%;flex-wrap: wrap;">
+                            <ul style="font-family: 'Lato',sans-serif;padding: 0;float: left;list-style: none;width: 74%;color: #535766;display: flex;flex-wrap: wrap;padding-left: 5%;">
                             @foreach($detail as $key => $config)
                             @if(isset($config->label))
                             
