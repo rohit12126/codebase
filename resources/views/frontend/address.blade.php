@@ -161,16 +161,17 @@
                                         <span class="error server">
                                             {{ $errors->first('city') }}
                                         </span>
+                                        @endif
                                         </div>
                                         
-                                        @endif
+                                        
                                         <div class="form-group">
                                             <input class="form-control bill" required="" type="text" id="bill_zipcode" name="bill_zipcode"   @if(isset($billingAddresses)) value="{{ $billingAddresses->zipcode ?? '' }}" @endif  placeholder="Postcode / ZIP *">
-                                            @if ($errors->has('zip'))
-                                        <span class="error server">
-                                            {{ $errors->first('zip') }}
-                                        </span>
-                                        @endif
+                                                @if ($errors->has('zip'))
+                                                <span class="error server">
+                                                    {{ $errors->first('zip') }}
+                                                </span>
+                                                @endif
                                         </div>
                                         
                                     </div>
