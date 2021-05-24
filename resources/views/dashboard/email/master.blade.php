@@ -101,7 +101,7 @@
                             </tr>
                             <tr>
                                 <td align="center" style="text-align:center;padding-top:5px;font-family: 'Lato',sans-serif;font-size: 11px;">
-                                <a href="#" style="color:#959595" target="_blank">www.customcloset.com</a> | <a href="#" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="#" style="color:#959595" target="_blank">Privacy Policy</a>
+                                <a href="#" style="color:#959595" target="_blank">www.customcloset.com</a> | <a href="{{route('termsAndCondition')}}" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="{{route('privacyPolicy'}}" style="color:#959595" target="_blank">Privacy Policy</a>
                                 </td>
                             </tr>
                             <tr>
@@ -109,9 +109,9 @@
                                 <div>
                                     <span style="text-align:right;display:inline-block;vertical-align:middle">
                                     <span style="font-size:16px;font-family:'Lato',sans-serif;">Follow Us:</span>
-                                    <a href="https://www.facebook.com" style="text-decoration:none;vertical-align:middle" target="_blank""><img src="{{URL::asset('/images/icon/facebook.png')}}" width="22"></a>
-                                    <a href="https://www.instagram.com" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/instagram.png')}}" width="22"></a>
-                                    <a href="https://pintrest.com" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/pintrest.png')}}" width="22"></a>
+                                    <a href="{{$setting->facebook_url ?? 'https://www.facebook.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank""><img src="{{URL::asset('/images/icon/facebook.png')}}" width="22"></a>
+                                    <a href="{{$setting->instagram_url ?? 'https://www.instagram.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/instagram.png')}}" width="22"></a>
+                                    <a href="{{$setting->pinterest_url ?? 'https://www.pinterest.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/pintrest.png')}}" width="22"></a>
                                     </span>
                                 </div>
                                 <div style="font-size:11px;text-align:center;padding-bottom:5px;padding-top:15px;line-height:15px;font-family:'Lato',sans-serif;">

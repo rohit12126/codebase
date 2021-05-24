@@ -19,6 +19,10 @@ class ViewComposerServiceProvider extends ServiceProvider
             'frontend.contact',
             'frontend.home'
         ],CartComposer::class);
+
+        view()->composer([
+            'dashboard.email.master'
+        ],SettingComposer::class);
     }
 
     /**
