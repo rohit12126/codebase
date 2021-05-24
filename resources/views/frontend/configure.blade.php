@@ -518,7 +518,7 @@
                                 <video autoplay loop muted class="product-grid-video mb-5">
                                     <source src="{{URL::asset('/images/home/roller.mp4')}}" type="video/mp4">
                                 </video>
-                                <div class="specs-heading-wrap mt-0"><h3 class="pt-2 heading_s3 text-center">TruClose Hinge</h3></div>
+                                <div class="specs-heading-wrap mb-4"><h3 class="pt-2 heading_s3 text-center">TruClose Hinge</h3></div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <img class="mb-3" src="{{URL::asset('/images/configure/hinge.jpg')}}" alt="">
