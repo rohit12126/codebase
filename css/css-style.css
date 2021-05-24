@@ -10471,6 +10471,15 @@ h5 {
 /* ==================User account form ================ */
 .user-account-form .form-group{
 	display: flex;
+	flex-wrap:wrap;
+}
+@media(min-width:576px){
+	.user-account-form .form-group .form-control{
+		width: calc(100% - 164px);
+	}
+	.user-account-form .form-group .error{
+		margin-left: 164px;
+	}
 }
 .user-account-form .form-group label{
 	min-width: 164px;
