@@ -661,13 +661,21 @@ $(document).ready(function() {
             ship_zipcode: "Please enter a valid postcode",
             ship_name: "Please enter a valid name",
             ship_city: "Please enter a valid city",
-            ship_state: "Please enter a valid state",
+            // ship_state: "Please enter a valid state",
             ship_address: "Please enter a valid address",
             bill_name: "Please enter a valid name",
             bill_city: "Please enter a valid city",
-            bill_state: "Please enter a valid state",
+            // bill_state: "Please enter a valid state",
             bill_address: "Please enter a valid address",
         },
+        errorPlacement: function(error, element) {
+            if ( element.is('select')) {
+                 error.insertAfter(element.parent());
+            }
+            else {
+                error.insertAfter(element);
+            }},
+
         submitHandler: function(form) {
             form.submit(); 
         }
