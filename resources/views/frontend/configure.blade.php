@@ -358,7 +358,7 @@
                                         </p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-right.jpg')}}" alt="">
+                                        <img class="mb-2" src="{{URL::asset('/images/configure/slider-3.jpg')}}" alt="">
                                         <p>
                                             Optional Triple Track
                                         </p>
@@ -471,7 +471,7 @@
                                         </p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <img class="mb-2" src="{{URL::asset('/images/configure/2-track-mirror-slider-open-right.jpg')}}" alt="">
+                                        <img class="mb-2" src="{{URL::asset('/images/configure/slider-3.jpg')}}" alt="">
                                         <p>
                                             Optional Triple Track
                                         </p>
