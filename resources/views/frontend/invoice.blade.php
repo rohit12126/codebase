@@ -261,7 +261,7 @@
                                 Net Amount
                             </td>
                             <td style="padding: 10px;border-bottom:1px solid #000;">
-                                @if($order->grand_total > 999 ) ${{number_format($order->getPaymentDetail->tax, 2,",")}} @else ${{number_format($order->getPaymentDetail->tax, 2)}}@endif
+                                @if($order->grand_total > 999 ) ${{number_format($order->getPaymentDetail->tax, 2,".",",")}} @else ${{number_format($order->getPaymentDetail->tax, 2)}}@endif
                             </td>
                         </tr>
                         <tr style="font-weight: bold;">
