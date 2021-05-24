@@ -61,7 +61,7 @@
     }
     .tooltip {
         transform: scale(0.7);
-        top: 0px !important;
+        top: 24px !important;
         left: 28px !important;
     }
     .tooltip.tooltip-custom-left{
@@ -79,6 +79,10 @@
     }
     .content-width-fix{
         width: 240px !important;
+    }
+    .product-listing .btn{
+        padding: 10px 20px;
+        min-width: 154px;
     }
 }
 
