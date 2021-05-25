@@ -34,6 +34,7 @@ class OrderController extends Controller
             $req = new \stdClass();
             $req->order_no = $request->order_id;
             $req->order_status = '5';
+            $req->cancelled_by = 1;
             
             if(orderManager::orderStatusChange($req) == true)
             {
@@ -59,6 +60,19 @@ class OrderController extends Controller
 
     public function orderStatusChange(Request $req)
     {
+        if($req->order_status == 5)
+        {
+            if(empty($req->message))
+            {
+                Common::setMessage(__('order_status_change_failed'), 'error');
+                return back();
+            }
+            $reqeuest = new \stdClass();
+            $reqeuest->order_id = $req->order_no;
+            $reqeuest->cancelled_by = 1;
+            $reqeuest->message = $req->message ?? '';
+            OrderManager::ordercancelreason($reqeuest);
+        }
         $response = OrderManager::orderStatusChange($req);
         if($response == true){
             Common::setMessage(__('order_status_change_success'));

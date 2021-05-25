@@ -70,13 +70,13 @@
                         </table>
                     </div>
                     <div class="col-md-6">
-                        <form action="{{ url()->current() }}" method="post">
+                        <form action="{{ url()->current() }}" id="status" method="post">
                             <table class="w-100">
                                 <tr class="row m-0">
                                     <th class="p-1 col-sm-3">Order Status</th>
                                     <td class="p-1 col-sm-9">
                                         @csrf
-                                        <select name="order_status" id="" class="form-control" required>
+                                        <select name="order_status" id="order_status" class="form-control" required>
                                             <option value="1" @if($order->status == 1) selected @else disabled @endif > Received
                                             </option>
                                             <option value="2" @if($order->status == 2)
@@ -107,8 +107,16 @@
                                     </td>
                                 </tr>
                             </table>
+                            <div class="form-group col-md-12" id="reason">
+                                <textarea placeholder="Reason for canceling *" id="description" class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="4"></textarea>
+                                @if ($errors->has('message'))
+                                <div class="error">
+                                    {{ $errors->first('message') }}
+                                </div>
+                                @endif
+                            </div>
                             <div class="text-right">
-                                <button type="submit" class="btn btn-danger mt-2 mb-2">Submit</button>
+                                <button type="submit" id="submitstatus" class="btn btn-danger mt-2 mb-2">Submit</button>
                             </div>
                             <div class="text-danger text-right">After submit buyer will get email notification for order status change!</div>
                         </form>
@@ -187,5 +195,28 @@
 @endsection
 
 @section('javascript')
+
 <script src="{{asset('js/jquery-1.10.2.min.js')}}"></script>
+<script>
+ $('#reason').css('display','none');
+function somejs(){
+    if ( $('#order_status').val() == 5 )
+        {
+        $('#reason').css('display','block');
+        }
+    }
+    somejs();
+    $('select').on('change', function() {
+    somejs();
+    });
+
+</script>
+@if(@$order->status == 5)
+<script>
+    {
+        $('#reason').css('display','none');
+        $('#submitstatus').css('display','none');
+    }
+    </script>
+    @endif
 @endsection
