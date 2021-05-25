@@ -79,7 +79,8 @@ class CartController extends Controller
         if($req->session()->has('buynow') && isset($_GET['buy-now']))
         {
             $productList = $req->session()->get('buynow');
-            $cartSubTotal = $productList['item']->price = $productList['item']->sale_price;
+            $cartSubTotal = $productList['item']->sale_price * (($productList['item']->per_foot == 1) ? $productList['item']->min_cart_qty : 1);
+            $productList['item']->price = $productList['item']->sale_price;
         }
         else
         {
