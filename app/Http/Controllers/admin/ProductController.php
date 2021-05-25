@@ -98,7 +98,7 @@ class ProductController extends Controller
         if(is_null($req->storeimage)) {
             $imgRequired = 'required|';
         }
-        $weightRequired = $confIdRequired = '';
+        $minCartRequired = $weightRequired = $confIdRequired = '';
         if($req->is_accessory == 0)
         {
             $confIdRequired = 'required|max:200|min:5';
