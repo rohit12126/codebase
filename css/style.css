@@ -319,7 +319,10 @@ input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
-
+input[type="radio"]:focus,
+input[type="checkbox"]:focus{
+  box-shadow:none;
+}
 textarea {
   overflow: auto;
   resize: vertical;
@@ -5250,7 +5253,9 @@ html:not([dir="rtl"]) .dropleft .dropdown-toggle:empty::after {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
+.form-control:focus{
+  outline:none;
+}
 @media (prefers-reduced-motion: reduce) {
   .form-control {
     transition: none;
