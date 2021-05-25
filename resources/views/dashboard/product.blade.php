@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="form-group" id="per_foot">
                                         <label>Is Price per Foot ?</label>
-                                        <input type="checkbox" name="per_foot" class="form-control" @if(@$product->sale_price == 1) checked @endif>
+                                        <input type="checkbox" name="per_foot" class="form-control" @if(@$product->per_foot == 1) checked @endif>
                                     </div>
                                     {{--<div class="form-group">
                                         <label>Cart Limit</label>
