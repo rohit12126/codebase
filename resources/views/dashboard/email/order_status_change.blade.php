@@ -29,7 +29,7 @@
                                 <table style="border-collapse:collapse;border-spacing:0px;margin:0 auto" width="100%">
                                     <tbody>
                                         <tr style="margin:0;padding:0">
-                                            <td width="calc(100% - (30*2))" style="margin:0;padding:30px;width:calc(100% - (30px*2));padding-top:20px;background-color: #F94E57;color:white;" bgcolor="#03a685">
+                                            <td width="calc(100% - (30*2))" style="margin:0;padding:30px;width:calc(100% - (30px*2));padding-top:20px;background-color: #00436b;color:white;">
                                             <table style="border-collapse:collapse" width="100%">
                                                 <tbody>
                                                     <tr style="margin:0;padding:0">
