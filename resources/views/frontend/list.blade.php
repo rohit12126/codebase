@@ -65,7 +65,7 @@
                                 @else
                                     <a href="{{ url('product/detail/').'/'.$product->slug }}" class="product-listing-desc">
                                         <div class="products-list-title"><h2>{{$product->name}}</h2></div>
-                                        <div class="products-list-price">${{$product->sale_price}}</div>
+                                        <div class="products-list-price">${{$product->sale_price}} @if($product->per_foot) Per Foot @endif</div>
                                     </a>
                                 @endif
                             </div>

@@ -24,7 +24,8 @@ class Product extends Model implements ReviewRateable
         'is_accessory',
         'configure_id',
         'weight',
-        'per_foot'
+        'per_foot',
+        'min_cart_qty'
     ];
 
     /**

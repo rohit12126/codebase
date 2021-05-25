@@ -50,7 +50,7 @@
                             <div>
                                 <div class="cart-product-quantity">
                                     <div class="quantity">
-                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif >
+                                        <input type="button" value="-" id ="msub{{$product->id}}" class="sub{{$product->id}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == ($product->options->min_cart_qty) ? $product->options->min_cart_qty : 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif >
 
                                         <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" class="qty mqty{{$product->rowId}}" id="mqty{{$product->rowId}}" size="4" productId="{{$product->id}}" datavalue="" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
 
@@ -108,12 +108,17 @@
                     <a href="javascript:void(0)"onclick="myFunction('{{$product->options['configureDetails']['configurationId']}}')" id="myBtn" >configured details </a><i id="c-arrow{{$product->options['configureDetails']['configurationId']}}" class="linearicons-arrow-down"></i>
                     </div>
                     @endif
+                    @if($product->options->min_cart_qty)
+                    </br><div id="card">
+                    min quantity : {{$product->options->min_cart_qty}}
+                    </div>
+                    @endif
                 </td>
                 <td class="text-center">${{number_format($product->price,2)}}</td>
                 <td class="text-center">
                     <div class="cart-product-quantity">
                         <div class="quantity">
-                            <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
+                            <input type="button" value="-" id ="sub{{$product->rowId}}" class="sub{{$product->rowId}} minus remove-from-cart" productId="{{$product->id}}" rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}" @if($product->qty == ($product->options->min_cart_qty) ? $product->options->min_cart_qty : 1) style="cursor: -webkit-not-allowed; cursor: not-allowed;" @endif>
 
                             <input type="number" min="0" step="1" name="quantity" pattern="/^[1-9]\d*$/" value="{{$product->qty}}" title="Qty" datavalue="" class="qty qty{{$product->rowId}}" id ="qty{{$product->rowId}}" size="4" productId="{{$product->id}}"  rowId="{{$product->rowId}}" conf_id="{{$product->options['configureDetails']['configurationId'] ?? ''}}" article_nu="{{$product->options['configureDetails']['partList']['articleNr'] ?? '' }}" price="{{$product->price}}">
 
