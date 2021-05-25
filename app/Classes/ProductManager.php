@@ -14,6 +14,7 @@ class ProductManager
 {
     public static function add($req)
     {
+        dd($req);
         $description = Common::parseEditorContentAndImages($req->input('description'), 'upload/product/content/');
 
         $slug = self::generateSlug($req->name);
@@ -29,7 +30,8 @@ class ProductManager
             'status' => (int)$req->status,
             'is_accessory' => (int)$req->is_accessory,
             'configure_id' => $req->configure_id ?? NULL,
-            'weight' => $req->weight ?? NULL
+            'weight' => $req->weight ?? NULL,
+            'per_foot' => ($req->per_foot == 'on') ? 1 : 0,
         ];
         if ($product = ProductModel::create($data)) {
             if ($req->image) {

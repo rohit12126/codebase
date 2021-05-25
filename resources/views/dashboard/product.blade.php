@@ -86,6 +86,10 @@
                                             <div class="error">{{ $errors->first('sale_price') }}</div>
                                         @endif
                                     </div>
+                                    <div class="form-group" id="per_foot">
+                                        <label>Is Price per Foot ?</label>
+                                        <input type="checkbox" name="per_foot" class="form-control">
+                                    </div>
                                     {{--<div class="form-group">
                                         <label>Cart Limit</label>
                                         <span class="mandatory">*</span>
@@ -221,11 +225,13 @@
         {
         $('#configure_id').css('display','none');
         $('#weight').css('display','block');
+        $('#per_foot').css('display','block');
         }
     else if ( $('#is_accessory').val() == 0)
     {
         $('#configure_id').css('display','block');
         $('#weight').css('display','none');
+        $('#per_foot').css('display','none');
     }
     }
     somejs();
