@@ -23,7 +23,8 @@ class Product extends Model implements ReviewRateable
         'status',
         'is_accessory',
         'configure_id',
-        'weight'
+        'weight',
+        'per_foot'
     ];
 
     /**
