@@ -46,8 +46,10 @@ class ProductController extends Controller
         }
         else {
             $weightRequired = 'required';
-            if($req->per_foot)
-            $minCartRequired = 'required|numeric';
+            if($req->per_foot == 1)
+            {
+                $minCartRequired = 'required|numeric';
+            }
         }
         $this->validate(
             $req, 
@@ -103,8 +105,10 @@ class ProductController extends Controller
         }
         else{
             $weightRequired ='required';
-            if($req->per_foot)
-            $minCartRequired = 'required|numeric';
+            if($req->per_foot == 1)
+            {
+                $minCartRequired = 'required|numeric';
+            }
         }
         $this->validate(
             $req, 
