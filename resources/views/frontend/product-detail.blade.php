@@ -71,14 +71,16 @@
                         <span class="pdp-price 
                         cursor-none" tabindex="0">
                             <strong>${{$productData['product']->sale_price}}</strong>
-                        </span> 
+                            <span>@if($productData['product']->per_foot == 1) Per Foot @endif </span>
+                        
                     </p>
-                        <!-- <span class="pdp-mrp"><s>&#36;4599</s></span>
-                        <span class="pdp-discount">(50% OFF)</span> -->
+                    @if($productData['product']->per_foot == 1)
 
-                    <!-- <p class="pdp-selling-price">
-                        <span class="pdp-vatInfo">inclusive of all taxes</span>
-                    </p>-->
+                    <p class="pdp-selling-price">
+                        <span class="pdp-vatInfo">minimum cart quantity {{$productData['product']->min_cart_qty}}</span>
+                    </p>
+                    @endif
+
                     <p class="sku-number">
                         <strong>SKU No.</strong> <span>{{$productData['product']->sku}}</span>
                     </p>

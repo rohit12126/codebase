@@ -39,13 +39,15 @@ class ProductController extends Controller
      */
     public function addProduct(Request $req)
     {
-        $weightRequired = $confIdRequired = '';
+        $minCartRequired = $weightRequired = $confIdRequired = '';
         if($req->is_accessory == 0)
         {
             $confIdRequired = 'required|max:200|min:5';
         }
         else {
             $weightRequired = 'required';
+            if($req->per_foot)
+            $minCartRequired = 'required|numeric';
         }
         $this->validate(
             $req, 
@@ -56,7 +58,8 @@ class ProductController extends Controller
                 'sale_price'=> 'required|numeric|min:0|not_in:0',
                 'sku'=> 'required|max:20|min:2|unique:products,sku',
                 'configure_id' =>$confIdRequired,
-                'weight' => $weightRequired
+                'weight' => $weightRequired,
+                'min_cart_qty' => $minCartRequired
             ]
         ); 
         $response = ProductManager::add($req);
@@ -100,6 +103,8 @@ class ProductController extends Controller
         }
         else{
             $weightRequired ='required';
+            if($req->per_foot)
+            $minCartRequired = 'required|numeric';
         }
         $this->validate(
             $req, 
@@ -109,7 +114,8 @@ class ProductController extends Controller
                 'description' => 'required',
                 'sku'=> 'required|max:20|min:2|unique:products,sku,'.$req->id,
                 'configure_id' =>$confIdRequired,
-                'weight' => $weightRequired
+                'weight' => $weightRequired,
+                'min_cart_qty' => $minCartRequired
             ]
         );
         $response = ProductManager::edit($req);

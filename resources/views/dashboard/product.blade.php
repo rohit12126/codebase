@@ -90,6 +90,14 @@
                                         <label>Is Price per Foot ?</label>
                                         <input type="checkbox" name="per_foot" class="form-control" @if(@$product->per_foot == 1) checked @endif>
                                     </div>
+                                    <div class="form-group" id="per_foot">
+                                        <label>Minimum Cart Quantity ?</label>
+                                        <span class="mandatory">*</span>
+                                        <input type="number" id="min_cart_qty" name="min_cart_qty" class="form-control" value="{{ old('min_cart_qty', @$product->min_cart_qty) }}">
+                                        @if($errors->has('min_cart_qty'))
+                                            <div class="error">{{ $errors->first('min_cart_qty') }}</div>
+                                        @endif
+                                    </div>
                                     {{--<div class="form-group">
                                         <label>Cart Limit</label>
                                         <span class="mandatory">*</span>
@@ -226,12 +234,15 @@
         $('#configure_id').css('display','none');
         $('#weight').css('display','block');
         $('#per_foot').css('display','block');
+        $('#min_cart_qty').css('display','block');
         }
     else if ( $('#is_accessory').val() == 0)
     {
         $('#configure_id').css('display','block');
         $('#weight').css('display','none');
         $('#per_foot').css('display','none');
+        $('#min_cart_qty').css('display','none');
+
     }
     }
     somejs();

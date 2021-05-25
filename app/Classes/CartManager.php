@@ -98,6 +98,15 @@ class CartManager
                 break;
             }
         }
+        if ($product->min_cart_qty <= $qty) { 
+        } else {
+            $response = [
+                'status' => false,
+                'message'=> "Unable to update cart (Minimum ".$product->min_cart_qty." Quantity Required.",
+                'qty'=> $productCartQty
+            ];
+            return $response;
+        }
         
         if ($product->max_cart_qty >= $qty) { 
             if ($set == 1 || $set == true) {
@@ -130,7 +139,7 @@ class CartManager
         $contains = $this->getCartContain();
         foreach ($contains as $key => $item) {
             if ($item->id == $product->id) {
-                if($item->qty == 1)
+                if($item->qty == $item->options->min_cart_qty ?? 1)
                 {
                     $qty = $item->qty;
                     $rowId = $item->rowId;
@@ -179,7 +188,6 @@ class CartManager
      */
     public function addProduct($product, $qty = 1, $configuredProductData = 0)
     {
-        
         if(!empty($configuredProductData))
         {
             $price = $this->productManager->getPriceByArticlenumber(
@@ -193,12 +201,13 @@ class CartManager
         $productData = [
             'id'=> $product->id,
             'name'=> ($product->is_accessory == 0) ? ucfirst(strtolower($product->catergory->name)).' '.$product->name : $product->name,
-            'qty'=> $qty,
+            'qty'=> ($product->per_foot == 1) ? $product->min_cart_qty : $qty,
             'price'=> str_replace(",", "",$price),
             'options' => 
             [
                 'image' => @$product->images[0]->image,
-                'configureDetails' => $configuredProductData
+                'configureDetails' => $configuredProductData,
+                'min_cart_qty' => $product->min_cart_qty,
             ]
         ];
         
