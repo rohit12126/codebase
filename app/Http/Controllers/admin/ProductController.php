@@ -46,7 +46,7 @@ class ProductController extends Controller
         }
         else {
             $weightRequired = 'required';
-            if($req->per_foot == 1)
+            if($req->per_foot == 'on')
             {
                 $minCartRequired = 'required|numeric';
             }
@@ -105,7 +105,7 @@ class ProductController extends Controller
         }
         else{
             $weightRequired ='required';
-            if($req->per_foot == 1)
+            if($req->per_foot == 'on')
             {
                 $minCartRequired = 'required|numeric';
             }

@@ -31,7 +31,7 @@ class ProductManager
             'configure_id' => $req->configure_id ?? NULL,
             'weight' => $req->weight ?? NULL,
             'per_foot' => ($req->per_foot == 'on') ? 1 : 0,
-            'min_cart_qty'=>$req->min_cart_qty ?? NULL
+            'min_cart_qty'=>($req->per_foot != 'on') ? NULL : $req->min_cart_qty
         ];
         if ($product = ProductModel::create($data)) {
             if ($req->image) {
@@ -76,7 +76,7 @@ class ProductManager
             'configure_id' => $req->configure_id ?? NULL,
             'weight' => $req->weight ?? NULL,
             'per_foot' => ($req->per_foot == 'on') ? 1 : 0,
-            'min_cart_qty'=>$req->min_cart_qty ?? NULL
+            'min_cart_qty'=> ($req->per_foot != 'on') ? NULL : $req->min_cart_qty
 
         ];
         if ($product->fill($data)->save()) {
