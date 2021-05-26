@@ -50,9 +50,6 @@
                     <p>
                         {!! $blog->description !!}
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sapiente deserunt, necessitatibus at illo est perferendis voluptate maxime laboriosam vitae eum totam quibusdam? Animi, ipsum nulla dolor officiis quibusdam expedita.
-                    </p>
                 </article>
                 <!-- <div class="blog-post-arrows">
                     <div class="blog-post-switcher">
