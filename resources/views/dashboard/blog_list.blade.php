@@ -100,7 +100,7 @@
                                 @endif
                             </table>
                         </div>
-                        {{ @$blog_list->links() }}
+                        {{ @$blog_list->appends(request()->input())->links() }}
                     </div>
                 </div>
             </div>
