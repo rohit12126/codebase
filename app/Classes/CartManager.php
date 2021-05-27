@@ -102,7 +102,7 @@ class CartManager
         } else {
             $response = [
                 'status' => false,
-                'message'=> "Unable to update cart (Minimum ".$product->min_cart_qty." Quantity Required.",
+                'message'=> "Unable to update (Minimum ".$product->min_cart_qty." Quantity Required.)",
                 'qty'=> $productCartQty
             ];
             return $response;
