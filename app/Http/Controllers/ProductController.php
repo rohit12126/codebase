@@ -180,7 +180,6 @@ class ProductController extends Controller
         if ($productData) {
             $productId = $productData['product']->id;
             $cart = $this->cartManager->getProduct($productId);
-            
             return view('frontend.configure',
                 ['productData' => $productData, 'cart'=>$cart]
             );
