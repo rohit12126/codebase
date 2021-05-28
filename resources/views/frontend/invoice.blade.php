@@ -277,7 +277,7 @@
             </tr>
             <tr>
                 <th style="border-top: 1px solid #000;text-align: left;padding: 5px;">
-                    <span style="font-weight: bold;line-height: 22px;">Total Amount(In Words): {{$order->total_text}} Only</span>
+                    <span style="font-weight: bold;line-height: 22px;">Total Amount (In Words): {{$order->total_text}} Only</span>
                 </th>
             </tr>
         </table>
