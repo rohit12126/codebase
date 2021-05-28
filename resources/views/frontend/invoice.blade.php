@@ -230,7 +230,7 @@
                                 @endif
                                     {{array_reverse( $array )[1] ?? $product->product->sku}} 
                                 </td>
-                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">${{number_format($product->price, 2)}}</td>
+                                <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">${{number_format($product->price, 2)}} @if($product->product->per_foot) / Foot @endif</td>
                                 <td style="padding: 10px;text-align:center;border-right:1px solid #000;border-bottom:1px solid #000;">{{number_format($product->product_quantity)}}</td>
                                 <td style="padding: 10px;text-align:center;border-bottom:1px solid #000;">${{number_format($product->price * $product->product_quantity, 2)}}</td>
                             </tr>
