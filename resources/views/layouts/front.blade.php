@@ -308,7 +308,7 @@ footer-->
                 </div>
                 <div class="text-center">
                     <p class="pt-3 mb-0">
-                        &#169; Copyright Custom Closets. All rights Reserved.
+                        &#169; Copyright {{date("Y")}} Custom Closets. All rights Reserved.
                     </p>
                 </div>
             </div>
