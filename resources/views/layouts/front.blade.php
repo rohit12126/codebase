@@ -122,7 +122,7 @@
                 <nav class="head-nav">
                     <ul class="head-nav-ul mt-lg-1 mr-lg-3">
                         <li class="head-nav-li">
-                            <a href="{{ url('installation/') }}" class="head-nav-link {{ request()->is('installation') ? 'active' : ''}}">Installation</a>
+                            <a href="{{ url('installation/') }}" class="head-nav-link {{ request()->is('installation') ? 'active' : ''}}">Installation Videos</a>
                         </li>
                         <li class="head-nav-li">
                             <a href="{{ url('product/') }}" class="head-nav-link {{ request()->is('product*') ? 'active' : ''}} ">Products</a>
