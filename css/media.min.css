@@ -83,6 +83,7 @@
     .product-listing .btn{
         padding: 10px 20px;
         min-width: 154px;
+        opacity: 1;
     }
 }
 
@@ -426,7 +427,7 @@
     .specs-mega-menu{
         width: 100%;
         border-left: 0;
-        padding-top: 44px;
+        padding-top: 42px;
     }
     .specs-mega-menu>li{
         width: 100%;

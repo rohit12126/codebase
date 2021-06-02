@@ -5776,6 +5776,8 @@ footer .widget_title {
 .comment_list{
 	max-height: 300px;
     overflow-y: auto;
+	z-index: 0;
+	position: relative;
 }
 .comment_list::-webkit-scrollbar{width:5px}
 .comment_list::-webkit-scrollbar-track{background:#eee}
@@ -8421,14 +8423,7 @@ h5 {
 	/*=================Home page Step 2 end====================*/
 
 	/*================Home page Step 3 section=================*/
-	.home-measure-step{
-		
-	}
-	.measure-step-video{
-		width: 100%;
-		max-width: 870px;
-		margin: 0 auto;
-	}
+	
 	/*=================Home page Step 3 end====================*/
 /*=================Home Page End====================*/
 
@@ -8473,7 +8468,7 @@ h5 {
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		right: -100%;
+		right: -106%;
 		width: 100%;
 		max-width: 800px;
 		height: 100vh;
@@ -8631,6 +8626,7 @@ h5 {
     }
 	.specs-mega-back{
 		color: #00436b;
+		cursor:pointer;
 	}
 	.door-style-wrap{
 		display: grid;
@@ -9125,8 +9121,7 @@ h5 {
     align-items: center;
     justify-content: center;
 }
-.product-listing .btn
-{
+.product-listing .btn{
     position: absolute;
     opacity: 0;
     bottom: 14%;
