@@ -96,7 +96,7 @@
                                                             <span>{{$data['ship']->zipcode ?? $data['bill']->zipcode}}</span>
                                                         </div>
                                                                                 </br>Hope you have liked it. Please click on link below to get the installation instructions for your product:
-                                                                                <a href="{{url('/installation')}}" ?>Installation Instructions</a>
+                                                                                <a href="{{url('/installation-video')}}" ?>Installation Instructions</a>
                                                                             </p>
                                                                             <p>In case, you have not received this order yet or have any query while installing your product, then kindly reach us at enquire@customcloset.com.</p>
                                                                             </td>

@@ -36,7 +36,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-md-6">
-                    <a href="{{ url('installation/') }}" class="resources-card" >
+                    <a href="{{ url('installation-video/') }}" class="resources-card" >
                         <div class="resources-icon">
                             <img src="{{URL::asset('/images/icon/video.svg')}}" alt="">
                             <img src="{{URL::asset('/images/icon/video-white.svg')}}" class="white-svg">

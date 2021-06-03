@@ -380,7 +380,7 @@ Route::get('home/', 'HomeController@home')->name('home');
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('faq/', 'HomeController@faq')->name('faq');
 Route::get('about-us/', 'HomeController@aboutUs')->name('about-us');
-Route::get('installation/', 'HomeController@installation')->name('installation');
+Route::get('installation-video/', 'HomeController@installation')->name('installation');
 Route::get('resource/', 'HomeController@resourcePage')->name('resourcePage');
 Route::get('terms-and-conditions/', 'HomeController@termsAndCondition')->name('termsAndCondition');
 Route::get('404/', 'HomeController@notFound')->name('notFound');
