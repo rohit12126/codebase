@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-<section class="main-wrapper">
+    <section class="client-section">
         <div class="container">
             <h1 class="pt-3 pb-4 mb-5 heading_s3 text-center">Clients</h1>
             <div class="row">
@@ -418,7 +418,7 @@
                 </div>
             </div>
         </div>
-</section>
+    </section>
 @endsection
 
 @section('scripts')

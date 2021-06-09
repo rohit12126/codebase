@@ -28,7 +28,7 @@
                         <div><span class="start-steps-number"><b title="Step first">1</b></span></div>
                         <h4 class="home-step-heading mb-4">Choose your door type</h4>
                         <p class="home-step-para">
-                            Bifold and slider doors both offer their own unique advantages. Click on the RED hot spots below to learn more about which style is right for you.
+                            Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for.
                         </p>
                     </article>
                 </div>
@@ -61,7 +61,7 @@
                 <span class="step-serial">Step 1:</span> Bifold Or Sliding Doors?
             </h2>
             <p class="home-step-para">
-            Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for. 
+            Bifold and slider doors both offer their own unique advantages. Click on the RED hot spots below to learn more about which style is right for you.
             </p>
             <div class="row mt-4">
                 <div class="col-lg-6 col-sm-12 home-swip-column pr-lg-5">
@@ -296,7 +296,7 @@
                 <span class="step-serial">Step 3:</span> Measure and fit 
             </h2>
             <p class="home-step-para">
-                All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit.
+                All of our custom closet doors are "True to Fit" which means we do all the calculations for you so that you get the proper fit. Our doors can be installed on any type of flooring check out the videos below to learn more.
             </p>
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0">

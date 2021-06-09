@@ -10150,6 +10150,26 @@ h5 {
 	color:#fff;
 }
 /* =============================== Client CSS ===================================*/
+.client-section{
+	background-image: url(../images/high-rise-building.jpg);
+	position: relative;
+	background-repeat: round;
+}
+.client-section:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0 0 0 / 70%);
+}
+.client-section .heading_s3{
+	color: #fff;
+}
+.client-section .heading_s3:before{
+	background: #fff;
+}
 .client-list-tile{
 	padding: 15px;
 	border-radius: 4px;
@@ -10158,6 +10178,7 @@ h5 {
 	overflow: hidden;
     margin-bottom: 1.25rem;
 	height: calc(100% - 1.25rem);
+	background: #fff;
 }
 .client-list-tile:before{
 	content: "\f448";
