@@ -8428,6 +8428,103 @@ h5 {
 /*=================Home Page End====================*/
 
 
+/*=================== Installation page CSS ======================*/
+.installation-videos-wrap{
+	display: flex;
+	position: relative;
+}
+.installation-videos-wrap .specs-iframe-wrap{
+	padding-top: 40%;
+	margin-right: 378px;
+}
+.iv-playlist-wrap{
+	width: 100%;
+	position: absolute;
+    height: 100%;
+    right: 0;
+	max-width: 380px;
+	background: rgba(0,0,0,0.8);
+    -webkit-transition: -webkit-transform .25s cubic-bezier(0,0,0.2,1);
+    transition: transform .25s cubic-bezier(0,0,0.2,1),-webkit-transform .25s cubic-bezier(0,0,0.2,1);
+}
+.iv-playlist-header{
+	padding: 15px;
+    border-bottom: 1px solid #444;
+}
+.iv-playlist-title{
+	height: 20px;
+    line-height: 20px;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+	color: #eee;
+	font-size: 1rem;
+}
+.iv-playlist-close{
+	cursor:pointer;
+}
+.iv-playlist-ul{
+	height: calc(100% - 51px);
+	list-style: none;
+	overflow-y: auto;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.iv-playlist-li{
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: flex-start;
+}
+.iv-playlist-li:hover{
+	background-color: rgba(255,255,255,0.15);
+}
+.iv-playlist-li.active{
+	background-color: rgba(255,255,255,0.1);
+}
+.iv-playlist-thumb{
+	width: 64px;
+	height: 36px;
+	position: relative;
+	background-position: center center;
+    background-size: 64px 48px;
+	margin: 2px;
+    border-width: 0;
+}
+.iv-playlist-li.active .iv-playlist-thumb{
+	border-style: solid;
+    border-width: 2px;
+	border-color: #f00;
+	margin: 2px;
+}
+.iv-playlist-thumb-title{
+	padding-left: 9px;
+    color: #b8b8b8;
+	max-height: 2.6em;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+	color:#eee;
+	font-size: 14px;
+}
+.iv-pl-icon{
+	padding-bottom:5px;
+	align-self: center;
+}
+.iv-pl-icon i{
+	color:#eee;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.iv-playlist-li.active .iv-pl-icon i{
+	color: #f00;
+}
 /*=================configurator Page CSS====================*/
 	.configure-specs{
 		position: fixed;
@@ -8594,7 +8691,7 @@ h5 {
 	}
 	.specs-iframe-wrap{
 		position: relative;
-		max-width: 100%;
+		width: 100%;
 		padding-top: 56.6%;
 	}
 	.specs-iframe-responsive{
@@ -8603,9 +8700,8 @@ h5 {
 		left: 0;
 		right: 0;
 		bottom:0;
-		max-height: 100%;
-		max-width:100%;
 		height: 100%;
+		width: 100%;
 	}
 	.normal-ul{
 		list-style: disc;

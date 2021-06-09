@@ -9,6 +9,12 @@
 @media (max-width: 1199px) {
     body{
         padding-top: 122px;
+    }    
+    .container{
+        max-width: 100% !important;
+    }
+    .main-wrapper{
+        margin: 0 15px;
     }
     .main-header{
         padding: 0.5rem 0;
