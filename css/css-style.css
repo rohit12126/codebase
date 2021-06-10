@@ -8429,13 +8429,61 @@ h5 {
 
 
 /*=================== Installation page CSS ======================*/
+.section.installation-wrap{
+	overflow-x: visible;
+}
 .installation-videos-wrap{
 	display: flex;
 	position: relative;
 }
 .installation-videos-wrap .specs-iframe-wrap{
-	padding-top: 40%;
-	margin-right: 378px;
+	-webkit-transition: all .25s cubic-bezier(0,0,0.2,1);
+    transition: all .25s cubic-bezier(0,0,0.2,1),all .25s cubic-bezier(0,0,0.2,1);
+}
+.playlist-trigger{
+	position: absolute;
+	padding: 4px;
+	top: 0;
+	right: -59px;
+	background-color: #00436b;
+	cursor: pointer;
+	font-size: 12px;
+	width: 60px;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+.playlist-trigger svg{
+	width: 36px;
+	animation: heartbeat 0.6s ease-in infinite;
+}
+.installation-videos-wrap.open .playlist-trigger{
+	visibility: hidden;
+}
+@media(min-width:992px){
+	.installation-videos-wrap.open .specs-iframe-wrap{
+		margin-right: 378px;
+	}
+}
+@media(min-width:1200px){
+	.installation-videos-wrap .specs-iframe-wrap{
+		padding-top: 40%;
+	}
+}
+@media(max-width:1199px){
+	.installation-videos-wrap:not(.open){
+		margin-right: 50px;
+	}
+	.playlist-trigger{
+		width: 50px;
+		font-size: 10px;
+		right: -49px;
+	}
+	.playlist-trigger svg{
+		width: 32px;
+	}
 }
 .iv-playlist-wrap{
 	width: 100%;
@@ -8446,6 +8494,12 @@ h5 {
 	background: rgba(0,0,0,0.8);
     -webkit-transition: -webkit-transform .25s cubic-bezier(0,0,0.2,1);
     transition: transform .25s cubic-bezier(0,0,0.2,1),-webkit-transform .25s cubic-bezier(0,0,0.2,1);
+	transform: scaleX(0);
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+.installation-videos-wrap.open .iv-playlist-wrap{
+	transform: scaleX(1);
 }
 .iv-playlist-header{
 	padding: 15px;
@@ -8475,6 +8529,10 @@ h5 {
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 }
+.iv-playlist-ul::-webkit-scrollbar{width:8px;}
+.iv-playlist-ul::-webkit-scrollbar-track{background:rgba(0,0,0,0.25)}
+.iv-playlist-ul::-webkit-scrollbar-thumb{background:rgb(238 238 238 / 65%);border-radius:10px;border-right: 0.05px solid #000000fa;}
+.iv-playlist-ul::-webkit-scrollbar-thumb:hover{background:rgb(238 238 238 / 65%);}
 .iv-playlist-li{
 	padding: 10px;
 	cursor: pointer;

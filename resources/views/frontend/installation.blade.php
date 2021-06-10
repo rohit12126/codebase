@@ -6,8 +6,14 @@
             Installation of CDM closet doors is pretty easy and your level of experience, tools, and door configuration will help dictate whether you will want to do this yourself or hire an installer. Watch our installation videos here for the door type you are interested in and you can decide for yourself if you want to tackle it yourself or hire someone to do it for you.
         </p>
 
-        <div class="installation-videos-wrap">
+        <div class="installation-videos-wrap open">
             <div class="specs-iframe-wrap" id="youtubeplayer">
+                <div class="playlist-trigger">
+                    <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-23"></use><path d="m 22.53,21.42 0,6.85 5.66,-3.42 -5.66,-3.42 0,0 z m -11.33,0 9.06,0 0,2.28 -9.06,0 0,-2.28 0,0 z m 0,-9.14 13.6,0 0,2.28 -13.6,0 0,-2.28 0,0 z m 0,4.57 13.6,0 0,2.28 -13.6,0 0,-2.28 0,0 z" fill="#fff" id="ytp-id-23"></path></svg>
+                    <span>
+                        Playlist
+                    </span>
+                </div>
                 <iframe class="specs-iframe-responsive" width="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="iv-playlist-wrap">
@@ -112,20 +118,20 @@
 @section('scripts')
     <script>
         $(function(){
-            console.log('hiasda');
             var youtubeUrl = "https://www.youtube.com/embed/" + $('#youtubevideotabs li:first-child').attr('youtubeid') + "?rel=0";
-            $('#youtubeplayer iframe').attr('src',youtubeUrl);
-            
+            $('#youtubeplayer iframe').attr('src',youtubeUrl);            
             $('#youtubevideotabs li').click(function(){
                 youtubeUrl = "https://www.youtube.com/embed/"+ $(this).attr('youtubeid') +"?rel=0";
                 $('#youtubeplayer iframe').attr('src',youtubeUrl);
-                console.log('hiasda1');
-
                 $('#youtubevideotabs li').removeClass('active');
                 $(this).addClass('active');
-                console.log('hiasda');
-
             }); 
+        });
+        $('.installation-videos-wrap .playlist-trigger').on("click", function(){
+            $('.installation-videos-wrap').addClass('open');
+        });
+        $('.installation-videos-wrap .iv-playlist-close').on("click", function(){
+            $('.installation-videos-wrap').removeClass('open');
         });
     </script>
 @endsection
