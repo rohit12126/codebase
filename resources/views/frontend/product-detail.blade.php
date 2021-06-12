@@ -47,7 +47,7 @@
                         if($productData['reviewCount'] == 0)
                         $avgRate = 0;
                     @endphp
-                    <div class="rating-img-icon">
+                    <div class="rating-img-icon mt-2 mt-lg-0">
                         @for ($i = 0; $i < 5; $i++)
                             @if ($i < $avgRate)
                                 <img src="{{URL::asset('/images/star-fill.png')}}" alt="">

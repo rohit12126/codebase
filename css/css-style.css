@@ -8443,11 +8443,11 @@ h5 {
 .playlist-trigger{
 	position: absolute;
     padding-right: 8px;
-    top: -45px;
+	top: -36px;
     right: 1px;
     background-color: #004066;
     cursor: pointer;
-    border-radius: 0;
+    border-radius: 10px 10px 0 0;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -8459,6 +8459,9 @@ h5 {
 .playlist-trigger svg{
 	width: 36px;
 	animation: heartbeat 0.6s ease-in infinite;
+}
+.installation-videos-wrap.open .playlist-trigger{
+	right: 0;
 }
 @media(min-width:992px){
 	.installation-videos-wrap.open .specs-iframe-wrap{
@@ -8472,7 +8475,7 @@ h5 {
 }
 @media(max-width:1199px){
 	.playlist-trigger{
-		top: -40px;
+		top: -32px;
 		right: 0;
 	}
 	.playlist-trigger svg{
