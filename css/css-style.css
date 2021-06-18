@@ -8586,7 +8586,7 @@ h5 {
 		right: 0;
 		top: 50%;
 		transform: translateY(-100%);
-		background-color: rgba(0, 68, 107, 0.90);
+		background-color: rgb(249 78 87 / 90%);
 		box-shadow: 0 3px 6px rgb(0 67 107 / 16%), 0 3px 6px rgb(0 67 107 / 23%);
 		-moz-border-radius: 12px 0 0 12px;
 		-webkit-border-radius: 12px 0 0 12px;
