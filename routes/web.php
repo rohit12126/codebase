@@ -370,7 +370,7 @@ Route::get('product/detail/{slug}','ProductController@detail')->name('product.de
 Route::get('accessory/', 'ProductController@accessory')->name('accessory.list');
 Route::get('product/configure/{slug}', 'ProductController@configure')->name('product.configure');
 //temp only
-Route::post('/product/price','ProductController@getPrice')->name('get.price');
+Route::post('/configurator/product/price','ProductController@getPrice')->name('get.price');
 
 /* Blog Routes */
 Route::get('blog/{catSlug?}', 'BlogController@index')->name('blog.list');
