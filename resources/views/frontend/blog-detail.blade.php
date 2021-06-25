@@ -1,11 +1,6 @@
 @extends('layouts.front')
 
 @section('content')
-<meta property="og:url" content="{{url()->current()}}"/>
-<meta property="og:type" content="blog" />
-<meta property="og:title" content="{{$blog->title}}"/>
-<meta property="og:description" content="{!! Str::limit( $blog->description , 200, ' ...') !!}"/>
-<meta property="og:image" content="{{ asset('upload/blog/'.$blog->image)}}" />
 <!-- START SECTION Blog -->
 <div class="section blog-view">
     <div class="blog-view-inner container-fluid">
