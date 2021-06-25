@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Terug",
+        "roomle": "Roomle",
+        "cancel": "Annuleren",
+        "enter-mail": "E-mailadres invoeren",
+        "gdpr-info": "Ik ga akkoord met het ontvangen van e-mails over mijn opgeslagen ontwerp, evenals het af en toe ontvangen van een zorgvuldig samengesteld stuk content van <TENANT_NAME>. De gegevensbeheerder is Roomle GmbH. Uw gegevens worden verwerkt om uw ontwerp af te werken en op te slaan. De wettelijke basis voor de verwerking is uw toestemming (art. 6(1)(a)(f) van de GDPR).",
+        "see-more": "Meer bekijken"
+    },
+    "params": {
+        "show-all": "Alles tonen",
+        "show-less": "Minder tonen",
+        "search": "Voer zoekopdracht in...",
+        "nothing-found": "Niets gevonden voor",
+        "nothing-available": "Niets beschikbaar",
+        "filter-all": "Alles",
+        "save-draft": "Concept opslaan",
+        "request-product": "Product aanvragen",
+        "range": {
+            "range-error": "De waarde lag niet in het bereik",
+            "syntax-error": "De waarde was niet numeriek"
+        },
+        "back": "terug",
+        "boolean": {
+            "1": "Ja",
+            "0": "Nee",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Huidige selectie heeft geen opties",
+        "cancel-selection": "Selectie Annuleren",
+        "variants": "Varianten"
+    },
+    "hint": {
+        "turn-device": "Draai je apparaat om te configureren"
+    },
+    "addon-trigger": "Element toevoegen",
+    "article-nr": "Artikelnr.",
+    "count": "Aantal",
+    "parameters": "Parameters",
+    "width-short": "B",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Onderdelenlijst",
+        "multiselect": "Meervoudige selectie",
+        "measurements": "Maten",
+        "fullscreen ": "Volledig scherm",
+        "export-3d": "3D-gegevens exporteren"
+    },
+    "addon-fallback": "Invoegtoepassing",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Klik op een element om het in je configuratie te plaatsen"
+    },
+    "ar": {
+        "heading": "In kamer weergeven",
+        "hint": {
+            "ios": "Open de volgende link in de browser van je iOS-apparaat",
+            "android": "Open de volgende link in de browser van je Android-apparaat",
+            "desktop": "Open de volgende link in de browser van je mobiele apparaat"
+        },
+        "title": "In je kamer bekijken (AR)",
+        "description": "Je kunt augmented reality op je smartphone of tablet gebruiken, de QR-code scannen of de link op je apparaat openen.",
+        "send": "URL kopiëren",
+        "landing-page": {
+            "title": "Schitterend! En nu?",
+            "description": "Open deze configuratie in AR en zie het gelijk in je kamer.",
+            "button-ar": "Open AR",
+            "button-ar-legacy": "Open AR in Roomle-app"
+        },
+        "not-available": "Het lijkt erop dat je apparaat niet geschikt is voor augmented reality. Als je deze webpagina via een in-app browser bekijkt, probeer hem dan in je eigen browser te openen. Als je gebruikmaakt van iOS kun je de app ook downloaden om AR te kunnen gebruiken.",
+        "in-app": "Je bekijkt de configurator in een in-app browser. Bij eventuele problemen kun je proberen om de configurator in je eigen browser te openen."
+    },
+    "no-docking": {
+        "heading": "Sorry, toevoegen is niet mogelijk",
+        "desc": "Verwijder of wijzig een bestaand onderdeel of kies een ander onderdeel dat je wilt toevoegen aan de configuratie.",
+        "ok": "OK, doorgaan"
+    },
+    "feedback": {
+        "question": "Was deze tip nuttig",
+        "yes": "Ja",
+        "no": "Nee"
+    },
+    "continue-to": "Doorgaan naar",
+    "wrong-domain": "Het spijt ons, deze configurator is niet beschikbaar in dit domein",
+    "save-draft": {
+        "title": "Concept opslaan",
+        "description": "We slaan je concept op, zodat je het project later kunt bewerken.",
+        "save": "URL kopiëren",
+        "loading-url": "URL laden",
+        "copy": "URL kopiëren",
+        "copied": "gekopieerd",
+        "description-link": "Je configuratie is opgeslagen. Je kunt de link gebruiken om deze te delen."
+    },
+    "variants": {
+        "heading1": "Let op:",
+        "heading2": "Wijzigingen worden niet opgeslagen",
+        "desc": "Bij het overgaan naar een andere variant gaan alle wijzigingen verloren. Wil je toch doorgaan?",
+        "button": "Variant wijzigen",
+        "close": "Sluiten",
+        "help": "Andere variant kiezen"
+    },
+    "variant-fallback": "Varianten",
+    "export-3d": {
+        "title": "3D-gegevens downloaden",
+        "description": "Selecteer het bestandstype dat je wilt downloaden",
+        "cta": "Downloadlink verzenden",
+        "error": "Er is een fout opgetreden bij het exporteren van je bestand. Probeer het opnieuw."
+    },
+    "print": {
+        "page": "Pagina",
+        "of": "van",
+        "custom": "Aangepaste configuratie",
+        "button": "Afdrukken"
+    },
+    "part-list": {
+        "label": "Label",
+        "price": "Prijs",
+        "main-component": "Hoofdcomponent",
+        "heading": "Onderdelenlijst"
+    },
+    "no-active-package": "Deze configurator is momenteel niet beschikbaar.",
+    "tooltip": {
+        "ar": "Product in kamer bekijken",
+        "partlist": "Onderdelenlijst tonen",
+        "multiselect": "Multi-select activeren",
+        "measurements": "Afmetingen tonen",
+        "fullscreen": "Product op volledig scherm bekijken",
+        "reset-camera": "Camera resetten",
+        "render": "Weergaven aanvragen",
+        "export": "3D-bestanden exporteren"
+    },
+    "element-disabled": {
+        "heading": "Sorry, maar deze optie is momenteel niet beschikbaar.",
+        "desc": "De door jou gewenste optie is momenteel niet mogelijk. Probeer een ander onderdeel of wijzig de parameters van de configuratie.",
+        "ok": "OK, doorgaan"
+    },
+    "cookies": {
+        "info": "Deze website gebruikt cookies om je een betere service te verlenen en je ervaring te verbeteren. Als je doorgaat met het browsen op de site ga je akkoord met ons gebruik van cookies.",
+        "link": "Meer informatie",
+        "accept": "Accepteren"
+    },
+    "object-fallback": "Object"
+}

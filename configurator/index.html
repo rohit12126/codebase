@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><script>
+var pricecustom = 87; (function(){window.__e=function f(e){f.q=f.q||[];f.q.push(e)};window.addEventListener('error', window.__e);window.dataLayer=window.dataLayer||[];window.gtag=function (){dataLayer.push(arguments);};gtag('js',new Date());(function(i,s,r){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,document,'ga');}());</script><script>// depending on the security settings (thanks to melt down and spectre)
+    // performance functions are not always there...
+    if (!performance.mark) {
+      performance.mark = () => undefined;
+    }
+    if(!performance.getEntriesByName) {
+      performance.getEntriesByName = () => [{startTime: 0},{startTime: Number.MAX_SAFE_INTEGER}];
+    }
+    performance.mark('initial-load');
+    // Version from https://raw.githubusercontent.com/aFarkas/requestIdleCallback/master/index.js
+    // caused troubles in Safari when used in an iframe...
+
+    // using shim from https://gist.githubusercontent.com/paullewis/55efe5d6f05434a96c36/raw/cb80587e6d9a8a7b64079d612afe0a15c332300a/requestIdleCallback.js
+
+    // solves: #102
+    // @todo move to common-ui
+    window.idleCallbackShim = {
+      request: function (cb) {
+        return setTimeout(function () {
+          var start = Date.now();
+          cb({
+            didTimeout: false,
+            timeRemaining: function () {
+              return Math.max(0, 50 - (Date.now() - start));
+            }
+          });
+        }, 1);
+      },
+      cancel: function (id) {
+        clearTimeout(id);
+      }
+    };
+
+    var ricShim = window.idleCallbackShim;
+    if (!window.requestIdleCallback) {
+      window.requestIdleCallback = ricShim.request;
+    }
+
+    if (!window.cancelIdleCallback) {
+      window.cancelIdleCallback = ricShim.cancel;
+    }</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><link rel="icon" href="favicon.png"><link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext" rel="stylesheet"><title>Roomle UI</title><link href="css/chunk-03daa8f7.32ebcb57.css" rel="prefetch"><link href="css/chunk-0c957810.ab22c084.css" rel="prefetch"><link href="css/chunk-11305649.a4578a91.css" rel="prefetch"><link href="css/chunk-1fd0cc7e.1422246b.css" rel="prefetch"><link href="css/chunk-21063757.8d603e7c.css" rel="prefetch"><link href="css/chunk-2a38272e.c87f331d.css" rel="prefetch"><link href="css/chunk-3336d37a.eb67a703.css" rel="prefetch"><link href="css/chunk-3b09de03.88dba543.css" rel="prefetch"><link href="css/chunk-4dbfc12e.9b1852aa.css" rel="prefetch"><link href="css/chunk-5c4e2ae8.a087707f.css" rel="prefetch"><link href="css/chunk-61de2ad2.b2421eda.css" rel="prefetch"><link href="css/chunk-6a0c8e8c.e640bc56.css" rel="prefetch"><link href="css/chunk-6b2d5f05.62aa4bb8.css" rel="prefetch"><link href="css/chunk-6bdf8bd2.0275a644.css" rel="prefetch"><link href="css/chunk-6fbbdaa2.ab9d4f22.css" rel="prefetch"><link href="css/chunk-71180739.8e951474.css" rel="prefetch"><link href="css/chunk-75046c5d.b2421eda.css" rel="prefetch"><link href="css/chunk-75827ee6.285d2e29.css" rel="prefetch"><link href="js/chunk-03daa8f7.62b67810.js" rel="prefetch"><link href="js/chunk-08ca9b08.8c1d5c26.js" rel="prefetch"><link href="js/chunk-0c957810.61da2e5b.js" rel="prefetch"><link href="js/chunk-11305649.fcaf1e5a.js" rel="prefetch"><link href="js/chunk-1fd0cc7e.7d59a653.js" rel="prefetch"><link href="js/chunk-21063757.ef7e81b4.js" rel="prefetch"><link href="js/chunk-2a38272e.4b86b140.js" rel="prefetch"><link href="js/chunk-2d0af61d.08bd848e.js" rel="prefetch"><link href="js/chunk-2d0b16c2.d4cf3d8a.js" rel="prefetch"><link href="js/chunk-2d0b23c2.822e0f62.js" rel="prefetch"><link href="js/chunk-2d0c1cce.c7e3c9e9.js" rel="prefetch"><link href="js/chunk-2d0cb76d.bf883299.js" rel="prefetch"><link href="js/chunk-2d0e55df.fd189fa9.js" rel="prefetch"><link href="js/chunk-2d0e9222.90a0532c.js" rel="prefetch"><link href="js/chunk-2d208aa7.3ce30e51.js" rel="prefetch"><link href="js/chunk-2d216214.3fd22800.js" rel="prefetch"><link href="js/chunk-2d216257.1eff1fbf.js" rel="prefetch"><link href="js/chunk-2d22c2e4.11c1a807.js" rel="prefetch"><link href="js/chunk-3336d37a.800a0c98.js" rel="prefetch"><link href="js/chunk-3b09de03.5108a8b8.js" rel="prefetch"><link href="js/chunk-3cdbd03f.bfa0a09e.js" rel="prefetch"><link href="js/chunk-4dbfc12e.abe8d390.js" rel="prefetch"><link href="js/chunk-5b403032.ce96c162.js" rel="prefetch"><link href="js/chunk-5c4e2ae8.3e06e899.js" rel="prefetch"><link href="js/chunk-61de2ad2.da1cf5c1.js" rel="prefetch"><link href="js/chunk-62cb4e26.a3126ec0.js" rel="prefetch"><link href="js/chunk-66be89ce.163b9cb6.js" rel="prefetch"><link href="js/chunk-6a0c8e8c.835f1abc.js" rel="prefetch"><link href="js/chunk-6b2d5f05.b6cb8148.js" rel="prefetch"><link href="js/chunk-6bdf8bd2.b8050b23.js" rel="prefetch"><link href="js/chunk-6d36a2bc.380b568f.js" rel="prefetch"><link href="js/chunk-6fbbdaa2.7496bd62.js" rel="prefetch"><link href="js/chunk-71180739.01f16df9.js" rel="prefetch"><link href="js/chunk-75046c5d.360e03b4.js" rel="prefetch"><link href="js/chunk-75827ee6.ebc163b7.js" rel="prefetch"><link href="js/chunk-84c712ee.d164d873.js" rel="prefetch"><link href="js/chunk-a474db44.80579264.js" rel="prefetch"><link href="js/chunk-d1e8c618.968ec51f.js" rel="prefetch"><link href="css/chunk-common.92647ec0.css" rel="preload" as="style"><link href="css/index.fb84972f.css" rel="preload" as="style"><link href="js/chunk-common.b79b9f05.js" rel="modulepreload" as="script"><link href="js/chunk-vendors.06bb8f65.js" rel="modulepreload" as="script"><link href="js/index.0d3648ce.js" rel="modulepreload" as="script"><link href="css/chunk-common.92647ec0.css" rel="stylesheet"><link href="css/index.fb84972f.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but Roomle doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><script>window.__RML__ENV__ = {
+    assetPath: 'roomle/'
+  };
+  </script><style>.rml-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  will-change: opacity;
+}
+
+.rml-loading--opacity-0 {
+  opacity: 0;
+}
+
+.rml-loading--hide {
+  display: none;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0.0)
+  }
+  50% {
+    -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.progress-ring__circle {
+    stroke-dasharray: 326 326;
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dashoffset: 120;
+}
+.gltf-loader {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}</style><div class="rml-loading"><div class="gltf-loader rml-loading--hide"><svg class="progress-ring" width="120" height="120"><circle class="progress-ring__circle2" stroke="#ddd" stroke-width="2" fill="transparent" r="52" cx="60" cy="60"/><circle class="progress-ring__circle" stroke="#777" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/></svg></div><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div><div id="app"></div><script type="module" src="js/chunk-vendors.06bb8f65.js"></script><script type="module" src="js/chunk-common.b79b9f05.js"></script><script type="module" src="js/index.0d3648ce.js"></script><script>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()},!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script><script src="js/chunk-vendors-legacy.06bb8f65.js" nomodule></script><script src="js/chunk-common-legacy.b79b9f05.js" nomodule></script><script src="js/index-legacy.c62d74e2.js" nomodule></script></body></html>

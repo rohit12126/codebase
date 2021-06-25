@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Zurück",
+        "roomle": "Roomle",
+        "cancel": "Abbrechen",
+        "enter-mail": "E-Mail eingeben",
+        "gdpr-info": "Ich bin damit einverstanden, E-Mails über mein gespeichertes Design sowie gelegentlich sorgfältig kuratierte Inhalte von <TENANT_NAME> zu erhalten. Inhaber der Daten ist die Roomle GmbH. Ihre Daten werden verarbeitet, um Ihnen die Fertigstellung und Speicherung Ihres Entwurfs zu ermöglichen. Die rechtliche Grundlage für die Verarbeitung ist Ihre Zustimmung (Art. 6(1)(a)(f) der GDPR).",
+        "see-more": "Mehr anzeigen"
+    },
+    "params": {
+        "show-all": "Alles anzeigen",
+        "show-less": "Weniger anzeigen",
+        "search": "Suche eingeben ...",
+        "nothing-found": "Nichts gefunden für",
+        "nothing-available": "Nichts verfügbar",
+        "filter-all": "Alles",
+        "save-draft": "Entwurf speichern",
+        "request-product": "Produkt anfragen",
+        "range": {
+            "range-error": "Wert war nicht im Bereich von",
+            "syntax-error": "Wert war nicht numerisch"
+        },
+        "back": "Zurück",
+        "boolean": {
+            "1": "Ja",
+            "0": "Nein",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Aktuelle Selektion hat keine Optionen",
+        "cancel-selection": "Auswahl beenden",
+        "variants": "Varianten"
+    },
+    "hint": {
+        "turn-device": "Drehe dein Gerät um zu konfigurieren"
+    },
+    "addon-trigger": "Element hinzufügen",
+    "article-nr": "Artikel-Nr.",
+    "count": "Anzahl",
+    "parameters": "Parameter",
+    "width-short": "B",
+    "height-short": "H",
+    "depth-short": "T",
+    "drop-down": {
+        "partlist": "Stückliste",
+        "multiselect": "Mehrfachauswahl",
+        "measurements": "Bemaßungen",
+        "fullscreen ": "Vollbild",
+        "export-3d": "3D Daten exportieren"
+    },
+    "addon-fallback": "Addon",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Klicke auf ein Element um es in deiner Konfiguration zu positionieren"
+    },
+    "ar": {
+        "heading": "Im Raum anzeigen",
+        "hint": {
+            "ios": "Gib den folgenden Link im Browser deines iOS Gerätes ein",
+            "android": "Gib den folgenden Link im Browser deines Android Gerätes ein",
+            "desktop": "Gib den folgenden Link im Browser deines Mobile Gerätes ein"
+        },
+        "title": "Im Raum anzeigen (AR)",
+        "description": "Augmented Reality ist mit Smartphone oder Tablet möglich, QR Code scannen oder den Link direkt am Gerät öffnen.",
+        "send": "Kopieren",
+        "landing-page": {
+            "title": "Wundervoll! Und jetzt?",
+            "description": "Öffne deine Konfiguration in AR und schau sie dir direkt im Raum an.",
+            "button-ar": "Öffnen",
+            "button-ar-legacy": "AR in Roomle App öffnen"
+        },
+        "not-available": "Dein Gerät unterstützt kein Augmented Reality. Wenn du die Website in einem In-App Browser geöffnet hast, versuche es in einem nativen Browser nochmals.",
+        "in-app": "Du hast den Konfigurator in einem In-App Browser geöffnet. Wenn dir irgendwelche Probleme auffallen, versuche den Konfigurator in einem nativen Browser zu öffnen."
+    },
+    "no-docking": {
+        "heading": "Entschuldigung, aber hinzufügen gerade nicht möglich",
+        "desc": "Bitte lösche oder ändere ein bestehendes Element, oder wähle ein anderes Element aus, welches du zur Konfiguration hinzufügen möchtest",
+        "ok": "Ok, weitermachen"
+    },
+    "feedback": {
+        "question": "War dieser Tipp hilfreich",
+        "yes": "Ja",
+        "no": "Nein"
+    },
+    "continue-to": "Weiter mit",
+    "wrong-domain": "Sorry, aber dieser Konfigurator ist auf dieser Domain nicht verfügbar",
+    "save-draft": {
+        "title": "Entwurf speichern",
+        "description": "Wir speichern deinen Entwurf, damit du ihn jederzeit weiter bearbeiten kannst.",
+        "save": "Speichern",
+        "loading-url": "Url wird geladen",
+        "copy": "Link kopieren",
+        "copied": "Kopiert",
+        "description-link": "Deine Konfiguration wurde gespeichert. Du kannst den Link benutzen um sie zu teilen."
+    },
+    "variants": {
+        "heading1": "Achtung",
+        "heading2": "Änderungen gehen verloren",
+        "desc": "Wenn du zu einer anderen Variante wechselst gehen deine Änderungen verloren. Willst du trotzdem weitermachen",
+        "button": "Variante ändern",
+        "close": "Schließen",
+        "help": "Wähle deine gewünschte Variante aus"
+    },
+    "variant-fallback": "Varianten",
+    "export-3d": {
+        "title": "Download 3D Daten",
+        "description": "Bitte wähle den Datei-Typen aus, welchen du downloaden willst",
+        "cta": "Download Link zusenden",
+        "error": "Export fehlgeschlagen, bitte probiere es noch einmal"
+    },
+    "print": {
+        "page": "Seite",
+        "of": "von",
+        "custom": "Individuelle Konfiguration",
+        "button": "Drucken"
+    },
+    "part-list": {
+        "label": "Bezeichnung",
+        "price": "Preis",
+        "main-component": "Hauptkomponente",
+        "heading": "Stückliste"
+    },
+    "no-active-package": "Dieser Konfigurator ist aktuell nicht verfügbar",
+    "tooltip": {
+        "ar": "Produkt im Raum ansehen",
+        "partlist": "Stückliste anzeigen",
+        "multiselect": "Aktiviere Multiselect",
+        "measurements": "Bemaßungen anzeigen",
+        "fullscreen": "Produkt in Vollbild ansehen",
+        "reset-camera": "Kamera zurücksetzen",
+        "render": "Renderings anfordern",
+        "export": "Exportiere 3D Dateien"
+    },
+    "element-disabled": {
+        "heading": "Entschuldigung, aber die Option ist gerade nicht möglich",
+        "desc": "Die Option welche du gerade versuchts zu ändern ist im Moment nicht möglich. Bitte wähle ein anderes Element aus oder ändere die Parameter der Konfiguration",
+        "ok": "Ok, weitermachen"
+    },
+    "cookies": {
+        "info": "Wir verwenden Cookies! Durch die weitere Nutzung der Website erklären Sie sich damit einverstanden, dass Cookies gesetzt werden.",
+        "link": "Mehr erfahren",
+        "accept": "Akzeptieren"
+    },
+    "object-fallback": "Object"
+}

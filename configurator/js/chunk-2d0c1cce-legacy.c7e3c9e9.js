@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c1cce"],{"481e":function(n,s,e){"use strict";e.r(s),e.d(s,"EMPTY_PLAN",(function(){return a}));const a='<plan version="2"><walls><nodes/><edges/></walls><planobjects/><texters/><measures/><floors/><transparency><layers/></transparency></plan>'}}]);
+//# sourceMappingURL=chunk-2d0c1cce-legacy.c7e3c9e9.js.map

@@ -1,11 +1,14 @@
 @extends('layouts.front')
 
 @section('content')
-<script src="{{asset('js/roomle/roomle-configurator-api.es.min.js')}}" ></script>
     <style>
         body{
             overflow-x: hidden;
         }
+        .bottombar-container{
+            justify-content : 'flex-end'
+        } 
+        .bottombar-container[data-v-48c0d190]{justify-content:flex-end!important}
     </style>
     <div class="configure-specs">
         <b class="ti-info-alt"></b>
@@ -585,7 +588,14 @@
             {{-- <div class="text-md-center mt-3 mt-md-0">
                 <h1 class="product-detail-heading">{{$productData['product']->name}}</h1>
             </div> --}}
-            <div id="configurator-container"></div>
+            <div id="configurator-container">
+            <iframe
+                id="iframe"
+                src="{{asset('configurator/index.html')}}?id={{$productData['product']->configure_id ?? 'cdm:sr2_white' }}&configuratorId=cdm&api=false"
+                frameborder="0"
+                width="100%" height="600"
+            ></iframe>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="pl-3 pb-3 pb-md-0">
@@ -600,16 +610,30 @@
                     </div>
                 </div>
             </div>
-            <script type="module">
+         <!-- <script type="module">
                 import RoomleConfiguratorApi from '{{asset('js/roomle/roomle-configurator-api.es.min.js')}}';
                 (async ()=> {
                     const options = {
-                        id: '{{$productData['product']->configure_id ?? 'cdm:sr2_white' }}'
+                        id: '{{$productData['product']->configure_id ?? 'cdm:sr2_white' }}',
+                        locale: "en",
+                        translations: {
+                        en: {
+                            params: {
+                            "request-product": "Add to cart"
+                            }
+                        }
+                        },
+                        // skin: {
+                        //     'bottombar-container': 'justify-content : flex-end'
+                        // }
                     };
                     const configurator = await RoomleConfiguratorApi.create(
                         'demoConfigurator',
                         document.getElementById('configurator-container'),
-                        {...options, buttons: {savedraft: false,requestproduct:false}},
+                        {...options, buttons: {savedraft: false},
+                        skin: {  'cta-color': '#00436b', },},
+                        // abc.style.display = 'none',
+
                     );
                     configurator.ui.callbacks.onRequestProduct = (configurationId, image, partlist) => {
                         addToCart(configurationId, image, partlist);
@@ -640,15 +664,22 @@
                             });
                         };
                     })();
-            </script>
+                    window.onload = function() {
+   let myiFrame = document.getElementByClassName("rml-container");
+   let doc = myiFrame.contentDocument;
+   doc.body.innerHTML = doc.body.innerHTML + '<style> .bottombar-container{justify-content:flex-end!important}</style>';
+}
+
+            </script>   
+            
             <div class="d-flex justify-content-center">
             <!-- <a href="javascript:void(0)" class="btn btn-fill-out buy-now">-->
                 <input type="hidden" class="product-id" value="{{$productData['product']->id}}">
                 <!--<i class="linearicons-cart"></i> Buy Now
             </a> -->
-            <a href="javascript:void(0)" id="trigger-request" class="btn btn-fill-out">
+            <!-- <a href="javascript:void(0)" id="trigger-request" class="btn btn-fill-out">
                 <i class="linearicons-cart-plus"></i> Add to cart
-            </a>
+            </a> -->
             {{-- <a href="#" class="btn btn-fill-out">
                 Configure
             </a> --}}
@@ -888,10 +919,9 @@
         lazyLoad: 'progressive'
     });
     /* Add to cart functionality */
-    function addToCart(configurationId, image, partlist){
-        
+    function addToCart(configurationId, partlist){
     var productId = $(".product-id").val();
-    
+    console.
     jQuery.ajax({
         url: "{{ url('/cart/add-cart') }}",
         method: 'post',
@@ -900,7 +930,7 @@
         data: {
             productId : productId,
             configurationId : configurationId,
-            partList : partlist.fullList[0]
+            partList : partlist
         },
         success: function(result){
             $('.cart-count').html(result.data.cartCount);

@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Tilbake",
+        "roomle": "Roomle",
+        "cancel": "Avbryt",
+        "enter-mail": "Skriv inn e-postadresse",
+        "gdpr-info": "Jeg godtar å motta e-postmeldinger om det lagrede designet mitt, samt sporadisk stykke nøye kuratert innhold fra <TENANT_NAME>. Den behandlingsansvarlige er Roomle GmbH. Dataene dine blir behandlet for å la deg fullføre og lagre designet ditt. Det juridiske grunnlaget for behandlingen er ditt samtykke (art. 6 (1) (a) (f) i GDPR).",
+        "see-more": "Se mer"
+    },
+    "params": {
+        "show-all": "Vis alt",
+        "show-less": "Vis mindre",
+        "search": "Oppgi søk ...",
+        "nothing-found": "Intet funnet for",
+        "nothing-available": "Intet tilgjengelig",
+        "filter-all": "All",
+        "save-draft": "Lagre utkast",
+        "request-product": "Be om produkt",
+        "range": {
+            "range-error": "Verdien var ikke innenfor",
+            "syntax-error": "Verdien var ikke et tall"
+        },
+        "back": "tilbake",
+        "boolean": {
+            "1": "Ja",
+            "0": "Nei",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Aktuelt utvalg har ingen alternativer",
+        "cancel-selection": "Nullstill utvalg",
+        "variants": "Varianter"
+    },
+    "hint": {
+        "turn-device": "Snu enheten for å konfigurere"
+    },
+    "addon-trigger": "Legg til et element",
+    "article-nr": "Arktikkelnr.",
+    "count": "Mengde",
+    "parameters": "Parametre",
+    "width-short": "B",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Deleliste",
+        "multiselect": "Velg flere",
+        "measurements": "Mål",
+        "fullscreen ": "Fullskjerm",
+        "export-3d": "Eksporter 3D-data"
+    },
+    "addon-fallback": "Tillegg",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Klikk på et element for å plassere det i konfigurasjonen"
+    },
+    "ar": {
+        "heading": "Se i rommet",
+        "hint": {
+            "ios": "Oppgi følgende link i nettleseren til iOS-enheten din",
+            "android": "Oppgi følgende link i nettleseren til Android-enheten din",
+            "desktop": "Oppgi følgende link i nettleseren til den mobile enheten din"
+        },
+        "title": "Vis i rommet ditt (AR)",
+        "description": "Du kan bruke utvidet virkelighet (augmented reality) på smarttelefonen eller nettbrettet, skann QR-koden eller åpne lenken på enheten din.",
+        "send": "Kopier URL",
+        "landing-page": {
+            "title": "Vakkert Og nå?",
+            "description": "Åpne denne konfigurasjonen i utvidet virkelighet (AR) og se den direkte i rommet ditt.",
+            "button-ar": "Åpne utvidet virkelighet (AR)",
+            "button-ar-legacy": "Åpne utvidet virkelighet (AR) i Roomle-appen"
+        },
+        "not-available": "Det virker som enheten din ikke håndterer utvidet virkelighet. Hvis du viser denne nettsiden i en nettleser i appen, kan du prøve å åpne den i en vanlig nettleser. Hvis du benytter iOS, kan du også laste ned appen for å aktivere utvidet virkelighet.",
+        "in-app": "Du viser konfigurasjonsprogrammet i en nettleser i appen. Hvis du opplever problemer, kan du prøve å åpne konfigurasjonsprogrammet i en standard nettleser"
+    },
+    "no-docking": {
+        "heading": "Det er dessverre ikke mulig å legge til",
+        "desc": "Vennligst slett eller endre et eksisterende element, eller velg et annet element som du ønsker å legge til i konfigurasjonen",
+        "ok": "Ok, fortsett"
+    },
+    "feedback": {
+        "question": "Var dette tipset nyttig",
+        "yes": "Ja",
+        "no": "Nei"
+    },
+    "continue-to": "Gå til",
+    "wrong-domain": "Konfiguratoren er dessverre ikke tilgjengelig på dette domene",
+    "save-draft": {
+        "title": "Lagre utkast",
+        "description": "Vi lagrer utkastet ditt så du kan fortsette å redigere senere.",
+        "save": "Kopier url",
+        "loading-url": "Laster inn url",
+        "copy": "Kopier URL",
+        "copied": "kopiert",
+        "description-link": "Konfigurasjonen din er lagret, du kan bruke lenken for å dele den."
+    },
+    "variants": {
+        "heading1": "Merk",
+        "heading2": "Du mister endringer",
+        "desc": "Hvis du endrer til en annen variant, mister du alle endringene dine Vil du likevel fortsette",
+        "button": "Endre variant",
+        "close": "Lukk",
+        "help": "Velg en annen variant"
+    },
+    "variant-fallback": "Varianter",
+    "export-3d": {
+        "title": "Last ned 3D-data",
+        "description": "Velg filtypen du ønsker å laste ned",
+        "cta": "Send nedlastingslenke",
+        "error": "Problemer ved eksportering av filen, prøv igjen"
+    },
+    "print": {
+        "page": "Side",
+        "of": "av",
+        "custom": "Tilpasset konfigurasjon",
+        "button": "Skriv ut"
+    },
+    "part-list": {
+        "label": "Etikett",
+        "price": "Pris",
+        "main-component": "Hovedkomponent",
+        "heading": "Deleliste"
+    },
+    "no-active-package": "For tiden er ikke dette konfigurasjonsprogrammet tilgjengelig",
+    "tooltip": {
+        "ar": "Vis produkt i rommet",
+        "partlist": "Vis deleliste",
+        "multiselect": "Aktiver multi-valg",
+        "measurements": "Vis målinger",
+        "fullscreen": "Vis produktet i fullskjerm-modus",
+        "reset-camera": "Tilbakestill kamera",
+        "render": "Be om gjengivelser",
+        "export": "Eksporter 3D-filer"
+    },
+    "element-disabled": {
+        "heading": "Beklager, dette alternativet er for tiden ikke mulig.",
+        "desc": "Alternativet du prøver å stille inn er for tiden ikke mulig, prøv å velge et annet element eller endre parameterne i konfigurasjonen.",
+        "ok": "Ok, fortsett"
+    },
+    "cookies": {
+        "info": "Denne nettsiden benytter informasjonskapsler for å gi deg en bedre tjeneste og forbedre opplevelsen din. Ved å fortsette å bruke nettsiden godtar du at vi benytter informasjonskapsler.",
+        "link": "Les mer",
+        "accept": "Godta"
+    },
+    "object-fallback": "Object"
+}

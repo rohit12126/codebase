@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Tillbaka",
+        "roomle": "Roomle",
+        "cancel": "Avbryt",
+        "enter-mail": "Ange e-postadress",
+        "gdpr-info": "Jag samtycker till att få e-postmeddelanden om min sparade design, samt enstaka noggrant innehåll från <TENANT_NAME>. Den registeransvarige är Roomle GmbH. Dina uppgifter kommer att bearbetas så att du kan avsluta och spara din design. Den rättsliga grunden för behandlingen är ditt samtycke (artikel 6 (1) (a) (GDPR).",
+        "see-more": "Se mer"
+    },
+    "params": {
+        "show-all": "Visa allt",
+        "show-less": "Visa mindre",
+        "search": "Ange sökning ...",
+        "nothing-found": "Ingenting hittades för",
+        "nothing-available": "Ingenting tillgängligt",
+        "filter-all": "Alla",
+        "save-draft": "Spara utkast",
+        "request-product": "Begär produkt",
+        "range": {
+            "range-error": "Värdet låg inte inom intervallet",
+            "syntax-error": "Värdet var inte numeriskt"
+        },
+        "back": "tillbaka",
+        "boolean": {
+            "1": "Ja",
+            "0": "Nej",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Aktuella val har inga alternativ",
+        "cancel-selection": "Avbryt val",
+        "variants": "Varianter"
+    },
+    "hint": {
+        "turn-device": "Vänd din enhet för att konfigurera"
+    },
+    "addon-trigger": "Lägg till ett element",
+    "article-nr": "Artikelnr.",
+    "count": "Antal",
+    "parameters": "Parametrar",
+    "width-short": "B",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Lista över delar",
+        "multiselect": "Flera val",
+        "measurements": "Mätningar",
+        "fullscreen ": "Helskärm",
+        "export-3d": "Exportera 3D-data"
+    },
+    "addon-fallback": "Tillägg",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Klicka på ett element för att placera det i din konfiguration"
+    },
+    "ar": {
+        "heading": "Visa i rum",
+        "hint": {
+            "ios": "Ange följande länk i webbläsaren på din iOS-enhet",
+            "android": "Ange följande länk i webbläsaren på din Android-enhet",
+            "desktop": "Ange följande länk i webbläsaren på din mobila enhet"
+        },
+        "title": "Visa i ditt rum (AR)",
+        "description": "Du kan använda förhöjd verklighet på din smartphone eller läsplatta, skanna QR-koden eller öppna länken på din enhet.",
+        "send": "Kopiera webbadress",
+        "landing-page": {
+            "title": "Utmärkt! Och nu?",
+            "description": "Öppna den här konfigurationen i AR och se den direkt i ditt rum.",
+            "button-ar": "Öppna AR",
+            "button-ar-legacy": "Öppna AR i Roomle App"
+        },
+        "not-available": "Din enhet tycks inte kunna hantera förhöjd verklighet. Om du tittar på den här webbsidan inom en webbvy i appen ska du försöka öppna den i din inbyggda webbläsare. Om du är på iOS kan du också ladda ned appen för att aktivera förhöjd verklighet.",
+        "in-app": "Du tittar på konfiguratorn i en webbläsare i appen. Vid problem kan du försöka öppna konfiguratorn i din inbyggda webbläsare"
+    },
+    "no-docking": {
+        "heading": "Det går tyvärr inte att lägga till",
+        "desc": "Ta bort eller ändra ett befintligt element, eller välj ett annat element som du vill lägga till i konfigurationen",
+        "ok": "Ok, fortsätt"
+    },
+    "feedback": {
+        "question": "Var det här tipset användbart",
+        "yes": "Ja",
+        "no": "Nej"
+    },
+    "continue-to": "Fortsätt till",
+    "wrong-domain": "Denna konfigurator är tyvärr inte tillgänglig på denna domän",
+    "save-draft": {
+        "title": "Spara utkast",
+        "description": "Vi sparar ditt utkast så att du kan fortsätta redigeringen senare.",
+        "save": "Kopiera webbadress",
+        "loading-url": "Laddar webbadress",
+        "copy": "Kopiera webbadress",
+        "copied": "kopierad",
+        "description-link": "Din konfiguration har sparats, du kan använda länken för att dela den."
+    },
+    "variants": {
+        "heading1": "Obs!",
+        "heading2": "Ändringar kommer att gå förlorade",
+        "desc": "Om du ändrar till en annan variant kommer alla dina ändringar att gå förlorade. Vill du fortfarande fortsätta?",
+        "button": "Ändra variant",
+        "close": "Stäng",
+        "help": "Välj en annan variant"
+    },
+    "variant-fallback": "Varianter",
+    "export-3d": {
+        "title": "Ladda ned 3D-data",
+        "description": "Välj filtypen som du vill ladda ned",
+        "cta": "Skicka nedladdningslänk",
+        "error": "Problem med att exportera din fil, försök igen"
+    },
+    "print": {
+        "page": "Sida",
+        "of": "av",
+        "custom": "Anpassad konfiguration",
+        "button": "Skriv ut"
+    },
+    "part-list": {
+        "label": "Etikett",
+        "price": "Pris",
+        "main-component": "Huvudkomponent",
+        "heading": "Dellista"
+    },
+    "no-active-package": "Den här konfiguratorn är inte tillgänglig just nu",
+    "tooltip": {
+        "ar": "Visa produkt i rum",
+        "partlist": "Visa dellista",
+        "multiselect": "Aktivera val av flera",
+        "measurements": "Visa mått",
+        "fullscreen": "Visa produkt i helskärm",
+        "reset-camera": "Återställ kamera",
+        "render": "Begär renderingar",
+        "export": "Exportera 3D-filer"
+    },
+    "element-disabled": {
+        "heading": "Det här alternativet kan tyvärr inte väljas just nu",
+        "desc": "Alternativet du försöker ställa in kan för närvarande inte väljas. Försök med ett annat element eller ändra parametrarna för konfigurationen",
+        "ok": "Ok, fortsätt"
+    },
+    "cookies": {
+        "info": "Den här webbplatsen använder cookies för att ge dig en bättre tjänst och förbättra din upplevelse. Genom att fortsätta surfa på webbplatsen godkänner du vår användning av cookies.",
+        "link": "Läs mer",
+        "accept": "Godkänn"
+    },
+    "object-fallback": "Object"
+}

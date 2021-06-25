@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Retour",
+        "roomle": "Roomle",
+        "cancel": "Annuler",
+        "enter-mail": "Saisissez votre adresse e-mail",
+        "gdpr-info": "J’accepte de recevoir des courriers concernant mon dessin ou modèle sauvegardé, ainsi qu’une partie occasionnelle du contenu soigneusement conservé de <TENANT_NAME>. Le responsable du traitement des données est Roomle GmbH. Vos données seront traitées afin de vous permettre de terminer et de sauvegarder votre dessin. La base juridique du traitement est votre consentement (article 6, paragraphe (1), point(a),(f),du GDPR).",
+        "see-more": "Afficher plus"
+    },
+    "params": {
+        "show-all": "Tout afficher",
+        "show-less": "Afficher moins",
+        "search": "Indiquer la recherche...",
+        "nothing-found": "Aucun résultat pour",
+        "nothing-available": "Rien n’est disponible",
+        "filter-all": "Toutes",
+        "save-draft": "Sauvegarder le projet",
+        "request-product": "Demander un produit",
+        "range": {
+            "range-error": "La valeur n’était pas dans la plage de",
+            "syntax-error": "La valeur n’était pas numérique"
+        },
+        "back": "retour",
+        "boolean": {
+            "1": "Oui",
+            "0": "N°",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Les sélections actuelles n’ont pas d’options",
+        "cancel-selection": "Annuler la sélection",
+        "variants": "Variantes"
+    },
+    "hint": {
+        "turn-device": "Tournez votre appareil pour le configurer"
+    },
+    "addon-trigger": "Ajouter un élément",
+    "article-nr": "N° d’article",
+    "count": "Total",
+    "parameters": "Paramètres",
+    "width-short": "l",
+    "height-short": "H",
+    "depth-short": "P",
+    "drop-down": {
+        "partlist": "Liste des pièces",
+        "multiselect": "Sélection multiple",
+        "measurements": "Dimensions",
+        "fullscreen ": "Plein écran",
+        "export-3d": "Export des données 3D"
+    },
+    "addon-fallback": "Extension",
+    "parameter-fallback": "Paramètre",
+    "addons": {
+        "hint": "Cliquez sur un élément pour le placer dans votre configuration"
+    },
+    "ar": {
+        "heading": "Visionner dans la pièce",
+        "hint": {
+            "ios": "Copiez le lien suivant dans le navigateur de votre appareil iOS",
+            "android": "Copiez le lien suivant dans le navigateur de votre appareil Android",
+            "desktop": "Copiez le lien suivant dans le navigateur de votre appareil mobile"
+        },
+        "title": "Visualiser dans la pièce (réalité augmentée)",
+        "description": "Vous pouvez utiliser la réalité augmentée sur votre smartphone ou votre tablette, scanner le code QR ou ouvrir le lien sur votre appareil.",
+        "send": "Copier l’URL",
+        "landing-page": {
+            "title": "Magnifique ! Et maintenant ?",
+            "description": "Ouvrir cette configuration dans la réalité augmentée et la visionner directement dans la pièce.",
+            "button-ar": "Ouvrir la réalité augmentée",
+            "button-ar-legacy": "Ouvrir la réalité augmentée dans l’application Roomle"
+        },
+        "not-available": "Il semble que votre appareil ne prenne pas en charge la réalité augmentée. Si vous consultez cette page web depuis la navigation intégrée à une application, essayez de l’ouvrir dans votre navigateur natif. Si vous êtes sur iOS, vous pouvez également télécharger l’application pour activer la réalité augmentée.",
+        "in-app": "Vous consultez le configurateur dans un navigateur intégré à une application. Si vous rencontrez un problème, essayez d'ouvrir le configurateur dans votre navigateur natif."
+    },
+    "no-docking": {
+        "heading": "Désolé, mais l’ajout n’est pas possible",
+        "desc": "Veuillez supprimer ou modifier un élément existant ou choisir un autre élément que vous souhaitez ajouter à la configuration",
+        "ok": "Ok, continuer"
+    },
+    "feedback": {
+        "question": "Ce conseil vous a-t-il été utile",
+        "yes": "Oui",
+        "no": "N°"
+    },
+    "continue-to": "Continuer vers",
+    "wrong-domain": "Désolé, mais ce configurateur n’est pas disponible sur ce domaine",
+    "save-draft": {
+        "title": "Sauvegarder le projet",
+        "description": "Nous sauvegardons votre projet afin que vous puissiez continuer de le modifier ultérieurement.",
+        "save": "Copier l’URL",
+        "loading-url": "Chargement de l’URL",
+        "copy": "Copier l’URL",
+        "copied": "copié",
+        "description-link": "Votre configuration est enregistrée, vous pouvez utiliser le lien pour la partager."
+    },
+    "variants": {
+        "heading1": "Attention",
+        "heading2": "Vos modifications seront effacées",
+        "desc": "Si vous souhaitez passer à une autre variante, toutes vos modifications seront effacées. Souhaitez-vous quand même continuer",
+        "button": "Changer de variante",
+        "close": "Fermer",
+        "help": "Choisir une autre variante"
+    },
+    "variant-fallback": "Variantes",
+    "export-3d": {
+        "title": "Téléchargement des données 3D",
+        "description": "Veuillez sélectionner le type de fichier que vous souhaitez télécharger",
+        "cta": "Envoi du lien de téléchargement",
+        "error": "Un problème est survenu lors de l’exportation de votre fichier, veuillez réessayer"
+    },
+    "print": {
+        "page": "Page",
+        "of": "sur",
+        "custom": "Configuration personnalisée",
+        "button": "Impression"
+    },
+    "part-list": {
+        "label": "Étiquette",
+        "price": "Prix",
+        "main-component": "Composant principal",
+        "heading": "Nomenclature"
+    },
+    "no-active-package": "Ce configurateur est actuellement indisponible",
+    "tooltip": {
+        "ar": "Voir le produit dans une pièce",
+        "partlist": "Afficher la nomenclature",
+        "multiselect": "Activer la sélection multiple",
+        "measurements": "Afficher les mesures",
+        "fullscreen": "Voir le produit en plein écran",
+        "reset-camera": "Réinitialisation de la caméra",
+        "render": "Demande de rendu",
+        "export": "Export des fichiers 3D"
+    },
+    "element-disabled": {
+        "heading": "Désolé, mais cette option est actuellement indisponible",
+        "desc": "L’option que vous tentez de paramétrer est actuellement indisponible. Essayez de choisir un autre élément ou de modifier les paramètres de configuration.",
+        "ok": "Ok, continuer"
+    },
+    "cookies": {
+        "info": "Ce site internet utilise des cookies pour vous offrir un meilleur service et améliorer votre expérience. En poursuivant votre navigation, vous acceptez que nous utilisions des cookies.",
+        "link": "En savoir plus",
+        "accept": "Accepter"
+    },
+    "object-fallback": "Object"
+}

@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Tilbage",
+        "roomle": "Roomle",
+        "cancel": "Annuller",
+        "enter-mail": "Angiv mailadresse",
+        "gdpr-info": "Jeg accepterer at modtage e-mails om mit gemte design samt lejlighedsvis stykke omhyggeligt kurateret indhold fra <TENANT_NAME>. Den dataansvarlige er Roomle GmbH. Dine data behandles for at give dig mulighed for at afslutte og gemme dit design. Det juridiske grundlag for behandlingen er dit samtykke (art. 6 (1) (a) (f) i GDPR).",
+        "see-more": "Læs mere"
+    },
+    "params": {
+        "show-all": "Vis alle",
+        "show-less": "Vis mindre",
+        "search": "Indtast søgning...",
+        "nothing-found": "Der blev ikke fundet noget for",
+        "nothing-available": "Intet ledigt",
+        "filter-all": "Alle",
+        "save-draft": "Gem udkast",
+        "request-product": "Anmod om produkt",
+        "range": {
+            "range-error": "Værdien lå ikke inden for intervallet",
+            "syntax-error": "Værdien var ikke numerisk"
+        },
+        "back": "tilbage",
+        "boolean": {
+            "1": "Ja",
+            "0": "Nej",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "De aktuelle markeringer indeholder ingen indstillinger",
+        "cancel-selection": "Annuller markering",
+        "variants": "Varianter"
+    },
+    "hint": {
+        "turn-device": "Vend din enhed for at konfigurere"
+    },
+    "addon-trigger": "Tilføj et element",
+    "article-nr": "Varenummer",
+    "count": "Antal",
+    "parameters": "Parametre",
+    "width-short": "B",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Stykliste",
+        "multiselect": "Markér flere",
+        "measurements": "Mål",
+        "fullscreen ": "Fuld skærm",
+        "export-3d": "Eksportér 3D-data"
+    },
+    "addon-fallback": "Tilføjelsesprogram",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Klik på et element for at placere det i din konfiguration"
+    },
+    "ar": {
+        "heading": "Vis i rum",
+        "hint": {
+            "ios": "Indtast følgende link i browseren på din iOS-enhed",
+            "android": "Indtast følgende link i browseren på din Android-enhed",
+            "desktop": "Indtast følgende link i browseren på din mobilenhed"
+        },
+        "title": "Vis i værelse (AR)",
+        "description": "Du kan bruge augmented reality på din smartphone eller tablet, scanne QR-koden eller åbne linket på din enhed.",
+        "send": "Kopiér URL-adresse",
+        "landing-page": {
+            "title": "Smukt! Og nu?",
+            "description": "Åbn denne konfiguration i AR, og se den direkte i værelset.",
+            "button-ar": "Åbn AR",
+            "button-ar-legacy": "Åbn AR i Roomle-app"
+        },
+        "not-available": "Der ser ud til, at din enhed ikke er kompatibel med augmented reality. Hvis du ser denne hjemmeside i en app, kan du prøve at åbne den i din lokale browser. Hvis du har en iOS-enhed, kan du også downloade appen og aktivere augmented reality.",
+        "in-app": "Du ser tilpasningsværktøjet i en appbrowser. Hvis du støder på problemer, kan du prøve at åbne tilpasningsværktøjet i din lokale browser"
+    },
+    "no-docking": {
+        "heading": "Det er desværre ikke muligt at tilføje elementet",
+        "desc": "Slet eller rediger et eksisterende element, eller vælg et andet, du vil tilføje til konfigurationen",
+        "ok": "OK, fortsæt"
+    },
+    "feedback": {
+        "question": "Kunne du bruget tippet?",
+        "yes": "Ja",
+        "no": "Nej"
+    },
+    "continue-to": "Fortsæt til",
+    "wrong-domain": "Tilpasningsværktøjet er desværre ikke tilgængeligt på dette domæne",
+    "save-draft": {
+        "title": "Gem udkast",
+        "description": "Vi gemmer dit udkast, så du kan fortsætte redigeringen senere.",
+        "save": "Kopiér URL-adresse",
+        "loading-url": "Indlæser URL-adresse",
+        "copy": "Kopiér URL-adresse",
+        "copied": "kopieret",
+        "description-link": "Din konfiguration er blevet gemt. Du kan bruge linket til at dele den."
+    },
+    "variants": {
+        "heading1": "Bemærk",
+        "heading2": "Ændringer vil gå tabt",
+        "desc": "Hvis du vil skifte til en anden variant, vil alle dine ændringer gå tabt. Vil du stadig fortsætte?",
+        "button": "Skift variant",
+        "close": "Luk",
+        "help": "Vælg en anden variant"
+    },
+    "variant-fallback": "Varianter",
+    "export-3d": {
+        "title": "Download 3D-data",
+        "description": "Vælg den filtype, du vil downloade",
+        "cta": "Send link til download",
+        "error": "Problemer med eksport af din fil. Prøv igen."
+    },
+    "print": {
+        "page": "Side",
+        "of": "af",
+        "custom": "Brugerdefineret konfiguration",
+        "button": "Udskriv"
+    },
+    "part-list": {
+        "label": "Etiket",
+        "price": "Pris",
+        "main-component": "Overordnet komponent",
+        "heading": "Komponentliste"
+    },
+    "no-active-package": "Dette tilpasningsværktøj er ikke tilgængeligt i øjeblikket",
+    "tooltip": {
+        "ar": "Se produkt i værelse",
+        "partlist": "Vis komponentliste",
+        "multiselect": "Aktivér \"Vælg flere\"",
+        "measurements": "Vis målinger",
+        "fullscreen": "Se produkt på fuld skærm",
+        "reset-camera": "Nulstil kamera",
+        "render": "Anmod om gengivelser",
+        "export": "Eksportér 3D-filer"
+    },
+    "element-disabled": {
+        "heading": "Denne indstilling er desværre ikke mulig",
+        "desc": "Det er i øjeblikket ikke muligt at angive den valgte indstilling. Prøv at vælge et andet element eller ændre parametre i konfigurationen.",
+        "ok": "OK, fortsæt"
+    },
+    "cookies": {
+        "info": "Denne hjemmeside bruger cookies for at give dig en bedre service og oplevelse. Ved fortsat brug af hjemmesiden accepterer du vores brug af cookies.",
+        "link": "Læs mere",
+        "accept": "Acceptér"
+    },
+    "object-fallback": "Object"
+}

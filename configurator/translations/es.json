@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Atrás",
+        "roomle": "Roomle",
+        "cancel": "Cancelar",
+        "enter-mail": "Introduzca la dirección de correo electrónico",
+        "gdpr-info": "Acepto recibir correos electrónicos sobre mi diseño guardado, así como la pieza ocasional de contenido cuidadosamente curado de <TENANT_NAME>. El controlador de datos es Roomle GmbH. Sus datos serán procesados para permitirle terminar y guardar su diseño. La base legal para el procesamiento es su consentimiento (art. 6(1)(a)(f) de la GDPR).",
+        "see-more": "Ver más"
+    },
+    "params": {
+        "show-all": "Mostrar todo",
+        "show-less": "Mostrar menos",
+        "search": "Introducir búsqueda...",
+        "nothing-found": "Nada encontrado para",
+        "nothing-available": "Nada disponible",
+        "filter-all": "Todas",
+        "save-draft": "Guardar borrador",
+        "request-product": "Solicitar producto",
+        "range": {
+            "range-error": "El valor no estaba en el rango de",
+            "syntax-error": "El valor no era numérico"
+        },
+        "back": "atrás",
+        "boolean": {
+            "1": "Sí",
+            "0": "No",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Las selecciones actuales no tienen opciones",
+        "cancel-selection": "Cancelar selección",
+        "variants": "Variantes"
+    },
+    "hint": {
+        "turn-device": "Gire su dispositivo para configurarlo"
+    },
+    "addon-trigger": "Añadir un elemento",
+    "article-nr": "N.º de artículo",
+    "count": "Recuento",
+    "parameters": "Parámetros",
+    "width-short": "Anch.",
+    "height-short": "Alt.",
+    "depth-short": "Prof.",
+    "drop-down": {
+        "partlist": "Lista de piezas",
+        "multiselect": "Multiselección",
+        "measurements": "Mediciones",
+        "fullscreen ": "Pantalla completa",
+        "export-3d": "Exportar datos 3D"
+    },
+    "addon-fallback": "Complemento",
+    "parameter-fallback": "Parámetro",
+    "addons": {
+        "hint": "Haga clic en un elemento para colocarlo en su configuración"
+    },
+    "ar": {
+        "heading": "Ver en la habitación",
+        "hint": {
+            "ios": "Introduzca el siguiente enlace en el navegador de su dispositivo iOS",
+            "android": "Introduzca el siguiente enlace en el navegador de su dispositivo Android",
+            "desktop": "Introduzca el siguiente enlace en el navegador de su dispositivo móvil"
+        },
+        "title": "Mostrar en su habitación (RA)",
+        "description": "Puede usar la realidad aumentada en su smartphone o tablet, escanear el código QR o abrir el enlace en su dispositivo.",
+        "send": "Copiar URL",
+        "landing-page": {
+            "title": "¡Me encanta!",
+            "description": "Abra esta configuración en RA y véala directamente en su habitación.",
+            "button-ar": "Abrir RA",
+            "button-ar-legacy": "Abrir RA en la aplicación Roomle"
+        },
+        "not-available": "Parece que su dispositivo no es compatible con la realidad aumentada. Si está viendo esta página web desde la vista web de una aplicación, intente abrirla en su navegador nativo. Si está en iOS también puede descargar la aplicación para habilitar la realidad aumentada.",
+        "in-app": "Está viendo el configurador en un navegador de la aplicación. Si tiene algún problema, intente abrir el configurador en su navegador nativo."
+    },
+    "no-docking": {
+        "heading": "Lo sentimos, pero no es posible añadir",
+        "desc": "Por favor, elimine o cambie un elemento existente, o elija otro elemento que desee añadir a la configuración",
+        "ok": "Acepto, continuar"
+    },
+    "feedback": {
+        "question": "¿Le resultó útil esta sugerencia?",
+        "yes": "Sí",
+        "no": "No"
+    },
+    "continue-to": "Continuar a",
+    "wrong-domain": "Lo lamentamos, pero este configurador no está disponible en este dominio",
+    "save-draft": {
+        "title": "Guardar borrador",
+        "description": "Guardamos su borrador para que pueda continuar editándolo más tarde.",
+        "save": "Copiar url",
+        "loading-url": "Cargando url",
+        "copy": "Copiar url",
+        "copied": "copiada",
+        "description-link": "Su configuración está guardada, puede utilizar el enlace para compartirla."
+    },
+    "variants": {
+        "heading1": "Atención",
+        "heading2": "Los cambios se perderán",
+        "desc": "Si cambia a una variante distinta, todos sus cambios se perderán.",
+        "button": "Cambiar variante",
+        "close": "Cerrar",
+        "help": "Elegir otra variante"
+    },
+    "variant-fallback": "Variantes",
+    "export-3d": {
+        "title": "Descargar datos 3D",
+        "description": "Por favor, seleccione el tipo de archivo que desea descargar",
+        "cta": "Enviar enlace de descarga",
+        "error": "Problemas al exportar su archivo, por favor, inténtelo de nuevo"
+    },
+    "print": {
+        "page": "Página",
+        "of": "de",
+        "custom": "Configuración personalizada",
+        "button": "Imprimir"
+    },
+    "part-list": {
+        "label": "Etiqueta",
+        "price": "Precio",
+        "main-component": "Componente principal",
+        "heading": "Lista de piezas"
+    },
+    "no-active-package": "Actualmente no está disponible este configurador",
+    "tooltip": {
+        "ar": "Ver el producto en la sala",
+        "partlist": "Mostrar lista de piezas",
+        "multiselect": "Habilitar selección múltiple",
+        "measurements": "Mostrar las medidas",
+        "fullscreen": "Ver el producto en pantalla completa",
+        "reset-camera": "Restablecer la cámara",
+        "render": "Solicitar representaciones",
+        "export": "Exportar archivos 3D"
+    },
+    "element-disabled": {
+        "heading": "Lo sentimos, pero esta opción no está disponible en este momento",
+        "desc": "La opción que intenta configurar no es posible en este momento. Intente elegir otro elemento o cambie los parámetros de la configuración",
+        "ok": "De acuerdo, continuar"
+    },
+    "cookies": {
+        "info": "Este sitio web utiliza cookies para ofrecerle un mejor servicio y mejorar su experiencia. Al continuar navegando por el sitio, usted acepta nuestro uso de cookies.",
+        "link": "Más información",
+        "accept": "Aceptar"
+    },
+    "object-fallback": "Object"
+}

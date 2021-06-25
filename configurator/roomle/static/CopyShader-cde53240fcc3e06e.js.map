@@ -1,0 +1,1 @@
+{"version":3,"sources":["0"],"names":["THREE","CopyShader","uniforms","tDiffuse","value","opacity","vertexShader","join","fragmentShader"],"mappings":"AAMAA,MAAMC,WAAa,CAElBC,SAAU,CAETC,SAAY,CAAEC,MAAO,MACrBC,QAAW,CAAED,MAAO,IAIrBE,aAAc,CAEb,oBAEA,gBAEA,cACA,8EAEA,KAECC,KAAM,MAERC,eAAgB,CAEf,yBAEA,8BAEA,oBAEA,gBAEA,6CACA,oCAEA,KAECD,KAAM"}

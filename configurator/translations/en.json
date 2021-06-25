@@ -1,0 +1,145 @@
+{
+    "global": {
+        "back": "Back",
+        "roomle": "Roomle",
+        "cancel": "Cancel",
+        "enter-mail": "Enter email address",
+        "gdpr-info": "I agree to receiving emails about my saved design, as well as the occasional piece of carefully curated content from <TENANT_NAME>. The data controller is Roomle GmbH. Your data will be processed in order to allow you to finish and save your design. The legal basis for the processing is your consent (art. 6(1)(a)(f) of the GDPR).",
+        "see-more": "See more"
+    },
+    "params": {
+        "show-all": "Show all",
+        "show-less": "Show less",
+        "search": "Enter search ...",
+        "nothing-found": "Nothing found for",
+        "nothing-available": "Nothing available",
+        "filter-all": "All",
+        "save-draft": "Save draft",
+        "request-product": "Add to Cart",
+        "range": {
+            "range-error": "Value was not in the range of",
+            "syntax-error": "Value was not numeric"
+        },
+        "back": "back",
+        "boolean": {
+            "1": "Yes",
+            "0": "No",
+            "one": "No",
+            "other": "Yes"
+        },
+        "no-elements": "Current selections has no options",
+        "cancel-selection": "Cancel selection",
+        "variants": "Variants"
+    },
+    "hint": {
+        "turn-device": "Turn your device to configure"
+    },
+    "addon-trigger": "Add an element",
+    "article-nr": "Article-Nr.",
+    "count": "Count",
+    "parameters": "Parameters",
+    "width-short": "W",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Partlist",
+        "multiselect": "Multiselect",
+        "measurements": "Measurements",
+        "fullscreen ": "Fullscreen",
+        "export-3d": "Export 3D data"
+    },
+    "addon-fallback": "Addon",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Click on an element to position it in your configuration"
+    },
+    "ar": {
+        "heading": "View in room",
+        "hint": {
+            "ios": "Enter the following link into the browser of your iOS device",
+            "android": "Enter the following link into the browser of your Android device",
+            "desktop": "Enter the following link into the browser of your mobile device"
+        },
+        "title": "Show in your room (AR)",
+        "description": "You can use augmented reality on your smartphone or tablet, scan the QR code or open the link on your device.",
+        "send": "Copy Url",
+        "landing-page": {
+            "title": "Beautiful! And now?",
+            "description": "Open this configuration in AR and see it directly in your room.",
+            "button-ar": "Open AR",
+            "button-ar-legacy": "Open AR in Roomle App"
+        },
+        "not-available": "It seems like your device is not capable of augmented reality. If you are viewing this web page within an in-app web view try to open it in your native browser. If you are on iOS you can also download the app to enable augmented reality.",
+        "in-app": "You are viewing the configurator in an in-app browser. If you encounter any problems please try to open the configurator in your native browser"
+    },
+    "no-docking": {
+        "heading": "Sorry, but adding is not possible",
+        "desc": "Please delete or change an existing element, or choose another element, which you want to add to the configuration",
+        "ok": "Ok, continue"
+    },
+    "feedback": {
+        "question": "Was this hint helpful",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "continue-to": "Continue to",
+    "wrong-domain": "Sorry but this configurator is not available on this domain",
+    "save-draft": {
+        "title": "Save draft",
+        "description": "We save your draft, so you can continue editing later.",
+        "save": "Save",
+        "loading-url": "Loading url",
+        "copy": "Copy url",
+        "copied": "copied",
+        "description-link": "Your configuration is saved you can use the link to share it."
+    },
+    "variants": {
+        "heading1": "Attention",
+        "heading2": "Changes will be lost",
+        "desc": "If you change to a different variant all your changes will be lost. Do you still want to continue",
+        "button": "Change variant",
+        "close": "Close",
+        "help": "Choose another variant"
+    },
+    "variant-fallback": "Variants",
+    "export-3d": {
+        "title": "Download 3D data",
+        "description": "Please select the file type you want to download",
+        "cta": "Send download link",
+        "error": "Problems while exporting your file, please try again"
+    },
+    "print": {
+        "page": "Page",
+        "of": "of",
+        "custom": "Custom configuration",
+        "button": "Print"
+    },
+    "part-list": {
+        "label": "Label",
+        "price": "Price",
+        "main-component": "Main component",
+        "heading": "Part list"
+    },
+    "no-active-package": "Currently this configurator is not available",
+    "tooltip": {
+        "ar": "View product in room",
+        "partlist": "Show part list",
+        "multiselect": "Enable multi select",
+        "measurements": "Show measurements",
+        "fullscreen": "View product in fullscreen",
+        "reset-camera": "Reset camera",
+        "render": "Request renderings",
+        "export": "Export 3D files"
+    },
+    "element-disabled": {
+        "heading": "Sorry, but this option is currently not possible",
+        "desc": "The option you are trying to set is currently not possible try to choose another element or change the parameters of the configuration",
+        "ok": "Ok, continue"
+    },
+    "cookies": {
+        "info": "This website uses cookies to give you a better service and to improve your experience. By continuing to browse the site you are agreeing to our use of cookies.",
+        "link": "Read more",
+        "accept": "Accept"
+    },
+    "object-fallback": "Object"
+}

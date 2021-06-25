@@ -1,0 +1,94 @@
+{
+    "global": {
+        "back": "Back",
+        "roomle": "Roomle",
+        "cancel": "Cancel"
+    },
+    "params": {
+        "show-all": "Show all",
+        "show-less": "Show less",
+        "search": "Enter search ...",
+        "nothing-found": "Nothing found for",
+        "nothing-available": "Nothing available",
+        "filter-all": "All",
+        "save-draft": "Save draft",
+        "request-product": "Request product",
+        "range": {
+            "range-error": "Value was not in the range of",
+            "syntax-error": "Value was not numeric"
+        },
+        "back": "back",
+        "boolean": [
+            "No",
+            "Yes"
+        ],
+        "no-elements": "Current selections has no options",
+        "cancel-selection": "Cancel selection",
+        "variants": "Variants"
+    },
+    "hint": {
+        "turn-device": "Turn your device to configure"
+    },
+    "addon-trigger": "Add an element",
+    "article-nr": "Article-Nr.",
+    "count": "Count",
+    "parameters": "Parameters",
+    "width-short": "W",
+    "height-short": "H",
+    "depth-short": "D",
+    "drop-down": {
+        "partlist": "Partlist",
+        "multiselect": "Multiselect",
+        "measurements": "Measurements",
+        "fullscreen ": "Fullscreen"
+    },
+    "addon-fallback": "Addon",
+    "parameter-fallback": "Parameter",
+    "addons": {
+        "hint": "Click on an element to position it in your configuration"
+    },
+    "ar": {
+        "heading": "View in room",
+        "hint": {
+            "ios": "Enter the following link into the browser of your iOS device",
+            "android": "Enter the following link into the browser of your Android device",
+            "desktop": "Enter the following link into the browser of your mobile device"
+        },
+        "title": "Show in your room (AR)",
+        "description": "You can use augmented reality on your smartphone or tablet, scan the QR code or open the link on your device.",
+        "send": "Copy Url",
+        "landing-page": {
+            "title": "Beautiful! And now?",
+            "description": "Open this configuration in AR and see it directly in your room.",
+            "button-ar": "Open AR",
+            "button-ar-legacy": "Open AR in Roomle App"
+        }
+    },
+    "no-docking": {
+        "heading": "Sorry, but adding is not possible",
+        "desc": "Please delete an existing element, or choose another element, which you want to add to the configuration",
+        "ok": "Ok, continue"
+    },
+    "feedback": {
+        "question": "Was this hint helpful",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "continue-to": "Continue to",
+    "wrong-domain": "Sorry but this configurator is not available on this domain",
+    "save-draft": {
+        "title": "Save draft",
+        "description": "We save your draft, so you can continue editing later.",
+        "save": "Copy url",
+        "loading-url": "Loading url"
+    },
+    "variants": {
+        "heading1": "Attention",
+        "heading2": "Changes will be lost",
+        "desc": "If you change to a different variant all your changes will be lost. Do you still want to continue",
+        "button": "Change variant",
+        "close": "Close",
+        "help": "Choose another variant"
+    },
+    "variant-fallback": "Variants"
+}

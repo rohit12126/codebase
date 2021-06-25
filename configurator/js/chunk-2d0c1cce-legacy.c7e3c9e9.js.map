@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/common/utils/plan.ts"],"names":["EMPTY_PLAN"],"mappings":"kHAAA,kDAAO,MAAMA,EAAa","file":"js/chunk-2d0c1cce-legacy.c7e3c9e9.js","sourcesContent":["export const EMPTY_PLAN = '<plan version=\"2\"><walls><nodes/><edges/></walls><planobjects/><texters/><measures/><floors/><transparency><layers/></transparency></plan>';\n"],"sourceRoot":""}
