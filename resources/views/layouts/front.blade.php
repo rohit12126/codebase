@@ -16,7 +16,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{$blog->title ?? ''}}"/>
     <meta property="og:description" content="{!! Str::limit( $blog->description ?? '' , 200, ' ...') !!}"/>
-    <meta property="og:image" content="@if(isset($blog)) {{ asset('upload/blog/'.$blog->image)}} @else {{ asset('upload/images/home/step-two.jpg')}} @endif" />
+    <meta property="og:image" content="@if(isset($blog)){{ asset('upload/blog/'.$blog->image)}}@else{{asset('upload/images/home/step-two.jpg')}}@endif"/>
     <!-- SITE TITLE -->
     <title>Custom Closet</title><!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon/favicon.jpg')}}"><!-- Animation CSS -->
