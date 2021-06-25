@@ -396,14 +396,8 @@
                     async requestPartListAndUpdatePricesOfParts(e, t) {
                         let n = this._kernelInstance.getFullPartList();
                         e || (e = this._kernelInstance.getHashOfConfiguration(this._configuratorContext.planObjectId));
-                        console.log('in');
-                        console.log(btoa(e));
-                        console.log('out');
                         const i = await this.addUiDataAndPriceToPartList(n, e);
                         this._configuratorUiCallbacks.onPartListUpdate(i, btoa(e));
-                        console.log('in');
-                        console.log(n);
-                        console.log('out');
                         const requestOptions = {
                             method: "POST",
                             headers : { 
