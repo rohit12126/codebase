@@ -415,7 +415,7 @@
                                 parts : i.fullList[0].parameters
                             })
                           };
-                          const tr = await fetch("http://localhost/c247/codebase/index.php/product/price", requestOptions);
+                          const tr = await fetch("//ecom.c247.website/product/product/price", requestOptions);
                           const price = await tr.json();
                         this._configuratorUiCallbacks.onUpdatePrice('$', price)
                     }
