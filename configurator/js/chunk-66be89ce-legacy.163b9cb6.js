@@ -71,7 +71,7 @@
                                     this._actualUnit = p.InchFeet;
                                     break;
                                 default:
-                                    this._actualUnit = p.CM
+                                    this._actualUnit = p.InchFeet
                             }
                         }
                         _initActualUnitStringType() {
