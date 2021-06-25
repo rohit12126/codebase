@@ -636,7 +636,6 @@
                             })
                         },
                         async requestProduct() {
-                            console.log('gotta');
                             await Object(x["c"])(this.$embeddingCallbacks, this.$sdkConnector, this.$store, this.$analytics);
                         }
                     }
