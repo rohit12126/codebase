@@ -921,7 +921,6 @@
     /* Add to cart functionality */
     function addToCart(configurationId, partlist){
     var productId = $(".product-id").val();
-    console.
     jQuery.ajax({
         url: "{{ url('/cart/add-cart') }}",
         method: 'post',
