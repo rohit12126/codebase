@@ -611,10 +611,7 @@
                             }
                         },
                         subLabel() {
-                            const {
-                                price: t
-                            } = this.$store.state.coreData;
-                            return t ? this.$store.state.coreState.label+' '+decodeURIComponent(location.search.split('item=')[1]) : this.$store.state.coreState.catalogLabel+' '+decodeURIComponent(location.search.split('item=')[1])
+                            return decodeURIComponent(location.search.split('item=')[1])
                         },
                         mainLabel() {
                             return this.$store.getters[I["b"].CURRENT_PRICE] || this.$store.state.coreState.label
