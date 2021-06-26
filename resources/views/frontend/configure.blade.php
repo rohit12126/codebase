@@ -577,6 +577,7 @@
             <h2 class="home-step-heading">
                 Custom build your closet doors
             </h2>
+            <h3 class="home-step-heading">{{ucfirst(strtolower($productData['product']->catergory->name))}} {{$productData['product']->name}}</h3>
             <p class="home-step-para mb-3">
                 Design and configure the door that fits your style.
                 Prices adjust in real time as you add options to create your perfect closet door.
@@ -591,7 +592,7 @@
             <div id="configurator-container">
             <iframe
                 id="iframe"
-                src="{{asset('configurator/index.html')}}?id={{$productData['product']->configure_id ?? 'cdm:sr2_white' }}&configuratorId=cdm&api=false"
+                src="{{asset('configurator/index.html')}}?id={{$productData['product']->configure_id ?? 'cdm:sr2_white' }}&configuratorId=cdm&api=false?item={{ucfirst(strtolower($productData['product']->catergory->name))}} {{$productData['product']->name}}"
                 frameborder="0"
                 width="100%" height="600"
             ></iframe>
@@ -599,7 +600,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="pl-3 pb-3 pb-md-0">
-                        <span class="product-sku-no">{{ucfirst(strtolower($productData['product']->catergory->name))}} {{$productData['product']->name}}</span>
+                        <!-- <span class="product-sku-no">{{ucfirst(strtolower($productData['product']->catergory->name))}} {{$productData['product']->name}}</span> -->
                         <!-- <span class="product-sku">SKU (Stock Keeping Unit)</span> -->
                     </div>
                 </div>
@@ -709,7 +710,7 @@
     </section>
 @endif
 @if(!$productData['product']->images->isEmpty())
-    <section class="configure-product-slider py-5">
+    <section class="configure-product-slider py-3">
         <div class="container">
             <h1 class="pt-3 mb-5 heading_s3 text-center">Product Gallery</h1>
             <div class="product-wallpaper-slider my-1">
