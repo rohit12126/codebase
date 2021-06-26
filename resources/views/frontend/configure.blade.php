@@ -577,7 +577,7 @@
             <h2 class="home-step-heading">
                 Custom build your closet doors
             </h2>
-            <h3 class="home-step-heading">{{ucfirst(strtolower($productData['product']->catergory->name))}} {{$productData['product']->name}}</h3>
+
             <p class="home-step-para mb-3">
                 Design and configure the door that fits your style.
                 Prices adjust in real time as you add options to create your perfect closet door.
