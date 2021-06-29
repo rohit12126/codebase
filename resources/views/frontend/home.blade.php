@@ -9,7 +9,10 @@
         </h4>
     </div>
     <div class="main-page-video">
-        <iframe src="https://player.vimeo.com/video/513525765?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <video autoplay loop>
+            <source src="{{URL::asset('/images/home/cdm-banner.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <section class="home-steps home-page-section">
         <div class="container">

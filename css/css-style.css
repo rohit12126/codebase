@@ -8015,8 +8015,11 @@ h5 {
 		text-transform: capitalize;
 	}
 	.main-page-video{
-		padding:62.5% 0 0 0;
 		position:relative;
+		display: flex;
+	}
+	.main-page-video video{
+		width:100%;
 	}
 	/*================Home page Banner End=================*/
 	.home-page-section{
