@@ -9,7 +9,10 @@
         </h4>
     </div>
     <div class="main-page-video">
-        <iframe src="https://player.vimeo.com/video/513525765?autoplay=1&loop=1&title=0&byline=0&portrait=0&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <video autoplay loop>
+            <source src="{{URL::asset('/images/home/cdm-banner.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <section class="home-steps home-page-section">
         <div class="container">
@@ -74,7 +77,7 @@
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Lifetime Warranty on all Hardware 
+                                            <p>Our Bifold doors use a patented cam-hinge system that is quiet, reliable, and has a lifetime warranty. CDM bifolds stay closed and don’t pop out slightly like lesser quality competitors.
                                             </p>
                                             </div>
                                         </div>
@@ -82,14 +85,14 @@
                                     <div class="hot-spot left-sides-second">
                                         <div class="circle"></div>
                                         <div class="tooltip">
-                                            <p>Track & Trim to match most decor (Chrome, White, or Matching)</p>
+                                            <p>CDM bifolds fold almost completely flat at the edge of your closet when opened allowing you to maximize accessible space. The CDM bifold only takes up 5-½” of your closet space when open. </p>
                                         </div>
                                     </div>
                                     <div class="hot-spot left-sides-third">
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Custom sizes and configurations available to fit any size opening 
+                                            <p>Bifold doors operate with a track at the top and pivot to the left or the right. This makes it possible to have no track on the floor. Sliders and some of our bifold competitors require a bottom track. Our bifolds do come with an optional oak saddle for the floor but it’s your choice if you want to use it or not based on your needs
                                             </p>
                                             </div>
                                         </div>
@@ -98,7 +101,7 @@
                                         <div class="circle" ></div>
                                         <div class="tooltip tip-upside">
                                             <div class="text-row">
-                                            <p>Fully adjustable for perfect fit on “not-so-perfect openings”
+                                            <p>CDM Bifolds are adjustable both vertically and horizontally so any imperfections in your opening; out-of-square, settled over time or uneven walls usually can be adjusted for.
                                             </p>
                                             </div>
                                         </div>
@@ -107,7 +110,7 @@
                                         <div class="circle" ></div>
                                         <div class="tooltip tip-upside">
                                             <div class="text-row">
-                                            <p>Optional Saddle and multiple installation methods to fit ALL applications
+                                            <p>Bifolds are a good alternative to traditional doors in that they don’t stick out so far into the room. This makes them perfect for closets in tight spaces or hallways. Because they split in half as they open, they only project out into the room half the amount traditional swinging doors do.
                                             </p>
                                             </div>
                                         </div>
@@ -140,7 +143,7 @@
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Lifetime Warranty on all Hardware</p>
+                                            <p>Sliding doors allow access to half of your opening at any one time as they slide open. We also offer 3-panel, 3-track options that allow access to a full two thirds of your open at any time</p>
                                             </div>
                                         </div>
                                     </div>
@@ -148,7 +151,7 @@
                                         <div class="circle"></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Track & Trim to match most decor (Chrome, White, or Matching)</p>
+                                            <p>Both our Sliders and our Bifolds use heavy-duty extruded aluminum tracks. They are 2-sided and come in chrome, white or matching colors to fit almost any decor.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +159,7 @@
                                         <div class="circle" ></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Custom sizes and configurations available to fit any size opening</p>
+                                            <p>Our mirror sliders are available in many different styles, including frameless or framed, beveled or polished. We offer non-mirror styles too so we can match a door seamlessly into your design choices. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -164,15 +167,15 @@
                                         <div class="circle"></div>
                                         <div class="tooltip">
                                             <div class="text-row">
-                                            <p>Solid-backed and Impact Resistant (Mirror Doors)</p>
+                                            <p>Sliding Doors don't swing out, they operate on a track and like their name, they slide out for the way. Sliders are the perfect door for very tight hallways and closets where there is no space for a traditional door to swing into the room </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="hot-spot right-sides-fifth">
                                         <div class="circle" ></div>
-                                        <div class="tooltip">
+                                        <div class="tooltip tip-upside">
                                             <div class="text-row">
-                                            <p>Optional “Triple-Track” available</p>
+                                            <p>Our Sliding doors run on smooth, heavy duty ball-bearing rollers for a lifetime of reliable and quiet operation. They are adjustable so that any unevenness in your walls, floors, or opening can be accommodated for a perfect fitting door.</p>
                                             </div>
                                         </div>
                                     </div>

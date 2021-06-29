@@ -8015,8 +8015,11 @@ h5 {
 		text-transform: capitalize;
 	}
 	.main-page-video{
-		padding:62.5% 0 0 0;
 		position:relative;
+		display: flex;
+	}
+	.main-page-video video{
+		width:100%;
 	}
 	/*================Home page Banner End=================*/
 	.home-page-section{
@@ -8361,7 +8364,8 @@ h5 {
     		left: 12%;
 		}
 			.hot-spot.right-sides-third .tooltip{
-				margin-left: -50px !important
+				margin-left: -50px !important;
+				width:280px;
 			}
 			.hot-spot.right-sides-third .tooltip:before{
 				left: 4.5%;
@@ -8373,6 +8377,10 @@ h5 {
 		.hot-spot.right-sides-fifth{
 			top: 78%;
 			left: 60%;
+		}
+		.hot-spot.right-sides-fifth .tooltip{
+			margin-left: -118px !important;
+			width: 260px;
 		}
 	/*================Home page Step 2 section=================*/
 		.home-step-2,.how-to-wrap,.configure-product-slider{
