@@ -200,8 +200,11 @@
                         @endforeach
                     </tbody>
                 </table>
-                
                 <div class="grand-total">
+                <div class="cart-row">
+                        <span>Sub Total :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span><label id="subQty" class="mb-0" >${{number_format(($data->grand_total - $data->getPaymentDetail->shipping ?? '0'), 2)}}</label></span>
+                    </div>
                 <div class="cart-row">
                         <span>Shipping :&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <span><label id="subQty" class="mb-0" >${{number_format(($data->getPaymentDetail->shipping ?? '0'), 2)}}</label></span>

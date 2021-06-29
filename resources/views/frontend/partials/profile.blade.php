@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label>Email Address <span class="mandatory">*</span></label>
-                    <input required="" class="form-control" name="email" type="email" data-tooltip="I’m the tooltip text." value="{{ $user->email}}" readonly required>
+                    <input required="" class="form-control" name="email" type="email" data-tooltip="I’m the tooltip text." value="{{ $user->email}}" @if($user->email) readonly @endif required>
                     @if($errors->has('email'))
                         <div class="error">{{ $errors->first('email') }}</div>
                     @endif
