@@ -151,10 +151,13 @@
                 </div>
             </div>
             <div class="col-lg-6 pt-2 pt-lg-0 mt-4 mt-lg-0">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.553236393216!2d-73.41840868459393!3d40.74985517932786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82b004b8d960b%3A0xf3e632b088acdf4a!2s148%20Milbar%20Blvd%2C%20Farmingdale%2C%20NY%2011735%2C%20USA!5e0!3m2!1sen!2sin!4v1624965772044!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5530516678573!2d-73.41840868504845!3d40.74985924323634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82b00493e8c33%3A0x7079f8e7893a8d11!2sCustom%20Door%20%26%20Mirror!5e0!3m2!1sen!2sin!4v1625057404690!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>
+
+   
+
 </div>
 <!-- END SECTION CONTACT -->
 </div>
