@@ -46,14 +46,25 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        ($request->password) ? $password = 'required' : $password = null;
         $this->validate(
             $request, 
             [
                 'email' => 'required|email|unique:users,email,'.$request->id.',id',
                 'name' => 'required|max:40',
-                'mobile' => 'required|required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15|unique:users,mobile,'.$request->id.',id'
+                'mobile' => 'required|required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15|unique:users,mobile,'.$request->id.',id',
             ]
         );
+        if($password)
+        {
+            $this->validate(
+                $request, 
+                [
+                    'password' => 'required',
+                    'password_confirmation' => 'required|same:password',
+                ]
+            );
+        }
 
         if($this->userManager->edit($request)){
             return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
@@ -128,7 +139,7 @@ class ProfileController extends Controller
 
         $validator = Validator::make($data, [
             'currentPassword' => 'required',
-            'password' => 'required|same:password',
+            'password' => 'required',
             'password_confirmation' => 'required|same:password',     
         ], $messages);
 

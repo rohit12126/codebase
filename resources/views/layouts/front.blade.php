@@ -649,7 +649,7 @@ footer-->
                 touchScroller (classArray[i].classname,classArray[i].wrap);
             }
         });
-        $(".alert-success").delay(2000).slideUp(300);
+        $(".alert-success").delay(5000).slideUp(300);
     });
 
 </script>

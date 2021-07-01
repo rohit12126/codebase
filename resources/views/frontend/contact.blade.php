@@ -65,7 +65,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Call Us</span>
-                        <p>{{$setting->contact ?? '123 456 789'}}</p>
+                        <p><a href="tel:{{$setting->contact ?? '123 456 789'}}">{{$setting->contact ?? '123 456 789'}}</a></p>
                     </div>
                 </div>
             </div>
@@ -151,10 +151,13 @@
                 </div>
             </div>
             <div class="col-lg-6 pt-2 pt-lg-0 mt-4 mt-lg-0">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3392844867617!2d-73.31837064994565!3d40.71054694554163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82d244be8e85d%3A0x96b95586c48e45a7!2sCustom%20Door%20%26%20Mirror%20Inc!5e0!3m2!1sen!2sin!4v1610546441457!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5530516678573!2d-73.41840868504845!3d40.74985924323634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82b00493e8c33%3A0x7079f8e7893a8d11!2sCustom%20Door%20%26%20Mirror!5e0!3m2!1sen!2sin!4v1625057404690!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
     </div>
+
+   
+
 </div>
 <!-- END SECTION CONTACT -->
 </div>

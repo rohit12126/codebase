@@ -69,14 +69,16 @@ class LoginController extends Controller
             
             return redirect('/login');
         }
+        // dd($user);
         
-        if($user->getemail() == null){
-        Alert::info('Unable to login.', 'Your' .$provider. ' account Does not Provide Any Information, Kindly SignUp !');
+    //     if($user->getemail() == null){
+    //     Alert::info('Unable to login.', 'Your' .$provider. ' account Does not Provide Any Information, Kindly SignUp !');
         
-        return redirect()->route('home');
-    }
+    //     return redirect()->route('home');
+    // }
 
         $authUser = $this->findOrCreateUser($user, $provider);
+        // dd($authUser);
     if(!$authUser){
         Alert::info('Unable to login.', 'Can not find mail Id you used, in system. kindly SignUp.');
         
@@ -92,6 +94,36 @@ class LoginController extends Controller
     }
     return Redirect::to($redirectUrl);
     }
+    // public function findOrCreateUser($providerUser, $provider)
+    // {
+    //     $account = SocialIdentity::whereProviderName($provider)
+    //             ->whereProviderId($providerUser->getId())
+    //             ->first();
+
+    //     if ($account) {
+    //         return $account->user;
+    //     } else {
+    //         $user = User::whereEmail($providerUser->getEmail())->first();
+
+    //         if (! $user) {
+    //             $user = User::create([
+    //                 'email' => $providerUser->getEmail(),
+    //                 'name'  => $providerUser->getName(),
+    //             ]);
+
+    //             Mail::to($user->email)->send(new UserRegistration($user));
+    //         }
+
+    //         $user->identities()->create([
+    //             'provider_id'   => $providerUser->getId(),
+    //             'provider_name' => $provider,
+    //         ]);
+
+    //         return $user;
+    //     }
+    // }
+    
+    
     public function findOrCreateUser($providerUser, $provider)
     {
         $account = SocialIdentity::whereProviderName($provider)
@@ -100,16 +132,36 @@ class LoginController extends Controller
 
         if ($account) {
             return $account->user;
-        } else {
+        }
+        if($providerUser->getEmail()) {
             $user = User::whereEmail($providerUser->getEmail())->first();
 
             if (! $user) {
+
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name'  => $providerUser->getName(),
                 ]);
 
                 Mail::to($user->email)->send(new UserRegistration($user));
+            }
+
+            $user->identities()->create([
+                'provider_id'   => $providerUser->getId(),
+                'provider_name' => $provider,
+            ]);
+
+            return $user;
+        }
+        else{
+            $user = User::whereEmail($providerUser->getEmail())->first();
+
+            if (! $user) {
+
+                $user = User::create([
+                    'email' => '',
+                    'name'  => $providerUser->getName(),
+                ]);
             }
 
             $user->identities()->create([
