@@ -9,7 +9,7 @@
         </h4>
     </div>
     <div class="main-page-video d-flex align-items-center">
-        <video autoplay loop>
+        <video autoplay loop muted class="video-autoplay">
             <source src="{{URL::asset('/images/home/cdm-banner.mp4')}}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
