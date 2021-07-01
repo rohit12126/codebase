@@ -67,7 +67,7 @@ class ProfileController extends Controller
         }
 
         if($this->userManager->edit($request)){
-            return redirect()->back()->with('message', 'Profile Updated Sucessfully!');
+            return redirect()->route('account')->with('message', 'Profile Updated Sucessfully!');
         }
     }
     /**
@@ -156,7 +156,7 @@ class ProfileController extends Controller
         $validator = $this->passwordUpdateRules($request_data);
         if($validator->fails())
         {
-            return redirect()->back()->withErrors($validator->getMessageBag());
+            return redirect()->back()->withInput(['tab'=>'password'])->withErrors($validator->getMessageBag());
         }
         else
         {  
@@ -167,12 +167,12 @@ class ProfileController extends Controller
             $obj_user = User::find($user_id);
             $obj_user->password = \Hash::make($request_data['password']);
             $obj_user->save(); 
-            return redirect()->route('account')->with('message', 'Profile Updated Sucessfully!');
+            return redirect()->route('account' , ['tab'=>'password'])->with('message', 'Profile Updated Sucessfully!');
         }
         else
         {           
             $error = array('currentPassword' => 'Please enter correct current password');
-            return redirect()->back()->withErrors($error);
+            return redirect()->back()->withInput(['tab'=>'password'])->withErrors($error);
         }
         }               
     }
