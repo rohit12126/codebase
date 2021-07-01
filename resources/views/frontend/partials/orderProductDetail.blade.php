@@ -42,7 +42,6 @@
     </div>
 	<div class="container">
         <div class="row">
-            <div class="d-flex w-100 pt-3 pb-3">
                 @isset($data->getBillingAddress->address)
                     <div class="col-lg-6">
                         <div class="card mb-3 mb-lg-0 address-card">
@@ -80,7 +79,7 @@
                 @endisset
             </div>
             <hr>
-            <div class="col-md-12">
+            <div class="col-md-12 mt-3">
                 <div class="cart-for-mobile d-block d-lg-none">
                 @foreach($data->productList as $product)
                     <div class="row m-0 mb-4 contact_style3 pl-0 pr-0">
@@ -214,7 +213,6 @@
                         <span><label id="subQty" class="mb-0" >${{$data->grand_total}}</label></span>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

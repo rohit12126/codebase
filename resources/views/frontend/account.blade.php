@@ -5,7 +5,7 @@
       <h4 class="text-center pb-3 mb-4 pt-4 user-account-name">Welcome, {{ ucwords($user->name) }}!</h4>
         <div class="p-4">
           <div class="row">
-              <div class="col-lg-3 col-md-4 pr-0 dashboard_menu-wrap">
+              <div class="col-lg-3 col-md-4 dashboard_menu-wrap">
                   <div class="dashboard_menu">
                       <ul class="nav nav-tabs flex-column" role="tablist">
                         <li class="nav-item">
