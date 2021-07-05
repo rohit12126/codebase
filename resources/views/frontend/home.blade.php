@@ -8,8 +8,8 @@
             Create custom closet doors that fit your style
         </h4>
     </div>
-    <div class="main-page-video">
-        <video autoplay loop>
+    <div class="main-page-video d-flex align-items-center">
+        <video class="video-autoplay" autoplay muted loop>
             <source src="{{URL::asset('/images/home/cdm-banner.mp4')}}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
