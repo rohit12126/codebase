@@ -23,7 +23,7 @@ class PaymentController extends Controller {
     }
 
     public function handleonlinepay(Request $request) {
-        dd($request->input());
+        // dd($request->input());
         $input = $request->input();
         
         /* Create a merchantAuthenticationType object with authentication details
