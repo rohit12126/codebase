@@ -372,13 +372,10 @@ footer-->
 </script>
 @yield('scripts')
 <script>
-    document.querySelector('.video-autoplay').play();
     $(window).load(function(){
         $('#sitePreloader').fadeOut();
     });
-    $( document ).ready(function() {
-    $('.video-autoplay').play();
-    });
+   
     $(".main-toggler").on("click", function () {
         $(".main-toggler").toggleClass("opened");
         $(".head-navbar").toggleClass("nav-open");
