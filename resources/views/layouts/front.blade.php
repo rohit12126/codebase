@@ -375,7 +375,9 @@ footer-->
     document.querySelector('.video-autoplay').play();
     $(window).load(function(){
         $('#sitePreloader').fadeOut();
-        $('.video-autoplay').play();
+    });
+    $( document ).ready(function() {
+    $('.video-autoplay').play();
     });
     $(".main-toggler").on("click", function () {
         $(".main-toggler").toggleClass("opened");
