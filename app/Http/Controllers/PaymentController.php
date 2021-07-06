@@ -23,6 +23,7 @@ class PaymentController extends Controller {
     }
 
     public function handleonlinepay(Request $request) {
+        dd($request->input());
         $input = $request->input();
         
         /* Create a merchantAuthenticationType object with authentication details
@@ -60,7 +61,7 @@ class PaymentController extends Controller {
         // Create the controller and get the response
         $controller = new AnetController\CreateTransactionController($requests);
         $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
-
+        dd($response);
         if ($response != null) {
             // Check to see if the API request was successfully received and acted upon
             if ($response->getMessages()->getResultCode() == "Ok") {
