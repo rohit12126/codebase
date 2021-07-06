@@ -101,7 +101,7 @@
                             </tr>
                             <tr>
                                 <td align="center" style="text-align:center;padding-top:5px;font-family: 'Lato',sans-serif;font-size: 11px;">
-                                <a href="#" style="color:#959595" target="_blank">www.customcloset.com</a> | <a href="{{route('termsAndCondition')}}" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="{{route('privacyPolicy')}}" style="color:#959595" target="_blank">Privacy Policy</a>
+                                <a href="#" style="color:#959595" target="_blank">https://customdoorandmirror.com</a> | <a href="{{route('termsAndCondition')}}" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="{{route('privacyPolicy')}}" style="color:#959595" target="_blank">Privacy Policy</a>
                                 </td>
                             </tr>
                             <tr>
