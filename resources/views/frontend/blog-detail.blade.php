@@ -14,14 +14,14 @@
                         <span class="linearicons-share"></span> share
                     </a>
                     <div class="collapse" id="shareIcons">
-                        <a target="_blank" class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=', 
+                        <a target="_blank" class="blog-back-btn d-block fb-icon" role="button" data-sharer="facebook" data-title="This is share from Custom Doors and Mirrors blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}&t=', 
                             'newwindow', 
                             'width=600,height=550'); 
                             return false;">
                             <img src="{{URL::asset('/images/facebook.svg')}}" alt="">
                             Facebook
                         </a>
-                            <a target="_blank" class="blog-back-btn d-block twitter-icon" role="button" data-sharer="twitter" data-title="This is share from custom closet blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{url()->current()}}" onclick="window.open('https://twitter.com/intent/tweet?text={{$blog->title}}&url={{url()->current()}}', 
+                            <a target="_blank" class="blog-back-btn d-block twitter-icon" role="button" data-sharer="twitter" data-title="This is share from Custom Doors and Mirrors blog to twitter" data-hashtags="hashtag comma separated" data-url="blog-view.php" href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{url()->current()}}" onclick="window.open('https://twitter.com/intent/tweet?text={{$blog->title}}&url={{url()->current()}}', 
                                 'newwindow', 
                                 'width=600,height=550'); 
                             return false;">

@@ -127,7 +127,7 @@ class PaypalController extends Controller
         
         $webProfile = new WebProfile();
 
-        $webProfile->setName("Custom Closets" . uniqid())
+        $webProfile->setName("Custom Doors and Mirrors" . uniqid())
             ->setInputFields($inputFields)
             ->setTemporary(true);
         $request = clone $webProfile;

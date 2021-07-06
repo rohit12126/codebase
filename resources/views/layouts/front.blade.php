@@ -18,7 +18,7 @@
     <meta property="og:description" content="{!! Str::limit( $blog->description ?? '' , 200, ' ...') !!}"/>
     <meta property="og:image" content="@if(isset($blog)){{ asset('upload/blog/'.$blog->image)}}@else{{asset('upload/images/home/step-two.jpg')}}@endif"/>
     <!-- SITE TITLE -->
-    <title>Custom Closet</title><!-- Favicon Icon -->
+    <title>Custom Doors and Mirrors</title><!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon/favicon.jpg')}}"><!-- Animation CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-animate.css')}}">Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-bootstrap.min.css')}}">
@@ -165,7 +165,7 @@
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header border-bottom-0 p-0 position-realtive">
-            <!-- <h4 class="modal-title" id="exampleModalLabel">Custom Closet</h4> -->
+            <!-- <h4 class="modal-title" id="exampleModalLabel">Custom Doors and Mirrors</h4> -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -303,7 +303,7 @@ footer-->
                 <div class="row m-0">
                     <div class="col-sm-5 p-lg-0">
                         <!-- <img src="img/sitzfeldt-white.png" alt="" class="foot-logo"> -->
-                        <a href={{ url('/')}}><span class="footer-logo">Custom Closet</span></a>
+                        <a href={{ url('/')}}><span class="footer-logo">Custom Doors and Mirrors</span></a>
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100 pt-2 pt-sm-0">
@@ -313,7 +313,7 @@ footer-->
                 </div>
                 <div class="text-center">
                     <p class="pt-3 mb-0">
-                        &#169; Copyright {{date("Y")}} Custom Closets. All rights Reserved.
+                        &#169; Copyright {{date("Y")}} Custom Doors and Mirrors. All rights Reserved.
                     </p>
                 </div>
             </div>
