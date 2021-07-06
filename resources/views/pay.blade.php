@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.front')
 
 @section('content')
 
@@ -82,9 +82,7 @@
                                                     </select>
                                                 </div>                                                
                                                 <div class="form-group col-md-6" id="credit_cards" style="margin-top: 22px;">
-                                                    <img src="{{ asset('images/visa.jpg') }}" id="visa">
-                                                    <img src="{{ asset('images/mastercard.jpg') }}" id="mastercard">
-                                                    <img src="{{ asset('images/amex.jpg') }}" id="amex">
+                                                    
                                                 </div>
                                             </div>
                                             
