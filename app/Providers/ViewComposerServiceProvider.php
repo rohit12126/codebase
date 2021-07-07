@@ -22,7 +22,8 @@ class ViewComposerServiceProvider extends ServiceProvider
         ],CartComposer::class);
 
         view()->composer([
-            'dashboard.email.master'
+            'dashboard.email.master',
+            'frontend.invoice'
         ],SettingComposer::class);
     }
 
