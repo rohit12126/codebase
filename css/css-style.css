@@ -8444,6 +8444,7 @@ h5 {
 .installation-videos-wrap .specs-iframe-wrap{
 	-webkit-transition: all .25s cubic-bezier(0,0,0.2,1);
     transition: all .25s cubic-bezier(0,0,0.2,1),all .25s cubic-bezier(0,0,0.2,1);
+	background: rgba(30,30,30,.9);
 }
 .playlist-trigger{
 	position: absolute;
@@ -8474,7 +8475,7 @@ h5 {
 	}
 }
 @media(min-width:1200px){
-	.installation-videos-wrap.open .specs-iframe-wrap{
+	.installation-videos-wrap .specs-iframe-wrap{
 		padding-top: 39.25%;
 	}
 }
