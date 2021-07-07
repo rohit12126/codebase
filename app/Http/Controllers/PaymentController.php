@@ -120,8 +120,8 @@ class PaymentController extends Controller {
 //     }
 
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-    $merchantAuthentication->setName(\SampleCodeConstants::env('MERCHANT_LOGIN_ID'));
-    $merchantAuthentication->setTransactionKey(\SampleCodeConstants::env('MERCHANT_TRANSACTION_KEY'));
+    $merchantAuthentication->setName(env('MERCHANT_LOGIN_ID'));
+    $merchantAuthentication->setTransactionKey(env('MERCHANT_TRANSACTION_KEY'));
     
     // Set the transaction's refId
     $refId = 'ref' . time();
