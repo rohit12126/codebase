@@ -14,7 +14,7 @@
                 </span>
             </div>
             <div class="specs-iframe-wrap" id="youtubeplayer">
-                <iframe class="specs-iframe-responsive" width="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="specs-iframe-responsive" width="100%" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="iv-playlist-wrap">
                 <div class="iv-playlist-header">
@@ -24,89 +24,61 @@
                     </div>
                 </div>
                 <ul class="iv-playlist-ul" id="youtubevideotabs">
-                    <li class="iv-playlist-li active" youtubeid="K23rTF9Jfa0">
+                    <li class="iv-playlist-li active" iVideoId="571741493">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182456348?mw=64&mh=36')"></div>
+                        <div class="iv-playlist-thumb-title">2-Panel Bifold Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
+                    <li class="iv-playlist-li" iVideoId="571741365">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182456129?mw=64&mh=36');"></div>
+                        <div class="iv-playlist-thumb-title">4-Panel Bifold Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="K23rTF9Jfa0">
+                    <li class="iv-playlist-li" iVideoId="571741198">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182456131?mw=64&mh=36')"></div>
+                        <div class="iv-playlist-thumb-title">6-Panel Bifold Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
+                    <li class="iv-playlist-li" iVideoId="571740985">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182455718?mw=64&mh=36');"></div>
+                        <div class="iv-playlist-thumb-title">8-Panel Bifold Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="K23rTF9Jfa0">
+                    <li class="iv-playlist-li" iVideoId="571740902">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182455466?mw=64&mh=36')"></div>
+                        <div class="iv-playlist-thumb-title">2-Panel Slider Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
+                    <li class="iv-playlist-li" iVideoId="571740806">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182454998?mw=64&mh=36');"></div>
+                        <div class="iv-playlist-thumb-title">3-Panel Slider Double-Track Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="K23rTF9Jfa0">
+                    <li class="iv-playlist-li" iVideoId="571740933">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182455140?mw=64&mh=36')"></div>
+                        <div class="iv-playlist-thumb-title">4-Panel Slider Install</div>
                     </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
+                    <li class="iv-playlist-li" iVideoId="571741629">
                         <div class="iv-pl-icon">
                             <i class="ion-ios-play"></i>
                         </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
-                    </li>
-                    <li class="iv-playlist-li" youtubeid="K23rTF9Jfa0">
-                        <div class="iv-pl-icon">
-                            <i class="ion-ios-play"></i>
-                        </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
-                    </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
-                        <div class="iv-pl-icon">
-                            <i class="ion-ios-play"></i>
-                        </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
-                    </li>
-                    <li class="iv-playlist-li" youtubeid="K23rTF9Jfa0">
-                        <div class="iv-pl-icon">
-                            <i class="ion-ios-play"></i>
-                        </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/K23rTF9Jfa0/default.jpg')"></div>
-                        <div class="iv-playlist-thumb-title">Solid Backed Mirror Slider Door</div>
-                    </li>
-                    <li class="iv-playlist-li" youtubeid="NS5CrSbAwi0">
-                        <div class="iv-pl-icon">
-                            <i class="ion-ios-play"></i>
-                        </div>
-                        <div class="iv-playlist-thumb" style="background-image: url('https://i1.ytimg.com/vi/NS5CrSbAwi0/default.jpg');"></div>
-                        <div class="iv-playlist-thumb-title">CDM Bifold Install Overview</div>
+                        <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182454680?mw=64&mh=36');"></div>
+                        <div class="iv-playlist-thumb-title">3-Panel Slider Triple-Track Install</div>
                     </li>
                 </ul>
             </div>
@@ -118,11 +90,11 @@
 @section('scripts')
     <script>
         $(function(){
-            var youtubeUrl = "https://www.youtube.com/embed/" + $('#youtubevideotabs li:first-child').attr('youtubeid') + "?rel=0";
-            $('#youtubeplayer iframe').attr('src',youtubeUrl);            
+            var iVideoUrl = "https://player.vimeo.com/video/" + $('#youtubevideotabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
+            $('#youtubeplayer iframe').attr('src',iVideoUrl);            
             $('#youtubevideotabs li').click(function(){
-                youtubeUrl = "https://www.youtube.com/embed/"+ $(this).attr('youtubeid') +"?rel=0";
-                $('#youtubeplayer iframe').attr('src',youtubeUrl);
+                iVideoUrl = "https://player.vimeo.com/video/"+ $(this).attr('iVideoId') +"?title=0&byline=0&portrait=0";
+                $('#youtubeplayer iframe').attr('src',iVideoUrl);
                 $('#youtubevideotabs li').removeClass('active');
                 $(this).addClass('active');
             }); 

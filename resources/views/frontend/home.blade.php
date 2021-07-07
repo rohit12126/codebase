@@ -304,12 +304,12 @@
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="specs-iframe-wrap">                            
-                        <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://player.vimeo.com/video/571741695?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="specs-iframe-wrap">                            
-                        <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://player.vimeo.com/video/571740752?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -363,9 +363,5 @@
     });
     var widthGet = $(".slideshow-thumb").width();
     $(".slideshow-thumb").height(widthGet);
-    $( document ).ready(function() {
-    $('.video-autoplay').play();
-    });
-    document.querySelector('.video-autoplay').play();
 </script>
 @endsection
