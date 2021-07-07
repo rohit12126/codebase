@@ -109,7 +109,7 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-12">
-                                <input required="" placeholder="Enter Email *" id="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" type="email">
+                                <input required="" placeholder="Enter Email *" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" type="email">
                                 @if ($errors->has('email'))
                                 <div class="error">
                                     {{ $errors->first('email') }}

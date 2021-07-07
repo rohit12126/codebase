@@ -363,5 +363,9 @@
     });
     var widthGet = $(".slideshow-thumb").width();
     $(".slideshow-thumb").height(widthGet);
+    $( document ).ready(function() {
+    $('.video-autoplay').play();
+    });
+    document.querySelector('.video-autoplay').play();
 </script>
 @endsection

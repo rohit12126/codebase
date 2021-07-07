@@ -228,7 +228,7 @@ class OrderController extends Controller
         	// pass view file
             $pdf = PDF::loadView('frontend.invoice');
             // download pdf
-            return $pdf->download("customclosets-".$req->order_no.'.pdf');
+            return $pdf->download("customdoorsandmirror-".$req->order_no.'.pdf');
         }
         return view('frontend.invoice');
     }

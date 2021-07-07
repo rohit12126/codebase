@@ -65,7 +65,7 @@
             <img src="{{URL::asset('/images/cutom-inc-logo.png')}}" alt="" class="head-logo">
             </td>
             <td style="text-align: right;">
-                Custom Closets Innovations Private Limited <br>
+                Custom Doors and Mirrors <br>
             </td>
             </tr>
         </table>
@@ -80,10 +80,10 @@
                 <table style="width: 100%;border-bottom: 1px solid #000;" cellspacing="0">
                     <tr>
                         <td style="padding: 10px;width: 60%;border-right: 1px solid #000;">
-                                Manufactured and Sold by: Custom Closets Innovations Pvt Ltd <br><br>
+                                Manufactured and Sold by: Custom Doors and Mirrors <br><br>
                         
                                 Phone: +91 988 3333 123 <br>
-                                Email: support@customclosets.co
+                                Email: support@customdoorandmirror.com
                         </td>
                         <td cellspacing="0">
                             <table style="width: 100%;" cellspacing="0">
@@ -97,7 +97,7 @@
                                     <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;border-bottom:1px solid #000;">
                                         Order Via
                                     </td>
-                                    <td style="padding: 4px 5px;border-bottom:1px solid #000;">customclosets.co</td>
+                                    <td style="padding: 4px 5px;border-bottom:1px solid #000;">customdoorandmirror.com</td>
                                 </tr>
                                 <tr>
                                     <td style="border-right: 1px solid #000;font-weight:600;padding-left: 5px;border-bottom:1px solid #000;">
@@ -148,10 +148,10 @@
             </tr>
             <!-- <tr>
             <td style="padding: 10px;width: 60%;border-right: 1px solid #000;" rowspan="5">
-                    Manufactured and Sold by: customclosets Innovations Pvt Ltd <br><br>
+                    Manufactured and Sold by: customdoorsandmirror Innovations Pvt Ltd <br><br>
                     
                     Phone: +91 988 3333 123 <br>
-                    Email: support@customclosets.co
+                    Email: support@customdoorandmirror.com
             </td>
             </tr>
             <tr>
@@ -164,7 +164,7 @@
                 <th style="border-right: 1px solid #000;padding-left: 5px;border-bottom:1px solid #000;">
                     Order Via
                 </th>
-                <td style="padding-left: 5px;border-bottom:1px solid #000;">customclosets.co</td>
+                <td style="padding-left: 5px;border-bottom:1px solid #000;">customdoorandmirror.com</td>
             </tr>
             <tr>
                 <th style="border-right: 1px solid #000;padding-left: 5px;border-bottom:1px solid #000;">
@@ -294,7 +294,7 @@
     function generatePDF() {
         // Choose the element that our invoice is rendered in.
         const element = document.getElementById("invoice-body");
-        var filename = "{{ 'customclosets'.$order->order_no.'.pdf' }}";
+        var filename = "{{ 'customdoorsandmirror'.$order->order_no.'.pdf' }}";
         // Choose the element and save the PDF for our user.
         html2pdf()
           .from(element)

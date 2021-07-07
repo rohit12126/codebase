@@ -81,7 +81,7 @@
                             <tr>
                                 <td align="center" style="text-align:center;padding-bottom:50px">
                                 <a href="{{url('/')}}" style="text-decoration:none" target="_blank">
-                                    <img alt="Custom Closet" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
+                                    <img alt="Custom Doors and Mirrors" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
                                 </a>
                                 </td>
                             </tr>
@@ -101,7 +101,7 @@
                             </tr>
                             <tr>
                                 <td align="center" style="text-align:center;padding-top:5px;font-family: 'Lato',sans-serif;font-size: 11px;">
-                                <a href="#" style="color:#959595" target="_blank">www.customcloset.com</a> | <a href="{{route('termsAndCondition')}}" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="{{route('privacyPolicy')}}" style="color:#959595" target="_blank">Privacy Policy</a>
+                                <a href="#" style="color:#959595" target="_blank">https://customdoorandmirror.com</a> | <a href="{{route('termsAndCondition')}}" style="color:#959595" target="_blank">Terms &amp; Conditions</a> | <a href="{{route('privacyPolicy')}}" style="color:#959595" target="_blank">Privacy Policy</a>
                                 </td>
                             </tr>
                             <tr>
@@ -115,7 +115,7 @@
                                     </span>
                                 </div>
                                 <div style="font-size:11px;text-align:center;padding-bottom:5px;padding-top:15px;line-height:15px;font-family:'Lato',sans-serif;">
-                                    Copyright © {{date("Y")}} Custom Closet, All rights reserved.
+                                    Copyright © {{date("Y")}} Custom Doors and Mirrors, All rights reserved.
                                 </div>
                                 </td>
                             </tr>

@@ -8,7 +8,7 @@
             <div class="card-group">
                 <div class="card p-4">
                     <a href="{{ url('/') }}" class="d-block m-auto p-0 pr-xl-2 head-logo">
-                        Custom Closet
+                        Custom Doors and Mirrors
                     </a>
                     <div class="card-body">
                         <h1 class="text-center text-uppercase login-form-title">Admin Login</h1>

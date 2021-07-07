@@ -30,7 +30,7 @@ if(!function_exists('renderDropdown')){
 }
 ?>
 
-<h3 class="c-sidebar-brand" ><a href="{{ route('admin.dashboard') }}" style="color:white;">Custom Closets</a></h3>
+<h3 class="c-sidebar-brand" ><a href="{{ route('admin.dashboard') }}" style="color:white;">Custom Doors and Mirrors</a></h3>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'dashboard') c-active @endif" href="{{ route('admin.dashboard') }}" >
