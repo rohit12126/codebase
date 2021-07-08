@@ -69,8 +69,8 @@ class OrderController extends Controller
 
              if(strpos(url()->previous(), 'order/add-order') == false) {
 
-                $orderNumber = $this->orderManager->generateOrderNumber();
-                
+                $orderNumber = $req->session()->get('orderNu');
+                // dd($orderNumber);
                 $orderData['order_no'] = $orderNumber;
                 $orderData['user_id'] = $userId;
                 if(!empty($isTempUser)) {
@@ -125,8 +125,8 @@ class OrderController extends Controller
                 }
                 $paymentId = session()->get('payment_id');
                 
-                PaymentModel::where('id', $paymentId)
-                    ->update(['order_no' => $orderNumber]);
+                // PaymentModel::where('id', $paymentId)
+                //     ->update(['order_no' => $orderNumber]);
 
                 if($req->session()->has('buynow'))
                 {
@@ -145,7 +145,8 @@ class OrderController extends Controller
                     'payment_id',
                     'shippingCharge',
                     'taxCharge',
-                    'configuredProductData'
+                    'configuredProductData',
+                    'orderNo'
                     ]
                 );
             } else {

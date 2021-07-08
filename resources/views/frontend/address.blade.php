@@ -41,7 +41,11 @@
             	<div class="medium_divider"></div>
             </div>
         </div> -->
-
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <span class="error">{{$error}}</span>
+            @endforeach
+        @endif
         <form method="post" action="{{route('address.save')}}" id="checkoutForm">
         @csrf
             <input type="hidden" name="isNewAddress" id="isNewAddress" value="1">
@@ -316,6 +320,43 @@
                                 <h4>Payment</h4>
                             </div>
                             <div class="payment_option">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                    <div class="input-group-text log"></div>
+                                    </div>
+                                <input type="text" type="text" class="form-control" name="card_number" id="card_number" required="" value="" placeholder="Card Number *" autocomplete="cc-number" maxlength="19" inputmode="numeric" pattern="[0-9\s]{13,19}">
+                            </div>                            
+                            <div class="row">
+                                <div class = "col-4">                                
+                                    <div class="custom_select">
+                                        <select class="form-control placeholder-select" name="month" id="month" required="" value="">
+                                                
+                                        <option disabled selected >Expiry Month</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February </option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class = "col-4">
+
+                                <input type="text" class="form-control ship" name="year" id="year" required="" minlength="4" maxlength="4" placeholder="Expiry Year">
+                                </div>
+                                <div class = "col-4">
+
+                                <input type="text" class="form-control ship" name="cvc" id="cvc" required="" value="" minlength="3" placeholder="CVV / CVC *">
+                                </div>
+                            </div>
+
                                 <!-- <div class="custome-radio">
                                     <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="option3" checked="">
                                     <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
@@ -326,11 +367,11 @@
                                     <label class="form-check-label" for="exampleRadios4">Check Payment</label>
                                     <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
                                 </div> -->
-                                <div class="custome-radio">
+                                <!-- <div class="custome-radio">
                                     <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
                                     <label class="form-check-label" for="exampleRadios5">Pay via Paypal</label>
                                     <p data-method="paypal" class="payment-text">You can pay with your credit card if you don't have a PayPal account.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <button type="submit" id="place_order" class="btn btn-fill-out btn-block">Place Order</button>
@@ -682,4 +723,18 @@ $(document).ready(function() {
     });
 });
 </script>
+@push('c-scripts')
+<script src="{{ asset('js/ccvalidator/jquery.creditCardValidator.js')}}"></script>
+<script>
+    $(function() {
+        $('#card_number').validateCreditCard(function(result) {
+            $('.log').text(result.card_type == null ? '-' : result.card_type.name)
+            if(result.valid)
+            {
+                
+            }
+        });
+    });
+</script>
+@endpush
 @endsection

@@ -138,7 +138,6 @@ class CartController extends Controller
      * @return view checkout
      */
     public function addAddress(Request $req) {
-        
         $isTemp = 0;
         $userId = 0;
         $bill = 0;
@@ -205,6 +204,11 @@ class CartController extends Controller
 
         // $productList = $this->cartManager->getCartContain();
         // $cartSubTotal = $this->cartManager->subTotal();
+        $card['number'] = $req->card_number;
+        $card['month'] = $req->month;
+        $card['year'] = $req->year;
+        $card['cvc'] = $req->cvc;
+
         session([
             'ship' => $ship,
             'bill' => $bill,
@@ -212,6 +216,7 @@ class CartController extends Controller
             'userId' => $userId,
             'shippingCharge' => $req->shipping,
             'taxCharge' => $req->tax ?? 0,  
+            'card' => $card
         ]);
 
         if(strpos(url()->previous(), '?cart') !== false) {
@@ -219,9 +224,9 @@ class CartController extends Controller
             $req->session()->forget('buynow');
         }
 
-        if ($req->payment_option == 'paypal') {
+        // if ($req->payment_option == 'paypal') {
             return redirect()->route('addmoney.paywithpaypal');
-        }
+        // }
     }
     
     /**
