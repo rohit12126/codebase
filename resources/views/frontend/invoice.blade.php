@@ -264,14 +264,14 @@
                                 @if($order->grand_total > 999 ) ${{number_format($order->grand_total, 2,".",",")}} @else ${{number_format($order->grand_total, 2)}}@endif
                             </td>
                         </tr>
-                        <tr style="font-weight: bold;">
+                        <!-- <tr style="font-weight: bold;">
                             <td colspan="5" style="text-align: right;padding: 5px;border-right:1px solid #000;">
                                 Payment Mode
                             </td>
                             <td style="padding: 10px;">
                                 Paypal
                             </td> 
-                        </tr>
+                        </tr> -->
                     </table>
                 </td>
             </tr>
