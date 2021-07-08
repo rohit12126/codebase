@@ -8470,12 +8470,12 @@ h5 {
 	right: 0;
 }
 @media(min-width:992px){
-	.installation-videos-wrap.open .specs-iframe-wrap{
+	.installation-videos-wrap.open:not(.configure-playlist) .specs-iframe-wrap{
 		margin-right: 378px;
 	}
 }
 @media(min-width:1200px){
-	.installation-videos-wrap .specs-iframe-wrap{
+	.installation-videos-wrap:not(.configure-playlist) .specs-iframe-wrap{
 		padding-top: 39.25%;
 	}
 }

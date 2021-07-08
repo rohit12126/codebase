@@ -30,7 +30,10 @@ if(!function_exists('renderDropdown')){
 }
 ?>
 
-<h3 class="c-sidebar-brand" ><a href="{{ route('admin.dashboard') }}" style="color:white;">Custom Doors and Mirrors</a></h3>
+<a href="{{ route('admin.dashboard') }}" class="c-sidebar-brand d-lg-down-none">
+    <img src="{{URL::asset('/images/custom-inc-logo-white.png')}}" alt="" class="c-sidebar-brand-full mw-100">
+    <img src="{{URL::asset('/images/cdm-inc-short.png')}}" alt="" class="c-sidebar-brand-minimized">
+</a>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item" title="Admin Dashboard">
         <a class="c-sidebar-nav-link @if(request()->segment(2) == 'dashboard') c-active @endif" href="{{ route('admin.dashboard') }}" >

@@ -1,4 +1,7 @@
-      <div class="c-sidebar-brand">Custom Doors and Mirrors</div>
+      <div class="c-sidebar-brand d-lg-down-none">
+        <img src="{{URL::asset('/images/custom-inc-logo-white.png')}}" alt="" class="c-sidebar-brand-full">
+        <img src="{{URL::asset('/images/cdm-inc-short.png')}}" alt="" class="c-sidebar-brand-minimized">
+      </div>
       <nav class="c-sidebar-nav">
         <ul class="c-nav">
           <li class="c-nav-item"><a class="c-nav-link" href="/">

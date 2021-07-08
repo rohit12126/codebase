@@ -321,6 +321,71 @@
 @endsection
 @section('scripts')
 <script>
+        jQuery(document).ready(function(){
+
+            function touchScroller(className,wrapper) {
+                let active = false;
+                document.querySelector(className).addEventListener('mousedown',function(){
+                    active = true;
+                    document.querySelector(className).classList.add('scrolling');
+                });
+                document.body.addEventListener('mouseup',function(){
+                    active = false;
+                    document.querySelector(className).classList.remove('scrolling');
+                });
+                document.body.addEventListener('mouseleave',function(){
+                    active = false;
+                    document.querySelector(className).classList.remove('scrolling');
+                }); 
+                document.body.addEventListener('mousemove',function(e){
+                    if (!active) return;
+                    let x = e.pageX;
+                    x -= document.querySelector(wrapper).getBoundingClientRect().left;
+                    scrollIt(x);
+                });
+                function scrollIt(x){
+                    let transform = Math.max(8,(Math.min(x,document.querySelector(wrapper).offsetWidth-20)));
+                    document.querySelector(wrapper).querySelector('.after').style.width = transform+"px";
+                    document.querySelector(className).style.left = transform+"px";
+                }
+                /* if (window.matchMedia("(max-width: 1200px)").matches) {
+                    scrollIt(screen.width/2);
+                } else {
+                    scrollIt(600);
+                } */
+                scrollIt(document.querySelector(wrapper).offsetWidth/2);
+                document.querySelector(className).addEventListener('touchstart',function(){
+                    active = true;
+                    document.querySelector(className).classList.add('scrolling');
+                });
+                document.body.addEventListener('touchend',function(){
+                    active = false;
+                    document.querySelector(className).classList.remove('scrolling');
+                });
+                document.body.addEventListener('touchcancel',function(){
+                    active = false;
+                    document.querySelector(className).classList.remove('scrolling');
+                });
+                document.body.addEventListener('touchmove',function(e){ 
+                    if (!active) return;
+                    let x = e.touches[0].pageX;
+                    x -= document.querySelector(wrapper).getBoundingClientRect().left;
+                    scrollIt(x); 
+                });
+            }
+            window.addEventListener('load', (event) => {
+                const classArray = [
+                    {classname : '.scrollerFirst',wrap:'.wrapperFirst'},
+                    {classname:'.scrollerSecond',wrap:'.wrapperSecond'}
+                ]
+                var i;
+                for (i = 0; i < classArray.length; i++) {
+                    touchScroller (classArray[i].classname,classArray[i].wrap);
+                }
+            });
+        });
+</script>
+<script>
     $('.product-wallpaper-slider').slick({
         lazyLoad: 'ondemand',
         autoplay: false,

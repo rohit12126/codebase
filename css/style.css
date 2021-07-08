@@ -10746,13 +10746,21 @@ html:not([dir="rtl"]) .c-sidebar-right .c-sidebar-minimizer::before {
 
   .c-sidebar-minimized .c-sidebar-brand-minimized {
     display: block;
+    max-width: 100%;
+    padding: 0 2px;
   }
 
   .c-sidebar-minimized .c-sidebar-nav {
     padding-bottom: 50px;
-    overflow: visible;
+    overflow-y: visible;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
-
+  .c-sidebar-minimized .c-sidebar-nav::-webkit-scrollbar {
+    display: none;
+    }
   .c-sidebar-minimized .c-d-minimized-none,
   .c-sidebar-minimized .c-sidebar-nav-divider,
   .c-sidebar-minimized .c-sidebar-nav-label,
