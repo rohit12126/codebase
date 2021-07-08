@@ -415,7 +415,7 @@ Route::get('order/add-order','OrderController@addOrder')->name('order.addOrder')
 Route::get('order/success','OrderController@orderSuccess')->name('order.success');
 
 /*Paypal Payment Routes*/
-Route::get('/paywithpaypal','PayPalController@payWithPaypal')->name('addmoney.paywithpaypal');
+Route::get('/paywithpaypal','PayPalController@payWithAuthorize')->name('addmoney.paywithpaypal');
 Route::post('/paypal','PayPalController@postPaymentWithpaypal')->name('addmoney.paypal');
 Route::get('/paypal', 'PayPalController@getPaymentStatus')->name('payment.status');
 

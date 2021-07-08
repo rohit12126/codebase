@@ -316,6 +316,21 @@
                                 <h4>Payment</h4>
                             </div>
                             <div class="payment_option">
+                            <input type="text" class="form-control ship" name="card_number" id="card_number" required="" value="" placeholder="Card Number *" autocomplete="cc-number" maxlength="19" inputmode="numeric" pattern="[0-9\s]{13,19}">
+                            <div class="row">
+                                    <div class = "col-4">
+                                <input type="text" class="form-control ship" name="month" id="month" required="" value="" placeholder="Expiry Month">
+                                </div>
+                                <div class = "col-4">
+
+                                <input type="text" class="form-control ship" name="year" id="year" required="" value="" placeholder="Expiry Year">
+                                </div>
+                                <div class = "col-4">
+
+                                <input type="text" class="form-control ship" name="cvc" id="cvc" required="" value="" placeholder="CVV / CVC *">
+                                </div>
+                            </div>
+
                                 <!-- <div class="custome-radio">
                                     <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="option3" checked="">
                                     <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
@@ -326,11 +341,11 @@
                                     <label class="form-check-label" for="exampleRadios4">Check Payment</label>
                                     <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
                                 </div> -->
-                                <div class="custome-radio">
+                                <!-- <div class="custome-radio">
                                     <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios5" value="paypal" checked=''>
                                     <label class="form-check-label" for="exampleRadios5">Pay via Paypal</label>
                                     <p data-method="paypal" class="payment-text">You can pay with your credit card if you don't have a PayPal account.</p>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <button type="submit" id="place_order" class="btn btn-fill-out btn-block">Place Order</button>
