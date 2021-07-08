@@ -2,25 +2,24 @@
 namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Validator;
 use URL;
 use Session;
-use Redirect;
-/** All Paypal Details class **/
-use PayPal\Rest\ApiContext;
-use PayPal\Auth\OAuthTokenCredential;
-use PayPal\Api\Amount;
-use PayPal\Api\Details;
-use PayPal\Api\Item;
-use PayPal\Api\ItemList;
-use PayPal\Api\Payer;
-use PayPal\Api\Payment;
-use PayPal\Api\RedirectUrls;
-use PayPal\Api\ExecutePayment;
-use PayPal\Api\PaymentExecution;
-use PayPal\Api\Transaction;
-use PayPal\Api\WebProfile;
-use PayPal\Api\InputFields;
+// use Redirect;
+// /** All Paypal Details class **/
+// use PayPal\Rest\ApiContext;
+// use PayPal\Auth\OAuthTokenCredential;
+// use PayPal\Api\Amount;
+// use PayPal\Api\Details;
+// use PayPal\Api\Item;
+// use PayPal\Api\ItemList;
+// use PayPal\Api\Payer;
+// use PayPal\Api\Payment;
+// use PayPal\Api\RedirectUrls;
+// use PayPal\Api\ExecutePayment;
+// use PayPal\Api\PaymentExecution;
+// use PayPal\Api\Transaction;
+// use PayPal\Api\WebProfile;
+// use PayPal\Api\InputFields;
 use App\Classes\CartManager;
 use App\Classes\ProductManager;
 use App\Classes\AddressManager;
@@ -44,12 +43,12 @@ class PaypalController extends Controller
         OrderManager $orderManager
     )
     {
-        $paypal_conf = \Config::get('paypal');
-        $this->_api_context = new ApiContext(new OAuthTokenCredential(
-                $paypal_conf['client_id'],
-                $paypal_conf['secret'])
-            );
-        $this->_api_context->setConfig($paypal_conf['settings']);
+        // $paypal_conf = \Config::get('paypal');
+        // $this->_api_context = new ApiContext(new OAuthTokenCredential(
+        //         $paypal_conf['client_id'],
+        //         $paypal_conf['secret'])
+        //     );
+        // $this->_api_context->setConfig($paypal_conf['settings']);
         $this->cartManager = $cartManager;
         $this->addressManager = $addressManager;
         $this->orderManager = $orderManager;
@@ -71,7 +70,6 @@ class PaypalController extends Controller
                 return redirect('cart/');
             }
         }
-        // dd($request);
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
     $merchantAuthentication->setName('5KP3u95bQpv');
     $merchantAuthentication->setTransactionKey('346HZ32z3fP4hTG2');
@@ -177,58 +175,54 @@ class PaypalController extends Controller
             $tresponse = $response->getTransactionResponse();
         
             if ($tresponse != null && $tresponse->getMessages() != null) {
-                echo " Successfully created transaction with Transaction ID: " . $tresponse->getTransId() . "\n";
-                echo " Transaction Response Code: " . $tresponse->getResponseCode() . "\n";
-                echo " Message Code: " . $tresponse->getMessages()[0]->getCode() . "\n";
-                echo " Auth Code: " . $tresponse->getAuthCode() . "\n";
-                echo " Description: " . $tresponse->getMessages()[0]->getDescription() . "\n";
+                $data = [
+                    'payment_id'=>$tresponse->getTransId(),
+                    'amount'=>$subTotal + $tax + $shipCost,
+                    'currency'=>'USD',
+                    'shipping'=>$shipCost,
+                    'status'=> 'OK',
+                    'tax' => $tax,
+                    'order_no' => $orderNu,
+                ];
+                
+                $paymentData = PaymentModel::create($data);
+                
+                session(
+                    ['payment_id' => $paymentData->id,
+                    'orderNu' => $orderNu]
+                );
+                return redirect()->route('order.addOrder');
             } else {
-                echo "Transaction Failed \n";
                 if ($tresponse->getErrors() != null) {
-                    echo " Error Code  : " . $tresponse->getErrors()[0]->getErrorCode() . "\n";
-                    echo " Error Message : " . $tresponse->getErrors()[0]->getErrorText() . "\n";
+                    if(session()->has('buynow'))
+                    {
+                        return redirect()->route('address.get',['buy-now'])->withErrors(['authorize', $tresponse->getErrors()[0]->getErrorText()]);
+                    }
+                    return redirect()->route('address.get')->withErrors(['authorize', $tresponse->getErrors()[0]->getErrorText()]);
+               
                 }
             }
             // Or, print errors if the API request wasn't successful
-            $data = [
-                'payment_id'=>$tresponse->getTransId(),
-                'amount'=>$subTotal + $tax + $shipCost,
-                'currency'=>'USD',
-                'shipping'=>$shipCost,
-                'status'=> 'OK',
-                'tax' => $tax,
-                'order_no' => $orderNu,
-            ];
             
-            $paymentData = PaymentModel::create($data);
-            
-            session(
-                ['payment_id' => $paymentData->id,
-                'orderNu' => $orderNu]
-            );
-            return redirect()->route('order.addOrder');
         } else {
+            $tresponse = $response->getTransactionResponse();
             if ($tresponse != null && $tresponse->getErrors() != null) {
                 if(session()->has('buynow'))
                 {
-                    return redirect()->route('address.get',['buy-now'])->withErrors(['msg', $tresponse->getErrors()[0]->getErrorText()]);
+                    return redirect()->route('address.get',['buy-now'])->withErrors(['authorize', $tresponse->getErrors()[0]->getErrorText()]);
                 }
-                return redirect()->route('address.get')->withErrors(['msg', $tresponse->getErrors()[0]->getErrorText()]);
+                return redirect()->route('address.get')->withErrors(['authorize', $tresponse->getErrors()[0]->getErrorText()]);
                 } else {
                     if(session()->has('buynow'))
                     {
-                        return redirect()->route('address.get',['buy-now'])->withErrors(['msg', $response->getMessages()->getMessage()[0]->getText()]);
+                        return redirect()->route('address.get',['buy-now'])->withErrors(['authorize', $response->getMessages()->getMessage()[0]->getText()]);
                     }
-                    return redirect()->route('address.get')->withErrors(['msg', $response->getMessages()->getMessage()[0]->getText()]);
+                    return redirect()->route('address.get')->withErrors(['authorize', $response->getMessages()->getMessage()[0]->getText()]);
                 }
             }
     } else {
-        echo  "No response returned \n";
+        return redirect()->route('address.get')->withErrors(['authorize', "NO Response returned"]);
     }
-
-    
-
-    dd($response);
     }
 
     /**

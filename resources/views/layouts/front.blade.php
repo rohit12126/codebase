@@ -371,6 +371,7 @@ footer-->
 	// }
 </script>
 @yield('scripts')
+@stack('c-scripts')
 <script>
     $(window).load(function(){
         $('#sitePreloader').fadeOut();
