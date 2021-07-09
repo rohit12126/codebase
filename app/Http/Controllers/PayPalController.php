@@ -71,8 +71,8 @@ class PaypalController extends Controller
             }
         }
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-    $merchantAuthentication->setName('5KP3u95bQpv');
-    $merchantAuthentication->setTransactionKey('346HZ32z3fP4hTG2');
+    $merchantAuthentication->setName(env('MERCHANT_LOGIN_ID'));
+    $merchantAuthentication->setTransactionKey(env('MERCHANT_TRANSACTION_KEY'));
     
     // Set the transaction's refId
     $refId = 'ref' . time();
@@ -164,7 +164,7 @@ class PaypalController extends Controller
 
     // Create the controller and get the response
     $controller = new AnetController\CreateTransactionController($request);
-    $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
+    $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
     
 
     if ($response != null) {
