@@ -87,8 +87,8 @@
                                                                                 Order delievered to the following address:
                                                                                 <p style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;color:#282c3f;font-size:25px;margin-bottom:16px;font-weight:normal;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal">
                                                         </p>
-                                                        <div style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;font-size:16px;line-height:1.38;letter-spacing:0.29px;color:#7e818c;font-weight:normal;font-stretch:normal;font-style:normal">
-                                                            <span><strong style="font-weight:bold;color:#3e4152">{{$data['ship']->name ?? $data['bill']->name}}</strong>,</span>
+                                                        <div style="margin:0;padding:0;width:100%;font-family:'Lato',sans-serif;font-size:16px;line-height:1.38;letter-spacing:0.29px;color:##ffffff;font-weight:normal;font-stretch:normal;font-style:normal">
+                                                            <span><strong style="font-weight:bold;color:##ffffff">{{$data['ship']->name ?? $data['bill']->name}}</strong>,</span>
                                                             <span>{{$data['ship']->address ?? $data['bill']->address}}</span>,
                                                             <span>{{$data['ship']->city ?? $data['bill']->city}}</span>,
                                                             <span>{{$data['ship']->state ?? $data['bill']->state}}</span>,
