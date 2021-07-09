@@ -23,7 +23,10 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         view()->composer([
             'dashboard.email.master',
-            'frontend.invoice'
+            'frontend.invoice',
+            'dashboard.email.order_status_change',
+            'frontend.privacy-policy',
+            'frontend.terms-and-conditions'
         ],SettingComposer::class);
     }
 

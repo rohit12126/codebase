@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label>Facebook URL</label>
                                         <span class="mandatory">*</span> 
-                                        <input type="text" maxlength="150" placeholder="Facebook URL" name="facebook_url" value="{{ old('facebook_url',@$setting->facebook_url) }}" class="form-control" required autocomplete="off" />
+                                        <input type="text" maxlength="150" placeholder="Facebook URL" name="facebook_url" value="{{ old('facebook_url',@$setting->facebook_url) }}" class="form-control"  autocomplete="off" />
                                         @if($errors->has('facebook_url'))
                                             <div class="error ">{{ $errors->first('facebook_url') }}</div>
                                         @endif
@@ -69,7 +69,7 @@
                                     <div class="form-group">
                                         <label>Twitter URL</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" maxlength="150" placeholder="Twitter URL" name="twitter_url" value="{{ old('twitter_url',@$setting->twitter_url) }}"  class="form-control" required autocomplete="off" />
+                                        <input type="text" maxlength="150" placeholder="Twitter URL" name="twitter_url" value="{{ old('twitter_url',@$setting->twitter_url) }}"  class="form-control" autocomplete="off" />
                                         @if($errors->has('twitter_url'))
                                             <div class="error ">{{ $errors->first('twitter_url') }}</div>
                                         @endif
@@ -77,7 +77,7 @@
                                     <div class="form-group">
                                         <label>Pinterest URL</label>
                                         <span class="mandatory">*</span>
-                                        <input type="text" maxlength="150" placeholder="Pinterest URL" name="pinterest_url" value="{{ old('pinterest_url',@$setting->pinterest_url) }}"  class="form-control" required autocomplete="off" />
+                                        <input type="text" maxlength="150" placeholder="Pinterest URL" name="pinterest_url" value="{{ old('pinterest_url',@$setting->pinterest_url) }}"  class="form-control" autocomplete="off" />
                                         @if($errors->has('pinterest_url'))
                                             <div class="error ">{{ $errors->first('pinterest_url') }}</div>
                                         @endif
@@ -134,15 +134,12 @@ $.validator.addMethod(
               required: true
             },
             facebook_url: {
-              required: true,
               regex: /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/
             },
             twitter_url: {
-              required : true,
               regex: /(?:http:\/\/)?(?:www\.)?twitter\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/
             },
             pinterest_url: {
-              required : true,
               regex: /(?:http:\/\/)?(?:www\.)?pinterest\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/
             }
         },
@@ -157,9 +154,6 @@ $.validator.addMethod(
               email: "Please provide a valid email"
             },
             address: "Please provide a address",
-            facebook_url: "Please provide a Facebook Url",
-            twitter_url: "Please provide a Twitter Url",
-            pinterest_url: "Please provide a Pinterest Url",
         },
         submitHandler: function(form) {
             form.submit();
