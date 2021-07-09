@@ -109,9 +109,15 @@
                                 <div>
                                     <span style="text-align:right;display:inline-block;vertical-align:middle">
                                     <span style="font-size:16px;font-family:'Lato',sans-serif;">Follow Us:</span>
+                                    @if($setting->facebook_url)
                                     <a href="{{$setting->facebook_url ?? 'https://www.facebook.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank""><img src="{{URL::asset('/images/icon/facebook.png')}}" width="22"></a>
+                                    @endif
+                                    @if($setting->instagram_url)
                                     <a href="{{$setting->instagram_url ?? 'https://www.instagram.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/instagram.png')}}" width="22"></a>
+                                    @endif
+                                    @if($setting->instagram_url)
                                     <a href="{{$setting->pinterest_url ?? 'https://www.pinterest.com/'}}" style="text-decoration:none;vertical-align:middle" target="_blank"><img src="{{URL::asset('/images/icon/pintrest.png')}}" width="22"></a>
+                                    @endif
                                     </span>
                                 </div>
                                 <div style="font-size:11px;text-align:center;padding-bottom:5px;padding-top:15px;line-height:15px;font-family:'Lato',sans-serif;">

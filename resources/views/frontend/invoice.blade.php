@@ -82,8 +82,8 @@
                         <td style="padding: 10px;width: 60%;border-right: 1px solid #000;">
                                 Manufactured and Sold by: Custom Doors and Mirrors <br><br>
                         
-                                Phone: {{$setting->contact ?? '123 456 789'}} <br>
-                                Email: {{$setting->email ?? 'help@customcloset.com'}}
+                                Phone: {{$setting->contact ?? '(631)-414-7725'}} <br>
+                                Email: {{$setting->email ?? 'sales@paniflex.com'}}
                         </td>
                         <td cellspacing="0">
                             <table style="width: 100%;" cellspacing="0">

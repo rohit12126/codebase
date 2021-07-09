@@ -98,7 +98,7 @@
                                                                                 </br>Hope you have liked it. Please click on link below to get the installation instructions for your product:
                                                                                 <a href="{{url('/installation-video')}}" ?>Installation Instructions</a>
                                                                             </p>
-                                                                            <p>In case, you have not received this order yet or have any query while installing your product, then kindly reach us at enquire@customcloset.com.</p>
+                                                                            <p>In case, you have not received this order yet or have any query while installing your product, then kindly reach us at {{$setting->email ?? 'sales@paniflex.com'}}.</p>
                                                                             </td>
                                                                         </tr>
                                                                     @endif

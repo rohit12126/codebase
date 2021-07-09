@@ -54,7 +54,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Drop a mail</span>
-                        <a href="mailto:{{$setting->email ?? 'help@customcloset.com'}}">{{$setting->email ?? 'help@customcloset.com'}} </a>
+                        <a href="mailto:{{$setting->email ?? 'sales@paniflex.com'}}">{{$setting->email ?? 'sales@paniflex.com'}} </a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="contact_text">
                         <span>Call Us</span>
-                        <p><a href="tel:{{$setting->contact ?? '123 456 789'}}">{{$setting->contact ?? '123 456 789'}}</a></p>
+                        <p><a href="tel:{{$setting->contact ?? '(631)-414-7725'}}">{{$setting->contact ?? '(631)-414-7725'}}</a></p>
                     </div>
                 </div>
             </div>

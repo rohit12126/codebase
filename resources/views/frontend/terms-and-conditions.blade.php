@@ -221,7 +221,7 @@
                 </p>
                 <ul>
                     <li>
-                        By email: <a href="mailto:sales@paniflex.com">sales@paniflex.com</a>
+                        By email: <a href="mailto:{{$setting->email ?? 'sales@paniflex.com'}}">{{$setting->email ?? 'sales@paniflex.com'}}</a>
                     </li>
                 </ul>
             </div>

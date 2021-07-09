@@ -504,7 +504,7 @@
                     In order to exercise any of Your rights under the CCPA, and if You are a California resident, You can contact Us:
                 </p>
                 <ul>
-                    <li>By email: sales@paniflex.com</li>
+                    <li>By email: {{$setting->email ?? 'sales@paniflex.com'}}</li>
                 </ul>
                 <p>
                     Only You, or a person registered with the California Secretary of State that You authorize to act on Your behalf, may make a verifiable request related to Your personal information.
@@ -617,7 +617,7 @@
                 </p>
                 <ul>
                     <li>
-                        By email: <a href="mailto:sales@paniflex.com">sales@paniflex.com</a>
+                        By email: <a href="mailto:{{$setting->email ?? 'sales@paniflex.com'}}">{{$setting->email ?? 'sales@paniflex.com'}}</a>
                     </li>
                 </ul>
             </div>
