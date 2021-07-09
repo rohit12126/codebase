@@ -32,8 +32,40 @@
                                 <p>
                                 All of our custom closet doors are "<strong>True to Fit</strong>" which means we do all the calculations for you so that you get the proper fit.
                                 </p>
-                                <div class="specs-iframe-wrap mb-4">
-                                    <iframe class="specs-iframe-responsive" width="100%" height="320" src="https://www.youtube.com/embed/videoseries?list=PLTR8e6AHZK3vVaSyVrVkUxkRvM3H1u5c3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="installation-videos-wrap configure-playlist mt-5">
+                                    <div class="playlist-trigger">
+                                        <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-23"></use><path d="m 22.53,21.42 0,6.85 5.66,-3.42 -5.66,-3.42 0,0 z m -11.33,0 9.06,0 0,2.28 -9.06,0 0,-2.28 0,0 z m 0,-9.14 13.6,0 0,2.28 -13.6,0 0,-2.28 0,0 z m 0,4.57 13.6,0 0,2.28 -13.6,0 0,-2.28 0,0 z" fill="#fff" id="ytp-id-23"></path></svg>
+                                        <span>
+                                            Playlist
+                                        </span>
+                                    </div>
+                                    <div class="specs-iframe-wrap" id="measurePlaylistPlayer">
+                                        <iframe class="specs-iframe-responsive" width="100%" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="iv-playlist-wrap">
+                                        <div class="iv-playlist-header">
+                                            <div class="iv-playlist-title">
+                                                Measure and Fit Videos
+                                                <span class="ti-close iv-playlist-close"></span>
+                                            </div>
+                                        </div>
+                                        <ul class="iv-playlist-ul" id="measureVideoTabs">
+                                            <li class="iv-playlist-li active" iVideoId="571741695">
+                                                <div class="iv-pl-icon">
+                                                    <i class="ion-ios-play"></i>
+                                                </div>
+                                                <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1183371048?mw=64&mh=36')"></div>
+                                                <div class="iv-playlist-thumb-title">2 Panel - Right Open</div>
+                                            </li>
+                                            <li class="iv-playlist-li" iVideoId="571740752">
+                                                <div class="iv-pl-icon">
+                                                    <i class="ion-ios-play"></i>
+                                                </div>
+                                                <div class="iv-playlist-thumb" style="background-image: url('https://i.vimeocdn.com/video/1182454680?mw=64&mh=36');"></div>
+                                                <div class="iv-playlist-thumb-title">2 Panel - Left Open</div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <p>
                                     Adjustability – Our bifold and sliders have
@@ -1263,7 +1295,7 @@ $(document).ready(function(){
 </script>
 <script>
     $(document).ready(function(){
-        var iVideoUrl = "https://player.vimeo.com/video/" + $('#youtubevideotabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
+        let iVideoUrl = "https://player.vimeo.com/video/" + $('#youtubevideotabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
         $('#youtubeplayer iframe').attr('src',iVideoUrl);            
         $('#youtubevideotabs li').click(function(){
             iVideoUrl = "https://player.vimeo.com/video/"+ $(this).attr('iVideoId') +"?title=0&byline=0&portrait=0";
@@ -1274,12 +1306,23 @@ $(document).ready(function(){
         }); 
     });
     $(document).ready(function(){
-        var iVideoUrl = "https://player.vimeo.com/video/" + $('#pcVideoTabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
+        let iVideoUrl = "https://player.vimeo.com/video/" + $('#pcVideoTabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
         $('#pcPlaylistPlayer iframe').attr('src',iVideoUrl);            
         $('#pcVideoTabs li').click(function(){
             iVideoUrl = "https://player.vimeo.com/video/"+ $(this).attr('iVideoId') +"?title=0&byline=0&portrait=0";
             $('#pcPlaylistPlayer iframe').attr('src',iVideoUrl);
             $('#pcVideoTabs li').removeClass('active');
+            $(this).addClass('active');
+            $(this).parents('.installation-videos-wrap').toggleClass('open');
+        }); 
+    });
+    $(document).ready(function(){
+        let iVideoUrl = "https://player.vimeo.com/video/" + $('#measureVideoTabs li:first-child').attr('iVideoId') + "?title=0&byline=0&portrait=0";
+        $('#measurePlaylistPlayer iframe').attr('src',iVideoUrl);            
+        $('#measureVideoTabs li').click(function(){
+            iVideoUrl = "https://player.vimeo.com/video/"+ $(this).attr('iVideoId') +"?title=0&byline=0&portrait=0";
+            $('#measurePlaylistPlayer iframe').attr('src',iVideoUrl);
+            $('#measureVideoTabs li').removeClass('active');
             $(this).addClass('active');
             $(this).parents('.installation-videos-wrap').toggleClass('open');
         }); 
