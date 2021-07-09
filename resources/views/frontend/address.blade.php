@@ -488,6 +488,7 @@ $(document).ready(function() {
                     value: tax
                 }).appendTo('#checkoutForm');
                 var subtotal = +data['shipping'] + +tax + +{{$cartSubTotal}}
+                console.log(subtotal);
                 $('#total').html('$'+(parseInt(subtotal).toFixed(2)))
                 }
             }
