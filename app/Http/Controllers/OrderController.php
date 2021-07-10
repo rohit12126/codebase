@@ -223,7 +223,7 @@ class OrderController extends Controller
         
         if($twodecimal - floor($twodecimal) > 0 )
         {
-            $cents = Terbilang::make($twodecimal - floor($twodecimal) * 100, ' cents');
+            $cents = Terbilang::make((($twodecimal - floor($twodecimal)) * 100), ' cents');
         }
         $ce = ($cents) ? 'And' .ucwords($cents) : '.';
         $order->total_text = ucwords(Terbilang::make($twodecimal, ' dollars')) . $ce ;
