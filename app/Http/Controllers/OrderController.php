@@ -225,7 +225,7 @@ class OrderController extends Controller
         {
             $cents = Terbilang::make((($twodecimal - floor($twodecimal)) * 100), ' cents');
         }
-        $ce = ($cents) ? 'And' .ucwords($cents) : '.';
+        $ce = ($cents) ? ' And ' .ucwords($cents) : '.';
         $order->total_text = ucwords(Terbilang::make($twodecimal, ' dollars')) . $ce ;
         
         view()->share('order', $order);
