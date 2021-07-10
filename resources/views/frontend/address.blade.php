@@ -548,7 +548,9 @@ $(document).ready(function() {
             $("#holder").val("bill_state");
             $('.shipping_price').html('$0.00')
             $('.tax_price').html('$0.00')
-            getShippingPrice();
+            // getShippingPrice();
+            var zoneid = $('#'+$("#holder").val()).find(':selected').attr('data-value')
+            if (zoneid != undefined) {shippingajax(zoneid)};
         } else {
             $("#ship_name").val('');
             $("#ship_phone").val('');
