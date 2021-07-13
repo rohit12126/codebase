@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "authorizenet/authorizenet": "^2.0",
         "barryvdh/laravel-dompdf": "^0.8.7",
         "codebyray/laravel-review-rateable": "^1.3",
         "fideloper/proxy": "^4.2",
@@ -23,10 +24,11 @@
         "paypal/rest-api-sdk-php": "^1.14",
         "realrashid/sweet-alert": "^3.2",
         "riskihajar/terbilang": "^1.2",
-        "spatie/laravel-medialibrary": "^7.19.0",
-        "spatie/laravel-permission": "^3.8",
+        "spatie/pdf-to-image": "^2.1",
         "srmklive/paypal": "^3.0",
-        "stripe/stripe-php": "^7.64"
+        "stripe/stripe-php": "^7.64",
+        "spatie/laravel-medialibrary": "^7.19.0",
+        "spatie/laravel-permission": "^3.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

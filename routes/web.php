@@ -428,5 +428,5 @@ Route::post('/contact-us/store', 'admin\EnquiryController@submit')->name('contac
 /* Invoice Generation */
 Route::get('invoice', 'OrderController@invoice')->name('invoice');
 
-Route::get('/pay','PaymentController@pay')->name('pay');
-Route::post('/dopay/online', 'PaymentController@handleonlinepay')->name('dopay.online');
+// Route::get('/pay','PaymentController@pay')->name('pay');
+// Route::post('/dopay/online', 'PaymentController@handleonlinepay')->name('dopay.online');

@@ -215,11 +215,18 @@ class OrderController extends Controller
         $this->validate( $req, [
             'order_no' => 'required'
         ]); 
-
+        $ce = $cents = '';
         $order = $this->orderManager->getOrderByOrderNUmberWithOrderAddress($req->order_no);
         if(!$order)
         return redirect('/');
-        $order->total_text = ucwords(Terbilang::make($order->grand_total, ' dollars'));
+        $twodecimal = number_format((float)$order->grand_total, 2, '.', '');
+        
+        if($twodecimal - floor($twodecimal) > 0 )
+        {
+            $cents = Terbilang::make((($twodecimal - floor($twodecimal)) * 100), ' cents');
+        }
+        $ce = ($cents) ? ' And ' .ucwords($cents) : '';
+        $order->total_text = ucwords(Terbilang::make($twodecimal, ' dollars')) . $ce ;
         
         view()->share('order', $order);
 

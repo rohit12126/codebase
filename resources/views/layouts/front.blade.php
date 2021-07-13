@@ -7,18 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="Anil z" name="author">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    
+    <title>Custom Closet Doors NYC | United States | Custom Door and Mirror</title>
+    <meta name="description" content="Custom Door and Mirror is your one stop online store to buy residential and commercial closet doors and hardware. Visit our website and browse huge range of doors!"/>
+    <link rel="canonical" href="https://www.customdoorandmirror.com"/>
+    <meta name="keywords" content="Custom Doors Near Me, Custom Closet Doors NYC"/>    
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <meta property="og:url" content="{{url()->current()}}"/>
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{$blog->title ?? ''}}"/>
-    <meta property="og:description" content="{!! Str::limit( $blog->description ?? '' , 200, ' ...') !!}"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{$blog->title ?? 'Custom Closet Doors NYC | United States | Custom Door and Mirror'}}"/>
+    <meta property="og:description" content="Custom Door and Mirror is your one stop online store to buy residential and commercial closet doors and hardware. Visit our website and browse huge range of doors!"/>
     <meta property="og:image" content="@if(isset($blog)){{ asset('upload/blog/'.$blog->image)}}@else{{asset('upload/images/home/step-two.jpg')}}@endif"/>
+    <meta property="og:site_name" content="customdoorandmirror"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Custom Closet Doors NYC | United States | Custom Door and Mirror"/>
+    <meta name="twitter:description" content="Custom Door and Mirror is your one stop online store to buy residential and commercial closet doors and hardware. Visit our website and browse huge range of doors!"/>
+    <meta name="twitter:image" content="@if(isset($blog)){{ asset('upload/blog/'.$blog->image)}}@else{{asset('upload/images/home/step-two.jpg')}}@endif"/>
+
+
     <!-- SITE TITLE -->
-    <title>Custom Doors and Mirrors</title><!-- Favicon Icon -->
+    
+
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon/favicon.jpg')}}"><!-- Animation CSS -->
     <!-- <link rel="stylesheet" href="{{ asset('css/css-animate.css')}}">Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('css/css-bootstrap.min.css')}}">
@@ -29,6 +37,16 @@
     <script src="{{asset('js/SimpleComparison_files/iframeResizer.contentWindow.min.js')}}" defer></script>
     <script src="{{ asset('js/js-jquery-1.12.4.min.js')}}"></script>
     <!-- <script src="{{ asset('select-pure/dist/bundle.min.js')}}"></script> -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121622888-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121622888-1');
+    </script>
     <style>
     /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
@@ -165,7 +183,7 @@
       <div class="auth-modal modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header border-bottom-0 p-0 position-realtive">
-            <!-- <h4 class="modal-title" id="exampleModalLabel">Custom Doors and Mirrors</h4> -->
+            <!-- <h4 class="modal-title" id="exampleModalLabel">Custom Door and Mirror</h4> -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -303,7 +321,7 @@ footer-->
                 <div class="row m-0">
                     <div class="col-sm-5 p-lg-0">
                         <!-- <img src="img/sitzfeldt-white.png" alt="" class="foot-logo"> -->
-                        <a href={{ url('/')}}><span class="footer-logo">Custom Doors and Mirrors</span></a>
+                        <a href={{ url('/')}}><span class="footer-logo">Custom Door and Mirror</span></a>
                     </div>
                     <div class="col-sm-7 p-lg-0">
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end h-100 pt-2 pt-sm-0">
@@ -313,7 +331,7 @@ footer-->
                 </div>
                 <div class="text-center">
                     <p class="pt-3 mb-0">
-                        &#169; Copyright {{date("Y")}} Custom Doors and Mirrors. All rights Reserved.
+                        &#169; Copyright {{date("Y")}} Custom Door and Mirror. All rights Reserved.
                     </p>
                 </div>
             </div>

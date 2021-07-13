@@ -29,7 +29,7 @@ class UserRegistration extends Mailable
     public function build()
     {
         return $this->view('dashboard.email.register_success')
-            ->subject('Signup - Welcome to Custom Doors and Mirrors')
+            ->subject('Signup - Welcome to Custom Door and Mirror')
             ->with('data', $this->data);
     }
 }
