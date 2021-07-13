@@ -165,7 +165,7 @@
     <section class="product-grid-detail">
         <div class="product-grid-container">
             <div class="product-grid-tile-first">
-                <video autoplay loop muted class="product-grid-video video-autoplay">
+                <video autoplay loop muted playsinline class="product-grid-video video-autoplay">
                     <source src="{{URL::asset('/images/home/hammer-video.mp4')}}" type="video/mp4">
                 </video>
             </div>
@@ -177,7 +177,7 @@
         </div>
         <div class="product-grid-container">    
             <div class="product-grid-tile-first order-md-1">
-                <video autoplay loop muted class="product-grid-video video-autoplay">
+                <video autoplay loop muted playsinline class="product-grid-video video-autoplay">
                     <source src="{{URL::asset('/images/home/smooth-hinge.mp4')}}" type="video/mp4">
                 </video>
             </div>   

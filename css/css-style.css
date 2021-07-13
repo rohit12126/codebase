@@ -8487,6 +8487,9 @@ h5 {
 	.playlist-trigger svg{
 		width: 32px;
 	}
+	.pc-playlist-player{
+		margin-bottom: 60px;
+	}
 }
 .iv-playlist-wrap{
 	width: 100%;
