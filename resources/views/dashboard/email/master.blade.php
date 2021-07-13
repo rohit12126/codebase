@@ -81,7 +81,7 @@
                             <tr>
                                 <td align="center" style="text-align:center;padding-bottom:50px">
                                 <a href="{{url('/')}}" style="text-decoration:none" target="_blank">
-                                    <img alt="Custom Door and Mirrors" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
+                                    <img alt="Custom Door and Mirror" src="{{URL::asset('/images/email-img/logo.png')}}" width="200" class="CToWUd">
                                 </a>
                                 </td>
                             </tr>
@@ -121,7 +121,7 @@
                                     </span>
                                 </div>
                                 <div style="font-size:11px;text-align:center;padding-bottom:5px;padding-top:15px;line-height:15px;font-family:'Lato',sans-serif;">
-                                    Copyright © {{date("Y")}} Custom Door and Mirrors, All rights reserved.
+                                    Copyright © {{date("Y")}} Custom Door and Mirror, All rights reserved.
                                 </div>
                                 </td>
                             </tr>

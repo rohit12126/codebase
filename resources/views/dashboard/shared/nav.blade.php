@@ -1,4 +1,4 @@
-      <div class="c-sidebar-brand">Custom Door and Mirrors</div>
+      <div class="c-sidebar-brand">Custom Door and Mirror</div>
       <nav class="c-sidebar-nav">
         <ul class="c-nav">
           <li class="c-nav-item"><a class="c-nav-link" href="/">

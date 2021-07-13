@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keyword" content="">
-    <title>Custom Door and Mirrors</title>
+    <title>Custom Door and Mirror</title>
     <link rel="icon" href="{{url('/')}}/assets/favicon/favicon.jpg">
     
     <!-- Icons-->

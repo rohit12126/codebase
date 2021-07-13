@@ -65,7 +65,7 @@
             <img src="{{URL::asset('/images/cutom-inc-logo.png')}}" alt="" class="head-logo">
             </td>
             <td style="text-align: right;">
-                Custom Door and Mirrors <br>
+                Custom Door and Mirror<br>
             </td>
             </tr>
         </table>
@@ -80,7 +80,7 @@
                 <table style="width: 100%;border-bottom: 1px solid #000;" cellspacing="0">
                     <tr>
                         <td style="padding: 10px;width: 60%;border-right: 1px solid #000;">
-                                Manufactured and Sold by: Custom Door and Mirrors <br><br>
+                                Manufactured and Sold by: Custom Door and Mirror<br><br>
                         
                                 Phone: {{$setting->contact ?? '(631)-414-7725'}} <br>
                                 Email: {{$setting->email ?? 'sales@paniflex.com'}}
