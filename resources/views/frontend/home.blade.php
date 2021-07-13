@@ -31,7 +31,7 @@
                         <div><span class="start-steps-number"><b title="Step first">1</b></span></div>
                         <h4 class="home-step-heading mb-4">Choose your door type</h4>
                         <p class="home-step-para">
-                            Custom Door &amp; Mirror has a variety of designs making it easy to find exactly what you are looking for.
+                            Custom Door &amp; Mirror has a variety of Bifold and Slider designs making it easy to find exactly what you are looking for.
                         </p>
                     </article>
                 </div>
