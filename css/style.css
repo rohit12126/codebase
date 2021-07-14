@@ -10751,7 +10751,7 @@ html:not([dir="rtl"]) .c-sidebar-right .c-sidebar-minimizer::before {
   }
 
   .c-sidebar-minimized .c-sidebar-nav {
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     overflow-y: visible;
     overflow-x: auto;
     -ms-overflow-style: none;
