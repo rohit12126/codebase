@@ -10322,7 +10322,7 @@ h5 {
     height: 100%;
     left: 0;
     top: 0;
-    background: rgb(0 0 0 / 70%);
+    background: rgb(0 0 0 / 50%);
 }
 .client-section .heading_s3{
 	color: #fff;
@@ -10338,7 +10338,7 @@ h5 {
 	overflow: hidden;
     margin-bottom: 1.25rem;
 	height: calc(100% - 1.25rem);
-	background: #fff;
+	background: transparent;
 }
 .client-list-tile:before{
 	content: "\f448";
@@ -10361,13 +10361,13 @@ h5 {
 }
 .client-title{
 	font-weight: 600;
-	color: #292b2c;
+	color: #fff;
     font-size: 1.25rem;
 	position: relative;
 }
 .client-name{
 	font-size: 0.975rem;
-	color: #5d5d5d;
+	color: #eaeaea;
 	position: relative;
 }
 /* ======================================= Projects end ========================================== */
