@@ -37,10 +37,10 @@
                                     <div class="form-group">
                                         <label for="select3">Select Category</label>
                                         <span class="mandatory">*</span>
-                                        <span title="Click here to add category">
+                                        <span title="Click here to manage category">
                                             <a href="{{url('admin/blog-category')}}" style="text-decoration: none;">
                                                 <i class="fa fa-plus category-add" ></i>
-                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to add category</span>
+                                                <span class="text-success text-success font-weight-bold category-add-text">Click here to manage category</span>
                                             </a>
                                         </span>
                                         <select class="form-control" id="select3" name="category_id">
